@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <!-- Deep dark-fantasy tavern atmosphere -->
+    <linearGradient id="skyWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090c17"/>
+      <stop offset="48%" stop-color="#15121d"/>
+      <stop offset="100%" stop-color="#1f1410"/>
+    </linearGradient>
+
+    <!-- Oak tabletop perspective wood -->
+    <linearGradient id="tableWood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d2314"/>
+      <stop offset="35%" stop-color="#4e2d19"/>
+      <stop offset="100%" stop-color="#22120a"/>
+    </linearGradient>
+
+    <!-- Aged fantasy parchment map -->
+    <linearGradient id="parchment" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#edd9b0"/>
+      <stop offset="55%" stop-color="#d6b983"/>
+      <stop offset="100%" stop-color="#b08b53"/>
+    </linearGradient>
+
+    <!-- Candle warm radial aura -->
+    <radialGradient id="candleAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8d1" stop-opacity="0.95"/>
+      <stop offset="20%" stop-color="#ffb02e" stop-opacity="0.62"/>
+      <stop offset="55%" stop-color="#d95b12" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#d95b12" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Emerald mystical dice glow -->
+    <radialGradient id="emeraldAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#10b981" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Amber mystical dice glow -->
+    <radialGradient id="amberAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.85"/>
+      <stop offset="42%" stop-color="#f59e0b" stop-opacity="0.36"/>
+      <stop offset="100%" stop-color="#b45309" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="emeraldDice" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="48%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+
+    <linearGradient id="amberDice" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="48%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#d49b27"/>
+      <stop offset="100%" stop-color="#784f0b"/>
+    </linearGradient>
+
+    <radialGradient id="windowMoon" cx="50%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#1e3a8a" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#090c17" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bannerVignette" cx="50%" cy="52%" r="65%">
+      <stop offset="50%" stop-color="#050408" stop-opacity="0"/>
+      <stop offset="86%" stop-color="#050408" stop-opacity="0.52"/>
+      <stop offset="100%" stop-color="#030205" stop-opacity="0.88"/>
+    </radialGradient>
+
+    <filter id="tableShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#070403" flood-opacity="0.72"/>
+    </filter>
+  </defs>
+
+  <!-- Blurred Dark Medieval Library / Tavern Wall Backdrop -->
+  <rect width="1600" height="900" fill="url(#skyWall)"/>
+
+  <!-- Gothic Arched Stone Window with Starry Night Sky (Center-Left Background) -->
+  <g opacity="0.85">
+    <path d="M560 440 L560 155 Q560 55 680 35 Q800 55 800 155 L800 440 Z" fill="#0d172a" stroke="#242029" stroke-width="14"/>
+    <path d="M560 440 L560 155 Q560 55 680 35 Q800 55 800 155 L800 440 Z" fill="url(#windowMoon)"/>
+    <!-- Stars & crescent moon through leaded glass -->
+    <circle cx="716" cy="128" r="24" fill="#dbeafe" opacity="0.75"/>
+    <circle cx="726" cy="122" r="21" fill="#0d172a"/>
+    <g fill="#e0f2fe" opacity="0.7">
+      <circle cx="614" cy="110" r="2"/><circle cx="654" cy="86" r="1.6"/>
+      <circle cx="752" cy="184" r="2"/><circle cx="622" cy="204" r="1.5"/>
+    </g>
+    <!-- Window mullions -->
+    <line x1="680" y1="38" x2="680" y2="440" stroke="#1c1922" stroke-width="8"/>
+    <line x1="560" y1="190" x2="800" y2="190" stroke="#1c1922" stroke-width="7"/>
+    <line x1="560" y1="310" x2="800" y2="310" stroke="#1c1922" stroke-width="7"/>
+  </g>
+
+  <!-- Subtle Background Bookshelves on Right & Timber Beams on Left -->
+  <g fill="#1c1311" stroke="#0d0807" stroke-width="3" opacity="0.85">
+    <rect x="1140" y="60" width="460" height="390"/>
+    <line x1="1140" y1="160" x2="1600" y2="160" stroke="#2b1b15" stroke-width="10"/>
+    <line x1="1140" y1="270" x2="1600" y2="270" stroke="#2b1b15" stroke-width="10"/>
+    <line x1="1140" y1="380" x2="1600" y2="380" stroke="#2b1b15" stroke-width="10"/>
+    <!-- Book spines -->
+    <g opacity="0.7">
+      <rect x="1170" y="92" width="22" height="62" fill="#4c1d24"/><rect x="1196" y="102" width="18" height="52" fill="#1e3a5f"/>
+      <rect x="1218" y="88" width="26" height="66" fill="#3f2b1c"/><rect x="1248" y="96" width="20" height="58" fill="#1f4232"/>
+      <rect x="1290" y="194" width="24" height="70" fill="#59351c"/><rect x="1318" y="206" width="19" height="58" fill="#3a1c42"/>
+      <rect x="1342" y="190" width="28" height="74" fill="#6b1f1f"/><rect x="1374" y="200" width="22" height="64" fill="#233d4d"/>
+    </g>
+  </g>
+
+  <!-- Heavy Illuminated Wooden Tavern Table Surface (Foreground Perspective) -->
+  <polygon points="-80,440 1680,440 1760,920 -160,920" fill="url(#tableWood)" stroke="#170c06" stroke-width="6"/>
+  <!-- Perspective Wood Plank Lines -->
+  <g stroke="#1b0e07" stroke-width="3" opacity="0.65">
+    <line x1="0" y1="520" x2="1600" y2="520"/>
+    <line x1="0" y1="620" x2="1600" y2="620"/>
+    <line x1="0" y1="740" x2="1600" y2="740"/>
+    <line x1="420" y1="440" x2="310" y2="900"/>
+    <line x1="1180" y1="440" x2="1290" y2="900"/>
+  </g>
+
+  <!-- Unfurled Fantasy Realm Parchment Map Centered on Table -->
+  <g filter="url(#tableShadow)">
+    <!-- Map paper polygon with perspective -->
+    <polygon points="350,488 1190,482 1280,828 265,834" fill="url(#parchment)" stroke="#5c3e1b" stroke-width="4"/>
+    <!-- Curled parchment roll edges left & right -->
+    <path d="M350 488 C328 536, 294 742, 265 834 C242 820, 250 760, 272 684 C296 598, 326 502, 350 488 Z" fill="#c7a56d" stroke="#5c3e1b" stroke-width="3"/>
+    <path d="M1190 482 C1214 532, 1252 736, 1280 828 C1306 814, 1298 756, 1272 680 C1246 594, 1216 498, 1190 482 Z" fill="#b8945a" stroke="#5c3e1b" stroke-width="3"/>
+
+    <!-- Drawn Cartographic Fantasy Map Elements (NO text) -->
+    <g stroke="#5c3d1e" fill="none" opacity="0.72">
+      <!-- Map inner border frame -->
+      <polygon points="378,510 1162,504 1236,804 304,808" stroke-width="2" stroke-dasharray="10 5"/>
+      <!-- Coastline & Winding River -->
+      <path d="M360 720 C460 660, 560 680, 660 620 C760 560, 880 590, 990 540 C1080 510, 1150 530, 1200 560" stroke-width="3"/>
+      <path d="M520 520 C560 590, 620 630, 660 690 C700 740, 740 770, 790 800" stroke="#2d6370" stroke-width="3.5" opacity="0.7"/>
+      <!-- Mountain range ridges -->
+      <path d="M440 610 L470 555 L500 610 M485 615 L520 548 L558 615 M545 610 L578 564 L610 610" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M880 650 L918 590 L956 650 M938 656 L980 582 L1022 656 M1000 650 L1035 602 L1072 650" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- Dotted adventurer trail & red X mark -->
+      <path d="M440 742 Q590 710 730 684 T1060 634" stroke="#8c261d" stroke-width="3" stroke-dasharray="9 8"/>
+      <path d="M1046 620 L1074 648 M1074 620 L1046 648" stroke="#991b1b" stroke-width="4" stroke-linecap="round"/>
+      <!-- Ornate Compass Rose in bottom-left of map -->
+      <g transform="translate(430, 750) scale(0.95)">
+        <circle cx="0" cy="0" r="34" stroke-width="1.8"/>
+        <polygon points="0,-42 10,-10 42,0 10,10 0,42 -10,10 -42,0 -10,-10" fill="#5c3d1e" opacity="0.55"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Open Leather-Bound Arcane Grimoire on Left Side of Table -->
+  <g transform="translate(310, 630) rotate(-9)" filter="url(#tableShadow)">
+    <path d="M-210 -84 L0 -58 L210 -84 L196 112 L0 138 L-196 112 Z" fill="#3b1808" stroke="url(#gold)" stroke-width="4"/>
+    <path d="M-190 -92 Q-92 -118 0 -70 Q92 -118 190 -92 L176 94 Q88 68 0 112 Q-88 68 -176 94 Z" fill="#f2e2c2" stroke="#8c6230" stroke-width="2.5"/>
+    <line x1="0" y1="-70" x2="0" y2="112" stroke="#6b441c" stroke-width="3"/>
+    <!-- Glowing geometric rune diagram on grimoire pages -->
+    <g stroke="#d97706" fill="none" opacity="0.8">
+      <circle cx="-92" cy="2" r="42" stroke-width="2.2"/>
+      <polygon points="-92,-36 -58,24 -126,24" stroke-width="1.8"/>
+      <polygon points="-92,40 -58,-20 -126,-20" stroke-width="1.8"/>
+      <circle cx="92" cy="2" r="42" stroke="#0d9488" stroke-width="2.2"/>
+      <rect x="64" y="-26" width="56" height="56" stroke="#0d9488" stroke-width="1.8" transform="rotate(45 92 2)"/>
+    </g>
+  </g>
+
+  <!-- Melted Beeswax Pillar Candles & Brass Candelabra on Right Side -->
+  <g transform="translate(1310, 500)" filter="url(#tableShadow)">
+    <!-- Brass candle tray -->
+    <ellipse cx="0" cy="116" rx="115" ry="34" fill="url(#gold)" stroke="#422006" stroke-width="3"/>
+    <ellipse cx="0" cy="112" rx="92" ry="24" fill="#925e14"/>
+    <!-- Tall center beeswax pillar candle -->
+    <rect x="-26" y="-88" width="52" height="198" rx="6" fill="#f5e6c8" stroke="#9e8762" stroke-width="2"/>
+    <path d="M-26 -80 Q-14 -48 -8 -66 Q2 -36 14 -68 Q20 -52 26 -82 Z" fill="#fff7e6"/>
+    <!-- Flame -->
+    <ellipse cx="0" cy="-114" rx="14" ry="28" fill="#ff8c1a"/>
+    <ellipse cx="0" cy="-110" rx="8" ry="18" fill="#fef08a"/>
+    <ellipse cx="0" cy="-106" rx="4" ry="9" fill="#ffffff"/>
+    <!-- Shorter flanking candle left -->
+    <rect x="-74" y="-12" width="40" height="122" rx="5" fill="#ebd6b0" stroke="#947c58" stroke-width="2"/>
+    <ellipse cx="-54" cy="-34" rx="10" ry="20" fill="#ff8c1a"/>
+    <ellipse cx="-54" cy="-31" rx="5.5" ry="12" fill="#fef08a"/>
+    <!-- Shorter flanking candle right -->
+    <rect x="36" y="14" width="38" height="98" rx="5" fill="#e6cfa4" stroke="#947c58" stroke-width="2"/>
+    <ellipse cx="55" cy="-8" rx="9" ry="18" fill="#ff8c1a"/>
+    <ellipse cx="55" cy="-5" rx="5" ry="11" fill="#fef08a"/>
+  </g>
+
+  <!-- Glowing Translucent Emerald & Amber 3D Polyhedral Dice on Map Center-Foreground -->
+  <!-- Hero Emerald D20 -->
+  <g transform="translate(790, 680)" filter="url(#tableShadow)">
+    <polygon points="0,-68 58,-34 58,34 0,68 -58,34 -58,-34" fill="url(#emeraldDice)" stroke="#a7f3d0" stroke-width="3"/>
+    <!-- Inner facets -->
+    <polygon points="0,-40 36,24 -36,24" fill="#34d399" stroke="#ecfdf5" stroke-width="2.2" opacity="0.88"/>
+    <line x1="0" y1="-68" x2="0" y2="-40" stroke="#a7f3d0" stroke-width="2.2"/>
+    <line x1="58" y1="-34" x2="0" y2="-40" stroke="#a7f3d0" stroke-width="2"/>
+    <line x1="-58" y1="-34" x2="0" y2="-40" stroke="#a7f3d0" stroke-width="2"/>
+    <line x1="58" y1="34" x2="36" y2="24" stroke="#a7f3d0" stroke-width="2.2"/>
+    <line x1="-58" y1="34" x2="-36" y2="24" stroke="#a7f3d0" stroke-width="2.2"/>
+    <line x1="0" y1="68" x2="36" y2="24" stroke="#a7f3d0" stroke-width="2"/>
+    <line x1="0" y1="68" x2="-36" y2="24" stroke="#a7f3d0" stroke-width="2"/>
+  </g>
+
+  <!-- Glowing Amber D12 / D8 beside it -->
+  <g transform="translate(944, 718) rotate(14)" filter="url(#tableShadow)">
+    <polygon points="0,-54 48,-18 32,44 -32,44 -48,-18" fill="url(#amberDice)" stroke="#fef9c3" stroke-width="2.8"/>
+    <polygon points="0,-28 26,-6 16,24 -16,24 -26,-6" fill="#fbbf24" stroke="#fffbeb" stroke-width="2" opacity="0.85"/>
+    <line x1="0" y1="-54" x2="0" y2="-28" stroke="#fef9c3" stroke-width="2"/>
+    <line x1="48" y1="-18" x2="26" y2="-6" stroke="#fef9c3" stroke-width="2"/>
+    <line x1="-48" y1="-18" x2="-26" y2="-6" stroke="#fef9c3" stroke-width="2"/>
+    <line x1="32" y1="44" x2="16" y2="24" stroke="#fef9c3" stroke-width="2"/>
+    <line x1="-32" y1="44" x2="-16" y2="24" stroke="#fef9c3" stroke-width="2"/>
+  </g>
+
+  <!-- Emerald D6 & Amber D4 Foreground Accent -->
+  <g transform="translate(652, 742) rotate(-18)" filter="url(#tableShadow)">
+    <polygon points="-34,-18 4,-38 38,-18 38,24 0,44 -34,24" fill="url(#emeraldDice)" stroke="#a7f3d0" stroke-width="2.5"/>
+    <line x1="4" y1="-38" x2="4" y2="4" stroke="#ecfdf5" stroke-width="2"/>
+    <line x1="-34" y1="-18" x2="4" y2="4" stroke="#ecfdf5" stroke-width="2"/>
+    <line x1="38" y1="-18" x2="4" y2="4" stroke="#ecfdf5" stroke-width="2"/>
+    <line x1="4" y1="4" x2="0" y2="44" stroke="#ecfdf5" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(1056, 760) rotate(20)" filter="url(#tableShadow)">
+    <polygon points="0,-42 40,26 -40,26" fill="url(#amberDice)" stroke="#fef9c3" stroke-width="2.5"/>
+    <line x1="0" y1="-42" x2="8" y2="26" stroke="#fffbeb" stroke-width="2"/>
+  </g>
+
+  <!-- Volumetric Lighting & Mystical Glows (Additive Screen) -->
+  <g style="mix-blend-mode: screen;" pointer-events="none">
+    <circle cx="1310" cy="390" r="460" fill="url(#candleAura)"/>
+    <circle cx="790" cy="680" r="240" fill="url(#emeraldAura)"/>
+    <circle cx="944" cy="718" r="220" fill="url(#amberAura)"/>
+    <circle cx="310" cy="590" r="260" fill="url(#amberAura)"/>
+  </g>
+
+  <!-- Floating Golden Embers Rising Across Scene -->
+  <g fill="#fef08a" opacity="0.8">
+    <circle cx="330" cy="490" r="2.8"/><circle cx="390" cy="432" r="2"/>
+    <circle cx="760" cy="560" r="2.6"/><circle cx="842" cy="522" r="2.2"/>
+    <circle cx="1220" cy="330" r="2.8"/><circle cx="1380" cy="296" r="2.2"/>
+    <circle cx="980" cy="580" r="2"/><circle cx="620" cy="610" r="1.8"/>
+  </g>
+
+  <!-- Cinematic Widescreen Vignette -->
+  <rect width="1600" height="900" fill="url(#bannerVignette)" pointer-events="none"/>
+</svg>

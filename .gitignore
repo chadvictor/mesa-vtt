@@ -1,0 +1,37 @@
+# Go binaries & build artifacts
+/mesa-vtt
+/healthcheck
+/server/server
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.*
+
+# Node / Frontend
+node_modules/
+client/node_modules/
+client/dist/
+client/.vite/
+
+# Local environment & runtime data
+.env
+.env.local
+.env.*.local
+*.db
+*.sqlite
+*.sqlite3
+.mesa-vtt-data.json
+.mesa-vtt-*.tmp
+.mesa-vtt-write-probe
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

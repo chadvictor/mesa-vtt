@@ -1,0 +1,29 @@
+{
+  "name": "mesa-vtt-client",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Open-source multisystem Virtual Tabletop (VTT) client — tactical battlemap, Fog of War, Three.js 3D dice, Discord-style WebRTC voice, and scripted RPG systems.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 127.0.0.1 --port 3104"
+  },
+  "dependencies": {
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  }
+}

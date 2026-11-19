@@ -1,0 +1,417 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1440" width="1920" height="1440">
+  <defs>
+    <!-- Wood floorboards pattern (aligned to 80px grid) -->
+    <pattern id="woodPlanks" width="160" height="80" patternUnits="userSpaceOnUse">
+      <rect width="160" height="80" fill="#4a2e1b"/>
+      <rect x="0" y="0" width="160" height="20" fill="#52331e"/>
+      <rect x="0" y="20" width="160" height="20" fill="#462b19"/>
+      <rect x="0" y="40" width="160" height="20" fill="#4f311d"/>
+      <rect x="0" y="60" width="160" height="20" fill="#422817"/>
+      <!-- Wood grain streaks -->
+      <path d="M0 7 Q40 5 80 8 T160 6 M0 15 Q50 17 110 14 T160 16 M0 28 Q35 25 90 29 T160 27 M0 49 Q60 52 120 47 T160 50 M0 68 Q45 65 95 70 T160 67" stroke="#361f11" stroke-width="1.2" fill="none" opacity="0.45"/>
+      <path d="M0 12 Q60 10 120 13 T160 11 M0 35 Q40 37 100 34 T160 36 M0 56 Q55 54 115 57 T160 55" stroke="#6b4428" stroke-width="0.9" fill="none" opacity="0.25"/>
+      <!-- Plank seams -->
+      <line x1="0" y1="20" x2="160" y2="20" stroke="#26150b" stroke-width="1.5"/>
+      <line x1="0" y1="40" x2="160" y2="40" stroke="#26150b" stroke-width="1.5"/>
+      <line x1="0" y1="60" x2="160" y2="60" stroke="#26150b" stroke-width="1.5"/>
+      <line x1="0" y1="80" x2="160" y2="80" stroke="#26150b" stroke-width="1.5"/>
+      <line x1="78" y1="0" x2="78" y2="20" stroke="#26150b" stroke-width="1.5"/>
+      <line x1="130" y1="20" x2="130" y2="40" stroke="#26150b" stroke-width="1.5"/>
+      <line x1="42" y1="40" x2="42" y2="60" stroke="#26150b" stroke-width="1.5"/>
+      <line x1="108" y1="60" x2="108" y2="80" stroke="#26150b" stroke-width="1.5"/>
+      <!-- Iron nails -->
+      <circle cx="74" cy="5" r="1.3" fill="#1e1109"/><circle cx="74" cy="15" r="1.3" fill="#1e1109"/>
+      <circle cx="82" cy="5" r="1.3" fill="#1e1109"/><circle cx="82" cy="15" r="1.3" fill="#1e1109"/>
+      <circle cx="126" cy="25" r="1.3" fill="#1e1109"/><circle cx="126" cy="35" r="1.3" fill="#1e1109"/>
+      <circle cx="46" cy="45" r="1.3" fill="#1e1109"/><circle cx="46" cy="55" r="1.3" fill="#1e1109"/>
+    </pattern>
+
+    <!-- Stone wall masonry pattern -->
+    <pattern id="stoneWall" width="80" height="40" patternUnits="userSpaceOnUse">
+      <rect width="80" height="40" fill="#2c2926"/>
+      <rect x="2" y="2" width="36" height="17" rx="2" fill="#46423d" stroke="#1e1c1a" stroke-width="1.5"/>
+      <rect x="41" y="2" width="37" height="17" rx="2" fill="#3d3935" stroke="#1e1c1a" stroke-width="1.5"/>
+      <rect x="2" y="21" width="18" height="17" rx="2" fill="#3a3632" stroke="#1e1c1a" stroke-width="1.5"/>
+      <rect x="22" y="21" width="38" height="17" rx="2" fill="#4a4540" stroke="#1e1c1a" stroke-width="1.5"/>
+      <rect x="62" y="21" width="16" height="17" rx="2" fill="#3f3b37" stroke="#1e1c1a" stroke-width="1.5"/>
+    </pattern>
+
+    <!-- Cobblestone exterior outside tavern -->
+    <pattern id="exteriorCobble" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="#17191c"/>
+      <g fill="#23262b" stroke="#111316" stroke-width="1.5">
+        <rect x="4" y="4" width="22" height="16" rx="4"/>
+        <rect x="29" y="4" width="24" height="16" rx="4"/>
+        <rect x="56" y="4" width="20" height="16" rx="4"/>
+        <rect x="2" y="23" width="16" height="16" rx="4"/>
+        <rect x="21" y="23" width="26" height="16" rx="4"/>
+        <rect x="50" y="23" width="26" height="16" rx="4"/>
+        <rect x="6" y="42" width="24" height="16" rx="4"/>
+        <rect x="33" y="42" width="22" height="16" rx="4"/>
+        <rect x="58" y="42" width="18" height="16" rx="4"/>
+        <rect x="3" y="61" width="28" height="15" rx="4"/>
+        <rect x="34" y="61" width="20" height="15" rx="4"/>
+        <rect x="57" y="61" width="20" height="15" rx="4"/>
+      </g>
+    </pattern>
+
+    <!-- Subtle VTT grid overlay (80x80) -->
+    <pattern id="vttGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#f5d59c" stroke-width="0.8" opacity="0.11"/>
+    </pattern>
+
+    <!-- Radial lighting glows -->
+    <radialGradient id="hearthGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff4c4" stop-opacity="0.95"/>
+      <stop offset="18%" stop-color="#ff9b26" stop-opacity="0.72"/>
+      <stop offset="48%" stop-color="#e85d12" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#e85d12" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="candleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8d6" stop-opacity="0.9"/>
+      <stop offset="25%" stop-color="#ffb84d" stop-opacity="0.48"/>
+      <stop offset="65%" stop-color="#d96b18" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#d96b18" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="barWood" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#7c4b27"/>
+      <stop offset="60%" stop-color="#5c351a"/>
+      <stop offset="100%" stop-color="#3a200f"/>
+    </radialGradient>
+
+    <radialGradient id="tableTop" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#85532d"/>
+      <stop offset="65%" stop-color="#623a1d"/>
+      <stop offset="100%" stop-color="#422511"/>
+    </radialGradient>
+
+    <radialGradient id="barrelTop" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#8c5832"/>
+      <stop offset="70%" stop-color="#5a351b"/>
+      <stop offset="100%" stop-color="#3b210f"/>
+    </radialGradient>
+
+    <linearGradient id="carpetGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7d1f24"/>
+      <stop offset="50%" stop-color="#5a1418"/>
+      <stop offset="100%" stop-color="#3f0d10"/>
+    </linearGradient>
+
+    <radialGradient id="vignette" cx="50%" cy="50%" r="68%">
+      <stop offset="55%" stop-color="#090605" stop-opacity="0"/>
+      <stop offset="88%" stop-color="#090605" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#050302" stop-opacity="0.78"/>
+    </radialGradient>
+
+    <filter id="dropShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="6" dy="8" stdDeviation="6" flood-color="#0a0503" flood-opacity="0.65"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="4" stdDeviation="3" flood-color="#0a0503" flood-opacity="0.55"/>
+    </filter>
+
+    <!-- Reusable round table with 4 chairs & candle -->
+    <g id="roundTableSet">
+      <!-- Chairs -->
+      <g filter="url(#softShadow)">
+        <rect x="-18" y="-82" width="36" height="24" rx="5" fill="#4f2d16" stroke="#241308" stroke-width="2"/>
+        <rect x="-20" y="-86" width="40" height="8" rx="3" fill="#6b3e1f" stroke="#241308" stroke-width="1.5"/>
+
+        <rect x="-18" y="58" width="36" height="24" rx="5" fill="#4f2d16" stroke="#241308" stroke-width="2"/>
+        <rect x="-20" y="78" width="40" height="8" rx="3" fill="#6b3e1f" stroke="#241308" stroke-width="1.5"/>
+
+        <rect x="-82" y="-18" width="24" height="36" rx="5" fill="#4f2d16" stroke="#241308" stroke-width="2"/>
+        <rect x="-86" y="-20" width="8" height="40" rx="3" fill="#6b3e1f" stroke="#241308" stroke-width="1.5"/>
+
+        <rect x="58" y="-18" width="24" height="36" rx="5" fill="#4f2d16" stroke="#241308" stroke-width="2"/>
+        <rect x="78" y="-20" width="8" height="40" rx="3" fill="#6b3e1f" stroke="#241308" stroke-width="1.5"/>
+      </g>
+      <!-- Table top -->
+      <circle cx="0" cy="0" r="56" fill="url(#tableTop)" stroke="#241308" stroke-width="3.5" filter="url(#dropShadow)"/>
+      <circle cx="0" cy="0" r="48" fill="none" stroke="#361c0c" stroke-width="1.2" opacity="0.6"/>
+      <line x1="-52" y1="-16" x2="52" y2="-16" stroke="#2c170a" stroke-width="1.2" opacity="0.65"/>
+      <line x1="-54" y1="16" x2="54" y2="16" stroke="#2c170a" stroke-width="1.2" opacity="0.65"/>
+      <!-- Mugs & plate -->
+      <circle cx="-24" cy="-22" r="7" fill="#c9a86a" stroke="#3d2712" stroke-width="1.5"/>
+      <circle cx="-24" cy="-22" r="4.5" fill="#d68b2c"/>
+      <circle cx="28" cy="18" r="6.5" fill="#a89f91" stroke="#2c2925" stroke-width="1.5"/>
+      <circle cx="28" cy="18" r="4" fill="#e0a943"/>
+      <circle cx="18" cy="-26" r="11" fill="#cbbba0" stroke="#4f4334" stroke-width="1.5"/>
+      <!-- Center candle -->
+      <circle cx="0" cy="0" r="8" fill="#5e4b32" stroke="#261c10" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="4.5" fill="#f5e6c8"/>
+      <circle cx="0" cy="0" r="2.2" fill="#fff7b2"/>
+    </g>
+
+    <!-- Reusable barrel -->
+    <g id="barrel" filter="url(#softShadow)">
+      <circle cx="0" cy="0" r="26" fill="url(#barrelTop)" stroke="#1f1108" stroke-width="3"/>
+      <circle cx="0" cy="0" r="21" fill="none" stroke="#52575e" stroke-width="2.5"/>
+      <line x1="-18" y1="-8" x2="18" y2="-8" stroke="#29160a" stroke-width="1.4"/>
+      <line x1="-20" y1="0" x2="20" y2="0" stroke="#29160a" stroke-width="1.4"/>
+      <line x1="-18" y1="8" x2="18" y2="8" stroke="#29160a" stroke-width="1.4"/>
+      <circle cx="9" cy="6" r="3" fill="#2b170b"/>
+    </g>
+
+    <!-- Barstool -->
+    <g id="stool" filter="url(#softShadow)">
+      <circle cx="0" cy="0" r="16" fill="#6b3e1f" stroke="#241308" stroke-width="2.2"/>
+      <circle cx="0" cy="0" r="11" fill="none" stroke="#8c5730" stroke-width="1" opacity="0.6"/>
+    </g>
+  </defs>
+
+  <!-- Night exterior cobblestone surround -->
+  <rect width="1920" height="1440" fill="url(#exteriorCobble)"/>
+  <!-- Moonlit exterior road leading to south entrance -->
+  <path d="M840 1320 L1080 1320 L1140 1440 L780 1440 Z" fill="#2d2b28" opacity="0.7"/>
+  <!-- Exterior bushes/shrubs flanking building -->
+  <g filter="url(#dropShadow)" opacity="0.85">
+    <circle cx="70" cy="160" r="38" fill="#182b1b"/><circle cx="52" cy="195" r="28" fill="#1e3822"/>
+    <circle cx="1855" cy="220" r="42" fill="#182b1b"/><circle cx="1875" cy="265" r="30" fill="#1f3a23"/>
+    <circle cx="80" cy="1260" r="40" fill="#192e1c"/><circle cx="1845" cy="1240" r="36" fill="#192e1c"/>
+  </g>
+
+  <!-- Tavern Interior Floor (cols 2..22, rows 2..16 => x:160..1760, y:160..1280) -->
+  <rect x="160" y="160" width="1600" height="1120" fill="url(#woodPlanks)"/>
+
+  <!-- Storage / Kitchen stone-flagged room in NE corner (cols 17..22, rows 2..6 => x:1360..1760, y:160..480) -->
+  <rect x="1360" y="160" width="400" height="320" fill="#322e2a"/>
+  <rect x="1360" y="160" width="400" height="320" fill="url(#stoneWall)" opacity="0.55"/>
+
+  <!-- Warm woven red-and-gold tavern rug in front of hearth -->
+  <g filter="url(#softShadow)">
+    <rect x="770" y="310" width="380" height="210" rx="8" fill="url(#carpetGrad)" stroke="#c89b3c" stroke-width="4"/>
+    <rect x="786" y="326" width="348" height="178" rx="4" fill="none" stroke="#e2bd6b" stroke-width="2" stroke-dasharray="10 5" opacity="0.75"/>
+    <polygon points="960,348 1010,415 960,482 910,415" fill="none" stroke="#d9a94a" stroke-width="2.5" opacity="0.75"/>
+    <circle cx="960" cy="415" r="22" fill="#9c2c2c" stroke="#e2bd6b" stroke-width="2"/>
+  </g>
+
+  <!-- Raised wooden minstrel stage in SW corner (x:180..480, y:960..1260) -->
+  <g filter="url(#dropShadow)">
+    <rect x="180" y="960" width="300" height="300" rx="4" fill="#5e391f" stroke="#241308" stroke-width="4"/>
+    <rect x="192" y="972" width="276" height="276" fill="#6b4225" stroke="#361e0e" stroke-width="2"/>
+    <line x1="192" y1="1018" x2="468" y2="1018" stroke="#3b2211" stroke-width="1.5"/>
+    <line x1="192" y1="1064" x2="468" y2="1064" stroke="#3b2211" stroke-width="1.5"/>
+    <line x1="192" y1="1110" x2="468" y2="1110" stroke="#3b2211" stroke-width="1.5"/>
+    <line x1="192" y1="1156" x2="468" y2="1156" stroke="#3b2211" stroke-width="1.5"/>
+    <line x1="192" y1="1202" x2="468" y2="1202" stroke="#3b2211" stroke-width="1.5"/>
+    <!-- Stage steps -->
+    <rect x="480" y="1060" width="22" height="100" fill="#54331b" stroke="#241308" stroke-width="2"/>
+    <!-- Decorative purple-gold runner & lute on stage -->
+    <ellipse cx="320" cy="1110" rx="75" ry="52" fill="#3b1d45" stroke="#c89b3c" stroke-width="2.5"/>
+    <!-- Lute -->
+    <g transform="translate(275,1145) rotate(-32)">
+      <ellipse cx="0" cy="0" rx="18" ry="13" fill="#b37236" stroke="#2e1808" stroke-width="2"/>
+      <rect x="14" y="-3" width="26" height="6" fill="#6b3c17" stroke="#2e1808" stroke-width="1.5"/>
+      <circle cx="-2" cy="0" r="4" fill="#2e1808"/>
+    </g>
+    <!-- Stage stool -->
+    <use href="#stool" x="345" y="1090"/>
+  </g>
+
+  <!-- Long L-shaped Bar Counter in NW quadrant -->
+  <g filter="url(#dropShadow)">
+    <!-- Back bar bottle shelf against west wall -->
+    <rect x="180" y="210" width="52" height="470" rx="3" fill="#3b2110" stroke="#1b0e06" stroke-width="3"/>
+    <!-- Glowing bottles on shelf -->
+    <g>
+      <circle cx="206" cy="245" r="8" fill="#d97706" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="272" r="7" fill="#dc2626" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="298" r="8" fill="#16a34a" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="330" r="8" fill="#eab308" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="360" r="7" fill="#9333ea" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="390" r="8" fill="#d97706" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="430" r="9" fill="#b45309" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="462" r="7" fill="#dc2626" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="495" r="8" fill="#0d9488" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="535" r="8" fill="#d97706" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="570" r="8" fill="#ca8a04" stroke="#1f1108" stroke-width="1.5"/>
+      <circle cx="206" cy="610" r="9" fill="#991b1b" stroke="#1f1108" stroke-width="1.5"/>
+    </g>
+    <!-- Main polished oak bar counter -->
+    <path d="M180 680 L550 680 Q595 680 595 635 L595 220 L535 220 L535 620 L180 620 Z" fill="url(#barWood)" stroke="#1e0f06" stroke-width="4"/>
+    <path d="M190 668 L545 668 Q582 668 582 630 L582 230" fill="none" stroke="#a66c3e" stroke-width="2" opacity="0.5"/>
+    <!-- Brass beer taps & tankards on bar -->
+    <rect x="548" y="340" width="32" height="84" rx="4" fill="#78532a" stroke="#241308" stroke-width="2"/>
+    <circle cx="564" cy="360" r="5" fill="#e8c468"/>
+    <circle cx="564" cy="382" r="5" fill="#e8c468"/>
+    <circle cx="564" cy="404" r="5" fill="#e8c468"/>
+    <circle cx="565" cy="480" r="7" fill="#d4a759" stroke="#2b190b" stroke-width="1.5"/>
+    <circle cx="562" cy="540" r="7" fill="#d4a759" stroke="#2b190b" stroke-width="1.5"/>
+    <circle cx="435" cy="650" r="7" fill="#d4a759" stroke="#2b190b" stroke-width="1.5"/>
+    <circle cx="315" cy="648" r="8" fill="#b8986b" stroke="#2b190b" stroke-width="1.5"/>
+  </g>
+
+  <!-- Barstools along bar counter -->
+  <use href="#stool" x="630" y="290"/>
+  <use href="#stool" x="630" y="370"/>
+  <use href="#stool" x="630" y="450"/>
+  <use href="#stool" x="630" y="530"/>
+  <use href="#stool" x="630" y="610"/>
+  <use href="#stool" x="515" y="715"/>
+  <use href="#stool" x="430" y="715"/>
+  <use href="#stool" x="345" y="715"/>
+
+  <!-- Large Stone Fireplace / Hearth on North Wall (centered around x:960, y:160) -->
+  <g filter="url(#dropShadow)">
+    <rect x="810" y="135" width="300" height="125" rx="6" fill="url(#stoneWall)" stroke="#171513" stroke-width="5"/>
+    <!-- Inner hearth firebox -->
+    <rect x="860" y="165" width="200" height="72" rx="4" fill="#1c110b" stroke="#473c35" stroke-width="4"/>
+    <!-- Hearth stone apron -->
+    <rect x="820" y="242" width="280" height="36" rx="3" fill="#4f4943" stroke="#1e1b18" stroke-width="3"/>
+    <!-- Burning logs & embers -->
+    <rect x="895" y="196" width="130" height="14" rx="5" fill="#3b1d0d" transform="rotate(-6 960 203)"/>
+    <rect x="905" y="204" width="110" height="12" rx="4" fill="#2b1409" transform="rotate(8 960 210)"/>
+    <ellipse cx="960" cy="204" rx="64" ry="20" fill="#ff5500" opacity="0.8"/>
+    <ellipse cx="960" cy="200" rx="44" ry="13" fill="#ffae00" opacity="0.9"/>
+    <ellipse cx="960" cy="198" rx="22" ry="7" fill="#fff5b8"/>
+    <!-- Stacked firewood beside hearth -->
+    <g transform="translate(745,195)">
+      <rect x="0" y="0" width="50" height="32" rx="3" fill="#3a2010" stroke="#1b0e06" stroke-width="2"/>
+      <line x1="0" y1="10" x2="50" y2="10" stroke="#1b0e06" stroke-width="2"/>
+      <line x1="0" y1="21" x2="50" y2="21" stroke="#1b0e06" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Interior partition wall for NE cellar/storage alcove -->
+  <rect x="1346" y="160" width="24" height="330" fill="url(#stoneWall)" stroke="#161412" stroke-width="3" filter="url(#dropShadow)"/>
+  <rect x="1346" y="468" width="150" height="24" fill="url(#stoneWall)" stroke="#161412" stroke-width="3" filter="url(#dropShadow)"/>
+  <rect x="1590" y="468" width="170" height="24" fill="url(#stoneWall)" stroke="#161412" stroke-width="3" filter="url(#dropShadow)"/>
+  <!-- Storage wooden door (ajar) -->
+  <rect x="1496" y="476" width="88" height="12" rx="2" fill="#6b3e1d" stroke="#1c0f06" stroke-width="2" transform="rotate(-22 1496 482)"/>
+
+  <!-- Barrels & Supply Crates in NE Storage Room -->
+  <use href="#barrel" x="1418" y="220"/>
+  <use href="#barrel" x="1478" y="220"/>
+  <use href="#barrel" x="1538" y="220"/>
+  <use href="#barrel" x="1418" y="282"/>
+  <use href="#barrel" x="1478" y="282"/>
+  <use href="#barrel" x="1690" y="230"/>
+  <use href="#barrel" x="1690" y="294"/>
+  <!-- Wooden crates -->
+  <g filter="url(#softShadow)">
+    <rect x="1610" y="340" width="56" height="56" rx="2" fill="#6e4422" stroke="#241308" stroke-width="2.5"/>
+    <line x1="1610" y1="340" x2="1666" y2="396" stroke="#3d220e" stroke-width="2.5"/>
+    <line x1="1666" y1="340" x2="1610" y2="396" stroke="#3d220e" stroke-width="2.5"/>
+    <rect x="1676" y="345" width="52" height="52" rx="2" fill="#5e391b" stroke="#241308" stroke-width="2.5"/>
+    <line x1="1676" y1="345" x2="1728" y2="397" stroke="#331c0b" stroke-width="2.5"/>
+    <rect x="1395" y="385" width="58" height="58" rx="2" fill="#694120" stroke="#241308" stroke-width="2.5"/>
+    <line x1="1395" y1="385" x2="1453" y2="443" stroke="#3b210e" stroke-width="2.5"/>
+  </g>
+  <!-- Extra barrels behind bar -->
+  <use href="#barrel" x="255" y="220"/>
+  <use href="#barrel" x="315" y="220"/>
+
+  <!-- Wooden Staircase rising along East Wall to 2nd Floor Gallery (x:1620..1755, y:620..1120) -->
+  <g filter="url(#dropShadow)">
+    <rect x="1620" y="620" width="135" height="480" fill="#3a2110" stroke="#1b0e06" stroke-width="4"/>
+    <!-- Steps getting lighter going up (north) -->
+    <rect x="1626" y="1062" width="123" height="34" fill="#462815" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="1026" width="123" height="34" fill="#4c2c17" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="990" width="123" height="34" fill="#523019" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="954" width="123" height="34" fill="#58341c" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="918" width="123" height="34" fill="#5f381e" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="882" width="123" height="34" fill="#663d21" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="846" width="123" height="34" fill="#6d4224" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="810" width="123" height="34" fill="#744727" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="774" width="123" height="34" fill="#7c4c2a" stroke="#1e0f07" stroke-width="1.5"/>
+    <rect x="1626" y="738" width="123" height="34" fill="#82512e" stroke="#1e0f07" stroke-width="1.5"/>
+    <!-- Top landing -->
+    <rect x="1626" y="626" width="123" height="110" fill="#8a5631" stroke="#1e0f07" stroke-width="2"/>
+    <!-- Wooden banister railing -->
+    <rect x="1614" y="620" width="12" height="480" rx="3" fill="#9c6438" stroke="#241308" stroke-width="2"/>
+    <circle cx="1620" cy="625" r="9" fill="#c89b3c" stroke="#241308" stroke-width="2"/>
+    <circle cx="1620" cy="1095" r="9" fill="#c89b3c" stroke="#241308" stroke-width="2"/>
+  </g>
+
+  <!-- Round & Long Dining Tables arranged on Tactical Floor -->
+  <use href="#roundTableSet" x="800" y="680"/>
+  <use href="#roundTableSet" x="1160" y="680"/>
+  <use href="#roundTableSet" x="680" y="1000"/>
+  <use href="#roundTableSet" x="1280" y="1020"/>
+
+  <!-- Long Adventurers' Feast Table in East-Center -->
+  <g transform="translate(1440, 760)" filter="url(#dropShadow)">
+    <!-- Benches -->
+    <rect x="-110" y="-66" width="220" height="24" rx="4" fill="#523018" stroke="#211107" stroke-width="2"/>
+    <rect x="-110" y="42" width="220" height="24" rx="4" fill="#523018" stroke="#211107" stroke-width="2"/>
+    <!-- Table -->
+    <rect x="-120" y="-34" width="240" height="68" rx="6" fill="url(#tableTop)" stroke="#211107" stroke-width="3.5"/>
+    <line x1="-116" y1="-10" x2="116" y2="-10" stroke="#2e180b" stroke-width="1.2"/>
+    <line x1="-116" y1="12" x2="116" y2="12" stroke="#2e180b" stroke-width="1.2"/>
+    <!-- Roast platter, parchment map & candles -->
+    <ellipse cx="0" cy="0" rx="28" ry="15" fill="#a89e8c" stroke="#362f26" stroke-width="1.5"/>
+    <ellipse cx="0" cy="0" rx="18" ry="9" fill="#8c3b19"/>
+    <rect x="-86" y="-18" width="38" height="28" rx="2" fill="#e6cfa0" stroke="#6b522c" stroke-width="1.2" transform="rotate(-7 -67 -4)"/>
+    <circle cx="72" cy="-6" r="7" fill="#5e4b32" stroke="#241308" stroke-width="1.2"/>
+    <circle cx="72" cy="-6" r="3" fill="#fff6b8"/>
+    <circle cx="-36" cy="14" r="6" fill="#d4a759" stroke="#241308" stroke-width="1.2"/>
+    <circle cx="96" cy="12" r="6" fill="#d4a759" stroke="#241308" stroke-width="1.2"/>
+  </g>
+
+  <!-- Heavy Timber Support Pillars (4 structural columns) -->
+  <g filter="url(#dropShadow)">
+    <rect x="700" y="460" width="40" height="40" rx="4" fill="#3a2010" stroke="#170b04" stroke-width="3"/>
+    <rect x="708" y="468" width="24" height="24" fill="#5c351a"/>
+
+    <rect x="1180" y="460" width="40" height="40" rx="4" fill="#3a2010" stroke="#170b04" stroke-width="3"/>
+    <rect x="1188" y="468" width="24" height="24" fill="#5c351a"/>
+
+    <rect x="700" y="820" width="40" height="40" rx="4" fill="#3a2010" stroke="#170b04" stroke-width="3"/>
+    <rect x="708" y="828" width="24" height="24" fill="#5c351a"/>
+
+    <rect x="1180" y="820" width="40" height="40" rx="4" fill="#3a2010" stroke="#170b04" stroke-width="3"/>
+    <rect x="1188" y="828" width="24" height="24" fill="#5c351a"/>
+  </g>
+
+  <!-- Exterior Perimeter Stone Walls (40px thick around x:120..1800, y:120..1320) -->
+  <g filter="url(#dropShadow)">
+    <!-- North Wall (split around fireplace) -->
+    <rect x="120" y="120" width="700" height="44" fill="url(#stoneWall)" stroke="#12100f" stroke-width="4"/>
+    <rect x="1100" y="120" width="700" height="44" fill="url(#stoneWall)" stroke="#12100f" stroke-width="4"/>
+    <!-- West Wall -->
+    <rect x="120" y="164" width="44" height="1156" fill="url(#stoneWall)" stroke="#12100f" stroke-width="4"/>
+    <!-- East Wall -->
+    <rect x="1756" y="164" width="44" height="1156" fill="url(#stoneWall)" stroke="#12100f" stroke-width="4"/>
+    <!-- South Wall (split for double entrance doors at x:880..1040) -->
+    <rect x="120" y="1276" width="760" height="44" fill="url(#stoneWall)" stroke="#12100f" stroke-width="4"/>
+    <rect x="1040" y="1276" width="760" height="44" fill="url(#stoneWall)" stroke="#12100f" stroke-width="4"/>
+
+    <!-- Recessed amber glass windows -->
+    <rect x="128" y="760" width="28" height="140" rx="3" fill="#ffbe55" stroke="#2c190c" stroke-width="3" opacity="0.8"/>
+    <rect x="360" y="1284" width="160" height="28" rx="3" fill="#ffbe55" stroke="#2c190c" stroke-width="3" opacity="0.8"/>
+    <rect x="1360" y="1284" width="160" height="28" rx="3" fill="#ffbe55" stroke="#2c190c" stroke-width="3" opacity="0.8"/>
+    <rect x="1764" y="540" width="28" height="120" rx="3" fill="#ffbe55" stroke="#2c190c" stroke-width="3" opacity="0.7"/>
+
+    <!-- Double Oak Entrance Doors (South Wall) -->
+    <rect x="880" y="1282" width="160" height="32" fill="#3a2010" stroke="#180d06" stroke-width="2"/>
+    <rect x="884" y="1264" width="74" height="16" rx="2" fill="#734321" stroke="#1e1007" stroke-width="2.5" transform="rotate(-14 884 1272)"/>
+    <rect x="962" y="1264" width="74" height="16" rx="2" fill="#734321" stroke="#1e1007" stroke-width="2.5" transform="rotate(14 1036 1272)"/>
+    <!-- Welcome mat inside door -->
+    <rect x="900" y="1208" width="120" height="48" rx="3" fill="#6b4e2e" stroke="#362413" stroke-width="2"/>
+  </g>
+
+  <!-- Subtle VTT Grid overlay inside tavern -->
+  <rect x="160" y="160" width="1600" height="1120" fill="url(#vttGrid)"/>
+
+  <!-- Warm Dynamic Lighting Layers (additive candlelight & roaring hearth glow) -->
+  <g style="mix-blend-mode: screen;" pointer-events="none">
+    <!-- Hearth primary light -->
+    <circle cx="960" cy="230" r="460" fill="url(#hearthGlow)"/>
+    <!-- Table candles -->
+    <circle cx="800" cy="680" r="190" fill="url(#candleGlow)"/>
+    <circle cx="1160" cy="680" r="190" fill="url(#candleGlow)"/>
+    <circle cx="680" cy="1000" r="185" fill="url(#candleGlow)"/>
+    <circle cx="1280" cy="1020" r="185" fill="url(#candleGlow)"/>
+    <circle cx="1512" cy="754" r="175" fill="url(#candleGlow)"/>
+    <!-- Bar sconces & stage lantern -->
+    <circle cx="564" cy="390" r="220" fill="url(#candleGlow)"/>
+    <circle cx="330" cy="1110" r="210" fill="url(#candleGlow)"/>
+    <circle cx="960" cy="1260" r="170" fill="url(#candleGlow)"/>
+  </g>
+
+  <!-- Atmospheric Vignette -->
+  <rect width="1920" height="1440" fill="url(#vignette)" pointer-events="none"/>
+</svg>

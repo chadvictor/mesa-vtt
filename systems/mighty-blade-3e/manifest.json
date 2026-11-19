@@ -1,0 +1,19 @@
+{
+  "id": "mighty-blade-3e",
+  "name": "Mighty Blade 3ª Edição",
+  "shortName": "Mighty Blade 3e",
+  "version": "3.5.0",
+  "author": "Mesa VTT Community (Mighty Blade 3ª Edição por Tiago Junges / Coisinha Verde)",
+  "description": "O clássico RPG brasileiro de fantasia medieval (Drakon) com automação completa: assistente de criação de heróis, cálculo automático de PV/PM/Bloqueio/Esquiva/Determinação/FN, rolagens 2d6+Atributo com Crítico (6+6) e Falha Crítica (1+1), conjuração com desconto de PM e bestiário pronto para o mapa.",
+  "language": "pt-BR",
+  "diceDefaults": {
+    "coreFormula": "2d6",
+    "quickDice": [6, 4, 8, 10, 12, 20, 100]
+  },
+  "theme": {
+    "primary": "#1a1410",
+    "accent": "#d4a84f",
+    "badge": "Mighty Blade 3.5 · Completo"
+  },
+  "supportsWizard": true
+}

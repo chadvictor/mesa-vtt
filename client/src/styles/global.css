@@ -1,0 +1,420 @@
+/* ============================================================================
+ * Mesa VTT — Global Base Styles, Typography, Buttons, Inputs & Modals
+ * ============================================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+a {
+  color: var(--gold-400);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Focus visibility */
+:focus-visible {
+  outline: 2px solid var(--gold-400);
+  outline-offset: 2px;
+}
+
+/* Custom sleek dark scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 168, 79, 0.35);
+}
+
+/* ============================================================================
+ * Reusable UI Primitives (used across Lobby, Shell & Feature Panels)
+ * ============================================================================ */
+
+.mesa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  transition: background 140ms ease, border-color 140ms ease, transform 100ms ease, box-shadow 140ms ease;
+  white-space: nowrap;
+}
+
+.mesa-btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+}
+
+.mesa-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.mesa-btn--gold {
+  background: linear-gradient(135deg, #d4a84f 0%, #b08633 100%);
+  color: var(--text-inverse);
+  border-color: rgba(242, 204, 123, 0.7);
+  box-shadow: 0 2px 12px rgba(212, 168, 79, 0.25);
+}
+
+.mesa-btn--gold:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f2cc7b 0%, #d4a84f 100%);
+  border-color: var(--gold-400);
+  box-shadow: var(--gold-glow);
+}
+
+.mesa-btn--emerald {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #06210f;
+  border-color: rgba(74, 222, 128, 0.6);
+}
+
+.mesa-btn--emerald:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  box-shadow: 0 0 16px rgba(34, 197, 94, 0.35);
+}
+
+.mesa-btn--danger {
+  background: var(--crimson-soft);
+  color: var(--crimson-400);
+  border-color: rgba(239, 68, 68, 0.38);
+}
+
+.mesa-btn--danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.28);
+  border-color: var(--crimson-500);
+}
+
+.mesa-btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+}
+
+.mesa-btn--ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.mesa-btn--sm {
+  min-height: 30px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.mesa-btn--icon {
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+
+.mesa-input,
+.mesa-select,
+.mesa-textarea {
+  width: 100%;
+  background: var(--bg-obsidian);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  color: var(--text-primary);
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.mesa-input:focus,
+.mesa-select:focus,
+.mesa-textarea:focus {
+  outline: none;
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 3px rgba(212, 168, 79, 0.16);
+}
+
+.mesa-textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+
+.mesa-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.mesa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+}
+
+.mesa-badge--gold {
+  background: var(--gold-soft);
+  border-color: var(--border-gold);
+  color: var(--gold-400);
+}
+
+.mesa-badge--emerald {
+  background: var(--emerald-soft);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: var(--emerald-400);
+}
+
+.mesa-badge--sapphire {
+  background: var(--sapphire-soft);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: var(--sapphire-400);
+}
+
+.mesa-badge--crimson {
+  background: var(--crimson-soft);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: var(--crimson-400);
+}
+
+.mesa-badge--amethyst {
+  background: var(--amethyst-soft);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: var(--amethyst-400);
+}
+
+/* Modal Backdrop & Dialog */
+.mesa-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: var(--bg-overlay);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: mesaFadeIn 150ms ease;
+}
+
+.mesa-modal {
+  width: 100%;
+  max-width: 540px;
+  max-height: min(90dvh, 760px);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 36px rgba(212, 168, 79, 0.08);
+  overflow: hidden;
+}
+
+.mesa-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(212, 168, 79, 0.08) 0%, transparent 100%);
+}
+
+.mesa-modal__title {
+  font-size: 17px;
+  color: var(--gold-400);
+}
+
+.mesa-modal__body {
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mesa-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Toast Stack */
+.mesa-toast-stack {
+  position: fixed;
+  top: 64px;
+  right: 16px;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.mesa-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-md);
+  font-size: 13px;
+  color: var(--text-primary);
+  animation: mesaSlideUp 180ms ease;
+}
+
+.mesa-toast--success {
+  border-color: rgba(34, 197, 94, 0.5);
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.15), var(--bg-elevated) 40%);
+}
+
+.mesa-toast--error {
+  border-color: rgba(239, 68, 68, 0.55);
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.18), var(--bg-elevated) 40%);
+}
+
+.mesa-toast--warning {
+  border-color: rgba(245, 158, 11, 0.55);
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.16), var(--bg-elevated) 40%);
+}
+
+/* Speaking Pulse Animation */
+@keyframes voiceRingPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px #22c55e, 0 0 10px rgba(34, 197, 94, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 3px #4ade80, 0 0 18px rgba(74, 222, 128, 0.85);
+  }
+}
+
+@keyframes mesaFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mesaSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mesaSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.mesa-spin {
+  animation: mesaSpin 900ms linear infinite;
+}
+
+/* Mobile touch-target accessibility */
+@media (max-width: 1023px) {
+  .mesa-btn {
+    min-height: 44px;
+  }
+  .mesa-btn--sm {
+    min-height: 36px;
+  }
+  .mesa-btn--icon {
+    min-width: 44px;
+    width: 44px;
+    height: 44px;
+  }
+  .mesa-modal-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+  .mesa-modal {
+    max-width: 100%;
+    max-height: 92dvh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding-bottom: var(--safe-bottom);
+  }
+}

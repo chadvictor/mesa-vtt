@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  go-backend:
+    name: Go Backend (Vet, Race Tests & Build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26'
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test with race detector
+        run: go test -race -count=1 ./...
+
+      - name: Build static server & healthcheck binaries
+        run: |
+          CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o /tmp/mesa-vtt ./server/cmd/server
+          CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o /tmp/healthcheck ./server/cmd/healthcheck
+
+  systems-tests:
+    name: Multisystem Engine & Sandbox Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Run systems & sandbox test suite
+        run: bun test systems/systems.test.ts
+
+  client-build:
+    name: Client Typecheck & Production Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: TypeScript typecheck & Vite production build
+        run: npm run build

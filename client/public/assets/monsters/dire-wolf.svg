@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#203047"/>
+      <stop offset="52%" stop-color="#0e1726"/>
+      <stop offset="100%" stop-color="#050810"/>
+    </radialGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="22%" r="48%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.65"/>
+      <stop offset="35%" stop-color="#93c5fd" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wolfFur" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="48%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="darkMane" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="55%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
+      <stop offset="62%" stop-color="#03060c" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#03060c" stop-opacity="0.74"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <!-- Full Moon Disc behind Wolf -->
+  <circle cx="256" cy="138" r="108" fill="#dbeafe" opacity="0.22"/>
+  <rect width="512" height="512" fill="url(#moonGlow)"/>
+
+  <!-- Silhouette Pine Tips at Horizon -->
+  <g fill="#08101c" opacity="0.8">
+    <polygon points="36,360 72,240 108,360"/>
+    <polygon points="404,360 442,232 480,360"/>
+  </g>
+
+  <!-- Massive Shaggy Dire Wolf Neck & Silver-Gray Shoulder Mane -->
+  <path d="M56 512 L88 340 L66 306 L114 268 L94 226 L154 202 Q256 170 358 202 L418 226 L398 268 L446 306 L424 340 L456 512 Z" fill="url(#darkMane)" stroke="#070a12" stroke-width="3"/>
+  <!-- Lighter Silver Chest Fur Ruff -->
+  <path d="M138 352 L172 418 L206 392 L256 462 L306 392 L340 418 L374 352 L322 330 L256 362 L190 330 Z" fill="url(#wolfFur)" opacity="0.82"/>
+
+  <!-- Alert Pointed Wolf Ears -->
+  <g>
+    <polygon points="154,186 112,84 206,136" fill="url(#darkMane)" stroke="#0b111e" stroke-width="3"/>
+    <polygon points="154,174 128,108 190,142" fill="#475569"/>
+    <polygon points="358,186 400,84 306,136" fill="url(#darkMane)" stroke="#0b111e" stroke-width="3"/>
+    <polygon points="358,174 384,108 322,142" fill="#475569"/>
+  </g>
+
+  <!-- Sculpted Dire Wolf Head & Cheek Fur Tufts -->
+  <path d="M136 220 L166 138 Q256 106 346 138 L376 220 L402 254 L352 288 L322 332 L256 364 L190 332 L160 288 L110 254 Z" fill="url(#wolfFur)" stroke="#0f172a" stroke-width="3"/>
+  <!-- Dark Crown & Forehead Ridge -->
+  <path d="M174 146 Q256 118 338 146 L316 206 L256 222 L196 206 Z" fill="url(#darkMane)"/>
+  <!-- Silver Cheekbone Markings -->
+  <path d="M138 252 Q184 226 220 248 L194 314 Z" fill="#e2e8f0" opacity="0.72"/>
+  <path d="M374 252 Q328 226 292 248 L318 314 Z" fill="#e2e8f0" opacity="0.72"/>
+
+  <!-- Fierce Glowing Golden Predator Eyes -->
+  <g>
+    <path d="M174 208 L234 224 L218 238 L178 228 Z" fill="#0f172a"/>
+    <polygon points="186,216 226,226 216,234 188,226" fill="#facc15"/>
+    <circle cx="208" cy="224" r="3.2" fill="#0f0704"/>
+    <circle cx="210" cy="222" r="1.4" fill="#ffffff"/>
+
+    <path d="M338 208 L278 224 L294 238 L334 228 Z" fill="#0f172a"/>
+    <polygon points="326,216 286,226 296,234 324,226" fill="#facc15"/>
+    <circle cx="304" cy="224" r="3.2" fill="#0f0704"/>
+    <circle cx="306" cy="222" r="1.4" fill="#ffffff"/>
+  </g>
+
+  <!-- Snarling Lupine Muzzle, Black Nose & Razor Fangs -->
+  <path d="M214 234 L256 222 L298 234 L308 286 L256 302 L204 286 Z" fill="#94a3b8" stroke="#1e293b" stroke-width="2"/>
+  <!-- Snarl wrinkles across bridge of snout -->
+  <path d="M232 246 Q256 238 280 246 M228 258 Q256 250 284 258" stroke="#334155" stroke-width="2.5" fill="none"/>
+  <!-- Wet Black Wolf Nose -->
+  <path d="M230 274 Q256 266 282 274 L268 294 Q256 300 244 294 Z" fill="#0f172a"/>
+  <ellipse cx="248" cy="276" rx="8" ry="3" fill="#475569" opacity="0.7"/>
+
+  <!-- Open Snarling Maw & Gleaming Canine Fangs -->
+  <path d="M196 304 Q256 286 316 304 L304 348 Q256 368 208 348 Z" fill="#450a0a" stroke="#0f172a" stroke-width="3"/>
+  <!-- Crimson Tongue -->
+  <path d="M234 338 Q256 322 278 338 Q256 356 234 338 Z" fill="#be123c"/>
+  <!-- Upper Razor Canines & Incisors -->
+  <g fill="#f8fafc" stroke="#334155" stroke-width="1.5">
+    <polygon points="208,304 218,336 228,306"/>
+    <polygon points="304,304 294,336 284,306"/>
+    <polygon points="232,304 238,318 244,304"/>
+    <polygon points="248,304 256,320 264,304"/>
+    <polygon points="268,304 274,318 280,304"/>
+    <!-- Lower fangs -->
+    <polygon points="222,346 228,324 236,348"/>
+    <polygon points="290,346 284,324 276,348"/>
+  </g>
+
+  <!-- Moonlit Rim Highlights on Ears & Mane -->
+  <path d="M118 94 L164 138 M394 94 L348 138" stroke="#e0f2fe" stroke-width="2.5" opacity="0.6"/>
+
+  <rect width="512" height="512" fill="url(#vignette)" pointer-events="none"/>
+</svg>

@@ -1,0 +1,2123 @@
+[
+  {
+    "id": "goblin-saqueador",
+    "name": "Goblin Saqueador",
+    "category": "Humanoide",
+    "size": "Pequeno",
+    "challengeLevel": 1,
+    "description": "Pequeno, traiçoeiro e oportunista, ataca viajantes e caravanas em bandos ruidosos usando lâminas enferrujadas.",
+    "portrait": "./assets/monsters/goblin-raider.svg",
+    "attributes": {
+      "forca": 2,
+      "agilidade": 4,
+      "inteligencia": 2,
+      "vontade": 2
+    },
+    "pvMax": 18,
+    "pmMax": 10,
+    "bloqueio": 9,
+    "esquiva": 10,
+    "determinacao": 10,
+    "movement": 7,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Cimitarra Enferrujada",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 7,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Causa +3 de dano se flanqueando"
+      },
+      {
+        "name": "Adaga Arremessada",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 6,
+        "damageType": "Perfuração",
+        "range": "9m",
+        "notes": "1 uso"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Tática de Bando",
+        "manaCost": 0,
+        "description": "Recebe +1 em testes de ataque quando houver outro goblin adjacente ao alvo."
+      },
+      {
+        "name": "Fuga Covarde",
+        "manaCost": 5,
+        "description": "Desengaja sem provocar ataques de oportunidade e corre até 7 metros."
+      }
+    ],
+    "loot": "10 TO, cimitarra enferrujada, escudo de madeira"
+  },
+  {
+    "id": "goblin-arqueiro",
+    "name": "Goblin Arqueiro",
+    "category": "Humanoide",
+    "size": "Pequeno",
+    "challengeLevel": 1,
+    "description": "Atirador sorrateiro que se esconde em arbustos e telhados para alvejar aventureiros desprevenidos.",
+    "portrait": "./assets/monsters/goblin-raider.svg",
+    "attributes": {
+      "forca": 2,
+      "agilidade": 4,
+      "inteligencia": 2,
+      "vontade": 2
+    },
+    "pvMax": 15,
+    "pmMax": 10,
+    "bloqueio": 8,
+    "esquiva": 10,
+    "determinacao": 10,
+    "movement": 7,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Arco Curto",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 7,
+        "damageType": "Perfuração",
+        "range": "24m",
+        "notes": "Disparo rápido"
+      },
+      {
+        "name": "Punhal",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 5,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Emboscada",
+        "manaCost": 0,
+        "description": "+1d6 em Furtividade e +4 de dano no primeiro disparo contra alvo desprevenido."
+      }
+    ],
+    "loot": "12 TO, arco curto, aljava com 12 flechas"
+  },
+  {
+    "id": "goblin-xama",
+    "name": "Goblin Xamã",
+    "category": "Humanoide",
+    "size": "Pequeno",
+    "challengeLevel": 2,
+    "description": "Conjurador tribal enfeitado com ossos e penas que invoca chamas instáveis e maldições para apoiar sua tribo.",
+    "portrait": "./assets/portraits/goblin-rogue.svg",
+    "attributes": {
+      "forca": 2,
+      "agilidade": 3,
+      "inteligencia": 4,
+      "vontade": 4
+    },
+    "pvMax": 24,
+    "pmMax": 35,
+    "bloqueio": 8,
+    "esquiva": 9,
+    "determinacao": 12,
+    "movement": 6,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Seta Flamejante",
+        "rollAttr": "inteligencia",
+        "rollBonus": 0,
+        "damage": 12,
+        "damageType": "Fogo",
+        "range": "15m",
+        "notes": "Gasta 10 PM"
+      },
+      {
+        "name": "Cajado Tribal",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 6,
+        "damageType": "Contusão",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Bênção da Tribo",
+        "manaCost": 10,
+        "description": "Aliados goblins em 6m ganham +2 de dano por 2 turnos (2x por combate)."
+      },
+      {
+        "name": "Bomba de Fumaça Xamânica",
+        "manaCost": 10,
+        "description": "Cria nuvem escura de 4m para reposicionar aliados."
+      }
+    ],
+    "loot": "25 TO, cajado tribal, 1 Poção de Mana Menor"
+  },
+  {
+    "id": "kobold-batedor",
+    "name": "Kobold Batedor",
+    "category": "Humanoide",
+    "size": "Pequeno",
+    "challengeLevel": 1,
+    "description": "Pequeno reptiliano engenhoso devoto de dragões, especialista em túneis escuros e armadilhas cruéis.",
+    "portrait": "./assets/monsters/goblin-raider.svg",
+    "attributes": {
+      "forca": 2,
+      "agilidade": 4,
+      "inteligencia": 3,
+      "vontade": 2
+    },
+    "pvMax": 16,
+    "pmMax": 10,
+    "bloqueio": 9,
+    "esquiva": 10,
+    "determinacao": 11,
+    "movement": 7,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Lança Curta",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 7,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Funda",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 6,
+        "damageType": "Contusão",
+        "range": "20m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Armadilha Improvisada",
+        "manaCost": 5,
+        "description": "Ativa estrepes ou laço oculto (8 dano Perfuração + Imobilizado)."
+      },
+      {
+        "name": "Visão no Escuro",
+        "manaCost": 0,
+        "description": "Enxerga perfeitamente na escuridão subterrânea."
+      }
+    ],
+    "loot": "8 TO, lança curta, kit de estrepes"
+  },
+  {
+    "id": "bandido-estrada",
+    "name": "Bandido de Estrada",
+    "category": "Humanoide",
+    "size": "Médio",
+    "challengeLevel": 1,
+    "description": "Salteador experiente que cobra pedágios ilegais nas estradas entre vilarejos e ataca viajantes isolados.",
+    "portrait": "./assets/portraits/human-warrior.svg",
+    "attributes": {
+      "forca": 3,
+      "agilidade": 3,
+      "inteligencia": 2,
+      "vontade": 2
+    },
+    "pvMax": 28,
+    "pmMax": 15,
+    "bloqueio": 10,
+    "esquiva": 8,
+    "determinacao": 10,
+    "movement": 6,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Espada Curta",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 9,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Besta Leve",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 9,
+        "damageType": "Perfuração",
+        "range": "24m",
+        "notes": "Recarga 1 movimento"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Golpe Sujo",
+        "manaCost": 5,
+        "description": "Joga areia ou golpeia abaixo da guarda, causando +3 dano e aplicando Atordoado (1x por combate)."
+      }
+    ],
+    "loot": "18 TO, armadura de couro, espada curta"
+  },
+  {
+    "id": "capitao-bandidos",
+    "name": "Capitão dos Bandidos",
+    "category": "Humanoide",
+    "size": "Médio",
+    "challengeLevel": 3,
+    "description": "Líder astuto e veterano de uma quadrilha de mercenários, perigoso tanto em duelos quanto comandando emboscadas.",
+    "portrait": "./assets/portraits/human-warrior.svg",
+    "attributes": {
+      "forca": 4,
+      "agilidade": 4,
+      "inteligencia": 3,
+      "vontade": 3
+    },
+    "pvMax": 52,
+    "pmMax": 30,
+    "bloqueio": 12,
+    "esquiva": 10,
+    "determinacao": 11,
+    "movement": 7,
+    "xpReward": 5,
+    "attacks": [
+      {
+        "name": "Espada Longa",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 12,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Adaga de Parada",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 8,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Ataque secundário"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Aparar e Ripostar",
+        "manaCost": 10,
+        "description": "Reação: +3 em Bloqueio e contra-ataque imediato se o agressor errar."
+      },
+      {
+        "name": "Cercar Alvo!",
+        "manaCost": 10,
+        "description": "Ordena até 2 capangas próximos a realizarem um ataque livre com +1."
+      }
+    ],
+    "loot": "75 TO, espada longa, couro batido, 1 Poção de Vida"
+  },
+  {
+    "id": "guarda-cidade",
+    "name": "Guarda da Cidade",
+    "category": "Humanoide",
+    "size": "Médio",
+    "challengeLevel": 2,
+    "description": "Soldado disciplinado da milícia local equipado com cota de malha, escudo e alabarda ou espada.",
+    "portrait": "./assets/portraits/human-warrior.svg",
+    "attributes": {
+      "forca": 4,
+      "agilidade": 3,
+      "inteligencia": 2,
+      "vontade": 3
+    },
+    "pvMax": 36,
+    "pmMax": 20,
+    "bloqueio": 13,
+    "esquiva": 8,
+    "determinacao": 11,
+    "movement": 6,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Lança ou Espada Longa",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 11,
+        "damageType": "Corte/Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Formação de Escudos",
+        "manaCost": 0,
+        "description": "+1 em Bloqueio enquanto estiver adjacente a outro guarda."
+      },
+      {
+        "name": "Reter Criminoso",
+        "manaCost": 10,
+        "description": "Golpe não letal que derruba o alvo (Caído)."
+      }
+    ],
+    "loot": "20 TO, cota de malha, escudo médio, algemas"
+  },
+  {
+    "id": "cultista-sombrio",
+    "name": "Cultista Sombrio",
+    "category": "Humanoide",
+    "size": "Médio",
+    "challengeLevel": 2,
+    "description": "Fanático encapuzado devoto de entidades proibidas que empunha adagas rituais e magia das trevas.",
+    "portrait": "./assets/portraits/gm-avatar.svg",
+    "attributes": {
+      "forca": 2,
+      "agilidade": 3,
+      "inteligencia": 4,
+      "vontade": 4
+    },
+    "pvMax": 30,
+    "pmMax": 40,
+    "bloqueio": 9,
+    "esquiva": 8,
+    "determinacao": 12,
+    "movement": 6,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Adaga Ritual",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 7,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Causa +3 dano Trevas"
+      },
+      {
+        "name": "Raio Necrótico",
+        "rollAttr": "inteligencia",
+        "rollBonus": 0,
+        "damage": 13,
+        "damageType": "Trevas",
+        "range": "15m",
+        "notes": "10 PM"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Devoção Fanática",
+        "manaCost": 0,
+        "description": "Imune à condição Amedrontado."
+      },
+      {
+        "name": "Maldição Sombria",
+        "manaCost": 15,
+        "description": "Aplica Exausto em um inimigo a até 12m (Determinação Dif 11)."
+      }
+    ],
+    "loot": "30 TO, adaga ritual, símbolo profano, pergaminho cifrado"
+  },
+  {
+    "id": "orc-guerreiro",
+    "name": "Orc Guerreiro (Bruto)",
+    "category": "Humanoide",
+    "size": "Médio",
+    "challengeLevel": 3,
+    "description": "Guerreiro musculoso de pele esverdeada e presas proeminentes que avança sem hesitação com seu machado pesado.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "forca": 5,
+      "agilidade": 4,
+      "inteligencia": 2,
+      "vontade": 3
+    },
+    "pvMax": 40,
+    "pmMax": 20,
+    "bloqueio": 11,
+    "esquiva": 9,
+    "determinacao": 11,
+    "movement": 7,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Machado Pesado",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 12,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Baseado na ficha oficial MB 3e"
+      },
+      {
+        "name": "Azagaia",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 10,
+        "damageType": "Perfuração",
+        "range": "15m",
+        "notes": "Arremesso"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Golpe Devastador",
+        "manaCost": 10,
+        "description": "1x por combate: desfere um golpe brutal causando 18 de dano Corte."
+      },
+      {
+        "name": "Sangue Orc",
+        "manaCost": 0,
+        "description": "+2 de dano quando abaixo de 20 PV."
+      }
+    ],
+    "loot": "30 TO, machado de batalha, gibão de peles"
+  },
+  {
+    "id": "orc-chefe",
+    "name": "Orc Chefe de Guerra",
+    "category": "Humanoide",
+    "size": "Médio",
+    "challengeLevel": 5,
+    "description": "Líder imponente de uma horda orc, coberto de cicatrizes rituais e armadura saqueada, inspirando fúria em seus seguidores.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "forca": 6,
+      "agilidade": 4,
+      "inteligencia": 3,
+      "vontade": 5
+    },
+    "pvMax": 85,
+    "pmMax": 40,
+    "bloqueio": 14,
+    "esquiva": 9,
+    "determinacao": 13,
+    "movement": 7,
+    "xpReward": 8,
+    "attacks": [
+      {
+        "name": "Machado Grande de Guerra",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 17,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Alcance 2m"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Grito da Horda",
+        "manaCost": 15,
+        "description": "Todos os orcs em 9m ganham +2 em ataques e +4 de dano por 2 turnos; inimigos testam Determinação (Dif 12) ou ficam Amedrontados."
+      },
+      {
+        "name": "Fúria Incontida",
+        "manaCost": 10,
+        "description": "Entra Em Fúria por 3 turnos (+6 dano, +2 testes de Força, -2 Defesa)."
+      },
+      {
+        "name": "Golpe Giratório",
+        "manaCost": 15,
+        "description": "Ataca todos os inimigos adjacentes de uma só vez."
+      }
+    ],
+    "loot": "150 TO, machado grande obra-prima, armadura de batalha, Poção de Vida"
+  },
+  {
+    "id": "lobo",
+    "name": "Lobo Cinzento",
+    "category": "Animal",
+    "size": "Médio",
+    "challengeLevel": 1,
+    "description": "Predador ágil das florestas que caça em matilhas coordenadas para cercar e derrubar suas presas.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "forca": 3,
+      "agilidade": 4,
+      "inteligencia": 2,
+      "vontade": 2
+    },
+    "pvMax": 22,
+    "pmMax": 0,
+    "bloqueio": 8,
+    "esquiva": 10,
+    "determinacao": 10,
+    "movement": 9,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Mordida",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 8,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Pode derrubar (Caído) se flanquear"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Tática de Matilha",
+        "manaCost": 0,
+        "description": "+2 em testes de ataque quando outro lobo estiver adjacente ao mesmo alvo."
+      },
+      {
+        "name": "Faro Aguçado",
+        "manaCost": 0,
+        "description": "+1d6 em testes de rastreamento e percepção."
+      }
+    ],
+    "loot": "Pele de lobo (15 TO)"
+  },
+  {
+    "id": "lobo-atroz",
+    "name": "Lobo Atroz",
+    "category": "Besta",
+    "size": "Grande",
+    "challengeLevel": 3,
+    "description": "Lobo gigantesco do tamanho de um cavalo, de pelagem prateada e mandíbulas capazes de partir ossos com uma mordida.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "forca": 5,
+      "agilidade": 5,
+      "inteligencia": 2,
+      "vontade": 3
+    },
+    "pvMax": 55,
+    "pmMax": 15,
+    "bloqueio": 11,
+    "esquiva": 11,
+    "determinacao": 11,
+    "movement": 10,
+    "xpReward": 5,
+    "attacks": [
+      {
+        "name": "Mordida Dilacerante",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 14,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Aplica Caído (Força Dif 12)"
+      },
+      {
+        "name": "Garras",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 11,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Uivo Congelante",
+        "manaCost": 15,
+        "description": "1x por combate: inimigos em 9m testam Determinação (Dif 11) ou ficam Amedrontados por 2 turnos."
+      },
+      {
+        "name": "Bote Predatório",
+        "manaCost": 0,
+        "description": "Se mover 6m antes de atacar, causa +4 de dano."
+      }
+    ],
+    "loot": "Pele de lobo atroz (60 TO), presas (25 TO)"
+  },
+  {
+    "id": "aranha-gigante",
+    "name": "Aranha Gigante",
+    "category": "Besta",
+    "size": "Grande",
+    "challengeLevel": 2,
+    "description": "Aracnídeo monstruoso que habita criptas e florestas antigas, tecendo teias pegajosas para imobilizar presas.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "forca": 3,
+      "agilidade": 5,
+      "inteligencia": 1,
+      "vontade": 2
+    },
+    "pvMax": 32,
+    "pmMax": 15,
+    "bloqueio": 9,
+    "esquiva": 11,
+    "determinacao": 10,
+    "movement": 8,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Presas Venenosas",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 9,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Aplica Envenenado (Força Dif 11)"
+      },
+      {
+        "name": "Disparo de Teia",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 0,
+        "damageType": "Contusão",
+        "range": "12m",
+        "notes": "Aplica Imobilizado (Força Dif 11 para romper)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Escalar Paredes",
+        "manaCost": 0,
+        "description": "Move-se livremente por tetos, paredes e teias sem penalidade."
+      }
+    ],
+    "loot": "Glândula de veneno (40 TO)"
+  },
+  {
+    "id": "urso-pardo",
+    "name": "Urso Pardo",
+    "category": "Animal",
+    "size": "Grande",
+    "challengeLevel": 3,
+    "description": "Fera territorial maciça que esmaga intrusos com patadas brutais e um abraço esmagador.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "forca": 6,
+      "agilidade": 3,
+      "inteligencia": 2,
+      "vontade": 3
+    },
+    "pvMax": 58,
+    "pmMax": 10,
+    "bloqueio": 12,
+    "esquiva": 8,
+    "determinacao": 11,
+    "movement": 7,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Patada Pesada",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 14,
+        "damageType": "Corte/Contusão",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Mordida",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 12,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Abraço de Urso",
+        "manaCost": 10,
+        "description": "Se acertar com a patada, prende o alvo (Constringido) causando 8 de dano Contusão por turno."
+      }
+    ],
+    "loot": "Pele de urso pardo (50 TO)"
+  },
+  {
+    "id": "javali-gigante",
+    "name": "Javali Gigante",
+    "category": "Animal",
+    "size": "Grande",
+    "challengeLevel": 2,
+    "description": "Fera irascível de presas curvas que investe furiosamente contra qualquer ameaça em seu território.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "forca": 5,
+      "agilidade": 3,
+      "inteligencia": 1,
+      "vontade": 3
+    },
+    "pvMax": 38,
+    "pmMax": 10,
+    "bloqueio": 11,
+    "esquiva": 8,
+    "determinacao": 11,
+    "movement": 7,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Presas",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 11,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "+5 dano em Investida"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Investida Furiosa",
+        "manaCost": 0,
+        "description": "Se mover 4m em linha reta antes de atacar, causa +5 dano e aplica Caído."
+      },
+      {
+        "name": "Teimosia Selvagem",
+        "manaCost": 0,
+        "description": "1x por combate, ao cair a 0 PV, fica com 8 PV e realiza um último ataque."
+      }
+    ],
+    "loot": "Presas de javali (20 TO), carne fresca"
+  },
+  {
+    "id": "serpente-gigante",
+    "name": "Serpente Venenosa Gigante",
+    "category": "Animal",
+    "size": "Médio",
+    "challengeLevel": 2,
+    "description": "Réptil silencioso de escamas camufladas capaz de desferir botes relâmpago com toxina paralisante.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "forca": 3,
+      "agilidade": 5,
+      "inteligencia": 1,
+      "vontade": 2
+    },
+    "pvMax": 30,
+    "pmMax": 10,
+    "bloqueio": 9,
+    "esquiva": 11,
+    "determinacao": 10,
+    "movement": 7,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Bote Venenoso",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 10,
+        "damageType": "Perfuração",
+        "range": "2m",
+        "notes": "Aplica Envenenado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Constrição",
+        "manaCost": 10,
+        "description": "Enrola-se no alvo aplicando Constringido e causando 8 de dano Contusão por turno."
+      }
+    ],
+    "loot": "Veneno de serpente (45 TO)"
+  },
+  {
+    "id": "grifo",
+    "name": "Grifo Real",
+    "category": "Besta",
+    "size": "Grande",
+    "challengeLevel": 5,
+    "description": "Majestosa criatura com corpo de leão e cabeça e asas de águia gigante, caçadora feroz dos picos montanhosos.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "forca": 6,
+      "agilidade": 5,
+      "inteligencia": 2,
+      "vontade": 4
+    },
+    "pvMax": 78,
+    "pmMax": 20,
+    "bloqueio": 13,
+    "esquiva": 11,
+    "determinacao": 12,
+    "movement": 12,
+    "xpReward": 7,
+    "attacks": [
+      {
+        "name": "Bico Afiado",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 15,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Garras Rasantes",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 13,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Pode agarrar alvo Médio"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Ataque Rasante",
+        "manaCost": 10,
+        "description": "Mergulha dos céus causando +6 de dano e afasta-se voando sem sofrer contra-ataques."
+      },
+      {
+        "name": "Voo Veloz",
+        "manaCost": 0,
+        "description": "Deslocamento aéreo de 12 metros por turno."
+      }
+    ],
+    "loot": "Penas de grifo (90 TO), ovos raros em ninho"
+  },
+  {
+    "id": "esqueleto-guerreiro",
+    "name": "Esqueleto Guerreiro",
+    "category": "Morto-Vivo",
+    "size": "Médio",
+    "challengeLevel": 1,
+    "description": "Ossada animada por necromancia, armada com espada enferrujada e escudo partido, marchando em silêncio absoluto.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 3,
+      "agilidade": 3,
+      "inteligencia": 1,
+      "vontade": 4
+    },
+    "pvMax": 22,
+    "pmMax": 0,
+    "bloqueio": 11,
+    "esquiva": 8,
+    "determinacao": 12,
+    "movement": 6,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Espada Enferrujada",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 9,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Natureza Morta-Viva",
+        "manaCost": 0,
+        "description": "Imune a venenos, medo e sangramento. Sofre +4 de dano de Contusão e Sagrado; reduz em 2 dano de Perfuração."
+      }
+    ],
+    "loot": "10 TO, espada enferrujada, escudo pequeno"
+  },
+  {
+    "id": "esqueleto-arqueiro",
+    "name": "Esqueleto Arqueiro",
+    "category": "Morto-Vivo",
+    "size": "Médio",
+    "challengeLevel": 1,
+    "description": "Sentinela cadavérica posicionada sobre muralhas e criptas que dispara flechas incessantemente contra invasores.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 2,
+      "agilidade": 4,
+      "inteligencia": 1,
+      "vontade": 4
+    },
+    "pvMax": 18,
+    "pmMax": 0,
+    "bloqueio": 9,
+    "esquiva": 9,
+    "determinacao": 12,
+    "movement": 6,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Arco Simples",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 8,
+        "damageType": "Perfuração",
+        "range": "24m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Natureza Morta-Viva",
+        "manaCost": 0,
+        "description": "Imune a venenos e medo. Vulnerável a Contusão e dano Sagrado."
+      }
+    ],
+    "loot": "8 TO, arco simples, 10 flechas"
+  },
+  {
+    "id": "zumbi",
+    "name": "Zumbi Putrefato",
+    "category": "Morto-Vivo",
+    "size": "Médio",
+    "challengeLevel": 1,
+    "description": "Cadáver reanimado lento, porém tenaz, que ignora dor e avança incansavelmente para devorar os vivos.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 4,
+      "agilidade": 2,
+      "inteligencia": 1,
+      "vontade": 4
+    },
+    "pvMax": 30,
+    "pmMax": 0,
+    "bloqueio": 9,
+    "esquiva": 7,
+    "determinacao": 12,
+    "movement": 4,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Pancada e Mordida",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 9,
+        "damageType": "Contusão",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Tenacidade Cadavérica",
+        "manaCost": 0,
+        "description": "Ao ser reduzido a 0 PV (exceto por Crítico ou dano Sagrado/Fogo), testa Vontade (Dif 11) para permanecer de pé com 5 PV."
+      }
+    ],
+    "loot": "Trapilhos e moedas antigas (5 TO)"
+  },
+  {
+    "id": "ghoul",
+    "name": "Carniçal (Ghoul)",
+    "category": "Morto-Vivo",
+    "size": "Médio",
+    "challengeLevel": 3,
+    "description": "Morto-vivo faminto e veloz de garras alongadas cujo toque espalha paralisia gelada pelos músculos da vítima.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 4,
+      "agilidade": 5,
+      "inteligencia": 2,
+      "vontade": 4
+    },
+    "pvMax": 42,
+    "pmMax": 15,
+    "bloqueio": 10,
+    "esquiva": 11,
+    "determinacao": 12,
+    "movement": 8,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Garras Paralisantes",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 11,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Aplica Paralisado por 1 turno (Força Dif 11)"
+      },
+      {
+        "name": "Mordida",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 12,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "+4 dano contra alvo Paralisado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Frenesi Necrófago",
+        "manaCost": 0,
+        "description": "Recupera 10 PV ao morder um alvo caído ou paralisado."
+      }
+    ],
+    "loot": "35 TO em joias roubadas de túmulos"
+  },
+  {
+    "id": "espectro",
+    "name": "Espectro Sombrio",
+    "category": "Morto-Vivo",
+    "size": "Médio",
+    "challengeLevel": 4,
+    "description": "Espírito atormentado envolto em névoa translúcida que atravessa paredes sólidas e drena a força vital dos vivos.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 2,
+      "agilidade": 5,
+      "inteligencia": 3,
+      "vontade": 5
+    },
+    "pvMax": 48,
+    "pmMax": 35,
+    "bloqueio": 10,
+    "esquiva": 12,
+    "determinacao": 13,
+    "movement": 8,
+    "xpReward": 6,
+    "attacks": [
+      {
+        "name": "Toque Gélido",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 14,
+        "damageType": "Trevas",
+        "range": "Corpo a Corpo",
+        "notes": "Ignora armadura mundana e cura 6 PV do espectro"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Corpo Incorpóreo",
+        "manaCost": 0,
+        "description": "Sofre metade do dano de armas não-mágicas e atravessa paredes sólidas."
+      },
+      {
+        "name": "Lamento Espectral",
+        "manaCost": 15,
+        "description": "Aplica Amedrontado em todos em 6m que falharem em Determinação (Dif 12)."
+      }
+    ],
+    "loot": "Ectoplasma cristalizado (80 TO)"
+  },
+  {
+    "id": "cavaleiro-da-morte",
+    "name": "Cavaleiro da Morte",
+    "category": "Morto-Vivo",
+    "size": "Médio",
+    "challengeLevel": 7,
+    "description": "Antigo paladino corrompido trajando armadura negra rúnica e empunhando um montante envolto em chamas sombrias.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 7,
+      "agilidade": 4,
+      "inteligencia": 4,
+      "vontade": 6
+    },
+    "pvMax": 115,
+    "pmMax": 60,
+    "bloqueio": 16,
+    "esquiva": 9,
+    "determinacao": 14,
+    "movement": 7,
+    "xpReward": 12,
+    "attacks": [
+      {
+        "name": "Montante Profano",
+        "rollAttr": "forca",
+        "rollBonus": 2,
+        "damage": 20,
+        "damageType": "Corte",
+        "range": "2m",
+        "notes": "+6 dano Trevas adicional"
+      },
+      {
+        "name": "Esfera de Chamas Negras",
+        "rollAttr": "vontade",
+        "rollBonus": 1,
+        "damage": 22,
+        "damageType": "Trevas",
+        "range": "15m",
+        "notes": "Área 4m, 20 PM"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Aura de Desespero",
+        "manaCost": 0,
+        "description": "Inimigos em 6m sofrem -1 em Determinação e curas recebidas são reduzidas em 5 PV."
+      },
+      {
+        "name": "Comandar Mortos-Vivos",
+        "manaCost": 15,
+        "description": "Aliados mortos-vivos em 9m recebem +2 em ataques e recuperam 10 PV."
+      }
+    ],
+    "loot": "350 TO, armadura completa negra, montante rúnico"
+  },
+  {
+    "id": "vampiro",
+    "name": "Vampiro Nobre",
+    "category": "Morto-Vivo",
+    "size": "Médio",
+    "challengeLevel": 7,
+    "description": "Senhor imortal da noite de porte aristocrático, força sobrenatural, olhar hipnótico e sede insaciável de sangue.",
+    "portrait": "./assets/portraits/gm-avatar.svg",
+    "attributes": {
+      "forca": 6,
+      "agilidade": 6,
+      "inteligencia": 5,
+      "vontade": 6
+    },
+    "pvMax": 110,
+    "pmMax": 70,
+    "bloqueio": 14,
+    "esquiva": 13,
+    "determinacao": 14,
+    "movement": 9,
+    "xpReward": 12,
+    "attacks": [
+      {
+        "name": "Garras Sombrias",
+        "rollAttr": "agilidade",
+        "rollBonus": 2,
+        "damage": 16,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Pode agarrar o alvo"
+      },
+      {
+        "name": "Mordida Vampírica",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 18,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Cura o Vampiro em 15 PV e aplica Sangrando"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Olhar Hipnótico",
+        "manaCost": 15,
+        "description": "Alvo a até 9m testa Determinação (Dif 13) ou fica Encantado/Atordoado por 2 turnos."
+      },
+      {
+        "name": "Forma de Névoa / Morcego",
+        "manaCost": 15,
+        "description": "Transforma-se instantaneamente para reposicionar-se até 12m ignorando obstáculos."
+      },
+      {
+        "name": "Regeneração Noturna",
+        "manaCost": 0,
+        "description": "Recupera 10 PV no início do turno enquanto não sofrer dano Sagrado ou luz solar."
+      }
+    ],
+    "loot": "400 TO, anel nobre encantado, capa das sombras"
+  },
+  {
+    "id": "lich",
+    "name": "Lich Arquinecromante",
+    "category": "Morto-Vivo",
+    "size": "Médio",
+    "challengeLevel": 9,
+    "description": "Mago supremo que selou sua alma em um filactério para derrotar a morte, comandando legiões de mortos-vivos e feitiços cataclísmicos.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 3,
+      "agilidade": 4,
+      "inteligencia": 8,
+      "vontade": 8
+    },
+    "pvMax": 145,
+    "pmMax": 140,
+    "bloqueio": 14,
+    "esquiva": 11,
+    "determinacao": 16,
+    "movement": 7,
+    "xpReward": 18,
+    "attacks": [
+      {
+        "name": "Toque Paralisante",
+        "rollAttr": "inteligencia",
+        "rollBonus": 1,
+        "damage": 18,
+        "damageType": "Trevas",
+        "range": "Corpo a Corpo",
+        "notes": "Aplica Paralisado (Força Dif 14)"
+      },
+      {
+        "name": "Raio da Morte",
+        "rollAttr": "inteligencia",
+        "rollBonus": 2,
+        "damage": 28,
+        "damageType": "Trevas",
+        "range": "18m",
+        "notes": "20 PM"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Armadura de Ossos Suprema",
+        "manaCost": 0,
+        "description": "+4 Bloqueio permanente e redução de 4 de dano físico."
+      },
+      {
+        "name": "Dedo da Morte",
+        "manaCost": 40,
+        "description": "1x por combate: 42 dano Trevas em um alvo."
+      },
+      {
+        "name": "Erguer Legião",
+        "manaCost": 30,
+        "description": "Convoca 3 Esqueletos Guerreiros adjacentes."
+      },
+      {
+        "name": "Contramágica",
+        "manaCost": 15,
+        "description": "Reação: anula uma magia inimiga com teste de Inteligência."
+      }
+    ],
+    "loot": "800 TO, cajado do arquimago, grimório proibido, filactério oculto"
+  },
+  {
+    "id": "gnoll-cacador",
+    "name": "Gnoll Caçador",
+    "category": "Humanoide",
+    "size": "Médio",
+    "challengeLevel": 2,
+    "description": "Saqueador de feições hienoides que ri maniacamente durante batalhas e persegue inimigos feridos sem piedade.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "forca": 4,
+      "agilidade": 4,
+      "inteligencia": 2,
+      "vontade": 2
+    },
+    "pvMax": 34,
+    "pmMax": 10,
+    "bloqueio": 11,
+    "esquiva": 9,
+    "determinacao": 10,
+    "movement": 7,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Lança Serrilhada",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 10,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Arco Composto",
+        "rollAttr": "agilidade",
+        "rollBonus": 0,
+        "damage": 9,
+        "damageType": "Perfuração",
+        "range": "30m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Frenesi de Sangue",
+        "manaCost": 0,
+        "description": "Quando derruba um alvo, move-se 4m e faz uma mordida livre (8 dano)."
+      }
+    ],
+    "loot": "20 TO, lança, arco composto"
+  },
+  {
+    "id": "harpia",
+    "name": "Harpia dos Penhascos",
+    "category": "Monstro",
+    "size": "Médio",
+    "challengeLevel": 3,
+    "description": "Criatura alada de voz hipnótica que atrai viajantes para abismos e emboscadas aéreas.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "forca": 3,
+      "agilidade": 5,
+      "inteligencia": 3,
+      "vontade": 4
+    },
+    "pvMax": 40,
+    "pmMax": 25,
+    "bloqueio": 9,
+    "esquiva": 11,
+    "determinacao": 12,
+    "movement": 10,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Garras Afiadas",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 11,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Canto Sedutor",
+        "manaCost": 15,
+        "description": "Inimigos em 12m testam Determinação (Dif 11) ou ficam Atordoados caminhando em direção à harpia."
+      },
+      {
+        "name": "Voo",
+        "manaCost": 0,
+        "description": "Voa a 10 metros por turno."
+      }
+    ],
+    "loot": "35 TO em bugigangas brilhantes roubadas"
+  },
+  {
+    "id": "ogro",
+    "name": "Ogro Esmagador",
+    "category": "Gigante",
+    "size": "Grande",
+    "challengeLevel": 4,
+    "description": "Brutamontes de quase três metros de altura carregando uma clava feita de tronco de árvore reforçado com ferro.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "forca": 7,
+      "agilidade": 2,
+      "inteligencia": 1,
+      "vontade": 2
+    },
+    "pvMax": 72,
+    "pmMax": 10,
+    "bloqueio": 13,
+    "esquiva": 7,
+    "determinacao": 10,
+    "movement": 6,
+    "xpReward": 6,
+    "attacks": [
+      {
+        "name": "Clava Gigante",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 18,
+        "damageType": "Contusão",
+        "range": "2m",
+        "notes": "Empurra 2m e aplica Caído em Crítico"
+      },
+      {
+        "name": "Pedregulho Arremessado",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 14,
+        "damageType": "Contusão",
+        "range": "15m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Varredura Brutal",
+        "manaCost": 10,
+        "description": "2x por combate: golpeia até 2 alvos adjacentes simultaneamente causando 14 de dano Contusão."
+      }
+    ],
+    "loot": "65 TO, saco de saque com moedas e equipamentos amassados"
+  },
+  {
+    "id": "troll",
+    "name": "Troll da Caverna",
+    "category": "Monstro",
+    "size": "Grande",
+    "challengeLevel": 5,
+    "description": "Aberração alta, esguia e faminta cuja carne esverdeada regenera quase instantaneamente se não for cauterizada por fogo ou ácido.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "forca": 7,
+      "agilidade": 3,
+      "inteligencia": 2,
+      "vontade": 3
+    },
+    "pvMax": 88,
+    "pmMax": 15,
+    "bloqueio": 13,
+    "esquiva": 8,
+    "determinacao": 11,
+    "movement": 7,
+    "xpReward": 8,
+    "attacks": [
+      {
+        "name": "Garras Dilacerantes",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 16,
+        "damageType": "Corte",
+        "range": "2m",
+        "notes": "Realiza 2 ataques por turno"
+      },
+      {
+        "name": "Mordida",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 14,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Regeneração Monstruosa",
+        "manaCost": 0,
+        "description": "Recupera 12 PV no início de cada turno. Dano de Fogo ou Ácido suspende a regeneração por 1 turno."
+      }
+    ],
+    "loot": "90 TO, sangue de troll alquímico (100 TO)"
+  },
+  {
+    "id": "minotauro",
+    "name": "Minotauro do Labirinto",
+    "category": "Monstro",
+    "size": "Grande",
+    "challengeLevel": 5,
+    "description": "Colosso com cabeça de touro e corpo humanoide musculoso que guarda labirintos antigos com um machado colossal.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "forca": 7,
+      "agilidade": 4,
+      "inteligencia": 3,
+      "vontade": 4
+    },
+    "pvMax": 90,
+    "pmMax": 25,
+    "bloqueio": 14,
+    "esquiva": 9,
+    "determinacao": 12,
+    "movement": 8,
+    "xpReward": 8,
+    "attacks": [
+      {
+        "name": "Machado Grande do Labirinto",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 19,
+        "damageType": "Corte",
+        "range": "2m",
+        "notes": ""
+      },
+      {
+        "name": "Chifrada",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 15,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "+6 dano em Investida + Caído"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Investida Imparável",
+        "manaCost": 10,
+        "description": "Avança 8m em linha reta derrubando todos no caminho (21 dano Perfuração + Caído)."
+      },
+      {
+        "name": "Memória de Labirinto",
+        "manaCost": 0,
+        "description": "Nunca se perde e não pode ser surpreendido."
+      }
+    ],
+    "loot": "140 TO, machado grande, amuleto de bronze"
+  },
+  {
+    "id": "gargula",
+    "name": "Gárgula de Pedra",
+    "category": "Monstro",
+    "size": "Médio",
+    "challengeLevel": 4,
+    "description": "Estátua alada grotesca esculpida em granito que ganha vida para emboscar invasores de catedrais e castelos.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 5,
+      "agilidade": 4,
+      "inteligencia": 2,
+      "vontade": 4
+    },
+    "pvMax": 62,
+    "pmMax": 15,
+    "bloqueio": 14,
+    "esquiva": 9,
+    "determinacao": 12,
+    "movement": 9,
+    "xpReward": 6,
+    "attacks": [
+      {
+        "name": "Garras de Granito",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 13,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Mordida",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 12,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Pele de Pedra",
+        "manaCost": 0,
+        "description": "Reduz em 3 pontos todo dano físico de armas não-mágicas."
+      },
+      {
+        "name": "Falsa Estátua",
+        "manaCost": 0,
+        "description": "Indistinguível de uma escultura comum enquanto imóvel."
+      }
+    ],
+    "loot": "Olhos de ônix (85 TO)"
+  },
+  {
+    "id": "basilisco",
+    "name": "Basilisco",
+    "category": "Monstro",
+    "size": "Grande",
+    "challengeLevel": 5,
+    "description": "Lagarto blindado de oito patas cujo olhar esmeralda transforma carne e osso em pedra sólida.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "forca": 5,
+      "agilidade": 3,
+      "inteligencia": 1,
+      "vontade": 4
+    },
+    "pvMax": 75,
+    "pmMax": 20,
+    "bloqueio": 14,
+    "esquiva": 8,
+    "determinacao": 12,
+    "movement": 6,
+    "xpReward": 8,
+    "attacks": [
+      {
+        "name": "Mordida Ácida",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 15,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "+5 dano Veneno"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Olhar Petrificante",
+        "manaCost": 10,
+        "description": "Alvo em 9m testa Vontade/Força (Dif 12): na 1ª falha fica Imobilizado; na 2ª falha fica Paralisado (petrificado)."
+      }
+    ],
+    "loot": "Escamas de basilisco (120 TO)"
+  },
+  {
+    "id": "manticora",
+    "name": "Mantícora",
+    "category": "Monstro",
+    "size": "Grande",
+    "challengeLevel": 6,
+    "description": "Predador quimérico com corpo de leão, asas de morcego e cauda de escorpião capaz de disparar espinhos mortais.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "forca": 6,
+      "agilidade": 5,
+      "inteligencia": 3,
+      "vontade": 4
+    },
+    "pvMax": 95,
+    "pmMax": 30,
+    "bloqueio": 14,
+    "esquiva": 11,
+    "determinacao": 12,
+    "movement": 11,
+    "xpReward": 10,
+    "attacks": [
+      {
+        "name": "Saraivada de Espinhos",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 14,
+        "damageType": "Perfuração",
+        "range": "24m",
+        "notes": "Atinge até 2 alvos e aplica Veneno"
+      },
+      {
+        "name": "Garras e Mordida",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 16,
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Voo Predatório",
+        "manaCost": 0,
+        "description": "Voa a 11 metros mantendo distância para bombardear com espinhos."
+      }
+    ],
+    "loot": "Espinhos venenosos (150 TO), tesouro no covil"
+  },
+  {
+    "id": "gigante-da-colina",
+    "name": "Gigante da Colina",
+    "category": "Gigante",
+    "size": "Enorme",
+    "challengeLevel": 7,
+    "description": "Titã de cinco metros de altura e apetite insaciável que arremessa rochedos como se fossem seixos.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "forca": 9,
+      "agilidade": 2,
+      "inteligencia": 2,
+      "vontade": 3
+    },
+    "pvMax": 130,
+    "pmMax": 20,
+    "bloqueio": 15,
+    "esquiva": 7,
+    "determinacao": 11,
+    "movement": 8,
+    "xpReward": 12,
+    "attacks": [
+      {
+        "name": "Tronco Ferrado",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 24,
+        "damageType": "Contusão",
+        "range": "3m",
+        "notes": "Aplica Caído (Força Dif 13)"
+      },
+      {
+        "name": "Rochedo",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 20,
+        "damageType": "Contusão",
+        "range": "24m",
+        "notes": "Área 2m"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Pisoteio Sísmico",
+        "manaCost": 15,
+        "description": "2x por combate: causa 18 de dano Contusão e Caído em todos a até 4m."
+      }
+    ],
+    "loot": "280 TO, tesouros variados em saco colossal"
+  },
+  {
+    "id": "limo-acido",
+    "name": "Limo Ácido",
+    "category": "Amorfo",
+    "size": "Médio",
+    "challengeLevel": 2,
+    "description": "Massa gelatinosa translúcida que desliza por corredores de masmorras dissolvendo carne, madeira e metal.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "forca": 4,
+      "agilidade": 2,
+      "inteligencia": 1,
+      "vontade": 3
+    },
+    "pvMax": 40,
+    "pmMax": 0,
+    "bloqueio": 8,
+    "esquiva": 7,
+    "determinacao": 11,
+    "movement": 4,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Pseudópode Ácido",
+        "rollAttr": "forca",
+        "rollBonus": 0,
+        "damage": 11,
+        "damageType": "Veneno",
+        "range": "Corpo a Corpo",
+        "notes": "Corrói -1 Bloqueio temporariamente"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Corpo Amorfo",
+        "manaCost": 0,
+        "description": "Imune a Críticos, Caído, Sangrando e Cego. Divide-se em dois limos menores se sofrer dano de Raio."
+      }
+    ],
+    "loot": "Moedas e gemas não-digeridas (35 TO)"
+  },
+  {
+    "id": "mimico",
+    "name": "Mímico",
+    "category": "Aberração",
+    "size": "Médio",
+    "challengeLevel": 3,
+    "description": "Metamorfo astuto que assume a aparência exata de um baú de tesouro ou porta para devorar aventureiros gananciosos.",
+    "portrait": "./assets/monsters/goblin-raider.svg",
+    "attributes": {
+      "forca": 5,
+      "agilidade": 3,
+      "inteligencia": 2,
+      "vontade": 3
+    },
+    "pvMax": 52,
+    "pmMax": 10,
+    "bloqueio": 12,
+    "esquiva": 8,
+    "determinacao": 11,
+    "movement": 5,
+    "xpReward": 5,
+    "attacks": [
+      {
+        "name": "Mordida Dentuça",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 14,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Adere ao alvo (Constringido)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Adesivo Natural",
+        "manaCost": 0,
+        "description": "Qualquer criatura que tocar o mímico ou sofrer sua mordida fica presa (Constringido, Força Dif 12)."
+      },
+      {
+        "name": "Emboscada Perfeita",
+        "manaCost": 0,
+        "description": "Indistinguível de um objeto comum; primeiro ataque tem +1d6."
+      }
+    ],
+    "loot": "70 TO em moedas presas no interior"
+  },
+  {
+    "id": "elemental-fogo",
+    "name": "Elemental do Fogo",
+    "category": "Elemental",
+    "size": "Grande",
+    "challengeLevel": 5,
+    "description": "Vórtice vivo de chamas incandescentes e brasas furiosas que incendeia tudo ao seu alcance.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "forca": 5,
+      "agilidade": 6,
+      "inteligencia": 2,
+      "vontade": 4
+    },
+    "pvMax": 75,
+    "pmMax": 40,
+    "bloqueio": 12,
+    "esquiva": 12,
+    "determinacao": 12,
+    "movement": 9,
+    "xpReward": 8,
+    "attacks": [
+      {
+        "name": "Punho Flamejante",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 16,
+        "damageType": "Fogo",
+        "range": "Corpo a Corpo",
+        "notes": "Aplica Queimando"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Corpo em Chamas",
+        "manaCost": 0,
+        "description": "Imune a Fogo e venenos; vulnerável a Água/Gelo (+6 dano). Quem atacar corpo a corpo sofre 6 dano Fogo."
+      },
+      {
+        "name": "Explosão Incandescente",
+        "manaCost": 20,
+        "description": "Causa 20 de dano Fogo e Queimando em 4m de raio."
+      }
+    ],
+    "loot": "Núcleo de brasa eterna (160 TO)"
+  },
+  {
+    "id": "golem-pedra",
+    "name": "Golem de Pedra",
+    "category": "Autômato",
+    "size": "Grande",
+    "challengeLevel": 6,
+    "description": "Guardião ancestral esculpido em rocha maciça e animado por runas eternas, quase imune a magia e lâminas comuns.",
+    "portrait": "./assets/portraits/dwarf-paladin.svg",
+    "attributes": {
+      "forca": 8,
+      "agilidade": 2,
+      "inteligencia": 1,
+      "vontade": 6
+    },
+    "pvMax": 120,
+    "pmMax": 20,
+    "bloqueio": 16,
+    "esquiva": 7,
+    "determinacao": 14,
+    "movement": 5,
+    "xpReward": 10,
+    "attacks": [
+      {
+        "name": "Punho de Granito",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 22,
+        "damageType": "Contusão",
+        "range": "2m",
+        "notes": "Aplica Atordoado (Força Dif 13)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Corpo Inanimado",
+        "manaCost": 0,
+        "description": "Reduz em 5 todo dano físico não-mágico; imune a venenos, medo, paralisia e sangramento."
+      },
+      {
+        "name": "Pulso de Lentidão",
+        "manaCost": 15,
+        "description": "Inimigos em 6m têm deslocamento reduzido à metade por 2 turnos."
+      }
+    ],
+    "loot": "Núcleo rúnico intacto (250 TO)"
+  },
+  {
+    "id": "diabrete",
+    "name": "Diabrete (Imp)",
+    "category": "Demônio",
+    "size": "Pequeno",
+    "challengeLevel": 2,
+    "description": "Pequeno demônio alado de cauda venenosa que serve feiticeiros sombrios como espião e sabotador.",
+    "portrait": "./assets/monsters/goblin-raider.svg",
+    "attributes": {
+      "forca": 2,
+      "agilidade": 5,
+      "inteligencia": 4,
+      "vontade": 3
+    },
+    "pvMax": 26,
+    "pmMax": 25,
+    "bloqueio": 9,
+    "esquiva": 11,
+    "determinacao": 12,
+    "movement": 9,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Ferrão da Cauda",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 9,
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Aplica Envenenado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Invisibilidade Demoníaca",
+        "manaCost": 10,
+        "description": "Fica Invisível até atacar."
+      },
+      {
+        "name": "Resistência Infernal",
+        "manaCost": 0,
+        "description": "Imune a Fogo e Veneno; vulnerável a dano Sagrado."
+      }
+    ],
+    "loot": "25 TO, pó de enxofre mágico"
+  },
+  {
+    "id": "demonio-menor",
+    "name": "Demônio Menor (Abissal)",
+    "category": "Demônio",
+    "size": "Grande",
+    "challengeLevel": 6,
+    "description": "Fera infernal de chifres retorcidos, pele avermelhada e chicote de brasas, invocada por rituais profanos.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "forca": 7,
+      "agilidade": 5,
+      "inteligencia": 4,
+      "vontade": 5
+    },
+    "pvMax": 105,
+    "pmMax": 50,
+    "bloqueio": 14,
+    "esquiva": 11,
+    "determinacao": 13,
+    "movement": 8,
+    "xpReward": 10,
+    "attacks": [
+      {
+        "name": "Garras Infernais",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 18,
+        "damageType": "Corte",
+        "range": "2m",
+        "notes": "+4 dano Fogo"
+      },
+      {
+        "name": "Chicote de Brasas",
+        "rollAttr": "agilidade",
+        "rollBonus": 1,
+        "damage": 15,
+        "damageType": "Fogo",
+        "range": "4m",
+        "notes": "Puxa o alvo e aplica Queimando"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Aura de Enxofre",
+        "manaCost": 0,
+        "description": "Imune a Fogo e Veneno; vulnerável a dano Sagrado (+6 dano)."
+      },
+      {
+        "name": "Passo das Chamas",
+        "manaCost": 15,
+        "description": "Teleporta-se até 12m em uma explosão causando 14 de dano Fogo nos adjacentes."
+      }
+    ],
+    "loot": "220 TO, essência abissal, arma encantada menor"
+  },
+  {
+    "id": "dragao-jovem",
+    "name": "Dragão Jovem (Fogo / Gelo)",
+    "category": "Dragão",
+    "size": "Enorme",
+    "challengeLevel": 8,
+    "description": "Dragão jovem porém já temível, com escamas duras como aço, asas poderosas e sopro elemental devastador.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "forca": 8,
+      "agilidade": 5,
+      "inteligencia": 5,
+      "vontade": 6
+    },
+    "pvMax": 140,
+    "pmMax": 80,
+    "bloqueio": 16,
+    "esquiva": 11,
+    "determinacao": 14,
+    "movement": 12,
+    "xpReward": 15,
+    "attacks": [
+      {
+        "name": "Mordida Dracônica",
+        "rollAttr": "forca",
+        "rollBonus": 2,
+        "damage": 22,
+        "damageType": "Perfuração",
+        "range": "2m",
+        "notes": "+6 dano elemental"
+      },
+      {
+        "name": "Garras",
+        "rollAttr": "forca",
+        "rollBonus": 1,
+        "damage": 18,
+        "damageType": "Corte",
+        "range": "2m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Sopro Dracônico",
+        "manaCost": 25,
+        "description": "Cone de 9m: 28 de dano Fogo (ou Gelo) em todos na área (Agilidade Dif 14 reduz à metade). Recarrega a cada 2 turnos."
+      },
+      {
+        "name": "Escamas Blindadas",
+        "manaCost": 0,
+        "description": "Imune ao seu elemento e reduz em 4 todo dano físico não-mágico."
+      },
+      {
+        "name": "Voo Poderoso",
+        "manaCost": 0,
+        "description": "Deslocamento aéreo de 12 metros."
+      }
+    ],
+    "loot": "600 TO, escamas de dragão, 1 item mágico raro"
+  },
+  {
+    "id": "dragao-anciao",
+    "name": "Dragão Ancião Vermelho",
+    "category": "Dragão",
+    "size": "Colossal",
+    "challengeLevel": 10,
+    "description": "Lenda viva dos céus de Drakon: um colosso milenar de escamas rubras incandescentes cuja fúria reduz fortalezas inteiras a cinzas.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "forca": 10,
+      "agilidade": 5,
+      "inteligencia": 7,
+      "vontade": 8
+    },
+    "pvMax": 240,
+    "pmMax": 150,
+    "bloqueio": 18,
+    "esquiva": 12,
+    "determinacao": 16,
+    "movement": 14,
+    "xpReward": 30,
+    "attacks": [
+      {
+        "name": "Mandíbula Colossal",
+        "rollAttr": "forca",
+        "rollBonus": 3,
+        "damage": 30,
+        "damageType": "Perfuração",
+        "range": "3m",
+        "notes": "+10 dano Fogo"
+      },
+      {
+        "name": "Garras e Cauda",
+        "rollAttr": "forca",
+        "rollBonus": 2,
+        "damage": 24,
+        "damageType": "Corte",
+        "range": "4m",
+        "notes": "Atinge até 2 alvos e aplica Caído"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Sopro Infernal",
+        "manaCost": 35,
+        "description": "Cone de 15m: 45 de dano Fogo e Queimando em todos na área (Agilidade Dif 15 reduz à metade)."
+      },
+      {
+        "name": "Presença Aterradora",
+        "manaCost": 15,
+        "description": "Todos os inimigos em 18m testam Determinação (Dif 14) ou ficam Amedrontados por 2 turnos."
+      },
+      {
+        "name": "Bater de Asas Cataclísmico",
+        "manaCost": 20,
+        "description": "Empurra todos a até 6m causando 18 dano Contusão e Caído enquanto alça voo."
+      },
+      {
+        "name": "Escamas Lendárias",
+        "manaCost": 0,
+        "description": "Imune a Fogo, medo e paralisia; redução de 6 contra dano físico."
+      }
+    ],
+    "loot": "2500 TO, tesouro dracônico, 2 itens mágicos lendários, escamas ancestrais"
+  }
+]

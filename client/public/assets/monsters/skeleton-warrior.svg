@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#112b38"/>
+      <stop offset="55%" stop-color="#09151e"/>
+      <stop offset="100%" stop-color="#04080d"/>
+    </radialGradient>
+    <radialGradient id="necroticGlow" cx="50%" cy="42%" r="46%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.52"/>
+      <stop offset="45%" stop-color="#0891b2" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0e7490" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bone" x1="0.2" y1="0" x2="0.85" y2="1">
+      <stop offset="0%" stop-color="#f2ecdc"/>
+      <stop offset="58%" stop-color="#c9bfa6"/>
+      <stop offset="100%" stop-color="#78715e"/>
+    </linearGradient>
+    <linearGradient id="rustedHelm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="48%" stop-color="#57534e"/>
+      <stop offset="100%" stop-color="#1c1917"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
+      <stop offset="62%" stop-color="#020508" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#020508" stop-opacity="0.76"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <rect width="512" height="512" fill="url(#necroticGlow)"/>
+
+  <!-- Eerie Cyan Soul Wisps -->
+  <g fill="#67e8f9" opacity="0.65">
+    <circle cx="104" cy="140" r="2.6"/><circle cx="408" cy="158" r="2.8"/>
+    <circle cx="130" cy="286" r="2"/><circle cx="384" cy="272" r="2.2"/>
+  </g>
+
+  <!-- Notched Ancient Broadsword behind Right Shoulder -->
+  <g transform="translate(382, 184) rotate(22)">
+    <polygon points="-11,-140 0,-166 11,-140 10,96 -10,96" fill="url(#rustedHelm)" stroke="#0f172a" stroke-width="2.5"/>
+    <polygon points="10,-72 2,-64 10,-56" fill="#09151e"/>
+    <polygon points="-10,-28 -2,-20 -10,-12" fill="#09151e"/>
+    <rect x="-42" y="92" width="84" height="12" rx="3" fill="#475569" stroke="#0f172a" stroke-width="2"/>
+  </g>
+
+  <!-- Tattered Crypt Shroud & Skeletal Ribcage under Rusted Armor -->
+  <g>
+    <path d="M88 372 Q152 308 256 314 Q360 308 424 372 L456 512 L56 512 Z" fill="#1c242b" stroke="#080c10" stroke-width="3"/>
+    <!-- Exposed Spine & Ribs -->
+    <rect x="244" y="294" width="24" height="218" fill="#8f8773"/>
+    <g stroke="url(#bone)" stroke-width="11" stroke-linecap="round" fill="none">
+      <path d="M188 358 Q256 376 324 358"/>
+      <path d="M182 396 Q256 416 330 396"/>
+      <path d="M190 434 Q256 452 322 434"/>
+      <path d="M202 472 Q256 488 310 472"/>
+    </g>
+    <!-- Rusted Iron Shoulder Pauldrons -->
+    <path d="M68 378 Q94 298 186 314 L198 392 Q124 416 68 422 Z" fill="url(#rustedHelm)" stroke="#0f172a" stroke-width="3"/>
+    <path d="M444 378 Q418 298 326 314 L314 392 Q388 416 444 422 Z" fill="url(#rustedHelm)" stroke="#0f172a" stroke-width="3"/>
+  </g>
+
+  <!-- Cervical Spine Neck -->
+  <rect x="236" y="276" width="40" height="46" rx="4" fill="#99907a" stroke="#363229" stroke-width="2"/>
+  <line x1="236" y1="292" x2="276" y2="292" stroke="#363229" stroke-width="2.5"/>
+  <line x1="236" y1="308" x2="276" y2="308" stroke="#363229" stroke-width="2.5"/>
+
+  <!-- Weathered Humanoid Skull -->
+  <g>
+    <!-- Cranium & Cheekbones -->
+    <path d="M184 190 Q180 112 256 108 Q332 112 328 190 L322 232 Q308 250 296 262 L292 292 Q256 308 220 292 L216 262 Q204 250 190 232 Z" fill="url(#bone)" stroke="#3d382c" stroke-width="2.5"/>
+    <!-- Skull cracks -->
+    <path d="M214 148 L228 172 L222 186 M298 226 L310 242" stroke="#4a4437" stroke-width="2" fill="none"/>
+    <!-- Hollow Cheek Shadows -->
+    <path d="M196 236 L216 254 L208 264 Z" fill="#4a4437" opacity="0.6"/>
+    <path d="M316 236 L296 254 L304 264 Z" fill="#4a4437" opacity="0.6"/>
+    <!-- Nasal Cavity -->
+    <polygon points="256,216 244,244 256,240 268,244" fill="#0d1318"/>
+    <!-- Grinning Skeletal Teeth -->
+    <path d="M218 262 Q256 270 294 262 L290 288 Q256 296 222 288 Z" fill="#11161c"/>
+    <g fill="url(#bone)" stroke="#2e2a22" stroke-width="1.5">
+      <rect x="224" y="263" width="10" height="22" rx="2"/>
+      <rect x="236" y="265" width="10" height="23" rx="2"/>
+      <rect x="248" y="266" width="10" height="24" rx="2"/>
+      <rect x="260" y="266" width="10" height="24" rx="2"/>
+      <rect x="272" y="265" width="10" height="23" rx="2"/>
+      <rect x="284" y="263" width="8" height="21" rx="2"/>
+    </g>
+    <!-- Deep Eye Sockets with Blazing Cyan Undead Fire -->
+    <ellipse cx="222" cy="204" rx="22" ry="18" fill="#070d12"/>
+    <ellipse cx="290" cy="204" rx="22" ry="18" fill="#070d12"/>
+    <circle cx="222" cy="204" r="14" fill="#06b6d4" opacity="0.45"/>
+    <circle cx="290" cy="204" r="14" fill="#06b6d4" opacity="0.45"/>
+    <circle cx="222" cy="204" r="7" fill="#67e8f9"/>
+    <circle cx="290" cy="204" r="7" fill="#67e8f9"/>
+    <circle cx="222" cy="204" r="3" fill="#ffffff"/>
+    <circle cx="290" cy="204" r="3" fill="#ffffff"/>
+  </g>
+
+  <!-- Battle-Damaged Rusted Open Iron Helm -->
+  <path d="M172 178 Q174 92 256 84 Q338 92 340 178 L324 190 Q288 160 256 172 Q224 160 188 190 Z" fill="url(#rustedHelm)" stroke="#0f172a" stroke-width="3.5"/>
+  <!-- Deep sword dent in helm -->
+  <path d="M276 96 L312 146" stroke="#0c0f14" stroke-width="5" stroke-linecap="round"/>
+  <path d="M279 98 L314 146" stroke="#cbd5e1" stroke-width="1.5" opacity="0.5"/>
+  <!-- Iron nasal bar -->
+  <polygon points="250,152 262,152 260,214 252,214" fill="url(#rustedHelm)" stroke="#0f172a" stroke-width="2"/>
+
+  <rect width="512" height="512" fill="url(#vignette)" pointer-events="none"/>
+</svg>

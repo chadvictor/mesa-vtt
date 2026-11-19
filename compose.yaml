@@ -1,0 +1,53 @@
+# Mesa VTT — Standalone Docker Compose
+#
+# Quick start (zero-config JSON FileStore with persistent volume):
+#   docker compose up -d
+#   Open http://localhost:8094
+#
+# Self-hosted with PostgreSQL (recommended for larger communities):
+#   DATABASE_URL=postgres://mesa:mesa_dev_password@postgres:5432/mesa_vtt?sslmode=disable \
+#     docker compose --profile postgres up -d
+
+services:
+  mesa-vtt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${MESA_PORT:-8094}:8094"
+    environment:
+      LISTEN_ADDRESS: ":8094"
+      STATIC_DIR: "/app/web"
+      AUTH_MODE: "${AUTH_MODE:-local}"
+      MESA_DATA_FILE: "/data/mesa-vtt-data.json"
+      DATABASE_URL: "${DATABASE_URL:-}"
+      SESSION_SECRET: "${SESSION_SECRET:-}"
+      APP_ORIGIN: "${APP_ORIGIN:-}"
+      MESA_ICE_SERVERS: "${MESA_ICE_SERVERS:-}"
+      GEMINI_API_KEY: "${GEMINI_API_KEY:-}"
+      GEMINI_IMAGE_MODEL: "${GEMINI_IMAGE_MODEL:-gemini-2.5-flash-image}"
+      EXTERNAL_TICKET_URL: "${EXTERNAL_TICKET_URL:-}"
+      EXTERNAL_AUTH_TOKEN: "${EXTERNAL_AUTH_TOKEN:-}"
+    volumes:
+      - mesa_vtt_data:/data
+
+  postgres:
+    image: postgres:17-alpine
+    profiles: ["postgres"]
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "${POSTGRES_DB:-mesa_vtt}"
+      POSTGRES_USER: "${POSTGRES_USER:-mesa}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-mesa_dev_password}"
+    volumes:
+      - mesa_vtt_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-mesa} -d $${POSTGRES_DB:-mesa_vtt}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mesa_vtt_data:
+  mesa_vtt_pgdata:

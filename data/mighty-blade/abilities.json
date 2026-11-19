@@ -1,0 +1,3061 @@
+[
+  {
+    "id": "guerreiro-de-aco",
+    "name": "Guerreiro de Aço",
+    "classId": "guerreiro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Guerreiro)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seu treinamento constante em batalha permite vestir proteções pesadas sem perder mobilidade. Reduz em 1 a Força Necessária (FN) de armaduras e escudos e ignora penalidades de deslocamento de armaduras pesadas.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "ataque-poderoso",
+    "name": "Ataque Poderoso",
+    "classId": "guerreiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Você concentra toda a força do seu corpo em um golpe esmagador. Realize um ataque corpo a corpo que causa +6 de dano adicional caso acerte.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 0,
+      "damageFormula": "weapon + 6",
+      "damageType": "Fisico",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "implacavel",
+    "name": "Implacável",
+    "classId": "guerreiro",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Guerreiro Nível 2",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Permanente",
+    "description": "Mesmo quando o inimigo apara ou desvia de seu golpe, a brutalidade do impacto atravessa sua guarda. Quando errar um ataque corpo a corpo (exceto Falha Crítica), ainda causa dano igual à sua Força.",
+    "automation": {
+      "damageFormula": "forca",
+      "damageType": "Contusao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "valor-da-vitoria",
+    "name": "Valor da Vitória",
+    "classId": "guerreiro",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Guerreiro Nível 2",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "description": "O triunfo em combate renova seu fôlego. Sempre que reduzir um inimigo relevante a 0 PV em combate corpo a corpo, você recupera 15 PV e 10 PM.",
+    "automation": {
+      "healFormula": "15",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "postura-defensiva",
+    "name": "Postura Defensiva",
+    "classId": "guerreiro",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Força 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "1 Turno",
+    "description": "Você firma os pés e ergue sua arma ou escudo em guarda fechada. Recebe +2 em Bloqueio até o início do seu próximo turno.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "golpe-giratorio",
+    "name": "Golpe Giratório",
+    "classId": "guerreiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Adjacente (2m)",
+    "duration": "Instantânea",
+    "description": "Você executa um arco amplo com sua arma, atingindo todos os inimigos adjacentes. Faça um único teste de ataque e compare com a Defesa de cada alvo no alcance.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 0,
+      "damageFormula": "weapon",
+      "damageType": "Corte",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "investida-brutal",
+    "name": "Investida Brutal",
+    "classId": "guerreiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Deslocamento",
+    "duration": "Instantânea",
+    "description": "Você avança em linha reta pelo menos 4 metros e desfere um impacto violento. Causa +4 de dano e derruba o alvo (Caído) se ele falhar em um teste de Força (Dif 11).",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 1,
+      "damageFormula": "weapon + 4",
+      "damageType": "Contusao",
+      "appliesCondition": "caido",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "aparar-golpe",
+    "name": "Aparar Golpe",
+    "classId": "guerreiro",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Força 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "description": "Ao ser alvo de um ataque corpo a corpo, você intercepta a lâmina adversária com precisão. Recebe +3 em Bloqueio contra esse ataque.",
+    "automation": {
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "quebrar-defesa",
+    "name": "Quebrar Defesa",
+    "classId": "guerreiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 5",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Até o fim da cena",
+    "description": "Um golpe direcionado à armadura ou escudo do inimigo que abre brechas permanentes. Causa dano normal e reduz o Bloqueio do alvo em -2 até o final do combate.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 0,
+      "damageFormula": "weapon",
+      "damageType": "Contusao",
+      "appliesCondition": "indefeso",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "maestria-em-armas",
+    "name": "Maestria em Armas",
+    "classId": "guerreiro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Guerreiro Nível 1",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Escolha uma família de armas (Espadas, Machados, Martelos ou Armas de Haste). Você recebe +1 em testes de ataque e +2 de dano ao empunhá-las.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 1,
+      "damageFormula": "2",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "vitalidade-marcial",
+    "name": "Vitalidade Marcial",
+    "classId": "guerreiro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Força 4",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seu corpo calejado por batalhas suporta ferimentos que derrubariam soldados comuns. Aumenta seus Pontos de Vida máximos em +15 permanentemente.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "execucao-heroica",
+    "name": "Execução Heroica",
+    "classId": "guerreiro",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Guerreiro Nível 5",
+    "manaCost": 25,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Um golpe finalizador devastador contra oponentes enfraquecidos. Realize um ataque com +2 no teste; se o alvo estiver com metade ou menos dos PV máximos, causa +12 de dano adicional.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 2,
+      "damageFormula": "weapon + 12",
+      "damageType": "Corte",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "voto-sagrado",
+    "name": "Voto Sagrado",
+    "classId": "paladino",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Paladino)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua devoção inabalável à justiça protege sua mente contra terrores sombrios. Você recebe +2 em Determinação e é imune à condição Assustado.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "cura-pelas-maos",
+    "name": "Cura pelas Mãos",
+    "classId": "paladino",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Toque",
+    "duration": "Instantânea",
+    "description": "Ao tocar um aliado (ou a si mesmo), você canaliza energia luminosa que fecha ferimentos. Restaura 20 + Vontade Pontos de Vida.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "20 + vontade",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "destruicao-divina",
+    "name": "Destruição Divina",
+    "classId": "paladino",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 3, Vontade 3",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Você imbui sua arma com chamas da justiça. O ataque causa +8 de dano Sagrado (+12 se o alvo for Morto-Vivo ou Demônio).",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 1,
+      "damageFormula": "weapon + 8",
+      "damageType": "Sagrado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "aura-de-protecao",
+    "name": "Aura de Proteção",
+    "classId": "paladino",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Raio de 6m",
+    "duration": "3 Turnos",
+    "description": "Uma luz dourada emana de sua armadura, protegendo seus companheiros. Todos os aliados a até 6 metros recebem +2 em Bloqueio e +2 em Determinação.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "escudo-da-fe",
+    "name": "Escudo da Fé",
+    "classId": "paladino",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Paladino Nível 1",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Adjacente",
+    "duration": "Instantânea",
+    "description": "Quando um aliado adjacente for atingido por um ataque, você se interpõe com seu escudo ou corpo, recebendo o golpe em seu lugar com +2 em Bloqueio.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "julgamento-celestial",
+    "name": "Julgamento Celestial",
+    "classId": "paladino",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 20,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "3 Turnos",
+    "description": "Você aponta sua arma e declara um inimigo culpado diante da luz. O alvo sofre 10 de dano Sagrado e ataques contra ele recebem +2 nos testes enquanto a marca durar.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "10 + vontade",
+      "damageType": "Sagrado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "purificar-mal",
+    "name": "Purificar o Mal",
+    "classId": "paladino",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Toque",
+    "duration": "Instantânea",
+    "description": "Uma prece limpa o corpo e o espírito do alvo, removendo imediatamente condições de Envenenado, Assustado, Cego ou Paralisado.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "10",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "montaria-sagrada",
+    "name": "Montaria Sagrada",
+    "classId": "paladino",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Paladino Nível 3",
+    "manaCost": 20,
+    "difficulty": 10,
+    "range": "Adjacente",
+    "duration": "1 Cena",
+    "description": "Você invoca um corcel abençoado de inteligência elevada que obedece seus comandos, concedendo deslocamento 12m e +2 em investidas montadas.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "bencao-da-justica",
+    "name": "Bênção da Justiça",
+    "classId": "paladino",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Toque",
+    "duration": "3 Turnos",
+    "description": "Você abençoa uma arma, fazendo-a brilhar com luz prateada. Os ataques com essa arma causam +4 de dano Sagrado adicional.",
+    "automation": {
+      "damageFormula": "4",
+      "damageType": "Sagrado",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "bastiao-inabalavel",
+    "name": "Bastião Inabalável",
+    "classId": "paladino",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Paladino Nível 5",
+    "manaCost": 20,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "1 vez por combate",
+    "description": "Quando um ataque reduziria seus Pontos de Vida a 0, sua fé o mantém erguido. Você permanece de pé com 15 PV e imune a condições até seu próximo turno.",
+    "automation": {
+      "healFormula": "15",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "furia-barbara",
+    "name": "Fúria",
+    "classId": "barbaro",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Automática (Bárbaro)",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "3 Turnos",
+    "description": "Você se entrega à fúria primal. Durante 3 turnos, recebe +2 em testes de Força e +6 de dano corpo a corpo, mas sofre -2 na Defesa.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 2,
+      "damageFormula": "6",
+      "defenseBonus": -2,
+      "appliesCondition": "furia",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "pele-de-ferro",
+    "name": "Pele de Ferro",
+    "classId": "barbaro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Força 4",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Acostumado a lutar sem armaduras pesadas, seus músculos absorvem impactos com facilidade. Recebe +2 em Bloqueio enquanto não vestir armadura pesada.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "grito-de-guerra",
+    "name": "Grito de Guerra",
+    "classId": "barbaro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 3",
+    "manaCost": 10,
+    "difficulty": 10,
+    "range": "Raio de 6m",
+    "duration": "2 Turnos",
+    "description": "Você solta um brado aterrador que abala os inimigos próximos. Criaturas no alcance devem passar em Determinação (Dif 11) ou ficam Amedrontadas por 2 turnos.",
+    "automation": {
+      "rollAttribute": "forca",
+      "appliesCondition": "amedrontado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "golpe-devastador",
+    "name": "Golpe Devastador",
+    "classId": "barbaro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 5",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Usando uma arma de duas mãos, você desfere um golpe selvagem capaz de partir escudos. O ataque causa +10 de dano físico.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 0,
+      "damageFormula": "weapon + 10",
+      "damageType": "Corte",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "instinto-selvagem",
+    "name": "Instinto Selvagem",
+    "classId": "barbaro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Bárbaro Nível 1",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seus sentidos aguçados percebem emboscadas antes que aconteçam. Recebe +2 em Iniciativa e nunca fica desprevenido no primeiro turno de combate.",
+    "automation": {
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "frenesi-sanguinario",
+    "name": "Frenesi Sanguinário",
+    "classId": "barbaro",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Bárbaro Nível 2",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Quando sofre dano de um inimigo adjacente enquanto está em Fúria, você responde imediatamente com um ataque corpo a corpo.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 0,
+      "damageFormula": "weapon",
+      "damageType": "Fisico",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "salto-esmagador",
+    "name": "Salto Esmagador",
+    "classId": "barbaro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "6 metros (Área 2m)",
+    "duration": "Instantânea",
+    "description": "Você salta até 6 metros e desce com toda a força sobre os inimigos. Causa Força + 8 de dano Contusão em todos na área de impacto e aplica Caído.",
+    "automation": {
+      "rollAttribute": "forca",
+      "damageFormula": "forca + 8",
+      "damageType": "Contusao",
+      "appliesCondition": "caido",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "vigor-selvagem",
+    "name": "Vigor Selvagem",
+    "classId": "barbaro",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Força 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "description": "Ignorando a dor pela pura adrenalina, você recupera imediatamente 20 Pontos de Vida.",
+    "automation": {
+      "healFormula": "20",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "quebrador-de-ossos",
+    "name": "Quebrador de Ossos",
+    "classId": "barbaro",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Força 6",
+    "manaCost": 20,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Um golpe brutal direcionado ao tronco ou cabeça do oponente. Causa +8 de dano Contusão e deixa o alvo Atordoado por 1 turno se falhar em Força (Dif 12).",
+    "automation": {
+      "rollAttribute": "forca",
+      "damageFormula": "weapon + 8",
+      "damageType": "Contusao",
+      "appliesCondition": "atordoado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "indomavel",
+    "name": "Indomável",
+    "classId": "barbaro",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Bárbaro Nível 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "1 Turno",
+    "description": "Sua fúria rejeita qualquer tentativa de subjugar sua mente ou corpo. Ignora imediatamente efeitos de Paralisado, Imobilizado ou Assustado.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "ataque-furtivo",
+    "name": "Ataque Furtivo",
+    "classId": "ladino",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Automática (Ladino)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Corpo a Corpo / Curto",
+    "duration": "Instantânea",
+    "description": "Quando ataca um alvo desprevenido, flanqueado ou que não percebeu sua presença, você atinge pontos vitais e causa +8 de dano adicional.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "weapon + 8",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "furtivo",
+    "name": "Furtivo",
+    "classId": "ladino",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Você se move como uma sombra silenciosa. Rola +1d6 adicional em testes de Agilidade para se esconder e mover-se em silêncio.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "movimentos-evasivos",
+    "name": "Movimentos Evasivos",
+    "classId": "ladino",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "description": "Com reflexos felinos, você se esquiva no último instante. Recebe +3 em Esquiva contra um ataque ou reduz à metade o dano de um efeito em área.",
+    "automation": {
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "golpe-baixo",
+    "name": "Golpe Baixo",
+    "classId": "ladino",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "1 Turno",
+    "description": "Um ataque sujo direcionado aos olhos ou articulações. Causa +4 de dano e deixa o alvo Cego até o próximo turno dele.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "weapon + 4",
+      "damageType": "Perfuracao",
+      "appliesCondition": "cego",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "maos-leves",
+    "name": "Mãos Leves",
+    "classId": "ladino",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Toque",
+    "duration": "Permanente",
+    "description": "Perito em fechaduras, armadilhas e pequenos furtos. Recebe +1d6 em testes de Agilidade ou Inteligência para abrir trancas, desarmar armadilhas e punga.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "lamina-envenenada",
+    "name": "Lâmina Envenenada",
+    "classId": "ladino",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "3 Turnos",
+    "description": "Você reveste sua arma com toxina concentrada. O próximo ataque bem-sucedido aplica a condição Envenenado (5 de dano Veneno por turno durante 3 turnos).",
+    "automation": {
+      "damageFormula": "5",
+      "damageType": "Veneno",
+      "appliesCondition": "envenenado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "passo-nas-sombras",
+    "name": "Passo nas Sombras",
+    "classId": "ladino",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "9 metros",
+    "duration": "Até atacar",
+    "description": "Você desliza de uma sombra a outra até 9 metros de distância e fica Invisível em penumbra até realizar um ataque ou magia.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "appliesCondition": "invisivel",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "ataque-preciso",
+    "name": "Ataque Preciso",
+    "classId": "ladino",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Você desliza a lâmina exatamente pelas frestas da proteção adversária. Seu ataque ignora o bônus de armadura do alvo.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "damageFormula": "weapon + 4",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "fuga-acrobatica",
+    "name": "Fuga Acrobática",
+    "classId": "ladino",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "4 metros",
+    "duration": "Instantânea",
+    "description": "Após esquivar de um golpe, você rola pelo chão e reposiciona-se até 4 metros de distância sem provocar ataques de oportunidade.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "golpe-mortal",
+    "name": "Golpe Mortal",
+    "classId": "ladino",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Ladino Nível 5",
+    "manaCost": 25,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Um golpe cirúrgico devastador contra um alvo desprevenido ou flanqueado. Causa +14 de dano Perfurante e aplica Sangrando.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "damageFormula": "weapon + 14",
+      "damageType": "Perfuracao",
+      "appliesCondition": "sangrando",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "rastreador",
+    "name": "Rastreador",
+    "classId": "patrulheiro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Patrulheiro)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Mestre das trilhas e dos ermos. Recebe +1d6 em testes de sobrevivência, rastreamento, navegação e percepção em ambientes naturais.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "tiro-certeiro",
+    "name": "Tiro Certeiro",
+    "classId": "patrulheiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Alcance da Arma",
+    "duration": "Instantânea",
+    "description": "Você respira fundo e alinha o disparo perfeito com arco ou besta. Recebe +2 no teste de ataque e causa +6 de dano Perfurante adicional.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "damageFormula": "weapon + 6",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "disparo-rapido",
+    "name": "Disparo Rápido",
+    "classId": "patrulheiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Alcance da Arma",
+    "duration": "Instantânea",
+    "description": "Com destreza impressionante, você encaixa e dispara duas flechas em sequência contra o mesmo alvo ou alvos diferentes no mesmo turno.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 0,
+      "damageFormula": "weapon",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "companheiro-animal",
+    "name": "Companheiro Animal",
+    "classId": "patrulheiro",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Patrulheiro Nível 1",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "12 metros",
+    "duration": "Permanente",
+    "description": "Você mantém um vínculo leal com um animal selvagem (Lobo, Águia ou Pantera) que o acompanha em expedições e combate sob seu comando.",
+    "automation": {
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "inimigo-jurado",
+    "name": "Inimigo Jurado",
+    "classId": "patrulheiro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Patrulheiro Nível 1",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Escolha um grupo de criaturas (Goblins, Orcs, Mortos-Vivos, Bestas ou Dragões). Recebe +2 em ataques e +4 de dano contra esse tipo de inimigo.",
+    "automation": {
+      "rollBonus": 2,
+      "damageFormula": "4",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "chuva-de-flechas",
+    "name": "Chuva de Flechas",
+    "classId": "patrulheiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 5",
+    "manaCost": 20,
+    "difficulty": null,
+    "range": "Longo (Área 4m)",
+    "duration": "Instantânea",
+    "description": "Você dispara uma saraivada de flechas para o alto que chovem sobre uma área de 4 metros de raio, causando dano da arma + 4 Perfurante a todos na zona.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "weapon + 4",
+      "damageType": "Perfuracao",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "flecha-imobilizadora",
+    "name": "Flecha Imobilizadora",
+    "classId": "patrulheiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Alcance da Arma",
+    "duration": "2 Turnos",
+    "description": "Um tiro preciso que prende a roupa ou o membro do alvo ao chão. Causa dano normal e aplica Imobilizado até o alvo gastar uma ação para se soltar.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "weapon",
+      "damageType": "Perfuracao",
+      "appliesCondition": "imobilizado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "camuflagem-natural",
+    "name": "Camuflagem Natural",
+    "classId": "patrulheiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "1 Cena",
+    "description": "Usando folhagens, lama e sombras do ambiente selvagem, você se mescla ao terreno e fica Invisível enquanto permanecer imóvel ou se mover à metade do deslocamento.",
+    "automation": {
+      "appliesCondition": "invisivel",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "armadilha-de-caca",
+    "name": "Armadilha de Caça",
+    "classId": "patrulheiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 3",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Adjacente",
+    "duration": "Até ativar",
+    "description": "Você monta rapidamente uma armadilha camuflada no solo. A primeira criatura inimiga que pisar sofre 12 de dano Perfurante e fica Imobilizada.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "12",
+      "damageType": "Perfuracao",
+      "appliesCondition": "imobilizado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "olho-de-aguia",
+    "name": "Olho de Águia",
+    "classId": "patrulheiro",
+    "category": "suporte",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "3 Turnos",
+    "description": "Sua visão alcança distâncias sobre-humanas. Dobra o alcance efetivo de armas de distância e ignora cobertura parcial ou penalidades de vento.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "artes-marciais",
+    "name": "Artes Marciais",
+    "classId": "monge",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Automática (Monge)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Permanente",
+    "description": "Seu corpo é uma arma aperfeiçoada. Seus golpes desarmados podem usar Agilidade para atacar e causam Agilidade + 4 de dano Contusão.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "agilidade + 4",
+      "damageType": "Contusao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "rajada-de-golpes",
+    "name": "Rajada de Golpes",
+    "classId": "monge",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Você executa uma combinação veloz de socos e chutes, realizando dois ataques desarmados completos no mesmo turno.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "agilidade + 4",
+      "damageType": "Contusao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "corpo-harmonioso",
+    "name": "Corpo Harmonioso",
+    "classId": "monge",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "A harmonia entre corpo e espírito substitui o metal. Enquanto não usar armaduras ou escudos, recebe +2 em Esquiva.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "palma-atordoante",
+    "name": "Palma Atordoante",
+    "classId": "monge",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 4, Vontade 3",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "1 Turno",
+    "description": "Um impacto concentrado nos pontos de pressão do adversário. Causa Agilidade + 6 de dano Contusão e deixa o alvo Atordoado por 1 turno se falhar em Força (Dif 11).",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "agilidade + 6",
+      "damageType": "Contusao",
+      "appliesCondition": "atordoado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "desviar-projeteis",
+    "name": "Desviar Projéteis",
+    "classId": "monge",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "description": "Você intercepta no ar uma flecha, virote ou adaga arremessada contra você, anulando completamente o ataque.",
+    "automation": {
+      "defenseBonus": 4,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "passo-do-vento",
+    "name": "Passo do Vento",
+    "classId": "monge",
+    "category": "suporte",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "2 Turnos",
+    "description": "Canalizando chi para as pernas, você dobra seu deslocamento e pode correr sobre superfícies verticais ou água sem cair durante seu movimento.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "meditacao-restauradora",
+    "name": "Meditação Restauradora",
+    "classId": "monge",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "description": "Você alinha sua respiração e desperta sua energia interior, recuperando 25 PV e removendo uma condição negativa (como Envenenado ou Sangrando).",
+    "automation": {
+      "healFormula": "25",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "onda-de-chi",
+    "name": "Onda de Chi",
+    "classId": "monge",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 4",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "9 metros",
+    "duration": "Instantânea",
+    "description": "Você projeta uma onda de energia espiritual com as palmas das mãos, causando 16 + Vontade de dano Arcano e empurrando o alvo 3 metros para trás.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "16 + vontade",
+      "damageType": "Arcano",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "mente-serena",
+    "name": "Mente Serena",
+    "classId": "monge",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua disciplina meditativa protege sua consciência. Recebe +2 em Determinação e bônus de +1d6 contra encantamentos e ilusões.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "inspiracao-bardica",
+    "name": "Inspiração Bárdica",
+    "classId": "bardo",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Automática (Bardo)",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Raio de 9m",
+    "duration": "3 Turnos",
+    "description": "Sua música inflamada eleva o ânimo dos heróis. Todos os aliados que o ouvirem recebem +2 em testes de ataque e +2 de dano por 3 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "rollBonus": 2,
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "cancao-de-cura",
+    "name": "Canção de Cura",
+    "classId": "bardo",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Raio de 9m",
+    "duration": "Instantânea",
+    "description": "Uma melodia suave e reconfortante fecha ferimentos leves. Todos os aliados a até 9 metros recuperam 15 + Vontade Pontos de Vida.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "15 + vontade",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "balada-da-coragem",
+    "name": "Balada da Coragem",
+    "classId": "bardo",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 3",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Raio de 9m",
+    "duration": "3 Turnos",
+    "description": "Versos épicos dissipam o terror do campo de batalha. Remove Assustado de todos os aliados próximos e concede +2 em Determinação.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "defenseBonus": 2,
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "acorde-dissonante",
+    "name": "Acorde Dissonante",
+    "classId": "bardo",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 4",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "12 metros",
+    "duration": "Instantânea",
+    "description": "Um acorde estridente rasga a concentração de um inimigo, causando 14 + Vontade de dano Psíquico e aplicando Silenciado por 1 turno.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "14 + vontade",
+      "damageType": "Psiquico",
+      "appliesCondition": "silenciado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "melodia-fascinante",
+    "name": "Melodia Fascinante",
+    "classId": "bardo",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 4",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "9 metros",
+    "duration": "2 Turnos",
+    "description": "Uma cantiga hipnótica envolve até 3 inimigos. Alvos que falharem em Determinação (Dif 11) ficam Atordoados enquanto você mantiver a música.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "appliesCondition": "atordoado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "verso-cortante",
+    "name": "Verso Cortante",
+    "classId": "bardo",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "12 metros",
+    "duration": "Instantânea",
+    "description": "Você dispara uma rima mordaz no momento exato do ataque inimigo, desconcentrando-o e impondo -2 no teste dele.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "marcha-triunfal",
+    "name": "Marcha Triunfal",
+    "classId": "bardo",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Vontade 4",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Raio de 9m",
+    "duration": "3 Turnos",
+    "description": "Um ritmo acelerado impulsiona o grupo. Aliados no alcance recebem +3 metros de deslocamento e +4 de dano em ataques.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "4",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "conhecimento-de-bardo",
+    "name": "Conhecimento de Bardo",
+    "classId": "bardo",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Viajante incansável e colecionador de histórias, você rola +1d6 em testes de Inteligência sobre lendas, nobreza, cidades e fraquezas de monstros.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "sinfonia-heroica",
+    "name": "Sinfonia Heroica",
+    "classId": "bardo",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Bardo Nível 5",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "Raio de 12m",
+    "duration": "3 Turnos",
+    "description": "Sua obra-prima ressoa pelo campo de batalha. Todos os aliados ganham +2 em Defesa, +2 em ataques e recuperam 10 PV ao início de seus turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "10",
+      "defenseBonus": 2,
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "estilo-duelista",
+    "name": "Estilo Duelista",
+    "classId": "espadachim",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Automática (Espadachim)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Permanente",
+    "description": "Sua esgrima elegante troca força bruta por velocidade letal. Pode usar Agilidade em vez de Força para atacar e calcular o dano com espadas leves, sabres e rapieiras.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "aparar-e-ripostar",
+    "name": "Aparar e Ripostar",
+    "classId": "espadachim",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Quando um inimigo ataca você corpo a corpo, recebe +3 em Defesa contra o golpe. Se o inimigo errar, você desfere imediatamente um contra-ataque.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "defenseBonus": 3,
+      "damageFormula": "weapon",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "estocada-veloz",
+    "name": "Estocada Veloz",
+    "classId": "espadachim",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Um avanço relâmpago com a ponta da lâmina. Recebe +2 no teste de ataque e causa +5 de dano Perfurante adicional.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "damageFormula": "weapon + 5",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "danca-das-laminas",
+    "name": "Dança das Lâminas",
+    "classId": "espadachim",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Você gira com fluidez letal e desfere dois ataques de espada no mesmo turno, podendo se mover 2 metros entre os golpes.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "weapon",
+      "damageType": "Corte",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "desarmar-elegante",
+    "name": "Desarmar Elegante",
+    "classId": "espadachim",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Um giro de pulso prende a arma do adversário e a lança longe. Se acertar, o alvo perde a arma que empunha (cai a 3 metros) e sofre metade do dano normal.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "agilidade",
+      "damageType": "Fisico",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "finta-magistral",
+    "name": "Finta Magistral",
+    "classId": "espadachim",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Você simula um ataque alto para expor a guarda baixa. Realize um ataque que ignora o bônus de escudo do alvo e recebe +2 no teste.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "damageFormula": "weapon + 3",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "corte-arterial",
+    "name": "Corte Arterial",
+    "classId": "espadachim",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Agilidade 5",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "3 Turnos",
+    "description": "Um talho cirúrgico que abre um sangramento contínuo. Causa dano da arma + 4 Corte e aplica Sangrando (5 de dano por turno).",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "weapon + 4",
+      "damageType": "Corte",
+      "appliesCondition": "sangrando",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "panache",
+    "name": "Panache",
+    "classId": "espadachim",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Espadachim Nível 2",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seu estilo audacioso inflama sua confiança. Sempre que obtiver um Crítico ou derrotar um oponente em duelo, recupera 10 PM e ganha +2 em Esquiva até seu próximo turno.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "lamina-tempestuosa",
+    "name": "Lâmina Tempestuosa",
+    "classId": "espadachim",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Espadachim Nível 5",
+    "manaCost": 25,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Uma sequência quase invisível de estocadas. Causa dano da arma + 12 Perfurante e o alvo não pode usar reações contra este golpe.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "damageFormula": "weapon + 12",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "canalizacao-arcana",
+    "name": "Canalização Arcana",
+    "classId": "feiticeiro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Feiticeiro)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "A magia corre naturalmente em seu sangue. Você conjura magias arcanas utilizando Inteligência e ganha +1 em testes de conjuração ao segurar um cajado ou foco canalizador.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "foco-elemental",
+    "name": "Foco Elemental",
+    "classId": "feiticeiro",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 4",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Escolha um elemento (Fogo, Gelo, Relâmpago ou Terra). Suas magias desse caminho ganham +1 no teste de conjuração e causam +4 de dano adicional.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 1,
+      "damageFormula": "4",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "potencializar-magia",
+    "name": "Potencializar Magia",
+    "classId": "feiticeiro",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Este turno",
+    "description": "Você canaliza poder bruto em seu próximo feitiço. A próxima magia ofensiva lançada neste turno causa +8 de dano adicional.",
+    "automation": {
+      "damageFormula": "8",
+      "damageType": "Arcano",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "escudo-de-mana",
+    "name": "Escudo de Mana",
+    "classId": "feiticeiro",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "description": "Ao sofrer dano, você projeta uma barreira instantânea de energia arcana que absorve até 15 pontos de dano desse golpe.",
+    "automation": {
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "fluxo-arcano",
+    "name": "Fluxo Arcano",
+    "classId": "feiticeiro",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Feiticeiro Nível 2",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "1 vez por combate",
+    "description": "Você respira profundamente e puxa energia mágica do ambiente para dentro de si, recuperando imediatamente 25 Pontos de Mana.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "conjuracao-acelerada",
+    "name": "Conjuração Acelerada",
+    "classId": "feiticeiro",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 5",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Este turno",
+    "description": "Você encurta os gestos e palavras arcanas, podendo conjurar uma segunda magia de custo até 15 PM no mesmo turno.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "sobrecarga-arcana",
+    "name": "Sobrecarga Arcana",
+    "classId": "feiticeiro",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 5",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "Raio de 4m",
+    "duration": "Instantânea",
+    "description": "Você libera uma onda explosiva de mana pura ao seu redor, causando 18 de dano Arcano a todos os inimigos em 4 metros e empurrando-os 2 metros.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "18",
+      "damageType": "Arcano",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "contramagica",
+    "name": "Contramágica",
+    "classId": "feiticeiro",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 4",
+    "manaCost": 15,
+    "difficulty": null,
+    "range": "18 metros",
+    "duration": "Instantânea",
+    "description": "Quando um oponente conjurar uma magia visível, você tece uma interferência arcana. Faça um teste de Inteligência contra a Dificuldade da magia + 2; se vencer, a magia é anulada.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "grimorio-arcano",
+    "name": "Grimório Arcano",
+    "classId": "mago",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Mago)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seu estudo rigoroso dos tomos arcanos lhe confere +2 magias conhecidas iniciais e +1d6 em testes de conhecimento mágico.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "erudicao-mistica",
+    "name": "Erudição Mística",
+    "classId": "mago",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 4",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua mente treinada armazena grandes reservas de éter. Aumenta seus Pontos de Mana máximos em +15 permanentemente.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "ampliar-magia",
+    "name": "Ampliar Magia",
+    "classId": "mago",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Este turno",
+    "description": "Você ajusta a geometria do seu próximo feitiço, dobrando o alcance ou o raio da área de efeito da magia lançada neste turno.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "estender-magia",
+    "name": "Estender Magia",
+    "classId": "mago",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Este turno",
+    "description": "Você reforça a trama mágica do feitiço, dobrando a duração da próxima magia de suporte, ilusão ou controle que conjurar.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "analise-arcana",
+    "name": "Análise Arcana",
+    "classId": "mago",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 3",
+    "manaCost": 5,
+    "difficulty": 9,
+    "range": "15 metros",
+    "duration": "1 Cena",
+    "description": "Você lê as auras ao redor, identificando itens mágicos, magias ativas e as resistências ou vulnerabilidades elementais de um alvo.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "familiar-arcano",
+    "name": "Familiar Arcano",
+    "classId": "mago",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Mago Nível 1",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "18 metros",
+    "duration": "Permanente",
+    "description": "Você invoca um espírito na forma de coruja, gato ou corvo que compartilha seus sentidos, vigia acampamentos e pode entregar magias de toque.",
+    "automation": {
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "barreira-mistica",
+    "name": "Barreira Mística",
+    "classId": "mago",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 4",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal / 3m",
+    "duration": "1 Turno",
+    "description": "Você ergue um domo translúcido que concede +4 de Defesa a você e aliados adjacentes contra projéteis e magias de ataque até o próximo turno.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 4,
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "mestria-em-grimorio",
+    "name": "Mestria em Grimório",
+    "classId": "mago",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Mago Nível 5",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seu domínio técnico elimina desperdício de éter. Todas as suas magias com custo igual ou superior a 20 PM custam 5 PM a menos.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "devocao-divina",
+    "name": "Devoção Divina",
+    "classId": "sacerdote",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Sacerdote)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Você canaliza milagres de sua divindade usando Vontade e recebe +1 em Determinação e +1 em testes de magias divinas ao empunhar um Símbolo Sagrado.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "rollBonus": 1,
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "expulsar-mortos-vivos",
+    "name": "Expulsar Mortos-Vivos",
+    "classId": "sacerdote",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Raio de 9m",
+    "duration": "Instantânea",
+    "description": "Você ergue seu símbolo sagrado e irradia luz purificadora. Todos os mortos-vivos em 9 metros sofrem 18 de dano Sagrado e ficam Assustados por 2 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "18",
+      "damageType": "Sagrado",
+      "appliesCondition": "amedrontado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "bencao-curativa",
+    "name": "Bênção Curativa",
+    "classId": "sacerdote",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Suas preces restauradoras são extraordinariamente eficazes. Todas as suas habilidades e magias de cura restauram +6 PV adicionais.",
+    "automation": {
+      "healFormula": "6",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "prece-de-protecao",
+    "name": "Prece de Proteção",
+    "classId": "sacerdote",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "12 metros",
+    "duration": "3 Turnos",
+    "description": "Você invoca uma aura protetora sobre um aliado, concedendo +2 em Bloqueio, Esquiva e Determinação durante 3 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "defenseBonus": 2,
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "martirio-sagrado",
+    "name": "Martírio Sagrado",
+    "classId": "sacerdote",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "9 metros",
+    "duration": "Instantânea",
+    "description": "Quando um aliado em até 9 metros sofrer dano, você absorve metade do dano no lugar dele graças ao seu vínculo de fé.",
+    "automation": {
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "consagrar-solo",
+    "name": "Consagrar Solo",
+    "classId": "sacerdote",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "Raio de 6m",
+    "duration": "3 Turnos",
+    "description": "Você santifica o terreno ao seu redor. Aliados dentro da área recuperam 6 PV por turno, enquanto mortos-vivos e demônios sofrem -2 em testes de ataque.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "6",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "vontade-inabalavel",
+    "name": "Vontade Inabalável",
+    "classId": "sacerdote",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "description": "Quando falhar em um teste de Vontade ou Determinação, você ora brevemente e rola novamente o teste com +2 de bônus.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "milagre-restaurador",
+    "name": "Milagre Restaurador",
+    "classId": "sacerdote",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Sacerdote Nível 5",
+    "manaCost": 30,
+    "difficulty": 12,
+    "range": "9 metros",
+    "duration": "Instantânea",
+    "description": "Você canaliza um milagre maior que restaura 40 + Vontade Pontos de Vida de um aliado e remove todas as condições negativas ativas.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "40 + vontade",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "elo-natural",
+    "name": "Elo Natural",
+    "classId": "druida",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Druida)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Você compreende a linguagem silenciosa da fauna e da flora, podendo se comunicar com animais e recebendo +1d6 em testes de sobrevivência e herborismo.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "forma-selvagem-lobo",
+    "name": "Forma Selvagem: Lobo",
+    "classId": "druida",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal",
+    "duration": "1 Cena",
+    "description": "Você assume a forma de um lobo ágil. Ganha +2 em Agilidade, +3 metros de deslocamento e um ataque de Mordida (Agilidade + 6 Perfuração).",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "agilidade + 6",
+      "damageType": "Perfuracao",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "forma-selvagem-urso",
+    "name": "Forma Selvagem: Urso",
+    "classId": "druida",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "Pessoal",
+    "duration": "1 Cena",
+    "description": "Você se transforma em um urso pardo imponente. Ganha +3 em Força, +25 PV temporários e ataque de Garras (Força + 8 Corte).",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "25",
+      "damageFormula": "forca + 8",
+      "damageType": "Corte",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "forma-selvagem-aguia",
+    "name": "Forma Selvagem: Águia",
+    "classId": "druida",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal",
+    "duration": "1 Cena",
+    "description": "Você se transforma em uma águia gigante capaz de voar a 12 metros por turno, excelente para reconhecimento e ataques rasantes.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "pele-de-casca",
+    "name": "Pele de Casca",
+    "classId": "druida",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Toque",
+    "duration": "4 Turnos",
+    "description": "A pele do alvo endurece como casca de carvalho antigo, concedendo +3 em Bloqueio durante 4 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "defenseBonus": 3,
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "raizes-aprisionadoras",
+    "name": "Raízes Aprisionadoras",
+    "classId": "druida",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "12 metros (Área 4m)",
+    "duration": "3 Turnos",
+    "description": "Vinhas e raízes brotam violentamente do chão, causando 8 de dano Contusão e deixando todos os inimigos na área Imobilizados.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "8",
+      "damageType": "Contusao",
+      "appliesCondition": "imobilizado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "bencao-da-floresta",
+    "name": "Bênção da Floresta",
+    "classId": "druida",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "9 metros",
+    "duration": "Instantânea",
+    "description": "Folhas luminescentes envolvem um aliado, restaurando 20 + Vontade PV e removendo imediatamente Envenenado e Sangrando.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "20 + vontade",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "furia-da-natureza",
+    "name": "Fúria da Natureza",
+    "classId": "druida",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Druida Nível 4",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "15 metros (Área 4m)",
+    "duration": "Instantânea",
+    "description": "Você convoca espinhos e relâmpagos selvagens sobre uma zona, causando 18 de dano Raio/Perfuração em todos os inimigos na área.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "18",
+      "damageType": "Raio",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "escrita-runica",
+    "name": "Escrita Rúnica",
+    "classId": "runico",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Rúnico)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Toque",
+    "duration": "Permanente",
+    "description": "Você domina o alfabeto arcano primordial, podendo inscrever até 3 runas simultâneas em armas, armaduras ou no solo do campo de batalha.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "runa-flamejante",
+    "name": "Runa Flamejante",
+    "classId": "runico",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Toque / 6m",
+    "duration": "1 Cena ou até detonar",
+    "description": "Grava uma runa de fogo em uma arma (+5 de dano Fogo) ou no solo (explode quando um inimigo pisar, causando 16 de dano Fogo e Queimando).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "16",
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "runa-de-protecao",
+    "name": "Runa de Proteção",
+    "classId": "runico",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Toque",
+    "duration": "1 Cena",
+    "description": "Inscreve um selo defensivo brilhante em uma armadura ou escudo, concedendo +2 em Bloqueio até o fim do combate.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 2,
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "runa-glacial",
+    "name": "Runa Glacial",
+    "classId": "runico",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 4",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "Toque / 6m",
+    "duration": "Até detonar",
+    "description": "Um glifo azulado gravado no chão que explode em gelo quando um inimigo se aproxima, causando 14 de dano Gelo e aplicando Congelado.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "14",
+      "damageType": "Gelo",
+      "appliesCondition": "enregelado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "runa-da-vitalidade",
+    "name": "Runa da Vitalidade",
+    "classId": "runico",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Toque / 6m",
+    "duration": "Até ativar",
+    "description": "Desenha um selo esmeralda no chão. O primeiro aliado que passar sobre a runa recupera imediatamente 18 + Inteligência PV.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "healFormula": "18 + inteligencia",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "detonacao-runica",
+    "name": "Detonação Rúnica",
+    "classId": "runico",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 5",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "18 metros (Área)",
+    "duration": "Instantânea",
+    "description": "Você estala os dedos e detona todas as suas runas ativas no campo de batalha simultaneamente, causando 20 de dano Arcano em cada área afetada.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "20",
+      "damageType": "Arcano",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "visao-espiritual",
+    "name": "Visão Espiritual",
+    "classId": "xama",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Xamã)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "18 metros",
+    "duration": "Permanente",
+    "description": "Seus olhos contemplam o plano espiritual. Você enxerga criaturas invisíveis, fantasmas e auras espirituais, além de receber +1 em testes de Vontade.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "rollBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "totem-da-cura",
+    "name": "Totem da Cura",
+    "classId": "xama",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "6 metros (Área 6m)",
+    "duration": "3 Turnos",
+    "description": "Você finca um totem espiritual no chão. No início de cada turno, todos os aliados a até 6 metros do totem recuperam 10 PV.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "10",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "totem-da-furia",
+    "name": "Totem da Fúria",
+    "classId": "xama",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "6 metros (Área 6m)",
+    "duration": "3 Turnos",
+    "description": "Um totem entalhado com presas de lobo pulsa com energia ancestral, concedendo +4 de dano em todos os ataques de aliados no raio de 6 metros.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "4",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "invocar-espirito-ancestral",
+    "name": "Invocar Espírito Ancestral",
+    "classId": "xama",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "12 metros",
+    "duration": "3 Turnos",
+    "description": "Você chama um guerreiro espectral de seus antepassados para golpear um inimigo, causando 16 + Vontade de dano Arcano.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "16 + vontade",
+      "damageType": "Arcano",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "maldicao-xamanica",
+    "name": "Maldição Xamânica",
+    "classId": "xama",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "12 metros",
+    "duration": "3 Turnos",
+    "description": "Espíritos inquietos cercam um inimigo, impondo -2 em todos os seus ataques e -2 na Defesa durante 3 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "appliesCondition": "exausto",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "caminhada-espiritual",
+    "name": "Caminhada Espiritual",
+    "classId": "xama",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Vontade 4",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal",
+    "duration": "2 Turnos",
+    "description": "Seu corpo torna-se parcialmente translúcido. Você recebe +3 em Esquiva e pode atravessar terreno difícil ou obstáculos finos livremente.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "atletismo",
+    "name": "Atletismo",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Força 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seu condicionamento físico é exemplar. Rola +1d6 em testes de Força para escalar, nadar, saltar e levantar grandes pesos.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "acrobacia",
+    "name": "Acrobacia",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Você realiza saltos mortais e mantém equilíbrio em superfícies estreitas. Rola +1d6 em testes de Agilidade acrobáticos e reduz dano de queda à metade.",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "prontidao",
+    "name": "Prontidão",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Nenhum",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sempre atento ao menor ruído. Você recebe +2 em rolagens de Iniciativa e +1d6 em testes de percepção para notar emboscadas.",
+    "automation": {
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "combate-duas-armas",
+    "name": "Combate com Duas Armas",
+    "classId": "geral",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 4",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Permanente",
+    "description": "Você treina lutar com uma arma em cada mão. Ao empunhar uma arma leve na mão secundária, pode realizar um ataque extra causando metade do dano base (ou dano normal com 5 PM).",
+    "automation": {
+      "rollAttribute": "agilidade",
+      "damageFormula": "weapon",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "forca-heroica",
+    "name": "Força Heroica",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Força 4",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua força descomunal permite empunhar armamentos maiores com facilidade. Reduz em 1 a FN de todas as armas e aumenta sua capacidade de carga em +20 kg.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "estabilidade",
+    "name": "Estabilidade",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Força 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Você mantém base firme mesmo sob impacto violento. Recebe +1d6 em testes para resistir a empurrões, quedas e manobras de derrubar.",
+    "automation": {
+      "rollAttribute": "forca",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "esquiva-aprimorada",
+    "name": "Esquiva Aprimorada",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Agilidade 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seus reflexos defensivos são afiados. Aumenta sua Esquiva permanentemente em +1.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "bloqueio-aprimorado",
+    "name": "Bloqueio Aprimorado",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Força 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Você sabe posicionar escudo e arma no ângulo perfeito. Aumenta seu Bloqueio permanentemente em +1.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "determinacao-ferrea",
+    "name": "Determinação Férrea",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Vontade 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua força de espírito resiste a medos, maldições e controle mental. Aumenta sua Determinação permanentemente em +2.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "primeiros-socorros",
+    "name": "Primeiros Socorros",
+    "classId": "geral",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Inteligência 3",
+    "manaCost": 0,
+    "difficulty": 9,
+    "range": "Toque",
+    "duration": "Instantânea",
+    "description": "Usando ataduras e conhecimento médico, faça um teste de Inteligência (Dif 9) para estabilizar um aliado inconsciente, remover Sangrando e restaurar 10 PV.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "healFormula": "10",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "labia-persuasao",
+    "name": "Lábia e Persuasão",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Nenhum",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Social",
+    "duration": "Permanente",
+    "description": "Sua eloqüência abre portas e evita combates desnecessários. Rola +1d6 em testes sociais de diplomacia, barganha e persuasão.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "presenca-intimidadora",
+    "name": "Presença Intimidadora",
+    "classId": "geral",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Força 3 ou Vontade 3",
+    "manaCost": 0,
+    "difficulty": 10,
+    "range": "6 metros",
+    "duration": "1 Turno",
+    "description": "Com olhar feroz e postura ameaçadora, teste Força ou Vontade contra a Determinação do alvo; em sucesso, o inimigo fica Assustado por 1 turno.",
+    "automation": {
+      "rollAttribute": "forca",
+      "appliesCondition": "amedrontado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "manobra-investida",
+    "name": "Investida",
+    "classId": "geral",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Nenhum",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Deslocamento",
+    "duration": "Instantânea",
+    "description": "Avança em linha reta e realiza um ataque corpo a corpo com +3 de dano bônus, sofrendo -1 na Defesa até seu próximo turno.",
+    "automation": {
+      "rollAttribute": "forca",
+      "damageFormula": "weapon + 3",
+      "defenseBonus": -1,
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "manobra-derrubar",
+    "name": "Manobra: Derrubar",
+    "classId": "geral",
+    "category": "acao",
+    "source": "Manual Básico",
+    "requirement": "Nenhum",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Corpo a Corpo",
+    "duration": "Instantânea",
+    "description": "Em vez de causar dano total, você tenta desequilibrar o oponente. Em um acerto bem-sucedido, o alvo sofre dano igual à sua Força e cai no chão (Caído).",
+    "automation": {
+      "rollAttribute": "forca",
+      "damageFormula": "forca",
+      "damageType": "Contusao",
+      "appliesCondition": "caido",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "conhecimento-regional",
+    "name": "Conhecimento Regional",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Nenhum",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Você conhece estradas, costumes, facções e criaturas de sua terra natal em Drakon. Recebe +1d6 em testes de Inteligência relacionados à região escolhida.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "precisao-mortal",
+    "name": "Precisão Mortal",
+    "classId": "geral",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Nível 3",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Quando você obtém um Crítico (6+6) em um ataque físico ou mágico, causa +6 de dano adicional além dos efeitos normais do crítico.",
+    "automation": {
+      "damageFormula": "6",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "adaptabilidade",
+    "name": "Adaptabilidade",
+    "classId": "humano",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Humano)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "A versatilidade humana permite destacar-se em qualquer ofício. Recebe +1 em um atributo à escolha na criação e pode escolher 1 Habilidade Geral extra.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "ambicao-humana",
+    "name": "Ambição Humana",
+    "classId": "humano",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Raça: Humano",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "1 vez por cena",
+    "description": "Diante da adversidade, sua força de vontade supera limites. Uma vez por cena, adicione +1d6 a qualquer teste de atributo ou ataque.",
+    "automation": {
+      "rollBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "sentidos-apurados",
+    "name": "Sentidos Apurados",
+    "classId": "elfo",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Elfo)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seus olhos e ouvidos captam detalhes imperceptíveis para outras raças. Rola +1d6 em todos os testes de Inteligência ligados à percepção e aos cinco sentidos.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "graca-elfica",
+    "name": "Graça Élfica",
+    "classId": "elfo",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Raça: Elfo",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seus passos são leves como folhas ao vento. Recebe +1 em Esquiva e ignora terreno difícil em florestas e matas.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "vigor-da-montanha",
+    "name": "Vigor da Montanha",
+    "classId": "anao",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Anão)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "O sangue anão é resistente como granito. Você é imune a venenos comuns, resistente à fadiga e recebe +1d6 para resistir a toxinas mágicas.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "coracao-da-montanha",
+    "name": "Coração da Montanha",
+    "classId": "anao",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Raça: Anão",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua constituição robusta garante +10 PV máximos adicionais e +1 em Bloqueio quando empunhando escudo ou vestindo armadura pesada.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "constituicao-feerica",
+    "name": "Constituição Feérica",
+    "classId": "faen",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Faen)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "A essência mágica do povo feérico fortalece seu espírito. Você recebe +10 PM máximos e +2 em Determinação contra encantamentos e ilusões.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "vigor-nordico",
+    "name": "Vigor Nórdico",
+    "classId": "aesir",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Aesir)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Nascido nas terras gélidas de Eishelm, você é imune aos efeitos climáticos do frio extremo e reduz à metade todo dano de Gelo/Frio recebido.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "sangue-orc",
+    "name": "Sangue Orc",
+    "classId": "orc",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Orc)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua vitalidade feroz concede +10 Pontos de Vida máximos e +2 de dano em ataques corpo a corpo sempre que estiver abaixo de metade dos PV.",
+    "automation": {
+      "damageFormula": "2",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "tamanho-pequeno",
+    "name": "Tamanho Pequeno e Visão Noturna",
+    "classId": "goblin",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Goblin)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua estatura ágil garante +1 em Defesa (Esquiva), +1d6 em testes para esconder-se e mover-se em silêncio, além de enxergar perfeitamente na escuridão.",
+    "automation": {
+      "defenseBonus": 1,
+      "rollAttribute": "agilidade",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "corpo-pesado",
+    "name": "Corpo Pesado",
+    "classId": "juban",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Juban)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "A imponência leonina dos Juban garante +1 em Bloqueio, +1d6 em testes de intimidação e maior resistência a ser derrubado ou empurrado.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "asas-pesadas",
+    "name": "Asas Pesadas",
+    "classId": "levent",
+    "category": "suporte",
+    "source": "Manual Básico",
+    "requirement": "Automática (Levent)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Suas grandes asas emplumadas permitem planar sem sofrer dano de queda e voar pelo campo de batalha utilizando seu deslocamento normal.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "pele-de-pedra",
+    "name": "Pele de Pedra",
+    "classId": "mahok",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Mahok)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Seu couro rochoso funciona como armadura natural, concedendo +2 em Bloqueio e reduzindo em 2 pontos todo dano físico recebido.",
+    "automation": {
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "heranca-versatil",
+    "name": "Herança Versátil",
+    "classId": "meio-elfo",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Automática (Meio-Elfo)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Unindo o carisma humano à acuidade élfica, você enxerga perfeitamente na penumbra e recebe +1 em Determinação e em testes de percepção.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "resiliencia-meio-orc",
+    "name": "Resiliência Meio-Orc",
+    "classId": "meio-orc",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Automática (Meio-Orc)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "1 vez por combate",
+    "description": "Quando um ataque reduziria você a 0 PV, sua tenacidade o mantém lutando com 5 PV restantes.",
+    "automation": {
+      "healFormula": "5",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "mistura-alquimica",
+    "name": "Mistura Alquímica",
+    "classId": "alquimista",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Automática (Alquimista)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Você fabrica bombas, elixires e ácidos em campo usando Inteligência e recebe +1d6 em testes de alquimia e identificação de venenos.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "bomba-incendiaria",
+    "name": "Bomba Incendiária",
+    "classId": "alquimista",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 3",
+    "manaCost": 10,
+    "difficulty": 10,
+    "range": "12 metros (Área 3m)",
+    "duration": "Instantânea",
+    "description": "Arremessa um frasco alquímico explosivo que causa 14 + Inteligência de dano Fogo na área e aplica Queimando.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "14 + inteligencia",
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "bomba-criogenica",
+    "name": "Bomba Criogênica",
+    "classId": "alquimista",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 4",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "12 metros (Área 3m)",
+    "duration": "Instantânea",
+    "description": "Frasco de reagentes glaciais que explode em cristais de gelo, causando 12 de dano Gelo e aplicando Enregelado em todos na área.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "12",
+      "damageType": "Gelo",
+      "appliesCondition": "enregelado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "elixir-restaurador",
+    "name": "Elixir Restaurador",
+    "classId": "alquimista",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "Toque / 6m",
+    "duration": "Instantânea",
+    "description": "Prepara ou arremessa um elixir instantâneo que restaura 20 + Inteligência PV e remove Envenenado.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "healFormula": "20 + inteligencia",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "acido-corrosivo",
+    "name": "Frasco de Ácido Corrosivo",
+    "classId": "alquimista",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 4",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "2 Turnos",
+    "description": "Joga um frasco de ácido concentrado que causa 14 de dano Veneno/Ácido e corrói armaduras (-2 Bloqueio por 2 turnos).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "14",
+      "damageType": "Veneno",
+      "appliesCondition": "envenenado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "tecelao-de-ilusoes",
+    "name": "Tecelão de Ilusões",
+    "classId": "ilusionista",
+    "category": "caracteristica",
+    "source": "Guia do Herói",
+    "requirement": "Automática (Ilusionista)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Suas ilusões são quase indistinguíveis da realidade. Recebe +2 em testes de conjuração do Caminho do Espírito/Ilusão e +1 na dificuldade para desacreditar suas miragens.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "rollBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "troca-ilusoria",
+    "name": "Troca Ilusória",
+    "classId": "ilusionista",
+    "category": "reacao",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 3",
+    "manaCost": 10,
+    "difficulty": null,
+    "range": "6 metros",
+    "duration": "Instantânea",
+    "description": "Quando atingido por um ataque, revela que o golpe acertou um clone ilusório e reaparece a até 6 metros de distância com +3 em Esquiva.",
+    "automation": {
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "laminas-fantasmas",
+    "name": "Lâminas Fantasmas",
+    "classId": "ilusionista",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 4",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "description": "Conjura espadas ilusórias que ferem a mente de quem acredita nelas, causando 16 + Inteligência de dano Psíquico.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "16 + inteligencia",
+      "damageType": "Psiquico",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "terror-espectral",
+    "name": "Terror Espectral",
+    "classId": "ilusionista",
+    "category": "acao",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 4",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "12 metros (Área 4m)",
+    "duration": "2 Turnos",
+    "description": "Aparições horripilantes emergem das sombras, aplicando Amedrontado a todos os inimigos que falharem em Determinação (Dif 11).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "appliesCondition": "amedrontado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "manto-espectral",
+    "name": "Manto Espectral",
+    "classId": "ilusionista",
+    "category": "suporte",
+    "source": "Guia do Herói",
+    "requirement": "Inteligência 4",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal",
+    "duration": "3 Turnos",
+    "description": "Envolve seu corpo em refrações luminosas que tornam difícil fixar sua posição, concedendo Invisível ou +3 em Esquiva.",
+    "automation": {
+      "defenseBonus": 3,
+      "appliesCondition": "invisivel",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "passo-do-fauno",
+    "name": "Agilidade Caprina",
+    "classId": "fauno",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Fauno)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Suas pernas musculosas de fauno concedem +1 metro de deslocamento, bônus de +1d6 em saltos e chifrada natural (Força + 4 Contusão).",
+    "automation": {
+      "rollAttribute": "forca",
+      "damageFormula": "forca + 4",
+      "damageType": "Contusao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "sangue-de-fogo-fira",
+    "name": "Sangue Flamejante",
+    "classId": "fira",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Fira)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Descendente do fogo primordial, você sofre metade do dano de Fogo e pode inflamar suas mãos para causar +3 de dano Fogo desarmado.",
+    "automation": {
+      "damageFormula": "3",
+      "damageType": "Fogo",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "faro-groton",
+    "name": "Couro Espesso e Faro",
+    "classId": "groton",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Groton)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua pele resistente concede +1 em Bloqueio e seu olfato aguçado garante +1d6 em testes para rastrear presas e perceber inimigos ocultos.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "sorte-metadilio",
+    "name": "Sorte Pequenina",
+    "classId": "metadilio",
+    "category": "reacao",
+    "source": "Manual Básico",
+    "requirement": "Automática (Metadílio)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "1 vez por cena",
+    "description": "Sua boa fortuna e estatura pequena garantem Defesa base 6 e permitem rolar novamente uma Falha Crítica (1+1) uma vez por cena.",
+    "automation": {
+      "defenseBonus": 1,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "reflexos-tailox",
+    "name": "Reflexos Felinos",
+    "classId": "tailox",
+    "category": "caracteristica",
+    "source": "Manual Básico",
+    "requirement": "Automática (Tailox)",
+    "manaCost": 0,
+    "difficulty": null,
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "description": "Sua graça vulpina/felina garante +1 em Esquiva, +2 em Iniciativa e garras retráteis naturais (Agilidade + 4 Corte).",
+    "automation": {
+      "defenseBonus": 1,
+      "damageFormula": "agilidade + 4",
+      "damageType": "Corte",
+      "targetType": "self"
+    }
+  }
+]

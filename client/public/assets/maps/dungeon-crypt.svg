@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1440" width="1920" height="1440">
+  <defs>
+    <!-- Weathered ancient flagstone floor pattern -->
+    <pattern id="cryptStone" width="160" height="160" patternUnits="userSpaceOnUse">
+      <rect width="160" height="160" fill="#1b1e24"/>
+      <g stroke="#0e1014" stroke-width="2.2">
+        <rect x="2" y="2" width="76" height="76" rx="3" fill="#2c3038"/>
+        <rect x="82" y="2" width="76" height="50" rx="3" fill="#262a31"/>
+        <rect x="82" y="56" width="76" height="102" rx="3" fill="#2f343d"/>
+        <rect x="2" y="82" width="76" height="76" rx="3" fill="#252930"/>
+      </g>
+      <!-- Cracks & moss -->
+      <path d="M18 22 L34 38 L29 56 M108 84 L126 98 L142 93 M54 106 L64 132" stroke="#13161b" stroke-width="1.4" fill="none" opacity="0.8"/>
+      <circle cx="78" cy="79" r="5" fill="#1e3a2b" opacity="0.45"/>
+      <circle cx="155" cy="53" r="4" fill="#1c3628" opacity="0.4"/>
+    </pattern>
+
+    <!-- Heavy carved dungeon masonry wall -->
+    <pattern id="dungeonWall" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="#0d0f14"/>
+      <rect x="3" y="3" width="35" height="34" rx="2" fill="#1b1f29" stroke="#08090d" stroke-width="2"/>
+      <rect x="42" y="3" width="35" height="34" rx="2" fill="#171b24" stroke="#08090d" stroke-width="2"/>
+      <rect x="3" y="41" width="52" height="36" rx="2" fill="#191d27" stroke="#08090d" stroke-width="2"/>
+      <rect x="59" y="41" width="18" height="36" rx="2" fill="#141820" stroke="#08090d" stroke-width="2"/>
+    </pattern>
+
+    <!-- Subtle VTT Grid -->
+    <pattern id="cryptGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#8ecae6" stroke-width="0.8" opacity="0.1"/>
+    </pattern>
+
+    <!-- Arcane altar glow -->
+    <radialGradient id="arcaneGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.85"/>
+      <stop offset="30%" stop-color="#14b8a6" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#0f766e" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0f766e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Wall torch fire glow -->
+    <radialGradient id="torchGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff3bf" stop-opacity="0.95"/>
+      <stop offset="22%" stop-color="#ff8c1a" stop-opacity="0.6"/>
+      <stop offset="58%" stop-color="#c2410c" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c2410c" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="daisGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3c424f"/>
+      <stop offset="70%" stop-color="#2c313b"/>
+      <stop offset="100%" stop-color="#1c2028"/>
+    </radialGradient>
+
+    <radialGradient id="cryptVignette" cx="50%" cy="50%" r="68%">
+      <stop offset="50%" stop-color="#040508" stop-opacity="0"/>
+      <stop offset="86%" stop-color="#040508" stop-opacity="0.52"/>
+      <stop offset="100%" stop-color="#020305" stop-opacity="0.86"/>
+    </radialGradient>
+
+    <filter id="cryptShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="7" dy="9" stdDeviation="7" flood-color="#020306" flood-opacity="0.8"/>
+    </filter>
+
+    <!-- Pillar reusable -->
+    <g id="cryptPillar" filter="url(#cryptShadow)">
+      <rect x="-32" y="-32" width="64" height="64" rx="5" fill="#232730" stroke="#0b0d12" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#3a404d" stroke="#11141c" stroke-width="3"/>
+      <circle cx="0" cy="0" r="18" fill="#474e5d" stroke="#252a34" stroke-width="1.5"/>
+      <path d="M-12 -10 L4 4 L14 -6" stroke="#191d26" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- Sarcophagus reusable -->
+    <g id="sarcophagus" filter="url(#cryptShadow)">
+      <polygon points="-46,-26 46,-26 56,-14 56,14 46,26 -46,26 -56,14 -56,-14" fill="#3b404c" stroke="#11131a" stroke-width="3"/>
+      <polygon points="-38,-18 38,-18 46,-9 46,9 38,18 -38,18 -46,9 -46,-9" fill="#4c5361" stroke="#222630" stroke-width="2"/>
+      <!-- Carved sword relief on lid -->
+      <line x1="-26" y1="0" x2="28" y2="0" stroke="#252a35" stroke-width="4" stroke-linecap="round"/>
+      <line x1="-14" y1="-10" x2="-14" y2="10" stroke="#252a35" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Brazier reusable -->
+    <g id="brazier" filter="url(#cryptShadow)">
+      <circle cx="0" cy="0" r="24" fill="#24272e" stroke="#0c0e12" stroke-width="3"/>
+      <circle cx="0" cy="0" r="17" fill="#18120e" stroke="#4a4e57" stroke-width="2"/>
+      <circle cx="0" cy="0" r="12" fill="#ea580c"/>
+      <circle cx="0" cy="0" r="7" fill="#facc15"/>
+      <circle cx="0" cy="0" r="3" fill="#fffbeb"/>
+    </g>
+  </defs>
+
+  <!-- Solid subterranean bedrock void -->
+  <rect width="1920" height="1440" fill="url(#dungeonWall)"/>
+
+  <!-- Playable Carved Stone Floor Geometry -->
+  <g>
+    <!-- Main Central Ritual Chamber (x:480..1440, y:320..1120) -->
+    <rect x="480" y="320" width="960" height="800" rx="8" fill="url(#cryptStone)" stroke="#090a0e" stroke-width="8"/>
+    <!-- South Entry Corridor (x:840..1080, y:1120..1440) -->
+    <rect x="840" y="1100" width="240" height="340" fill="url(#cryptStone)"/>
+    <!-- North Sanctum / Reliquary Chamber (x:760..1160, y:80..340) -->
+    <rect x="760" y="80" width="400" height="260" rx="6" fill="url(#cryptStone)" stroke="#090a0e" stroke-width="6"/>
+    <!-- West Crypt Alcove (x:160..500, y:480..960) -->
+    <rect x="160" y="480" width="340" height="480" rx="6" fill="url(#cryptStone)" stroke="#090a0e" stroke-width="6"/>
+    <!-- East Crypt Alcove (x:1420..1760, y:480..960) -->
+    <rect x="1420" y="480" width="340" height="480" rx="6" fill="url(#cryptStone)" stroke="#090a0e" stroke-width="6"/>
+  </g>
+
+  <!-- Thick Masonry Inner Wall Framing & Doorway Thresholds -->
+  <g fill="none" stroke="#454c5c" stroke-width="6">
+    <!-- Main chamber outline minus corridor openings -->
+    <path d="M480 480 L480 320 L840 320 M1080 320 L1440 320 L1440 480 M1440 960 L1440 1120 L1080 1120 M840 1120 L480 1120 L480 960"/>
+    <!-- Alcove borders -->
+    <path d="M480 480 L160 480 L160 960 L480 960"/>
+    <path d="M1440 480 L1760 480 L1760 960 L1440 960"/>
+    <!-- North sanctum border -->
+    <path d="M840 320 L760 320 L760 80 L1160 80 L1160 320 L1080 320"/>
+    <!-- South corridor walls -->
+    <path d="M840 1120 L840 1440 M1080 1120 L1080 1440"/>
+  </g>
+
+  <!-- Dark Mossy Floor Fissures & Subtle Blood/Water Puddles -->
+  <g opacity="0.6">
+    <path d="M560 410 Q600 440 620 420 T675 455" stroke="#0d1117" stroke-width="4" fill="none"/>
+    <ellipse cx="1310" cy="1010" rx="46" ry="26" fill="#0f252e" opacity="0.75"/>
+    <ellipse cx="290" cy="870" rx="34" ry="20" fill="#102b24" opacity="0.65"/>
+  </g>
+
+  <!-- Central Stepped Ritual Dais & Arcane Circle (centered 960, 720) -->
+  <g transform="translate(960, 720)" filter="url(#cryptShadow)">
+    <!-- Outer step -->
+    <circle cx="0" cy="0" r="225" fill="#272c36" stroke="#0f1218" stroke-width="5"/>
+    <circle cx="0" cy="0" r="196" fill="url(#daisGrad)" stroke="#171b24" stroke-width="4"/>
+    <!-- Glowing inlaid arcane geometric sigil (no text) -->
+    <circle cx="0" cy="0" r="172" fill="none" stroke="#2dd4bf" stroke-width="2.5" opacity="0.75"/>
+    <circle cx="0" cy="0" r="154" fill="none" stroke="#2dd4bf" stroke-width="1.5" stroke-dasharray="14 8" opacity="0.65"/>
+    <!-- 8-point geometric star -->
+    <polygon points="0,-168 42,-42 168,0 42,42 0,168 -42,42 -168,0 -42,-42" fill="none" stroke="#14b8a6" stroke-width="2" opacity="0.6"/>
+    <polygon points="-118,-118 0,-56 118,-118 56,0 118,118 0,56 -118,118 -56,0" fill="none" stroke="#5eead4" stroke-width="1.5" opacity="0.45"/>
+    <!-- Central Obsidian Altar -->
+    <rect x="-62" y="-34" width="124" height="68" rx="6" fill="#14161d" stroke="#5eead4" stroke-width="2"/>
+    <rect x="-48" y="-22" width="96" height="44" rx="3" fill="#1e222e" stroke="#334155" stroke-width="1.5"/>
+    <!-- Crimson altar cloth & glowing crystal relic -->
+    <rect x="-18" y="-34" width="36" height="68" fill="#7f1d1d" opacity="0.88"/>
+    <polygon points="0,-14 10,0 0,14 -10,0" fill="#5eead4" stroke="#ccfbf1" stroke-width="1.5"/>
+  </g>
+
+  <!-- 4 Flaming Braziers around Central Dais -->
+  <use href="#brazier" x="760" y="520"/>
+  <use href="#brazier" x="1160" y="520"/>
+  <use href="#brazier" x="760" y="920"/>
+  <use href="#brazier" x="1160" y="920"/>
+
+  <!-- 8 Ancient Stone Pillars -->
+  <use href="#cryptPillar" x="600" y="440"/>
+  <use href="#cryptPillar" x="1320" y="440"/>
+  <use href="#cryptPillar" x="600" y="720"/>
+  <use href="#cryptPillar" x="1320" y="720"/>
+  <use href="#cryptPillar" x="600" y="1000"/>
+  <use href="#cryptPillar" x="1320" y="1000"/>
+  <use href="#cryptPillar" x="840" y="1240"/>
+  <use href="#cryptPillar" x="1080" y="1240"/>
+
+  <!-- West Crypt Sarcophagi -->
+  <use href="#sarcophagus" x="280" y="590"/>
+  <use href="#sarcophagus" x="280" y="720"/>
+  <!-- Ajar sarcophagus with dark hollow & scattered bones -->
+  <g transform="translate(280, 850)" filter="url(#cryptShadow)">
+    <polygon points="-46,-26 46,-26 56,-14 56,14 46,26 -46,26 -56,14 -56,-14" fill="#101218" stroke="#3b404c" stroke-width="5"/>
+    <!-- Skeleton ribs inside -->
+    <circle cx="-22" cy="0" r="8" fill="#cfc7b4"/>
+    <line x1="-10" y1="0" x2="26" y2="0" stroke="#bdb49f" stroke-width="3"/>
+    <line x1="-4" y1="-8" x2="-4" y2="8" stroke="#bdb49f" stroke-width="2"/>
+    <line x1="6" y1="-9" x2="6" y2="9" stroke="#bdb49f" stroke-width="2"/>
+    <line x1="16" y1="-7" x2="16" y2="7" stroke="#bdb49f" stroke-width="2"/>
+    <!-- Pushed lid -->
+    <g transform="translate(18, 22) rotate(14)">
+      <polygon points="-44,-22 44,-22 52,-11 52,11 44,22 -44,22 -52,11 -52,-11" fill="#4a5160" stroke="#12151c" stroke-width="2.5"/>
+    </g>
+  </g>
+
+  <!-- East Crypt Sarcophagi -->
+  <use href="#sarcophagus" x="1640" y="590"/>
+  <use href="#sarcophagus" x="1640" y="720"/>
+  <use href="#sarcophagus" x="1640" y="850"/>
+
+  <!-- North Sanctum: Iron Portcullis Bars & Ancient Gilded Treasure Chest -->
+  <g filter="url(#cryptShadow)">
+    <!-- Iron portcullis across north archway -->
+    <line x1="840" y1="320" x2="1080" y2="320" stroke="#1b1f26" stroke-width="10"/>
+    <g fill="#525b6b" stroke="#0d0f14" stroke-width="1.5">
+      <circle cx="865" cy="320" r="5"/><circle cx="903" cy="320" r="5"/>
+      <circle cx="941" cy="320" r="5"/><circle cx="979" cy="320" r="5"/>
+      <circle cx="1017" cy="320" r="5"/><circle cx="1055" cy="320" r="5"/>
+    </g>
+    <!-- Raised stone pedestal -->
+    <rect x="885" y="135" width="150" height="90" rx="5" fill="#323845" stroke="#11141c" stroke-width="3"/>
+    <!-- Ornate treasure chest -->
+    <rect x="920" y="156" width="80" height="48" rx="4" fill="#6b3d1c" stroke="#1c0f06" stroke-width="3"/>
+    <rect x="920" y="156" width="80" height="10" fill="#c89b3c" opacity="0.85"/>
+    <rect x="920" y="194" width="80" height="10" fill="#c89b3c" opacity="0.85"/>
+    <rect x="952" y="172" width="16" height="18" rx="2" fill="#e8c468" stroke="#362208" stroke-width="2"/>
+  </g>
+
+  <!-- Wall Torch Sconces -->
+  <g>
+    <circle cx="485" cy="390" r="7" fill="#ffae33" stroke="#241308" stroke-width="2"/>
+    <circle cx="1435" cy="390" r="7" fill="#ffae33" stroke="#241308" stroke-width="2"/>
+    <circle cx="485" cy="1050" r="7" fill="#ffae33" stroke="#241308" stroke-width="2"/>
+    <circle cx="1435" cy="1050" r="7" fill="#ffae33" stroke="#241308" stroke-width="2"/>
+    <circle cx="848" cy="1340" r="7" fill="#ffae33" stroke="#241308" stroke-width="2"/>
+    <circle cx="1072" cy="1340" r="7" fill="#ffae33" stroke="#241308" stroke-width="2"/>
+    <circle cx="775" cy="190" r="7" fill="#ffae33" stroke="#241308" stroke-width="2"/>
+    <circle cx="1145" cy="190" r="7" fill="#ffae33" stroke="#241308" stroke-width="2"/>
+  </g>
+
+  <!-- Subtle VTT Grid over playable areas -->
+  <rect x="160" y="80" width="1600" height="1360" fill="url(#cryptGrid)" pointer-events="none"/>
+
+  <!-- Lighting Layers (Arcane Altar + Braziers + Wall Torches) -->
+  <g style="mix-blend-mode: screen;" pointer-events="none">
+    <circle cx="960" cy="720" r="320" fill="url(#arcaneGlow)"/>
+    <circle cx="760" cy="520" r="240" fill="url(#torchGlow)"/>
+    <circle cx="1160" cy="520" r="240" fill="url(#torchGlow)"/>
+    <circle cx="760" cy="920" r="240" fill="url(#torchGlow)"/>
+    <circle cx="1160" cy="920" r="240" fill="url(#torchGlow)"/>
+    <circle cx="485" cy="390" r="180" fill="url(#torchGlow)"/>
+    <circle cx="1435" cy="390" r="180" fill="url(#torchGlow)"/>
+    <circle cx="485" cy="1050" r="180" fill="url(#torchGlow)"/>
+    <circle cx="1435" cy="1050" r="180" fill="url(#torchGlow)"/>
+    <circle cx="848" cy="1340" r="175" fill="url(#torchGlow)"/>
+    <circle cx="1072" cy="1340" r="175" fill="url(#torchGlow)"/>
+    <circle cx="775" cy="190" r="190" fill="url(#torchGlow)"/>
+    <circle cx="1145" cy="190" r="190" fill="url(#torchGlow)"/>
+  </g>
+
+  <!-- Atmospheric Vignette -->
+  <rect width="1920" height="1440" fill="url(#cryptVignette)" pointer-events="none"/>
+</svg>

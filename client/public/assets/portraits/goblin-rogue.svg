@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#261f38"/>
+      <stop offset="55%" stop-color="#131020"/>
+      <stop offset="100%" stop-color="#07060d"/>
+    </radialGradient>
+    <radialGradient id="poisonRim" cx="76%" cy="28%" r="52%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.42"/>
+      <stop offset="48%" stop-color="#16a34a" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#15803d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goblinSkin" x1="0.2" y1="0" x2="0.85" y2="1">
+      <stop offset="0%" stop-color="#84b84d"/>
+      <stop offset="58%" stop-color="#558230"/>
+      <stop offset="100%" stop-color="#2c4717"/>
+    </linearGradient>
+    <linearGradient id="darkLeather" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b3642"/>
+      <stop offset="55%" stop-color="#221e29"/>
+      <stop offset="100%" stop-color="#0f0d14"/>
+    </linearGradient>
+    <linearGradient id="daggerSteel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="45%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
+      <stop offset="62%" stop-color="#040308" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#040308" stop-opacity="0.74"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <rect width="512" height="512" fill="url(#poisonRim)"/>
+
+  <!-- Dark Leather Rogue Hood & High Stealth Scarf -->
+  <path d="M138 232 Q144 96 256 88 Q368 96 374 232 L416 382 L442 512 L70 512 L96 382 Z" fill="url(#darkLeather)" stroke="#09080d" stroke-width="3.5"/>
+  <path d="M168 242 Q172 126 256 120 Q340 126 344 242 Q306 312 256 316 Q206 312 168 242 Z" fill="#0b0912"/>
+
+  <!-- Long Notched Goblin Ears Poking Out Through Sides of Hood -->
+  <g>
+    <path d="M188 202 L82 162 L124 224 L178 236 Z" fill="url(#goblinSkin)" stroke="#1f3310" stroke-width="2.5"/>
+    <path d="M170 206 L108 184 L132 214 Z" fill="#3a5c1f" opacity="0.65"/>
+    <circle cx="114" cy="212" r="7" fill="none" stroke="#eab308" stroke-width="2.8"/>
+
+    <path d="M324 202 L430 162 L388 224 L334 236 Z" fill="#4f782c" stroke="#1f3310" stroke-width="2.5"/>
+    <path d="M342 206 L404 184 L380 214 Z" fill="#2e4a18" opacity="0.65"/>
+    <!-- Notch in right ear -->
+    <polygon points="396,174 384,186 402,190" fill="#131020"/>
+  </g>
+
+  <!-- Agile Dark Leather Jerkin & Utility Pouches -->
+  <path d="M126 356 Q192 312 256 318 Q320 312 386 356 L406 512 L106 512 Z" fill="url(#darkLeather)" stroke="#0a090f" stroke-width="3"/>
+  <!-- Crossed Throwing-Knife Bandolier -->
+  <path d="M162 332 L348 512 L316 512 L140 352 Z" fill="#452b1a" stroke="#1a0e07" stroke-width="2"/>
+  <path d="M350 332 L164 512 L196 512 L372 352 Z" fill="#3b2416" stroke="#1a0e07" stroke-width="2"/>
+  <!-- Stitched dark scarf around neck -->
+  <path d="M164 316 Q256 356 348 316 L356 364 Q256 404 156 364 Z" fill="#2e1836" stroke="#120817" stroke-width="2.5"/>
+
+  <!-- Cunning Sharp-Featured Goblin Head -->
+  <path d="M192 184 Q192 134 256 134 Q320 134 320 184 L310 238 Q294 282 256 296 Q218 282 202 238 Z" fill="url(#goblinSkin)" stroke="#1f3310" stroke-width="2"/>
+
+  <!-- Expressive Mischievous Brows & Glowing Golden-Red Eyes -->
+  <path d="M202 186 Q226 176 246 196" fill="none" stroke="#1e3310" stroke-width="5" stroke-linecap="round"/>
+  <path d="M310 186 Q286 176 266 196" fill="none" stroke="#1e3310" stroke-width="5" stroke-linecap="round"/>
+
+  <path d="M204 206 Q224 192 246 208 Q226 220 204 206 Z" fill="#1c1108"/>
+  <circle cx="226" cy="206" r="7" fill="#facc15"/>
+  <ellipse cx="226" cy="206" rx="2.4" ry="6" fill="#0f0704"/>
+  <circle cx="229" cy="203" r="2" fill="#ffffff"/>
+
+  <path d="M266 208 Q288 192 308 206 Q286 220 266 208 Z" fill="#1c1108"/>
+  <circle cx="286" cy="206" r="7" fill="#facc15"/>
+  <ellipse cx="286" cy="206" rx="2.4" ry="6" fill="#0f0704"/>
+  <circle cx="289" cy="203" r="2" fill="#ffffff"/>
+
+  <!-- Long Hooked Goblin Nose -->
+  <path d="M256 202 Q248 232 256 244 Q266 238 262 216" fill="#6d9c3d" stroke="#223812" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Wide Mischievous Tooth-Glinting Grin -->
+  <path d="M214 254 Q256 284 298 254 Q256 266 214 254 Z" fill="#21090c" stroke="#1a2c0e" stroke-width="2"/>
+  <path d="M224 258 L230 266 L237 260 L245 268 L256 262 L267 268 L275 260 L282 266 L288 258" fill="#f5eedc"/>
+
+  <!-- Twin Wicked Poison-Tipped Daggers Crossed in Lower Foreground -->
+  <g transform="translate(122, 388) rotate(-32)">
+    <polygon points="0,-116 12,-30 8,10 -8,10 -12,-30" fill="url(#daggerSteel)" stroke="#0f172a" stroke-width="2"/>
+    <!-- Venomous emerald sheen at blade tip -->
+    <polygon points="0,-116 7,-64 0,-56 -7,-64" fill="#4ade80" opacity="0.72"/>
+    <rect x="-24" y="8" width="48" height="10" rx="3" fill="#64748b" stroke="#0f172a" stroke-width="2"/>
+    <rect x="-6" y="18" width="12" height="44" rx="3" fill="#2e180c"/>
+  </g>
+  <g transform="translate(390, 388) rotate(32)">
+    <polygon points="0,-116 12,-30 8,10 -8,10 -12,-30" fill="url(#daggerSteel)" stroke="#0f172a" stroke-width="2"/>
+    <polygon points="0,-116 7,-64 0,-56 -7,-64" fill="#4ade80" opacity="0.72"/>
+    <rect x="-24" y="8" width="48" height="10" rx="3" fill="#64748b" stroke="#0f172a" stroke-width="2"/>
+    <rect x="-6" y="18" width="12" height="44" rx="3" fill="#2e180c"/>
+  </g>
+
+  <rect width="512" height="512" fill="url(#vignette)" pointer-events="none"/>
+</svg>

@@ -1,0 +1,246 @@
+{
+  "systemId": "mighty-blade-3e",
+  "name": "Mighty Blade 3ª Edição",
+  "shortName": "Mighty Blade 3e",
+  "version": "3.5",
+  "edition": "3ª Edição (Guia Básico + Guia do Herói)",
+  "authors": ["Tiago Junges", "Domênico Gay", "Luciano Abel"],
+  "publisher": "Coisinha Verde / Editora Runas",
+  "license": "Distribuição Gratuita Oficial (Creative Commons / Coisinha Verde)",
+  "language": "pt-BR",
+  "defaultSetting": "Drakon",
+  "attributes": [
+    {
+      "id": "forca",
+      "name": "Força",
+      "shortName": "FOR",
+      "description": "Mede o vigor físico, potência muscular, resistência corporal e capacidade de carga. Base para ataques corporais, Bloqueio e Força Necessária (FN) de armas e armaduras.",
+      "uses": ["Ataques corporais", "Dano com armas brancas", "Bloqueio", "Capacidade de Carga", "Força Necessária (FN)", "Escalar, saltar, nadar e resistir a impactos"]
+    },
+    {
+      "id": "agilidade",
+      "name": "Agilidade",
+      "shortName": "AGI",
+      "description": "Mede destreza manual, reflexos, equilíbrio, coordenação e velocidade. Base para Esquiva, Iniciativa, Deslocamento, ataques à distância e furtividade.",
+      "uses": ["Esquiva", "Iniciativa", "Deslocamento", "Ataques à distância", "Furtividade", "Acrobacia e reflexos"]
+    },
+    {
+      "id": "inteligencia",
+      "name": "Inteligência",
+      "shortName": "INT",
+      "description": "Mede raciocínio lógico, erudição, memória, percepção e domínio de artes arcanas. Usada em conjuração arcana, investigação, conhecimento e Determinação.",
+      "uses": ["Conjuração Arcana", "Percepção e Investigação", "Conhecimentos Gerais e Arcanos", "Alquimia e Armadilhas", "Determinação (se maior que Vontade)"]
+    },
+    {
+      "id": "vontade",
+      "name": "Vontade",
+      "shortName": "VON",
+      "description": "Mede força espiritual, carisma, coragem, disciplina mental e conexão divina ou primal. Usada em conjuração divina/primal, resistência mental, estabilização e Determinação.",
+      "uses": ["Conjuração Divina e Primal", "Determinação (se maior que Inteligência)", "Resistir a medo e controle mental", "Persuasão e Intimidação", "Teste de estabilização ao cair Inconsciente"]
+    }
+  ],
+  "characterCreation": {
+    "startingLevel": 1,
+    "maxLevel": 10,
+    "startingPv": 60,
+    "startingPm": 60,
+    "startingGold": 400,
+    "currencyName": "Moedas de Ouro (MO)",
+    "initialChosenAbilities": 3,
+    "steps": [
+      "1. Escolha sua Raça: anote os 4 atributos iniciais da raça e a Habilidade Automática racial.",
+      "2. Escolha sua Classe: some os bônus de atributos da classe (+1 em dois atributos principais) e anote a Habilidade Automática da classe.",
+      "3. Pontos Extras: se sua raça conceder pontos livres (como o Humano com +1 livre), distribua-os nos atributos desejados.",
+      "4. Escolha 3 Habilidades iniciais: selecione 3 habilidades entre as listas da sua Raça, da sua Classe ou Habilidades Gerais (respeitando pré-requisitos).",
+      "5. Equipamentos: receba o pacote inicial da classe ou gaste 400 moedas para comprar armas, armaduras e suprimentos (respeitando a Força Necessária).",
+      "6. Valores Derivados: inicie com 60 PV e 60 PM (somando bônus raciais ou de habilidades) e calcule Esquiva, Bloqueio, Determinação, Deslocamento e Carga."
+    ]
+  },
+  "derivedStats": {
+    "pv": {
+      "label": "Pontos de Vida (PV)",
+      "base": 60,
+      "formula": "60 + race.pvBonus + levelEvolutionPv + abilityPvBonus",
+      "description": "Todo personagem inicia no Nível 1 com 60 PV base, somando bônus raciais (como Orc +10 PV), habilidades e evoluções de nível (+10 PV ou +5 PV por escolha)."
+    },
+    "pm": {
+      "label": "Pontos de Mana (PM)",
+      "base": 60,
+      "formula": "60 + race.pmBonus + levelEvolutionPm + abilityPmBonus",
+      "description": "Todo personagem inicia no Nível 1 com 60 PM base, usados para conjurar magias e ativar habilidades especiais, somando bônus de evolução (+10 PM ou +5 PM por escolha)."
+    },
+    "esquiva": {
+      "label": "Esquiva",
+      "baseDefault": 5,
+      "smallSizeBase": 6,
+      "formula": "(race.baseDefenseOverride || 5) + agilidade + equipmentEsquivaBonus + abilityEsquivaBonus + conditionEsquivaDelta",
+      "description": "Defesa ágil usada para desviar de ataques físicos. Base 5 (ou 6 para raças Pequenas como Metadílio, Faen e Goblin) + Agilidade + bônus de Esquiva."
+    },
+    "bloqueio": {
+      "label": "Bloqueio",
+      "baseDefault": 5,
+      "smallSizeBase": 6,
+      "formula": "(race.baseDefenseOverride || 5) + forca + armorBonus + shieldBonus + abilityBloqueioBonus + conditionBloqueioDelta",
+      "description": "Defesa resistente usada para aparar ou absorver impactos com o corpo, armadura e escudo. Base 5 (ou 6 se Pequeno) + Força + Armadura + Escudo + bônus de Bloqueio."
+    },
+    "defesaEfetiva": {
+      "label": "Defesa",
+      "formula": "max(esquiva, bloqueio)",
+      "description": "Contra ataques físicos comuns, o defensor utiliza o maior valor aplicável entre Esquiva e Bloqueio (ataques surpresa ou que ignorem armadura podem restringir a escolha)."
+    },
+    "determinacao": {
+      "label": "Determinação",
+      "base": 8,
+      "formula": "8 + max(inteligencia, vontade) + equipmentDeterminacaoBonus + abilityDeterminacaoBonus + conditionDeterminacaoDelta",
+      "description": "Defesa mental e espiritual contra magias de controle, ilusões, medo e efeitos sobrenaturais. Base 8 + maior atributo entre Inteligência e Vontade + bônus."
+    },
+    "deslocamento": {
+      "label": "Deslocamento",
+      "baseMeters": 5,
+      "gridSquareMeters": 1.5,
+      "formulaMeters": "floor(agilidade / 2) + 5 + race.movementModifier + abilityMoveBonus + conditionMoveDelta",
+      "formulaSquares": "max(1, floor(deslocamentoMetros / 1.5))",
+      "description": "Distância em metros percorrida com uma Ação de Movimento: 5 + metade da Agilidade (arredondado para baixo) + modificadores raciais e de condições."
+    },
+    "corrida": {
+      "label": "Corrida",
+      "multiplier": 2,
+      "formulaMeters": "deslocamentoMetros * 2",
+      "description": "Ao gastar Ação Padrão e Ação de Movimento para correr em linha relativamente reta, o personagem percorre o dobro do seu Deslocamento (impedido se Exausto ou em Carga Pesada)."
+    },
+    "carga": {
+      "label": "Capacidade de Carga",
+      "unit": "kg",
+      "basicaFormula": "forca * 7",
+      "pesadaFormula": "forca * 14",
+      "maximaFormula": "forca * 21",
+      "penalties": {
+        "basica": "Sem penalidades de movimento ou testes.",
+        "pesada": "Deslocamento reduzido à metade (0.5x), não pode correr e sofre -2 em testes físicos de movimentação.",
+        "maxima": "Deslocamento reduzido a 0; exige teste de Força (Dif. 10) por turno para não largar a carga ou cair Exausto."
+      },
+      "forcaNecessariaRule": "Armas e armaduras possuem Força Necessária (FN). Se Força < FN, o personagem é considerado Inapto com o item (rola apenas 1d6 em vez de 2d6). Armas versáteis empunhadas com duas mãos reduzem a FN em 1."
+    }
+  },
+  "coreRollMechanic": {
+    "standardDice": "2d6",
+    "inaptoDice": "1d6",
+    "advantageDice": "3d6",
+    "formula": "2d6 + atributo + modificadores >= dificuldade",
+    "inaptoRule": "Quando o personagem é Inapto (sem equipamento adequado, Força < FN ou sob condições como Cego/Enregelado), rola apenas 1d6 + atributo + modificadores.",
+    "extraDieRule": "Habilidades ou traços raciais que concedem +1d6 fazem o jogador rolar 3d6 e somar todos os dados ao atributo (ou manter bônus conforme a habilidade).",
+    "criticalHit": {
+      "name": "Acerto Crítico (Sucesso Crítico)",
+      "trigger": "all_dice_6",
+      "standardTrigger": "6+6 em 2d6 (todos os dados rolados mostram 6)",
+      "autoSuccess": true,
+      "damageMultiplier": 2,
+      "description": "Todos os dados da rolagem caíram em 6! É um sucesso automático excepcional. Em ataques, o dano total é duplicado (x2). Apenas outro Sucesso Crítico empata/supera em testes resistidos."
+    },
+    "criticalFailure": {
+      "name": "Falha Crítica (Erro Crítico)",
+      "trigger": "all_dice_1",
+      "standardTrigger": "1+1 em 2d6 (ou 1 em 1d6 quando Inapto)",
+      "autoFailure": true,
+      "description": "Todos os dados da rolagem caíram em 1! É uma falha catastrófica: em combate pode derrubar a arma, tropeçar (ficando Caído), quebrar equipamento ou abrir brecha para o inimigo."
+    },
+    "difficultyTable": [
+      { "id": "rotineira", "label": "Rotineira", "target": 6, "description": "Tarefa simples sob leve pressão." },
+      { "id": "facil", "label": "Fácil", "target": 8, "description": "Desafio básico para alguém treinado." },
+      { "id": "normal", "label": "Normal (Padrão)", "target": 10, "description": "Dificuldade padrão de testes e estabilização." },
+      { "id": "desafiadora", "label": "Desafiadora", "target": 12, "description": "Exige técnica apurada ou sorte." },
+      { "id": "dificil", "label": "Difícil", "target": 14, "description": "Façanha notável mesmo para veteranos." },
+      { "id": "muito_dificil", "label": "Muito Difícil", "target": 16, "description": "Proeza heroica próxima do limite humano." },
+      { "id": "epica", "label": "Épica", "target": 18, "description": "Feito lendário quase impossível." }
+    ]
+  },
+  "levelProgression": {
+    "xpPerLevel": 10,
+    "maxLevel": 10,
+    "classSynergyUnlockLevel": 2,
+    "evolutionChoiceOptions": [
+      { "id": "pv10", "label": "+10 Pontos de Vida (PV)", "pv": 10, "pm": 0 },
+      { "id": "pm10", "label": "+10 Pontos de Mana (PM)", "pv": 0, "pm": 10 },
+      { "id": "pv5_pm5", "label": "+5 PV e +5 PM", "pv": 5, "pm": 5 }
+    ],
+    "table": [
+      { "level": 1, "xpRequired": 0, "abilitiesGained": 3, "attributePointsGained": 0, "evolutionPointsGained": 0, "notes": "Criação do personagem: 60 PV, 60 PM, Habilidade Automática de Raça e Classe + 3 Habilidades iniciais." },
+      { "level": 2, "xpRequired": 10, "abilitiesGained": 1, "attributePointsGained": 0, "evolutionPointsGained": 1, "notes": "+1 Habilidade, +1 Ponto de Evolução (+10 PV / +10 PM / +5 cada). Libera Sinergia de Classe." },
+      { "level": 3, "xpRequired": 20, "abilitiesGained": 1, "attributePointsGained": 0, "evolutionPointsGained": 1, "notes": "+1 Habilidade, +1 Ponto de Evolução (+10 PV / +10 PM / +5 cada)." },
+      { "level": 4, "xpRequired": 30, "abilitiesGained": 1, "attributePointsGained": 1, "evolutionPointsGained": 0, "notes": "+1 Habilidade, +1 Ponto em qualquer Atributo." },
+      { "level": 5, "xpRequired": 40, "abilitiesGained": 1, "attributePointsGained": 0, "evolutionPointsGained": 1, "notes": "+1 Habilidade, +1 Ponto de Evolução (+10 PV / +10 PM / +5 cada)." },
+      { "level": 6, "xpRequired": 50, "abilitiesGained": 1, "attributePointsGained": 0, "evolutionPointsGained": 1, "notes": "+1 Habilidade, +1 Ponto de Evolução (+10 PV / +10 PM / +5 cada)." },
+      { "level": 7, "xpRequired": 60, "abilitiesGained": 1, "attributePointsGained": 1, "evolutionPointsGained": 0, "notes": "+1 Habilidade, +1 Ponto em qualquer Atributo." },
+      { "level": 8, "xpRequired": 70, "abilitiesGained": 1, "attributePointsGained": 0, "evolutionPointsGained": 1, "notes": "+1 Habilidade, +1 Ponto de Evolução (+10 PV / +10 PM / +5 cada)." },
+      { "level": 9, "xpRequired": 80, "abilitiesGained": 1, "attributePointsGained": 0, "evolutionPointsGained": 1, "notes": "+1 Habilidade, +1 Ponto de Evolução (+10 PV / +10 PM / +5 cada)." },
+      { "level": 10, "xpRequired": 90, "abilitiesGained": 1, "attributePointsGained": 1, "evolutionPointsGained": 0, "notes": "Nível Máximo: +1 Habilidade, +1 Ponto em qualquer Atributo. O herói torna-se uma lenda de Drakon." }
+    ]
+  },
+  "combat": {
+    "initiative": {
+      "formula": "2d6 + agilidade + initiativeBonus",
+      "tieBreaker": "Maior Agilidade; persistindo empate, nova rolagem ou escolha do Mestre."
+    },
+    "turnActions": {
+      "standardActions": 1,
+      "movementActions": 1,
+      "reactions": "Conforme habilidades de Reação disponíveis (bloqueado se Cego, Paralisado ou Inconsciente).",
+      "freeActions": "Falar frases curtas, soltar um item ou acionar efeitos passivos.",
+      "description": "Em cada turno o personagem dispõe de 1 Ação Padrão (atacar, conjurar magia, usar habilidade ativa, prestar primeiros socorros) e 1 Ação de Movimento (andar até seu Deslocamento, levantar-se de Caído, sacar arma). Pode converter a Ação Padrão em segundo Movimento ou combinar ambas para Correr."
+    },
+    "attackResolution": {
+      "meleeFormula": "2d6 + forca + attackBonus >= targetDefense",
+      "rangedFormula": "2d6 + agilidade + attackBonus >= targetDefense",
+      "finesseFormula": "2d6 + agilidade + attackBonus >= targetDefense",
+      "magicFormula": "2d6 + spellcastingAttribute + magicBonus >= targetDefenseOrDeterminacao",
+      "damageCalculation": "Dano da arma (ex.: Força + bônus fixo da arma, ou dano fixo para arcos/bestas/magias) + bônus de habilidades. Em Acerto Crítico (duplo 6), o dano total é duplicado (x2). Dano mínimo de um ataque bem-sucedido é 1.",
+      "armorAndShields": "Armaduras e escudos aumentam o Bloqueio e nunca reduzem dano diretamente (exceto habilidades específicas como Pele de Pedra ou Resistência elemental, que reduz dano daquele elemento pela metade)."
+    },
+    "deathAndUnconsciousness": {
+      "unconsciousAtPv": 0,
+      "deathThresholdPv": -10,
+      "stabilizeTestAttribute": "vontade",
+      "stabilizeDifficulty": 10,
+      "recoveryOnStabilize": "1d6",
+      "description": "Ao chegar a 0 PV, o personagem cai Inconsciente e Indefeso. Dano contínuo ou golpes que o levem a -10 PV ou menos causam morte imediata. Ao fim do combate, faz um teste de Vontade (Dificuldade 10): em sucesso estabiliza e recobra a consciência com 1d6 PV; em falha precisa de ajuda médica/mágica antes de morrer."
+    },
+    "restAndRecovery": {
+      "shortRest": {
+        "name": "Descanso Curto (1 hora)",
+        "durationHours": 1,
+        "pvRecovered": 5,
+        "pmRecovered": 5,
+        "requirement": "1 hora contínua sem esforço físico ou combate."
+      },
+      "longRest": {
+        "name": "Sono / Descanso Longo (6 a 8 horas)",
+        "durationHours": 8,
+        "pvRecovered": 30,
+        "pmRecovered": 30,
+        "requirement": "Pelo menos 6 horas de sono ininterrupto em local seguro (recupera +30 PV e +30 PM)."
+      },
+      "fullSanctuaryRest": {
+        "name": "Descanso Completo em Estalagem / Santuário",
+        "durationHours": 24,
+        "fullRecovery": true,
+        "requirement": "Um dia inteiro de repouso confortável com alimentação e cuidados."
+      }
+    }
+  },
+  "magic": {
+    "manaRule": "Conjurar uma magia consome seu custo em Pontos de Mana (PM) imediatamente ao declarar a conjuração. Se o personagem não tiver PM suficientes, não pode conjurar.",
+    "castingRoll": "2d6 + atributoConjuracao (Inteligência para magia arcana/alquimia/runas; Vontade para magia divina/primal/bárdica) >= Dificuldade da Magia (ou Defesa/Determinação do alvo).",
+    "verbalRequirement": "Magias padrão exigem entoação verbal e gestos livres; personagens Silenciados ou Cegos não conseguem conjurar magias comuns.",
+    "paths": [
+      { "id": "fogo", "name": "Caminho do Fogo", "element": "Fogo", "description": "Chamas destrutivas, calor intenso, luz ardente e combustão." },
+      { "id": "agua", "name": "Caminho da Água", "element": "Água/Gelo", "description": "Manipulação de líquidos, gelo paralisante, névoas e fluidez curativa." },
+      { "id": "terra", "name": "Caminho da Terra", "element": "Terra", "description": "Rochas, metal, terremotos, proteção física e fortalecimento." },
+      { "id": "ar", "name": "Caminho do Ar", "element": "Ar/Relâmpago", "description": "Ventos cortantes, relâmpagos, voo, velocidade e ilusões sonoras." },
+      { "id": "luz", "name": "Caminho da Luz", "element": "Luz/Sagrado", "description": "Cura divina, purificação, barreiras radiantes e expulsão de mortos-vivos." },
+      { "id": "trevas", "name": "Caminho das Trevas", "element": "Trevas/Sombra", "description": "Sombras, maldições, medo, necromancia e drenagem vital." },
+      { "id": "espirito", "name": "Caminho do Espírito", "element": "Espírito/Mente", "description": "Telepatia, encantamentos, ilusões mentais, telecinese e proteção psíquica." },
+      { "id": "natureza", "name": "Caminho da Natureza", "element": "Primal", "description": "Vínculo com flora, fauna, venenos naturais, metamorfose e regeneração." },
+      { "id": "arcano", "name": "Magia Arcana & Rúnica", "element": "Arcano", "description": "Manipulação pura de mana, runas gravadas, selos e contramágica." }
+    ]
+  }
+}

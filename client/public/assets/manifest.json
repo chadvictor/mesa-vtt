@@ -1,0 +1,150 @@
+{
+  "version": "1.0.0",
+  "format": "svg",
+  "banner": {
+    "id": "banner-mesa-rpg",
+    "name": "Mesa VTT — A Mesa do Mestre",
+    "url": "./assets/banner-mesa-rpg.svg",
+    "width": 1600,
+    "height": 900,
+    "description": "Cena cinematográfica de taverna medieval iluminada à luz de velas com mapa de pergaminho, grimório arcano aberto e dados poliédricos reluzentes."
+  },
+  "maps": [
+    {
+      "id": "tavern",
+      "name": "Estalagem do Javali Dourado",
+      "url": "./assets/maps/tavern.svg",
+      "gridCols": 24,
+      "gridRows": 18,
+      "gridSizePx": 80,
+      "width": 1920,
+      "height": 1440,
+      "description": "Taverna medieval acolhedora com balcão em L, lareira acesa, mesas redondas, palco de bardo, adega de barris e escadaria para o mezanino."
+    },
+    {
+      "id": "dungeon-crypt",
+      "name": "Cripta dos Antigos",
+      "url": "./assets/maps/dungeon-crypt.svg",
+      "gridCols": 24,
+      "gridRows": 18,
+      "gridSizePx": 80,
+      "width": 1920,
+      "height": 1440,
+      "description": "Cripta subterrânea de pedra desgastada com altar ritual arcano central, braseiros ardentes, pilares maciços, alcovas de sarcófagos e relicário gradeado."
+    },
+    {
+      "id": "forest-road",
+      "name": "Estrada da Floresta Sombria",
+      "url": "./assets/maps/forest-road.svg",
+      "gridCols": 24,
+      "gridRows": 18,
+      "gridSizePx": 80,
+      "width": 1920,
+      "height": 1440,
+      "description": "Clareira florestal com estrada de terra sinuosa, ponte de pedra sobre riacho cristalino, ruínas tomadas por musgo e acampamento propício a emboscadas."
+    },
+    {
+      "id": "castle-courtyard",
+      "name": "Pátio do Castelo de Drakon",
+      "url": "./assets/maps/castle-courtyard.svg",
+      "gridCols": 24,
+      "gridRows": 18,
+      "gridSizePx": 80,
+      "width": 1920,
+      "height": 1440,
+      "description": "Pátio murado de cidadela medieval com calçamento de paralelepípedos, fonte central octogonal, tendas de mercado, ameias, torres de vigia e portão levadiço."
+    }
+  ],
+  "portraits": [
+    {
+      "id": "human-warrior",
+      "name": "Guerreiro Humano",
+      "url": "./assets/portraits/human-warrior.svg",
+      "role": "player",
+      "race": "humano",
+      "class": "guerreiro"
+    },
+    {
+      "id": "elf-mage",
+      "name": "Feiticeira Élfica",
+      "url": "./assets/portraits/elf-mage.svg",
+      "role": "player",
+      "race": "elfo",
+      "class": "feiticeiro"
+    },
+    {
+      "id": "dwarf-paladin",
+      "name": "Paladino Anão",
+      "url": "./assets/portraits/dwarf-paladin.svg",
+      "role": "player",
+      "race": "anao",
+      "class": "paladino"
+    },
+    {
+      "id": "faen-ranger",
+      "name": "Patrulheiro Faen",
+      "url": "./assets/portraits/faen-ranger.svg",
+      "role": "player",
+      "race": "faen",
+      "class": "patrulheiro"
+    },
+    {
+      "id": "orc-barbarian",
+      "name": "Bárbaro Orc",
+      "url": "./assets/portraits/orc-barbarian.svg",
+      "role": "player",
+      "race": "orc",
+      "class": "barbaro"
+    },
+    {
+      "id": "goblin-rogue",
+      "name": "Ladino Goblin",
+      "url": "./assets/portraits/goblin-rogue.svg",
+      "role": "player",
+      "race": "goblin",
+      "class": "ladino"
+    },
+    {
+      "id": "cleric-healer",
+      "name": "Sacerdotisa Humana",
+      "url": "./assets/portraits/cleric-healer.svg",
+      "role": "player",
+      "race": "humano",
+      "class": "sacerdote"
+    },
+    {
+      "id": "gm-avatar",
+      "name": "Mestre de Jogo",
+      "url": "./assets/portraits/gm-avatar.svg",
+      "role": "gm",
+      "race": "humano",
+      "class": "mestre"
+    }
+  ],
+  "monsters": [
+    {
+      "id": "goblin-raider",
+      "name": "Goblin Saqueador",
+      "url": "./assets/monsters/goblin-raider.svg",
+      "creatureId": "goblin-saqueador"
+    },
+    {
+      "id": "skeleton-warrior",
+      "name": "Esqueleto Guerreiro",
+      "url": "./assets/monsters/skeleton-warrior.svg",
+      "creatureId": "esqueleto-guerreiro"
+    },
+    {
+      "id": "dire-wolf",
+      "name": "Lobo Atroz",
+      "url": "./assets/monsters/dire-wolf.svg",
+      "creatureId": "lobo-atroz"
+    },
+    {
+      "id": "ancient-dragon",
+      "name": "Dragão Ancião",
+      "url": "./assets/monsters/ancient-dragon.svg",
+      "creatureId": "dragao-anciao"
+    }
+  ]
+}

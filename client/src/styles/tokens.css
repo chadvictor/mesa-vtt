@@ -1,0 +1,113 @@
+/* ============================================================================
+ * Mesa VTT — Dark-Fantasy Medieval Design Tokens
+ * Rich obsidian/slate surfaces, antique gold accents, emerald voice/HP glows,
+ * arcane sapphire mana, crimson danger, crisp accessible typography.
+ * ============================================================================ */
+
+:root {
+  /* Surfaces */
+  --bg-void: #07090d;
+  --bg-obsidian: #0c0f14;
+  --bg-surface: #141922;
+  --bg-elevated: #1b2230;
+  --bg-hover: #232c3e;
+  --bg-active: #2a354b;
+  --bg-glass: rgba(14, 18, 26, 0.86);
+  --bg-overlay: rgba(6, 8, 12, 0.78);
+
+  /* Parchment / Handout tones */
+  --parchment-bg: #1c1914;
+  --parchment-border: rgba(212, 168, 79, 0.28);
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(255, 255, 255, 0.13);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --border-gold: rgba(212, 168, 79, 0.36);
+  --border-gold-strong: rgba(242, 204, 123, 0.65);
+
+  /* Typography */
+  --font-display: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Text colors (WCAG AA+ on obsidian/surface) */
+  --text-primary: #eef2f8;
+  --text-secondary: #b2bdd0;
+  --text-muted: #7f8ba3;
+  --text-inverse: #0c0f14;
+
+  /* Antique Gold Accent */
+  --gold-400: #f2cc7b;
+  --gold-500: #d4a84f;
+  --gold-600: #b08633;
+  --gold-soft: rgba(212, 168, 79, 0.14);
+  --gold-glow: 0 0 18px rgba(212, 168, 79, 0.28);
+
+  /* Semantic: Emerald (Voice Speaking & HP) */
+  --emerald-400: #4ade80;
+  --emerald-500: #22c55e;
+  --emerald-600: #16a34a;
+  --emerald-soft: rgba(34, 197, 94, 0.16);
+  --emerald-glow: 0 0 0 2px #22c55e, 0 0 14px rgba(34, 197, 94, 0.55);
+
+  /* Semantic: Arcane Sapphire (Mana / Spells / Info) */
+  --sapphire-400: #60a5fa;
+  --sapphire-500: #3b82f6;
+  --sapphire-600: #2563eb;
+  --sapphire-soft: rgba(59, 130, 246, 0.16);
+
+  /* Semantic: Crimson (Danger / Damage / Mute / Fumble) */
+  --crimson-400: #f87171;
+  --crimson-500: #ef4444;
+  --crimson-600: #dc2626;
+  --crimson-soft: rgba(239, 68, 68, 0.16);
+
+  /* Semantic: Amethyst (Whispers / GM Secrets) */
+  --amethyst-400: #c084fc;
+  --amethyst-500: #a855f7;
+  --amethyst-soft: rgba(168, 85, 247, 0.16);
+
+  /* Semantic: Amber (Warnings / Buffs) */
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+  --amber-soft: rgba(245, 158, 11, 0.16);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.48);
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.68);
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* Layout Dimensions */
+  --topbar-height: 52px;
+  --voicebar-height: 48px;
+  --mobile-nav-height: 60px;
+  --left-sidebar-width: 280px;
+  --right-sidebar-width: 300px;
+
+  /* Safe areas (iOS notch / home indicator) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* Z-index stack */
+  --z-base: 1;
+  --z-canvas-ui: 15;
+  --z-floating-chat: 25;
+  --z-dice-3d: 40;
+  --z-header: 50;
+  --z-voice-bar: 60;
+  --z-mobile-nav: 65;
+  --z-modal: 80;
+  --z-voice-panel: 85;
+  --z-toast: 100;
+}

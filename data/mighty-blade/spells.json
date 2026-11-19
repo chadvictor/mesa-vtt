@@ -1,0 +1,2660 @@
+[
+  {
+    "id": "chama",
+    "name": "Chama",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "runico",
+      "xama",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 5,
+    "difficulty": 8,
+    "range": "Toque / 6m",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Cria uma pequena chama flutuante na palma da mão que ilumina 6 metros como uma tocha e pode incendiar objetos inflamáveis ou causar 6 de dano Fogo.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "6",
+      "damageType": "Fogo",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "seta-flamejante",
+    "name": "Seta Flamejante",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "runico",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Você dispara um projétil incandescente contra um alvo, causando 12 + Inteligência de dano Fogo.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "12 + inteligencia",
+      "damageType": "Fogo",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "maos-ardentes",
+    "name": "Mãos Ardentes",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 10,
+    "range": "Cone de 4m",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Um leque de chamas jorra de seus dedos, causando 12 de dano Fogo em todos os inimigos no cone e podendo incendiar roupas (Queimando).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "12",
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "area": "Cone 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "arma-flamejante",
+    "name": "Arma Flamejante",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "runico",
+      "paladino",
+      "alquimista"
+    ],
+    "type": "suporte",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Toque",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "Envolve uma arma corpo a corpo ou munições em fogo mágico, acrescentando +6 de dano Fogo a cada ataque bem-sucedido.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "6",
+      "damageType": "Fogo",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "bola-de-fogo",
+    "name": "Bola de Fogo",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "18 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "O conjurador dispara uma esfera flamejante que explode no impacto, causando 20 pontos de dano (Fogo) no alvo principal e 10 pontos de dano (Fogo) em todos adjacentes. Teste de Agilidade (Dif 14) reduz o dano à metade.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "20",
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "area": "Raio 3m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "muralha-de-fogo",
+    "name": "Muralha de Fogo",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "12 metros",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Ergue uma parede de chamas de 6 metros de comprimento e 3 metros de altura. Criaturas que atravessarem ou iniciarem o turno adjacentes sofrem 15 de dano Fogo.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "15",
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "area": "Linha 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "explosao-solar",
+    "name": "Explosão Solar",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "sacerdote"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 13,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Uma onda de calor e clarão intenso explode no ponto escolhido, causando 22 de dano Fogo e aplicando Cego por 1 turno nos atingidos.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "22",
+      "damageType": "Fogo",
+      "appliesCondition": "cego",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "elemental-do-fogo",
+    "name": "Elemental do Fogo",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 35,
+    "difficulty": 13,
+    "range": "9 metros",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Invoca um Elemental do Fogo que obedece seus comandos em combate, atacando com punhos flamejantes (15 dano Fogo) e irradiando calor.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "15",
+      "damageType": "Fogo",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "inferno",
+    "name": "Inferno",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 40,
+    "difficulty": 14,
+    "range": "18 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Transforma uma grande área em um verdadeiro mar de chamas abrasadoras, causando 30 de dano Fogo imediato e aplicando Queimando em todas as criaturas na zona.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "30",
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "chuva-de-meteoros",
+    "name": "Chuva de Meteoros",
+    "path": "Fogo",
+    "pathId": "fogo",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 50,
+    "difficulty": 15,
+    "range": "24 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Rocha em brasa desaba dos céus em múltiplas explosões devastadoras, causando 40 de dano Fogo/Contusão em uma vasta área.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "40",
+      "damageType": "Fogo",
+      "appliesCondition": "caido",
+      "area": "Raio 8m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "seta-de-gelo",
+    "name": "Seta de Gelo",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "runico",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Dispara uma estalactite congelada que perfura o alvo, causando 10 + Inteligência de dano Gelo e reduzindo o deslocamento dele em 2m no próximo turno.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "10 + inteligencia",
+      "damageType": "Gelo",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "congelar",
+    "name": "Congelar",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "runico",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Recobre o alvo ou um objeto com uma crosta de gelo rígida, causando 8 de dano Gelo e aplicando Congelado se falhar em Força (Dif 11).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "8",
+      "damageType": "Gelo",
+      "appliesCondition": "enregelado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "nevoa-espessa",
+    "name": "Névoa Espessa",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "xama",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "12 metros",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "Cria uma nuvem densa de vapor gélido com 6 metros de raio que bloqueia a visão e impõe -2 em ataques à distância através dela.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "parede-de-gelo",
+    "name": "Parede de Gelo",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "Ergue uma barreira translúcida de gelo sólido (6m de largura, 40 PV) que bloqueia passagem, flechas e linha de visão direta.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 3,
+      "area": "Linha 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "armadura-glacial",
+    "name": "Armadura Glacial",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "runico",
+      "alquimista"
+    ],
+    "type": "suporte",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "Placas cristalinas de gelo recobrem seu corpo, concedendo +3 em Bloqueio e causando 6 de dano Gelo a qualquer inimigo que o acerte corpo a corpo.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 3,
+      "damageFormula": "6",
+      "damageType": "Gelo",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "rajada-de-gelo",
+    "name": "Rajada de Gelo",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "Cone de 6m",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Dispara um jato congelante em cone que causa 18 de dano Gelo a todos os inimigos na área e aplica Congelado por 1 turno.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "18",
+      "damageType": "Gelo",
+      "appliesCondition": "enregelado",
+      "area": "Cone 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "laminas-de-gelo",
+    "name": "Lâminas de Gelo",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "runico",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Invoca três fragmentos afiados de gelo que podem atingir o mesmo alvo ou até três alvos distintos, causando 10 de dano Gelo/Perfuração cada.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "10",
+      "damageType": "Gelo",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "tempestade-de-granizo",
+    "name": "Tempestade de Granizo",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 30,
+    "difficulty": 13,
+    "range": "18 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Pedras de gelo caem violentamente numa área de 6 metros de raio, causando 24 de dano Gelo/Contusão e transformando o chão em terreno escorregadio.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "24",
+      "damageType": "Gelo",
+      "appliesCondition": "caido",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "elemental-do-gelo",
+    "name": "Elemental do Gelo",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 35,
+    "difficulty": 13,
+    "range": "9 metros",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Convoca um Elemental do Gelo resistente (45 PV, Def 13) que luta sob seu comando e congela inimigos com seu toque.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "14",
+      "damageType": "Gelo",
+      "appliesCondition": "enregelado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "nevasca-absoluta",
+    "name": "Nevasca Absoluta",
+    "path": "Água e Gelo",
+    "pathId": "agua",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 45,
+    "difficulty": 14,
+    "range": "20 metros",
+    "duration": "3 Turnos",
+    "source": "Guia do Herói",
+    "description": "Uma ventania polar cobre o campo de batalha, causando 32 de dano Gelo, reduzindo a visibilidade e congelando os inimigos que falharem em Força (Dif 13).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "32",
+      "damageType": "Gelo",
+      "appliesCondition": "enregelado",
+      "area": "Raio 8m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "lufada-de-vento",
+    "name": "Lufada de Vento",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Linha de 9m",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Uma rajada poderosa empurra criaturas 4 metros para trás, apaga chamas comuns, dispersa fumaça e pode derrubar alvos (Caído).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "6",
+      "damageType": "Contusao",
+      "appliesCondition": "caido",
+      "area": "Linha 9m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "centelha-eletrica",
+    "name": "Centelha Elétrica",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "runico"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "12 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Um raio rápido salta da ponta de seus dedos, causando 11 + Inteligência de dano Raio (+3 se o alvo vestir armadura metálica).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "11 + inteligencia",
+      "damageType": "Raio",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "manto-crepitante",
+    "name": "Manto Crepitante",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "suporte",
+    "manaCost": 15,
+    "difficulty": 9,
+    "range": "Pessoal",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "Faíscas elétricas dançam sobre suas vestes. Concede +2 em Esquiva e eletrocuta quem o atacar corpo a corpo causando 8 de dano Raio.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 2,
+      "damageFormula": "8",
+      "damageType": "Raio",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "barreira-de-ventos",
+    "name": "Barreira de Ventos",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida"
+    ],
+    "type": "reacao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal / 3m",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Correntes giratórias de ar desviam flechas, pedras e gases, concedendo +4 de Defesa contra ataques à distância.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 4,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "levitar",
+    "name": "Levitar",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "Pessoal ou 9m",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Permite flutuar verticalmente e deslizar pelo ar acima de armadilhas, abismos ou obstáculos terrestres.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "relampago",
+    "name": "Relâmpago",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "Linha de 15m",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Um feixe elétrico rasga o campo em linha reta, causando 22 de dano Raio em todas as criaturas atravessadas.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "22",
+      "damageType": "Raio",
+      "area": "Linha 15m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "arco-voltaico",
+    "name": "Arco Voltaico",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Uma descarga elétrica intensa que atinge um alvo principal (20 dano Raio) e salta para até 2 inimigos próximos (12 dano Raio) podendo deixá-los Atordoados.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "20",
+      "damageType": "Raio",
+      "appliesCondition": "atordoado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "voo",
+    "name": "Voo",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "Toque",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Concede ao alvo deslocamento aéreo completo de 12 metros por turno, permitindo manobras livres nos céus.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "corrente-de-raios",
+    "name": "Corrente de Raios",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 35,
+    "difficulty": 13,
+    "range": "18 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Um raio de altíssima voltagem salta entre até 5 inimigos em cadeia, causando 25 de dano Raio em cada um.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "25",
+      "damageType": "Raio",
+      "area": "5 alvos",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "tempestade-furiosa",
+    "name": "Tempestade Furiosa",
+    "path": "Ar e Relâmpago",
+    "pathId": "ar",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 45,
+    "difficulty": 14,
+    "range": "24 metros",
+    "duration": "3 Turnos",
+    "source": "Guia do Herói",
+    "description": "Nuvens carregadas de trovões cobrem o campo de batalha, desferindo relâmpagos de 30 de dano Raio por turno contra inimigos na área.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "30",
+      "damageType": "Raio",
+      "appliesCondition": "atordoado",
+      "area": "Raio 8m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "arremessar-rocha",
+    "name": "Arremessar Rocha",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "xama",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Ergue uma pedra do chão e a projeta com força cinética contra o alvo, causando 12 + Inteligência de dano Contusão.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "12 + inteligencia",
+      "damageType": "Contusao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "pele-rochosa",
+    "name": "Pele Rochosa",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "runico",
+      "alquimista"
+    ],
+    "type": "suporte",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Toque",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "A pele do alvo assume dureza mineral, concedendo +3 em Bloqueio e redução de 3 pontos contra dano físico.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 3,
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "abraco-de-pedra",
+    "name": "Abraço de Pedra",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Mãos de rocha emergem do solo e agarram as pernas de um inimigo, causando 10 de dano Contusão e aplicando Imobilizado.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "10",
+      "damageType": "Contusao",
+      "appliesCondition": "imobilizado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "mover-terra",
+    "name": "Mover Terra",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Escava trincheiras, ergue rampas ou altera o relevo de até 4 metros cúbicos de terra ou areia.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "espinhos-de-rocha",
+    "name": "Espinhos de Rocha",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Estalagmites afiadas irrompem do chão sob os pés dos inimigos, causando 18 de dano Perfuração em uma área de 3 metros.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "18",
+      "damageType": "Perfuracao",
+      "area": "Raio 3m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "muralha-de-pedra",
+    "name": "Muralha de Pedra",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "alquimista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "12 metros",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Ergue uma parede espessa de pedra maciça (6m de largura, 60 PV) oferecendo cobertura total e bloqueando o avanço inimigo.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 4,
+      "area": "Linha 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "tremor",
+    "name": "Tremor",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "Raio de 6m",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Um abalo sísmico violento sacode o solo ao seu redor, causando 18 de dano Contusão e derrubando (Caído) todos os inimigos na área.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "18",
+      "damageType": "Contusao",
+      "appliesCondition": "caido",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "fissura-sismica",
+    "name": "Fissura Sísmica",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 30,
+    "difficulty": 13,
+    "range": "Linha de 12m",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Abre uma fenda profunda no terreno em linha reta, causando 25 de dano Contusão e prendendo criaturas que falharem em Agilidade (Dif 13).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "25",
+      "damageType": "Contusao",
+      "appliesCondition": "imobilizado",
+      "area": "Linha 12m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "elemental-da-terra",
+    "name": "Elemental da Terra",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 35,
+    "difficulty": 13,
+    "range": "9 metros",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Invoca um colosso de rocha (60 PV, Bloqueio 15) que protege o conjurador e esmaga inimigos com 16 de dano Contusão.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "16",
+      "damageType": "Contusao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "terremoto",
+    "name": "Terremoto",
+    "path": "Terra",
+    "pathId": "terra",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 45,
+    "difficulty": 14,
+    "range": "24 metros",
+    "duration": "2 Turnos",
+    "source": "Guia do Herói",
+    "description": "Desencadeia um cataclismo localizado capaz de derrubar muros, causar 35 de dano Contusão em área e lançar todos os inimigos ao chão.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "35",
+      "damageType": "Contusao",
+      "appliesCondition": "caido",
+      "area": "Raio 9m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "luz",
+    "name": "Luz",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote",
+      "paladino",
+      "mago",
+      "feiticeiro"
+    ],
+    "type": "acao",
+    "manaCost": 5,
+    "difficulty": 8,
+    "range": "Toque / 12m",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Faz um objeto brilhar como a luz do dia em um raio de 12 metros, dissipando escuridão comum e revelando sombras escondidas.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "area": "Raio 12m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "raio-de-luz",
+    "name": "Raio de Luz",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote",
+      "paladino",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Dispara um feixe radiante que causa 12 + Vontade de dano Sagrado (+6 extra contra Mortos-Vivos e Demônios).",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "12 + vontade",
+      "damageType": "Sagrado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "abencoar-objeto",
+    "name": "Abençoar Objeto",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote",
+      "paladino"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Toque",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Consagra uma arma ou armadura. Armas abençoadas causam +3 de dano Sagrado; armaduras concedem +1 em Bloqueio contra criaturas profanas.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "3",
+      "damageType": "Sagrado",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "curar-ferimentos",
+    "name": "Curar Ferimentos",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote",
+      "paladino",
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Toque / 6m",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Canaliza energia vital luminosa que fecha cortes e regenera ossos, restaurando 25 + Vontade Pontos de Vida do alvo.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "25 + vontade",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "abencoar-aliados",
+    "name": "Abençoar Aliados",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote",
+      "paladino"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Raio de 9m",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Uma bênção coletiva envolve o grupo, concedendo +2 em testes de ataque e +2 em Determinação para todos os aliados na área.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "defenseBonus": 2,
+      "area": "Raio 9m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "escudo-de-luz",
+    "name": "Escudo de Luz",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote",
+      "paladino"
+    ],
+    "type": "reacao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "9 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Cria um broquel flutuante de pura luz diante de você ou de um aliado, concedendo +3 em Defesa contra ataques físicos e sombrios.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "defenseBonus": 3,
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "clarao-cegante",
+    "name": "Clarão Cegante",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote",
+      "paladino",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "12 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Uma explosão súbita de luz branca ofusca inimigos em 4 metros, causando 10 de dano Sagrado e aplicando Cego por 2 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "10",
+      "damageType": "Sagrado",
+      "appliesCondition": "cego",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "cura-em-area",
+    "name": "Onda de Cura",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "Raio de 9m",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Uma onda dourada irradia de suas mãos, restaurando 22 + Vontade Pontos de Vida de todos os aliados no alcance.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "22 + vontade",
+      "area": "Raio 9m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "coluna-solar",
+    "name": "Coluna Solar",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote",
+      "paladino"
+    ],
+    "type": "acao",
+    "manaCost": 30,
+    "difficulty": 13,
+    "range": "18 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Um pilar resplandecente desce dos céus sobre os inimigos, causando 28 de dano Sagrado (36 contra Mortos-Vivos) em uma área de 4 metros.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "28",
+      "damageType": "Sagrado",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "milagre-da-aurora",
+    "name": "Milagre da Aurora",
+    "path": "Luz",
+    "pathId": "luz",
+    "classIds": [
+      "sacerdote"
+    ],
+    "type": "acao",
+    "manaCost": 50,
+    "difficulty": 14,
+    "range": "Toque",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Restaura à vida um aliado caído há menos de 1 minuto (ou cura 50 PV e remove todas as condições de um aliado vivo).",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "50",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "sombra-protetora",
+    "name": "Sombra Protetora",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "xama"
+    ],
+    "type": "suporte",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Pessoal",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Sombras se enrolam em torno do seu corpo, borrando sua silhueta e concedendo +2 em Esquiva.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 2,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "adaga-das-sombras",
+    "name": "Adaga das Sombras",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "ladino"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Você molda e arremessa lâminas de escuridão sólida que ignoram parte da armadura, causando 14 + Inteligência de dano Trevas.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "14 + inteligencia",
+      "damageType": "Trevas",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "escuridao-magica",
+    "name": "Escuridão Mágica",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "15 metros",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "Cria uma esfera de trevas absolutas de 6 metros de raio que apaga fontes comuns de luz e aplica Cego a quem estiver dentro sem visão mágica.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "appliesCondition": "cego",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "toque-sombrio",
+    "name": "Toque Sombrio",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Toque",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Sua mão envolta em névoa negra drena calor e vitalidade, causando 16 de dano Trevas e impedindo o alvo de receber curas por 1 turno.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "16",
+      "damageType": "Trevas",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "medo-profundo",
+    "name": "Medo Profundo",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "bardo",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "12 metros",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Projeta pesadelos diretamente na mente de um inimigo. Se falhar em Determinação (Dif 11), fica Assustado e tenta fugir por 3 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "appliesCondition": "amedrontado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "manto-de-sombras",
+    "name": "Manto de Sombras",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "Pessoal",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Você se funde à escuridão, ficando Invisível em áreas de sombra e recebendo +3 em Esquiva.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 3,
+      "appliesCondition": "invisivel",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "passo-umbral",
+    "name": "Passo Umbral",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Você mergulha na própria sombra e reaparece instantaneamente em outra sombra a até 15 metros de distância.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "tentaculos-das-trevas",
+    "name": "Tentáculos das Trevas",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "15 metros",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Gavinhas sombrias brotam do chão em uma área de 4 metros, causando 14 de dano Trevas e aplicando Imobilizado nos inimigos capturados.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "14",
+      "damageType": "Trevas",
+      "appliesCondition": "imobilizado",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "drenar-essencia",
+    "name": "Drenar Essência",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "12 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Vilão",
+    "description": "Um raio sombrio arranca a força vital do alvo, causando 20 de dano Trevas e curando o conjurador em metade do dano causado.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "20",
+      "damageType": "Trevas",
+      "healFormula": "10",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "eclipse-devorador",
+    "name": "Eclipse Devorador",
+    "path": "Trevas",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 40,
+    "difficulty": 14,
+    "range": "18 metros",
+    "duration": "2 Turnos",
+    "source": "Guia do Vilão",
+    "description": "Um orbe negro consome luz e calor em 6 metros de raio, causando 32 de dano Trevas e aplicando Cego e Exausto nos sobreviventes.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "32",
+      "damageType": "Trevas",
+      "appliesCondition": "cego",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "detectar-magia",
+    "name": "Detectar Magia",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "runico",
+      "sacerdote",
+      "bardo"
+    ],
+    "type": "acao",
+    "manaCost": 5,
+    "difficulty": 8,
+    "range": "Raio de 12m",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Seus olhos passam a enxergar o brilho sutil de auras mágicas, runas ocultas, encantamentos e portais no alcance.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "area": "Raio 12m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "missil-arcano",
+    "name": "Míssil Arcano",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "runico"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "18 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Dispara dardos brilhantes de energia pura que perseguem o alvo e acertam automaticamente se a conjuração for bem-sucedida, causando 10 + Inteligência de dano Arcano.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "10 + inteligencia",
+      "damageType": "Arcano",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "escudo-arcano",
+    "name": "Escudo Arcano",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "runico"
+    ],
+    "type": "reacao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Pessoal",
+    "duration": "1 Turno",
+    "source": "Manual Básico",
+    "description": "Um disco translúcido de energia pura surge instantaneamente diante de você, concedendo +3 em Defesa contra ataques até o próximo turno.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "mao-telecinetica",
+    "name": "Mão Telecinética",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "12 metros",
+    "duration": "1 Cena",
+    "source": "Grimório das Pequenas Magias",
+    "description": "Manipula objetos leves à distância, destranca alavancas, puxa chaves ou empurra pequenos itens com força invisível.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "armadura-arcana",
+    "name": "Armadura Arcana",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "runico"
+    ],
+    "type": "suporte",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Uma malha invisível de força protege seu corpo durante todo o combate, concedendo +3 em Bloqueio sem impor peso ou FN.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "dissipar-magia",
+    "name": "Dissipar Magia",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "sacerdote",
+      "runico"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Desfaz uma magia contínua, barreira mágica, ilusão ou maldição ativa sobre um alvo ou objeto.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "teleporte-curto",
+    "name": "Salto Dimensional",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Você dobra o espaço em um clarão azulado e teleporta-se instantaneamente para qualquer ponto visível a até 15 metros.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "silenciar-magia",
+    "name": "Silenciar Magia",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "sacerdote"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "15 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Envolve um conjurador inimigo em um campo antimagia breve, aplicando Silenciado por 2 turnos.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "appliesCondition": "silenciado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "esfera-de-forca",
+    "name": "Esfera de Força",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "12 metros",
+    "duration": "2 Turnos",
+    "source": "Guia do Herói",
+    "description": "Encapsula um aliado (protegendo-o de todo dano) ou aprisiona um inimigo (Imobilizado) dentro de uma bolha indestrutível de energia.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 5,
+      "appliesCondition": "imobilizado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "desintegrar",
+    "name": "Desintegrar",
+    "path": "Arcano",
+    "pathId": "arcano",
+    "classIds": [
+      "mago",
+      "feiticeiro"
+    ],
+    "type": "acao",
+    "manaCost": 45,
+    "difficulty": 15,
+    "range": "18 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Herói",
+    "description": "Dispara um fino feixe esmeralda que reduz matéria a cinzas. Causa 42 de dano Arcano a um único alvo ou destrói uma barreira mágica/parede.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "42",
+      "damageType": "Arcano",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "curar-com-ervas",
+    "name": "Bálsamo Natural",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida",
+      "patrulheiro",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Toque",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Desperta a energia curativa de folhas e seiva, restaurando 18 + Vontade PV de um aliado.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "18 + vontade",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "chicote-de-vinhas",
+    "name": "Chicote de Vinhas",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "9 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Um cipó espinhoso açoita um inimigo a até 9 metros, causando 10 + Vontade de dano Corte e puxando o alvo 3 metros em sua direção.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "10 + vontade",
+      "damageType": "Corte",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "falar-com-animais",
+    "name": "Falar com Animais",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida",
+      "patrulheiro",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 8,
+    "range": "12 metros",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Permite conversar diretamente com bestas e aves da região para obter informações sobre trilhas, inimigos ou perigos ocultos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "enredar",
+    "name": "Enredar",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida",
+      "patrulheiro"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "15 metros",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Vegetação cresce subitamente em uma área de 4 metros de raio, aplicando Imobilizado a todos os inimigos que falharem em Força (Dif 11).",
+    "automation": {
+      "rollAttribute": "vontade",
+      "appliesCondition": "imobilizado",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "nuvem-de-esporos",
+    "name": "Nuvem de Esporos",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "12 metros",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Libera uma nuvem tóxica de pólen e fungos em 4 metros de raio, causando 10 de dano Veneno e aplicando Envenenado nos inimigos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "10",
+      "damageType": "Veneno",
+      "appliesCondition": "envenenado",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "regeneracao-natural",
+    "name": "Regeneração Natural",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida",
+      "sacerdote",
+      "xama"
+    ],
+    "type": "suporte",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "Toque / 6m",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "Imbui um aliado com vitalidade selvagem; ele recupera 10 PV no início de cada um dos próximos 4 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "10",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "espinhos-venenosos",
+    "name": "Espinhos Venenosos",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Dispara uma rajada de espinhos embebidos em seiva venenosa que causam 16 de dano Perfuração/Veneno e aplicam Envenenado.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "16",
+      "damageType": "Veneno",
+      "appliesCondition": "envenenado",
+      "area": "Cone 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "invocar-lobo-espiritual",
+    "name": "Invocar Fera Guardiã",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida",
+      "patrulheiro",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "9 metros",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Convoca um lobo espiritual translúcido (35 PV, Def 12) que flanqueia e ataca inimigos causando 12 de dano Perfuração.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "12",
+      "damageType": "Perfuracao",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "muralha-de-espinhos",
+    "name": "Muralha de Espinhos",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "12 metros",
+    "duration": "4 Turnos",
+    "source": "Guia do Herói",
+    "description": "Ergue uma sebe densa de sarças gigantes de 6 metros. Qualquer criatura que tente atravessar sofre 16 de dano Perfuração e fica Imobilizada.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "16",
+      "damageType": "Perfuracao",
+      "appliesCondition": "imobilizado",
+      "area": "Linha 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "despertar-da-floresta",
+    "name": "Despertar da Floresta",
+    "path": "Natureza",
+    "pathId": "natureza",
+    "classIds": [
+      "druida"
+    ],
+    "type": "acao",
+    "manaCost": 40,
+    "difficulty": 14,
+    "range": "18 metros",
+    "duration": "3 Turnos",
+    "source": "Guia do Herói",
+    "description": "Árvores e raízes ganham vida ao redor do campo de batalha, esmagando inimigos (28 de dano Contusão) enquanto restauram 15 PV aos aliados.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "28",
+      "damageType": "Contusao",
+      "healFormula": "15",
+      "area": "Raio 8m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "imagem-menor",
+    "name": "Imagem Menor",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "bardo",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 5,
+    "difficulty": 8,
+    "range": "12 metros",
+    "duration": "1 Cena",
+    "source": "Grimório das Pequenas Magias",
+    "description": "Cria a ilusão visual ou sonora de um objeto pequeno, passos falsos ou uma voz distante para distrair guardas.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "disfarce-ilusorio",
+    "name": "Disfarce Ilusório",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "bardo",
+      "ladino",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Pessoal",
+    "duration": "1 Hora",
+    "source": "Manual Básico",
+    "description": "Altera magicamente sua aparência, vestes e traços faciais para se passar por outra pessoa de estatura semelhante.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "invisibilidade",
+    "name": "Invisibilidade",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "bardo",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "Toque",
+    "duration": "1 Cena ou até atacar",
+    "source": "Manual Básico",
+    "description": "Torna você ou um aliado completamente Invisível aos olhos comuns. O efeito termina se o alvo realizar um ataque ou conjurar magia ofensiva.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "appliesCondition": "invisivel",
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "espelhos-ilusorios",
+    "name": "Espelhos Ilusórios",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "bardo",
+      "ilusionista"
+    ],
+    "type": "suporte",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Cria três cópias ilusórias idênticas a você que se movem em sincronia, concedendo +3 em Esquiva até serem dissipadas por ataques.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "silencio-absoluto",
+    "name": "Silêncio Absoluto",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "bardo",
+      "sacerdote",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Nenhum som pode ser produzido ou ouvido em uma esfera de 5 metros de raio, aplicando Silenciado e impedindo conjurações verbais na área.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "appliesCondition": "silenciado",
+      "area": "Raio 5m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "fantasma-aterrorizante",
+    "name": "Fantasma Aterrorizante",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "bardo",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Conjura a visão do pior pesadelo na mente de um alvo, causando 16 de dano Psíquico e aplicando Assustado.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "16",
+      "damageType": "Psiquico",
+      "appliesCondition": "amedrontado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "alucinacao-dolorosa",
+    "name": "Alucinação Dolorosa",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "bardo",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "15 metros",
+    "duration": "2 Turnos",
+    "source": "Guia do Herói",
+    "description": "Faz o inimigo acreditar estar cercado de chamas ou lâminas, causando 18 de dano Psíquico e aplicando Atordoado por 1 turno.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "18",
+      "damageType": "Psiquico",
+      "appliesCondition": "atordoado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "veu-da-ilusao",
+    "name": "Véu da Ilusão",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "bardo",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "Raio de 6m",
+    "duration": "1 Cena",
+    "source": "Guia do Herói",
+    "description": "Oculta todo o grupo sob uma ilusão de invisibilidade coletiva enquanto permanecerem próximos e sem atacar.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "appliesCondition": "invisivel",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "labirinto-mental",
+    "name": "Labirinto Mental",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "feiticeiro",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 30,
+    "difficulty": 13,
+    "range": "15 metros",
+    "duration": "2 Turnos",
+    "source": "Guia do Herói",
+    "description": "Aprisiona a percepção do alvo em corredores ilusórios infinitos, causando 20 de dano Psíquico e aplicando Paralisado se falhar em Determinação (Dif 13).",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "20",
+      "damageType": "Psiquico",
+      "appliesCondition": "paralisado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "miragem-perfeita",
+    "name": "Miragem Perfeita",
+    "path": "Ilusão",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "bardo",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 35,
+    "difficulty": 13,
+    "range": "24 metros",
+    "duration": "1 Cena",
+    "source": "Guia do Herói",
+    "description": "Altera completamente a aparência, sons e cheiros de uma área de 12 metros, criando pontes falsas, muralhas ilusórias ou exércitos fantasmas.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "area": "Raio 12m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "raio-necrotico",
+    "name": "Raio Necrótico",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Dispara um feixe esverdeado que apodrece tecidos vivos, causando 12 + Inteligência de dano Trevas.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "12 + inteligencia",
+      "damageType": "Trevas",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "toque-gelido-dos-mortos",
+    "name": "Toque dos Mortos",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Toque",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Um toque sepulcral que causa 12 de dano Trevas e impõe -2 em testes de ataque do alvo durante 2 turnos.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "12",
+      "damageType": "Trevas",
+      "appliesCondition": "exausto",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "armadura-de-ossos",
+    "name": "Armadura de Ossos",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "suporte",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "Pessoal",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Fragmentos ósseos giram ao redor do conjurador como um escudo macabro, concedendo +3 em Bloqueio e absorvendo os primeiros 10 pontos de dano físico.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "defenseBonus": 3,
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "maldicao-da-fraqueza",
+    "name": "Maldição da Fraqueza",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago",
+      "xama"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Drena o vigor muscular de um inimigo, reduzindo sua Força efetiva e dano em -4 e aplicando Exausto por 3 turnos.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "appliesCondition": "exausto",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "erguer-esqueleto",
+    "name": "Erguer Esqueleto",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "9 metros",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Anima ossos próximos para erguer um Esqueleto Guerreiro (20 PV, Def 10) que obedece fielmente suas ordens em combate.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "drenar-vida",
+    "name": "Drenar Vida",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "9 metros",
+    "duration": "Instantânea",
+    "source": "Manual Básico",
+    "description": "Rouba a vitalidade de um ser vivo, causando 18 de dano Trevas e restaurando 12 PV do conjurador.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "18",
+      "damageType": "Trevas",
+      "healFormula": "12",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "praga-putrefata",
+    "name": "Praga Putrefata",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 25,
+    "difficulty": 12,
+    "range": "15 metros",
+    "duration": "3 Turnos",
+    "source": "Guia do Vilão",
+    "description": "Espalha uma névoa pestilenta em 4 metros de raio, causando 16 de dano Veneno/Trevas e aplicando Envenenado em todos na área.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "16",
+      "damageType": "Veneno",
+      "appliesCondition": "envenenado",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "erguer-horda",
+    "name": "Erguer Zumbis",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 30,
+    "difficulty": 13,
+    "range": "12 metros",
+    "duration": "1 Cena",
+    "source": "Guia do Vilão",
+    "description": "Anima até 3 cadáveres na área como Zumbis resistentes (25 PV cada) para cercar e conter os adversários.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "grito-da-banshee",
+    "name": "Grito da Banshee",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 35,
+    "difficulty": 13,
+    "range": "Raio de 6m",
+    "duration": "Instantânea",
+    "source": "Guia do Vilão",
+    "description": "Um lamento fúnebre ecoa ao seu redor, causando 26 de dano Trevas/Psíquico e aplicando Assustado em todos os inimigos no alcance.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "26",
+      "damageType": "Trevas",
+      "appliesCondition": "amedrontado",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "dedo-da-morte",
+    "name": "Dedo da Morte",
+    "path": "Necromancia",
+    "pathId": "trevas",
+    "classIds": [
+      "feiticeiro",
+      "mago"
+    ],
+    "type": "acao",
+    "manaCost": 45,
+    "difficulty": 15,
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "source": "Guia do Vilão",
+    "description": "Canaliza energia negativa mortal em um único alvo vivo, causando 42 de dano Trevas direto. Se o alvo morrer, ergue-se como Zumbi sob seu controle.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "damageFormula": "42",
+      "damageType": "Trevas",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "comando",
+    "name": "Comando",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "sacerdote",
+      "paladino",
+      "bardo",
+      "mago",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "1 Turno",
+    "source": "Manual Básico",
+    "description": "Você profere uma única palavra de autoridade mágica ('Caia!', 'Largue!', 'Fuja!'). Se o alvo falhar em Determinação (Dif 11), obedece no próximo turno.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "appliesCondition": "caido",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "acalmar-emocoes",
+    "name": "Acalmar Emoções",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "sacerdote",
+      "bardo",
+      "druida",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 10,
+    "difficulty": 9,
+    "range": "Raio de 6m",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Dissipa fúria, pânico e hostilidade imediata em uma área, removendo Assustado e acalmando criaturas agitadas.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "area": "Raio 6m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "encantar-pessoa",
+    "name": "Encantar Pessoa",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "bardo",
+      "mago",
+      "feiticeiro",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "12 metros",
+    "duration": "1 Cena",
+    "source": "Manual Básico",
+    "description": "Um humanoide que falhe em Determinação (Dif 11) passa a enxergá-lo como um amigo confiável, recusando-se a atacá-lo enquanto não for agredido.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "sono-magico",
+    "name": "Sono Mágico",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "bardo",
+      "feiticeiro",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "15 metros",
+    "duration": "3 Turnos",
+    "source": "Manual Básico",
+    "description": "Envolve inimigos em uma área de 4 metros em torpor profundo. Criaturas enfraquecidas que falharem em Determinação ficam Inconscientes até sofrerem dano.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "appliesCondition": "inconsciente",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "vinculo-telepatico",
+    "name": "Vínculo Telepático",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "bardo",
+      "sacerdote",
+      "ilusionista"
+    ],
+    "type": "suporte",
+    "manaCost": 15,
+    "difficulty": 10,
+    "range": "18 metros",
+    "duration": "1 Hora",
+    "source": "Manual Básico",
+    "description": "Conecta mentalmente até 6 aliados, permitindo comunicação silenciosa instantânea mesmo separados por paredes.",
+    "automation": {
+      "rollAttribute": "inteligencia",
+      "area": "6 aliados",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "confusao",
+    "name": "Confusão",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "bardo",
+      "feiticeiro",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "15 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Embaralha os sentidos dos inimigos em 4 metros de raio, aplicando Atordoado ou fazendo-os agir de forma errática.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "appliesCondition": "atordoado",
+      "area": "Raio 4m",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "heroismo",
+    "name": "Heroísmo",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "sacerdote",
+      "paladino",
+      "bardo",
+      "ilusionista"
+    ],
+    "type": "suporte",
+    "manaCost": 20,
+    "difficulty": 11,
+    "range": "9 metros",
+    "duration": "4 Turnos",
+    "source": "Manual Básico",
+    "description": "Inflama o coração de um aliado com coragem sobrenatural: imunidade a medo, +2 em ataques e +15 PV temporários.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "healFormula": "15",
+      "defenseBonus": 1,
+      "targetType": "ally"
+    }
+  },
+  {
+    "id": "paralisar-humanoide",
+    "name": "Paralisar Humanoide",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "sacerdote",
+      "bardo",
+      "feiticeiro",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 20,
+    "difficulty": 12,
+    "range": "12 metros",
+    "duration": "2 Turnos",
+    "source": "Manual Básico",
+    "description": "Congela os músculos de um humanoide com pura força mental. Se falhar em Determinação (Dif 12), fica Paralisado por 2 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "appliesCondition": "paralisado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "dominar-mente",
+    "name": "Dominar Mente",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "mago",
+      "bardo",
+      "feiticeiro",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 35,
+    "difficulty": 13,
+    "range": "15 metros",
+    "duration": "2 Turnos",
+    "source": "Guia do Herói",
+    "description": "Subjuga a vontade de uma criatura inteligente. Em falha de Determinação (Dif 13), você controla suas ações pelos próximos 2 turnos.",
+    "automation": {
+      "rollAttribute": "vontade",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "decreto-imperial",
+    "name": "Decreto Imperial",
+    "path": "Encantamento",
+    "pathId": "espirito",
+    "classIds": [
+      "sacerdote",
+      "bardo",
+      "paladino",
+      "ilusionista"
+    ],
+    "type": "acao",
+    "manaCost": 40,
+    "difficulty": 14,
+    "range": "Raio de 9m",
+    "duration": "2 Turnos",
+    "source": "Guia do Herói",
+    "description": "Uma ordem ressoante de poder absoluto ecoa no campo. Todos os inimigos no alcance sofrem 20 de dano Psíquico e caem de joelhos (Caído e Atordoado).",
+    "automation": {
+      "rollAttribute": "vontade",
+      "damageFormula": "20",
+      "damageType": "Psiquico",
+      "appliesCondition": "atordoado",
+      "area": "Raio 9m",
+      "targetType": "area"
+    }
+  }
+]

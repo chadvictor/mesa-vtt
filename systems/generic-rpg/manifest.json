@@ -1,0 +1,19 @@
+{
+  "id": "generic-rpg",
+  "name": "RPG Genérico (Multisistema)",
+  "shortName": "Genérico",
+  "version": "1.0.0",
+  "author": "Mesa VTT Community",
+  "description": "Sistema livre e totalmente personalizável para qualquer RPG de mesa (D20, 3D&T, GURPS, Ordem, Tormenta, narrativo ou homebrew). Crie atributos, barras de recurso, ações com fórmulas livres de dados e macros.",
+  "language": "pt-BR",
+  "diceDefaults": {
+    "coreFormula": "1d20",
+    "quickDice": [20, 4, 6, 8, 10, 12, 100]
+  },
+  "theme": {
+    "primary": "#1e293b",
+    "accent": "#38bdf8",
+    "badge": "Livre · Multisistema"
+  },
+  "supportsWizard": false
+}

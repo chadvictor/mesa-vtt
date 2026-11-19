@@ -1,0 +1,1892 @@
+{
+  "system": "mighty-blade-3e",
+  "edition": "3ª Edição (3.x)",
+  "currency": "TO",
+  "weapons": [
+    {
+      "id": "punhal",
+      "name": "Punhal",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 1,
+      "damageBonus": 3,
+      "damageAttribute": "agilidade",
+      "damageType": "Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 30,
+      "weight": 0.4,
+      "properties": [
+        "Leve",
+        "Ocultável",
+        "Ágil"
+      ],
+      "description": "Lâmina curta e estreita fácil de esconder em botas ou mangas; muito utilizada por ladinos e espiões."
+    },
+    {
+      "id": "adaga",
+      "name": "Adaga",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 1,
+      "damageBonus": 4,
+      "damageAttribute": "forca",
+      "damageType": "Corte/Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo / Arremesso",
+      "distance": "1,5m / 9m",
+      "price": 50,
+      "weight": 0.5,
+      "properties": [
+        "Leve",
+        "Ágil",
+        "Arremesso"
+      ],
+      "description": "Arma clássica de lâmina dupla. Pode ser usada corpo a corpo, na mão secundária ou arremessada contra inimigos próximos."
+    },
+    {
+      "id": "adaga-de-parada",
+      "name": "Adaga de Parada",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 1,
+      "damageBonus": 4,
+      "damageAttribute": "agilidade",
+      "damageType": "Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 80,
+      "weight": 0.6,
+      "properties": [
+        "Leve",
+        "Ágil",
+        "Defensiva (+1 Bloqueio)"
+      ],
+      "description": "Adaga com guarda reforçada desenhada para espadachins apararem lâminas adversárias na mão secundária."
+    },
+    {
+      "id": "espada-curta",
+      "name": "Espada Curta",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 2,
+      "damageBonus": 6,
+      "damageAttribute": "forca",
+      "damageType": "Corte/Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 100,
+      "weight": 1.2,
+      "properties": [
+        "Leve",
+        "Ágil"
+      ],
+      "description": "Espada versátil e equilibrada, ideal para combates em corredores estreitos e para combatentes ágeis."
+    },
+    {
+      "id": "gladio",
+      "name": "Gládio",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 2,
+      "damageBonus": 6,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração/Corte",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 110,
+      "weight": 1.3,
+      "properties": [
+        "Balanceada"
+      ],
+      "description": "Espada curta de lâmina larga muito comum entre legionários e guardas de cidades."
+    },
+    {
+      "id": "rapieira",
+      "name": "Rapieira",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 2,
+      "damageBonus": 6,
+      "damageAttribute": "agilidade",
+      "damageType": "Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 160,
+      "weight": 1.1,
+      "properties": [
+        "Ágil",
+        "Esgrima",
+        "Precisa"
+      ],
+      "description": "Espada fina de guarda elaborada, preferida por duelistas e espadachins por sua precisão letal."
+    },
+    {
+      "id": "cimitarra",
+      "name": "Cimitarra",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 2,
+      "damageBonus": 7,
+      "damageAttribute": "agilidade",
+      "damageType": "Corte",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 150,
+      "weight": 1.5,
+      "properties": [
+        "Ágil",
+        "Curva"
+      ],
+      "description": "Espada de lâmina curva muito eficaz para cortes rápidos em movimento ou montado."
+    },
+    {
+      "id": "sabre",
+      "name": "Sabre",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 2,
+      "damageBonus": 7,
+      "damageAttribute": "agilidade",
+      "damageType": "Corte/Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 165,
+      "weight": 1.4,
+      "properties": [
+        "Ágil",
+        "Esgrima"
+      ],
+      "description": "Lâmina curva elegante com guarda para os dedos, excelente tanto em estocadas quanto em cortes velozes."
+    },
+    {
+      "id": "espada-longa",
+      "name": "Espada Longa",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 4,
+      "damageBonus": 8,
+      "damageAttribute": "forca",
+      "damageType": "Corte/Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 175,
+      "weight": 2.0,
+      "properties": [
+        "Versátil (2 mãos: FN 2)"
+      ],
+      "description": "A arma icônica dos cavaleiros e aventureiros de Drakon. Exige FN 4 em uma mão ou FN 2 se empunhada com as duas mãos."
+    },
+    {
+      "id": "katana",
+      "name": "Katana",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 3,
+      "damageBonus": 8,
+      "damageAttribute": "agilidade",
+      "damageType": "Corte",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 350,
+      "weight": 1.5,
+      "properties": [
+        "Ágil",
+        "Versátil (2 mãos: +1 dano)",
+        "Obra-Prima"
+      ],
+      "description": "Espada curva de fio extremamente afiado forjada em aço dobrado, símbolo de mestres duelistas."
+    },
+    {
+      "id": "espada-bastarda",
+      "name": "Espada Bastarda",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 5,
+      "damageBonus": 9,
+      "damageAttribute": "forca",
+      "damageType": "Corte/Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 260,
+      "weight": 2.8,
+      "properties": [
+        "Versátil (2 mãos: FN 3)"
+      ],
+      "description": "Também chamada de espada de mão-e-meia, combina o alcance de uma arma pesada com versatilidade tática."
+    },
+    {
+      "id": "montante",
+      "name": "Montante",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 5,
+      "damageBonus": 11,
+      "damageAttribute": "forca",
+      "damageType": "Corte",
+      "hands": 2,
+      "range": "Corpo a Corpo",
+      "distance": "2m",
+      "price": 350,
+      "weight": 4.0,
+      "properties": [
+        "Duas Mãos",
+        "Pesada",
+        "Devastadora"
+      ],
+      "description": "Espada colossal de duas mãos capaz de fender armaduras pesadas e derrubar múltiplos adversários em um arco."
+    },
+    {
+      "id": "machado-de-mao",
+      "name": "Machado de Mão",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 2,
+      "damageBonus": 5,
+      "damageAttribute": "forca",
+      "damageType": "Corte",
+      "hands": 1,
+      "range": "Corpo a Corpo / Arremesso",
+      "distance": "1,5m / 9m",
+      "price": 60,
+      "weight": 1.0,
+      "properties": [
+        "Leve",
+        "Arremesso"
+      ],
+      "description": "Machadinha prática de combate e sobrevivência, facilmente arremessada em curta distância."
+    },
+    {
+      "id": "machado-de-batalha",
+      "name": "Machado de Batalha",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 4,
+      "damageBonus": 8,
+      "damageAttribute": "forca",
+      "damageType": "Corte",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 175,
+      "weight": 2.5,
+      "properties": [
+        "Versátil (2 mãos: FN 2)",
+        "Brutal"
+      ],
+      "description": "Machado marcial de lâmina larga favorito de anões, bárbaros e guerreiros da linha de frente."
+    },
+    {
+      "id": "machado-grande",
+      "name": "Machado Grande",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 5,
+      "damageBonus": 12,
+      "damageAttribute": "forca",
+      "damageType": "Corte",
+      "hands": 2,
+      "range": "Corpo a Corpo",
+      "distance": "2m",
+      "price": 300,
+      "weight": 4.5,
+      "properties": [
+        "Duas Mãos",
+        "Pesada",
+        "Brutal"
+      ],
+      "description": "Machado pesado de lâmina dupla que exige duas mãos e força considerável, infligindo ferimentos terríveis."
+    },
+    {
+      "id": "martelo-leve",
+      "name": "Martelo Leve",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 2,
+      "damageBonus": 5,
+      "damageAttribute": "forca",
+      "damageType": "Contusão",
+      "hands": 1,
+      "range": "Corpo a Corpo / Arremesso",
+      "distance": "1,5m / 9m",
+      "price": 60,
+      "weight": 1.2,
+      "properties": [
+        "Leve",
+        "Arremesso"
+      ],
+      "description": "Pequeno martelo de aço muito eficaz contra esqueletos e oponentes de armadura leve."
+    },
+    {
+      "id": "martelo-de-guerra",
+      "name": "Martelo de Guerra",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 4,
+      "damageBonus": 8,
+      "damageAttribute": "forca",
+      "damageType": "Contusão",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 180,
+      "weight": 2.8,
+      "properties": [
+        "Versátil (2 mãos: FN 2)",
+        "Esmagador"
+      ],
+      "description": "Martelo pesado balanceado para esmagar placas metálicas e ossos; arma tradicional de paladinos e anões."
+    },
+    {
+      "id": "marreta-de-guerra",
+      "name": "Marreta de Guerra",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 6,
+      "damageBonus": 12,
+      "damageAttribute": "forca",
+      "damageType": "Contusão",
+      "hands": 2,
+      "range": "Corpo a Corpo",
+      "distance": "2m",
+      "price": 320,
+      "weight": 5.5,
+      "properties": [
+        "Duas Mãos",
+        "Pesada",
+        "Esmagador"
+      ],
+      "description": "Imenso malho de ferro capaz de destruir escudos e arremessar adversários ao chão."
+    },
+    {
+      "id": "maca",
+      "name": "Maça",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 3,
+      "damageBonus": 7,
+      "damageAttribute": "forca",
+      "damageType": "Contusão",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 120,
+      "weight": 2.0,
+      "properties": [
+        "Confiável"
+      ],
+      "description": "Cabo metálico com cabeça flangeada muito utilizada por sacerdotes e clérigos em batalha."
+    },
+    {
+      "id": "maca-estrela",
+      "name": "Maça-Estrela",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 3,
+      "damageBonus": 8,
+      "damageAttribute": "forca",
+      "damageType": "Contusão/Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 160,
+      "weight": 2.4,
+      "properties": [
+        "Perfurante"
+      ],
+      "description": "Maça com cabeça esférica repleta de cravos de ferro que perfuram e esmagam simultaneamente."
+    },
+    {
+      "id": "mangual",
+      "name": "Mangual",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 4,
+      "damageBonus": 8,
+      "damageAttribute": "forca",
+      "damageType": "Contusão",
+      "hands": 1,
+      "range": "Corpo a Corpo",
+      "distance": "1,5m",
+      "price": 175,
+      "weight": 2.5,
+      "properties": [
+        "Ignora Escudo (-1 Bloqueio do alvo)"
+      ],
+      "description": "Esfera metálica presa por corrente a um cabo de madeira, capaz de contornar a borda de escudos."
+    },
+    {
+      "id": "lanca-curta",
+      "name": "Lança Curta",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 2,
+      "damageBonus": 6,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo / Arremesso",
+      "distance": "2m / 12m",
+      "price": 75,
+      "weight": 1.5,
+      "properties": [
+        "Versátil",
+        "Arremesso",
+        "Alcance"
+      ],
+      "description": "Arma de haste simples e eficaz que pode ser empunhada com escudo ou arremessada."
+    },
+    {
+      "id": "lanca-longa",
+      "name": "Lança Longa",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 4,
+      "damageBonus": 9,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 2,
+      "range": "Corpo a Corpo (Alcance)",
+      "distance": "3m",
+      "price": 150,
+      "weight": 3.0,
+      "properties": [
+        "Duas Mãos",
+        "Alcance (3m)",
+        "Anti-Investida"
+      ],
+      "description": "Lança comprida ideal para manter monstros distantes e conter cargas de cavalaria."
+    },
+    {
+      "id": "alabarda",
+      "name": "Alabarda",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 5,
+      "damageBonus": 10,
+      "damageAttribute": "forca",
+      "damageType": "Corte/Perfuração",
+      "hands": 2,
+      "range": "Corpo a Corpo (Alcance)",
+      "distance": "3m",
+      "price": 240,
+      "weight": 4.0,
+      "properties": [
+        "Duas Mãos",
+        "Alcance (3m)",
+        "Versátil"
+      ],
+      "description": "Arma de haste longa que combina ponta de lança, lâmina de machado e gancho para derrubar cavaleiros."
+    },
+    {
+      "id": "tridente",
+      "name": "Tridente",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 3,
+      "damageBonus": 7,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 1,
+      "range": "Corpo a Corpo / Arremesso",
+      "distance": "2m / 9m",
+      "price": 140,
+      "weight": 2.2,
+      "properties": [
+        "Versátil (2 mãos: FN 2)",
+        "Arremesso"
+      ],
+      "description": "Haste de três pontas utilizada por gladiadores e marinheiros, excelente para prender armas inimigas."
+    },
+    {
+      "id": "cajado",
+      "name": "Cajado de Madeira",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 1,
+      "damageBonus": 5,
+      "damageAttribute": "forca",
+      "damageType": "Contusão",
+      "hands": 2,
+      "range": "Corpo a Corpo",
+      "distance": "2m",
+      "price": 40,
+      "weight": 1.5,
+      "properties": [
+        "Duas Mãos",
+        "Canalizador"
+      ],
+      "description": "Bastão resistente de carvalho ou freixo que serve tanto para defesa quanto como foco canalizador de magias."
+    },
+    {
+      "id": "cajado-arcano",
+      "name": "Cajado Arcano Rúnico",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 1,
+      "damageBonus": 5,
+      "damageAttribute": "forca",
+      "damageType": "Contusão",
+      "hands": 2,
+      "range": "Corpo a Corpo",
+      "distance": "2m",
+      "price": 250,
+      "weight": 1.8,
+      "properties": [
+        "Duas Mãos",
+        "Canalizador (+1 Conjuração)"
+      ],
+      "description": "Cajado entalhado com runas de prata e cristal no topo, concedendo +1 em testes de conjuração arcana."
+    },
+    {
+      "id": "chicote",
+      "name": "Chicote",
+      "category": "weapon",
+      "subcategory": "Corpo a Corpo",
+      "fn": 1,
+      "damageBonus": 4,
+      "damageAttribute": "agilidade",
+      "damageType": "Corte",
+      "hands": 1,
+      "range": "Corpo a Corpo (Alcance)",
+      "distance": "3m",
+      "price": 60,
+      "weight": 0.8,
+      "properties": [
+        "Ágil",
+        "Alcance (3m)",
+        "Enredar"
+      ],
+      "description": "Chicote de couro trançado útil para desarmar, derrubar inimigos à distância curta ou balançar em vigas."
+    },
+    {
+      "id": "arco-simples",
+      "name": "Arco Simples",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 2,
+      "damageBonus": 4,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 2,
+      "range": "Médio",
+      "distance": "24m",
+      "price": 75,
+      "weight": 1.0,
+      "properties": [
+        "Duas Mãos",
+        "Munição (Flechas)"
+      ],
+      "description": "Arco básico de madeira flexível usado por caçadores e batedores de todo o continente."
+    },
+    {
+      "id": "arco-curto",
+      "name": "Arco Curto",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 2,
+      "damageBonus": 5,
+      "damageAttribute": "agilidade",
+      "damageType": "Perfuração",
+      "hands": 2,
+      "range": "Médio",
+      "distance": "24m",
+      "price": 110,
+      "weight": 0.9,
+      "properties": [
+        "Duas Mãos",
+        "Leve",
+        "Munição (Flechas)"
+      ],
+      "description": "Arco compacto ideal para arqueiros montados, patrulheiros de florestas densas e raças pequenas."
+    },
+    {
+      "id": "arco-composto",
+      "name": "Arco Composto",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 3,
+      "damageBonus": 6,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 2,
+      "range": "Longo",
+      "distance": "36m",
+      "price": 175,
+      "weight": 1.4,
+      "properties": [
+        "Duas Mãos",
+        "Munição (Flechas)"
+      ],
+      "description": "Construído com madeira laminada, chifre e tendão para entregar maior potência e alcance superior."
+    },
+    {
+      "id": "arco-recurvo",
+      "name": "Arco Recurvo",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 2,
+      "damageBonus": 7,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 2,
+      "range": "Longo",
+      "distance": "36m",
+      "price": 250,
+      "weight": 1.3,
+      "properties": [
+        "Duas Mãos",
+        "Preciso",
+        "Munição (Flechas)"
+      ],
+      "description": "Arco elegante de pontas curvadas para fora, muito apreciado por elfos e arqueiros de elite."
+    },
+    {
+      "id": "arco-de-guerra",
+      "name": "Arco de Guerra (Longo)",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 4,
+      "damageBonus": 8,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 2,
+      "range": "Longo",
+      "distance": "45m",
+      "price": 250,
+      "weight": 1.8,
+      "properties": [
+        "Duas Mãos",
+        "Pesado",
+        "Munição (Flechas)"
+      ],
+      "description": "Arco alto de grande tensão capaz de atravessar armaduras a longas distâncias no campo de batalha."
+    },
+    {
+      "id": "besta-de-mao",
+      "name": "Besta de Mão",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 1,
+      "damageBonus": 5,
+      "damageAttribute": "agilidade",
+      "damageType": "Perfuração",
+      "hands": 1,
+      "range": "Curto",
+      "distance": "15m",
+      "price": 180,
+      "weight": 1.2,
+      "properties": [
+        "Leve",
+        "Recarga",
+        "Munição (Virotes)"
+      ],
+      "description": "Besta compacta que pode ser disparada com apenas uma mão; popular entre ladinos e mercenários."
+    },
+    {
+      "id": "besta-leve",
+      "name": "Besta Leve",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 2,
+      "damageBonus": 7,
+      "damageAttribute": "agilidade",
+      "damageType": "Perfuração",
+      "hands": 2,
+      "range": "Longo",
+      "distance": "30m",
+      "price": 175,
+      "weight": 2.5,
+      "properties": [
+        "Duas Mãos",
+        "Recarga (Movimento)",
+        "Munição (Virotes)"
+      ],
+      "description": "Arma mecânica de disparo preciso que exige pouca força para mirar, exigindo ação de movimento para recarregar."
+    },
+    {
+      "id": "besta-pesada",
+      "name": "Besta Pesada",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 4,
+      "damageBonus": 10,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 2,
+      "range": "Longo",
+      "distance": "42m",
+      "price": 320,
+      "weight": 4.5,
+      "properties": [
+        "Duas Mãos",
+        "Recarga (Ação)",
+        "Perfurante",
+        "Munição (Virotes)"
+      ],
+      "description": "Besta de arco de aço com manivela capaz de perfurar placas pesadas com impacto devastador."
+    },
+    {
+      "id": "funda",
+      "name": "Funda",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 1,
+      "damageBonus": 4,
+      "damageAttribute": "agilidade",
+      "damageType": "Contusão",
+      "hands": 1,
+      "range": "Médio",
+      "distance": "20m",
+      "price": 15,
+      "weight": 0.2,
+      "properties": [
+        "Leve",
+        "Munição (Pedras)"
+      ],
+      "description": "Tira de couro simples usada para arremessar pedras ou balas de chumbo com grande velocidade."
+    },
+    {
+      "id": "dardo",
+      "name": "Dardos de Arremesso (5 un.)",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 1,
+      "damageBonus": 3,
+      "damageAttribute": "agilidade",
+      "damageType": "Perfuração",
+      "hands": 1,
+      "range": "Curto",
+      "distance": "12m",
+      "price": 40,
+      "weight": 0.5,
+      "properties": [
+        "Leve",
+        "Arremesso",
+        "Ocultável"
+      ],
+      "description": "Conjunto de cinco dardos equilibrados de aço perfeitos para ataques rápidos e venenos."
+    },
+    {
+      "id": "azagaia",
+      "name": "Azagaia",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 2,
+      "damageBonus": 6,
+      "damageAttribute": "forca",
+      "damageType": "Perfuração",
+      "hands": 1,
+      "range": "Médio",
+      "distance": "18m",
+      "price": 45,
+      "weight": 1.0,
+      "properties": [
+        "Arremesso"
+      ],
+      "description": "Lança leve balanceada especialmente para arremesso antes de fechar distância em combate corpo a corpo."
+    },
+    {
+      "id": "shuriken",
+      "name": "Estrelas de Arremesso (5 un.)",
+      "category": "weapon",
+      "subcategory": "Distância",
+      "fn": 1,
+      "damageBonus": 4,
+      "damageAttribute": "agilidade",
+      "damageType": "Corte",
+      "hands": 1,
+      "range": "Curto",
+      "distance": "12m",
+      "price": 60,
+      "weight": 0.4,
+      "properties": [
+        "Leve",
+        "Ágil",
+        "Arremesso"
+      ],
+      "description": "Lâminas metálicas em estrela arremessadas em rápida sucessão por monges e assassinos."
+    }
+  ],
+  "armor": [
+    {
+      "id": "tunica-pesada",
+      "name": "Túnica Pesada",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Leve",
+      "fn": 1,
+      "defenseBonus": 1,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 0,
+      "price": 50,
+      "weight": 2.5,
+      "properties": [
+        "Leve",
+        "Silenciosa"
+      ],
+      "description": "Veste reforçada de tecido grosso e couro macio que protege contra cortes superficiais sem restringir movimentos."
+    },
+    {
+      "id": "manto-de-mago",
+      "name": "Manto de Mago Reforçado",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Leve",
+      "fn": 1,
+      "defenseBonus": 1,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 0,
+      "price": 85,
+      "weight": 2.0,
+      "properties": [
+        "Leve",
+        "Arcana (Não atrapalha conjuração)"
+      ],
+      "description": "Manto de linho tratado com fios prateados que oferece proteção básica e bolsos para componentes místicos."
+    },
+    {
+      "id": "armadura-acolchoada",
+      "name": "Armadura Acolchoada",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Leve",
+      "fn": 1,
+      "defenseBonus": 1,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 0,
+      "price": 60,
+      "weight": 4.0,
+      "properties": [
+        "Leve"
+      ],
+      "description": "Camadas costuradas de tecido espesso e lã que amortecem impactos contundentes."
+    },
+    {
+      "id": "armadura-de-couro",
+      "name": "Armadura de Couro",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Leve",
+      "fn": 2,
+      "defenseBonus": 2,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 0,
+      "price": 100,
+      "weight": 12.0,
+      "properties": [
+        "Leve"
+      ],
+      "description": "Peitoral e ombros moldados em couro fervido e endurecido; a escolha clássica de ladinos e patrulheiros."
+    },
+    {
+      "id": "couro-batido",
+      "name": "Armadura de Couro Batido",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Leve",
+      "fn": 3,
+      "defenseBonus": 2,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 1,
+      "price": 150,
+      "weight": 13.5,
+      "properties": [
+        "Leve",
+        "Reforçada"
+      ],
+      "description": "Armadura de couro flexível cravada com rebites metálicos próximos que oferecem excelente custo-benefício."
+    },
+    {
+      "id": "gibao-de-peles",
+      "name": "Gibão de Peles",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Média",
+      "fn": 3,
+      "defenseBonus": 2,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 1,
+      "price": 90,
+      "weight": 14.0,
+      "properties": [
+        "Rústica",
+        "Proteção contra Frio"
+      ],
+      "description": "Couros espessos de bestas selvagens costurados juntos; muito utilizada por bárbaros e druidas."
+    },
+    {
+      "id": "brigantina",
+      "name": "Brigantina",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Média",
+      "fn": 4,
+      "defenseBonus": 3,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 1,
+      "price": 220,
+      "weight": 16.0,
+      "properties": [
+        "Média"
+      ],
+      "description": "Túnica resistente de lona ou couro forrada internamente com pequenas placas de aço rebitadas."
+    },
+    {
+      "id": "armadura-simples",
+      "name": "Armadura Simples (Cota de Malha)",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Média",
+      "fn": 4,
+      "defenseBonus": 3,
+      "agilityPenalty": -1,
+      "dodgePenalty": -1,
+      "rd": 1,
+      "price": 200,
+      "weight": 18.0,
+      "properties": [
+        "Pesada",
+        "Metálica"
+      ],
+      "description": "Camisa longa tecida com milhares de elos de aço entrelaçados, padrão da Tabela Básica do Mighty Blade 3ª Edição."
+    },
+    {
+      "id": "cota-de-escamas",
+      "name": "Cota de Escamas",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Média",
+      "fn": 4,
+      "defenseBonus": 3,
+      "agilityPenalty": -1,
+      "dodgePenalty": -1,
+      "rd": 2,
+      "price": 280,
+      "weight": 20.0,
+      "properties": [
+        "Pesada",
+        "Metálica"
+      ],
+      "description": "Sobreposição de escamas metálicas costuradas sobre couro que defletem lâminas com eficácia."
+    },
+    {
+      "id": "peitoral-de-aco",
+      "name": "Peitoral de Aço",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Média",
+      "fn": 5,
+      "defenseBonus": 4,
+      "agilityPenalty": -1,
+      "dodgePenalty": -1,
+      "rd": 2,
+      "price": 450,
+      "weight": 22.0,
+      "properties": [
+        "Pesada",
+        "Metálica"
+      ],
+      "description": "Placa peitoral moldada de aço temperado combinada com proteções leves nos membros."
+    },
+    {
+      "id": "loriga-segmentada",
+      "name": "Loriga Segmentada",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Pesada",
+      "fn": 5,
+      "defenseBonus": 4,
+      "agilityPenalty": -1,
+      "dodgePenalty": -1,
+      "rd": 2,
+      "price": 500,
+      "weight": 25.0,
+      "properties": [
+        "Pesada",
+        "Metálica"
+      ],
+      "description": "Faixas articuladas de metal que envolvem tronco e ombros, combinando resistência e mobilidade em batalha."
+    },
+    {
+      "id": "armadura-de-batalha",
+      "name": "Armadura de Batalha",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Pesada",
+      "fn": 6,
+      "defenseBonus": 4,
+      "agilityPenalty": -2,
+      "dodgePenalty": -2,
+      "rd": 2,
+      "price": 600,
+      "weight": 27.0,
+      "properties": [
+        "Pesada",
+        "Metálica"
+      ],
+      "description": "Meia-armadura de placas de aço combinada com malha nas articulações; proteção oficial do Guia Básico."
+    },
+    {
+      "id": "armadura-completa",
+      "name": "Armadura Completa",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Pesada",
+      "fn": 8,
+      "defenseBonus": 5,
+      "agilityPenalty": -2,
+      "dodgePenalty": -2,
+      "rd": 3,
+      "price": 2000,
+      "weight": 36.0,
+      "properties": [
+        "Pesada",
+        "Rígida",
+        "Metálica"
+      ],
+      "description": "O ápice da forja medieval: placas inteiriças de aço temperado cobrindo todo o corpo do cavaleiro."
+    },
+    {
+      "id": "cota-de-mithril",
+      "name": "Cota Élfica de Mithril",
+      "category": "armor",
+      "slot": "armor",
+      "subcategory": "Média",
+      "fn": 2,
+      "defenseBonus": 4,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 2,
+      "price": 2500,
+      "weight": 8.0,
+      "properties": [
+        "Leve",
+        "Obra-Prima",
+        "Silenciosa",
+        "Mágica"
+      ],
+      "description": "Malha prateada forjada pelos elfos antigos: oferece proteção de armadura pesada com peso e silêncio de seda."
+    },
+    {
+      "id": "broquel",
+      "name": "Broquel",
+      "category": "shield",
+      "slot": "shield",
+      "subcategory": "Escudo",
+      "fn": 1,
+      "defenseBonus": 1,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 0,
+      "price": 40,
+      "weight": 2.0,
+      "properties": [
+        "Leve",
+        "Mão Livre para Itens"
+      ],
+      "description": "Pequeno escudo metálico preso ao antebraço, ideal para espadachins e arqueiros que precisam de agilidade."
+    },
+    {
+      "id": "escudo-pequeno",
+      "name": "Escudo Pequeno",
+      "category": "shield",
+      "slot": "shield",
+      "subcategory": "Escudo",
+      "fn": 2,
+      "defenseBonus": 1,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 0,
+      "price": 50,
+      "weight": 4.0,
+      "properties": [
+        "Ocupa 1 mão"
+      ],
+      "description": "Escudo redondo leve de madeira reforçada com borda de ferro, excelente para aparar golpes rápidos."
+    },
+    {
+      "id": "escudo-medio",
+      "name": "Escudo Médio",
+      "category": "shield",
+      "slot": "shield",
+      "subcategory": "Escudo",
+      "fn": 3,
+      "defenseBonus": 2,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 0,
+      "price": 100,
+      "weight": 6.0,
+      "properties": [
+        "Ocupa 1 mão"
+      ],
+      "description": "Escudo clássico de infantaria em madeira e aço, equilibrando proteção sólida e manobrabilidade."
+    },
+    {
+      "id": "escudo-cravejado",
+      "name": "Escudo Cravejado",
+      "category": "shield",
+      "slot": "shield",
+      "subcategory": "Escudo",
+      "fn": 3,
+      "defenseBonus": 2,
+      "agilityPenalty": 0,
+      "dodgePenalty": 0,
+      "rd": 0,
+      "price": 140,
+      "weight": 7.0,
+      "properties": [
+        "Ocupa 1 mão",
+        "Ofensivo (For + 3 Perfuração)"
+      ],
+      "description": "Escudo médio com ponta central e cravos metálicos que permitem desferir pancadas perfurantes."
+    },
+    {
+      "id": "escudo-de-corpo",
+      "name": "Escudo de Corpo",
+      "category": "shield",
+      "slot": "shield",
+      "subcategory": "Escudo",
+      "fn": 5,
+      "defenseBonus": 3,
+      "agilityPenalty": -1,
+      "dodgePenalty": -1,
+      "rd": 1,
+      "price": 200,
+      "weight": 10.0,
+      "properties": [
+        "Ocupa 1 mão",
+        "Cobertura contra Projéteis"
+      ],
+      "description": "Escudo alongado que protege dos ombros aos joelhos, padrão da tabela de proteções do Mighty Blade 3e."
+    },
+    {
+      "id": "escudo-torre",
+      "name": "Escudo Torre",
+      "category": "shield",
+      "slot": "shield",
+      "subcategory": "Escudo",
+      "fn": 6,
+      "defenseBonus": 3,
+      "agilityPenalty": -2,
+      "dodgePenalty": -2,
+      "rd": 2,
+      "price": 350,
+      "weight": 14.0,
+      "properties": [
+        "Ocupa 1 mão",
+        "Pesado",
+        "Muralha Móvel"
+      ],
+      "description": "Enorme escudo retangular de aço usado por paladinos e sentinelas para criar cobertura quase impenetrável."
+    }
+  ],
+  "gear": [
+    {
+      "id": "pocao-de-vida-menor",
+      "name": "Poção de Cura Menor",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "healPv": 15
+      },
+      "price": 25,
+      "weight": 0.1,
+      "description": "Frasco pequeno de líquido carmesim que fecha ferimentos leves, restaurando 15 Pontos de Vida."
+    },
+    {
+      "id": "pocao-de-vida",
+      "name": "Poção de Vida",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "healPv": 30
+      },
+      "price": 50,
+      "weight": 0.12,
+      "description": "Poção oficial do Guia Básico (100 ml, Aura Nula). Restaura imediatamente 30 Pontos de Vida."
+    },
+    {
+      "id": "pocao-de-vida-maior",
+      "name": "Poção de Cura Maior",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "healPv": 60
+      },
+      "price": 150,
+      "weight": 0.15,
+      "description": "Elixir concentrado de brilho rubi que regenera ferimentos graves, restaurando 60 Pontos de Vida."
+    },
+    {
+      "id": "pocao-de-mana-menor",
+      "name": "Poção de Mana Menor",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "healPm": 15
+      },
+      "price": 25,
+      "weight": 0.1,
+      "description": "Destilado azulado que revigora a mente arcana, restaurando 15 Pontos de Mana."
+    },
+    {
+      "id": "pocao-de-mana",
+      "name": "Poção de Mana",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "healPm": 30
+      },
+      "price": 50,
+      "weight": 0.12,
+      "description": "Poção oficial do Guia Básico (100 ml, Aura Nula). Restaura imediatamente 30 Pontos de Mana."
+    },
+    {
+      "id": "pocao-de-mana-maior",
+      "name": "Poção de Mana Maior",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "healPm": 60
+      },
+      "price": 150,
+      "weight": 0.15,
+      "description": "Essência etérea puríssima de cor safira que restaura 60 Pontos de Mana."
+    },
+    {
+      "id": "pocao-antidoto",
+      "name": "Poção Antídoto",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "removeCondition": "envenenado"
+      },
+      "price": 50,
+      "weight": 0.12,
+      "description": "Líquido esverdeado adocicado do Guia Básico que neutraliza todos os venenos naturais e remove a condição Envenenado."
+    },
+    {
+      "id": "elixir-de-vigor",
+      "name": "Elixir de Vigor",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "healPv": 15,
+        "removeCondition": "exausto"
+      },
+      "price": 75,
+      "weight": 0.15,
+      "description": "Tônico dourado que elimina fadiga (remove Exausto) e recupera 15 PV."
+    },
+    {
+      "id": "elixir-de-agilidade",
+      "name": "Elixir da Rapidez",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "tempBonus": {
+          "agilidade": 2,
+          "turns": 3
+        }
+      },
+      "price": 120,
+      "weight": 0.12,
+      "description": "Poção cintilante que acelera reflexos, concedendo +2 em Agilidade e Esquiva por 3 turnos."
+    },
+    {
+      "id": "pocao-de-invisibilidade",
+      "name": "Poção de Invisibilidade",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "appliesCondition": "invisivel",
+        "turns": 5
+      },
+      "price": 200,
+      "weight": 0.12,
+      "description": "Líquido completamente transparente que torna quem o beber Invisível por 5 turnos ou até realizar um ataque."
+    },
+    {
+      "id": "agua-benta",
+      "name": "Frasco de Água Benta",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "damage": 15,
+        "damageType": "Sagrado",
+        "range": "6m"
+      },
+      "price": 40,
+      "weight": 0.2,
+      "description": "Água consagrada em templo; quando arremessada contra Mortos-Vivos ou Demônios causa 15 de dano Sagrado."
+    },
+    {
+      "id": "fogo-alquimico",
+      "name": "Fogo Alquímico",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "damage": 12,
+        "damageType": "Fogo",
+        "appliesCondition": "queimando",
+        "range": "9m"
+      },
+      "price": 60,
+      "weight": 0.3,
+      "description": "Frasco de óleo inflamável que entra em combustão ao quebrar, causando 12 de dano Fogo e aplicando Queimando."
+    },
+    {
+      "id": "bomba-de-fumaca",
+      "name": "Bomba de Fumaça",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "area": "Raio 4m",
+        "obscuresVision": true
+      },
+      "price": 45,
+      "weight": 0.25,
+      "description": "Cria instantaneamente uma nuvem espessa de fumaça de 4 metros por 2 turnos, ideal para fugas e emboscadas."
+    },
+    {
+      "id": "veneno-de-vibora",
+      "name": "Veneno de Víbora",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "weaponCoat": true,
+        "appliesCondition": "envenenado",
+        "damage": 5
+      },
+      "price": 80,
+      "weight": 0.1,
+      "description": "Dose suficiente para revestir uma arma ou 5 flechas; o próximo acerto aplica a condição Envenenado."
+    },
+    {
+      "id": "bandagem-curativa",
+      "name": "Bandagem Curativa",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "healPv": 10,
+        "removeCondition": "sangrando"
+      },
+      "price": 15,
+      "weight": 0.1,
+      "description": "Atadura embebida em ervas cicatrizantes que estanca Sangrando e recupera 10 PV fora ou durante o combate."
+    },
+    {
+      "id": "mochila-de-viagem",
+      "name": "Mochila de Viagem",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 100,
+      "weight": 5.0,
+      "description": "Kit completo do Guia Básico: inclui mochila resistente, cantil, tenda, pederneira, panela pequena, tocha, corda, pá, anzol e linha."
+    },
+    {
+      "id": "kit-de-escalada",
+      "name": "Kit para Escalada",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "skillBonus": {
+          "escalar": 2
+        }
+      },
+      "price": 50,
+      "weight": 4.0,
+      "description": "Equipamento oficial do Guia Básico contendo corda de 15m, gancho arpéu e pinos de ferro para escalada (+2 em testes de escalar)."
+    },
+    {
+      "id": "kit-de-ladino",
+      "name": "Kit de Ladino (Gazuas)",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "skillBonus": {
+          "fechaduras": 2,
+          "armadilhas": 2
+        }
+      },
+      "price": 75,
+      "weight": 0.8,
+      "description": "Conjunto de gazuas de aço temperado, pinças, espelho pequeno e lima fina para abrir trancas e desarmar armadilhas."
+    },
+    {
+      "id": "kit-primeiros-socorros",
+      "name": "Kit de Primeiros Socorros",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "uses": 5,
+        "healPv": 10
+      },
+      "price": 45,
+      "weight": 1.2,
+      "description": "Estojo médico com ataduras, agulha, linha, álcool e ervas antissépticas (5 usos para estabilizar aliados)."
+    },
+    {
+      "id": "kit-de-alquimista",
+      "name": "Kit de Alquimista Portátil",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "skillBonus": {
+          "alquimia": 2
+        }
+      },
+      "price": 150,
+      "weight": 3.5,
+      "description": "Alambique pequeno, frascos de vidro, pilão e reagentes básicos para preparar poções e bombas em acampamento."
+    },
+    {
+      "id": "kit-de-herborismo",
+      "name": "Kit de Herborismo",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "skillBonus": {
+          "herborismo": 2
+        }
+      },
+      "price": 50,
+      "weight": 1.5,
+      "description": "Foice pequena, saquinhos de pano, almofariz e frascos para coletar ervas medicinais e preparar bálsamos."
+    },
+    {
+      "id": "tocha",
+      "name": "Tocha (Maço com 5)",
+      "category": "gear",
+      "consumable": true,
+      "effect": {
+        "lightRadius": 9
+      },
+      "price": 10,
+      "weight": 2.0,
+      "description": "Ilumina um raio de 9 metros por cerca de 1 hora cada; também pode servir como arma improvisada de fogo."
+    },
+    {
+      "id": "lampiao-oleo",
+      "name": "Lampião a Óleo",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "lightRadius": 12
+      },
+      "price": 35,
+      "weight": 1.0,
+      "description": "Lanterna fechada com vidro protetor que ilumina 12 metros por 6 horas com um frasco de óleo."
+    },
+    {
+      "id": "corda-15m",
+      "name": "Corda de Cânhamo (15m)",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 15,
+      "weight": 3.0,
+      "description": "Corda trançada resistente capaz de sustentar até 250 kg sem arrebentar."
+    },
+    {
+      "id": "arpeu",
+      "name": "Arpéu de Ferro",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 20,
+      "weight": 1.5,
+      "description": "Gancho de três pontas amarrável em corda para escalar muralhas e cruzar abismos."
+    },
+    {
+      "id": "pederneira",
+      "name": "Pederneira e Isqueiro",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 5,
+      "weight": 0.2,
+      "description": "Pedra de sílex e aço para acender fogueiras e tochas rapidamente."
+    },
+    {
+      "id": "racao-de-viagem",
+      "name": "Ração de Viagem (5 dias)",
+      "category": "consumable",
+      "consumable": true,
+      "effect": {
+        "days": 5
+      },
+      "price": 20,
+      "weight": 2.5,
+      "description": "Carne seca, pão duro, frutas secas e queijo curado suficientes para alimentar um aventureiro por 5 dias."
+    },
+    {
+      "id": "cantil",
+      "name": "Cantil de Couro",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 5,
+      "weight": 0.5,
+      "description": "Recipiente selado com cera de abelha com capacidade para 2 litros de água ou vinho."
+    },
+    {
+      "id": "saco-de-dormir",
+      "name": "Saco de Dormir e Cobertor",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 15,
+      "weight": 2.5,
+      "description": "Manta espessa forrada de lã para acampar com conforto e garantir recuperação plena no descanso longo."
+    },
+    {
+      "id": "barraca-campanha",
+      "name": "Barraca de Campanha (2 pessoas)",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 40,
+      "weight": 5.0,
+      "description": "Tenda de lona impermeável com estacas que abriga até dois aventureiros contra chuva e vento."
+    },
+    {
+      "id": "grimorio",
+      "name": "Grimório Arcano",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "focus": "arcano"
+      },
+      "price": 100,
+      "weight": 1.5,
+      "description": "Tomo encadernado em couro com páginas de pergaminho fino para registrar fórmulas e magias arcanas."
+    },
+    {
+      "id": "simbolo-sagrado",
+      "name": "Símbolo Sagrado",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "focus": "divino",
+        "spellBonus": 1
+      },
+      "price": 60,
+      "weight": 0.3,
+      "description": "Amuleto de prata ou ouro gravado com o emblema de sua divindade; indispensável para sacerdotes e paladinos."
+    },
+    {
+      "id": "orbe-arcano",
+      "name": "Orbe de Cristal Arcano",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "focus": "arcano",
+        "spellBonus": 1
+      },
+      "price": 120,
+      "weight": 0.8,
+      "description": "Esfera de quartzo límpido usada como canalizador mágico por feiticeiros, magos e ilusionistas."
+    },
+    {
+      "id": "varinha-canalizadora",
+      "name": "Varinha Canalizadora",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "focus": "arcano"
+      },
+      "price": 90,
+      "weight": 0.2,
+      "description": "Varinha esculpida em madeira mística que permite lançar magias mantendo a outra mão livre."
+    },
+    {
+      "id": "alaude-bardo",
+      "name": "Alaúde de Bardo",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "focus": "musica",
+        "skillBonus": {
+          "musica": 1
+        }
+      },
+      "price": 100,
+      "weight": 1.5,
+      "description": "Instrumento de cordas de acústica cristalina utilizado por bardos para canalizar canções mágicas."
+    },
+    {
+      "id": "flauta-madeira",
+      "name": "Flauta Transversal",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "focus": "musica"
+      },
+      "price": 30,
+      "weight": 0.3,
+      "description": "Flauta leve e portátil entalhada em madeira nobre, excelente para melodias rápidas em viagem."
+    },
+    {
+      "id": "aljava-flechas",
+      "name": "Aljava com 20 Flechas",
+      "category": "gear",
+      "consumable": true,
+      "effect": {
+        "ammoType": "flechas",
+        "count": 20
+      },
+      "price": 20,
+      "weight": 1.0,
+      "description": "Aljava de couro contendo 20 flechas com pontas de aço e penas estabilizadoras."
+    },
+    {
+      "id": "estojo-virotes",
+      "name": "Estojo com 20 Virotes",
+      "category": "gear",
+      "consumable": true,
+      "effect": {
+        "ammoType": "virotes",
+        "count": 20
+      },
+      "price": 25,
+      "weight": 1.2,
+      "description": "Caixa de couro rígido com 20 virotes pesados para bestas."
+    },
+    {
+      "id": "luneta",
+      "name": "Luneta de Latão",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "skillBonus": {
+          "percepcaoDistancia": 2
+        }
+      },
+      "price": 150,
+      "weight": 0.5,
+      "description": "Lente telescópica portátil que aproxima objetos distantes em até 4 vezes."
+    },
+    {
+      "id": "bussola",
+      "name": "Bússola de Navegação",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "skillBonus": {
+          "navegacao": 2
+        }
+      },
+      "price": 80,
+      "weight": 0.2,
+      "description": "Agulha imantada em caixa de bronze que sempre aponta o norte magnético."
+    },
+    {
+      "id": "algemas",
+      "name": "Algemas de Ferro",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 30,
+      "weight": 1.5,
+      "description": "Grilhões resistentes com chave (Força Dif 14 para arrebentar ou Ladino Dif 12 para abrir)."
+    },
+    {
+      "id": "pe-de-cabra",
+      "name": "Pé de Cabra",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "skillBonus": {
+          "arrombar": 2
+        }
+      },
+      "price": 20,
+      "weight": 2.0,
+      "description": "Barra de ferro curvada que concede +2 em testes de Força para abrir portas trancadas e baús."
+    },
+    {
+      "id": "material-escrita",
+      "name": "Pergaminhos, Pena e Tinta",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 20,
+      "weight": 0.4,
+      "description": "Estojo com dez folhas de pergaminho, tinteiro selado e pena para desenhar mapas e anotações."
+    },
+    {
+      "id": "manto-de-viagem",
+      "name": "Manto de Viagem Impermeável",
+      "category": "gear",
+      "consumable": false,
+      "effect": null,
+      "price": 35,
+      "weight": 1.2,
+      "description": "Capa com capuz encerado que protege da chuva, vento e olhares curiosos nas estradas."
+    },
+    {
+      "id": "cavalo-de-montaria",
+      "name": "Cavalo de Montaria",
+      "category": "gear",
+      "consumable": false,
+      "effect": {
+        "movement": 12
+      },
+      "price": 350,
+      "weight": 0.0,
+      "description": "Montaria treinada com sela e arreios, reduzindo drasticamente o tempo de viagens entre reinos."
+    },
+    {
+      "id": "anel-de-protecao",
+      "name": "Anel de Proteção +1",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "defenseBonus": 1,
+        "determinacaoBonus": 1
+      },
+      "price": 600,
+      "weight": 0.05,
+      "description": "Anel prateado gravado com runas de guarda. Concede +1 em Bloqueio, Esquiva e Determinação enquanto equipado."
+    },
+    {
+      "id": "amuleto-da-saude",
+      "name": "Amuleto da Saúde",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "pvBonus": 15
+      },
+      "price": 750,
+      "weight": 0.1,
+      "description": "Pingente de jade pulsante que fortalece o corpo do portador, concedendo +15 Pontos de Vida máximos."
+    },
+    {
+      "id": "colar-de-mana",
+      "name": "Colar da Fonte Arcana",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "pmBonus": 20
+      },
+      "price": 800,
+      "weight": 0.1,
+      "description": "Cristal azulado suspenso em corrente de prata que expande o reservatório mágico em +20 Pontos de Mana máximos."
+    },
+    {
+      "id": "botas-elficas",
+      "name": "Botas Élficas",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "stealthBonus": 2,
+        "movementBonus": 1
+      },
+      "price": 650,
+      "weight": 0.6,
+      "description": "Botas flexíveis de couro verde-musgo que silenciam passos (+2 Furtividade) e aumentam o deslocamento em +1m."
+    },
+    {
+      "id": "capa-das-sombras",
+      "name": "Capa das Sombras",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "esquivaBonus": 2,
+        "stealthBonus": 2
+      },
+      "price": 900,
+      "weight": 0.8,
+      "description": "Manto tecido com fios umbrais que mescla o portador à penumbra, concedendo +2 em Esquiva e Furtividade."
+    },
+    {
+      "id": "luvas-forca-ogro",
+      "name": "Manoplas da Força do Ogro",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "attributeBonus": {
+          "forca": 1
+        },
+        "damageBonus": 2
+      },
+      "price": 1000,
+      "weight": 1.2,
+      "description": "Manoplas de bronze rúnico que concedem +1 em Força e +2 de dano adicional em ataques corpo a corpo."
+    },
+    {
+      "id": "espada-flamejante-magica",
+      "name": "Espada Longa Flamejante +1",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "attackBonus": 1,
+        "damageBonus": 4,
+        "damageType": "Fogo"
+      },
+      "price": 1400,
+      "weight": 2.0,
+      "description": "Lâmina encantada que irrompe em chamas sob comando, concedendo +1 nos testes de ataque e +4 de dano Fogo extra."
+    },
+    {
+      "id": "escudo-do-guardiao",
+      "name": "Escudo do Guardião +1",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "defenseBonus": 3,
+        "rd": 2
+      },
+      "price": 1200,
+      "weight": 5.5,
+      "description": "Escudo médio abençoado que brilha ao bloquear impactos, concedendo +3 em Bloqueio e Redução de Dano 2."
+    },
+    {
+      "id": "cajado-do-arquimago",
+      "name": "Cajado do Arquimago",
+      "category": "magic",
+      "consumable": false,
+      "effect": {
+        "spellBonus": 2,
+        "pmBonus": 15,
+        "manaDiscount": 5
+      },
+      "price": 2200,
+      "weight": 1.6,
+      "description": "Relíquia arcana de madeira branca com gema prismática: +2 em conjuração, +15 PM máximos e reduz em 5 PM o custo de magias de 20+ PM."
+    },
+    {
+      "id": "pedra-da-fenix",
+      "name": "Pedra da Fênix",
+      "category": "magic",
+      "consumable": true,
+      "effect": {
+        "revivePv": 30
+      },
+      "price": 1500,
+      "weight": 0.1,
+      "description": "Gema incandescente de uso único: ao cair a 0 PV, a pedra se estilhaça em chamas douradas e restaura imediatamente 30 PV do portador."
+    }
+  ]
+}

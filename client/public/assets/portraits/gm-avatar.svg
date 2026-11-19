@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#2b1b42"/>
+      <stop offset="55%" stop-color="#130c21"/>
+      <stop offset="100%" stop-color="#06040b"/>
+    </radialGradient>
+    <radialGradient id="amberMagic" cx="50%" cy="68%" r="52%">
+      <stop offset="0%" stop-color="#fde047" stop-opacity="0.72"/>
+      <stop offset="35%" stop-color="#f59e0b" stop-opacity="0.34"/>
+      <stop offset="75%" stop-color="#9333ea" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#581c87" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gmCloak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b1d5e"/>
+      <stop offset="52%" stop-color="#1e1033"/>
+      <stop offset="100%" stop-color="#0a0614"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#d49b27"/>
+      <stop offset="100%" stop-color="#784f0b"/>
+    </linearGradient>
+    <linearGradient id="diceEmerald" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="diceAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
+      <stop offset="62%" stop-color="#040208" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#040208" stop-opacity="0.76"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <!-- Celestial Orrery Rings behind Game Master -->
+  <g stroke="#d49b27" fill="none" opacity="0.3">
+    <circle cx="256" cy="220" r="158" stroke-width="1.5" stroke-dasharray="12 6"/>
+    <circle cx="256" cy="220" r="134" stroke-width="1"/>
+    <ellipse cx="256" cy="220" rx="178" ry="64" stroke-width="1.2" transform="rotate(-18 256 220)"/>
+    <ellipse cx="256" cy="220" rx="178" ry="64" stroke-width="1.2" transform="rotate(18 256 220)"/>
+  </g>
+  <rect width="512" height="512" fill="url(#amberMagic)"/>
+
+  <!-- Mysterious Deeply Hooded Game Master Robes -->
+  <path d="M126 238 Q136 86 256 76 Q376 86 386 238 L448 410 L466 512 L46 512 L64 410 Z" fill="url(#gmCloak)" stroke="#07040d" stroke-width="4"/>
+  <!-- Gold-embroidered hood rim & shoulder vestments -->
+  <path d="M142 246 Q152 104 256 94 Q360 104 370 246" fill="none" stroke="url(#gold)" stroke-width="5"/>
+  <path d="M122 362 L256 426 L390 362" fill="none" stroke="url(#gold)" stroke-width="4" opacity="0.8"/>
+
+  <!-- Enigmatic Shadowed Face Void inside Deep Hood -->
+  <path d="M164 242 Q172 122 256 116 Q340 122 348 242 Q314 316 256 322 Q198 316 164 242 Z" fill="#06040a"/>
+
+  <!-- Glowing Amber Eyes Piercing the Shadow -->
+  <g>
+    <!-- Soft outer eye glow -->
+    <ellipse cx="222" cy="218" rx="22" ry="11" fill="#f59e0b" opacity="0.35"/>
+    <ellipse cx="290" cy="218" rx="22" ry="11" fill="#f59e0b" opacity="0.35"/>
+    <!-- Sharp luminous almond eyes -->
+    <path d="M206 218 Q222 208 238 220 Q222 226 206 218 Z" fill="#fef08a"/>
+    <path d="M274 220 Q290 208 306 218 Q290 226 274 220 Z" fill="#fef08a"/>
+    <circle cx="223" cy="218" r="3" fill="#ffffff"/>
+    <circle cx="289" cy="218" r="3" fill="#ffffff"/>
+  </g>
+
+  <!-- Open Arcane Grimoire Held in Foreground -->
+  <g transform="translate(256, 442)">
+    <!-- Radiant magical glow rising from open book pages -->
+    <ellipse cx="0" cy="-24" rx="124" ry="52" fill="#f59e0b" opacity="0.28"/>
+    <!-- Leather cover -->
+    <path d="M-132 -16 L0 8 L132 -16 L120 48 L0 70 L-120 48 Z" fill="#451a03" stroke="url(#gold)" stroke-width="3"/>
+    <!-- Illuminated parchment pages -->
+    <path d="M-118 -24 Q-58 -42 0 -8 Q58 -42 118 -24 L108 36 Q54 20 0 46 Q-54 20 -108 36 Z" fill="#f5e6c4" stroke="#92400e" stroke-width="2"/>
+    <line x1="0" y1="-8" x2="0" y2="46" stroke="#78350f" stroke-width="2.5"/>
+    <!-- Glowing geometric arcane diagram on pages (no text) -->
+    <circle cx="-56" cy="4" r="18" fill="none" stroke="#d97706" stroke-width="1.8"/>
+    <polygon points="-56,-12 -42,14 -70,14" fill="none" stroke="#d97706" stroke-width="1.4"/>
+    <circle cx="56" cy="4" r="18" fill="none" stroke="#0d9488" stroke-width="1.8"/>
+    <polygon points="56,-12 70,14 42,14" fill="none" stroke="#0d9488" stroke-width="1.4"/>
+  </g>
+
+  <!-- Floating Polyhedral Dice Orbiting Above Grimoire -->
+  <!-- Left Floating Emerald D20 -->
+  <g transform="translate(116, 304) rotate(-14)">
+    <circle cx="0" cy="0" r="38" fill="#10b981" opacity="0.22"/>
+    <polygon points="0,-28 24,-14 24,14 0,28 -24,14 -24,-14" fill="url(#diceEmerald)" stroke="#a7f3d0" stroke-width="2"/>
+    <polygon points="0,-16 14,10 -14,10" fill="none" stroke="#ecfdf5" stroke-width="1.5" opacity="0.85"/>
+    <line x1="0" y1="-28" x2="0" y2="-16" stroke="#a7f3d0" stroke-width="1.5"/>
+    <line x1="24" y1="14" x2="14" y2="10" stroke="#a7f3d0" stroke-width="1.5"/>
+    <line x1="-24" y1="14" x2="-14" y2="10" stroke="#a7f3d0" stroke-width="1.5"/>
+  </g>
+
+  <!-- Right Floating Amber D12 / D8 -->
+  <g transform="translate(396, 294) rotate(16)">
+    <circle cx="0" cy="0" r="36" fill="#f59e0b" opacity="0.25"/>
+    <polygon points="0,-26 24,0 0,26 -24,0" fill="url(#diceAmber)" stroke="#fef9c3" stroke-width="2"/>
+    <line x1="0" y1="-26" x2="0" y2="26" stroke="#fef9c3" stroke-width="1.5" opacity="0.8"/>
+    <line x1="-24" y1="0" x2="24" y2="0" stroke="#fef9c3" stroke-width="1.5" opacity="0.8"/>
+  </g>
+
+  <!-- Floating Gold Sparkles -->
+  <g fill="#fef08a" opacity="0.85">
+    <circle cx="154" cy="240" r="2.4"/><circle cx="358" cy="236" r="2.4"/>
+    <circle cx="104" cy="186" r="2"/><circle cx="408" cy="192" r="2"/>
+    <circle cx="256" cy="364" r="3"/><circle cx="204" cy="356" r="2"/>
+    <circle cx="308" cy="358" r="2"/>
+  </g>
+
+  <rect width="512" height="512" fill="url(#vignette)" pointer-events="none"/>
+</svg>

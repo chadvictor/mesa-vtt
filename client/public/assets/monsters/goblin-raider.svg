@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#3a2315"/>
+      <stop offset="55%" stop-color="#19100b"/>
+      <stop offset="100%" stop-color="#080605"/>
+    </radialGradient>
+    <radialGradient id="torchRim" cx="22%" cy="28%" r="55%">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#dc2626" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#991b1b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gobSkin" x1="0.2" y1="0" x2="0.85" y2="1">
+      <stop offset="0%" stop-color="#769e3f"/>
+      <stop offset="58%" stop-color="#4c6e26"/>
+      <stop offset="100%" stop-color="#273b12"/>
+    </linearGradient>
+    <linearGradient id="rustIron" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="45%" stop-color="#78523d"/>
+      <stop offset="100%" stop-color="#2b1e1a"/>
+    </linearGradient>
+    <linearGradient id="woodShield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#855129"/>
+      <stop offset="60%" stop-color="#573216"/>
+      <stop offset="100%" stop-color="#291508"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
+      <stop offset="62%" stop-color="#050302" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#050302" stop-opacity="0.74"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <rect width="512" height="512" fill="url(#torchRim)"/>
+
+  <!-- Jagged Rusty Scimitar raised behind right side -->
+  <g transform="translate(388, 224) rotate(22)">
+    <path d="M-12 72 C-6 -20, 6 -92, 46 -144 C12 -110, -24 -42, -26 72 Z" fill="url(#rustIron)" stroke="#1c1917" stroke-width="3"/>
+    <!-- Saw notches in rusty blade -->
+    <polygon points="10,-80 18,-68 6,-62" fill="#19100b"/>
+    <polygon points="2,-34 10,-22 -2,-16" fill="#19100b"/>
+    <rect x="-32" y="68" width="54" height="10" rx="3" fill="#475569" stroke="#0f172a" stroke-width="2"/>
+    <rect x="-8" y="78" width="16" height="48" rx="3" fill="#3b2010"/>
+  </g>
+
+  <!-- Spiked Scrap-Iron Raider Shoulders & Ragged Hide Armor -->
+  <path d="M98 366 Q162 308 256 314 Q350 308 414 366 L448 512 L64 512 Z" fill="#3b2618" stroke="#170d07" stroke-width="3"/>
+  <!-- Rusted Pauldron with iron spikes -->
+  <path d="M294 316 Q372 296 426 364 L398 422 Q336 410 302 366 Z" fill="url(#rustIron)" stroke="#18120e" stroke-width="3"/>
+  <polygon points="344,306 360,264 368,312" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+  <polygon points="384,322 414,288 402,338" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Long Flared Snarling Goblin Ears -->
+  <path d="M180 202 L58 158 L108 228 L174 238 Z" fill="url(#gobSkin)" stroke="#1c2b0e" stroke-width="2.5"/>
+  <path d="M332 202 L454 158 L404 228 L338 238 Z" fill="#476624" stroke="#1c2b0e" stroke-width="2.5"/>
+
+  <!-- Rusted Pot-Scrap Iron Browband / Helmet -->
+  <path d="M174 176 Q178 106 256 100 Q334 106 338 176 Q256 154 174 176 Z" fill="url(#rustIron)" stroke="#171210" stroke-width="3"/>
+  <circle cx="204" cy="156" r="4" fill="#cbd5e1"/><circle cx="256" cy="146" r="4" fill="#cbd5e1"/><circle cx="308" cy="156" r="4" fill="#cbd5e1"/>
+
+  <!-- Snarling Goblin Raider Head -->
+  <path d="M182 178 Q186 138 256 138 Q326 138 330 178 L318 242 Q302 288 256 300 Q210 288 194 242 Z" fill="url(#gobSkin)" stroke="#1c2b0e" stroke-width="2.5"/>
+
+  <!-- Angry Slanted Brows & Glowing Red-Orange Eyes -->
+  <path d="M196 184 L246 202" stroke="#1a290d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M316 184 L266 202" stroke="#1a290d" stroke-width="7" stroke-linecap="round"/>
+
+  <path d="M200 208 Q222 196 244 210 Q222 222 200 208 Z" fill="#1c0905"/>
+  <circle cx="224" cy="209" r="7" fill="#ef4444"/>
+  <circle cx="224" cy="209" r="2.8" fill="#fef08a"/>
+
+  <path d="M268 210 Q290 196 312 208 Q290 222 268 210 Z" fill="#1c0905"/>
+  <circle cx="288" cy="209" r="7" fill="#ef4444"/>
+  <circle cx="288" cy="209" r="2.8" fill="#fef08a"/>
+
+  <!-- Hooked Warted Nose & Snarling Fanged Maw -->
+  <path d="M256 204 Q244 234 256 246 Q268 236 264 218" fill="#5c852e" stroke="#1c2b0e" stroke-width="2.2"/>
+  <path d="M208 256 Q256 236 304 256 Q296 286 256 288 Q216 286 208 256 Z" fill="#2b080a" stroke="#19260c" stroke-width="2.5"/>
+  <!-- Jagged upper & lower fangs -->
+  <path d="M218 256 L224 272 L232 254 L242 270 L256 252 L270 270 L280 254 L288 272 L294 256" fill="#f5eedc"/>
+  <path d="M226 284 L232 268 L242 286 M270 286 L280 268 L286 284" fill="#e6dcc6"/>
+
+  <!-- Splintered Wooden Round Shield Raised in Left Foreground -->
+  <g transform="translate(124, 412)">
+    <circle cx="0" cy="0" r="88" fill="url(#woodShield)" stroke="#475569" stroke-width="10"/>
+    <line x1="-80" y1="-26" x2="80" y2="-26" stroke="#291408" stroke-width="3"/>
+    <line x1="-82" y1="26" x2="82" y2="26" stroke="#291408" stroke-width="3"/>
+    <!-- Iron shield boss & battle slashes -->
+    <circle cx="0" cy="0" r="24" fill="url(#rustIron)" stroke="#18120e" stroke-width="3"/>
+    <path d="M-46 -44 L36 32" stroke="#1a0d05" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <rect width="512" height="512" fill="url(#vignette)" pointer-events="none"/>
+</svg>

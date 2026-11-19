@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#3b2620"/>
+      <stop offset="55%" stop-color="#1d1414"/>
+      <stop offset="100%" stop-color="#0b090b"/>
+    </radialGradient>
+    <radialGradient id="emberRim" cx="78%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#ff9233" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#dc2626" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#dc2626" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="40%" stop-color="#64748b"/>
+      <stop offset="75%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="steelBright" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="45%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#ca8a04"/>
+      <stop offset="100%" stop-color="#713f12"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0.2" y1="0" x2="0.85" y2="1">
+      <stop offset="0%" stop-color="#efc3a1"/>
+      <stop offset="58%" stop-color="#c98e68"/>
+      <stop offset="100%" stop-color="#804f36"/>
+    </linearGradient>
+    <linearGradient id="cape" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#991b1b"/>
+      <stop offset="60%" stop-color="#611014"/>
+      <stop offset="100%" stop-color="#2b070a"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a2c1d"/>
+      <stop offset="55%" stop-color="#291710"/>
+      <stop offset="100%" stop-color="#140b08"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
+      <stop offset="62%" stop-color="#050406" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#050406" stop-opacity="0.72"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Backdrop -->
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <rect width="512" height="512" fill="url(#emberRim)"/>
+  <!-- Floating battle embers -->
+  <g fill="#fb923c" opacity="0.7">
+    <circle cx="92" cy="145" r="2.5"/><circle cx="135" cy="96" r="1.8"/>
+    <circle cx="408" cy="130" r="3"/><circle cx="436" cy="215" r="2"/>
+    <circle cx="78" cy="260" r="2"/><circle cx="380" cy="82" r="2.2"/>
+  </g>
+
+  <!-- Longsword resting behind right shoulder -->
+  <g transform="translate(362, 165) rotate(24)">
+    <polygon points="-9,-145 0,-170 9,-145 8,90 -8,90" fill="url(#steelBright)" stroke="#1e293b" stroke-width="2"/>
+    <line x1="0" y1="-150" x2="0" y2="84" stroke="#f8fafc" stroke-width="2" opacity="0.65"/>
+    <!-- Crossguard -->
+    <path d="M-42 86 L42 86 L34 100 L-34 100 Z" fill="url(#goldTrim)" stroke="#3b2006" stroke-width="2"/>
+    <!-- Hilt -->
+    <rect x="-7" y="100" width="14" height="46" rx="3" fill="#451a03" stroke="#1c0a02" stroke-width="2"/>
+    <circle cx="0" cy="152" r="10" fill="url(#goldTrim)" stroke="#3b2006" stroke-width="2"/>
+  </g>
+
+  <!-- Flowing Crimson Mantle / Cape -->
+  <path d="M98 350 Q135 280 256 286 Q377 280 414 350 L458 512 L54 512 Z" fill="url(#cape)" stroke="#240507" stroke-width="3"/>
+
+  <!-- Heavy Plate Armor Torso & Pauldrons -->
+  <g>
+    <!-- Chest cuirass -->
+    <path d="M138 356 Q190 310 256 312 Q322 310 374 356 L396 512 L116 512 Z" fill="url(#steel)" stroke="#0f172a" stroke-width="3"/>
+    <!-- Center chest ridge & gilded heraldic chevron -->
+    <path d="M256 322 L256 512" stroke="#1e293b" stroke-width="3"/>
+    <path d="M180 390 L256 440 L332 390" fill="none" stroke="url(#goldTrim)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M196 346 Q256 370 316 346" fill="none" stroke="#e2e8f0" stroke-width="2.5" opacity="0.5"/>
+    <!-- Steel Gorget (neck armor) -->
+    <path d="M188 308 Q256 342 324 308 L334 342 Q256 378 178 342 Z" fill="url(#steelBright)" stroke="#0f172a" stroke-width="3"/>
+    <path d="M192 318 Q256 350 320 318" fill="none" stroke="url(#goldTrim)" stroke-width="3"/>
+    <!-- Layered Left & Right Pauldrons -->
+    <path d="M84 366 Q106 300 184 316 L196 392 Q132 414 84 422 Z" fill="url(#steel)" stroke="#0f172a" stroke-width="3"/>
+    <path d="M94 374 Q124 328 180 338" fill="none" stroke="url(#goldTrim)" stroke-width="4"/>
+    <path d="M428 366 Q406 300 328 316 L316 392 Q380 414 428 422 Z" fill="url(#steel)" stroke="#0f172a" stroke-width="3"/>
+    <path d="M418 374 Q388 328 332 338" fill="none" stroke="url(#goldTrim)" stroke-width="4"/>
+    <!-- Cape clasp medallion -->
+    <circle cx="192" cy="348" r="11" fill="url(#goldTrim)" stroke="#3b2006" stroke-width="2"/>
+    <circle cx="320" cy="348" r="11" fill="url(#goldTrim)" stroke="#3b2006" stroke-width="2"/>
+  </g>
+
+  <!-- Neck & Heroic Head -->
+  <path d="M222 268 L290 268 L296 322 Q256 342 216 322 Z" fill="#a86d4d"/>
+  <path d="M224 275 Q256 306 288 275 L288 296 Q256 322 224 296 Z" fill="#6b3e28" opacity="0.65"/>
+
+  <!-- Hair back volume -->
+  <path d="M168 188 Q164 114 256 106 Q348 114 344 188 L338 256 L174 256 Z" fill="url(#hair)"/>
+
+  <!-- Ears -->
+  <ellipse cx="182" cy="212" rx="11" ry="18" fill="#c28561" stroke="#6b3e28" stroke-width="1.5"/>
+  <ellipse cx="330" cy="212" rx="11" ry="18" fill="#a86d4d" stroke="#59321f" stroke-width="1.5"/>
+
+  <!-- Face / Jawline -->
+  <path d="M186 176 Q186 124 256 124 Q326 124 326 176 L322 232 Q314 276 256 294 Q198 276 190 232 Z" fill="url(#skin)" stroke="#613722" stroke-width="2"/>
+  <!-- Cheekbone & Jaw Shadow -->
+  <path d="M322 180 L318 232 Q310 274 256 292 L256 276 Q298 262 304 224 Z" fill="#6b3b24" opacity="0.4"/>
+  <!-- Subtle battle scar across right cheek -->
+  <path d="M286 210 L306 242" stroke="#8c4434" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+
+  <!-- Determined Brows & Intense Eyes -->
+  <path d="M204 186 Q224 178 242 188" fill="none" stroke="#24130c" stroke-width="6" stroke-linecap="round"/>
+  <path d="M308 186 Q288 178 270 188" fill="none" stroke="#24130c" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Left Eye -->
+  <path d="M208 202 Q225 193 240 202 Q225 210 208 202 Z" fill="#f1f5f9"/>
+  <circle cx="225" cy="202" r="6" fill="#3b5e7a"/>
+  <circle cx="225" cy="202" r="3" fill="#0f172a"/>
+  <circle cx="227" cy="200" r="1.8" fill="#ffffff"/>
+  <path d="M206 202 Q225 192 242 202" fill="none" stroke="#1e100a" stroke-width="2.5"/>
+
+  <!-- Right Eye -->
+  <path d="M272 202 Q287 193 304 202 Q287 210 272 202 Z" fill="#e2e8f0"/>
+  <circle cx="287" cy="202" r="6" fill="#3b5e7a"/>
+  <circle cx="287" cy="202" r="3" fill="#0f172a"/>
+  <circle cx="289" cy="200" r="1.8" fill="#ffffff"/>
+  <path d="M270 202 Q287 192 306 202" fill="none" stroke="#1e100a" stroke-width="2.5"/>
+
+  <!-- Sculpted Nose & Determined Mouth -->
+  <path d="M256 196 L252 232 L262 235" fill="none" stroke="#7d4a30" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M255 200 L252 228" stroke="#fad9be" stroke-width="2" opacity="0.5"/>
+  <!-- Stubble shading along chin & jaw -->
+  <path d="M196 238 Q210 282 256 293 Q302 282 316 238 Q298 264 256 270 Q214 264 196 238 Z" fill="#2e1a12" opacity="0.35"/>
+  <!-- Mouth -->
+  <path d="M234 256 Q256 252 278 256" fill="none" stroke="#5c2d1d" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M242 262 Q256 266 270 262" fill="none" stroke="#7d4732" stroke-width="1.8" opacity="0.7"/>
+
+  <!-- Swept Dark-Brown Hero Hair -->
+  <path d="M174 188 Q170 116 256 102 Q342 116 338 188 Q326 154 298 148 Q268 140 232 152 Q194 162 174 188 Z" fill="url(#hair)"/>
+  <path d="M198 134 Q246 116 296 132" fill="none" stroke="#6b432e" stroke-width="3" opacity="0.45"/>
+  <path d="M214 146 Q254 134 282 146" fill="none" stroke="#543322" stroke-width="2.5" opacity="0.5"/>
+  <!-- Loose heroic hair strand on forehead -->
+  <path d="M244 138 Q232 162 226 176" fill="none" stroke="#24130c" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Warm Rim Light Accent along right shoulder & face -->
+  <path d="M326 176 Q326 226 312 262" fill="none" stroke="#fdba74" stroke-width="2.5" opacity="0.55"/>
+  <path d="M352 320 Q402 324 424 366" fill="none" stroke="#fdba74" stroke-width="3" opacity="0.6"/>
+
+  <!-- Circular Token Vignette -->
+  <rect width="512" height="512" fill="url(#vignette)" pointer-events="none"/>
+</svg>

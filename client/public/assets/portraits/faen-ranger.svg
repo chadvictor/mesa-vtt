@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#1c3d2a"/>
+      <stop offset="55%" stop-color="#0d2016"/>
+      <stop offset="100%" stop-color="#050d08"/>
+    </radialGradient>
+    <radialGradient id="forestLight" cx="30%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#a3e635" stop-opacity="0.38"/>
+      <stop offset="50%" stop-color="#22c55e" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#15803d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emeraldCloak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#15803d"/>
+      <stop offset="55%" stop-color="#0f5132"/>
+      <stop offset="100%" stop-color="#062919"/>
+    </linearGradient>
+    <linearGradient id="leather" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#855129"/>
+      <stop offset="60%" stop-color="#573216"/>
+      <stop offset="100%" stop-color="#2e1809"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0.2" y1="0" x2="0.85" y2="1">
+      <stop offset="0%" stop-color="#f2c9aa"/>
+      <stop offset="60%" stop-color="#d19874"/>
+      <stop offset="100%" stop-color="#8f5b3f"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
+      <stop offset="62%" stop-color="#030805" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#030805" stop-opacity="0.72"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <rect width="512" height="512" fill="url(#forestLight)"/>
+
+  <!-- Drifting forest fireflies / sunlit pollen -->
+  <g fill="#bef264" opacity="0.75">
+    <circle cx="96" cy="128" r="2.6"/><circle cx="146" cy="86" r="2"/>
+    <circle cx="408" cy="140" r="2.2"/><circle cx="386" cy="240" r="1.8"/>
+    <circle cx="88" cy="260" r="2"/>
+  </g>
+
+  <!-- Recurve Wood Bow & Arrow Quiver slung across back -->
+  <g>
+    <!-- Quiver with fletched arrows peeking over left shoulder -->
+    <g transform="translate(158, 224) rotate(-24)">
+      <rect x="-16" y="18" width="32" height="90" rx="5" fill="url(#leather)" stroke="#1f0f05" stroke-width="2"/>
+      <!-- Arrow shafts & white-green fletching -->
+      <line x1="-8" y1="-44" x2="-8" y2="20" stroke="#c89f6d" stroke-width="3"/>
+      <polygon points="-8,-44 -16,-24 -8,-28 0,-24" fill="#d9f99d"/>
+      <line x1="2" y1="-52" x2="2" y2="20" stroke="#c89f6d" stroke-width="3"/>
+      <polygon points="2,-52 -6,-32 2,-36 10,-32" fill="#f8fafc"/>
+      <line x1="12" y1="-40" x2="12" y2="20" stroke="#c89f6d" stroke-width="3"/>
+      <polygon points="12,-40 4,-20 12,-24 20,-20" fill="#86efac"/>
+    </g>
+    <!-- Curved yew recurve bow arc behind right shoulder -->
+    <path d="M350 92 Q430 212 374 440" fill="none" stroke="#6b3e1d" stroke-width="11" stroke-linecap="round"/>
+    <path d="M350 92 Q430 212 374 440" fill="none" stroke="#9e6234" stroke-width="4" stroke-linecap="round"/>
+    <line x1="350" y1="96" x2="374" y2="436" stroke="#e2e8f0" stroke-width="1.6" opacity="0.65"/>
+  </g>
+
+  <!-- Hooded Emerald Woodland Cloak Outer Silhouette -->
+  <path d="M138 228 Q144 96 256 88 Q368 96 374 228 L428 380 L452 512 L60 512 L84 380 Z" fill="url(#emeraldCloak)" stroke="#052113" stroke-width="3.5"/>
+  <!-- Deep interior shadow inside hood -->
+  <path d="M164 236 Q168 122 256 116 Q344 122 348 236 Q312 308 256 312 Q200 308 164 236 Z" fill="#061f12"/>
+
+  <!-- Leather Ranger Jerkin & Cross-Strap Belt -->
+  <path d="M132 364 Q194 314 256 320 Q318 314 380 364 L402 512 L110 512 Z" fill="url(#leather)" stroke="#1f0f05" stroke-width="3"/>
+  <!-- Diagonal quiver leather strap with brass buckle -->
+  <path d="M168 338 L346 512 L310 512 L144 358 Z" fill="#3d210d" stroke="#1c0d04" stroke-width="2"/>
+  <rect x="224" y="408" width="24" height="24" rx="4" fill="none" stroke="#eab308" stroke-width="4"/>
+  <!-- Draped emerald cloak mantle & leaf clasp -->
+  <path d="M110 340 Q186 382 256 350 Q326 382 402 340 L416 400 Q326 424 256 382 Q186 424 96 400 Z" fill="url(#emeraldCloak)" stroke="#062919" stroke-width="2.5"/>
+  <!-- Leaf clasp brooch -->
+  <path d="M256 340 Q272 356 256 374 Q240 356 256 340 Z" fill="#d4a024" stroke="#422006" stroke-width="2"/>
+
+  <!-- Neck & Agile Woodland Faen Ears -->
+  <path d="M230 272 L282 272 L286 326 Q256 344 226 326 Z" fill="#c98e6b"/>
+  <path d="M192 208 L156 198 L186 232 Z" fill="url(#skin)" stroke="#7c4e35" stroke-width="1.6"/>
+  <path d="M320 208 L356 198 L326 232 Z" fill="#b87e5c" stroke="#70442d" stroke-width="1.6"/>
+
+  <!-- Youthful Sharp-Eyed Faen Face -->
+  <path d="M196 184 Q196 138 256 138 Q316 138 316 184 L310 234 Q300 278 256 292 Q212 278 202 234 Z" fill="url(#skin)" stroke="#7c4f35" stroke-width="1.8"/>
+  <!-- Subtle woodland green cheek warpaint markings -->
+  <path d="M206 232 L226 228 M210 240 L226 236 M306 232 L286 228 M302 240 L286 236" stroke="#15803d" stroke-width="2.4" stroke-linecap="round" opacity="0.65"/>
+
+  <!-- Tousled Chestnut Hair peeking beneath hood -->
+  <path d="M188 190 Q192 128 256 124 Q320 128 324 190 Q298 158 262 156 Q224 156 188 190 Z" fill="#5c3118"/>
+  <path d="M222 148 Q208 176 200 198 M288 148 Q304 172 312 194" stroke="#42210e" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+  <!-- Keen Emerald Eyes & Confident Smirk -->
+  <path d="M208 198 Q226 190 242 198" fill="none" stroke="#3b1d0d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M304 198 Q286 190 270 198" fill="none" stroke="#3b1d0d" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M210 212 Q226 202 242 212 Q226 220 210 212 Z" fill="#f8fafc"/>
+  <circle cx="226" cy="212" r="6" fill="#16a34a"/>
+  <circle cx="226" cy="212" r="2.8" fill="#052e16"/>
+  <circle cx="228" cy="210" r="1.8" fill="#ffffff"/>
+
+  <path d="M270 212 Q286 202 302 212 Q286 220 270 212 Z" fill="#f8fafc"/>
+  <circle cx="286" cy="212" r="6" fill="#16a34a"/>
+  <circle cx="286" cy="212" r="2.8" fill="#052e16"/>
+  <circle cx="288" cy="210" r="1.8" fill="#ffffff"/>
+
+  <!-- Nose & Confident Half-Smile -->
+  <path d="M256 208 L253 236 L260 238" fill="none" stroke="#996447" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M238 256 Q258 266 278 252" fill="none" stroke="#7c3e2b" stroke-width="2.8" stroke-linecap="round"/>
+
+  <!-- Hood Rim Highlight -->
+  <path d="M150 226 Q156 108 256 100 Q356 108 362 226" fill="none" stroke="#4ade80" stroke-width="2.5" opacity="0.4"/>
+
+  <rect width="512" height="512" fill="url(#vignette)" pointer-events="none"/>
+</svg>

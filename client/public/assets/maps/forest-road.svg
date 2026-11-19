@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1440" width="1920" height="1440">
+  <defs>
+    <!-- Forest meadow moss & grass texture -->
+    <pattern id="forestGrass" width="160" height="160" patternUnits="userSpaceOnUse">
+      <rect width="160" height="160" fill="#213822"/>
+      <circle cx="32" cy="40" r="26" fill="#274328" opacity="0.7"/>
+      <circle cx="118" cy="28" r="30" fill="#1d321e" opacity="0.75"/>
+      <circle cx="84" cy="112" r="34" fill="#29472a" opacity="0.65"/>
+      <circle cx="145" cy="130" r="22" fill="#1b2f1c" opacity="0.7"/>
+      <!-- Grass tufts -->
+      <path d="M22 60 l-3 -8 m3 8 l2 -9 m-2 9 l6 -6 M96 42 l-2 -7 m2 7 l3 -8 M132 95 l-4 -7 m4 7 l2 -9 M46 136 l-3 -7 m3 7 l4 -8" stroke="#365c34" stroke-width="1.6" stroke-linecap="round" opacity="0.65"/>
+      <circle cx="62" cy="76" r="2" fill="#9bbf65" opacity="0.45"/>
+      <circle cx="128" cy="64" r="1.8" fill="#d9c66a" opacity="0.4"/>
+    </pattern>
+
+    <!-- Subtle VTT Grid -->
+    <pattern id="forestGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#d8f3dc" stroke-width="0.8" opacity="0.1"/>
+    </pattern>
+
+    <!-- Stream water gradient -->
+    <linearGradient id="waterGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17495e"/>
+      <stop offset="45%" stop-color="#1f647a"/>
+      <stop offset="100%" stop-color="#133d50"/>
+    </linearGradient>
+
+    <!-- Dirt road gradient -->
+    <linearGradient id="dirtRoad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6b5137"/>
+      <stop offset="50%" stop-color="#7c5f41"/>
+      <stop offset="100%" stop-color="#634b32"/>
+    </linearGradient>
+
+    <!-- Campfire glow -->
+    <radialGradient id="campGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff4c2" stop-opacity="0.95"/>
+      <stop offset="22%" stop-color="#ff8c1a" stop-opacity="0.65"/>
+      <stop offset="60%" stop-color="#ea580c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dappled forest sunlight -->
+    <radialGradient id="sunDapple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#bef264" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#bef264" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="forestVignette" cx="50%" cy="50%" r="70%">
+      <stop offset="55%" stop-color="#070d08" stop-opacity="0"/>
+      <stop offset="90%" stop-color="#060c07" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#030704" stop-opacity="0.78"/>
+    </radialGradient>
+
+    <filter id="treeShadow" x="-30%" y="-30%" width="170%" height="170%">
+      <feDropShadow dx="16" dy="18" stdDeviation="12" flood-color="#050c06" flood-opacity="0.72"/>
+    </filter>
+    <filter id="objShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="6" dy="8" stdDeviation="5" flood-color="#060b07" flood-opacity="0.65"/>
+    </filter>
+
+    <!-- Lush Top-Down Pine Tree -->
+    <g id="pineTree" filter="url(#treeShadow)">
+      <polygon points="0,-96 24,-52 72,-62 46,-18 94,10 46,32 68,78 18,52 -4,98 -24,52 -74,72 -46,24 -94,-4 -44,-28 -68,-74 -18,-50" fill="#132b1a" stroke="#0b1c10" stroke-width="2.5"/>
+      <polygon points="0,-72 18,-38 54,-46 34,-12 70,8 34,24 50,58 14,38 -2,74 -18,38 -56,54 -34,18 -70,-2 -32,-20 -50,-54 -14,-36" fill="#1d4227"/>
+      <polygon points="0,-46 12,-24 36,-30 22,-8 46,6 22,16 32,38 8,24 0,48 -12,24 -36,34 -22,12 -46,-2 -22,-14 -32,-36 -10,-22" fill="#2c5e36"/>
+      <circle cx="0" cy="0" r="14" fill="#3f7a47"/>
+    </g>
+
+    <!-- Lush Top-Down Oak Tree -->
+    <g id="oakTree" filter="url(#treeShadow)">
+      <g fill="#19361d" stroke="#0d2010" stroke-width="2">
+        <circle cx="-40" cy="-26" r="46"/><circle cx="38" cy="-32" r="48"/>
+        <circle cx="48" cy="28" r="44"/><circle cx="-36" cy="36" r="46"/>
+        <circle cx="0" cy="-48" r="44"/><circle cx="0" cy="44" r="42"/>
+      </g>
+      <g fill="#275229">
+        <circle cx="-26" cy="-18" r="38"/><circle cx="28" cy="-22" r="36"/>
+        <circle cx="30" cy="20" r="34"/><circle cx="-22" cy="24" r="35"/>
+        <circle cx="0" cy="0" r="42"/>
+      </g>
+      <g fill="#3a7239" opacity="0.88">
+        <circle cx="-18" cy="-22" r="24"/><circle cx="16" cy="-16" r="22"/>
+        <circle cx="6" cy="12" r="20"/><circle cx="-16" cy="8" r="18"/>
+      </g>
+      <circle cx="-12" cy="-18" r="12" fill="#529148" opacity="0.7"/>
+    </g>
+
+    <!-- Boulder reusable -->
+    <g id="boulder" filter="url(#objShadow)">
+      <polygon points="-32,-14 -10,-30 22,-24 36,-2 24,24 -12,28 -34,12" fill="#545b5e" stroke="#222629" stroke-width="2.5"/>
+      <polygon points="-22,-10 -6,-22 14,-16 20,0 10,14 -14,14" fill="#6b7378"/>
+      <path d="M-24 -8 Q-12 -18 2 -14" stroke="#3c6e3d" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+    </g>
+  </defs>
+
+  <!-- Forest Floor Base -->
+  <rect width="1920" height="1440" fill="url(#forestGrass)"/>
+
+  <!-- Muddy stream banks -->
+  <path d="M620 -40 C660 240, 820 420, 960 660 C1100 900, 1180 1160, 1280 1480" fill="none" stroke="#3d3527" stroke-width="235" stroke-linecap="round"/>
+  <path d="M620 -40 C660 240, 820 420, 960 660 C1100 900, 1180 1160, 1280 1480" fill="none" stroke="#4d4534" stroke-width="205" stroke-linecap="round"/>
+
+  <!-- Winding Forest Stream -->
+  <path d="M620 -40 C660 240, 820 420, 960 660 C1100 900, 1180 1160, 1280 1480" fill="none" stroke="url(#waterGrad)" stroke-width="175" stroke-linecap="round"/>
+  <!-- Deep river channel center -->
+  <path d="M620 -40 C660 240, 820 420, 960 660 C1100 900, 1180 1160, 1280 1480" fill="none" stroke="#0d2d3d" stroke-width="86" stroke-linecap="round" opacity="0.65"/>
+  <!-- Water ripples & foam highlights -->
+  <g fill="none" stroke="#8be0f7" stroke-linecap="round" opacity="0.4">
+    <path d="M635 80 Q655 150 680 210" stroke-width="3"/>
+    <path d="M720 270 Q765 340 805 405" stroke-width="2.5"/>
+    <path d="M1045 810 Q1085 880 1110 950" stroke-width="3"/>
+    <path d="M1155 1060 Q1190 1150 1215 1240" stroke-width="2.5"/>
+    <path d="M695 160 Q715 205 745 250" stroke-width="2"/>
+    <path d="M1090 920 Q1125 990 1150 1050" stroke-width="2"/>
+  </g>
+  <!-- Submerged river rocks -->
+  <g opacity="0.55">
+    <ellipse cx="755" cy="360" rx="22" ry="15" fill="#465c63"/>
+    <ellipse cx="1115" cy="960" rx="26" ry="18" fill="#465c63"/>
+    <ellipse cx="1195" cy="1180" rx="18" ry="13" fill="#465c63"/>
+  </g>
+
+  <!-- Winding Dirt Road (SW to NE crossing stream at center 960, 680) -->
+  <path d="M-40 1160 C240 1080, 480 940, 720 800 C840 730, 1080 630, 1260 540 C1520 410, 1720 320, 1960 220" fill="none" stroke="#473824" stroke-width="225" stroke-linecap="round"/>
+  <path d="M-40 1160 C240 1080, 480 940, 720 800 C840 730, 1080 630, 1260 540 C1520 410, 1720 320, 1960 220" fill="none" stroke="url(#dirtRoad)" stroke-width="192" stroke-linecap="round"/>
+  <!-- Wagon wheel ruts -->
+  <path d="M-40 1130 C240 1050, 480 910, 720 770 C840 700, 1080 600, 1260 510 C1520 380, 1720 290, 1960 190" fill="none" stroke="#523d27" stroke-width="8" opacity="0.6"/>
+  <path d="M-40 1190 C240 1110, 480 970, 720 830 C840 760, 1080 660, 1260 570 C1520 440, 1720 350, 1960 250" fill="none" stroke="#523d27" stroke-width="8" opacity="0.6"/>
+
+  <!-- Medieval Stone Bridge over the Stream (centered around 960, 680, rotated -25 deg along road) -->
+  <g transform="translate(960, 675) rotate(-25)" filter="url(#objShadow)">
+    <!-- Bridge shadow on water -->
+    <rect x="-155" y="-110" width="310" height="220" rx="8" fill="#091a21" opacity="0.45" transform="translate(10, 18)"/>
+    <!-- Bridge deck -->
+    <rect x="-155" y="-102" width="310" height="204" rx="5" fill="#6b6861" stroke="#262421" stroke-width="4"/>
+    <!-- Flagstone courses across bridge -->
+    <g stroke="#3c3a35" stroke-width="2" fill="none">
+      <line x1="-115" y1="-98" x2="-115" y2="98"/>
+      <line x1="-70" y1="-98" x2="-70" y2="98"/>
+      <line x1="-22" y1="-98" x2="-22" y2="98"/>
+      <line x1="25" y1="-98" x2="25" y2="98"/>
+      <line x1="72" y1="-98" x2="72" y2="98"/>
+      <line x1="115" y1="-98" x2="115" y2="98"/>
+      <line x1="-150" y1="-48" x2="150" y2="-48"/>
+      <line x1="-150" y1="0" x2="150" y2="0"/>
+      <line x1="-150" y1="48" x2="150" y2="48"/>
+    </g>
+    <!-- Stone parapet walls (north & south edges of bridge) -->
+    <rect x="-160" y="-114" width="320" height="24" rx="4" fill="#827e76" stroke="#22201d" stroke-width="3"/>
+    <rect x="-160" y="90" width="320" height="24" rx="4" fill="#827e76" stroke="#22201d" stroke-width="3"/>
+    <!-- Corner stone posts -->
+    <rect x="-164" y="-120" width="32" height="34" rx="3" fill="#949087" stroke="#22201d" stroke-width="3"/>
+    <rect x="132" y="-120" width="32" height="34" rx="3" fill="#949087" stroke="#22201d" stroke-width="3"/>
+    <rect x="-164" y="86" width="32" height="34" rx="3" fill="#949087" stroke="#22201d" stroke-width="3"/>
+    <rect x="132" y="86" width="32" height="34" rx="3" fill="#949087" stroke="#22201d" stroke-width="3"/>
+    <!-- Moss creeping on bridge stones -->
+    <circle cx="-90" cy="-102" r="10" fill="#2d5730" opacity="0.75"/>
+    <circle cx="80" cy="102" r="12" fill="#2d5730" opacity="0.75"/>
+  </g>
+
+  <!-- Mossy Ancient Ruins in NW Clearing (great ambush/cover terrain) -->
+  <g transform="translate(340, 390)" filter="url(#objShadow)">
+    <!-- Cracked stone floor base -->
+    <polygon points="-130,-90 110,-110 140,80 -100,110" fill="#464b4c" stroke="#222626" stroke-width="3" opacity="0.85"/>
+    <!-- Broken L-shaped stone ruin walls -->
+    <rect x="-120" y="-95" width="180" height="28" rx="3" fill="#6b7073" stroke="#222526" stroke-width="3"/>
+    <rect x="-120" y="-95" width="28" height="165" rx="3" fill="#6b7073" stroke="#222526" stroke-width="3"/>
+    <rect x="65" y="40" width="60" height="28" rx="3" fill="#5e6366" stroke="#222526" stroke-width="3"/>
+    <!-- Fallen pillar & moss -->
+    <rect x="-20" y="-20" width="84" height="24" rx="8" fill="#7a8082" stroke="#252829" stroke-width="2.5" transform="rotate(24 22 -8)"/>
+    <circle cx="-106" cy="-82" r="14" fill="#2c592e" opacity="0.8"/>
+    <circle cx="40" cy="-82" r="16" fill="#2c592e" opacity="0.7"/>
+    <circle cx="-106" cy="54" r="15" fill="#254c28" opacity="0.8"/>
+  </g>
+
+  <!-- Travelers' Campfire & Overturned Supply Wagon in SE Clearing (ambush site) -->
+  <g transform="translate(1520, 960)">
+    <!-- Camp clearing dirt patch -->
+    <ellipse cx="0" cy="0" rx="145" ry="110" fill="#4a402c" opacity="0.72"/>
+    <!-- Log benches -->
+    <g filter="url(#objShadow)">
+      <rect x="-90" y="-68" width="90" height="22" rx="9" fill="#59361c" stroke="#211207" stroke-width="2.5" transform="rotate(-18 -45 -57)"/>
+      <rect x="34" y="34" width="88" height="22" rx="9" fill="#59361c" stroke="#211207" stroke-width="2.5" transform="rotate(-24 78 45)"/>
+      <!-- Bedroll -->
+      <rect x="-108" y="28" width="68" height="34" rx="6" fill="#7c2d12" stroke="#291008" stroke-width="2" transform="rotate(22 -74 45)"/>
+      <!-- Wooden supply cart / crates -->
+      <g transform="translate(120, -140) rotate(16)">
+        <rect x="-52" y="-32" width="104" height="64" rx="4" fill="#6b4120" stroke="#211107" stroke-width="3"/>
+        <line x1="-52" y1="-10" x2="52" y2="-10" stroke="#361e0d" stroke-width="2"/>
+        <line x1="-52" y1="12" x2="52" y2="12" stroke="#361e0d" stroke-width="2"/>
+        <!-- Wagon wheels -->
+        <rect x="-36" y="-40" width="28" height="8" rx="2" fill="#3a2110"/>
+        <rect x="14" y="-40" width="28" height="8" rx="2" fill="#3a2110"/>
+        <rect x="-36" y="32" width="28" height="8" rx="2" fill="#3a2110"/>
+        <rect x="14" y="32" width="28" height="8" rx="2" fill="#3a2110"/>
+      </g>
+    </g>
+    <!-- Stone campfire ring -->
+    <circle cx="0" cy="0" r="28" fill="#2b211a" stroke="#6b6e70" stroke-width="8" stroke-dasharray="12 6"/>
+    <circle cx="0" cy="0" r="16" fill="#ea580c"/>
+    <circle cx="0" cy="0" r="10" fill="#facc15"/>
+    <circle cx="0" cy="0" r="4.5" fill="#fffbeb"/>
+  </g>
+
+  <!-- Tactical Boulders -->
+  <use href="#boulder" x="590" y="640"/>
+  <use href="#boulder" x="1310" y="750"/>
+  <use href="#boulder" x="620" y="1140"/>
+  <use href="#boulder" x="1190" y="290"/>
+
+  <!-- Multi-Layered Forest Canopy (Perimeter & Tactical Ambush Clusters) -->
+  <!-- North-West & North woods -->
+  <use href="#pineTree" x="120" y="140"/>
+  <use href="#oakTree" x="280" y="120"/>
+  <use href="#pineTree" x="480" y="130"/>
+  <use href="#pineTree" x="940" y="150"/>
+  <use href="#oakTree" x="1110" y="110"/>
+  <use href="#pineTree" x="1340" y="140"/>
+  <use href="#oakTree" x="1550" y="110"/>
+  <use href="#pineTree" x="1780" y="90"/>
+
+  <!-- West edge woods -->
+  <use href="#oakTree" x="110" y="390"/>
+  <use href="#pineTree" x="130" y="640"/>
+  <use href="#oakTree" x="230" y="780"/>
+  <use href="#pineTree" x="100" y="910"/>
+
+  <!-- South-West & South woods -->
+  <use href="#oakTree" x="240" y="1330"/>
+  <use href="#pineTree" x="450" y="1290"/>
+  <use href="#oakTree" x="720" y="1310"/>
+  <use href="#pineTree" x="920" y="1240"/>
+  <use href="#pineTree" x="1510" y="1310"/>
+  <use href="#oakTree" x="1740" y="1270"/>
+
+  <!-- East edge woods -->
+  <use href="#oakTree" x="1810" y="540"/>
+  <use href="#pineTree" x="1790" y="760"/>
+  <use href="#oakTree" x="1820" y="1020"/>
+
+  <!-- Subtle VTT Grid overlay -->
+  <rect width="1920" height="1440" fill="url(#forestGrid)" pointer-events="none"/>
+
+  <!-- Atmospheric Lighting: Dappled Sunbeams & Campfire Glow -->
+  <g style="mix-blend-mode: screen;" pointer-events="none">
+    <circle cx="960" cy="675" r="420" fill="url(#sunDapple)"/>
+    <circle cx="480" cy="540" r="320" fill="url(#sunDapple)"/>
+    <circle cx="1520" cy="960" r="290" fill="url(#campGlow)"/>
+  </g>
+
+  <!-- Forest Vignette -->
+  <rect width="1920" height="1440" fill="url(#forestVignette)" pointer-events="none"/>
+</svg>

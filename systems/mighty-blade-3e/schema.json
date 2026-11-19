@@ -1,0 +1,29 @@
+{
+  "attributes": [
+    { "key": "forca", "label": "Força", "abbr": "FOR", "min": 1, "max": 12, "defaultValue": 3, "description": "Ataques corporais, dano com armas brancas, Bloqueio, Carga e Força Necessária (FN)." },
+    { "key": "agilidade", "label": "Agilidade", "abbr": "AGI", "min": 1, "max": 12, "defaultValue": 3, "description": "Esquiva, Iniciativa, Deslocamento, ataques à distância e furtividade." },
+    { "key": "inteligencia", "label": "Inteligência", "abbr": "INT", "min": 1, "max": 12, "defaultValue": 3, "description": "Conjuração arcana, percepção, conhecimentos e Determinação." },
+    { "key": "vontade", "label": "Vontade", "abbr": "VON", "min": 1, "max": 12, "defaultValue": 3, "description": "Conjuração divina/primal, resistência mental, estabilização e Determinação." }
+  ],
+  "resources": [
+    { "key": "pv", "label": "Pontos de Vida", "abbr": "PV", "color": "#22c55e" },
+    { "key": "pm", "label": "Pontos de Mana", "abbr": "PM", "color": "#3b82f6" }
+  ],
+  "derivedStats": [
+    { "key": "bloqueio", "label": "Bloqueio", "abbr": "BLOQ", "formulaHint": "5 + FOR + Armadura + Escudo (6 se Pequeno)" },
+    { "key": "esquiva", "label": "Esquiva", "abbr": "ESQ", "formulaHint": "5 + AGI (6 se Pequeno)" },
+    { "key": "defesa", "label": "Defesa Efetiva", "abbr": "DEF", "formulaHint": "max(Bloqueio, Esquiva)" },
+    { "key": "determinacao", "label": "Determinação", "abbr": "DET", "formulaHint": "8 + max(INT, VON)" },
+    { "key": "deslocamento", "label": "Deslocamento", "abbr": "DESL", "formulaHint": "floor(AGI / 2) + 5m", "unit": "m" },
+    { "key": "carga", "label": "Carga", "abbr": "KG", "formulaHint": "Básica FOR×7 / Pesada FOR×14 / Máx FOR×21", "unit": "kg" }
+  ],
+  "sheetTabs": [
+    { "id": "resumo", "label": "Resumo" },
+    { "id": "combate", "label": "Combate" },
+    { "id": "habilidades", "label": "Habilidades" },
+    { "id": "magias", "label": "Magias" },
+    { "id": "inventario", "label": "Equipamentos" },
+    { "id": "notas", "label": "História & Notas" }
+  ],
+  "equipmentSlots": ["weapon", "armor", "shield", "gear", "consumable", "magic"]
+}

@@ -1,0 +1,23 @@
+{
+  "attributes": [
+    { "key": "fisico", "label": "Físico", "abbr": "FIS", "min": -5, "max": 30, "defaultValue": 2, "description": "Força, vigor e resistência corporal." },
+    { "key": "destreza", "label": "Destreza", "abbr": "DES", "min": -5, "max": 30, "defaultValue": 2, "description": "Agilidade, reflexos e precisão." },
+    { "key": "mente", "label": "Mente", "abbr": "MEN", "min": -5, "max": 30, "defaultValue": 2, "description": "Intelecto, percepção e conhecimento." },
+    { "key": "espirito", "label": "Espírito", "abbr": "ESP", "min": -5, "max": 30, "defaultValue": 2, "description": "Vontade, carisma e presença." }
+  ],
+  "resources": [
+    { "key": "hp", "label": "Pontos de Vida", "abbr": "PV", "color": "#22c55e" },
+    { "key": "mp", "label": "Pontos de Energia / Mana", "abbr": "PE", "color": "#3b82f6" }
+  ],
+  "derivedStats": [
+    { "key": "defesa", "label": "Defesa", "abbr": "DEF", "formulaHint": "10 + destreza" },
+    { "key": "iniciativa", "label": "Iniciativa", "abbr": "INI", "formulaHint": "1d20 + destreza" },
+    { "key": "deslocamento", "label": "Deslocamento", "abbr": "DESL", "formulaHint": "9m (6 quadrados)", "unit": "m" }
+  ],
+  "sheetTabs": [
+    { "id": "resumo", "label": "Atributos" },
+    { "id": "combate", "label": "Ações & Rolagens" },
+    { "id": "inventario", "label": "Inventário" },
+    { "id": "notas", "label": "Notas" }
+  ]
+}

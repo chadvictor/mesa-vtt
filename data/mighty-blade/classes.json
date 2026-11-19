@@ -1,0 +1,394 @@
+[
+  {
+    "id": "guerreiro",
+    "name": "Guerreiro",
+    "source": "Manual Básico",
+    "category": "Combate",
+    "description": "Mestre incontestável das armas, armaduras e táticas de campo de batalha. O Guerreiro domina tanto o combate corporal pesado quanto manobras defensivas na linha de frente.",
+    "primaryAttribute": "forca",
+    "spellcastingAttribute": null,
+    "attributeBonuses": { "forca": 1, "agilidade": 1, "inteligencia": 0, "vontade": 0 },
+    "automaticAbility": {
+      "id": "mestre-de-armas-1",
+      "name": "Mestre de Armas",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Você é treinado com todas as armas marciais e armaduras. Escolha um grupo de armas: você recebe +1 em todos os testes de ataque e +1 no dano com armas daquele grupo.",
+      "automationEffect": { "attackBonus": 1, "damageBonus": 1 }
+    },
+    "startingEquipment": [
+      "Espada Longa (ou Machado de Batalha)",
+      "Escudo Médio",
+      "Armadura de Couro Batido (ou Cota de Malha)",
+      "Mochila de Aventureiro e 1 Poção de Cura Menor"
+    ],
+    "startingGold": 400,
+    "allowedPaths": [],
+    "suggestedAbilities": ["Golpe Poderoso", "Aparar", "Ataque Giratório", "Postura Defensiva"],
+    "suggestedPortrait": "./assets/portraits/human-warrior.svg"
+  },
+  {
+    "id": "paladino",
+    "name": "Paladino",
+    "source": "Manual Básico",
+    "category": "Combate",
+    "description": "Cavaleiro sagrado guiado por um juramento inquebrantável de justiça e proteção. Combina aço pesado, aura protetora e bênçãos do Caminho da Luz.",
+    "primaryAttribute": "forca",
+    "spellcastingAttribute": "vontade",
+    "attributeBonuses": { "forca": 1, "agilidade": 0, "inteligencia": 0, "vontade": 1 },
+    "automaticAbility": {
+      "id": "aura-divina",
+      "name": "Aura Divina",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Sua convicção irradia proteção sagrada. Você e aliados adjacentes recebem +1 em Determinação e em testes contra medo e efeitos de Trevas.",
+      "automationEffect": { "determinacaoBonus": 1, "fearResistBonus": 1, "auraRangeMeters": 3 }
+    },
+    "startingEquipment": [
+      "Martelo de Guerra (ou Espada Longa)",
+      "Escudo de Torre (ou Escudo Médio)",
+      "Cota de Malha",
+      "Símbolo Sagrado e Manto da Ordem"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["luz"],
+    "suggestedAbilities": ["Golpe Sagrado", "Imposição de Mãos", "Escudo da Fé", "Desafio Honrado"],
+    "suggestedPortrait": "./assets/portraits/dwarf-paladin.svg"
+  },
+  {
+    "id": "barbaro",
+    "name": "Bárbaro",
+    "source": "Manual Básico",
+    "category": "Combate",
+    "description": "Combatente selvagem das fronteiras indomáveis que canaliza fúria primordial para desferir golpes devastadores e suportar ferimentos mortais.",
+    "primaryAttribute": "forca",
+    "spellcastingAttribute": null,
+    "attributeBonuses": { "forca": 1, "agilidade": 0, "inteligencia": 0, "vontade": 1 },
+    "automaticAbility": {
+      "id": "furia-de-batalha",
+      "name": "Fúria de Batalha",
+      "type": "Ação Livre / Ativa (Automática)",
+      "costPm": 5,
+      "description": "Ao gastar 5 PM você entra na condição Em Fúria até o fim da cena (ou por 3 turnos): recebe +2 no dano corporal e +1 em testes de Força, mas sofre -1 na Defesa.",
+      "automationEffect": { "appliesCondition": "furia", "costPm": 5, "durationTurns": 3 }
+    },
+    "startingEquipment": [
+      "Machado Grande (2 mãos)",
+      "Gibão de Peles",
+      "2 Machadinhas de Arremesso",
+      "Mochila de Sobrevivência"
+    ],
+    "startingGold": 400,
+    "allowedPaths": [],
+    "suggestedAbilities": ["Investida Brutal", "Pele Grossa", "Grito de Guerra", "Golpe Demolidor"],
+    "suggestedPortrait": "./assets/portraits/orc-barbarian.svg"
+  },
+  {
+    "id": "espadachim",
+    "name": "Espadachim",
+    "source": "Manual Básico",
+    "category": "Combate",
+    "description": "Duelista veloz e acrobático que troca armaduras pesadas por esgrima refinada, contra-ataques fulminantes e precisão cirúrgica.",
+    "primaryAttribute": "agilidade",
+    "spellcastingAttribute": null,
+    "attributeBonuses": { "forca": 0, "agilidade": 1, "inteligencia": 1, "vontade": 0 },
+    "automaticAbility": {
+      "id": "estilo-agil",
+      "name": "Estilo Ágil",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Você pode usar Agilidade no lugar de Força nos testes de ataque e dano com armas leves ou de esgrima (como rapieira, cimitarra, espada curta e adaga), recebendo ainda +1 na Esquiva quando sem armadura pesada.",
+      "automationEffect": { "finesseWeapons": true, "esquivaBonus": 1 }
+    },
+    "startingEquipment": [
+      "Rapieira (ou Cimitarra)",
+      "Adaga de Parada",
+      "Armadura de Couro Leve",
+      "Capa de Duelista"
+    ],
+    "startingGold": 400,
+    "allowedPaths": [],
+    "suggestedAbilities": ["Ripostar", "Estocada Precisa", "Passo Fantasma", "Desarmar"],
+    "suggestedPortrait": "./assets/portraits/human-warrior.svg"
+  },
+  {
+    "id": "ladino",
+    "name": "Ladino",
+    "source": "Manual Básico",
+    "category": "Furtividade",
+    "description": "Especialista em infiltração, armadilhas, furtividade e golpes traiçoeiros nos pontos vitais do inimigo. Letal nas sombras e indispensável em masmorras.",
+    "primaryAttribute": "agilidade",
+    "spellcastingAttribute": null,
+    "attributeBonuses": { "forca": 0, "agilidade": 1, "inteligencia": 1, "vontade": 0 },
+    "automaticAbility": {
+      "id": "ataque-furtivo",
+      "name": "Ataque Furtivo",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Sempre que atacar um alvo surpreso, flanqueado, Cego ou Indefeso com uma arma leve ou à distância, você adiciona +1d6 de dano extra ao golpe.",
+      "automationEffect": { "sneakAttackBonusDice": "1d6" }
+    },
+    "startingEquipment": [
+      "2 Adagas (ou Espada Curta)",
+      "Armadura de Couro",
+      "Kit de Arrombamento (Gazuas)",
+      "Manto Escuro com Capuz"
+    ],
+    "startingGold": 400,
+    "allowedPaths": [],
+    "suggestedAbilities": ["Passo Silencioso", "Desarmar Armadilhas", "Evasão", "Lâmina Envenenada"],
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "patrulheiro",
+    "name": "Patrulheiro",
+    "source": "Manual Básico",
+    "category": "Furtividade",
+    "description": "Caçador dos ermos, batedor e arqueiro letal. O Patrulheiro lê rastros na floresta, sobrevive em qualquer bioma e abate presas à distância ou com duas lâminas.",
+    "primaryAttribute": "agilidade",
+    "spellcastingAttribute": null,
+    "attributeBonuses": { "forca": 0, "agilidade": 1, "inteligencia": 0, "vontade": 1 },
+    "automaticAbility": {
+      "id": "rastreador-dos-ermos",
+      "name": "Rastreador dos Ermos",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Você domina a caça e a sobrevivência selvagem. Recebe +2 em testes de Rastreio, Sobrevivência e Percepção em ambientes naturais, além de +1 em ataques com arcos ou contra sua presa marcada.",
+      "automationEffect": { "survivalBonus": 2, "rangedAttackBonus": 1 }
+    },
+    "startingEquipment": [
+      "Arco Longo e Aljava com 20 Flechas",
+      "Espada Curta (ou 2 Facas de Caça)",
+      "Armadura de Couro",
+      "Capa Camuflada e Corda"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["natureza"],
+    "suggestedAbilities": ["Tiro Preciso", "Chuva de Flechas", "Combate com Duas Armas", "Companheiro Animal"],
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "feiticeiro",
+    "name": "Feiticeiro",
+    "source": "Manual Básico",
+    "category": "Magia",
+    "description": "Estudioso ou prodígio das artes arcanas que molda mana bruta nos Caminhos Elementais para lançar chamas, relâmpagos, barreiras e feitiços arcanos.",
+    "primaryAttribute": "inteligencia",
+    "spellcastingAttribute": "inteligencia",
+    "attributeBonuses": { "forca": 0, "agilidade": 0, "inteligencia": 1, "vontade": 1 },
+    "automaticAbility": {
+      "id": "conhecimento-arcano",
+      "name": "Conhecimento Arcano",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Você compreende as correntes de mana de Drakon. Recebe +2 em testes para identificar magias, artefatos e runas, pode conjurar magias dos Caminhos Elementais e começa com +10 PM extras.",
+      "automationEffect": { "pmBonus": 10, "arcanaBonus": 2 }
+    },
+    "startingEquipment": [
+      "Cajado Arcano",
+      "Adaga Ritual",
+      "Grimório e Vestes de Feiticeiro",
+      "1 Poção de Mana Menor"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["fogo", "agua", "terra", "ar", "espirito", "trevas", "arcano"],
+    "suggestedAbilities": ["Bola de Fogo", "Seta Arcana", "Escudo Místico", "Relâmpago"],
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "sacerdote",
+    "name": "Sacerdote",
+    "source": "Manual Básico",
+    "category": "Suporte",
+    "description": "Emissário devoto dos deuses que canaliza energia divina para curar feridos, abençoar aliados, purificar venenos e banir mortos-vivos e abominações.",
+    "primaryAttribute": "vontade",
+    "spellcastingAttribute": "vontade",
+    "attributeBonuses": { "forca": 0, "agilidade": 0, "inteligencia": 1, "vontade": 1 },
+    "automaticAbility": {
+      "id": "canalizar-fe",
+      "name": "Canalizar Fé",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Sua devoção amplifica milagres de proteção e cura. Magias de cura que você conjurar recuperam +5 PV adicionais, e você recebe +2 em testes contra mortos-vivos e efeitos profanos.",
+      "automationEffect": { "healingBonus": 5, "undeadTestBonus": 2 }
+    },
+    "startingEquipment": [
+      "Maça (ou Cajado Sagrado)",
+      "Símbolo Sagrado",
+      "Vestes Clericais (ou Couro Batido)",
+      "Kit de Curandeiro"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["luz", "espirito", "agua", "fogo"],
+    "suggestedAbilities": ["Cura Menor", "Bênção Divina", "Expulsar Mortos-Vivos", "Luz Purificadora"],
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "druida",
+    "name": "Druida",
+    "source": "Manual Básico",
+    "category": "Magia",
+    "description": "Guardião ancestral do equilíbrio natural. O Druida invoca a fúria dos elementos, comanda raízes e feras, cura com ervas sagradas e assume formas selvagens.",
+    "primaryAttribute": "vontade",
+    "spellcastingAttribute": "vontade",
+    "attributeBonuses": { "forca": 0, "agilidade": 0, "inteligencia": 1, "vontade": 1 },
+    "automaticAbility": {
+      "id": "comunhao-com-a-natureza",
+      "name": "Comunhão com a Natureza",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Você compreende sinais da fauna e flora, não sofre penalidade de terreno difícil natural e recebe +2 em testes de Sobrevivência, Herbalismo e empatia com animais.",
+      "automationEffect": { "ignoreNaturalDifficultTerrain": true, "natureBonus": 2 }
+    },
+    "startingEquipment": [
+      "Cajado de Carvalho (ou Foice Curva)",
+      "Gibão de Peles",
+      "Foco Natural (Amuleto de Visco)",
+      "Bolsa de Ervas Medicinais"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["natureza", "terra", "agua", "ar"],
+    "suggestedAbilities": ["Forma Selvagem", "Raízes Constritoras", "Regeneração Natural", "Chamado da Tempestade"],
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "bardo",
+    "name": "Bardo",
+    "source": "Manual Básico",
+    "category": "Suporte",
+    "description": "Menestrel, diplomata e cronista arcano cujas melodias elevam a moral dos aliados, desorientam inimigos e tecem encantamentos sutis.",
+    "primaryAttribute": "vontade",
+    "spellcastingAttribute": "vontade",
+    "attributeBonuses": { "forca": 0, "agilidade": 1, "inteligencia": 0, "vontade": 1 },
+    "automaticAbility": {
+      "id": "cancao-inspiradora",
+      "name": "Canção Inspiradora",
+      "type": "Ação (Automática)",
+      "costPm": 5,
+      "description": "Ao tocar ou cantar gastando 5 PM, todos os aliados que puderem ouvi-lo recebem +1 em todos os testes de ataque, magia e Determinação por 3 turnos.",
+      "automationEffect": { "partyAttackBonus": 1, "partyDeterminacaoBonus": 1, "costPm": 5, "durationTurns": 3 }
+    },
+    "startingEquipment": [
+      "Instrumento Musical (Alaúde, Flauta ou Lira)",
+      "Rapieira (ou Adaga)",
+      "Roupas Finas de Viagem",
+      "Diário de Crônicas"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["espirito", "ar", "luz"],
+    "suggestedAbilities": ["Acorde Dissonante", "Lábia Irresistível", "Melodia Revigorante", "Conhecimento de Bardo"],
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "monge",
+    "name": "Monge",
+    "source": "Guia do Herói",
+    "category": "Combate",
+    "description": "Artista marcial disciplinado que transforma o próprio corpo em arma letal, canalizando foco interior para aparar flechas, mover-se como o vento e atordoar oponentes.",
+    "primaryAttribute": "agilidade",
+    "spellcastingAttribute": "vontade",
+    "attributeBonuses": { "forca": 0, "agilidade": 1, "inteligencia": 0, "vontade": 1 },
+    "automaticAbility": {
+      "id": "artes-marciais",
+      "name": "Artes Marciais",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Seus golpes desarmados causam dano igual a Força + 2 (ou Agilidade + 2) e contam como armas marciais. Quando não usa armadura ou escudo, você soma +2 à sua Esquiva.",
+      "automationEffect": { "unarmedDamageBonus": 2, "unarmoredEsquivaBonus": 2, "finesseUnarmed": true }
+    },
+    "startingEquipment": [
+      "Bastão de Madeira (Bo)",
+      "Túnica de Monastério",
+      "Faixas de Combate",
+      "Contas de Meditação"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["espirito"],
+    "suggestedAbilities": ["Golpe Atordoante", "Rajada de Golpes", "Passo do Vento", "Mente Inabalável"],
+    "suggestedPortrait": "./assets/portraits/human-warrior.svg"
+  },
+  {
+    "id": "alquimista",
+    "name": "Alquimista",
+    "source": "Guia do Herói",
+    "category": "Suporte",
+    "description": "Cientista místico que destila reagentes raros em elixires curativos, bombas incendiárias, ácidos corrosivos e mutagênicos de combate.",
+    "primaryAttribute": "inteligencia",
+    "spellcastingAttribute": "inteligencia",
+    "attributeBonuses": { "forca": 0, "agilidade": 1, "inteligencia": 1, "vontade": 0 },
+    "automaticAbility": {
+      "id": "sintese-alquimica",
+      "name": "Síntese Alquímica",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Você domina o preparo de fórmulas alquímicas. Recebe +2 em testes de Alquimia e pode preparar até 3 frascos (bombas incendiárias, ácido ou elixires menores) por descanso longo sem custo em moedas.",
+      "automationEffect": { "alchemyBonus": 2, "dailyBrewCharges": 3 }
+    },
+    "startingEquipment": [
+      "Kit de Alquimia Portátil",
+      "2 Frascos de Fogo Alquímico",
+      "Besta Leve (ou Adaga)",
+      "Avental de Couro Reforçado"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["fogo", "agua", "terra"],
+    "suggestedAbilities": ["Bomba Incendiária", "Elixir Restaurador", "Frasco de Ácido", "Transmutação Rápida"],
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "runico",
+    "name": "Rúnico (Runemaster)",
+    "source": "Guia do Herói",
+    "category": "Magia",
+    "description": "Ferreiro arcano que entalha runas de poder em armas, escudos e armaduras, combinando combate vigoroso com selos elementais devastadores.",
+    "primaryAttribute": "inteligencia",
+    "spellcastingAttribute": "inteligencia",
+    "attributeBonuses": { "forca": 1, "agilidade": 0, "inteligencia": 1, "vontade": 0 },
+    "automaticAbility": {
+      "id": "gravacao-runica",
+      "name": "Gravação Rúnica",
+      "type": "Ação / Suporte (Automática)",
+      "costPm": 5,
+      "description": "Gastando 5 PM, você inscreve uma Runa Elemental em uma arma ou escudo pela cena: armas ganham +2 de dano elemental (Fogo, Gelo ou Raio) e escudos ganham +1 no Bloqueio.",
+      "automationEffect": { "runeDamageBonus": 2, "runeShieldBonus": 1, "costPm": 5 }
+    },
+    "startingEquipment": [
+      "Martelo de Forja (ou Machado de Batalha)",
+      "Cinzel Rúnico",
+      "Armadura de Couro Batido",
+      "Pedras Rúnicas"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["arcano", "terra", "fogo", "luz"],
+    "suggestedAbilities": ["Runa da Chama", "Runa da Muralha", "Detonar Selo", "Armadura Rúnica"],
+    "suggestedPortrait": "./assets/portraits/dwarf-paladin.svg"
+  },
+  {
+    "id": "ilusionista",
+    "name": "Ilusionista",
+    "source": "Guia do Herói",
+    "category": "Magia",
+    "description": "Manipulador das percepções e das sombras, capaz de criar miragens convincentes, duplicatas ilusórias e desaparecer diante dos olhos dos inimigos.",
+    "primaryAttribute": "inteligencia",
+    "spellcastingAttribute": "inteligencia",
+    "attributeBonuses": { "forca": 0, "agilidade": 0, "inteligencia": 1, "vontade": 1 },
+    "automaticAbility": {
+      "id": "manto-de-ilusoes",
+      "name": "Manto de Ilusões",
+      "type": "Suporte (Automática)",
+      "costPm": 0,
+      "description": "Suas ilusões são excepcionalmente convincentes: a Dificuldade para inimigos desacreditarem suas magias ilusórias aumenta em +2, e você recebe +1 na Esquiva enquanto mantiver uma ilusão ativa.",
+      "automationEffect": { "illusionDcBonus": 2, "esquivaBonusWhileIllusion": 1 }
+    },
+    "startingEquipment": [
+      "Varinha (ou Cajado Leve)",
+      "Adaga Oculta",
+      "Manto Sombrio",
+      "Espelho de Prata Pequeno"
+    ],
+    "startingGold": 400,
+    "allowedPaths": ["espirito", "ar", "trevas"],
+    "suggestedAbilities": ["Invisibilidade", "Imagens Espelhadas", "Miragem Sonora", "Pesadelo Ilusório"],
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  }
+]
