@@ -17,6 +17,7 @@
 [![WebRTC Voice](https://img.shields.io/badge/WebRTC-Built--in%20Voice-22c55e?style=flat-square&logo=webrtc&logoColor=white)](#-key-features)
 [![Mobile-First](https://img.shields.io/badge/Mobile--First-Phone%20%26%20Desktop-8b5cf6?style=flat-square)](#-why-mesa-vtt)
 
+[Trailer](#-official-trailer-real-gameplay) •
 [Why Mesa VTT?](#-why-mesa-vtt) •
 [Features](#-key-features) •
 [Built-in Systems](#-built-in-systems) •
@@ -25,6 +26,20 @@
 [Quick Start](#-quick-start) •
 [Roadmap](#-roadmap) •
 [Licensing](#-licensing)
+
+</div>
+
+---
+
+## 🎬 Official Trailer (Real Gameplay)
+
+<div align="center">
+
+[![Watch the Mesa VTT Official Launch Trailer (1:30 · Full HD 1080p)](docs/media/trailer-play-poster-en.png)](https://github.com/chadvictor/mesa-vtt/releases/download/v0.1.0/mesa-vtt-trailer.mp4)
+
+**[▶ Watch / Download 1080p Full HD Trailer (`mesa-vtt-trailer.mp4`)](https://github.com/chadvictor/mesa-vtt/releases/download/v0.1.0/mesa-vtt-trailer.mp4)** · **[📦 Release `v0.1.0`](https://github.com/chadvictor/mesa-vtt/releases/tag/v0.1.0)**
+
+*100% live gameplay captured directly from Mesa VTT: Multisystem Lobby, Tactical Battlemap with Ruler/Pings/Fog of War, Three.js 3D Dice, Automated Mighty Blade 3rd Edition, Firecast-style Library with GM/Player permissions & zero-`eval` Macros, Tagmar 3.0 + Expansions (color-coded `1d20` Resolution Table), and Mobile-First Gameplay with live Discord-style WebRTC Voice.*
 
 </div>
 

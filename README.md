@@ -17,6 +17,7 @@
 [![WebRTC Voz](https://img.shields.io/badge/WebRTC-Voz%20Integrada-22c55e?style=flat-square&logo=webrtc&logoColor=white)](#-funcionalidades-principais)
 [![Mobile-First](https://img.shields.io/badge/Mobile--First-Celular%20%26%20Desktop-8b5cf6?style=flat-square)](#-por-que-o-mesa-vtt)
 
+[Trailer](#-trailer-oficial-gameplay-real) •
 [Por que o Mesa VTT?](#-por-que-o-mesa-vtt) •
 [Funcionalidades](#-funcionalidades-principais) •
 [Sistemas Incluídos](#-sistemas-incluídos) •
@@ -25,6 +26,20 @@
 [Início Rápido](#-início-rápido) •
 [Roadmap](#-roadmap) •
 [Licenças](#-licenças)
+
+</div>
+
+---
+
+## 🎬 Trailer Oficial (Gameplay Real)
+
+<div align="center">
+
+[![Assista ao Trailer Oficial do Mesa VTT (1:30 · Full HD 1080p)](docs/media/trailer-play-poster.png)](https://github.com/chadvictor/mesa-vtt/releases/download/v0.1.0/mesa-vtt-trailer.mp4)
+
+**[▶ Baixar / Assistir Trailer em 1080p Full HD (`mesa-vtt-trailer.mp4`)](https://github.com/chadvictor/mesa-vtt/releases/download/v0.1.0/mesa-vtt-trailer.mp4)** · **[📦 Release `v0.1.0`](https://github.com/chadvictor/mesa-vtt/releases/tag/v0.1.0)**
+
+*Captura 100% real da aplicação rodando ao vivo: Lobby multisistema, Tabuleiro Tático com Régua/Pings/Fog of War, Dados 3D Three.js, Mighty Blade 3ª Edição automatizado, Biblioteca Firecast com permissões Mestre/Jogador e Macros, Tagmar 3.0 + Expansões (Tabela de Resolução `1d20` colorida) e Gameplay Mobile com Voz WebRTC estilo Discord ao vivo.*
 
 </div>
 
