@@ -255,6 +255,8 @@ export type InteractiveActionType =
   | "apply_damage"
   | "apply_heal"
   | "spend_mana"
+  | "spend_karma"
+  | "spend_resource"
   | "apply_condition"
   | "roll_followup";
 
@@ -266,6 +268,26 @@ export interface InteractiveAction {
   targetCharacterId?: string;
   payload: Record<string, unknown>;
   executedBy?: string;
+}
+
+export type TagmarResolutionColor =
+  | "erro_critico"
+  | "falha"
+  | "verde"
+  | "amarelo"
+  | "laranja"
+  | "vermelho"
+  | "azul";
+
+export interface TagmarResistanceRequest {
+  kind: "rf" | "rm";
+  fa: number;
+  fd: number;
+}
+
+export interface TagmarResistanceResult extends TagmarResistanceRequest {
+  target: number;
+  resisted: boolean;
 }
 
 export interface RollOutcome {
@@ -287,6 +309,12 @@ export interface RollResult {
   seed: number;
   outcome?: RollOutcome;
   systemMeta?: Record<string, unknown>;
+  /** Tagmar 3.0 Tabela de Resolução & Tabela de Resistências metadata */
+  tagmarColumn?: number;
+  tagmarColor?: TagmarResolutionColor;
+  tagmarDamageTier?: number;
+  tagmarResistance?: TagmarResistanceResult;
+  tagmarDirectToEf?: boolean;
 }
 
 export interface ChatMessage extends VisibilityRule {
@@ -470,6 +498,11 @@ export interface SystemManifest {
   author: string;
   description: string;
   language: string;
+  defaultDice?: string;
+  primaryResource?: string;
+  secondaryResource?: string;
+  accentColor?: string;
+  license?: string;
   diceDefaults: {
     coreFormula: string;
     quickDice: number[];
@@ -528,11 +561,42 @@ export interface RollPlan {
   targetDefense?: number;
   targetName?: string;
   manaCost?: number;
+  karmaCost?: number;
   damageFormula?: string;
   damageType?: string;
   healFormula?: string;
   appliesCondition?: string;
+  /** Tagmar 3.0 Tabela de Resolução & Tabela de Resistências metadata */
+  tagmarColumn?: number;
+  tagmarColor?: TagmarResolutionColor;
+  tagmarDamageTier?: number;
+  tagmarResistance?: TagmarResistanceRequest;
+  tagmarDirectToEf?: boolean;
   systemMeta: Record<string, unknown>;
+}
+
+export interface RollRequest {
+  kind:
+    | "attribute"
+    | "skill"
+    | "attack"
+    | "ability"
+    | "spell"
+    | "resistance"
+    | "initiative"
+    | "custom";
+  key?: string;
+  itemId?: string;
+  formula?: string;
+  label?: string;
+  bonus?: number;
+  difficulty?: number;
+  target?: Character;
+  tagmarColumn?: number;
+  tagmarColor?: TagmarResolutionColor;
+  tagmarDamageTier?: number;
+  tagmarResistance?: TagmarResistanceRequest;
+  tagmarDirectToEf?: boolean;
 }
 
 export interface RollEvaluation {
@@ -546,6 +610,12 @@ export interface CompendiumCategory {
   items: Record<string, unknown>[];
 }
 
+export interface DamageOptions {
+  damageType?: string;
+  directToEf?: boolean;
+  ignoreAbsorption?: boolean;
+}
+
 export interface RpgSystemEngine {
   manifest: SystemManifest;
   schema: SystemSchema;
@@ -556,25 +626,13 @@ export interface RpgSystemEngine {
     resourceMax: Record<string, number>;
   };
 
-  /** Guided creation (e.g. MB 3e wizard) or blank template creation. */
+  /** Guided creation (e.g. MB 3e / Tagmar 3.0 wizard) or blank template creation. */
   createCharacterFromWizard(
     input: Record<string, unknown>
   ): Omit<Character, "id" | "campaignId" | "updatedAt">;
 
   /** Builds authoritative RollPlans sent to Go server via WS `dice.roll`. */
-  buildRollRequest(
-    character: Character,
-    request: {
-      kind: "attribute" | "attack" | "ability" | "spell" | "initiative" | "custom";
-      key?: string;
-      itemId?: string;
-      formula?: string;
-      label?: string;
-      bonus?: number;
-      difficulty?: number;
-      target?: Character;
-    }
-  ): RollPlan;
+  buildRollRequest(character: Character, request: RollRequest): RollPlan;
 
   planAttributeCheck(
     character: Character,
@@ -592,7 +650,11 @@ export interface RpgSystemEngine {
   evaluateRoll(roll: RollResult, actor?: Character, target?: Character): RollEvaluation;
 
   /** Pure state mutators returning partial Character patches ready for `character.patch`. */
-  applyDamage(character: Character, amount: number, damageType?: string): Partial<Character>;
+  applyDamage(
+    character: Character,
+    amount: number,
+    damageTypeOrOptions?: string | DamageOptions
+  ): Partial<Character>;
   applyHealing(character: Character, amount: number): Partial<Character>;
   spendMana(character: Character, amount: number): { patch?: Partial<Character>; error?: string };
   applyCondition(character: Character, conditionId: string, rounds?: number): Partial<Character>;
@@ -731,4 +793,175 @@ export interface GenericRpgSystemData {
   actions: GenericActionEntry[];
   inventory: CharacterEquipmentEntry[];
   notes?: string;
+}
+
+// ---------------------------------------------------------------------------
+// 13. Tagmar 3.0 Typed Sheet Data & Wizard Helpers
+// ---------------------------------------------------------------------------
+
+export interface TagmarAttributes {
+  intelecto: number;
+  aura: number;
+  carisma: number;
+  forca: number;
+  fisico: number;
+  agilidade: number;
+}
+
+export interface TagmarColorDamage {
+  verde: number;
+  amarelo: number;
+  laranja: number;
+  vermelho: number;
+  azul?: number;
+}
+
+export interface TagmarSkillEntry {
+  id: string;
+  skillId?: string;
+  name: string;
+  group?: string;
+  attribute: keyof TagmarAttributes;
+  level: number;
+  bonus?: number;
+  restricted?: boolean;
+  specialized?: boolean;
+  specialization?: string;
+  description?: string;
+}
+
+export interface TagmarCombatEntry {
+  id: string;
+  techniqueId?: string;
+  name: string;
+  category?: "melee" | "ranged" | "defense" | "maneuver" | string;
+  attribute?: keyof TagmarAttributes;
+  level: number;
+  bonus?: number;
+  description?: string;
+  automation?: Record<string, unknown>;
+}
+
+export interface TagmarSpellEntry {
+  id: string;
+  spellId?: string;
+  name: string;
+  group?: string;
+  professionIds?: string[];
+  level: number;
+  karmaCost: number;
+  evocationTime?: string;
+  range?: string;
+  duration?: string;
+  resistance?: "none" | "rf" | "rm" | string;
+  effectLevels?: Array<{ level: number; summary: string }>;
+  description: string;
+  automation?: {
+    damageByColor?: TagmarColorDamage;
+    healByColor?: TagmarColorDamage;
+    damageType?: string;
+    appliesCondition?: string;
+    defenseBonus?: number;
+    targetType?: string;
+    [key: string]: unknown;
+  };
+}
+
+export interface TagmarEquipmentEntry {
+  id: string;
+  itemId?: string;
+  name: string;
+  category: "weapon" | "armor" | "shield" | "helmet" | "gear" | "consumable" | "magic";
+  slot?: "armor" | "shield" | "helmet" | string;
+  equipped?: boolean;
+  quantity: number;
+  damage?: TagmarColorDamage;
+  damageType?: string;
+  hands?: number;
+  minFor?: number;
+  columnBonus?: number;
+  /** Optional explicit attack column override (used by Bestiary natural attacks so sheets never drift). */
+  fixedColumn?: number;
+  range?: string;
+  weaponGroup?: string;
+  armorClass?: "L" | "M" | "P" | string;
+  absorcao?: number;
+  defPassiveBonus?: number;
+  defActiveBonus?: number;
+  agilityPenalty?: number;
+  price?: number;
+  weight?: number;
+  properties?: string[];
+  effect?: Record<string, unknown>;
+  description?: string;
+}
+
+export interface TagmarMoney {
+  mo: number;
+  mp: number;
+  mc: number;
+}
+
+export interface TagmarSystemData {
+  raceId: string;
+  raceName: string;
+  professionId: string;
+  professionName: string;
+  specializationId?: string | null;
+  specializationName?: string | null;
+  stage: number;
+  xp: number;
+  attributes: TagmarAttributes;
+  ehBonus?: number;
+  efBonus?: number;
+  karmaBonus?: number;
+  ehGainedFromStages?: number;
+  baseEfOverride?: number;
+  baseEhOverride?: number;
+  baseVbOverride?: number;
+  naturalAbsorption?: number;
+  naturalDefenseActive?: number;
+  naturalDefensePassive?: number;
+  rfBonus?: number;
+  rmBonus?: number;
+  armorClassOverride?: "L" | "M" | "P";
+  skills: TagmarSkillEntry[];
+  combatTechniques: TagmarCombatEntry[];
+  spells: TagmarSpellEntry[];
+  inventory: TagmarEquipmentEntry[];
+  money: TagmarMoney;
+  languages?: string[];
+  notes?: string;
+  biography?: string;
+  /** Computed stat snapshots kept in sync by `computeDerivedStats` */
+  efMax?: number;
+  ehMax?: number;
+  karmaMax?: number;
+  defesaAtiva?: number;
+  defesaPassiva?: number;
+  absorcao?: number;
+  rf?: number;
+  rm?: number;
+  vb?: number;
+  iniciativa?: number;
+}
+
+export interface TagmarWizardInput {
+  name: string;
+  portraitUrl?: string;
+  raceId: string;
+  professionId: string;
+  specializationId?: string | null;
+  /** Final attributes or adjustments applied on top of racial base (validated against 15/16-pt pool). */
+  attributeAllocations?: Partial<TagmarAttributes>;
+  /** Optional direct final attributes override (when UI builds final attrs directly). */
+  attributes?: Partial<TagmarAttributes>;
+  selectedSkillIds?: string[];
+  selectedCombatTechniqueIds?: string[];
+  selectedSpellIds?: string[];
+  selectedWeaponId?: string;
+  selectedArmorId?: string;
+  biography?: string;
+  notes?: string;
+  ownerUserId?: string | null;
 }

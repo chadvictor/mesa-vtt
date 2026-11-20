@@ -49,6 +49,7 @@ import type {
 import { FALLBACK_ASSET_MANIFEST, fetchAssetManifest, type AssetEntry } from '@/lib/api';
 import type { CharacterSheetModalProps } from '@/lib/componentProps';
 import { useCampaignStore } from '@/lib/store';
+import { TagmarSheetContent } from './TagmarSheetContent';
 
 type SheetTab = 'combat' | 'skills' | 'equipment' | 'bio';
 
@@ -179,11 +180,40 @@ export function CharacterSheetModal({
 
   if (!characterId || !character) return null;
 
+  const isTagmar = character.systemId === 'tagmar-3';
   const isMightyBlade = character.systemId === 'mighty-blade-3e';
   const canEdit =
     isGm ||
     character.ownerUserId === user.id ||
     character.controlledByUserIds?.includes(user.id);
+
+  if (isTagmar) {
+    return (
+      <div
+        className="mesa-modal-backdrop"
+        style={isMobile ? { alignItems: 'flex-end', padding: 0 } : undefined}
+        onClick={onClose}
+      >
+        <div
+          className="mesa-modal"
+          style={{
+            maxWidth: isMobile ? '100%' : 940,
+            maxHeight: isMobile ? '94dvh' : '92dvh',
+            height: isMobile ? '94dvh' : undefined,
+            borderColor: 'rgba(74, 222, 128, 0.45)',
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <TagmarSheetContent
+            character={character}
+            canEdit={canEdit}
+            portraits={portraits}
+            onClose={onClose}
+          />
+        </div>
+      </div>
+    );
+  }
 
   // Live derived stats recomputation for Mighty Blade
   const mbData = isMightyBlade ? readMBData(character) : null;

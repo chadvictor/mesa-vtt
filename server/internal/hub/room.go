@@ -418,16 +418,19 @@ func (r *Room) handleChatSend(c *Client, env WsEnvelope) {
 
 func (r *Room) handleDiceRoll(c *Client, env WsEnvelope) {
 	var in struct {
-		Formula           string                    `json:"formula"`
-		Label             string                    `json:"label"`
-		CharacterID       string                    `json:"characterId"`
-		Visibility        model.Visibility          `json:"visibility"`
-		VisibleToUserIDs  []string                  `json:"visibleToUserIds"`
-		Difficulty        *int                      `json:"difficulty"`
-		TargetCharacterID string                    `json:"targetCharacterId"`
-		TargetDefense     *int                      `json:"targetDefense"`
-		SystemMeta        map[string]any            `json:"systemMeta"`
-		Actions           []model.InteractiveAction `json:"actions"`
+		SystemID          string                         `json:"systemId"`
+		Formula           string                         `json:"formula"`
+		Label             string                         `json:"label"`
+		CharacterID       string                         `json:"characterId"`
+		Visibility        model.Visibility               `json:"visibility"`
+		VisibleToUserIDs  []string                       `json:"visibleToUserIds"`
+		Difficulty        *int                           `json:"difficulty"`
+		TargetCharacterID string                         `json:"targetCharacterId"`
+		TargetDefense     *int                           `json:"targetDefense"`
+		SystemMeta        map[string]any                 `json:"systemMeta"`
+		TagmarColumn      *int                           `json:"tagmarColumn"`
+		TagmarResistance  *model.TagmarResistanceRequest `json:"tagmarResistance"`
+		Actions           []model.InteractiveAction      `json:"actions"`
 	}
 	if err := json.Unmarshal(env.Payload, &in); err != nil {
 		r.sendError(c, env.RequestID, "bad_payload", "Invalid dice roll payload")
@@ -437,12 +440,19 @@ func (r *Room) handleDiceRoll(c *Client, env WsEnvelope) {
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
 
+	systemID := strings.TrimSpace(in.SystemID)
+	if systemID == "" {
+		if camp, err := r.store.GetCampaign(ctx, r.campaignID); err == nil {
+			systemID = camp.SystemID
+		}
+	}
+
 	targetName := ""
 	targetDef := in.TargetDefense
 	if in.TargetCharacterID != "" {
 		if tc, err := r.store.GetCharacter(ctx, r.campaignID, in.TargetCharacterID); err == nil {
 			targetName = tc.Name
-			if targetDef == nil {
+			if targetDef == nil && !dice.IsTagmarSystem(systemID) {
 				if defVal, ok := readIntField(tc.Computed, "defesa", "bloqueio", "esquiva"); ok && defVal > 0 {
 					targetDef = &defVal
 				}
@@ -451,11 +461,14 @@ func (r *Room) handleDiceRoll(c *Client, env WsEnvelope) {
 	}
 
 	rollRes, err := dice.Roll(in.Formula, dice.Options{
-		Label:         in.Label,
-		Difficulty:    in.Difficulty,
-		TargetDefense: targetDef,
-		TargetName:    targetName,
-		SystemMeta:    in.SystemMeta,
+		SystemID:         systemID,
+		Label:            in.Label,
+		Difficulty:       in.Difficulty,
+		TargetDefense:    targetDef,
+		TargetName:       targetName,
+		SystemMeta:       in.SystemMeta,
+		TagmarColumn:     in.TagmarColumn,
+		TagmarResistance: in.TagmarResistance,
 	})
 	if err != nil {
 		r.sendError(c, env.RequestID, "invalid_formula", err.Error())
@@ -580,12 +593,25 @@ func (r *Room) handleChatAction(c *Client, env WsEnvelope) {
 	if act.ActionType == "roll_followup" {
 		if formula, ok := act.Payload["formula"].(string); ok && formula != "" {
 			label, _ := act.Payload["label"].(string)
-			payloadBytes, _ := json.Marshal(map[string]any{
+			followup := map[string]any{
 				"formula":     formula,
 				"label":       label,
 				"characterId": msg.CharacterID,
 				"visibility":  msg.Visibility,
-			})
+			}
+			if act.TargetCharacterID != "" {
+				followup["targetCharacterId"] = act.TargetCharacterID
+			}
+			if v, ok := act.Payload["tagmarColumn"]; ok {
+				followup["tagmarColumn"] = v
+			}
+			if v, ok := act.Payload["tagmarResistance"]; ok {
+				followup["tagmarResistance"] = v
+			}
+			if v, ok := act.Payload["systemMeta"]; ok {
+				followup["systemMeta"] = v
+			}
+			payloadBytes, _ := json.Marshal(followup)
 			r.handleDiceRoll(c, WsEnvelope{Type: "dice.roll", RequestID: env.RequestID, Payload: payloadBytes})
 		}
 	} else {
@@ -606,37 +632,78 @@ func (r *Room) handleChatAction(c *Client, env WsEnvelope) {
 			r.sendError(c, env.RequestID, "forbidden", "Only the GM or character owner can apply this action")
 			return
 		}
+		if ch.Resources == nil {
+			ch.Resources = map[string]model.ResourceBar{}
+		}
 
 		amount := int(readFloat(act.Payload["amount"]))
+		if amount < 0 {
+			amount = 0
+		}
+		isTagmar := isTagmarCharacter(ch)
+
 		switch act.ActionType {
 		case "apply_damage":
-			key := resolveResourceKey(ch.Resources, "pv", "hp")
-			bar := ch.Resources[key]
-			bar.Current -= amount
-			if bar.Current < 0 {
-				bar.Current = 0
+			if isTagmar {
+				auditText = applyTagmarDamage(&ch, amount, act.Payload)
+			} else {
+				key := resolveResourceKey(ch.Resources, "pv", "hp")
+				bar := ch.Resources[key]
+				bar.Current -= amount
+				if bar.Current < 0 {
+					bar.Current = 0
+				}
+				ch.Resources[key] = bar
+				auditText = fmt.Sprintf("%s sofreu %d de dano (%s: %d/%d).", ch.Name, amount, strings.ToUpper(key), bar.Current, bar.Max)
 			}
-			ch.Resources[key] = bar
-			auditText = fmt.Sprintf("%s sofreu %d de dano (%s: %d/%d).", ch.Name, amount, strings.ToUpper(key), bar.Current, bar.Max)
 		case "apply_heal":
-			key := resolveResourceKey(ch.Resources, "pv", "hp")
-			bar := ch.Resources[key]
-			bar.Current += amount
-			if bar.Max > 0 && bar.Current > bar.Max {
-				bar.Current = bar.Max
+			if isTagmar {
+				auditText = applyTagmarHeal(&ch, amount, act.Payload)
+			} else {
+				key := resolveResourceKey(ch.Resources, "pv", "hp")
+				bar := ch.Resources[key]
+				bar.Current += amount
+				if bar.Max > 0 && bar.Current > bar.Max {
+					bar.Current = bar.Max
+				}
+				ch.Resources[key] = bar
+				auditText = fmt.Sprintf("%s recuperou %d de vida (%s: %d/%d).", ch.Name, amount, strings.ToUpper(key), bar.Current, bar.Max)
 			}
-			ch.Resources[key] = bar
-			auditText = fmt.Sprintf("%s recuperou %d de vida (%s: %d/%d).", ch.Name, amount, strings.ToUpper(key), bar.Current, bar.Max)
-		case "spend_mana":
-			key := resolveResourceKey(ch.Resources, "pm", "mp")
+		case "spend_mana", "spend_resource", "spend_karma":
+			key := ""
+			if resName, ok := act.Payload["resource"].(string); ok && strings.TrimSpace(resName) != "" {
+				key = strings.ToLower(strings.TrimSpace(resName))
+			} else if act.ActionType == "spend_karma" {
+				key = "karma"
+			} else if isTagmar {
+				key = "karma"
+			} else {
+				key = resolveResourceKey(ch.Resources, "pm", "mp")
+			}
 			bar := ch.Resources[key]
 			if bar.Current < amount {
-				r.sendError(c, env.RequestID, "insufficient_mana", "Mana insuficiente")
+				errCode := "insufficient_resource"
+				errMsg := fmt.Sprintf("Recurso %s insuficiente", strings.ToUpper(key))
+				if act.ActionType == "spend_mana" && key != "karma" {
+					errCode = "insufficient_mana"
+					errMsg = "Mana insuficiente"
+				} else if key == "karma" {
+					errCode = "insufficient_mana"
+					errMsg = "Karma insuficiente"
+				}
+				r.sendError(c, env.RequestID, errCode, errMsg)
 				return
 			}
 			bar.Current -= amount
 			ch.Resources[key] = bar
-			auditText = fmt.Sprintf("%s gastou %d de mana (%s: %d/%d).", ch.Name, amount, strings.ToUpper(key), bar.Current, bar.Max)
+			resLabel := strings.ToUpper(key)
+			if key == "karma" {
+				auditText = fmt.Sprintf("%s gastou %d de Karma (Karma: %d/%d).", ch.Name, amount, bar.Current, bar.Max)
+			} else if act.ActionType == "spend_mana" {
+				auditText = fmt.Sprintf("%s gastou %d de mana (%s: %d/%d).", ch.Name, amount, resLabel, bar.Current, bar.Max)
+			} else {
+				auditText = fmt.Sprintf("%s gastou %d de %s (%s: %d/%d).", ch.Name, amount, resLabel, resLabel, bar.Current, bar.Max)
+			}
 		case "apply_condition":
 			condID, _ := act.Payload["conditionId"].(string)
 			condName, _ := act.Payload["name"].(string)
@@ -754,10 +821,25 @@ func (r *Room) syncLinkedTokens(ctx context.Context, ch model.Character) {
 	if err != nil {
 		return
 	}
-	pvKey := resolveResourceKey(ch.Resources, "pv", "hp")
-	pmKey := resolveResourceKey(ch.Resources, "pm", "mp")
-	pvBar, hasPV := ch.Resources[pvKey]
-	pmBar, hasPM := ch.Resources[pmKey]
+	var pvBar, pmBar model.ResourceBar
+	var hasPV, hasPM bool
+	if isTagmarCharacter(ch) {
+		if b, ok := ch.Resources["eh"]; ok {
+			pvBar, hasPV = b, true
+		} else if b, ok := ch.Resources["ef"]; ok {
+			pvBar, hasPV = b, true
+		}
+		if b, ok := ch.Resources["ef"]; ok {
+			pmBar, hasPM = b, true
+		} else if b, ok := ch.Resources["karma"]; ok {
+			pmBar, hasPM = b, true
+		}
+	} else {
+		pvKey := resolveResourceKey(ch.Resources, "pv", "hp")
+		pmKey := resolveResourceKey(ch.Resources, "pm", "mp")
+		pvBar, hasPV = ch.Resources[pvKey]
+		pmBar, hasPM = ch.Resources[pmKey]
+	}
 
 	condIDs := make([]string, 0, len(ch.Conditions))
 	for _, cond := range ch.Conditions {
@@ -1704,6 +1786,9 @@ func applyCharacterPatch(ch *model.Character, patch map[string]any, role model.M
 			var res map[string]model.ResourceBar
 			if json.Unmarshal(raw, &res) == nil {
 				ch.Resources = res
+				if ef, ok := res["ef"]; ok && ef.Temp > 0 && ch.Computed != nil {
+					delete(ch.Computed, "absorcaoDepleted")
+				}
 			}
 		}
 	}
@@ -1798,4 +1883,235 @@ func readIntField(m map[string]any, keys ...string) (int, bool) {
 		}
 	}
 	return 0, false
+}
+
+func readBool(v any) bool {
+	b, _ := v.(bool)
+	return b
+}
+
+func isTagmarCharacter(ch model.Character) bool {
+	if dice.IsTagmarSystem(ch.SystemID) {
+		return true
+	}
+	if _, hasEH := ch.Resources["eh"]; hasEH {
+		return true
+	}
+	if _, hasEF := ch.Resources["ef"]; hasEF {
+		return true
+	}
+	return false
+}
+
+func ensureCondition(ch *model.Character, id, name, icon string) {
+	for _, c := range ch.Conditions {
+		if c.ID == id {
+			return
+		}
+	}
+	ch.Conditions = append(ch.Conditions, model.ActiveCondition{
+		ID:   id,
+		Name: name,
+		Icon: icon,
+	})
+}
+
+func removeConditions(ch *model.Character, ids ...string) {
+	if len(ch.Conditions) == 0 {
+		return
+	}
+	next := make([]model.ActiveCondition, 0, len(ch.Conditions))
+	for _, c := range ch.Conditions {
+		if !slices.Contains(ids, c.ID) {
+			next = append(next, c)
+		}
+	}
+	ch.Conditions = next
+}
+
+// applyTagmarDamage implements Tagmar 3.0's official EH -> Absorção -> EF damage pipeline
+// (and Critical / directToEf bypass straight into EF, allowing negative EF down to unconscious/dead).
+func applyTagmarDamage(ch *model.Character, amount int, payload map[string]any) string {
+	ehBar := ch.Resources["eh"]
+	efBar := ch.Resources["ef"]
+
+	directToEf := readBool(payload["directToEf"]) || readBool(payload["tagmarDirectToEf"]) || readBool(payload["critical"])
+	if resStr, _ := payload["resource"].(string); strings.EqualFold(strings.TrimSpace(resStr), "ef") {
+		directToEf = true
+	}
+	ignoreAbsorption := readBool(payload["ignoreAbsorption"]) || directToEf
+
+	// Determine active armor Absorção pool: explicit payload override, else ef.Temp, else computed.absorcao (unless depleted).
+	nextAbs := efBar.Temp
+	if absOverride, ok := readIntField(payload, "absorcao"); ok {
+		nextAbs = max(0, absOverride)
+	} else if nextAbs <= 0 && !readBool(ch.Computed["absorcaoDepleted"]) {
+		if absVal, ok := readIntField(ch.Computed, "absorcao"); ok && absVal > 0 {
+			nextAbs = absVal
+		} else if absVal, ok := readIntField(ch.SystemData, "absorcao"); ok && absVal > 0 {
+			nextAbs = absVal
+		}
+	}
+	if nextAbs < 0 {
+		nextAbs = 0
+	}
+
+	ehAbsorbed := 0
+	armorAbsorbed := 0
+	efLoss := 0
+
+	if directToEf {
+		remaining := amount
+		if !ignoreAbsorption && nextAbs > 0 {
+			armorAbsorbed = min(nextAbs, remaining)
+			nextAbs -= armorAbsorbed
+			remaining -= armorAbsorbed
+		}
+		efLoss = remaining
+		efBar.Current -= efLoss
+	} else {
+		remaining := amount
+		if ehBar.Current > 0 {
+			ehAbsorbed = min(ehBar.Current, remaining)
+			ehBar.Current -= ehAbsorbed
+			remaining -= ehAbsorbed
+		}
+		if remaining > 0 && !ignoreAbsorption && nextAbs > 0 {
+			armorAbsorbed = min(nextAbs, remaining)
+			nextAbs -= armorAbsorbed
+			remaining -= armorAbsorbed
+		}
+		if remaining > 0 {
+			efLoss = remaining
+			efBar.Current -= efLoss
+		}
+	}
+
+	if armorAbsorbed > 0 && nextAbs == 0 {
+		if ch.Computed == nil {
+			ch.Computed = map[string]any{}
+		}
+		ch.Computed["absorcaoDepleted"] = true
+	}
+	efBar.Temp = nextAbs
+	ch.Resources["eh"] = ehBar
+	ch.Resources["ef"] = efBar
+
+	statusSuffix := ""
+	if efBar.Current <= -15 {
+		ensureCondition(ch, "inconsciente", "Inconsciente", "moon-star")
+		ensureCondition(ch, "agonizando", "Agonizando", "skull")
+		statusSuffix = " [MORTO · EF ≤ -15!]"
+	} else if efBar.Current < 0 {
+		ensureCondition(ch, "inconsciente", "Inconsciente", "moon-star")
+		ensureCondition(ch, "agonizando", "Agonizando", "skull")
+		statusSuffix = " [Inconsciente & Agonizando!]"
+	} else if efBar.Current == 0 {
+		ensureCondition(ch, "inconsciente", "Inconsciente", "moon-star")
+		statusSuffix = " [Inconsciente!]"
+	}
+
+	if directToEf {
+		return fmt.Sprintf("%s sofreu %d de dano direto na EF (EF: %d/%d · EH: %d/%d).%s",
+			ch.Name, amount, efBar.Current, efBar.Max, ehBar.Current, ehBar.Max, statusSuffix)
+	}
+	if armorAbsorbed == 0 && efLoss == 0 {
+		return fmt.Sprintf("%s sofreu %d de dano na EH (EH: %d/%d · EF: %d/%d).",
+			ch.Name, amount, ehBar.Current, ehBar.Max, efBar.Current, efBar.Max)
+	}
+	if armorAbsorbed > 0 {
+		return fmt.Sprintf("%s sofreu %d de dano (-%d EH, %d absorvido, -%d EF · EH: %d/%d · EF: %d/%d).%s",
+			ch.Name, amount, ehAbsorbed, armorAbsorbed, efLoss, ehBar.Current, ehBar.Max, efBar.Current, efBar.Max, statusSuffix)
+	}
+	return fmt.Sprintf("%s sofreu %d de dano (-%d EH, -%d EF · EH: %d/%d · EF: %d/%d).%s",
+		ch.Name, amount, ehAbsorbed, efLoss, ehBar.Current, ehBar.Max, efBar.Current, efBar.Max, statusSuffix)
+}
+
+func applyTagmarHeal(ch *model.Character, amount int, payload map[string]any) string {
+	ehBar := ch.Resources["eh"]
+	efBar := ch.Resources["ef"]
+	karmaBar := ch.Resources["karma"]
+	prevEf := efBar.Current
+
+	healEf := max(0, int(readFloat(payload["healEf"])))
+	healEh := max(0, int(readFloat(payload["healEh"])))
+	restoreKarma := max(0, int(readFloat(payload["restoreKarma"])))
+	resStr := strings.ToLower(strings.TrimSpace(fmt.Sprint(payload["resource"])))
+	if payload["resource"] == nil {
+		resStr = ""
+	}
+
+	if healEf > 0 || healEh > 0 || restoreKarma > 0 {
+		if healEf > 0 {
+			efBar.Current += healEf
+			if efBar.Max > 0 && efBar.Current > efBar.Max {
+				efBar.Current = efBar.Max
+			}
+		}
+		if healEh > 0 {
+			ehBar.Current += healEh
+			if ehBar.Max > 0 && ehBar.Current > ehBar.Max {
+				ehBar.Current = ehBar.Max
+			}
+		}
+		if restoreKarma > 0 {
+			karmaBar.Current += restoreKarma
+			if karmaBar.Max > 0 && karmaBar.Current > karmaBar.Max {
+				karmaBar.Current = karmaBar.Max
+			}
+			ch.Resources["karma"] = karmaBar
+		}
+		ch.Resources["ef"] = efBar
+		ch.Resources["eh"] = ehBar
+		if prevEf <= 0 && efBar.Current > 0 {
+			removeConditions(ch, "inconsciente", "agonizando")
+		}
+		return fmt.Sprintf("%s recuperou energia (EH: %d/%d · EF: %d/%d).", ch.Name, ehBar.Current, ehBar.Max, efBar.Current, efBar.Max)
+	}
+
+	switch resStr {
+	case "ef":
+		efBar.Current += amount
+		if efBar.Max > 0 && efBar.Current > efBar.Max {
+			efBar.Current = efBar.Max
+		}
+		ch.Resources["ef"] = efBar
+		if prevEf <= 0 && efBar.Current > 0 {
+			removeConditions(ch, "inconsciente", "agonizando")
+		}
+		return fmt.Sprintf("%s recuperou %d de EF (EF: %d/%d).", ch.Name, amount, efBar.Current, efBar.Max)
+	case "eh":
+		ehBar.Current += amount
+		if ehBar.Max > 0 && ehBar.Current > ehBar.Max {
+			ehBar.Current = ehBar.Max
+		}
+		ch.Resources["eh"] = ehBar
+		return fmt.Sprintf("%s recuperou %d de EH (EH: %d/%d).", ch.Name, amount, ehBar.Current, ehBar.Max)
+	case "karma":
+		karmaBar.Current += amount
+		if karmaBar.Max > 0 && karmaBar.Current > karmaBar.Max {
+			karmaBar.Current = karmaBar.Max
+		}
+		ch.Resources["karma"] = karmaBar
+		return fmt.Sprintf("%s recuperou %d de Karma (Karma: %d/%d).", ch.Name, amount, karmaBar.Current, karmaBar.Max)
+	default:
+		// Tagmar default healing: stabilize EF up to max first, overflow remaining into EH.
+		remaining := amount
+		efMissing := max(0, efBar.Max-efBar.Current)
+		efGain := min(efMissing, remaining)
+		efBar.Current += efGain
+		remaining -= efGain
+
+		ehMissing := max(0, ehBar.Max-ehBar.Current)
+		ehGain := min(ehMissing, remaining)
+		ehBar.Current += ehGain
+
+		ch.Resources["ef"] = efBar
+		ch.Resources["eh"] = ehBar
+		if prevEf <= 0 && efBar.Current > 0 {
+			removeConditions(ch, "inconsciente", "agonizando")
+		}
+		return fmt.Sprintf("%s recuperou %d (+%d EF, +%d EH · EH: %d/%d · EF: %d/%d).",
+			ch.Name, amount, efGain, ehGain, ehBar.Current, ehBar.Max, efBar.Current, efBar.Max)
+	}
 }

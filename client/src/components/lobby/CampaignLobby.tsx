@@ -25,11 +25,12 @@ interface CampaignLobbyProps {
   onSignOut?: () => void;
 }
 
-type SystemFilter = 'all' | 'mighty-blade-3e' | 'generic-rpg';
+type SystemFilter = 'all' | 'mighty-blade-3e' | 'tagmar-3' | 'generic-rpg';
 
-const SYSTEM_LABELS: Record<string, string> = {
-  'mighty-blade-3e': 'Mighty Blade 3ª Ed.',
-  'generic-rpg': 'RPG Genérico',
+const SYSTEM_META: Record<string, { label: string; badgeClass: string }> = {
+  'mighty-blade-3e': { label: 'Mighty Blade 3ª Ed.', badgeClass: 'mesa-badge--gold' },
+  'tagmar-3': { label: 'Tagmar 3.0', badgeClass: 'mesa-badge--emerald' },
+  'generic-rpg': { label: 'RPG Genérico', badgeClass: 'mesa-badge--sapphire' },
 };
 
 export function CampaignLobby({
@@ -64,13 +65,29 @@ export function CampaignLobby({
     void loadCampaigns();
   }, [loadCampaigns]);
 
-  const demoCampaign = useMemo(
+  const drakonDemo = useMemo(
     () =>
       campaigns.find((c) => c.inviteCode?.toUpperCase() === 'DRAKON') ??
-      campaigns[0] ??
+      campaigns.find((c) => c.systemId === 'mighty-blade-3e') ??
       null,
     [campaigns]
   );
+
+  const tagmarDemo = useMemo(
+    () =>
+      campaigns.find((c) => c.inviteCode?.toUpperCase() === 'TAGMAR') ??
+      campaigns.find((c) => c.systemId === 'tagmar-3') ??
+      null,
+    [campaigns]
+  );
+
+  const showcaseDemos = useMemo(() => {
+    const list: Campaign[] = [];
+    if (drakonDemo) list.push(drakonDemo);
+    if (tagmarDemo && tagmarDemo.id !== drakonDemo?.id) list.push(tagmarDemo);
+    if (list.length === 0 && campaigns[0]) list.push(campaigns[0]);
+    return list;
+  }, [drakonDemo, tagmarDemo, campaigns]);
 
   const filteredCampaigns = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -155,83 +172,138 @@ export function CampaignLobby({
       </header>
 
       <main className="lobby-main">
-        {/* Featured Hero Banner */}
-        <section className="lobby-hero">
+        {/* Featured Hero Banner — Multisystem Showcase (Mighty Blade 3e & Tagmar 3.0) */}
+        <section className="lobby-hero" style={{ minHeight: 280 }}>
           <img
             className="lobby-hero__bg"
             src="./assets/banner-mesa-rpg.svg"
-            alt="Crônicas de Drakon — Mesa VTT"
+            alt="Mesa VTT — Mighty Blade 3ª Edição & Tagmar 3.0"
           />
           <div className="lobby-hero__scrim" />
-          <div className="lobby-hero__content">
+          <div className="lobby-hero__content" style={{ maxWidth: '100%', width: '100%' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
               <span className="mesa-badge mesa-badge--gold">
                 <Shield size={12} />
-                Mighty Blade 3ª Edição
+                Mighty Blade 3ª Ed.
               </span>
               <span className="mesa-badge mesa-badge--emerald">
+                <Shield size={12} />
+                Tagmar 3.0 + Expansões
+              </span>
+              <span className="mesa-badge mesa-badge--sapphire">
                 <Mic size={12} />
                 Voz Estilo Discord Integrada
               </span>
-              {demoCampaign && (
-                <span className="mesa-badge" style={{ fontFamily: 'var(--font-mono)' }}>
-                  Código: {demoCampaign.inviteCode}
-                </span>
-              )}
             </div>
 
             <h2 className="lobby-hero__title">
-              {demoCampaign ? (
-                <>
-                  <span>Crônicas de Drakon</span> — A Estalagem do Javali Dourado
-                </>
-              ) : (
-                <>
-                  Sua Mesa de RPG, <span>Onde Você Estiver</span>
-                </>
-              )}
+              Sua Mesa de RPG Brasileira, <span>Completa e Automatizada</span>
             </h2>
 
-            <p className="lobby-hero__desc">
-              Mapa tático com Névoa de Guerra, dados 3D sincronizados, fichas automatizadas de
-              Mighty Blade 3ª Edição, pastas com permissões de Mestre e canal de voz em 1 toque —
-              no computador ou no celular.
+            <p className="lobby-hero__desc" style={{ maxWidth: 680 }}>
+              Mapa tático com Névoa de Guerra, dados 3D sincronizados, fichas automatizadas de{' '}
+              <strong>Mighty Blade 3ª Edição</strong> e <strong>Tagmar 3.0</strong> (com Tabela de
+              Resolução colorida, Resistências RF/RM e expansões oficiais), pastas do Mestre e
+              canal de voz em 1 toque.
             </p>
 
-            <div className="lobby-hero__cta">
-              {demoCampaign ? (
-                <>
-                  <button
-                    type="button"
-                    className="mesa-btn mesa-btn--gold"
-                    disabled={joiningId !== null}
-                    onClick={() => handleJoinCampaign(demoCampaign, 'player')}
-                  >
-                    {joiningId === `${demoCampaign.id}:player` ? (
-                      <Loader2 size={15} className="mesa-spin" />
-                    ) : (
-                      <Sword size={15} />
-                    )}
-                    Entrar como Jogador
-                  </button>
-
-                  {(localAuthEnabled || demoCampaign.ownerUserId === user.id) && (
-                    <button
-                      type="button"
-                      className="mesa-btn"
-                      disabled={joiningId !== null}
-                      onClick={() => handleJoinCampaign(demoCampaign, 'gm')}
+            {showcaseDemos.length > 0 ? (
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))',
+                  gap: 12,
+                  marginTop: 6,
+                }}
+              >
+                {showcaseDemos.map((demo) => {
+                  const isTagmar = demo.systemId === 'tagmar-3';
+                  const sysInfo = SYSTEM_META[demo.systemId] ?? {
+                    label: demo.systemId,
+                    badgeClass: 'mesa-badge--gold',
+                  };
+                  return (
+                    <div
+                      key={demo.id}
+                      style={{
+                        background: isTagmar
+                          ? 'linear-gradient(145deg, rgba(34, 197, 94, 0.14) 0%, rgba(12, 15, 20, 0.88) 72%)'
+                          : 'linear-gradient(145deg, rgba(212, 168, 79, 0.14) 0%, rgba(12, 15, 20, 0.88) 72%)',
+                        border: `1px solid ${
+                          isTagmar ? 'rgba(74, 222, 128, 0.42)' : 'var(--border-gold)'
+                        }`,
+                        borderRadius: 'var(--radius-md)',
+                        padding: '12px 14px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 8,
+                        backdropFilter: 'blur(8px)',
+                      }}
                     >
-                      {joiningId === `${demoCampaign.id}:gm` ? (
-                        <Loader2 size={15} className="mesa-spin" />
-                      ) : (
-                        <Crown size={15} color="#f2cc7b" />
-                      )}
-                      Entrar como Mestre
-                    </button>
-                  )}
-                </>
-              ) : (
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6, flexWrap: 'wrap' }}>
+                        <span className={`mesa-badge ${sysInfo.badgeClass}`}>
+                          <Shield size={11} />
+                          {sysInfo.label}
+                        </span>
+                        <span
+                          className="mesa-badge"
+                          style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5 }}
+                        >
+                          Código: {demo.inviteCode}
+                        </span>
+                      </div>
+
+                      <div
+                        style={{
+                          fontFamily: 'var(--font-display)',
+                          fontWeight: 700,
+                          fontSize: 15,
+                          color: isTagmar ? 'var(--emerald-400)' : 'var(--gold-400)',
+                          lineHeight: 1.25,
+                        }}
+                      >
+                        {demo.name}
+                      </div>
+
+                      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 'auto' }}>
+                        <button
+                          type="button"
+                          className={`mesa-btn mesa-btn--sm ${
+                            isTagmar ? 'mesa-btn--emerald' : 'mesa-btn--gold'
+                          }`}
+                          disabled={joiningId !== null}
+                          onClick={() => handleJoinCampaign(demo, 'player')}
+                        >
+                          {joiningId === `${demo.id}:player` ? (
+                            <Loader2 size={14} className="mesa-spin" />
+                          ) : (
+                            <Sword size={14} />
+                          )}
+                          Jogar ({demo.inviteCode})
+                        </button>
+
+                        {(localAuthEnabled || demo.ownerUserId === user.id) && (
+                          <button
+                            type="button"
+                            className="mesa-btn mesa-btn--sm"
+                            disabled={joiningId !== null}
+                            onClick={() => handleJoinCampaign(demo, 'gm')}
+                          >
+                            {joiningId === `${demo.id}:gm` ? (
+                              <Loader2 size={14} className="mesa-spin" />
+                            ) : (
+                              <Crown size={14} color={isTagmar ? '#4ade80' : '#f2cc7b'} />
+                            )}
+                            Mestrar
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="lobby-hero__cta">
                 <button
                   type="button"
                   className="mesa-btn mesa-btn--gold"
@@ -240,8 +312,8 @@ export function CampaignLobby({
                   <Plus size={15} />
                   Criar Primeira Campanha
                 </button>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -252,8 +324,9 @@ export function CampaignLobby({
           <div className="lobby-pills" role="tablist" aria-label="Filtrar por sistema">
             {(
               [
-                ['all', 'Todos os Sistemas'],
+                ['all', 'Todos'],
                 ['mighty-blade-3e', 'Mighty Blade 3ª Ed.'],
+                ['tagmar-3', 'Tagmar 3.0'],
                 ['generic-rpg', 'RPG Genérico'],
               ] as Array<[SystemFilter, string]>
             ).map(([key, label]) => (
@@ -337,7 +410,10 @@ export function CampaignLobby({
             {filteredCampaigns.map((camp) => {
               const isOwner = camp.ownerUserId === user.id;
               const canGm = isOwner || localAuthEnabled;
-              const sysLabel = SYSTEM_LABELS[camp.systemId] ?? camp.systemId;
+              const sysInfo = SYSTEM_META[camp.systemId] ?? {
+                label: camp.systemId,
+                badgeClass: 'mesa-badge--gold',
+              };
               return (
                 <article key={camp.id} className="campaign-card">
                   <div className="campaign-card__cover">
@@ -346,7 +422,7 @@ export function CampaignLobby({
                       alt={camp.name}
                     />
                     <div className="campaign-card__cover-badges">
-                      <span className="mesa-badge mesa-badge--gold">{sysLabel}</span>
+                      <span className={`mesa-badge ${sysInfo.badgeClass}`}>{sysInfo.label}</span>
                       <span
                         className="mesa-badge"
                         style={{ fontFamily: 'var(--font-mono)', background: 'rgba(12,15,20,0.82)' }}

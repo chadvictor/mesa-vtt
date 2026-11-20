@@ -58,9 +58,17 @@ func (s *Server) handleCreateCharacter(w http.ResponseWriter, r *http.Request, u
 	}
 	in.Visibility = model.NormalizeVisibility(in.Visibility)
 	if in.Resources == nil {
-		in.Resources = map[string]model.ResourceBar{
-			"pv": {Current: 60, Max: 60},
-			"pm": {Current: 60, Max: 60},
+		if in.SystemID == "tagmar-3" {
+			in.Resources = map[string]model.ResourceBar{
+				"eh":    {Current: 18, Max: 18},
+				"ef":    {Current: 15, Max: 15},
+				"karma": {Current: 0, Max: 0},
+			}
+		} else {
+			in.Resources = map[string]model.ResourceBar{
+				"pv": {Current: 60, Max: 60},
+				"pm": {Current: 60, Max: 60},
+			}
 		}
 	}
 	if in.Conditions == nil {
@@ -117,6 +125,9 @@ func (s *Server) handleUpdateCharacter(w http.ResponseWriter, r *http.Request, u
 			var res map[string]model.ResourceBar
 			if json.Unmarshal(raw, &res) == nil {
 				ch.Resources = res
+				if ef, ok := res["ef"]; ok && ef.Temp > 0 && ch.Computed != nil {
+					delete(ch.Computed, "absorcaoDepleted")
+				}
 			}
 		}
 	}

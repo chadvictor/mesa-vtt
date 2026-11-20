@@ -4,11 +4,12 @@
 
 # 🎲 Mesa VTT
 
-**Mesa Virtual (VTT) multisistema, gratuita, open source e mobile-first para jogar RPG de mesa online.**
+**Mesa Virtual (VTT) multisistema, gratuita, open source e mobile-first para jogar RPG de mesa online — com Mighty Blade 3ª Edição e Tagmar 3.0 + Expansões integrados.**
 
 🇧🇷 **Português (Brasil)** · [🇺🇸 Read in English](README.en.md)
 
-[![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-d4a84f?style=flat-square)](LICENSE)
+[![Licença MIT](https://img.shields.io/badge/Software-MIT-d4a84f?style=flat-square)](LICENSE)
+[![Tagmar CC BY-NC-SA 3.0 BR](https://img.shields.io/badge/Tagmar%203.0-CC%20BY--NC--SA%203.0%20BR-2e8b57?style=flat-square)](data/tagmar/LICENSE.md)
 [![Go 1.26](https://img.shields.io/badge/Go-1.26-00ADD8?style=flat-square&logo=go&logoColor=white)](https://go.dev/)
 [![React 19](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -18,12 +19,12 @@
 
 [Por que o Mesa VTT?](#-por-que-o-mesa-vtt) •
 [Funcionalidades](#-funcionalidades-principais) •
-[Mighty Blade 3ª Ed.](#-mighty-blade-3ª-edição--completo--automatizado) •
+[Sistemas Incluídos](#-sistemas-incluídos) •
 [Galeria](#-galeria-de-mapas-embutidos) •
 [Arquitetura](#-arquitetura) •
 [Início Rápido](#-início-rápido) •
 [Roadmap](#-roadmap) •
-[Contribuir](#-contribuindo)
+[Licenças](#-licenças)
 
 </div>
 
@@ -35,8 +36,8 @@ Jogar RPG de mesa online com amigos não deveria exigir abrir um VTT pesado que 
 
 O **Mesa VTT** nasceu para reunir em um único aplicativo web leve, gratuito e auto-hospedável tudo o que um grupo precisa — **tanto no celular quanto no computador**:
 
-- **A alma do RRPG Firecast:** biblioteca hierárquica de pastas e handouts com permissões reais de Mestre/Jogador, chat imersivo (Em Personagem, Fora do Personagem, Narração e Sussurros) e carinho genuíno pela cena brasileira de RPG.
-- **O poder tático do Foundry VTT:** tabuleiro interativo com grade e Névoa de Guerra (*Fog of War*), tokens com barras de PV/PM, régua, pings sincronizados, dados 3D em tempo real e engine multisistema scriptável.
+- **A alma do RRPG Firecast:** biblioteca hierárquica de pastas e handouts com permissões reais de Mestre/Jogador, chat imersivo (Em Personagem, Fora do Personagem, Narração e Sussurros) e carinho genuíno pelos grandes sistemas brasileiros de RPG (**Mighty Blade 3ª Edição** e **Tagmar 3.0**).
+- **O poder tático do Foundry VTT:** tabuleiro interativo com grade e Névoa de Guerra (*Fog of War*), tokens com barras de PV/PM ou EH/EF, régua, pings sincronizados, dados 3D em tempo real e engine multisistema scriptável.
 - **A praticidade de voz do Discord:** canais de voz WebRTC embutidos com 1 toque para entrar, mutar ou ensurdecer — sempre ativos no topo da tela, sem cair quando você troca entre Chat, Mapa, Fichas e Biblioteca no celular.
 
 Tudo isso empacotado em um **único servidor Go 1.26**, que roda localmente **sem banco de dados externo** (usando armazenamento JSON atômico) ou escala facilmente com **PostgreSQL**.
@@ -48,17 +49,19 @@ Tudo isso empacotado em um **único servidor Go 1.26**, que roda localmente **se
 | Pilar | O que já vem pronto no Mesa VTT |
 |---|---|
 | 🎙️ **Voz Integrada estilo Discord (WebRTC + VAD)** | Malha P2P de baixa latência sem media server pesado. **1 toque** para entrar, mutar ou ensurdecer; detecção de atividade vocal (**VAD**) com **anel esmeralda luminoso** em quem está falando; volume individual por jogador; modo ouvinte (*Listen-Only*) caso o microfone esteja indisponível; e **áudio persistente** ao alternar de aba no celular. |
-| 🎲 **Dados 3D em Tempo Real (Three.js)** | Poliedros procedurais (`d4`, `d6`, `d8`, `d10`, `d12`, `d20` e `d100`) com texturas de alta definição e física determinística pré-simulada. O servidor sorteia os resultados com **`crypto/rand`** e todos os navegadores animam os dados caindo exatamente nas faces reais — com brilho dourado em **Crítico** e aura carmesim em **Falha Crítica** (além de fallback suave e respeito a `prefers-reduced-motion`). |
-| 🗺️ **Tabuleiro Tático + Fog of War** | Canvas HTML5 de alta densidade com **pinch-to-zoom** e arraste por 1 dedo no celular, grade configurável (`1,5m`/quadrado) com *snap-to-grid*, tokens com retratos circulares e barras de PV/PM, **camada secreta do Mestre** (`layer: "gm"`), pincel de **Névoa de Guerra** (revelar/ocultar células), régua de distância, pings animados sincronizados, **4 mapas SVG embutidos** e upload de mapas próprios (PNG/JPEG/WebP). |
+| 🎲 **Dados 3D em Tempo Real (Three.js)** | Poliedros procedurais (`d4`, `d6`, `d8`, `d10`, `d12`, `d20` e `d100`) com texturas de alta definição e física determinística pré-simulada. O servidor sorteia os resultados com **`crypto/rand`** e todos os navegadores animam os dados caindo exatamente nas faces reais — com destaque especial para **Crítico**, **Falha Crítica** e as faixas coloridas da **Tabela de Resolução de Tagmar 3.0** (além de fallback suave e respeito a `prefers-reduced-motion`). |
+| 🗺️ **Tabuleiro Tático + Fog of War** | Canvas HTML5 de alta densidade com **pinch-to-zoom** e arraste por 1 dedo no celular, grade configurável (`1,5m`/quadrado) com *snap-to-grid*, tokens com retratos circulares e barras sincronizadas (`PV`/`PM` ou `EH`/`EF`), **camada secreta do Mestre** (`layer: "gm"`), pincel de **Névoa de Guerra** (revelar/ocultar células), régua de distância, pings animados sincronizados, **4 mapas SVG embutidos** e upload de mapas próprios (PNG/JPEG/WebP). |
 | 📚 **Biblioteca estilo Firecast com Permissões Reais** | Pastas aninhadas, notas, lore e handouts em Markdown com suporte a ilustrações. As permissões (**Só Mestre**, **Todos os Jogadores** ou **Jogadores Específicos**) são **filtradas no servidor Go antes de enviar pela rede** — segredos do Mestre, tokens ocultos e rolagens secretas jamais vazam no tráfego dos jogadores. |
-| 🧩 **Engine Multisistema Scriptável (Zero-`eval`)** | Arquitetura modular em [`systems/`](systems/) com dois sistemas embutidos (**Mighty Blade 3ª Edição** e **RPG Genérico**) e interpretador AST próprio em TypeScript ([`systems/sandbox.ts`](systems/sandbox.ts)) 100% compatível com CSP restrito (`script-src 'self'`), sem `eval`/`new Function` e protegido contra *prototype pollution* e loops infinitos. |
-| ⚔️ **Combate & Chat Interativo** | Rastreador de iniciativa por rodadas com destaque do turno ativo, chat com modos **IC** (falando como personagem), **OOC**, **Narração**, **Sussurro** e **Cartões de Rolagem Interativos** com botões de 1 clique (*Aplicar Dano*, *Curar*, *Gastar PM*, *Aplicar Condição*) sincronizados direto com as fichas e os tokens no mapa. |
+| 🧩 **Engine Multisistema Scriptável (Zero-`eval`)** | Arquitetura modular em [`systems/`](systems/) com **3 sistemas embutidos** (**Mighty Blade 3ª Edição**, **Tagmar 3.0 + Expansões** e **RPG Genérico**) e interpretador AST próprio em TypeScript ([`systems/sandbox.ts`](systems/sandbox.ts)) 100% compatível com CSP restrito (`script-src 'self'`), sem `eval`/`new Function` e protegido contra *prototype pollution* e loops infinitos. |
+| ⚔️ **Combate & Chat Interativo** | Rastreador de iniciativa por rodadas (`2d6` no Mighty Blade, `1d10 + AGI` no Tagmar 3.0, livre no Genérico), chat com modos **IC**, **OOC**, **Narração**, **Sussurro**, comandos `/r 1d20 col N` e **Cartões de Rolagem Interativos** com botões de 1 clique (*Aplicar Dano EH→EF ou Direto na EF*, *Curar*, *Gastar PM/Karma*, *Rolar RF/RM*, *Aplicar Condição*). |
 
 ---
 
-## ⚔️ Mighty Blade 3ª Edição — Completo & Automatizado
+## 🎮 Sistemas Incluídos
 
-O sistema carro-chefe do Mesa VTT traz suporte completo e automatizado ao clássico RPG brasileiro de fantasia medieval **Mighty Blade 3ª Edição (3.5)**, ambientado em **Drakon**:
+### ⚔️ Mighty Blade 3ª Edição (`mighty-blade-3e`) — Completo & Automatizado
+
+Suporte completo e automatizado ao clássico RPG brasileiro de fantasia medieval **Mighty Blade 3ª Edição (3.5)**, ambientado em **Drakon**:
 
 <table>
   <thead>
@@ -85,12 +88,57 @@ O sistema carro-chefe do Mesa VTT traz suporte completo e automatizado ao cláss
   </tbody>
 </table>
 
-- **Assistente de Criação de Herói em 5 passos:** escolha Raça → Classe → Distribuição de Atributos (com prévia em tempo real de atributos derivados) → Habilidades e Magias iniciais → Nome, Retrato e História.
-- **Automação real de regras:** cálculo automático de `PV`, `PM`, `Bloqueio`, `Esquiva`, `Defesa Efetiva`, `Determinação`, `Deslocamento` (em metros e quadrados de `1,5m`), `Carga` (`Básica`, `Pesada` e `Máxima`) e verificação automática de **FN (Força Necessária)** em armas, armaduras e escudos.
-- **Combate & Conjuração em 1 clique:** testes `2d6 + Atributo`, detecção automática de **Crítico (`6+6`)** e **Falha Crítica (`1+1`)**, comparação contra a Defesa do alvo, gasto de **PM** em magias dos 11 caminhos (*Água e Gelo, Ar e Relâmpago, Arcano, Encantamento, Fogo, Ilusão, Luz, Natureza, Necromancia, Terra e Trevas*) e bestiário pronto para arrastar diretamente no tabuleiro.
-- **Joga outro sistema?** O módulo **RPG Genérico (`generic-rpg`)** já vem incluso com atributos editáveis, barras de recursos personalizadas, fórmulas livres (`1d20`, `3d6`, `2d10`, `1d100`, `kh`/`kl`) e suporte completo a macros.
+- **Assistente de Criação de Herói em 5 passos:** Raça → Classe → Distribuição de Atributos (prévia em tempo real) → Habilidades e Magias iniciais → Nome, Retrato e História.
+- **Automação real de regras:** `PV`, `PM`, `Bloqueio`, `Esquiva`, `Defesa Efetiva`, `Determinação`, `Deslocamento` (`1,5m`/quadrado), `Carga` (`Básica`, `Pesada`, `Máxima`) e verificação automática de **FN (Força Necessária)** em armas, armaduras e escudos.
+- **Combate & Conjuração em 1 clique:** testes `2d6 + Atributo`, detecção automática de **Crítico (`6+6`)** e **Falha Crítica (`1+1`)**, gasto de **PM** em magias dos 11 caminhos e bestiário pronto para invocar no mapa.
+- **Campanha pronta incluída:** **`DRAKON`** (*"Crônicas de Drakon — A Estalagem do Javali Dourado"*).
 
-> **Créditos e Reconhecimento:** **Mighty Blade 3ª Edição** é uma criação de **Tiago Junges** (com coautoria de Domênico Gay e Luciano Abel) publicada pela **Coisinha Verde** sob distribuição gratuita oficial para a comunidade. O Mesa VTT é um projeto independente da comunidade que oferece suporte estruturado e automação de mesa em homenagem a esse marco do RPG nacional.
+> **Créditos:** **Mighty Blade 3ª Edição** é uma criação de **Tiago Junges** (com coautoria de Domênico Gay e Luciano Abel) publicada pela **Coisinha Verde** sob distribuição gratuita oficial para a comunidade.
+
+---
+
+### 🛡️ Tagmar 3.0 + Expansões (`tagmar-3`) — Completo & Automatizado
+
+Suporte nativo e fiel ao primeiro RPG brasileiro de fantasia medieval — **Tagmar 3.0 e expansões oficiais do Projeto Tagmar** (*Livro de Regras*, *Livro de Magias*, *Livro das Ordens Sacerdotais*, *Livro das Criaturas*, *Equipamentos & Objetos Mágicos* e *Aventuras nas Terras Selvagens*):
+
+<table>
+  <thead>
+    <tr>
+      <th align="center">15</th>
+      <th align="center">42</th>
+      <th align="center">24</th>
+      <th align="center">103</th>
+      <th align="center">187</th>
+      <th align="center">148</th>
+      <th align="center">48</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">Raças<br/><sub>(6 Básico · 9 Expansões)</sub></td>
+      <td align="center">Profissões & Espec.<br/><sub>(6 Base · 36 incl. 13 Ordens)</sub></td>
+      <td align="center">Condições<br/><sub>Automatizadas</sub></td>
+      <td align="center">Habilidades & Téc.<br/><sub>(66 Hab. · 37 Combate)</sub></td>
+      <td align="center">Magias<br/><sub>(Colégios, Ordens & Trilhas)</sub></td>
+      <td align="center">Equip. & Relíquias<br/><sub>(52 armas · 28 defesas · 68 itens)</sub></td>
+      <td align="center">Criaturas<br/><sub>(Livro das Criaturas)</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+- **Tabela de Resolução `1d20` Colorida (Colunas `-7` a `20+`):** o servidor Go e o cliente resolvem toda rolagem `1d20` na tabela oficial exata — **Erro Crítico**, **Falha**, **Verde (25%)**, **Amarelo (50%)**, **Laranja (75%)**, **Vermelho (100%)** e **Azul — Crítico (125% · Dano direto na EF!)**, incluindo a regra oficial de *overflow* acima da Coluna 20 e consulta interativa no compêndio.
+- **Tabela de Resistências (`RF` & `RM`):** matriz completa de `460` células (`FD -2..20` × `FA 1..20`) com botões de 1 toque na ficha e follow-up automático em cartões de magia.
+- **Fluxo Autêntico de Dano & Saúde (`EH → Absorção → EF`):** dano normal é absorvido primeiro pela **Energia Heróica (`EH`)**, depois pela **Absorção** da armadura/escudo/elmo e só então atinge a **Energia Física (`EF`)** — com **Inconsciente** (`EF ≤ 0`), **Agonizando** (`EF < 0`) e **Morto** (`EF ≤ -15`) automáticos; já o **Golpe Crítico (Azul)** ignora `EH` e Absorção comum, atingindo a `EF` diretamente!
+- **Assistente de Criação em 5 passos + Ficha Completa:** compra progressiva de atributos (15 pts / 16 pts Humano), 6 atributos (`INT`, `AUR`, `CAR`, `FOR`, `FIS`, `AGI`), `Karma` místico `(AUR + 1) × (Estágio + 1)`, `DA`/`DP`/`Absorção`, `VB`, Iniciativa `1d10 + AGI`, moedas `MO`/`MP`/`MC`, evolução de Estágio (`1–20`) com desbloqueio de Especialização/Ordem/Colégio no Estágio 5 e invocação de criaturas do *Livro das Criaturas* direto no mapa.
+- **Campanha pronta incluída:** **`TAGMAR`** (*"Crônicas de Tagmar — Fronteira de Verrogar"*), com 4 heróis prontos (*Kael de Verrogar*, *Aelindra*, *Thorgar*, *Liriel*), 2 cenas táticas, pastas de segredos do Mestre e macros Tagmar prontas.
+
+> **Licença e Créditos do Compêndio Tagmar:** Os dados em [`data/tagmar/`](data/tagmar/) seguem a licença oficial do **Projeto Tagmar** — **Creative Commons Atribuição-NãoComercial-CompartilhaIgual 3.0 Brasil (`CC BY-NC-SA 3.0 BR`)** (<https://www.tagmar.com.br>), creditando Marcelo Rodrigues, Ygor Moraes Esteves da Silva, Julio Augusto Cezar Junior, Leonardo Nahoum Pache de Faria e a comunidade do Projeto Tagmar. Veja [`data/tagmar/LICENSE.md`](data/tagmar/LICENSE.md) e [`NOTICE.md`](NOTICE.md).
+
+---
+
+### 🧩 RPG Genérico (`generic-rpg`) — Livre & Personalizável
+
+Joga outro sistema? O módulo **RPG Genérico** já vem incluso com atributos editáveis, barras de recursos personalizadas, fórmulas livres (`1d20`, `3d6`, `2d10`, `1d100`, `kh`/`kl`) e suporte completo às macros no sandbox zero-`eval`.
 
 ---
 
@@ -103,9 +151,9 @@ O Mesa VTT já acompanha **17 artes vetoriais em SVG** leves e nítidas em qualq
 | ![Estalagem do Javali Dourado](client/public/assets/maps/tavern.svg) | ![Cripta dos Antigos](client/public/assets/maps/dungeon-crypt.svg) |
 | *Taverna medieval com balcão em L, lareira acesa, palco de bardo, adega e escadaria para o mezanino (`24×18`).* | *Cripta subterrânea de pedra com altar arcano central, braseiros, sarcófagos e relicário gradeado — ideal para Fog of War (`24×18`).* |
 
-| Estrada da Floresta Sombria (`forest-road.svg`) | Pátio do Castelo de Drakon (`castle-courtyard.svg`) |
+| Estrada da Floresta Sombria (`forest-road.svg`) | Pátio do Castelo / Fortaleza (`castle-courtyard.svg`) |
 | :---: | :---: |
-| ![Estrada da Floresta Sombria](client/public/assets/maps/forest-road.svg) | ![Pátio do Castelo de Drakon](client/public/assets/maps/castle-courtyard.svg) |
+| ![Estrada da Floresta Sombria](client/public/assets/maps/forest-road.svg) | ![Pátio do Castelo](client/public/assets/maps/castle-courtyard.svg) |
 | *Estrada sinuosa com ponte de pedra sobre riacho, ruínas cobertas de musgo e acampamento pronto para emboscadas (`24×18`).* | *Cidadela murada com fonte octogonal, tendas de mercado, torres de vigia e portão levadiço (`24×18`).* |
 
 ---
@@ -118,15 +166,15 @@ flowchart LR
         UI["TableShell Responsivo (Desktop 3 colunas / Mobile 4 abas)"]
         Dice["Dados 3D (Three.js WebGL)"]
         Map["Tabuleiro Tático (Canvas 2D + Fog of War)"]
-        Sys["Engine Multisistema (systems/ + Sandbox AST Zero-eval)"]
+        Sys["Engine Multisistema (MB 3e · Tagmar 3.0 · Genérico + Sandbox AST)"]
         Voice["Voz WebRTC Mesh (VAD + GainNode Persistente)"]
     end
 
     subgraph Server["⚙️ Servidor Autoritativo (Go 1.26 · :8094)"]
-        API["REST API (/api/v1/*) + Assets Estáticos"]
+        API["REST API (/api/v1/*) + Compêndios + Assets Estáticos"]
         Hub["WebSocket Hub (/ws) — Actor por Campanha"]
         Sec["Filtro de Visibilidade (Wire-Level Security)"]
-        RNG["Motor de Dados (crypto/rand)"]
+        RNG["Motor de Dados (crypto/rand + Tabela Tagmar 3.0)"]
         Sig["Sinalização WebRTC (Offer / Answer / ICE)"]
     end
 
@@ -137,7 +185,7 @@ flowchart LR
 
     UI <-->|"HTTPS / REST"| API
     UI <-->|"WSS / JSON"| Hub
-    Dice <-->|"Seed + Faces"| RNG
+    Dice <-->|"Seed + Faces + Cor Tagmar"| RNG
     Map <-->|"Tokens / Fog / Pings"| Hub
     Sys -->|"RollPlan / Macros"| UI
     Voice <-->|"SDP / ICE"| Sig
@@ -188,7 +236,7 @@ docker run --rm -p 8094:8094 mesa-vtt
 **Terminal 1 — Servidor Go autoritativo (`:8094`):**
 
 ```bash
-# Modo local habilitado por padrão + cria automaticamente a campanha demo DRAKON
+# Modo local habilitado por padrão + cria automaticamente as campanhas demo DRAKON e TAGMAR
 LISTEN_ADDRESS=:8094 go run ./server/cmd/server
 ```
 
@@ -202,16 +250,17 @@ npm run dev
 
 Acesse **`http://localhost:3104`** no desktop ou pelo IP da rede local no celular.
 
-### 3. Tour pela Campanha Demo (`DRAKON`)
+### 3. Tour pelas Campanhas Demo (`DRAKON` & `TAGMAR`)
 
-Na primeira inicialização com armazenamento vazio, o Mesa VTT semeia automaticamente a aventura introdutória **"Crônicas de Drakon — A Estalagem do Javali Dourado"** (código de convite **`DRAKON`**):
+Na primeira inicialização com armazenamento vazio, o Mesa VTT semeia automaticamente **duas aventuras introdutórias prontas para jogar**:
 
-1. **Entre no Lobby:** informe seu nome de exibição no login rápido local e clique na campanha destacada (ou clique em **Entrar por Código** e digite `DRAKON`). Você pode entrar como **Mestre** ou **Jogador**.
-2. **Teste a segurança real de visibilidade:** abra uma segunda aba/janela anônima entrando como **Jogador** enquanto a primeira está como **Mestre**:
-   - Na aba **Biblioteca → Pastas**, a pasta `Segredos do Mestre` (*A Conspiração do Culto Carmesim*, *Armadilhas da Cripta*) aparece só para o Mestre e nem sequer é enviada na rede para o Jogador.
-   - Na cena **Estalagem do Javali Dourado**, o token `Goblin Espião (Oculto)` fica semitransparente na camada do Mestre; alterne para **Cripta dos Antigos** para testar o pincel de **Névoa de Guerra** em tempo real.
-3. **Explore as fichas e role os Dados 3D:** abra qualquer um dos 4 heróis prontos (*Aldric de Valmont*, *Lyra Estrela-da-Alva*, *Borin Martelo-de-Ouro* e *Pip Folha-Ligeira*), dispare um ataque ou magia, ou use a barra rápida `2d6` / macros para ver os **Dados 3D em Three.js** e os botões interativos no chat.
-4. **Experimente a Voz Integrada:** toque em **"Entrar na Voz"** na barra persistente para entrar no canal **Mesa Principal** ou mudar para o **Sussurro do Mestre** — depois navegue livremente entre Mapa, Chat, Fichas e Biblioteca sem perder o áudio.
+- **`DRAKON`** (*Mighty Blade 3ª Edição*) — *"Crônicas de Drakon — A Estalagem do Javali Dourado"* (4 heróis, 2 cenas com Fog of War, segredos do Mestre e macros `2d6`).
+- **`TAGMAR`** (*Tagmar 3.0 + Expansões*) — *"Crônicas de Tagmar — Fronteira de Verrogar"* (4 heróis de Estágio 1 — *Kael de Verrogar*, *Aelindra*, *Thorgar* e *Liriel* — Capitão Brenno, cenas *Pátio da Fortaleza de Verrogar* e *Estrada da Floresta Sombria*, emboscadas ocultas na camada do Mestre, pastas de lore e macros da Tabela de Resolução + RF/RM).
+
+1. **Entre no Lobby:** informe seu nome no login rápido local e escolha **`DRAKON`** ou **`TAGMAR`** diretamente no banner principal (ou use **Entrar por Código**). Você pode entrar como **Mestre** ou **Jogador**.
+2. **Teste a segurança real de visibilidade:** abra uma segunda aba anônima como **Jogador** enquanto a primeira está como **Mestre** — pastas `Segredos do Mestre`, fichas de emboscada e tokens na camada `gm` são filtrados no servidor Go e jamais trafegam para o jogador.
+3. **Explore fichas, Dados 3D e ações em 1 clique:** no **`TAGMAR`**, ataque com a Espada Longa de Kael ou evoque *Bola de Fogo* com Aelindra para ver o banner colorido da Tabela de Resolução `1d20`, desconto de Karma, follow-up de `RF`/`RM` e aplicação automática de dano `EH → Absorção → EF` (ou direto na `EF` em Crítico Azul!).
+4. **Experimente a Voz Integrada:** toque em **"Entrar na Voz"** na barra persistente para entrar em **Mesa Principal** ou **Sussurro do Mestre** — alternar entre Mapa, Chat, Fichas e Biblioteca nunca derruba a chamada.
 
 ### 4. Voz no Celular, HTTPS e TURN (Auto-Hospedagem)
 
@@ -243,10 +292,9 @@ MESA_ICE_SERVERS='[{"urls":"stun:stun.l.google.com:19302"},{"urls":"turn:turn.se
 
 ## 🗺️ Roadmap
 
-O Mesa VTT está só começando! Estas são as próximas grandes entregas planejadas junto à comunidade:
-
-- [ ] 🇧🇷 **Tagmar — Próximo Sistema Brasileiro Open Source Oficial!** Integração completa do pioneiro RPG de fantasia medieval brasileiro (*Projeto Tagmar*), incluindo a icônica **Tabela de Resolução `1d20` por colunas**, `EF`/`EH`, Karma, profissões, raças, magias e bestiário nativos em `systems/tagmar/`. *(Quer liderar ou ajudar nesse módulo? Já deixamos um blueprint pronto em [`docs/CREATING_SYSTEMS.md`](docs/CREATING_SYSTEMS.md)!)*
-- [ ] 📦 **Mais Pacotes de Sistemas da Comunidade** — Templates prontos para Old Dragon, 3D&T, sistemas `d20`/SRD, sistemas `d100` e RPGs narrativos.
+- [x] 🇧🇷 **Mighty Blade 3ª Edição (`mighty-blade-3e`)** — Compêndio completo, assistente em 5 passos, `2d6` com Crítico/Falha Crítica, FN e campanha **`DRAKON`**.
+- [x] 🇧🇷 **Tagmar 3.0 + Expansões (`tagmar-3`)** — Tabela de Resolução `1d20` colorida (`-7..20+`), Tabela de Resistências `RF/RM`, fluxo `EH → Absorção → EF` + Crítico direto na `EF`, 15 raças, 42 profissões/ordens, 187 magias, 148 equipamentos, 48 criaturas e campanha **`TAGMAR`**.
+- [ ] 📦 **Próximos Pacotes de Sistemas Abertos & da Comunidade** — **Old Dragon 2e**, **3D&T**, **D&D 5e SRD / Pathfinder 2e (ORC)**, sistemas `d100` investigativos e RPGs narrativos (use `systems/tagmar/` como referência em [`docs/CREATING_SYSTEMS.md`](docs/CREATING_SYSTEMS.md)!).
 - [ ] 🕯️ **Iluminação Dinâmica & Linha de Visão (LoS)** — Paredes bloqueadoras de luz, tochas acopladas a tokens e visão noturna automática por raça.
 - [ ] 🎵 **Mesa Sonora & Ambiência Sincronizada** — Playlists de taverna, masmorra, chuva e efeitos sonoros controlados pelo Mestre para todo o grupo.
 - [ ] 📱 **PWA Instalável** — Instalação na tela inicial do Android e iOS, notificações de turno e consulta offline de fichas e compêndio.
@@ -259,14 +307,18 @@ O Mesa VTT está só começando! Estas são as próximas grandes entregas planej
 Contribuições são muito bem-vindas — seja código (Go, TypeScript, React, Three.js), novos sistemas de RPG, mapas táticos em SVG, traduções ou relatos de bugs!
 
 - Leia o guia de contribuição em **[`CONTRIBUTING.md`](CONTRIBUTING.md)** para setup local, testes e regras de segurança.
-- Quer adicionar o seu RPG favorito (como **Tagmar**)? Siga o passo a passo prático em **[`docs/CREATING_SYSTEMS.md`](docs/CREATING_SYSTEMS.md)**.
+- Quer adicionar o seu RPG favorito? Siga o passo a passo prático (com `systems/tagmar/` como implementação de referência real!) em **[`docs/CREATING_SYSTEMS.md`](docs/CREATING_SYSTEMS.md)**.
 - Consulte a visão técnica completa em **[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)**.
 
 ---
 
-## 📄 Licença
+## 📄 Licenças
 
-Distribuído sob a licença **MIT**. Veja [`LICENSE`](LICENSE) para mais detalhes.
+O Mesa VTT mantém separação clara entre o código do software e os compêndios de sistemas de RPG em `data/`:
+
+- **Software Mesa VTT (servidor Go, cliente Web/Mobile, engine em `systems/` e artes SVG originais):** distribuído sob a licença **MIT** — veja [`LICENSE`](LICENSE).
+- **Compêndio Tagmar 3.0 (`data/tagmar/`):** distribuído sob **Creative Commons Atribuição-NãoComercial-CompartilhaIgual 3.0 Brasil (`CC BY-NC-SA 3.0 BR`)** em conformidade com o **Projeto Tagmar** (<https://www.tagmar.com.br>) — veja [`data/tagmar/LICENSE.md`](data/tagmar/LICENSE.md) e [`NOTICE.md`](NOTICE.md). Projetos derivados comerciais do código MIT devem remover ou substituir `data/tagmar/`.
+- **Referência Mighty Blade 3ª Edição (`data/mighty-blade/`):** tributo comunitário ao RPG gratuito criado por Tiago Junges / Coisinha Verde — veja [`NOTICE.md`](NOTICE.md).
 
 <div align="center">
   <sub>Feito com ❤️ para mestres e jogadores de RPG de mesa — no celular ou no computador.</sub>

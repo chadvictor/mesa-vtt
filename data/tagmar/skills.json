@@ -1,0 +1,1164 @@
+{
+  "skills": [
+    {
+      "id": "agricultura",
+      "name": "Agricultura",
+      "group": "Profissional",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Conhecimento sobre cultivo de lavouras, épocas de plantio e colheita, irrigação, manejo de solo, criação básica de gado e conservação de grãos nas terras dos Reinos.",
+      "specializations": ["Lavouras e Grãos", "Viticultura", "Pecuária", "Manejo de Solo"]
+    },
+    {
+      "id": "carpintaria",
+      "name": "Carpintaria",
+      "group": "Profissional",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Arte de trabalhar madeira para construir e reparar estruturas, carroças, embarcações leves, móveis, hastes de armas, escudos de madeira e fortificações simples.",
+      "specializations": ["Marcenaria", "Carpintaria Naval", "Construção de Arcos e Flechas", "Estruturas de Madeira"]
+    },
+    {
+      "id": "engenharia",
+      "name": "Engenharia",
+      "group": "Profissional",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Estudo técnico de arquitetura, pontes, fortificações, sistemas hidráulicos, mineração, alavancas, roldanas e detecção de pontos fracos em edificações.",
+      "specializations": ["Arquitetura e Fortificações", "Mineração Anã", "Mecanismos e Engrenagens", "Pontes e Aquedutos"]
+    },
+    {
+      "id": "operacoes-de-cerco",
+      "name": "Operações de Cerco",
+      "group": "Profissional",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Construção, posicionamento, manutenção e disparo de engenhos bélicos como catapultas, trabucos, balistas, aríetes e torres de assalto, além de táticas para defender muralhas.",
+      "specializations": ["Catapultas e Trabucos", "Balistas", "Aríetes e Sapa", "Defesa de Muralhas"]
+    },
+    {
+      "id": "nautica",
+      "name": "Náutica",
+      "group": "Profissional",
+      "attribute": "agilidade",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Condução de embarcações a remo e a vela, manejo de cabos e velame, leitura de ventos e correntes marítimas, atracação segura e manutenção de convés sob tempestades.",
+      "specializations": ["Veleiros Oceânicos", "Barcos Fluviais", "Galés de Guerra", "Manobra em Tempestade"]
+    },
+    {
+      "id": "trabalho-em-metal",
+      "name": "Trabalho em Metal",
+      "group": "Profissional",
+      "attribute": "forca",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Forja, têmpera, fundição e reparo de armas metálicas, cotas de malha, couraças, elmos, ferraduras e fechaduras. Essencial para restaurar Absorção de armaduras danificadas em combate.",
+      "specializations": ["Armeiro (Espadas e Lâminas)", "Armadureiro (Malhas e Placas)", "Serralheria", "Forja Anã"]
+    },
+    {
+      "id": "trabalhos-manuais",
+      "name": "Trabalhos Manuais",
+      "group": "Profissional",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Ofícios artesanais cotidianos como costura, sapataria, cestaria, olaria, tecelagem, reparo de armaduras de couro, selaria e confecção de pequenos utensílios de viagem.",
+      "specializations": ["Alfaiataria", "Selaria e Couro", "Olaria", "Reparo de Equipamentos"]
+    },
+    {
+      "id": "alvenaria",
+      "name": "Alvenaria",
+      "group": "Profissional",
+      "attribute": "forca",
+      "restricted": false,
+      "source": "Guia de Especializações",
+      "description": "Corte, assentamento e inspeção de blocos de pedra e tijolos, permitindo erguer muros resistentes e identificar passagens secretas ou falhas estruturais em masmorras e castelos.",
+      "specializations": ["Cantaria em Pedra", "Detecção de Câmaras Ocultas", "Escultura Arquitetônica"]
+    },
+    {
+      "id": "alquimia-pratica",
+      "name": "Alquimia Prática",
+      "group": "Profissional",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Alquimia e Objetos Mágicos",
+      "description": "Destilação de reagentes, preparo de ácidos, fogo alquímico, antídotos básicos, tônicos restauradores e extração de componentes minerais e vegetais em laboratório.",
+      "specializations": ["Poções e Elixires", "Substâncias Voláteis", "Antídotos e Tônicos", "Transmutação Mineral"]
+    },
+    {
+      "id": "curtimento-e-couro",
+      "name": "Curtimento e Couro",
+      "group": "Profissional",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Equipamentos",
+      "description": "Tratamento de peles de animais e monstros para produzir couro leve, couro rígido, bolsas, aljavas, bainhas e revestimentos impermeáveis.",
+      "specializations": ["Armaduras de Couro", "Peles de Monstros", "Acessórios de Montaria"]
+    },
+    {
+      "id": "joalheria-e-ourivesaria",
+      "name": "Joalheria e Ourivesaria",
+      "group": "Profissional",
+      "attribute": "agilidade",
+      "restricted": true,
+      "source": "Expansão dos Reinos",
+      "description": "Lapidação de gemas, fundição de ouro e prata, gravação de sinetes e preparação de engastes finos muito requisitados por nobres e encantadores de objetos mágicos.",
+      "specializations": ["Lapidação de Gemas", "Ourivesaria", "Engastes Rúnicos"]
+    },
+    {
+      "id": "acrobacias",
+      "name": "Acrobacias",
+      "group": "Manobra",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Execução de saltos mortais, cambalhotas, equilibrismo em beirais estreitos, rolamentos para amortecer dano de quedas e manobras evasivas em terreno difícil.",
+      "specializations": ["Amortecer Quedas", "Equilibrismo", "Saltos Acrobáticos", "Evasão em Combate"]
+    },
+    {
+      "id": "aplicar-esforco",
+      "name": "Aplicar Esforço",
+      "group": "Manobra",
+      "attribute": "forca",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Emprego técnico da força muscular bruta para erguer portões pesados, arrombar portas trancadas, entortar grades, mover rochas e sustentar cargas extremas.",
+      "specializations": ["Arrombamento", "Erguer Cargas", "Arrastar e Empurrar", "Romper Amarras"]
+    },
+    {
+      "id": "corrida",
+      "name": "Corrida",
+      "group": "Manobra",
+      "attribute": "fisico",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Velocidade em arrancadas curtas e resistência cardiorrespiratória em perseguições prolongadas, marchas forçadas e fugas em terrenos acidentados.",
+      "specializations": ["Arrancada", "Maratona e Marcha Forçada", "Perseguição Urbana", "Corrida em Mata"]
+    },
+    {
+      "id": "escalar-superficies",
+      "name": "Escalar Superfícies",
+      "group": "Manobra",
+      "attribute": "forca",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Subir e descer encostas rochosas, muralhas de castelos, árvores altas, cordas e tetos com apoios mínimos, avaliando fendas e pontos de ancoragem.",
+      "specializations": ["Alpinismo em Rocha", "Muralhas e Torres", "Escalada com Cordas", "Árvores"]
+    },
+    {
+      "id": "malabarismo",
+      "name": "Malabarismo",
+      "group": "Manobra",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Destreza fina das mãos e coordenação olho-mão para apanhar objetos em voo, realizar truques de prestidigitação física, equilibrar lâminas e distrair espectadores.",
+      "specializations": ["Apanhar Objetos", "Prestidigitação", "Malabares com Facas e Tochas"]
+    },
+    {
+      "id": "montar-animais",
+      "name": "Montar Animais",
+      "group": "Manobra",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Cavalgar cavalos, pôneis, camelos ou montarias exóticas a galope, saltar obstáculos montado, manter-se na sela sob ataques e guiar o animal apenas com as pernas.",
+      "specializations": ["Cavalos de Guerra", "Cavalgar sem Sela", "Saltos Montados", "Montarias Exóticas"]
+    },
+    {
+      "id": "natacao",
+      "name": "Natação",
+      "group": "Manobra",
+      "attribute": "fisico",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Deslocamento seguro em rios, lagos e mares, superação de correnteza, resgate de pessoas se afogando e sustentação na superfície mesmo carregando equipamento.",
+      "specializations": ["Águas Turvas e Correnteza", "Nado de Longa Distância", "Resgate Aquático"]
+    },
+    {
+      "id": "equilibrio-e-saltos",
+      "name": "Equilíbrio e Saltos",
+      "group": "Manobra",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Guia de Especializações",
+      "description": "Saltos em distância e em altura sobre fossos, telhados e obstáculos, bem como manutenção de postura firme em conveses agitados, gelo escorregadio ou vigas estreitas.",
+      "specializations": ["Salto em Distância", "Salto em Altura", "Combate em Terreno Instável"]
+    },
+    {
+      "id": "conduzir-veiculos",
+      "name": "Conduzir Veículos",
+      "group": "Manobra",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Expansão dos Reinos",
+      "description": "Direção ágil de carroças, carruagens nobres, bigas de guerra e trenós puxados por animais, inclusive em fugas em alta velocidade e estradas estreitas.",
+      "specializations": ["Carruagens", "Carroças de Carga", "Bigas de Guerra", "Trenós"]
+    },
+    {
+      "id": "mergulho-e-apneia",
+      "name": "Mergulho e Apneia",
+      "group": "Manobra",
+      "attribute": "fisico",
+      "restricted": false,
+      "source": "Expansão dos Reinos",
+      "description": "Capacidade de prender a respiração por períodos prolongados, suportar pressão em águas profundas e explorar naufrágios ou cavernas submersas.",
+      "specializations": ["Apneia Prolongada", "Exploração Submersa", "Pesca Subaquática"]
+    },
+    {
+      "id": "escrita",
+      "name": "Escrita",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Alfabetização, leitura fluida, caligrafia formal, redação de cartas diplomáticas, leitura de pergaminhos antigos e registros contábeis nos idiomas conhecidos pelo personagem.",
+      "specializations": ["Escrita Comum", "Caligrafia Nobre", "Runas Anãs", "Escrita Élfica", "Manuscritos Antigos"]
+    },
+    {
+      "id": "linguas",
+      "name": "Línguas",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Compreensão e fluência falada em idiomas estrangeiros, dialetos regionais dos Reinos de Tagmar e línguas ancestrais de elfos, anões, pequeninos e raças selvagens.",
+      "specializations": ["Élfico", "Anão", "Idioma dos Reinos do Sul", "Dialeto Orco", "Língua Antiga", "Gírias Portuárias"]
+    },
+    {
+      "id": "medicina",
+      "name": "Medicina",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Diagnóstico e tratamento de ferimentos graves, estancamento de hemorragias, imobilização de fraturas, cuidados pós-combate para acelerar recuperação de EF e cura de doenças.",
+      "specializations": ["Traumatologia de Combate", "Tratamento de Doenças", "Estabilização de Moribundos", "Obstetrícia e Cuidados"]
+    },
+    {
+      "id": "misticismo",
+      "name": "Misticismo",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Estudo teórico e prático das leis do Mana e do Karma, identificação de encantamentos, símbolos arcanos, colégios de magia, criaturas mágicas e componentes alquímicos.",
+      "specializations": ["Teoria do Karma e Mana", "Identificação de Magias", "Objetos Mágicos", "Criaturas Místicas", "Colégios Arcanos"]
+    },
+    {
+      "id": "religiao",
+      "name": "Religião",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Conhecimento profundo do panteão de Tagmar (Palier, Maira, Blator, Crezir, Crisagom, Cruine, Ganis, Lena, Parom, Cambu, Selimom, Plandis), dogmas, ritos e heresias.",
+      "specializations": ["Panteão dos Deuses", "Ordens Sacerdotais", "Rituais e Liturgia", "Demonologia e Cultos Proibidos"]
+    },
+    {
+      "id": "sabedoria",
+      "name": "Sabedoria",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Erudição geral abrangendo mitos, folclore, geografia política, leis dos reinos, linhagens históricas e conhecimento acumulado sobre o mundo conhecido de Tagmar.",
+      "specializations": ["História de Tagmar", "Leis e Justiça", "Lendas e Folclore", "Geografia Política"]
+    },
+    {
+      "id": "veneficio",
+      "name": "Venefício",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Conhecimento sobre toxinas animais, vegetais e minerais: extração segura, aplicação em lâminas ou bebidas, identificação de sintomas e preparo de antídotos específicos.",
+      "specializations": ["Venenos Botânicos", "Peçonhas de Criaturas", "Antídotos", "Venenos de Contato"]
+    },
+    {
+      "id": "heraldica-e-nobreza",
+      "name": "Heráldica e Nobreza",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Expansão dos Reinos",
+      "description": "Reconhecimento de brasões, estandartes, títulos nobiliárquicos, ordens de cavalaria e genealogias das casas governantes de Levânia, Verrogar, Saravossa e demais reinos.",
+      "specializations": ["Brasões e Estandartes", "Ordens de Cavalaria", "Genealogia Real"]
+    },
+    {
+      "id": "geografia-de-tagmar",
+      "name": "Geografia de Tagmar",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Expansão dos Reinos",
+      "description": "Conhecimento de estradas comerciais, cordilheiras, rios navegáveis, fronteiras, rotas marítimas, climas regionais e mapas do Mundo Conhecido.",
+      "specializations": ["Cartografia", "Rotas Comerciais", "Regiões Selvagens", "Reinos do Norte e Sul"]
+    },
+    {
+      "id": "historia-dos-reinos",
+      "name": "História dos Reinos",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Expansão dos Reinos",
+      "description": "Estudo de grandes guerras, tratados antigos, dinastias caídas, ruínas de civilizações perdidas e acontecimentos marcantes das eras de Tagmar.",
+      "specializations": ["Guerras Antigas", "Ruínas e Relíquias", "Crônicas Imperiais"]
+    },
+    {
+      "id": "botanica-e-herborismo",
+      "name": "Botânica e Herborismo",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Livro de Flora e Alquimia",
+      "description": "Identificação, coleta e preparo de ervas medicinais, fungos raros, raízes aromáticas e plantas perigosas da flora de Tagmar (como a Alfineteira e a Folha de Maira).",
+      "specializations": ["Ervas Medicinais", "Plantas Tóxicas", "Ingredientes Místicos", "Flora Florestal"]
+    },
+    {
+      "id": "cirurgia-e-anatomia",
+      "name": "Cirurgia e Anatomia",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Guia de Especializações",
+      "description": "Intervenções cirúrgicas delicadas para remover pontas de flechas, suturar cortes profundos, tratar lesões internas e identificar pontos anatômicos vulneráveis.",
+      "specializations": ["Extração de Projéteis", "Suturas Avançadas", "Anatomia de Criaturas"]
+    },
+    {
+      "id": "astronomia-e-astrologia",
+      "name": "Astronomia e Astrologia",
+      "group": "Conhecimento",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Magias 3.0",
+      "description": "Observação dos astros, constelações, fases lunares e conjunções celestes para orientação noturna, previsão de marés e rituais místicos alinhados aos céus.",
+      "specializations": ["Navegação Celeste", "Calendários e Eclipses", "Conjunções Arcanas"]
+    },
+    {
+      "id": "acoes-furtivas",
+      "name": "Ações Furtivas",
+      "group": "Subterfúgio",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Movimentação silenciosa, ocultação nas sombras, camuflagem urbana ou natural e aproximação sem alertar sentinelas, essencial para emboscadas e invasões.",
+      "specializations": ["Esconder-se nas Sombras", "Mover-se em Silêncio", "Emboscada", "Seguir Alvo"]
+    },
+    {
+      "id": "codigos",
+      "name": "Códigos",
+      "group": "Subterfúgio",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Criação e decifração de mensagens cifradas, marcas secretas de guildas de ladrões, sinais gestuais clandestinos e criptografia diplomática ou militar.",
+      "specializations": ["Sinais de Guilda", "Criptografia Escrita", "Linguagem Gestual Secreta"]
+    },
+    {
+      "id": "destravar-fechaduras",
+      "name": "Destravar Fechaduras",
+      "group": "Subterfúgio",
+      "attribute": "agilidade",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Abertura silenciosa de fechaduras, cadeados, cofres, algemas e trancas mecânicas utilizando gazuas e ferramentas de precisão sem danificar o mecanismo.",
+      "specializations": ["Fechaduras Comuns", "Cofres e Trancas Anãs", "Algemas e Grilhões"]
+    },
+    {
+      "id": "enganacao",
+      "name": "Enganação",
+      "group": "Subterfúgio",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Arte de mentir de forma convincente, blefar, forjar álibis, interpretar papéis falsos e induzir interlocutores ao erro sem trair nervosismo.",
+      "specializations": ["Blefe", "Falsa Identidade", "Distração Verbal", "Mentira Sob Pressão"]
+    },
+    {
+      "id": "escapar",
+      "name": "Escapar",
+      "group": "Subterfúgio",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Contorcionismo e destreza para livrar-se de cordas, redes, agarrões em combate, algemas frouxas e passar por frestas estreitas.",
+      "specializations": ["Soltar-se de Cordas", "Fugir de Agarrões", "Passagens Estreitas"]
+    },
+    {
+      "id": "furtar-objetos",
+      "name": "Furtar Objetos",
+      "group": "Subterfúgio",
+      "attribute": "agilidade",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Punga, corte discreto de bolsas, substituição rápida de itens e ocultação de pequenos objetos no corpo sem ser percebido pela vítima ou por observadores.",
+      "specializations": ["Bater Carteiras", "Cortar Bolsas", "Plantar Objetos", "Ocultar Armas Pequenas"]
+    },
+    {
+      "id": "manusear-armadilhas",
+      "name": "Manusear Armadilhas",
+      "group": "Subterfúgio",
+      "attribute": "agilidade",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Localização, desarmamento seguro, sabotagem e construção de armadilhas mecânicas, alçapões, dardos ocultos, laços de caça e mecanismos de defesa em criptas.",
+      "specializations": ["Desarmar Mecanismos", "Armadilhas de Masmorra", "Laços de Caça", "Armadilhas de Alarme"]
+    },
+    {
+      "id": "disfarce",
+      "name": "Disfarce",
+      "group": "Subterfúgio",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Guia de Especializações",
+      "description": "Alteração convincente da própria aparência física, vestimentas, postura, sotaque e maneirismos para se passar por outra pessoa, profissão ou raça semelhante.",
+      "specializations": ["Caracterização Teatral", "Imitação de Voz", "Infiltração Nobre"]
+    },
+    {
+      "id": "falsificacao",
+      "name": "Falsificação",
+      "group": "Subterfúgio",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Guia de Especializações",
+      "description": "Reprodução fraudulenta de assinaturas, salvos-condutos, selos de cera, documentos mercantis, escrituras e mapas, bem como detecção de documentos adulterados.",
+      "specializations": ["Documentos Oficiais", "Selos e Sinetes", "Perícia Documental"]
+    },
+    {
+      "id": "contatos-do-submundo",
+      "name": "Contatos do Submundo",
+      "group": "Subterfúgio",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Expansão dos Reinos",
+      "description": "Conhecimento de guildas clandestinas, receptadores, mercados negros, tavernas suspeitas e informantes para obter itens ilícitos ou boatos secretos.",
+      "specializations": ["Mercado Negro", "Guildas de Ladinos", "Informantes de Taverna"]
+    },
+    {
+      "id": "arte",
+      "name": "Arte",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Expressão artística através de música, canto, poesia, atuação teatral, dança, pintura ou narrativa épica. É o principal canal de execução para as magias dos Bardos.",
+      "specializations": ["Música Instrumental", "Canto e Baladas", "Teatro e Declamação", "Dança", "Pintura e Escultura"]
+    },
+    {
+      "id": "empatia",
+      "name": "Empatia",
+      "group": "Influência",
+      "attribute": "aura",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Capacidade de perceber emoções genuínas, intenções ocultas, nervosismo, mentiras e o estado psicológico de criaturas inteligentes durante o convívio social.",
+      "specializations": ["Detectar Mentiras", "Ler Intenções", "Acalmar Ânimos"]
+    },
+    {
+      "id": "etiqueta",
+      "name": "Etiqueta",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Domínio das normas de cortesia, protocolos de corte, cerimoniais religiosos, costumes de diferentes raças e comportamento adequado em banquetes e audiências.",
+      "specializations": ["Corte Nobre", "Protocolo Eclesiástico", "Costumes Élficos", "Costumes Anões"]
+    },
+    {
+      "id": "extrair-informacao",
+      "name": "Extrair Informação",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Coleta habilidosa de boatos, segredos e fatos relevantes por meio de conversas casuais em estalagens, entrevistas direcionadas ou interrogatórios sutis.",
+      "specializations": ["Boatos em Tavernas", "Interrogatório", "Investigação Urbana"]
+    },
+    {
+      "id": "jogatina",
+      "name": "Jogatina",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Domínio de jogos de dados, cartas, tabuleiros estratégicos e apostas populares nas tavernas de Tagmar, incluindo leitura de adversários e percepção de trapaças.",
+      "specializations": ["Jogos de Dados", "Cartas", "Jogos de Estratégia", "Identificar Trapaças"]
+    },
+    {
+      "id": "lideranca",
+      "name": "Liderança",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Inspiração, comando e coordenação de grupos de soldados, mercenários, tripulações ou aliados, mantendo o moral elevado diante do perigo e da adversidade.",
+      "specializations": ["Comando Militar", "Inspirar Coragem", "Gestão de Expedição"]
+    },
+    {
+      "id": "negociacao",
+      "name": "Negociação",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Pechincha de preços em mercados, redação de contratos vantajosos, persuasão comercial e mediação de acordos entre partes em conflito.",
+      "specializations": ["Pechincha", "Contratos Mercantis", "Mediação de Conflitos"]
+    },
+    {
+      "id": "oratoria",
+      "name": "Oratória",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Guia de Especializações",
+      "description": "Retórica persuasiva perante multidões, tribunais, conselhos nobres ou congregações religiosas para convencer, comover ou mobilizar o público.",
+      "specializations": ["Discurso Político", "Sermão Religioso", "Defesa Jurídica"]
+    },
+    {
+      "id": "intimidacao",
+      "name": "Intimidação",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Guia de Especializações",
+      "description": "Imposição de medo, autoridade implacável ou ameaça física velada para dobrar a vontade de oponentes, dissuadir agressores ou forçar confissões.",
+      "specializations": ["Ameaça Física", "Coerção Autoritária", "Grito de Guerra"]
+    },
+    {
+      "id": "seducao-e-charme",
+      "name": "Sedução e Charme",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": false,
+      "source": "Guia de Especializações",
+      "description": "Uso de magnetismo pessoal, galanteio, simpatia e fascínio para conquistar favores, obter confidências ou desarmar hostilidade social.",
+      "specializations": ["Galanteio", "Simpatia Instantânea", "Manipulação Afetiva"]
+    },
+    {
+      "id": "diplomacia-dos-reinos",
+      "name": "Diplomacia dos Reinos",
+      "group": "Influência",
+      "attribute": "carisma",
+      "restricted": true,
+      "source": "Expansão dos Reinos",
+      "description": "Negociação política de alto nível entre casas nobres, cidades-estado e emissários estrangeiros para firmar alianças, tréguas e tratados comerciais.",
+      "specializations": ["Tratados e Alianças", "Embaixada Inter-Racial", "Intriga Palaciana"]
+    },
+    {
+      "id": "lidar-com-animais",
+      "name": "Lidar com Animais",
+      "group": "Geral",
+      "attribute": "aura",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Acalmar bestas arredias, cuidar da saúde de montarias, compreender sinais de comportamento animal e adestrar cães, falcões ou cavalos para comandos.",
+      "specializations": ["Adestramento de Cães", "Falcoaria", "Cuidados Veterinários", "Acalmar Feras"]
+    },
+    {
+      "id": "navegacao",
+      "name": "Navegação",
+      "group": "Geral",
+      "attribute": "intelecto",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Orientação em viagens longas por terra ou alto-mar usando bússolas, astrolábios, cartas náuticas, posição do sol e constelações para traçar rotas seguras.",
+      "specializations": ["Navegação Marítima", "Orientação Terrestre", "Leitura de Mapas"]
+    },
+    {
+      "id": "seguir-trilhas",
+      "name": "Seguir Trilhas",
+      "group": "Geral",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Identificação e acompanhamento de pegadas, galhos quebrados, cinzas de fogueira e vestígios deixados por animais, viajantes ou monstros, além de apagar os próprios rastros.",
+      "specializations": ["Rastreio em Floresta", "Rastreio em Montanha", "Rastreio Urbano", "Ocultar Rastros"]
+    },
+    {
+      "id": "sensitividade",
+      "name": "Sensitividade",
+      "group": "Geral",
+      "attribute": "aura",
+      "restricted": true,
+      "source": "Livro de Regras 3.0",
+      "description": "Sexto sentido intuitivo que permite pressentir perigos iminentes, perceber presenças sobrenaturais, sentir distúrbios de Karma e notar energias místicas latentes no ambiente.",
+      "specializations": ["Pressentir Perigo", "Sentir Auras Místicas", "Detectar Mortos-Vivos e Demônios"]
+    },
+    {
+      "id": "sobrevivencia",
+      "name": "Sobrevivência",
+      "group": "Geral",
+      "attribute": "fisico",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Habilidade prática para subsistir em ermos hostis: encontrar água potável, erguer abrigos improvisados, acender fogo sob chuva, prever mudanças climáticas e evitar perigos naturais.",
+      "specializations": ["Florestas", "Montanhas e Neve", "Desertos", "Pântanos", "Subterrâneos"]
+    },
+    {
+      "id": "usar-os-sentidos",
+      "name": "Usar os Sentidos",
+      "group": "Geral",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Percepção aguçada da visão, audição, olfato e tato para descobrir inimigos emboscados, ouvir passos atrás de portas, notar compartimentos secretos e detectar detalhes sutis.",
+      "specializations": ["Prontidão e Vigília", "Busca Minuciosa", "Escuta Aguçada", "Faro e Paladar"]
+    },
+    {
+      "id": "caca-e-coleta",
+      "name": "Caça e Coleta",
+      "group": "Geral",
+      "attribute": "agilidade",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Abate de caça silvestre, pesca em rios ou mares, preparo de armadilhas simples para pequenos animais e coleta segura de frutos, raízes e mel para alimentar o grupo.",
+      "specializations": ["Caça com Arco", "Pesca", "Esfolar e Conservar Carne", "Coleta Silvestre"]
+    },
+    {
+      "id": "avaliacao-de-mercadorias",
+      "name": "Avaliação de Mercadorias",
+      "group": "Geral",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Livro de Equipamentos",
+      "description": "Estimativa precisa do valor em moedas de prata e ouro de joias, obras de arte, armas forjadas, tecidos raros, relíquias e mercadorias de caravanas.",
+      "specializations": ["Gemas e Metais", "Armas e Armaduras", "Antiguidades e Relíquias"]
+    },
+    {
+      "id": "primeiros-socorros",
+      "name": "Primeiros Socorros",
+      "group": "Geral",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Livro de Regras 3.0",
+      "description": "Atendimento emergencial em campo para estancar sangramentos, aplicar ataduras limpas, aliviar contusões e impedir que um companheiro com EF zerada morra imediatamente.",
+      "specializations": ["Estancar Hemorragia", "Curativos de Campo", "Reanimação"]
+    },
+    {
+      "id": "orientacao-em-ermos",
+      "name": "Orientação em Ermos",
+      "group": "Geral",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Guia de Especializações",
+      "description": "Senso de direção natural em cavernas, florestas densas, nevoeiros ou planícies sem estradas, evitando andar em círculos e estimando distâncias de viagem.",
+      "specializations": ["Cavernas e Labirintos", "Florestas Cerradas", "Caminhada Noturna"]
+    },
+    {
+      "id": "comercio-e-financas",
+      "name": "Comércio e Finanças",
+      "group": "Geral",
+      "attribute": "intelecto",
+      "restricted": false,
+      "source": "Expansão dos Reinos",
+      "description": "Gestão de caravanas, taxas alfandegárias, câmbio de moedas entre reinos, contabilidade de guildas e identificação das melhores rotas de compra e venda.",
+      "specializations": ["Rotas de Caravanas", "Contabilidade", "Câmbio e Alfândega"]
+    }
+  ],
+  "combatTechniques": [
+    {
+      "id": "corte-leve",
+      "name": "Armas de Corte Leve (Lâminas Pequenas)",
+      "category": "melee",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Domínio do grupo de lâminas curtas e rápidas (adagas, facas de combate, alfanjes curtos e cutelos), privilegiando velocidade, precisão em espaços apertados e manuseio ágil.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Corte Leve"],
+        "damageAttribute": "forca",
+        "notes": "Soma nível da técnica + Agilidade na coluna de ataque com lâminas leves."
+      }
+    },
+    {
+      "id": "corte-medio-espadas",
+      "name": "Armas de Corte Médio — Espadas (CmE)",
+      "category": "melee",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Proficiência marcial com espadas médias de uma mão ou versáteis: Espada Curta, Gládio, Espada Longa, Cimitarra, Sabre e Espada Bastarda em uma mão.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Corte Médio — Espadas"],
+        "damageAttribute": "forca",
+        "notes": "Grupo principal dos espadachins e cavaleiros de Tagmar."
+      }
+    },
+    {
+      "id": "corte-medio-machados",
+      "name": "Armas de Corte Médio — Machados (CmM)",
+      "category": "melee",
+      "attribute": "forca",
+      "source": "Livro de Regras 3.0",
+      "description": "Manejo técnico de machados de batalha de uma mão, machadinhas de guerra e franciscas, explorando o centro de massa pesado para rachar escudos e armaduras.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Corte Médio — Machados"],
+        "damageAttribute": "forca",
+        "notes": "Usa Força para precisão de impacto bruto e dano."
+      }
+    },
+    {
+      "id": "corte-pesado",
+      "name": "Armas de Corte Pesado (Espadas Grandes e Machados Pesados)",
+      "category": "melee",
+      "attribute": "forca",
+      "source": "Livro de Regras 3.0",
+      "description": "Treinamento especializado em armas cortantes de duas mãos como Montante, Espada Bastarda (2 mãos), Machado Grande e Foice de Guerra, gerando golpes devastadores.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Corte Pesado"],
+        "damageAttribute": "forca",
+        "notes": "Requer duas mãos; alto potencial de dano 100% e crítico."
+      }
+    },
+    {
+      "id": "perfuracao-leve",
+      "name": "Armas de Perfuração Leve (Adagas, Punhais e Floretes)",
+      "category": "melee",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Estocadas cirúrgicas com punhais, estiletes, floretes e rapieiras, buscando brechas entre placas de armadura e pontos vitais.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Perfuração Leve"],
+        "damageAttribute": "forca",
+        "notes": "Excelente em duelos e golpes furtivos."
+      }
+    },
+    {
+      "id": "perfuracao-media-lancas",
+      "name": "Armas de Perfuração Média — Lanças (PmL)",
+      "category": "melee",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Combate com lanças curtas, lanças médias, tridentes e lanças de cavalaria, mantendo o inimigo à distância e aproveitando o alcance da haste.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Perfuração Média — Lanças"],
+        "damageAttribute": "forca",
+        "notes": "Permite manter inimigos à distância e receber cargas."
+      }
+    },
+    {
+      "id": "perfuracao-pesada-hastes",
+      "name": "Armas de Haste e Perfuração Pesada",
+      "category": "melee",
+      "attribute": "forca",
+      "source": "Livro de Regras 3.0",
+      "description": "Manuseio de alabardas, piques, glaives e lanças longas de formação, combinando estocadas perfurantes e golpes de corte/gancho para derrubar cavaleiros.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Perfuração Pesada e Hastes"],
+        "damageAttribute": "forca",
+        "notes": "Alcance estendido de 2,5m a 3m."
+      }
+    },
+    {
+      "id": "contusao-leve",
+      "name": "Armas de Contusão Leve (Clavas e Bastões)",
+      "category": "melee",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Combate ágil com bordões, cajados de batalha, clavas e porretes, permitindo ataques rápidos e boa cobertura defensiva.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Contusão Leve"],
+        "damageAttribute": "forca",
+        "notes": "Muito adotada por magos, rastreadores e viajantes."
+      }
+    },
+    {
+      "id": "contusao-media",
+      "name": "Armas de Contusão Média (Maças e Martelos)",
+      "category": "melee",
+      "attribute": "forca",
+      "source": "Livro de Regras 3.0",
+      "description": "Uso marcial de maças de armas, estrelas-da-manhã e martelos de guerra de uma mão, especialmente eficazes contra armaduras metálicas e esqueletos.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Contusão Média"],
+        "damageAttribute": "forca",
+        "notes": "Arma tradicional de sacerdotes de Blator e guerreiros anões."
+      }
+    },
+    {
+      "id": "contusao-pesada",
+      "name": "Armas de Contusão Pesada (Malhos e Grandes Martelos)",
+      "category": "melee",
+      "attribute": "forca",
+      "source": "Livro de Regras 3.0",
+      "description": "Golpes esmagadores com marretas de guerra, grandes maças de duas mãos e clavas gigantes capazes de fraturar ossos mesmo através de couraças.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Contusão Pesada"],
+        "damageAttribute": "forca",
+        "notes": "Requer alta Força mínima; dano contundente severo."
+      }
+    },
+    {
+      "id": "armas-articuladas",
+      "name": "Armas Articuladas e Correntes",
+      "category": "melee",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Manejo complexo de manguais, manguais pesados, correntes com cravos e chicotes, capazes de contornar escudos e enredar armas inimigas.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Armas Articuladas"],
+        "ignoreShieldDa": 1,
+        "notes": "Reduz em 1 o bônus de Defesa Ativa de escudos do alvo."
+      }
+    },
+    {
+      "id": "briga-artes-marciais",
+      "name": "Briga e Artes Marciais (Combate Desarmado)",
+      "category": "melee",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Combate com punhos, cotovelos, chutes, projeções e chaves corporais, elevando o dano desarmado e permitindo lutar eficientemente sem armas.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Desarmado"],
+        "damageType": "Contusão",
+        "notes": "Permite atacar sem penalidade estando desarmado ou com manoplas."
+      }
+    },
+    {
+      "id": "arcos",
+      "name": "Arcos (Simples, Composto e Longo)",
+      "category": "ranged",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Domínio de tiro com arco curto, arco longo, arco composto e arco longo élfico, calculando trajetória, vento e distância para disparos precisos.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Arcos"],
+        "notes": "Permite disparos contínuos a longas distâncias."
+      }
+    },
+    {
+      "id": "bestas",
+      "name": "Bestas (Leve, Média e Pesada)",
+      "category": "ranged",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Manejo e recarga ágil de bestas de mão, bestas leves e bestas pesadas, aproveitando o bônus de impacto de +25% em alvos a menos de 10 metros.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Bestas"],
+        "closeRangeBonusPct": 25,
+        "notes": "Em Tagmar 3.0, disparos de besta a menos de 10m concedem +25% no dano."
+      }
+    },
+    {
+      "id": "armas-de-arremesso",
+      "name": "Armas de Arremesso",
+      "category": "ranged",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Lançamento preciso de facas, adagas, azagaias, dardos, machadinhas e lanças curtas contra alvos em movimento a curto e médio alcance.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Arremesso"],
+        "damageAttribute": "forca",
+        "notes": "Soma Força ao dano de armas arremessadas."
+      }
+    },
+    {
+      "id": "fundas-e-zarabatanas",
+      "name": "Fundas e Zarabatanas",
+      "category": "ranged",
+      "attribute": "agilidade",
+      "source": "Livro de Equipamentos",
+      "description": "Uso tradicional de fundas de couro com balas de chumbo ou pedras e zarabatanas silenciosas de caça com dardos envenenados.",
+      "automation": {
+        "columnBonus": 0,
+        "weaponGroups": ["Fundas e Zarabatanas"],
+        "notes": "Armas leves, baratas e fáceis de ocultar."
+      }
+    },
+    {
+      "id": "tiro-preciso",
+      "name": "Tiro Preciso",
+      "category": "ranged",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Dedica concentração adicional para mirar em brechas da armadura ou alvos engajados em combate corpo a corpo, elevando a coluna de ataque à distância.",
+      "automation": {
+        "columnBonus": 2,
+        "ignoreCoverPenalty": true,
+        "notes": "+2 colunas no disparo quando mira antes de atirar; reduz penalidade por cobertura."
+      }
+    },
+    {
+      "id": "tiro-em-movimento",
+      "name": "Tiro em Movimento",
+      "category": "ranged",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Permite disparar arcos ou arremessar armas enquanto se desloca a pé ou em montaria a galope, reduzindo ou anulando as penalidades de movimento.",
+      "automation": {
+        "columnBonus": 0,
+        "cancelMovementPenalty": true,
+        "notes": "Anula penalidade de -2 colunas ao atirar em movimento ou montado."
+      }
+    },
+    {
+      "id": "uso-de-escudo",
+      "name": "Uso de Escudo",
+      "category": "defense",
+      "attribute": "forca",
+      "source": "Livro de Regras 3.0",
+      "description": "Manejo coordenado de broquéis, rodelas, pavêses e escudos torre para maximizar a Defesa Ativa, absorver impactos e reduzir penalidades de agilidade.",
+      "automation": {
+        "daBonus": 1,
+        "absorcaoBonus": 2,
+        "notes": "Concede +1 adicional na Defesa Ativa e +2 de Absorção enquanto empunhar escudo."
+      }
+    },
+    {
+      "id": "aparar",
+      "name": "Aparar",
+      "category": "defense",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Técnica defensiva clássica de Tagmar: anunciada no início da rodada, o combatente usa uma arma média ou pesada para interceptar golpes corpo a corpo, gerando absorção temporária baseada no nível da técnica.",
+      "automation": {
+        "daBonus": 2,
+        "absorcaoTemp": 6,
+        "replacesAttack": true,
+        "notes": "Substitui o ataque na rodada para aparar golpes; em níveis altos permite aparar projéteis."
+      }
+    },
+    {
+      "id": "esquiva-aprimorada",
+      "name": "Esquiva Aprimorada",
+      "category": "defense",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Trabalho de pés e reflexos afiados que permitem desviar de golpes diretos e ataques de área quando vestindo armadura leve ou nenhuma armadura.",
+      "automation": {
+        "daBonus": 2,
+        "maxArmorClass": "L",
+        "notes": "+2 na Defesa Ativa quando usando Defesa Leve (L) e sem sobrecarga."
+      }
+    },
+    {
+      "id": "combate-defensivo",
+      "name": "Combate Defensivo",
+      "category": "defense",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Postura cautelosa que sacrifica parte da ofensiva na rodada para fechar a guarda e elevar substancialmente a Defesa Ativa contra todos os atacantes visíveis.",
+      "automation": {
+        "columnBonus": -2,
+        "daBonus": 3,
+        "notes": "Sofre -2 colunas no ataque em troca de +3 na Defesa Ativa até o próximo turno."
+      }
+    },
+    {
+      "id": "bloqueio-de-projeteis",
+      "name": "Bloqueio de Projéteis",
+      "category": "defense",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Antecipação da linha de tiro para rebater ou desviar flechas, virotes e adagas arremessadas utilizando escudo ou lâmina longa.",
+      "automation": {
+        "daBonusVsRanged": 3,
+        "notes": "+3 na Defesa Ativa especificamente contra ataques à distância visíveis."
+      }
+    },
+    {
+      "id": "contra-ataque",
+      "name": "Contra-Ataque",
+      "category": "defense",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Ao aparar ou esquivar com sucesso de um ataque corpo a corpo inimigo que resulte em falha ou erro crítico, o combatente desfere imediatamente um golpe de resposta.",
+      "automation": {
+        "extraAttack": true,
+        "trigger": "enemy_melee_miss",
+        "columnBonus": -1,
+        "notes": "Reação imediata após erro do oponente em combate corpo a corpo."
+      }
+    },
+    {
+      "id": "postura-de-muralha",
+      "name": "Postura de Muralha",
+      "category": "defense",
+      "attribute": "forca",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Finca os pés firmemente com armadura pesada e escudo grande, tornando-se quase inabalável contra cargas, empurrões e tentativas de derrubar.",
+      "automation": {
+        "dpBonus": 2,
+        "absorcaoTemp": 4,
+        "vbMultiplier": 0.5,
+        "notes": "+2 DP e +4 Absorção temporária contra investidas; reduz deslocamento à metade."
+      }
+    },
+    {
+      "id": "combate-com-duas-armas",
+      "name": "Combate com Duas Armas (Ambidestria)",
+      "category": "maneuver",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Treinamento intensivo para empunhar e atacar simultaneamente com uma arma principal e uma arma secundária leve, mitigando as penalidades da mão inábil.",
+      "automation": {
+        "extraAttack": true,
+        "offhandColumnPenalty": -2,
+        "notes": "Permite ataque adicional com arma leve na mão secundária (-2 colunas no golpe extra)."
+      }
+    },
+    {
+      "id": "combate-montado",
+      "name": "Combate Montado",
+      "category": "maneuver",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Integração entre cavaleiro e montaria para desferir golpes precisos de cima da sela, proteger o animal e executar investidas de lança de cavalaria.",
+      "automation": {
+        "columnBonus": 1,
+        "mountedChargeBonus": 3,
+        "notes": "+1 coluna lutando montado; +3 colunas em carga com lança de cavalaria."
+      }
+    },
+    {
+      "id": "carga",
+      "name": "Carga (Investida)",
+      "category": "maneuver",
+      "attribute": "forca",
+      "source": "Livro de Regras 3.0",
+      "description": "Corrida impetuosa em linha reta culminando em um ataque brutal que soma o momento do deslocamento à força do golpe, embora deixe a guarda momentaneamente exposta.",
+      "automation": {
+        "columnBonus": 2,
+        "daBonus": -2,
+        "damageBonus": 3,
+        "notes": "+2 colunas e +3 de dano no ataque após corrida; -2 na Defesa Ativa até o turno seguinte."
+      }
+    },
+    {
+      "id": "ataque-oportuno",
+      "name": "Ataque Oportuno",
+      "category": "maneuver",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Explora aberturas táticas deixadas por inimigos distraídos, flanqueados, caídos ou que acabaram de correr, adicionando bônus progressivo na coluna de ataque.",
+      "automation": {
+        "columnBonus": 2,
+        "conditionTrigger": "flanked_or_distracted",
+        "notes": "+2 colunas contra alvos flanqueados, caídos ou que recuam sem cuidado."
+      }
+    },
+    {
+      "id": "golpe-poderoso",
+      "name": "Golpe Poderoso",
+      "category": "maneuver",
+      "attribute": "forca",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Sacrifica parte da precisão do ataque para imprimir todo o peso do corpo no golpe, ampliando o dano final caso acerte o alvo.",
+      "automation": {
+        "columnBonus": -2,
+        "damageBonus": 4,
+        "notes": "-2 colunas na rolagem de ataque em troca de +4 de dano em qualquer acerto."
+      }
+    },
+    {
+      "id": "desarmar",
+      "name": "Desarmar",
+      "category": "maneuver",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Manobra de alavanca ou golpe direcionado ao punho/arma do oponente para arrancá-la de suas mãos e lançá-la ao solo.",
+      "automation": {
+        "columnBonus": -2,
+        "appliesCondition": "desarmado",
+        "notes": "Acerto Laranja ou superior força teste de Força ou deixa o alvo Desarmado."
+      }
+    },
+    {
+      "id": "derrubar-e-imobilizar",
+      "name": "Derrubar e Imobilizar",
+      "category": "maneuver",
+      "attribute": "forca",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Rasteira, projeção corporal ou chave de agarramento para levar o adversário ao chão ou mantê-lo preso e incapaz de se mover.",
+      "automation": {
+        "columnBonus": -1,
+        "appliesCondition": "caido",
+        "notes": "Acerto Laranja derruba (Caído); Vermelho/Azul permite Imobilizar o alvo."
+      }
+    },
+    {
+      "id": "combate-nao-letal",
+      "name": "Combate Não Letal",
+      "category": "maneuver",
+      "attribute": "agilidade",
+      "source": "Livro de Regras 3.0",
+      "description": "Uso controlado da prancha da lâmina, do pomo ou de golpes contundentes para nocautear o oponente sem causar ferimentos mortais ou sangramento letal.",
+      "automation": {
+        "columnBonus": 0,
+        "nonLethal": true,
+        "notes": "Reduz EH normalmente; ao zerar EF, o alvo desmaia em vez de agonizar."
+      }
+    },
+    {
+      "id": "ataque-circular",
+      "name": "Ataque Circular (Varredura)",
+      "category": "maneuver",
+      "attribute": "forca",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Golpe giratório amplo com armas médias ou pesadas capaz de atingir até três inimigos adjacentes em uma mesma ação com penalidade controlada.",
+      "automation": {
+        "columnBonus": -2,
+        "maxTargets": 3,
+        "notes": "Atinge até 3 oponentes adjacentes em arco frontal com -2 colunas."
+      }
+    },
+    {
+      "id": "finta-tatica",
+      "name": "Finta Tática",
+      "category": "maneuver",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Movimento ilusório de lâmina ou corpo para induzir a defesa do oponente ao erro, reduzindo sua Defesa Ativa contra o próximo ataque.",
+      "automation": {
+        "targetDaPenalty": -2,
+        "notes": "Em caso de sucesso, reduz a Defesa Ativa do alvo em 2 no próximo golpe."
+      }
+    },
+    {
+      "id": "saque-rapido",
+      "name": "Saque Rápido",
+      "category": "maneuver",
+      "attribute": "agilidade",
+      "source": "Livro de Técnicas de Combate",
+      "description": "Permite sacar ou trocar armas instantaneamente sem perder a ação principal da rodada e concede vantagem de prontidão na iniciativa.",
+      "automation": {
+        "initiativeBonus": 2,
+        "freeWeaponDraw": true,
+        "notes": "Saque livre sem gastar ação e +2 na rolagem de Iniciativa."
+      }
+    },
+    {
+      "id": "combate-em-formacao",
+      "name": "Combate em Formação",
+      "category": "maneuver",
+      "attribute": "forca",
+      "source": "Expansão dos Reinos",
+      "description": "Disciplina tática de infantaria pesada e falanges: lutando ombro a ombro com aliados treinados, coordena escudos e lanças para reforçar defesa e ataque coletivos.",
+      "automation": {
+        "daBonus": 1,
+        "columnBonus": 1,
+        "requiresAdjacentAlly": true,
+        "notes": "+1 DA e +1 coluna quando adjacente a um aliado com a mesma técnica ou escudo."
+      }
+    }
+  ]
+}

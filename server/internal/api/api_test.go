@@ -216,6 +216,7 @@ func dialWS(t *testing.T, env *testEnv, token, campaignID string) *wsTestClient 
 	if err != nil {
 		t.Fatalf("dialWS: %v", err)
 	}
+	conn.SetReadLimit(1 << 20)
 	tc := &wsTestClient{
 		conn:   conn,
 		events: make(chan hub.WsEnvelope, 64),

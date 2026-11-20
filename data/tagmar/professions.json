@@ -1,0 +1,2702 @@
+[
+  {
+    "id": "guerreiro",
+    "name": "Guerreiro",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": false,
+    "baseProfessionId": null,
+    "minStage": 1,
+    "organizationType": "Academias de Combate",
+    "role": "Linha de Frente / Dano Físico e Defesa",
+    "baseEH": 18,
+    "ehTable": {
+      "1-2": 6,
+      "3-5": 7,
+      "6-8": 8,
+      "9-10": 9
+    },
+    "ehPerStage": "1d10 na tabela (6/7/8/9) + Físico (média 7,5 + FIS)",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico: Karma 0 (não conjura magias nativamente).",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 7,
+      "combatTechniques": 7,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Influência"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Aplicar Esforço"
+      ],
+      "notes": "Habilidades de Influência custam +1 ponto adicional; destaque natural em Aplicar Esforço e Técnicas de Combate."
+    },
+    "startingEquipment": [
+      "Armadura de Couro Rígido",
+      "Escudo Pequeno",
+      "Elmo Aberto",
+      "1 Arma à escolha com dano máximo até 16",
+      "Roupa comum, botas, cinto, mochila de couro e cantil"
+    ],
+    "startingCurrency": {
+      "amount": 1,
+      "unit": "MP"
+    },
+    "startingSkills": [
+      "Aplicar Esforço",
+      "Corrida",
+      "Montar Animais",
+      "Primeiros Socorros"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Corte Médio — Espadas (CmE)",
+      "Uso de Escudo",
+      "Golpe Poderoso",
+      "Aparar"
+    ],
+    "startingSpells": [],
+    "description": "Mestre das armas, armaduras e táticas de batalha em Tagmar. Possui a maior Energia Heróica do jogo (18 + FIS no 1º estágio) e recebe mais Pontos de Combate que qualquer outra profissão. A partir do 5º estágio pode ingressar em uma das Academias de Combate.",
+    "suggestedPortrait": "./assets/portraits/human-warrior.svg"
+  },
+  {
+    "id": "ladino",
+    "name": "Ladino",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": false,
+    "baseProfessionId": null,
+    "minStage": 1,
+    "organizationType": "Guildas",
+    "role": "Furtividade / Subterfúgio / Especialista em Perícias",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 na tabela (4/5/6/7) + Físico (média 5,5 + FIS)",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico: Karma 0 (não conjura magias nativamente).",
+    "startingPoints": {
+      "skills": 22,
+      "combatWeapons": 4,
+      "combatTechniques": 4,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Ações Furtivas"
+      ],
+      "notes": "Recebe a maior reserva de Pontos de Habilidade (22 por estágio) e não possui nenhum grupo penalizado."
+    },
+    "startingEquipment": [
+      "Armadura de Couro Rígido",
+      "Escudo Pequeno",
+      "1 Arma à escolha com dano máximo até 12",
+      "Navalha, 10 pítons de alpinismo e 20 metros de corda",
+      "Manto com capuz, roupa comum, calçado comum e mochila de couro"
+    ],
+    "startingCurrency": {
+      "amount": 3,
+      "unit": "MP"
+    },
+    "startingSkills": [
+      "Ações Furtivas",
+      "Destravar Fechaduras",
+      "Manusear Armadilhas",
+      "Escalar Superfícies",
+      "Escapar"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)",
+      "Esquiva Aprimorada",
+      "Finta Tática"
+    ],
+    "startingSpells": [],
+    "description": "Antigamente chamado de Ladrão, o Ladino é o especialista supremo em perícias, infiltração, armadilhas, furtividade e golpes oportunistas. Sem grupos de habilidades penalizados, adapta-se a cidades, masmorras e mares, especializando-se nas Guildas a partir do 5º estágio.",
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "sacerdote",
+    "name": "Sacerdote",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": false,
+    "baseProfessionId": null,
+    "minStage": 1,
+    "organizationType": "Ordens Sacerdotais",
+    "role": "Suporte Divino / Cura / Combate Sagrado",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 na tabela (4/5/6/7) + Físico (média 5,5 + FIS)",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1) se Aura ≥ 1. Usa seu Símbolo Sagrado como Focus.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 3,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião"
+      ],
+      "notes": "Habilidades de Subterfúgio custam +1 ponto adicional; profissão alfabetizada com domínio natural de Religião."
+    },
+    "startingEquipment": [
+      "Símbolo Sagrado de ferro (Focus)",
+      "Água abençoada",
+      "1 Arma permitida com dano máximo até 16",
+      "Manto com capuz, cinto, pederneiras e mochila de couro"
+    ],
+    "startingCurrency": {
+      "amount": 5,
+      "unit": "MC",
+      "altOption": "Ou arma até dano 16 + 4 MP e 5 MC para comprar o restante"
+    },
+    "startingSkills": [
+      "Religião",
+      "Escrita",
+      "Medicina",
+      "Oratória"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Média (Maças e Martelos)",
+      "Uso de Escudo",
+      "Combate Defensivo"
+    ],
+    "startingSpells": [
+      "Curas Físicas",
+      "Curas Heróicas",
+      "Bênção",
+      "Proteção Divina"
+    ],
+    "description": "Servo devotado a uma das divindades do panteão de Tagmar (Blator, Crisagom, Palier, Selimom, Maíra, Crezir, Lena, Ganis, Parom, Cambu, Cruine, Plandis ou Sevides). Canaliza milagres de cura, proteção e punição através de seu Símbolo Sagrado, podendo ingressar na Ordem Sacerdotal de seu deus no 5º estágio.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "mago",
+    "name": "Mago",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": false,
+    "baseProfessionId": null,
+    "minStage": 1,
+    "organizationType": "Colégios de Magia",
+    "role": "Conjuração Arcana / Dano Mágico e Controle",
+    "baseEH": 6,
+    "ehTable": {
+      "1-2": 2,
+      "3-5": 3,
+      "6-8": 4,
+      "9-10": 5
+    },
+    "ehPerStage": "1d10 na tabela (2/3/4/5) + Físico (média 3,5 + FIS)",
+    "isMystic": true,
+    "spellcastingAttribute": "intelecto",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1) se Aura ≥ 1. Utiliza cajado, varinha, anel ou grimório como Focus.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 1,
+      "combatTechniques": 1,
+      "magic": 5,
+      "magicFormula": "(2 × INT) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Manobra"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Misticismo"
+      ],
+      "notes": "Habilidades de Manobra custam +1 ponto adicional; profissão alfabetizada com foco em Misticismo e Conhecimento."
+    },
+    "startingEquipment": [
+      "Focus Arcano (cajado, varinha ou amuleto)",
+      "1 Arma leve com dano máximo até 8 (bordão ou adaga)",
+      "Pena, tinta, pergaminho e pederneiras",
+      "Manto com capuz, roupa comum, calçado comum, cinto e mochila de couro"
+    ],
+    "startingCurrency": {
+      "amount": 15,
+      "unit": "MP"
+    },
+    "startingSkills": [
+      "Misticismo",
+      "Escrita",
+      "Sabedoria",
+      "Línguas"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Leve (Clavas e Bastões)"
+    ],
+    "startingSpells": [
+      "Luz",
+      "Projétil Mágico",
+      "Escudo Mágico",
+      "Detectar Magia"
+    ],
+    "description": "Estudioso incansável do mana e das leis ocultas que regem o multiverso de Tagmar. Embora fisicamente frágil (EH inicial 6 + FIS), domina feitiços devastadores e utilitários. A partir do 5º estágio pode filiar-se a um dos Colégios de Magia (Elemental, Ilusões, Necromântico, Naturalista, Alquímico ou Conhecimento).",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "rastreador",
+    "name": "Rastreador",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": false,
+    "baseProfessionId": null,
+    "minStage": 1,
+    "organizationType": "Trilhas",
+    "role": "Exploração / Combate Híbrido e Magia Natural",
+    "baseEH": 15,
+    "ehTable": {
+      "1-2": 5,
+      "3-5": 6,
+      "6-8": 7,
+      "9-10": 8
+    },
+    "ehPerStage": "1d10 na tabela (5/6/7/8) + Físico (média 6,5 + FIS)",
+    "isMystic": true,
+    "spellcastingAttribute": "aura",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1) se Aura ≥ 1. Usa amuleto ou objeto natural como Focus (no Tagmar 3 Revisado, Pontos de Magia usam Percepção).",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 5,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × AUR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Profissional"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Sobrevivência",
+        "Seguir Trilhas"
+      ],
+      "notes": "Habilidades Profissionais custam +1 ponto adicional; excelência em Sobrevivência, Seguir Trilhas e combates com arco."
+    },
+    "startingEquipment": [
+      "Armadura de Couro Rígido",
+      "1 Arma à escolha com dano máximo até 16 (geralmente arco ou espada)",
+      "Capa de viagem, par de luvas, pederneiras",
+      "Roupa comum, botas, cinto e mochila de couro"
+    ],
+    "startingCurrency": {
+      "amount": 5,
+      "unit": "MP"
+    },
+    "startingSkills": [
+      "Sobrevivência",
+      "Seguir Trilhas",
+      "Usar os Sentidos",
+      "Lidar com Animais",
+      "Orientação em Ermos"
+    ],
+    "startingCombatTechniques": [
+      "Arcos (Simples, Composto e Longo)",
+      "Armas de Corte Médio — Espadas (CmE)",
+      "Tiro Preciso"
+    ],
+    "startingSpells": [
+      "Faro",
+      "Rastreamento",
+      "Bênção Selvagem",
+      "Visão Térmica"
+    ],
+    "description": "Guardião das fronteiras, batedor das matas e caçador das terras ermas. Une alta Energia Heróica (15 + FIS), forte capacidade marcial e magias sutilmente ligadas à natureza. A partir do 5º estágio segue uma das três Trilhas: Caçadores, Guardiões ou Exploradores.",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "bardo",
+    "name": "Bardo",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": false,
+    "baseProfessionId": null,
+    "minStage": 1,
+    "organizationType": "Confrarias",
+    "role": "Suporte Artístico / Influência Social / Magia Versátil",
+    "baseEH": 9,
+    "ehTable": {
+      "1-2": 3,
+      "3-5": 4,
+      "6-8": 5,
+      "9-10": 6
+    },
+    "ehPerStage": "1d10 na tabela (3/4/5/6) + Físico (média 4,5 + FIS)",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1) se Aura ≥ 1. Usa seu instrumento musical ou objeto artístico como Focus.",
+    "startingPoints": {
+      "skills": 16,
+      "combatWeapons": 2,
+      "combatTechniques": 2,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Arte",
+        "Etiqueta"
+      ],
+      "notes": "Sem grupos penalizados; recebe 16 pontos de habilidade por estágio e especialização natural em Arte e Etiqueta."
+    },
+    "startingEquipment": [
+      "Armadura de Couro Rígido",
+      "1 Instrumento musical (Focus)",
+      "1 Arma à escolha com dano máximo até 16",
+      "Capa, chapéu, cantil, lamparina a óleo",
+      "Roupa comum, calçado comum, cinto e mochila de couro"
+    ],
+    "startingCurrency": {
+      "amount": 5,
+      "unit": "MP"
+    },
+    "startingSkills": [
+      "Arte",
+      "Etiqueta",
+      "Oratória",
+      "Empatia",
+      "História dos Reinos"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)",
+      "Finta Tática"
+    ],
+    "startingSpells": [
+      "Canção do Alento",
+      "Fascínio",
+      "Ruído",
+      "Postura Imponente"
+    ],
+    "description": "Menestrel, diplomata, cronista e encantador que manipula o mana através da música, da poesia, do teatro e da erudição. Versátil dentro e fora de combate, inspira aliados e desconcerta inimigos. A partir do 5º estágio integra uma das Confrarias: Artistas, Arautos ou Eruditos.",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "academia-infantaria",
+    "name": "Guerreiro de Infantaria (Academia de Infantaria)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "guerreiro",
+    "minStage": 5,
+    "organizationType": "Academia",
+    "role": "Infantaria Pesada / Líder de Pelotão",
+    "baseEH": 18,
+    "ehTable": {
+      "1-2": 6,
+      "3-5": 7,
+      "6-8": 8,
+      "9-10": 9
+    },
+    "ehPerStage": "1d10 (6/7/8/9) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 7,
+      "combatTechniques": 7,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Influência"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Aplicar Esforço",
+        "Liderança"
+      ]
+    },
+    "startingEquipment": [
+      "Couraça ou Cota de Malha",
+      "Espada Longa ou Montante",
+      "Escudo Grande",
+      "Insígnia da Academia de Infantaria"
+    ],
+    "startingSkills": [
+      "Aplicar Esforço",
+      "Liderança"
+    ],
+    "startingCombatTechniques": [
+      "Força Interior",
+      "Golpe Giratório",
+      "Golpe Letal",
+      "Voz de Comando",
+      "Combate em Formação"
+    ],
+    "startingSpells": [],
+    "description": "Especialização oficial de Guerreiro dedicada ao combate corpo a corpo intenso, armas pesadas, formações militares e comando de tropas. Concede acesso às técnicas restritas Força Interior, Golpe Giratório, Golpe Letal e Voz de Comando.",
+    "suggestedPortrait": "./assets/portraits/human-warrior.svg"
+  },
+  {
+    "id": "academia-arqueiros",
+    "name": "Arqueiro (Academia dos Arqueiros)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "guerreiro",
+    "minStage": 5,
+    "organizationType": "Academia",
+    "role": "Combate à Distância / Precisão Letal",
+    "baseEH": 18,
+    "ehTable": {
+      "1-2": 6,
+      "3-5": 7,
+      "6-8": 8,
+      "9-10": 9
+    },
+    "ehPerStage": "1d10 (6/7/8/9) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 7,
+      "combatTechniques": 7,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Influência"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Usar os Sentidos"
+      ]
+    },
+    "startingEquipment": [
+      "Arco Longo ou Composto",
+      "Aljava com 30 flechas",
+      "Armadura de Couro Rígido",
+      "Adaga de reserva"
+    ],
+    "startingSkills": [
+      "Usar os Sentidos",
+      "Carpintaria"
+    ],
+    "startingCombatTechniques": [
+      "Combate com Arco",
+      "Direcionamento",
+      "Atirar em Movimento",
+      "Flechada Dupla",
+      "Mira",
+      "Tiro Preciso"
+    ],
+    "startingSpells": [],
+    "description": "Especialização oficial de Guerreiro voltada à maestria absoluta do arco em campo aberto ou em movimento. Desbloqueia as técnicas restritas Combate com Arco, Direcionamento, Atirar em Movimento, Flechada Dupla e Mira.",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "academia-cavaleiros",
+    "name": "Cavaleiro (Academia dos Cavaleiros)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "guerreiro",
+    "minStage": 5,
+    "organizationType": "Academia",
+    "role": "Cavalaria / Investida Montada e Escudo",
+    "baseEH": 18,
+    "ehTable": {
+      "1-2": 6,
+      "3-5": 7,
+      "6-8": 8,
+      "9-10": 9
+    },
+    "ehPerStage": "1d10 (6/7/8/9) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 7,
+      "combatTechniques": 7,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Influência"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Montar Animais",
+        "Heráldica e Nobreza"
+      ]
+    },
+    "startingEquipment": [
+      "Cavalo de Guerra",
+      "Lança de Cavalaria",
+      "Espada Longa",
+      "Escudo Grande",
+      "Cota de Malha Completa"
+    ],
+    "startingSkills": [
+      "Montar Animais",
+      "Heráldica e Nobreza",
+      "Liderança"
+    ],
+    "startingCombatTechniques": [
+      "Carga Montada",
+      "Carga de Arremesso",
+      "Combate com Escudo",
+      "Voz de Comando",
+      "Combate Montado"
+    ],
+    "startingSpells": [],
+    "description": "Especialização nobre de Guerreiro focada na cavalaria pesada, cargas montadas devastadoras, disciplina marcial e uso ofensivo e defensivo do escudo. Concede acesso a Carga Montada, Carga de Arremesso, Combate com Escudo e Voz de Comando.",
+    "suggestedPortrait": "./assets/portraits/dwarf-paladin.svg"
+  },
+  {
+    "id": "academia-gladiadores",
+    "name": "Gladiador (Academia dos Gladiadores)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "guerreiro",
+    "minStage": 5,
+    "organizationType": "Academia",
+    "role": "Duelista de Arena / Fúria e Contra-Ataque",
+    "baseEH": 18,
+    "ehTable": {
+      "1-2": 6,
+      "3-5": 7,
+      "6-8": 8,
+      "9-10": 9
+    },
+    "ehPerStage": "1d10 (6/7/8/9) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 7,
+      "combatTechniques": 7,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Influência"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Intimidação",
+        "Acrobacias"
+      ]
+    },
+    "startingEquipment": [
+      "Armas de arena (Gládio, Tridente ou Rede)",
+      "Escudo Pequeno",
+      "Armadura de Couro Rígido"
+    ],
+    "startingSkills": [
+      "Intimidação",
+      "Acrobacias",
+      "Aplicar Esforço"
+    ],
+    "startingCombatTechniques": [
+      "Contra-Ataque",
+      "Desequilibrar",
+      "Fúria",
+      "Intimidar",
+      "Derrubar e Imobilizar"
+    ],
+    "startingSpells": [],
+    "description": "Especialização brutal de Guerreiro forjada nas arenas e duelos sem quartel. Domina a intimidação, o desequilíbrio de adversários, contra-ataques fulminantes e a técnica restrita Fúria.",
+    "suggestedPortrait": "./assets/portraits/orc-barbarian.svg"
+  },
+  {
+    "id": "espadachim",
+    "name": "Espadachim (Duelista das Cortes)",
+    "source": "Guia de Especializações / Expansões",
+    "isSpecialization": true,
+    "baseProfessionId": "guerreiro",
+    "minStage": 5,
+    "organizationType": "Academia (Expansão)",
+    "role": "Esgrima Ágil / Aparar e Ripostar",
+    "baseEH": 18,
+    "ehTable": {
+      "1-2": 6,
+      "3-5": 7,
+      "6-8": 8,
+      "9-10": 9
+    },
+    "ehPerStage": "1d10 (6/7/8/9) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 16,
+      "combatWeapons": 7,
+      "combatTechniques": 7,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Acrobacias",
+        "Etiqueta"
+      ]
+    },
+    "startingEquipment": [
+      "Florete ou Sabre de Esgrima",
+      "Adaga de Parada",
+      "Armadura de Couro Leve",
+      "Capa de Duelista"
+    ],
+    "startingSkills": [
+      "Acrobacias",
+      "Etiqueta",
+      "Equilíbrio e Saltos"
+    ],
+    "startingCombatTechniques": [
+      "Aparar",
+      "Contra-Ataque",
+      "Finta Tática",
+      "Desarmar",
+      "Saque Rápido"
+    ],
+    "startingSpells": [],
+    "description": "Variante especializada de Guerreiro dedicada à esgrima refinada, velocidade de reação, defesa ativa elevada sem armaduras pesadas e duelos de honra nos reinos civilizados.",
+    "suggestedPortrait": "./assets/portraits/human-warrior.svg"
+  },
+  {
+    "id": "barbaro",
+    "name": "Bárbaro (Guerreiro das Terras Selvagens)",
+    "source": "Aventuras nas Terras Selvagens",
+    "isSpecialization": true,
+    "baseProfessionId": "guerreiro",
+    "minStage": 5,
+    "organizationType": "Tradição Tribal (Expansão)",
+    "role": "Fúria Selvagem / Resistência Extrema",
+    "baseEH": 18,
+    "ehTable": {
+      "1-2": 6,
+      "3-5": 7,
+      "6-8": 8,
+      "9-10": 9
+    },
+    "ehPerStage": "1d10 (6/7/8/9) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 7,
+      "combatTechniques": 7,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Influência"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Sobrevivência",
+        "Aplicar Esforço"
+      ]
+    },
+    "startingEquipment": [
+      "Machado Grande ou Espada Pesada",
+      "Gibão de Peles (Couro Rígido)",
+      "2 Machadinhas de Arremesso"
+    ],
+    "startingSkills": [
+      "Sobrevivência",
+      "Aplicar Esforço",
+      "Intimidação"
+    ],
+    "startingCombatTechniques": [
+      "Fúria",
+      "Golpe Poderoso",
+      "Carga (Investida)",
+      "Ataque Circular (Varredura)"
+    ],
+    "startingSpells": [],
+    "description": "Combatente indomável das tribos das Terras Selvagens e fronteiras geladas. Canaliza fúria primitiva para desferir golpes arrasadores com armas de duas mãos e resistir a ferimentos que derrubariam soldados comuns.",
+    "suggestedPortrait": "./assets/portraits/orc-barbarian.svg"
+  },
+  {
+    "id": "guilda-ladroes",
+    "name": "Ladrão de Guilda (Guilda dos Ladrões)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "ladino",
+    "minStage": 5,
+    "organizationType": "Guilda",
+    "role": "Infiltração Urbana / Furto e Armadilhas",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 22,
+      "combatWeapons": 4,
+      "combatTechniques": 4,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Ações Furtivas",
+        "Destravar Fechaduras",
+        "Escapar",
+        "Falsificação",
+        "Furtar Objetos",
+        "Jogatina",
+        "Manusear Armadilhas",
+        "Escalar Superfícies"
+      ],
+      "notes": "Testes nas habilidades especializadas da Guilda são resolvidos com 1 Nível de Dificuldade a menos (exceto Absurdo/Impossível)."
+    },
+    "startingEquipment": [
+      "Kit completo de arrombamento",
+      "Armadura de Couro Leve",
+      "Adaga",
+      "Corda de seda e gancho"
+    ],
+    "startingSkills": [
+      "Ações Furtivas",
+      "Destravar Fechaduras",
+      "Furtar Objetos",
+      "Manusear Armadilhas",
+      "Escapar",
+      "Falsificação",
+      "Jogatina",
+      "Escalar Superfícies"
+    ],
+    "startingCombatTechniques": [
+      "Esquiva Aprimorada",
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)"
+    ],
+    "startingSpells": [],
+    "description": "Mestre do submundo urbano filiado à Guilda dos Ladrões. Especializa-se em arrombamentos, furtos, evasão e desarme de armadilhas (reduzindo em 1 grau a dificuldade nas habilidades da Guilda) e recebe vantagens em Esquiva.",
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "guilda-assassinos",
+    "name": "Assassino (Guilda dos Assassinos)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "ladino",
+    "minStage": 5,
+    "organizationType": "Guilda",
+    "role": "Eliminação Furtiva / Venenos e Emboscada",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 22,
+      "combatWeapons": 4,
+      "combatTechniques": 4,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Ações Furtivas",
+        "Disfarce",
+        "Escapar",
+        "Manusear Armadilhas",
+        "Corrida",
+        "Botânica e Herborismo",
+        "Venefício"
+      ],
+      "notes": "Reduz 1 Nível de Dificuldade nas habilidades especializadas e recebe maestria na técnica Ataque de Surpresa."
+    },
+    "startingEquipment": [
+      "Par de Adagas / Punhais",
+      "Estojo de venenos e antídotos",
+      "Manto escuro",
+      "Kit de disfarces"
+    ],
+    "startingSkills": [
+      "Ações Furtivas",
+      "Disfarce",
+      "Escapar",
+      "Manusear Armadilhas",
+      "Corrida",
+      "Botânica e Herborismo",
+      "Venefício"
+    ],
+    "startingCombatTechniques": [
+      "Ataque de Surpresa",
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)",
+      "Saque Rápido"
+    ],
+    "startingSpells": [],
+    "description": "Agente silencioso da temida Guilda dos Assassinos. Combina disfarces impecáveis, venefício letal e domínio supremo da técnica Ataque de Surpresa para eliminar alvos antes que possam reagir.",
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "guilda-piratas",
+    "name": "Pirata / Corsário (Guilda dos Piratas)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "ladino",
+    "minStage": 5,
+    "organizationType": "Guilda",
+    "role": "Combate Naval / Acrobacia e Exploração Marítima",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": false,
+    "spellcastingAttribute": null,
+    "karmaRule": "Não-místico (Karma 0).",
+    "startingPoints": {
+      "skills": 22,
+      "combatWeapons": 4,
+      "combatTechniques": 4,
+      "magic": 0,
+      "magicFormula": "0"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Escapar",
+        "Jogatina",
+        "Náutica",
+        "Comércio e Finanças",
+        "Acrobacias",
+        "Escalar Superfícies",
+        "Malabarismo",
+        "Natação",
+        "Navegação"
+      ],
+      "notes": "Reduz 1 Nível de Dificuldade nas habilidades marítimas/acrobáticas da Guilda e recebe vantagens em Esquiva."
+    },
+    "startingEquipment": [
+      "Sabre ou Cimitarra",
+      "Adaga",
+      "Besta Leve ou Faca de Arremesso",
+      "Couro Leve",
+      "Bússola e corda náutica"
+    ],
+    "startingSkills": [
+      "Náutica",
+      "Navegação",
+      "Acrobacias",
+      "Natação",
+      "Escalar Superfícies",
+      "Escapar",
+      "Jogatina",
+      "Comércio e Finanças"
+    ],
+    "startingCombatTechniques": [
+      "Esquiva Aprimorada",
+      "Combate com Duas Armas (Ambidestria)",
+      "Armas de Corte Médio — Espadas (CmE)"
+    ],
+    "startingSpells": [],
+    "description": "Corsário ousado dos mares de Tagmar filiado à Guilda dos Piratas. Especialista em abordagens acrobáticas, navegação, comércio paralelo e esquiva ágil no convés em movimento.",
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "colegio-elemental",
+    "name": "Elementalista (Colégio Elemental)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "mago",
+    "minStage": 5,
+    "organizationType": "Colégio de Magia",
+    "role": "Evocação Elemental (Fogo, Água, Ar e Terra)",
+    "baseEH": 6,
+    "ehTable": {
+      "1-2": 2,
+      "3-5": 3,
+      "6-8": 4,
+      "9-10": 5
+    },
+    "ehPerStage": "1d10 (2/3/4/5) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "intelecto",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso privilegiado com custo reduzido às magias do Colégio Elemental.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 1,
+      "combatTechniques": 1,
+      "magic": 5,
+      "magicFormula": "(2 × INT) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Manobra"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Misticismo"
+      ]
+    },
+    "startingEquipment": [
+      "Focus Elemental (cajado rúnico ou gema)",
+      "Grimório do Colégio Elemental",
+      "Manto resistente"
+    ],
+    "startingSkills": [
+      "Misticismo",
+      "Sabedoria",
+      "Escrita"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Leve (Clavas e Bastões)"
+    ],
+    "startingSpells": [
+      "Bola de Fogo",
+      "Relâmpago",
+      "Muralha de Pedra",
+      "Rajada de Vento",
+      "Controle Elemental"
+    ],
+    "description": "Mago especializado nas forças primordiais deixadas pelos Titãs — Fogo, Água, Ar e Terra. Temido pela potência destrutiva de suas evocações, o Elementalista domina o campo de batalha com rajadas, barreiras e invocações elementais.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "colegio-ilusoes",
+    "name": "Ilusionista (Colégio das Ilusões)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "mago",
+    "minStage": 5,
+    "organizationType": "Colégio de Magia",
+    "role": "Controle Sensorial / Ilusões e Engano Arcano",
+    "baseEH": 6,
+    "ehTable": {
+      "1-2": 2,
+      "3-5": 3,
+      "6-8": 4,
+      "9-10": 5
+    },
+    "ehPerStage": "1d10 (2/3/4/5) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "intelecto",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso privilegiado às magias do Colégio das Ilusões.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 1,
+      "combatTechniques": 1,
+      "magic": 5,
+      "magicFormula": "(2 × INT) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Manobra"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Misticismo",
+        "Enganação"
+      ]
+    },
+    "startingEquipment": [
+      "Focus Prismático ou Anel Arcano",
+      "Grimório de Ilusões",
+      "Trajes elegantes"
+    ],
+    "startingSkills": [
+      "Misticismo",
+      "Enganação",
+      "Arte"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)"
+    ],
+    "startingSpells": [
+      "Invisibilidade",
+      "Imagem Espelhada",
+      "Ilusão Sensorial",
+      "Labirinto Ilusório"
+    ],
+    "description": "Mago bem-aceito nas cortes e cidades que manipula os resíduos sutis da criação divina para moldar luz, som, invisibilidade e projeções indistinguíveis da realidade.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "colegio-necromantico",
+    "name": "Necromante (Colégio Necromântico)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "mago",
+    "minStage": 5,
+    "organizationType": "Colégio de Magia",
+    "role": "Energias Negativas / Mortos-Vivos e Maldições",
+    "baseEH": 6,
+    "ehTable": {
+      "1-2": 2,
+      "3-5": 3,
+      "6-8": 4,
+      "9-10": 5
+    },
+    "ehPerStage": "1d10 (2/3/4/5) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "intelecto",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso privilegiado às magias proibidas do Colégio Necromântico.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 1,
+      "combatTechniques": 1,
+      "magic": 5,
+      "magicFormula": "(2 × INT) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Manobra"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Misticismo",
+        "Cirurgia e Anatomia"
+      ]
+    },
+    "startingEquipment": [
+      "Focus de Osso ou Obsidiana",
+      "Grimório Criptografado",
+      "Manto sombrio com capuz"
+    ],
+    "startingSkills": [
+      "Misticismo",
+      "Cirurgia e Anatomia",
+      "Sabedoria"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)"
+    ],
+    "startingSpells": [
+      "Toque Necrótico",
+      "Animar Mortos",
+      "Drenar Energia",
+      "Pavor"
+    ],
+    "description": "Estudioso clandestino das energias negativas e dos planos infernais. Severamente perseguido pelas ordens sacerdotais e reinos do Mundo Conhecido, o Necromante domina maldições, drenagem vital e o controle sobre mortos-vivos.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "colegio-naturalista",
+    "name": "Mago Naturalista (Colégio Naturalista)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "mago",
+    "minStage": 5,
+    "organizationType": "Colégio de Magia",
+    "role": "Magia da Natureza / Flora, Clima e Equilíbrio",
+    "baseEH": 6,
+    "ehTable": {
+      "1-2": 2,
+      "3-5": 3,
+      "6-8": 4,
+      "9-10": 5
+    },
+    "ehPerStage": "1d10 (2/3/4/5) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "intelecto",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso privilegiado às magias do Colégio Naturalista.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 1,
+      "combatTechniques": 1,
+      "magic": 5,
+      "magicFormula": "(2 × INT) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Manobra"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Misticismo",
+        "Botânica e Herborismo"
+      ]
+    },
+    "startingEquipment": [
+      "Cajado de Madeira Viva (Focus)",
+      "Bolsa de ervas e sementes",
+      "Manto verdejante"
+    ],
+    "startingSkills": [
+      "Misticismo",
+      "Botânica e Herborismo",
+      "Sobrevivência"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Leve (Clavas e Bastões)"
+    ],
+    "startingSpells": [
+      "Controlar Plantas",
+      "Falar com Animais",
+      "Névoa Natural",
+      "Pele de Casca"
+    ],
+    "description": "Mago em profunda sintonia com a flora, a fauna e os fenômenos climáticos — muito comum entre Elfos Dourados e comunidades silvestres. Canaliza o mana abundante da natureza de forma harmônica e protetora.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "colegio-alquimico",
+    "name": "Alquimista (Colégio Alquímico)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "mago",
+    "minStage": 5,
+    "organizationType": "Colégio de Magia",
+    "role": "Transmutação / Poções, Elixires e Artefatos",
+    "baseEH": 6,
+    "ehTable": {
+      "1-2": 2,
+      "3-5": 3,
+      "6-8": 4,
+      "9-10": 5
+    },
+    "ehPerStage": "1d10 (2/3/4/5) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "intelecto",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Especialista em infundir Karma em poções, elixires e itens mágicos.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 1,
+      "combatTechniques": 1,
+      "magic": 5,
+      "magicFormula": "(2 × INT) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Manobra"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Misticismo",
+        "Alquimia Prática"
+      ]
+    },
+    "startingEquipment": [
+      "Laboratório portátil de alquimia",
+      "Frascos de reagentes",
+      "Focus cristalino",
+      "Livro de fórmulas"
+    ],
+    "startingSkills": [
+      "Misticismo",
+      "Alquimia Prática",
+      "Botânica e Herborismo",
+      "Medicina"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Arremesso"
+    ],
+    "startingSpells": [
+      "Transmutação",
+      "Criar Poção",
+      "Ácido Arcano",
+      "Análise Alquímica"
+    ],
+    "description": "Cientista arcano do Colégio Alquímico dedicado à transmutação da matéria, síntese de poções, elixires lendários, antídotos, fogo alquímico e criação de homúnculos e objetos mágicos.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "colegio-conhecimento",
+    "name": "Mago do Conhecimento (Colégio do Conhecimento)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "mago",
+    "minStage": 5,
+    "organizationType": "Colégio de Magia",
+    "role": "Adivinhação / Metafísica / Proteção Arcana",
+    "baseEH": 6,
+    "ehTable": {
+      "1-2": 2,
+      "3-5": 3,
+      "6-8": 4,
+      "9-10": 5
+    },
+    "ehPerStage": "1d10 (2/3/4/5) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "intelecto",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso privilegiado às magias de adivinhação, idiomas e contramágica.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 1,
+      "combatTechniques": 1,
+      "magic": 5,
+      "magicFormula": "(2 × INT) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Manobra"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Misticismo",
+        "Sabedoria",
+        "História dos Reinos"
+      ]
+    },
+    "startingEquipment": [
+      "Focus de Cristal",
+      "Grimório Enciclopédico",
+      "Lente de aumento, pena e tintas raras"
+    ],
+    "startingSkills": [
+      "Misticismo",
+      "Sabedoria",
+      "História dos Reinos",
+      "Línguas",
+      "Astronomia e Astrologia"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Leve (Clavas e Bastões)"
+    ],
+    "startingSpells": [
+      "Identificar Objeto",
+      "Leitura Mental",
+      "Clarividência",
+      "Dissipar Magia"
+    ],
+    "description": "Erudito supremo do Colégio do Conhecimento, dedicado a desvendar segredos antigos, ler mentes, identificar relíquias, prever ameaças e neutralizar feitiços inimigos através da lógica arcana.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "colegio-sombrio",
+    "name": "Mago Sombrio (Colégio Sombrio)",
+    "source": "Aventuras nas Terras Selvagens",
+    "isSpecialization": true,
+    "baseProfessionId": "mago",
+    "minStage": 5,
+    "organizationType": "Colégio de Magia (Expansão)",
+    "role": "Magia das Sombras / Controle e Corrupção",
+    "baseEH": 6,
+    "ehTable": {
+      "1-2": 2,
+      "3-5": 3,
+      "6-8": 4,
+      "9-10": 5
+    },
+    "ehPerStage": "1d10 (2/3/4/5) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "intelecto",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Especializado em magias das sombras oriundas das Terras Selvagens e Caridrândia.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 1,
+      "combatTechniques": 1,
+      "magic": 5,
+      "magicFormula": "(2 × INT) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Manobra"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Misticismo",
+        "Ações Furtivas"
+      ]
+    },
+    "startingEquipment": [
+      "Focus de Ônix",
+      "Manto negro",
+      "Adaga ritual",
+      "Pergaminhos sombrios"
+    ],
+    "startingSkills": [
+      "Misticismo",
+      "Ações Furtivas",
+      "Intimidação"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)"
+    ],
+    "startingSpells": [
+      "Manto de Trevas",
+      "Lâmina Sombria",
+      "Passo nas Sombras",
+      "Cegueira"
+    ],
+    "description": "Especialização das Terras Selvagens intimamente ligada aos Elfos Sombrios da Caridrândia. Manipula escuridão sólida, teleporte entre sombras e encantamentos furtivos.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "trilha-cacadores",
+    "name": "Caçador (Trilha dos Caçadores)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "rastreador",
+    "minStage": 5,
+    "organizationType": "Trilha",
+    "role": "Batedor / Perseguição e Combate Preciso",
+    "baseEH": 15,
+    "ehTable": {
+      "1-2": 5,
+      "3-5": 6,
+      "6-8": 7,
+      "9-10": 8
+    },
+    "ehPerStage": "1d10 (5/6/7/8) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "aura",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Poderes naturais discretos de caça e combate.",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 5,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × AUR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Profissional"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Seguir Trilhas",
+        "Caça e Coleta"
+      ]
+    },
+    "startingEquipment": [
+      "Arco Composto",
+      "Espada Curta ou Faca de Caça",
+      "Armadura de Couro Rígido",
+      "Armadilhas de caça"
+    ],
+    "startingSkills": [
+      "Seguir Trilhas",
+      "Caça e Coleta",
+      "Usar os Sentidos",
+      "Sobrevivência"
+    ],
+    "startingCombatTechniques": [
+      "Arcos (Simples, Composto e Longo)",
+      "Tiro Preciso",
+      "Tiro em Movimento"
+    ],
+    "startingSpells": [
+      "Armadilha Natural",
+      "Arqueirismo",
+      "Caçada Marcada",
+      "Bote",
+      "Olhar do Predador",
+      "Faro"
+    ],
+    "description": "A mais belicosa das Trilhas de Rastreador — guias, batedores militares e caçadores de monstros. Aprimoram corpo e sentidos com magias discretas como Caçada Marcada, Bote, Olhar do Predador e Arqueirismo.",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "trilha-guardioes",
+    "name": "Guardião / Druida (Trilha dos Guardiões)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "rastreador",
+    "minStage": 5,
+    "organizationType": "Trilha",
+    "role": "Protetor das Florestas / Vínculo Animal e Defesa Natural",
+    "baseEH": 15,
+    "ehTable": {
+      "1-2": 5,
+      "3-5": 6,
+      "6-8": 7,
+      "9-10": 8
+    },
+    "ehPerStage": "1d10 (5/6/7/8) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "aura",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Comunhão profunda com flora, fauna e territórios sagrados.",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 5,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × AUR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Profissional"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Sobrevivência",
+        "Lidar com Animais",
+        "Botânica e Herborismo"
+      ]
+    },
+    "startingEquipment": [
+      "Arco Élfico ou Lança de Madeira",
+      "Couro Leve natural",
+      "Amuleto da Floresta (Focus)"
+    ],
+    "startingSkills": [
+      "Sobrevivência",
+      "Lidar com Animais",
+      "Botânica e Herborismo",
+      "Seguir Trilhas"
+    ],
+    "startingCombatTechniques": [
+      "Arcos (Simples, Composto e Longo)",
+      "Armas de Perfuração Média — Lanças (PmL)"
+    ],
+    "startingSpells": [
+      "Pele de Tronco",
+      "Convocar Animais",
+      "Vínculo Vital",
+      "Região Inviolável"
+    ],
+    "description": "Defensores fervorosos da natureza — em grande parte Elfos Florestais — que vivem em total simbiose com as matas. Invocam feras aliadas, enrijecem a própria pele como carvalho e protegem santuários naturais contra invasores.",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "trilha-exploradores",
+    "name": "Explorador (Trilha dos Exploradores)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "rastreador",
+    "minStage": 5,
+    "organizationType": "Trilha",
+    "role": "Desbravador / Cartografia, Mobilidade e Sobrevivência Extrema",
+    "baseEH": 15,
+    "ehTable": {
+      "1-2": 5,
+      "3-5": 6,
+      "6-8": 7,
+      "9-10": 8
+    },
+    "ehPerStage": "1d10 (5/6/7/8) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "aura",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Magias voltadas à orientação, deslocamento e leitura do ambiente.",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 5,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × AUR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Profissional"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Orientação em Ermos",
+        "Geografia de Tagmar",
+        "Navegação"
+      ]
+    },
+    "startingEquipment": [
+      "Equipamento de escalada e cartografia",
+      "Espada Curta e Arco",
+      "Armadura de Couro Rígido",
+      "Bússola"
+    ],
+    "startingSkills": [
+      "Orientação em Ermos",
+      "Geografia de Tagmar",
+      "Navegação",
+      "Escalar Superfícies",
+      "Sobrevivência"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Corte Médio — Espadas (CmE)",
+      "Arcos (Simples, Composto e Longo)"
+    ],
+    "startingSpells": [
+      "Deslocamento Natural",
+      "Conhecimento Natural",
+      "Visão de Cena",
+      "Vigília"
+    ],
+    "description": "Desbravadores incansáveis movidos pelo chamado do desconhecido. Dominam travessias impossíveis, sobrevivência em desertos, geleiras e pântanos, e magias de percepção geográfica e mobilidade.",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "confraria-artistas",
+    "name": "Artista (Confraria dos Artistas)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "bardo",
+    "minStage": 5,
+    "organizationType": "Confraria",
+    "role": "Encantamento Musical / Controle e Inspiração",
+    "baseEH": 9,
+    "ehTable": {
+      "1-2": 3,
+      "3-5": 4,
+      "6-8": 5,
+      "9-10": 6
+    },
+    "ehPerStage": "1d10 (3/4/5/6) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso pleno às Canções e Magias Perdidas dos Artistas.",
+    "startingPoints": {
+      "skills": 16,
+      "combatWeapons": 2,
+      "combatTechniques": 2,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Arte",
+        "Malabarismo"
+      ]
+    },
+    "startingEquipment": [
+      "Instrumento musical magistral (Focus)",
+      "Traje artístico",
+      "Florete ou Adaga"
+    ],
+    "startingSkills": [
+      "Arte",
+      "Malabarismo",
+      "Etiqueta",
+      "Empatia"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)",
+      "Esquiva Aprimorada"
+    ],
+    "startingSpells": [
+      "Canção do Alento",
+      "Canção do Sono",
+      "Canção do Tormento",
+      "Aura Ameaçadora",
+      "Fascínio",
+      "Tensão"
+    ],
+    "description": "Mestres devotados à busca da beleza transcendental por meio da música, dança, canto e teatro. Suas canções curam o ânimo dos aliados, mergulham inimigos em sono profundo ou semeiam tormento emocional.",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "confraria-arautos",
+    "name": "Arauto (Confraria dos Arautos)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "bardo",
+    "minStage": 5,
+    "organizationType": "Confraria",
+    "role": "Diplomacia / Manipulação Social e Liderança",
+    "baseEH": 9,
+    "ehTable": {
+      "1-2": 3,
+      "3-5": 4,
+      "6-8": 5,
+      "9-10": 6
+    },
+    "ehPerStage": "1d10 (3/4/5/6) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Magias de influência psicológica, retórica e comando.",
+    "startingPoints": {
+      "skills": 16,
+      "combatWeapons": 2,
+      "combatTechniques": 2,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Oratória",
+        "Diplomacia dos Reinos",
+        "Liderança"
+      ]
+    },
+    "startingEquipment": [
+      "Trombeta ou Alaúde Real (Focus)",
+      "Insígnia diplomática",
+      "Sabre",
+      "Couro Leve"
+    ],
+    "startingSkills": [
+      "Oratória",
+      "Diplomacia dos Reinos",
+      "Liderança",
+      "Etiqueta",
+      "Sedução e Charme"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)",
+      "Finta Tática"
+    ],
+    "startingSpells": [
+      "Postura Imponente",
+      "Engodo",
+      "Escárnio",
+      "Reminiscência",
+      "Manipular Confiança"
+    ],
+    "description": "Oradores, emissários e agitadores que estudam a alma humana através da Arte. Capazes de erguer o moral de exércitos inteiros ou desmantelar conspirações políticas com um único discurso.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "confraria-eruditos",
+    "name": "Erudito (Confraria dos Eruditos)",
+    "source": "Livro de Regras 3.0",
+    "isSpecialization": true,
+    "baseProfessionId": "bardo",
+    "minStage": 5,
+    "organizationType": "Confraria",
+    "role": "Sábio / História, Mistérios e Contramágica",
+    "baseEH": 9,
+    "ehTable": {
+      "1-2": 3,
+      "3-5": 4,
+      "6-8": 5,
+      "9-10": 6
+    },
+    "ehPerStage": "1d10 (3/4/5/6) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Magias de investigação, leitura oculta e quebra de encantos.",
+    "startingPoints": {
+      "skills": 16,
+      "combatWeapons": 2,
+      "combatTechniques": 2,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Sabedoria",
+        "História dos Reinos",
+        "Línguas"
+      ]
+    },
+    "startingEquipment": [
+      "Diário de Crônicas (Focus)",
+      "Pena, tintas e mapas",
+      "Bordão ou Adaga",
+      "Manto de viajante"
+    ],
+    "startingSkills": [
+      "Sabedoria",
+      "História dos Reinos",
+      "Geografia de Tagmar",
+      "Línguas",
+      "Escrita"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Leve (Clavas e Bastões)"
+    ],
+    "startingSpells": [
+      "Localizar Objeto",
+      "Leitura Espelhada",
+      "Desatinar",
+      "Rompimento de Harmonia"
+    ],
+    "description": "Os mais raros entre os bardos: sábios itinerantes que enxergam a Arte como chave para compreender civilizações, decifrar enigmas ancestrais e romper harmonias mágicas adversárias.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "bardo-guerreiro",
+    "name": "Bardo Guerreiro (Escaldo de Batalha)",
+    "source": "Guia de Especializações / Expansões",
+    "isSpecialization": true,
+    "baseProfessionId": "bardo",
+    "minStage": 5,
+    "organizationType": "Confraria (Expansão)",
+    "role": "Combate Inspirador / Cantos de Guerra",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Combina hinos bélicos com combate armado.",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 4,
+      "combatTechniques": 4,
+      "magic": 4,
+      "magicFormula": "(2 × CAR) + 3"
+    },
+    "skillCosts": {
+      "penalizedGroups": [],
+      "penalizedExtraCost": 0,
+      "specializedSkills": [
+        "Arte",
+        "Liderança"
+      ]
+    },
+    "startingEquipment": [
+      "Espada Longa ou Machado",
+      "Escudo Pequeno",
+      "Cota de Malha Parcial",
+      "Tambor ou Trompa de Guerra (Focus)"
+    ],
+    "startingSkills": [
+      "Arte",
+      "Liderança",
+      "Intimidação",
+      "História dos Reinos"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Corte Médio — Espadas (CmE)",
+      "Uso de Escudo",
+      "Aparar"
+    ],
+    "startingSpells": [
+      "Canção do Alento",
+      "Aura Ameaçadora",
+      "Postura Imponente",
+      "Tensão"
+    ],
+    "description": "Escaldo e cantor de sagas que marcha na vanguarda ao lado dos guerreiros, entoando cantos de guerra que fortalecem a bravura dos companheiros e abalam a moral dos inimigos.",
+    "suggestedPortrait": "./assets/portraits/human-warrior.svg"
+  },
+  {
+    "id": "ordem-crisagom",
+    "name": "Paladino / Ordem de Crisagom",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Crisagom",
+    "domains": [
+      "Honra",
+      "Justiça",
+      "Estratégia",
+      "Bravura"
+    ],
+    "role": "Paladino / Campeão Sagrado da Justiça",
+    "baseEH": 15,
+    "ehTable": {
+      "1-2": 5,
+      "3-5": 6,
+      "6-8": 7,
+      "9-10": 8
+    },
+    "ehPerStage": "1d10 (5/6/7/8) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso às magias exclusivas da Ordem de Crisagom.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 5,
+      "combatTechniques": 5,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Liderança",
+        "Heráldica e Nobreza"
+      ]
+    },
+    "startingEquipment": [
+      "Espada Longa",
+      "Escudo Grande com brasão de Crisagom",
+      "Cota de Malha Completa",
+      "Símbolo Sagrado (Focus)"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Liderança",
+      "Heráldica e Nobreza",
+      "Montar Animais"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Corte Médio — Espadas (CmE)",
+      "Uso de Escudo",
+      "Golpe Poderoso",
+      "Combate Defensivo"
+    ],
+    "startingSpells": [
+      "Aura de Coragem",
+      "Lâmina Sagrada",
+      "Curas Heróicas",
+      "Detectar Maldade"
+    ],
+    "description": "Cavaleiros sagrados e juízes implacáveis dedicados a Crisagom, deus da honra, justiça, estratégia e bravura (filho de Blator). Atuam como paladinos blindados que unem disciplina militar e milagres de proteção.",
+    "suggestedPortrait": "./assets/portraits/dwarf-paladin.svg"
+  },
+  {
+    "id": "ordem-blator",
+    "name": "Clérigo Guerreiro / Ordem de Blator",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Blator",
+    "domains": [
+      "Guerra",
+      "Conflito",
+      "Força",
+      "Anões"
+    ],
+    "role": "Clérigo de Guerra / Vanguarda Divina",
+    "baseEH": 15,
+    "ehTable": {
+      "1-2": 5,
+      "3-5": 6,
+      "6-8": 7,
+      "9-10": 8
+    },
+    "ehPerStage": "1d10 (5/6/7/8) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso às magias bélicas da Ordem de Blator.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 5,
+      "combatTechniques": 5,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Intimidação"
+      ]
+    },
+    "startingEquipment": [
+      "Martelo de Guerra ou Machado de Batalha",
+      "Escudo Grande",
+      "Couraça Metálica",
+      "Símbolo de Blator (Focus)"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Intimidação",
+      "Aplicar Esforço"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Média (Maças e Martelos)",
+      "Armas de Corte Médio — Machados (CmM)",
+      "Golpe Poderoso"
+    ],
+    "startingSpells": [
+      "Força de Blator",
+      "Frenesi de Batalha",
+      "Armadura Divina",
+      "Curas Físicas"
+    ],
+    "description": "Sacerdotes guerreiros de Blator, deus primordial da guerra e criador dos anões. Encaram a batalha como altar sagrado, fortalecendo armas e corpos com bênçãos marciais.",
+    "suggestedPortrait": "./assets/portraits/dwarf-paladin.svg"
+  },
+  {
+    "id": "ordem-crezir",
+    "name": "Ordem de Crezir",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Crezir",
+    "domains": [
+      "Fúria",
+      "Combate Visceral",
+      "Caos contra Caos"
+    ],
+    "role": "Sacerdote da Fúria / Combate Ofensivo",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Milagres de fúria, coragem selvagem e destruição.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 4,
+      "combatTechniques": 5,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Intimidação"
+      ]
+    },
+    "startingEquipment": [
+      "Machado ou Espada Larga",
+      "Couro Rígido",
+      "Símbolo de Crezir (Focus)"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Intimidação",
+      "Aplicar Esforço"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Corte Médio — Machados (CmM)",
+      "Carga (Investida)",
+      "Golpe Poderoso"
+    ],
+    "startingSpells": [
+      "Fúria Divina",
+      "Golpe Devastador",
+      "Ignorar Dor",
+      "Curas Heróicas"
+    ],
+    "description": "Devotos fervorosos de Crezir, filha de Blator e deusa da fúria em combate, que combatem o caos com ferocidade igualmente avassaladora.",
+    "suggestedPortrait": "./assets/portraits/orc-barbarian.svg"
+  },
+  {
+    "id": "ordem-palier",
+    "name": "Místico / Ordem de Palier",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Palier",
+    "domains": [
+      "Conhecimento",
+      "Magia",
+      "Sabedoria",
+      "Elfos"
+    ],
+    "role": "Sacerdote Erudito / Místico Divino",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Ponte sagrada entre fé divina e sabedoria arcana.",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 3,
+      "combatTechniques": 3,
+      "magic": 6,
+      "magicFormula": "(2 × CAR) + 6"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Misticismo",
+        "Sabedoria"
+      ]
+    },
+    "startingEquipment": [
+      "Cajado Sagrado de Palier (Focus)",
+      "Grimório Litúrgico",
+      "Manto azul e dourado"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Misticismo",
+      "Sabedoria",
+      "Escrita",
+      "Línguas"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Leve (Clavas e Bastões)"
+    ],
+    "startingSpells": [
+      "Luz Divina",
+      "Detectar Magia",
+      "Iluminação Mental",
+      "Escudo da Fé"
+    ],
+    "description": "Sacerdotes iluminados de Palier, deus do conhecimento, da magia e criador dos elfos. Guardam bibliotecas sagradas, estudam os fluxos do mana e combinam milagres com erudição arcana.",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "ordem-selimom",
+    "name": "Ordem de Selimom",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Selimom",
+    "domains": [
+      "Paz",
+      "Amor",
+      "Cura",
+      "Firmeza de Espírito"
+    ],
+    "role": "Curandeiro Supremo / Pacificador e Protetor",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Acesso privilegiado às magias mais poderosas de cura e paz.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 2,
+      "combatTechniques": 3,
+      "magic": 6,
+      "magicFormula": "(2 × CAR) + 6"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Medicina",
+        "Empatia"
+      ]
+    },
+    "startingEquipment": [
+      "Símbolo de Selimom (Focus)",
+      "Estojo médico e ervas",
+      "Bordão",
+      "Túnica branca"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Medicina",
+      "Empatia",
+      "Diplomacia dos Reinos"
+    ],
+    "startingCombatTechniques": [
+      "Combate Não Letal",
+      "Combate Defensivo"
+    ],
+    "startingSpells": [
+      "Curas Físicas",
+      "Curas Heróicas",
+      "Regeneração",
+      "Acalmar Emoções",
+      "Santuário"
+    ],
+    "description": "Emissários da paz, compaixão e cura devotados a Selimom. Possuem os mais potentes milagres restauradores de EF e EH de toda Tagmar e dedicam-se a aliviar o sofrimento nos reinos marcados pela guerra.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "ordem-maira",
+    "name": "Ordem de Maíra",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Maíra (Mon, Vet e Nil)",
+    "domains": [
+      "Natureza",
+      "Montanhas (Mon)",
+      "Florestas (Vet)",
+      "Animais (Nil)"
+    ],
+    "role": "Sacerdote da Natureza / Harmonia Natural",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Canaliza milagres sob os aspectos Mon (rocha), Vet (flora) ou Nil (fauna).",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 3,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Sobrevivência",
+        "Botânica e Herborismo"
+      ]
+    },
+    "startingEquipment": [
+      "Cajado de madeira e pedra (Focus)",
+      "Couro Leve",
+      "Bolsa de ervas curativas"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Sobrevivência",
+      "Botânica e Herborismo",
+      "Lidar com Animais"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Leve (Clavas e Bastões)",
+      "Armas de Perfuração Média — Lanças (PmL)"
+    ],
+    "startingSpells": [
+      "Curas Físicas",
+      "Comunhão Natural",
+      "Moldar Rocha",
+      "Convocar Fera"
+    ],
+    "description": "Guardiões espirituais de Maíra, mediadora das forças naturais em seus três aspectos: Mon (minerais e montanhas), Vet (plantas e matas) e Nil (animais).",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "ordem-ganis",
+    "name": "Ordem de Ganis",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Ganis",
+    "domains": [
+      "Mares",
+      "Águas",
+      "Tempestades",
+      "Navegação"
+    ],
+    "role": "Sacerdote das Águas / Controle Climático e Naval",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Milagres ligados às águas, marés e tempestades.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 3,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Náutica",
+        "Natação"
+      ]
+    },
+    "startingEquipment": [
+      "Tridente ou Lança",
+      "Símbolo de Concha/Coral (Focus)",
+      "Capa impermeável"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Náutica",
+      "Natação",
+      "Navegação"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Média — Lanças (PmL)"
+    ],
+    "startingSpells": [
+      "Controlar Águas",
+      "Respiração Aquática",
+      "Vento Favorável",
+      "Onda de Choque"
+    ],
+    "description": "Sacerdotes navegantes da imprevisível deusa Ganis, senhora dos oceanos, rios e tempestades. Abençoam travessias marítimas e invocam a fúria das águas contra inimigos.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "ordem-parom",
+    "name": "Ordem de Parom",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Parom",
+    "domains": [
+      "Forja",
+      "Artesanato",
+      "Metais",
+      "Trabalho Manual"
+    ],
+    "role": "Sacerdote Artífice / Encantamento de Armas e Armaduras",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Milagres de forja, reparo e bênção de equipamentos.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 3,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Trabalho em Metal",
+        "Engenharia"
+      ]
+    },
+    "startingEquipment": [
+      "Martelo de Forja/Guerra (Focus)",
+      "Avental de Couro Rígido",
+      "Ferramentas de ferreiro"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Trabalho em Metal",
+      "Engenharia",
+      "Trabalhos Manuais"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Média (Maças e Martelos)",
+      "Uso de Escudo"
+    ],
+    "startingSpells": [
+      "Abençoar Arma",
+      "Restaurar Armadura",
+      "Moldar Metal",
+      "Resistência ao Fogo"
+    ],
+    "description": "Artífices devotos de Parom (filho de Maíra e Palier), muito reverenciados entre anões e ferreiros humanos. Unem fé e bigorna para reparar absorção de armaduras e consagrar armas em pleno combate.",
+    "suggestedPortrait": "./assets/portraits/dwarf-paladin.svg"
+  },
+  {
+    "id": "ordem-lena",
+    "name": "Ordem de Lena",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Lena",
+    "domains": [
+      "Perfeição no Trabalho",
+      "Prazer",
+      "Vitalidade",
+      "Harmonia"
+    ],
+    "role": "Suporte Social / Inspiração e Excelência",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Bênçãos de maestria, charme e vigor.",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 3,
+      "combatTechniques": 3,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Arte",
+        "Sedução e Charme"
+      ]
+    },
+    "startingEquipment": [
+      "Medalhão dourado de Lena (Focus)",
+      "Vestes refinadas",
+      "Adaga ornamentada"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Arte",
+      "Sedução e Charme",
+      "Etiqueta",
+      "Empatia"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)"
+    ],
+    "startingSpells": [
+      "Toque de Perfeição",
+      "Encanto Pessoal",
+      "Vigor Renovado",
+      "Curas Heróicas"
+    ],
+    "description": "Devotos de Lena (filha de Selimom e Crezir), deusa do prazer e do perfeccionismo nas obras bem feitas. Inspiram excelência técnica e vitalidade em seus aliados.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "ordem-cambu",
+    "name": "Ordem de Cambu",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Cambu",
+    "domains": [
+      "Comércio",
+      "Diplomacia",
+      "Viagens",
+      "Relações Humanas"
+    ],
+    "role": "Diplomata Sagrado / Negociação e Proteção de Caravanas",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Milagres de sorte, idiomas, negociação e proteção em estradas.",
+    "startingPoints": {
+      "skills": 14,
+      "combatWeapons": 3,
+      "combatTechniques": 3,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Negociação",
+        "Comércio e Finanças"
+      ]
+    },
+    "startingEquipment": [
+      "Balança de prata de Cambu (Focus)",
+      "Espada Curta",
+      "Couro Leve",
+      "Bolsa reforçada"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Negociação",
+      "Comércio e Finanças",
+      "Diplomacia dos Reinos",
+      "Línguas"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Corte Médio — Espadas (CmE)",
+      "Combate Defensivo"
+    ],
+    "startingSpells": [
+      "Compreender Idiomas",
+      "Palavra de Verdade",
+      "Bênção do Viajante",
+      "Sorte de Cambu"
+    ],
+    "description": "Emissários e mercadores abençoados de Cambu, deus do comércio e da diplomacia. Mediam tratados entre reinos e protegem rotas comerciais com milagres de verdade e fortuna.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "ordem-cruine",
+    "name": "Ordem de Cruine",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Cruine",
+    "domains": [
+      "Morte",
+      "Almas",
+      "Reencarnação",
+      "Combate a Mortos-Vivos"
+    ],
+    "role": "Guardião das Almas / Exorcista",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Milagres sagrados de repouso dos mortos e expulsão de mortos-vivos.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 3,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Medicina",
+        "Sensitividade"
+      ]
+    },
+    "startingEquipment": [
+      "Símbolo de Cruine em prata/ferro (Focus)",
+      "Maça",
+      "Manto cinzento",
+      "Água abençoada"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Sensitividade",
+      "Medicina",
+      "Sabedoria"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Média (Maças e Martelos)",
+      "Uso de Escudo"
+    ],
+    "startingSpells": [
+      "Expulsar Mortos-Vivos",
+      "Falar com os Mortos",
+      "Proteção Contra Trevas",
+      "Paz da Alma"
+    ],
+    "description": "Guardiões solenes de Cruine, protetor das almas e regente do ciclo da reencarnação. Inimigos ferrenhos dos Necromantes, protegem os vivos e garantem a passagem justa dos mortos.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "ordem-plandis",
+    "name": "Ordem de Plandis",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Plandis",
+    "domains": [
+      "Paixão Cega",
+      "Loucura",
+      "Impulso",
+      "Descontrole"
+    ],
+    "role": "Controle Mental / Caos Emocional",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Milagres de confusão mental, paixão avassaladora e coragem insana.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 3,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Oratória"
+      ]
+    },
+    "startingEquipment": [
+      "Amuleto espiralado de Plandis (Focus)",
+      "Arma leve",
+      "Manto vibrante"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Oratória",
+      "Empatia",
+      "Enganação"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Perfuração Leve (Adagas, Punhais e Floretes)",
+      "Finta Tática"
+    ],
+    "startingSpells": [
+      "Confusão",
+      "Paixão Cega",
+      "Medo Incontrolável",
+      "Impulso Irrefreável"
+    ],
+    "description": "Sacerdotes imprevisíveis de Plandis, divindade da paixão cega e da loucura. Desestabilizam inimigos com ondas de confusão e êxtase enquanto encorajam feitos temerários.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  },
+  {
+    "id": "ordem-sevides",
+    "name": "Ordem de Sevides (inclui Liris e Quiris)",
+    "source": "Livro das Ordens Sacerdotais",
+    "isSpecialization": true,
+    "baseProfessionId": "sacerdote",
+    "minStage": 5,
+    "organizationType": "Ordem Sacerdotal",
+    "deity": "Sevides (e divindades menores Liris e Quiris)",
+    "domains": [
+      "Fertilidade",
+      "Agricultura",
+      "Colheita",
+      "Terra e Comunidade"
+    ],
+    "role": "Protetor Rural / Cura, Abundância e Resistência",
+    "baseEH": 12,
+    "ehTable": {
+      "1-2": 4,
+      "3-5": 5,
+      "6-8": 6,
+      "9-10": 7
+    },
+    "ehPerStage": "1d10 (4/5/6/7) + Físico",
+    "isMystic": true,
+    "spellcastingAttribute": "carisma",
+    "karmaRule": "Karma = (AUR + 1) × (Estágio + 1). Milagres de fertilidade, fartura, cura e purificação.",
+    "startingPoints": {
+      "skills": 12,
+      "combatWeapons": 3,
+      "combatTechniques": 4,
+      "magic": 5,
+      "magicFormula": "(2 × CAR) + 5"
+    },
+    "skillCosts": {
+      "penalizedGroups": [
+        "Subterfúgio"
+      ],
+      "penalizedExtraCost": 1,
+      "specializedSkills": [
+        "Religião",
+        "Agricultura",
+        "Medicina"
+      ]
+    },
+    "startingEquipment": [
+      "Foice ritual ou Bordão",
+      "Símbolo de Espiga de Sevides (Focus)",
+      "Sementes abençoadas"
+    ],
+    "startingSkills": [
+      "Religião",
+      "Agricultura",
+      "Medicina",
+      "Sobrevivência"
+    ],
+    "startingCombatTechniques": [
+      "Armas de Contusão Leve (Clavas e Bastões)",
+      "Armas de Corte Leve (Lâminas Pequenas)"
+    ],
+    "startingSpells": [
+      "Purificar Alimentos",
+      "Curas Físicas",
+      "Colheita Abençoada",
+      "Neutralizar Veneno"
+    ],
+    "description": "Sacerdotes justos e acolhedores de Sevides, deus da terra fértil e da agricultura — ordem que também acolhe oficialmente os devotos dos deuses menores Liris e Quiris.",
+    "suggestedPortrait": "./assets/portraits/cleric-healer.svg"
+  }
+]

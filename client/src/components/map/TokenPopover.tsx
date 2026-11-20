@@ -13,6 +13,7 @@ import {
 import type { ActiveCondition, Character, Token } from '@systems/types';
 import { useCampaignStore } from '@/lib/store';
 import conditionsData from '@data/mighty-blade/conditions.json';
+import tagmarConditionsData from '@data/tagmar/conditions.json';
 
 interface ConditionCatalogItem {
   id: string;
@@ -24,7 +25,8 @@ interface ConditionCatalogItem {
   description: string;
 }
 
-const CONDITION_CATALOG = conditionsData as ConditionCatalogItem[];
+const MB_CONDITION_CATALOG = conditionsData as ConditionCatalogItem[];
+const TAGMAR_CONDITION_CATALOG = tagmarConditionsData as ConditionCatalogItem[];
 
 export interface TokenPopoverProps {
   sceneId: string;
@@ -50,6 +52,7 @@ export const TokenPopover: React.FC<TokenPopoverProps> = ({
   onOpenCharacterSheet,
 }) => {
   const {
+    campaign,
     updateToken,
     deleteToken,
     patchCharacter,
@@ -60,9 +63,12 @@ export const TokenPopover: React.FC<TokenPopoverProps> = ({
 
   const [showConditions, setShowConditions] = useState(false);
 
-  // Sync live PV/PM from linked character if present, falling back to token fields
-  const pvBar = character?.resources?.pv;
-  const pmBar = character?.resources?.pm;
+  const isTagmar = character?.systemId === 'tagmar-3' || campaign?.systemId === 'tagmar-3';
+  const conditionCatalog = isTagmar ? TAGMAR_CONDITION_CATALOG : MB_CONDITION_CATALOG;
+
+  // Sync live EH/EF (Tagmar) or PV/PM (Mighty Blade) from linked character
+  const pvBar = isTagmar ? character?.resources?.eh : (character?.resources?.pv ?? character?.resources?.hp);
+  const pmBar = isTagmar ? character?.resources?.ef : (character?.resources?.pm ?? character?.resources?.mp);
 
   const hp = pvBar ? pvBar.current : token.hp;
   const hpMax = pvBar ? pvBar.max : token.hpMax;
@@ -91,23 +97,26 @@ export const TokenPopover: React.FC<TokenPopoverProps> = ({
       const next = Math.max(0, Math.min(max + 50, cur + delta));
       updateToken(sceneId, token.id, { hp: next, hpMax: max, showBars: true });
       if (character) {
+        const resKey = isTagmar ? 'eh' : character.resources?.pv ? 'pv' : 'hp';
         patchCharacter(character.id, {
           resources: {
             ...character.resources,
-            pv: { ...(character.resources.pv ?? { current: cur, max }), current: next, max },
+            [resKey]: { ...(character.resources[resKey] ?? { current: cur, max }), current: next, max },
           },
         });
       }
     } else {
       const cur = mp ?? 0;
       const max = mpMax ?? Math.max(cur, 1);
-      const next = Math.max(0, Math.min(max + 50, cur + delta));
+      const minBound = isTagmar ? -20 : 0;
+      const next = Math.max(minBound, Math.min(max + 50, cur + delta));
       updateToken(sceneId, token.id, { mp: next, mpMax: max, showBars: true });
       if (character) {
+        const resKey = isTagmar ? 'ef' : character.resources?.pm ? 'pm' : 'mp';
         patchCharacter(character.id, {
           resources: {
             ...character.resources,
-            pm: { ...(character.resources.pm ?? { current: cur, max }), current: next, max },
+            [resKey]: { ...(character.resources[resKey] ?? { current: cur, max }), current: next, max },
           },
         });
       }
@@ -333,8 +342,8 @@ export const TokenPopover: React.FC<TokenPopoverProps> = ({
       {(hp !== undefined || hpMax !== undefined || canEditStats) && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 12 }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, color: 'var(--emerald-400)' }}>
-              <Heart size={13} /> PV
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, color: isTagmar ? 'var(--gold-400)' : 'var(--emerald-400)' }}>
+              <Heart size={13} /> {isTagmar ? 'EH' : 'PV'}
             </span>
             <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-primary)' }}>
               {hp ?? 0} / {hpMax ?? 0}
@@ -389,8 +398,8 @@ export const TokenPopover: React.FC<TokenPopoverProps> = ({
       {(mp !== undefined || mpMax !== undefined) && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 12 }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, color: 'var(--sapphire-400)' }}>
-              <Sparkles size={13} /> PM
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, color: isTagmar ? 'var(--crimson-400)' : 'var(--sapphire-400)' }}>
+              <Sparkles size={13} /> {isTagmar ? 'EF' : 'PM'}
             </span>
             <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-primary)' }}>
               {mp ?? 0} / {mpMax ?? 0}
@@ -462,7 +471,7 @@ export const TokenPopover: React.FC<TokenPopoverProps> = ({
         {activeConditionIds.size > 0 && !showConditions && (
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
             {Array.from(activeConditionIds).map((id) => {
-              const info = CONDITION_CATALOG.find((c) => c.id === id);
+              const info = conditionCatalog.find((c) => c.id === id);
               return (
                 <span
                   key={id}
@@ -504,7 +513,7 @@ export const TokenPopover: React.FC<TokenPopoverProps> = ({
               border: '1px solid var(--border-subtle)',
             }}
           >
-            {CONDITION_CATALOG.map((cond) => {
+            {conditionCatalog.map((cond) => {
               const active = activeConditionIds.has(cond.id);
               return (
                 <button

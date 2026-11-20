@@ -32,7 +32,7 @@ const DEFAULT_CONFIG: ServerPublicConfig = {
     { urls: 'stun:stun.l.google.com:19302' },
     { urls: 'stun:stun1.l.google.com:19302' },
   ],
-  systems: ['mighty-blade-3e', 'generic-rpg'],
+  systems: ['mighty-blade-3e', 'tagmar-3', 'generic-rpg'],
 };
 
 export function App() {

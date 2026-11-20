@@ -124,7 +124,7 @@ func (s *Server) handlePublicConfig(w http.ResponseWriter, _ *http.Request) {
 		"authMode":         s.Config.AuthMode,
 		"localAuthEnabled": s.Config.LocalAuthEnabled(),
 		"iceServers":       s.Config.ICEServers,
-		"systems":          []string{"mighty-blade-3e", "generic-rpg"},
+		"systems":          []string{"mighty-blade-3e", "tagmar-3", "generic-rpg"},
 		"aiImageEnabled":   s.Config.GeminiAPIKey != "",
 	})
 }

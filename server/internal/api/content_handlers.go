@@ -2,6 +2,7 @@ package api
 
 import (
 	"bytes"
+	"embed"
 	"encoding/base64"
 	"encoding/json"
 	"errors"
@@ -24,6 +25,9 @@ const MaxUploadBytes = 5 * 1024 * 1024 // 5 MB
 var (
 	mightyBladeCategories = []string{
 		"rules", "races", "classes", "conditions", "abilities", "spells", "equipment", "bestiary",
+	}
+	tagmarCategories = []string{
+		"rules", "races", "professions", "conditions", "skills", "spells", "equipment", "bestiary",
 	}
 	unsafeSVGPattern = regexp.MustCompile(`(?is)<\s*script|on[a-z]+\s*=|javascript:|<\s*foreignObject`)
 )
@@ -417,15 +421,41 @@ func (s *Server) handleDeleteVoiceChannel(w http.ResponseWriter, r *http.Request
 
 // --- Compendium ---
 
+type compendiumSpec struct {
+	dir        string
+	fs         embed.FS
+	categories []string
+}
+
+func resolveCompendiumSpec(sysID string) (compendiumSpec, bool) {
+	switch strings.ToLower(strings.TrimSpace(sysID)) {
+	case "mighty-blade-3e", "mighty-blade":
+		return compendiumSpec{
+			dir:        "mighty-blade",
+			fs:         data.MightyBladeFS,
+			categories: mightyBladeCategories,
+		}, true
+	case "tagmar-3", "tagmar", "tagmar-3e", "tagmar-3.0":
+		return compendiumSpec{
+			dir:        "tagmar",
+			fs:         data.TagmarFS,
+			categories: tagmarCategories,
+		}, true
+	default:
+		return compendiumSpec{}, false
+	}
+}
+
 func (s *Server) handleCompendiumAll(w http.ResponseWriter, r *http.Request) {
 	sysID := r.PathValue("systemId")
-	if sysID != "mighty-blade-3e" && sysID != "mighty-blade" {
+	spec, ok := resolveCompendiumSpec(sysID)
+	if !ok {
 		writeError(w, http.StatusNotFound, "not_found", "Compêndio não encontrado para o sistema: "+sysID)
 		return
 	}
-	out := make(map[string]json.RawMessage, len(mightyBladeCategories))
-	for _, cat := range mightyBladeCategories {
-		if raw, err := s.readCompendiumFile(cat + ".json"); err == nil {
+	out := make(map[string]json.RawMessage, len(spec.categories))
+	for _, cat := range spec.categories {
+		if raw, err := s.readCompendiumFile(spec.dir, spec.fs, cat+".json"); err == nil {
 			out[cat] = json.RawMessage(raw)
 		}
 	}
@@ -435,12 +465,13 @@ func (s *Server) handleCompendiumAll(w http.ResponseWriter, r *http.Request) {
 func (s *Server) handleCompendiumCategory(w http.ResponseWriter, r *http.Request) {
 	sysID := r.PathValue("systemId")
 	cat := strings.TrimSuffix(strings.TrimSpace(r.PathValue("category")), ".json")
-	if sysID != "mighty-blade-3e" && sysID != "mighty-blade" {
+	spec, ok := resolveCompendiumSpec(sysID)
+	if !ok {
 		writeError(w, http.StatusNotFound, "not_found", "Compêndio não encontrado")
 		return
 	}
 	allowed := false
-	for _, c := range mightyBladeCategories {
+	for _, c := range spec.categories {
 		if c == cat {
 			allowed = true
 			break
@@ -450,7 +481,7 @@ func (s *Server) handleCompendiumCategory(w http.ResponseWriter, r *http.Request
 		writeError(w, http.StatusNotFound, "not_found", "Categoria não encontrada: "+cat)
 		return
 	}
-	raw, err := s.readCompendiumFile(cat + ".json")
+	raw, err := s.readCompendiumFile(spec.dir, spec.fs, cat+".json")
 	if err != nil {
 		writeError(w, http.StatusNotFound, "not_found", "Arquivo de compêndio indisponível")
 		return
@@ -460,15 +491,15 @@ func (s *Server) handleCompendiumCategory(w http.ResponseWriter, r *http.Request
 	_, _ = w.Write(raw)
 }
 
-func (s *Server) readCompendiumFile(filename string) ([]byte, error) {
+func (s *Server) readCompendiumFile(dir string, fs embed.FS, filename string) ([]byte, error) {
 	// Prefer configurable disk DATA_DIR if present, fall back to embedded FS.
 	if s.Config.DataDir != "" {
-		diskPath := filepath.Join(s.Config.DataDir, "mighty-blade", filename)
+		diskPath := filepath.Join(s.Config.DataDir, dir, filename)
 		if b, err := os.ReadFile(diskPath); err == nil {
 			return b, nil
 		}
 	}
-	return data.MightyBladeFS.ReadFile("mighty-blade/" + filename)
+	return fs.ReadFile(dir + "/" + filename)
 }
 
 // --- Image Upload ---

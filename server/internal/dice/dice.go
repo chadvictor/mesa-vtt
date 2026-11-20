@@ -22,13 +22,16 @@ const (
 	MaxFormulaLen = 128
 )
 
-// Options customizes roll evaluation metadata (label, difficulty/DC, target defense).
+// Options customizes roll evaluation metadata (system, label, difficulty/DC, target defense, Tagmar resolution/resistance).
 type Options struct {
-	Label         string
-	Difficulty    *int
-	TargetDefense *int
-	TargetName    string
-	SystemMeta    map[string]any
+	SystemID         string
+	Label            string
+	Difficulty       *int
+	TargetDefense    *int
+	TargetName       string
+	SystemMeta       map[string]any
+	TagmarColumn     *int
+	TagmarResistance *model.TagmarResistanceRequest
 }
 
 type term struct {
@@ -133,9 +136,15 @@ func RollWithRoller(formula string, opts Options, roller DieRoller, seedGen Seed
 		label = "Rolagem " + raw
 	}
 
-	outcome := evaluateOutcome(rolled, total, opts)
+	var sysMeta map[string]any
+	if len(opts.SystemMeta) > 0 {
+		sysMeta = make(map[string]any, len(opts.SystemMeta)+4)
+		for k, v := range opts.SystemMeta {
+			sysMeta[k] = v
+		}
+	}
 
-	return model.RollResult{
+	res := model.RollResult{
 		RollID:     newRollID(),
 		Formula:    raw,
 		Label:      label,
@@ -143,9 +152,16 @@ func RollWithRoller(formula string, opts Options, roller DieRoller, seedGen Seed
 		Modifier:   modifier,
 		Total:      total,
 		Seed:       seed,
-		Outcome:    outcome,
-		SystemMeta: opts.SystemMeta,
-	}, nil
+		SystemMeta: sysMeta,
+	}
+
+	if handled, err := applyTagmarEvaluation(&res, rolled, opts); err != nil {
+		return model.RollResult{}, err
+	} else if !handled {
+		res.Outcome = evaluateOutcome(rolled, total, opts)
+	}
+
+	return res, nil
 }
 
 func parseFormula(raw string) ([]term, int, error) {
@@ -303,13 +319,114 @@ func applyKeepDrop(group []model.RolledDie, mode string, count int) {
 	}
 }
 
-func evaluateOutcome(rolled []model.RolledDie, total int, opts Options) *model.RollOutcome {
+func activeRolledDice(rolled []model.RolledDie) []model.RolledDie {
 	active := make([]model.RolledDie, 0, len(rolled))
 	for _, d := range rolled {
 		if !d.Dropped {
 			active = append(active, d)
 		}
 	}
+	return active
+}
+
+func applyTagmarEvaluation(res *model.RollResult, rolled []model.RolledDie, opts Options) (bool, error) {
+	if opts.SystemID != "" && !IsTagmarSystem(opts.SystemID) {
+		return false, nil
+	}
+
+	active := activeRolledDice(rolled)
+	if len(active) != 1 || active[0].Sides != 20 {
+		return false, nil
+	}
+
+	metaCol, metaRes := extractTagmarFromMeta(opts.SystemMeta)
+	tagmarCol := opts.TagmarColumn
+	if tagmarCol == nil && metaCol != nil {
+		tagmarCol = metaCol
+	}
+	tagmarResReq := opts.TagmarResistance
+	if tagmarResReq == nil && metaRes != nil {
+		tagmarResReq = metaRes
+	}
+
+	if tagmarResReq == nil && tagmarCol == nil {
+		return false, nil
+	}
+
+	d20Val := active[0].Value
+	ensureMeta := func() map[string]any {
+		if res.SystemMeta == nil {
+			res.SystemMeta = map[string]any{}
+		}
+		return res.SystemMeta
+	}
+
+	if tagmarResReq != nil {
+		tr, err := ResolveTagmarResistance(d20Val, *tagmarResReq)
+		if err != nil {
+			return false, err
+		}
+		res.TagmarResistance = &tr
+		kindUpper := strings.ToUpper(tr.Kind)
+		target := tr.Target
+		margin := d20Val - tr.Target
+
+		var outcomeKind, badge string
+		switch {
+		case d20Val == 20:
+			outcomeKind = "critical"
+			badge = fmt.Sprintf("RESISTIU! (%s Crítico vs %d)", kindUpper, target)
+		case d20Val == 1:
+			outcomeKind = "fumble"
+			badge = fmt.Sprintf("FALHA CRÍTICA (%s vs %d)", kindUpper, target)
+		case tr.Resisted:
+			outcomeKind = "success"
+			badge = fmt.Sprintf("RESISTIU! (%s vs %d)", kindUpper, target)
+		default:
+			outcomeKind = "failure"
+			badge = fmt.Sprintf("AFETADO (%s vs %d)", kindUpper, target)
+		}
+		res.Outcome = &model.RollOutcome{
+			Kind:       outcomeKind,
+			BadgeText:  badge,
+			Difficulty: &target,
+			TargetName: opts.TargetName,
+			Margin:     &margin,
+		}
+		m := ensureMeta()
+		m["tagmarResistance"] = tr
+		return true, nil
+	}
+
+	// Tabela de Resolução de Ações (1d20 vs Column)
+	tr, err := ResolveTagmarColumn(d20Val, *tagmarCol)
+	if err != nil {
+		return false, err
+	}
+	colCopy := *tagmarCol
+	res.TagmarColumn = &colCopy
+	res.TagmarColor = tr.Color
+	res.TagmarDamageTier = tr.DamageTier
+	res.TagmarDirectToEf = tr.DirectToEf
+	badge := fmt.Sprintf("%s · Col %d", tr.Label, colCopy)
+	if opts.TargetName != "" {
+		badge = fmt.Sprintf("%s vs %s (Col %d)", tr.Label, opts.TargetName, colCopy)
+	}
+	res.Outcome = &model.RollOutcome{
+		Kind:       tr.OutcomeKind,
+		BadgeText:  badge,
+		TargetName: opts.TargetName,
+	}
+	m := ensureMeta()
+	m["tagmarColumn"] = colCopy
+	m["tagmarColor"] = tr.Color
+	m["tagmarDamageTier"] = tr.DamageTier
+	m["tagmarDirectToEf"] = tr.DirectToEf
+	return true, nil
+}
+
+func evaluateOutcome(rolled []model.RolledDie, total int, opts Options) *model.RollOutcome {
+	active := activeRolledDice(rolled)
 
 	var outcome *model.RollOutcome
 

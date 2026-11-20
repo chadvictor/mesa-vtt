@@ -13,9 +13,18 @@ import { useCampaignStore } from '@/lib/store';
 
 type ComposerMode = 'ic' | 'ooc' | 'narration' | 'whisper';
 
-const SLASH_HINTS = [
+const SLASH_HINTS_DEFAULT = [
   { cmd: '/r 2d6+3', desc: 'Rolar dados (ex: /r 2d6+@forca # Espada)' },
   { cmd: '/gm 2d6', desc: 'Rolagem secreta visível apenas ao Mestre' },
+  { cmd: '/me ', desc: 'Descrever ação em cena' },
+  { cmd: '/w ', desc: 'Sussurrar para um jogador' },
+  { cmd: '/ooc ', desc: 'Falar fora de personagem' },
+];
+
+const SLASH_HINTS_TAGMAR = [
+  { cmd: '/r 1d20 col 8 # ', desc: 'Tabela de Resolução Tagmar (ex: /r 1d20 col 8 # Espada)' },
+  { cmd: '/r 1d10+@agilidade # Iniciativa', desc: 'Iniciativa Tagmar 3.0 (1d10 + AGI)' },
+  { cmd: '/gm 1d20 col 5 # ', desc: 'Rolagem secreta na Tabela (somente Mestre)' },
   { cmd: '/me ', desc: 'Descrever ação em cena' },
   { cmd: '/w ', desc: 'Sussurrar para um jogador' },
   { cmd: '/ooc ', desc: 'Falar fora de personagem' },
@@ -27,6 +36,7 @@ export function ChatComposer({
   compact = false,
 }: ChatComposerProps) {
   const {
+    campaign,
     user,
     isGm,
     members,
@@ -36,6 +46,9 @@ export function ChatComposer({
     rollDice,
     pushToast,
   } = useCampaignStore();
+
+  const isTagmar = campaign?.systemId === 'tagmar-3';
+  const slashHints = isTagmar ? SLASH_HINTS_TAGMAR : SLASH_HINTS_DEFAULT;
 
   const [mode, setMode] = useState<ComposerMode>('ic');
   const [text, setText] = useState('');
@@ -83,20 +96,37 @@ export function ChatComposer({
       formulaPart = formulaPart.replace(difMatch[0], '').trim();
     }
 
+    let tagmarColumn: number | undefined;
+    const colMatch = formulaPart.match(/\b(?:col|coluna)\s*(-?\d+)\b/i);
+    if (colMatch) {
+      tagmarColumn = Number(colMatch[1]);
+      formulaPart = formulaPart.replace(colMatch[0], '').trim();
+    }
+
     const interpolated = interpolateFormula(formulaPart, {
       character: activeCharacter ?? undefined,
       target: targetCharacter ?? undefined,
       user,
     });
 
+    const systemMeta: Record<string, unknown> = {
+      kind: tagmarColumn !== undefined ? 'tagmar_table' : 'custom',
+      difficulty,
+    };
+    if (isTagmar && tagmarColumn !== undefined) {
+      systemMeta.systemId = 'tagmar-3';
+      systemMeta.tagmarColumn = tagmarColumn;
+    }
+
     rollDice({
       formula: interpolated,
-      label,
+      label: tagmarColumn !== undefined ? `${label} (Col ${tagmarColumn})` : label,
       characterId: activeCharacter?.id,
       visibility: secretGm ? 'gm_only' : 'all_players',
       difficulty,
       targetCharacterId: targetCharacter?.id,
-      systemMeta: { kind: 'custom', difficulty },
+      tagmarColumn: isTagmar ? tagmarColumn : undefined,
+      systemMeta,
     });
   };
 
@@ -271,7 +301,7 @@ export function ChatComposer({
             zIndex: 30,
           }}
         >
-          {SLASH_HINTS.filter((h) => h.cmd.startsWith(text.toLowerCase())).map((hint) => (
+          {slashHints.filter((h) => h.cmd.startsWith(text.toLowerCase())).map((hint) => (
             <button
               key={hint.cmd}
               type="button"
@@ -453,8 +483,12 @@ export function ChatComposer({
         {/* Quick /r shortcut button */}
         <button
           type="button"
-          onClick={() => setText((prev) => (prev.startsWith('/r ') ? prev : `/r 2d6+`))}
-          title="Atalho para rolar dados (/r)"
+          onClick={() =>
+            setText((prev) =>
+              prev.startsWith('/r ') ? prev : isTagmar ? '/r 1d20 col 5 # ' : '/r 2d6+'
+            )
+          }
+          title={isTagmar ? 'Atalho Tabela Tagmar (/r 1d20 col N)' : 'Atalho para rolar dados (/r)'}
           style={{
             marginLeft: 'auto',
             display: 'inline-flex',
@@ -484,8 +518,12 @@ export function ChatComposer({
           placeholder={
             mode === 'ic'
               ? activeCharacter
-                ? `Falar como ${activeCharacter.name}... ou /r 2d6+3`
-                : 'Escreva no chat ou /r 2d6+3...'
+                ? isTagmar
+                  ? `Falar como ${activeCharacter.name}... ou /r 1d20 col 6`
+                  : `Falar como ${activeCharacter.name}... ou /r 2d6+3`
+                : isTagmar
+                  ? 'Escreva no chat ou /r 1d20 col 6...'
+                  : 'Escreva no chat ou /r 2d6+3...'
               : mode === 'narration'
                 ? 'Descreva a cena para os jogadores...'
                 : mode === 'whisper'

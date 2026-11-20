@@ -1,0 +1,24 @@
+{
+  "id": "tagmar-3",
+  "name": "Tagmar 3.0",
+  "shortName": "Tagmar",
+  "version": "3.0",
+  "author": "Projeto Tagmar · Comunidade Mesa VTT (CC BY-NC-SA 3.0 BR)",
+  "description": "O primeiro RPG brasileiro (Tagmar 3.0 + Expansões oficiais do Projeto Tagmar) com automação completa: Tabela de Resolução colorida 1d20 (-7 a 20+), Tabela de Resistências (RF/RM), fluxo autêntico de dano EH → Absorção → EF com Golpe Crítico direto na EF, Karma místico, 15 raças, 6 profissões + 36 especializações/ordens/colégios, 103 habilidades & técnicas, 187 magias, 148 equipamentos e 48 criaturas do Livro das Criaturas.",
+  "language": "pt-BR",
+  "license": "CC BY-NC-SA 3.0 BR",
+  "defaultDice": "1d20",
+  "primaryResource": "eh",
+  "secondaryResource": "ef",
+  "accentColor": "#2e8b57",
+  "diceDefaults": {
+    "coreFormula": "1d20",
+    "quickDice": [20, 10, 6, 4, 8, 12, 100]
+  },
+  "theme": {
+    "primary": "#0f1c16",
+    "accent": "#2e8b57",
+    "badge": "Tagmar 3.0 · Expansões"
+  },
+  "supportsWizard": true
+}

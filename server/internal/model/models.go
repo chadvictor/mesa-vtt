@@ -280,10 +280,24 @@ type InteractiveAction struct {
 	ID                string         `json:"id"`
 	Label             string         `json:"label"`
 	Style             string         `json:"style"`      // "damage" | "heal" | "mana" | "condition" | "roll" | "neutral"
-	ActionType        string         `json:"actionType"` // "apply_damage" | "apply_heal" | "spend_mana" | "apply_condition" | "roll_followup"
+	ActionType        string         `json:"actionType"` // "apply_damage" | "apply_heal" | "spend_mana" | "spend_karma" | "spend_resource" | "apply_condition" | "roll_followup"
 	TargetCharacterID string         `json:"targetCharacterId,omitempty"`
 	Payload           map[string]any `json:"payload"`
 	ExecutedBy        string         `json:"executedBy,omitempty"`
+}
+
+type TagmarResistanceRequest struct {
+	Kind string `json:"kind"` // "rf" | "rm"
+	FA   int    `json:"fa"`
+	FD   int    `json:"fd"`
+}
+
+type TagmarResistanceResult struct {
+	Kind     string `json:"kind"` // "rf" | "rm"
+	FA       int    `json:"fa"`
+	FD       int    `json:"fd"`
+	Target   int    `json:"target"`
+	Resisted bool   `json:"resisted"`
 }
 
 type RollOutcome struct {
@@ -296,15 +310,20 @@ type RollOutcome struct {
 }
 
 type RollResult struct {
-	RollID     string         `json:"rollId"`
-	Formula    string         `json:"formula"`
-	Label      string         `json:"label"`
-	Dice       []RolledDie    `json:"dice"`
-	Modifier   int            `json:"modifier"`
-	Total      int            `json:"total"`
-	Seed       uint32         `json:"seed"`
-	Outcome    *RollOutcome   `json:"outcome,omitempty"`
-	SystemMeta map[string]any `json:"systemMeta,omitempty"`
+	RollID           string                  `json:"rollId"`
+	Formula          string                  `json:"formula"`
+	Label            string                  `json:"label"`
+	Dice             []RolledDie             `json:"dice"`
+	Modifier         int                     `json:"modifier"`
+	Total            int                     `json:"total"`
+	Seed             uint32                  `json:"seed"`
+	Outcome          *RollOutcome            `json:"outcome,omitempty"`
+	SystemMeta       map[string]any          `json:"systemMeta,omitempty"`
+	TagmarColumn     *int                    `json:"tagmarColumn,omitempty"`
+	TagmarColor      string                  `json:"tagmarColor,omitempty"`
+	TagmarDamageTier int                     `json:"tagmarDamageTier,omitempty"`
+	TagmarResistance *TagmarResistanceResult `json:"tagmarResistance,omitempty"`
+	TagmarDirectToEf bool                    `json:"tagmarDirectToEf,omitempty"`
 }
 
 type ChatMessage struct {

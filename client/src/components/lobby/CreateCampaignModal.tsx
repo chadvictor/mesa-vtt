@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Globe, Loader2, Lock, Plus, Shield, Sparkles, X } from 'lucide-react';
 import {
   FALLBACK_ASSET_MANIFEST,
@@ -6,6 +6,7 @@ import {
   fetchAssetManifest,
   type AssetEntry,
 } from '@/lib/api';
+import { listSystemManifests } from '@systems/registry';
 import type { Campaign } from '@systems/types';
 
 interface CreateCampaignModalProps {
@@ -14,20 +15,32 @@ interface CreateCampaignModalProps {
   onCreated: (campaign: Campaign) => void;
 }
 
-const SYSTEM_OPTIONS = [
-  {
-    id: 'mighty-blade-3e',
+const SYSTEM_UI_OVERRIDES: Record<
+  string,
+  { name: string; badge: string; desc: string; defaultSyn: string; accent: 'gold' | 'emerald' | 'sapphire' }
+> = {
+  'mighty-blade-3e': {
     name: 'Mighty Blade 3ª Edição',
     badge: 'Automação Completa',
     desc: 'Assistente de criação, PV/PM/Defesas automáticas, 2d6 com Crítico (6+6) e Falha Crítica (1+1), compêndio oficial completo.',
+    defaultSyn: 'Uma nova aventura épica nas terras de Drakon.',
+    accent: 'gold',
   },
-  {
-    id: 'generic-rpg',
+  'tagmar-3': {
+    name: 'Tagmar 3.0 — Expansões Incluídas',
+    badge: 'Tabela 1d20 Colorida',
+    desc: '15 raças, 42 profissões/ordens, 187 magias, 148 equipamentos, bestiário, EH→EF automático, Karma e Tabela de Resolução 1d20 + RF/RM.',
+    defaultSyn: 'Uma nova jornada heroica pelos Reinos do Mundo Conhecido de Tagmar.',
+    accent: 'emerald',
+  },
+  'generic-rpg': {
     name: 'RPG Genérico',
     badge: 'Multisistema Livre',
     desc: 'Atributos, barras e fórmulas customizáveis (d20, 3d6, d100) + macros seguras para qualquer sistema.',
+    defaultSyn: 'Campanha personalizada no Mesa VTT.',
+    accent: 'sapphire',
   },
-];
+};
 
 export function CreateCampaignModal({ open, onClose, onCreated }: CreateCampaignModalProps) {
   const [name, setName] = useState('');
@@ -42,6 +55,21 @@ export function CreateCampaignModal({ open, onClose, onCreated }: CreateCampaign
   const [coverUrl, setCoverUrl] = useState(FALLBACK_ASSET_MANIFEST.banner.url);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const systemOptions = useMemo(() => {
+    const manifests = listSystemManifests();
+    return manifests.map((m) => {
+      const ov = SYSTEM_UI_OVERRIDES[m.id];
+      return {
+        id: m.id,
+        name: ov?.name ?? m.name,
+        badge: ov?.badge ?? m.theme?.badge ?? m.version,
+        desc: ov?.desc ?? m.description,
+        defaultSyn: ov?.defaultSyn ?? 'Campanha personalizada no Mesa VTT.',
+        accent: ov?.accent ?? 'gold',
+      };
+    });
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -64,14 +92,14 @@ export function CreateCampaignModal({ open, onClose, onCreated }: CreateCampaign
     setError(null);
     try {
       const cleanCode = inviteCode.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+      const selectedSys = systemOptions.find((s) => s.id === systemId);
       const res = await createCampaign({
         name: trimmedName,
         systemId,
         description:
           description.trim() ||
-          (systemId === 'mighty-blade-3e'
-            ? 'Uma nova aventura épica nas terras de Drakon.'
-            : 'Campanha personalizada no Mesa VTT.'),
+          selectedSys?.defaultSyn ||
+          'Campanha personalizada no Mesa VTT.',
         coverUrl,
         privacy,
         inviteCode: cleanCode.length >= 4 ? cleanCode : undefined,
@@ -125,8 +153,31 @@ export function CreateCampaignModal({ open, onClose, onCreated }: CreateCampaign
             <div>
               <span className="mesa-label">Sistema de RPG</span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {SYSTEM_OPTIONS.map((sys) => {
+                {systemOptions.map((sys) => {
                   const selected = systemId === sys.id;
+                  const isEmerald = sys.accent === 'emerald';
+                  const borderColor = selected
+                    ? isEmerald
+                      ? 'var(--emerald-400)'
+                      : 'var(--gold-400)'
+                    : 'var(--border-default)';
+                  const bgColor = selected
+                    ? isEmerald
+                      ? 'var(--emerald-soft)'
+                      : 'var(--gold-soft)'
+                    : 'var(--bg-obsidian)';
+                  const titleColor = selected
+                    ? isEmerald
+                      ? 'var(--emerald-400)'
+                      : 'var(--gold-400)'
+                    : 'var(--text-primary)';
+                  const badgeCls = selected
+                    ? isEmerald
+                      ? 'mesa-badge--emerald'
+                      : 'mesa-badge--gold'
+                    : isEmerald
+                      ? 'mesa-badge--emerald'
+                      : '';
                   return (
                     <button
                       key={sys.id}
@@ -136,20 +187,18 @@ export function CreateCampaignModal({ open, onClose, onCreated }: CreateCampaign
                         textAlign: 'left',
                         padding: '11px 13px',
                         borderRadius: 'var(--radius-sm)',
-                        border: selected
-                          ? '1px solid var(--gold-400)'
-                          : '1px solid var(--border-default)',
-                        background: selected ? 'var(--gold-soft)' : 'var(--bg-obsidian)',
+                        border: `1px solid ${borderColor}`,
+                        background: bgColor,
                         display: 'flex',
                         flexDirection: 'column',
                         gap: 4,
                       }}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
-                        <span style={{ fontWeight: 700, color: selected ? 'var(--gold-400)' : 'var(--text-primary)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, flexWrap: 'wrap' }}>
+                        <span style={{ fontWeight: 700, color: titleColor }}>
                           {sys.name}
                         </span>
-                        <span className={`mesa-badge ${selected ? 'mesa-badge--gold' : ''}`}>
+                        <span className={`mesa-badge ${badgeCls}`}>
                           <Shield size={11} />
                           {sys.badge}
                         </span>

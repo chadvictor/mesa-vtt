@@ -24,13 +24,27 @@ const (
 func strPtr(s string) *string { return &s }
 func intPtr(i int) *int       { return &i }
 
-// EnsureSeeded populates the flagship demo campaign if the store has no campaigns yet.
+// EnsureSeeded populates the flagship demo campaigns (DRAKON Mighty Blade 3e & TAGMAR Tagmar 3.0)
+// if the store has no campaigns yet, and also ensures TAGMAR is added to upgraded stores containing DRAKON.
 func EnsureSeeded(ctx context.Context, st store.Store) error {
 	existing, err := st.ListCampaigns(ctx)
 	if err != nil {
 		return err
 	}
 	if len(existing) > 0 {
+		hasDrakon := false
+		hasTagmar := false
+		for _, c := range existing {
+			if c.ID == DemoCampaignID || c.InviteCode == DemoInviteCode {
+				hasDrakon = true
+			}
+			if c.ID == TagmarCampaignID || c.InviteCode == TagmarInviteCode {
+				hasTagmar = true
+			}
+		}
+		if hasDrakon && !hasTagmar {
+			return seedTagmarCampaign(ctx, st)
+		}
 		return nil
 	}
 
@@ -1073,6 +1087,10 @@ func EnsureSeeded(ctx context.Context, st store.Store) error {
 		if err := st.CreateMessage(ctx, msg); err != nil {
 			return err
 		}
+	}
+
+	if err := seedTagmarCampaign(ctx, st); err != nil {
+		return err
 	}
 
 	return nil

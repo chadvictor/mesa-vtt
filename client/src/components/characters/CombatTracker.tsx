@@ -72,9 +72,11 @@ export function CombatTracker({
     // Also ensure character is added/updated in combat tracker with quick roll estimate
     const existing = combat.combatants.find((c) => c.characterId === char.id);
     const rolled =
-      campaign?.systemId === 'generic-rpg'
-        ? Math.floor(Math.random() * 20) + 1 + computedBonus
-        : Math.floor(Math.random() * 6) + 1 + Math.floor(Math.random() * 6) + 1 + computedBonus;
+      campaign?.systemId === 'tagmar-3'
+        ? Math.floor(Math.random() * 10) + 1 + computedBonus
+        : campaign?.systemId === 'generic-rpg'
+          ? Math.floor(Math.random() * 20) + 1 + computedBonus
+          : Math.floor(Math.random() * 6) + 1 + Math.floor(Math.random() * 6) + 1 + computedBonus;
 
     if (existing) {
       updateCombat('set_initiative', { id: existing.id, initiative: rolled });
@@ -105,7 +107,12 @@ export function CombatTracker({
 
   const handleAddCharacter = (char: Character) => {
     const bonus = Number(char.computed?.iniciativaBonus ?? 0);
-    const init = Math.floor(Math.random() * 6) + Math.floor(Math.random() * 6) + 2 + bonus;
+    const init =
+      campaign?.systemId === 'tagmar-3'
+        ? Math.floor(Math.random() * 10) + 1 + bonus
+        : campaign?.systemId === 'generic-rpg'
+          ? Math.floor(Math.random() * 20) + 1 + bonus
+          : Math.floor(Math.random() * 6) + Math.floor(Math.random() * 6) + 2 + bonus;
     updateCombat('add', {
       characterId: char.id,
       name: char.name,
@@ -275,7 +282,10 @@ export function CombatTracker({
           {sortedCombatants.map((c, idx) => {
             const isCurrent = combat.active && idx === combat.turnIndex % Math.max(1, sortedCombatants.length);
             const linked = c.characterId ? charById.get(c.characterId) : undefined;
-            const hp = linked?.resources?.pv ?? linked?.resources?.hp;
+            const hp =
+              linked?.systemId === 'tagmar-3'
+                ? linked.resources?.eh ?? linked.resources?.ef
+                : linked?.resources?.pv ?? linked?.resources?.hp;
             const hpPct = hp && hp.max > 0 ? Math.max(0, Math.min(100, (hp.current / hp.max) * 100)) : 0;
             const isTarget = Boolean(c.characterId && selectedTargetId === c.characterId);
 

@@ -6,17 +6,25 @@ import {
   Flame,
   Heart,
   Shield,
+  ShieldAlert,
+  ShieldCheck,
   Skull,
   Sparkles,
   Swords,
   Zap,
 } from 'lucide-react';
-import { getSystemEngine } from '@systems/registry';
+import { getSystemEngine, tagmar3Engine } from '@systems/registry';
+import {
+  resolveTagmarResistance,
+  resolveTagmarRoll,
+} from '@systems/tagmar/resolutionTable';
 import type {
   ChatMessage,
   InteractiveAction,
   RolledDie,
   RollOutcome,
+  TagmarResolutionColor,
+  TagmarResistanceRequest,
 } from '@systems/types';
 import { useCampaignStore } from '@/lib/store';
 
@@ -25,6 +33,81 @@ export interface RollCardProps {
   compact?: boolean;
 }
 
+interface TagmarBannerTheme {
+  title: string;
+  subtitle?: string;
+  accent: string;
+  bg: string;
+  border: string;
+  text: string;
+  glow?: string;
+}
+
+const TAGMAR_BANNER_STYLES: Record<TagmarResolutionColor, TagmarBannerTheme> = {
+  erro_critico: {
+    title: 'ERRO CRÍTICO!',
+    subtitle: 'Falha catastrófica na Tabela de Resolução',
+    accent: '#991b1b',
+    bg: 'linear-gradient(90deg, rgba(127, 29, 29, 0.55), rgba(153, 27, 27, 0.72), rgba(127, 29, 29, 0.55))',
+    border: 'rgba(248, 113, 113, 0.78)',
+    text: '#fee2e2',
+    glow: '0 0 20px rgba(153, 27, 27, 0.45)',
+  },
+  falha: {
+    title: 'FALHA',
+    subtitle: 'Sem efeito na Tabela de Resolução',
+    accent: '#64748b',
+    bg: 'linear-gradient(90deg, rgba(51, 65, 85, 0.45), rgba(71, 85, 105, 0.58), rgba(51, 65, 85, 0.45))',
+    border: 'rgba(148, 163, 184, 0.5)',
+    text: '#e2e8f0',
+  },
+  verde: {
+    title: 'VERDE (25%)',
+    subtitle: 'Sucesso Leve · 25% de Dano/Efeito',
+    accent: '#22c55e',
+    bg: 'linear-gradient(90deg, rgba(22, 163, 74, 0.25), rgba(34, 197, 94, 0.4), rgba(22, 163, 74, 0.25))',
+    border: 'rgba(74, 222, 128, 0.72)',
+    text: '#dcfce7',
+    glow: '0 0 16px rgba(34, 197, 94, 0.22)',
+  },
+  amarelo: {
+    title: 'AMARELO (50%)',
+    subtitle: 'Sucesso Moderado · 50% de Dano/Efeito',
+    accent: '#eab308',
+    bg: 'linear-gradient(90deg, rgba(202, 138, 4, 0.28), rgba(234, 179, 8, 0.44), rgba(202, 138, 4, 0.28))',
+    border: 'rgba(250, 204, 21, 0.76)',
+    text: '#fef9c3',
+    glow: '0 0 16px rgba(234, 179, 8, 0.24)',
+  },
+  laranja: {
+    title: 'LARANJA (75%)',
+    subtitle: 'Sucesso Forte · 75% de Dano/Efeito',
+    accent: '#f97316',
+    bg: 'linear-gradient(90deg, rgba(234, 88, 12, 0.3), rgba(249, 115, 22, 0.46), rgba(234, 88, 12, 0.3))',
+    border: 'rgba(251, 146, 60, 0.8)',
+    text: '#ffedd5',
+    glow: '0 0 18px rgba(249, 115, 22, 0.28)',
+  },
+  vermelho: {
+    title: 'VERMELHO (100%)',
+    subtitle: 'Sucesso Pleno · 100% de Dano/Efeito',
+    accent: '#ef4444',
+    bg: 'linear-gradient(90deg, rgba(220, 38, 38, 0.32), rgba(239, 68, 68, 0.52), rgba(220, 38, 38, 0.32))',
+    border: 'rgba(248, 113, 113, 0.85)',
+    text: '#fee2e2',
+    glow: '0 0 20px rgba(239, 68, 68, 0.32)',
+  },
+  azul: {
+    title: 'AZUL — CRÍTICO! (Dano direto na EF!)',
+    subtitle: 'Ignora EH e Absorção normal · Efeito Crítico',
+    accent: '#38bdf8',
+    bg: 'linear-gradient(90deg, rgba(2, 132, 199, 0.38), rgba(56, 189, 248, 0.58), rgba(2, 132, 199, 0.38))',
+    border: 'rgba(125, 211, 252, 0.92)',
+    text: '#e0f2fe',
+    glow: '0 0 26px rgba(56, 189, 248, 0.44)',
+  },
+};
+
 function getDieHighlight(die: RolledDie): 'max' | 'min' | 'normal' {
   if (die.dropped) return 'normal';
   if (die.value === die.sides) return 'max';
@@ -32,7 +115,14 @@ function getDieHighlight(die: RolledDie): 'max' | 'min' | 'normal' {
   return 'normal';
 }
 
-function getActionToneStyle(style: InteractiveAction['style']): React.CSSProperties {
+function getActionToneStyle(style: InteractiveAction['style'], directToEf?: boolean): React.CSSProperties {
+  if (directToEf && style === 'damage') {
+    return {
+      background: 'rgba(56, 189, 248, 0.2)',
+      borderColor: 'rgba(56, 189, 248, 0.72)',
+      color: '#bae6fd',
+    };
+  }
   switch (style) {
     case 'damage':
       return {
@@ -76,11 +166,17 @@ function getActionToneStyle(style: InteractiveAction['style']): React.CSSPropert
 function renderActionIcon(action: InteractiveAction) {
   switch (action.actionType) {
     case 'apply_damage':
-      return <Swords size={13} />;
+      return action.payload.directToEf ? <Sparkles size={13} /> : <Swords size={13} />;
     case 'apply_heal':
       return <Heart size={13} />;
     case 'spend_mana':
-      return <Zap size={13} />;
+    case 'spend_karma':
+    case 'spend_resource':
+      return action.actionType === 'spend_karma' || action.payload.resource === 'karma' ? (
+        <Sparkles size={13} />
+      ) : (
+        <Zap size={13} />
+      );
     case 'apply_condition':
       return <Flame size={13} />;
     case 'roll_followup':
@@ -110,6 +206,7 @@ export function RollCard({ message, compact = false }: RollCardProps) {
   const [showQuickApply, setShowQuickApply] = useState(false);
 
   const systemId = campaign?.systemId ?? 'mighty-blade-3e';
+  const isTagmarCampaign = systemId === 'tagmar-3';
   const engine = useMemo(() => getSystemEngine(systemId), [systemId]);
 
   const actor = useMemo(
@@ -134,17 +231,91 @@ export function RollCard({ message, compact = false }: RollCardProps) {
     return engine.resolveRollOutcome(roll, actor, resolvedTarget);
   }, [engine, roll, actor, resolvedTarget]);
 
+  // Tagmar 3.0 Resolution Table & Resistance metadata resolution
+  const tagmarInfo = useMemo(() => {
+    if (!roll) return null;
+    const activeDice = roll.dice.filter((d) => !d.dropped);
+    const d20Die = activeDice.find((d) => d.sides === 20);
+    const d20Val = d20Die?.value ?? roll.total;
+
+    // Resistance roll check (RF / RM)
+    const rawRes =
+      roll.tagmarResistance ??
+      (meta.kind === 'resistance'
+        ? {
+            kind: (meta.resistanceKind === 'rm' ? 'rm' : 'rf') as 'rf' | 'rm',
+            fa: Number(meta.fa ?? 5),
+            fd: Number(meta.fd ?? 1),
+            target: Number(meta.target ?? 11),
+            resisted: false,
+          }
+        : undefined);
+
+    if (rawRes && d20Die) {
+      const res = resolveTagmarResistance(d20Val, rawRes.fa, rawRes.fd);
+      return {
+        mode: 'resistance' as const,
+        kind: rawRes.kind,
+        d20: d20Val,
+        fa: res.fa,
+        fd: res.fd,
+        target: res.target,
+        resisted: typeof roll.tagmarResistance?.resisted === 'boolean' ? roll.tagmarResistance.resisted : res.resisted,
+        isCritical: res.isCritical,
+        isFumble: res.isFumble,
+      };
+    }
+
+    // Resolution Table check (Col + d20 -> Color)
+    const col =
+      typeof roll.tagmarColumn === 'number'
+        ? roll.tagmarColumn
+        : typeof meta.tagmarColumn === 'number'
+          ? meta.tagmarColumn
+          : undefined;
+
+    if (roll.tagmarColor || (col !== undefined && d20Die)) {
+      const resolved = col !== undefined ? resolveTagmarRoll(d20Val, col) : null;
+      const color: TagmarResolutionColor = roll.tagmarColor ?? resolved?.color ?? 'falha';
+      return {
+        mode: 'table' as const,
+        color,
+        d20: d20Val,
+        column: col,
+        effectiveColumn: resolved?.effectiveColumn,
+        overflowSteps: resolved?.overflowSteps ?? 0,
+        overflowTiers: resolved?.overflowTiers ?? 0,
+        percent: resolved?.percent ?? 0,
+        directToEf: roll.tagmarDirectToEf ?? resolved?.directToEf ?? color === 'azul',
+      };
+    }
+
+    return null;
+  }, [roll, meta]);
+
   if (!roll) return null;
 
   const outcome: RollOutcome | undefined = roll.outcome ?? evaluated?.outcome;
   const serverActions = message.actions && message.actions.length > 0 ? message.actions : [];
-  const actions: InteractiveAction[] =
+  const rawActions: InteractiveAction[] =
     serverActions.length > 0 ? serverActions : (evaluated?.actions ?? []);
+
+  const isTagmarTable = tagmarInfo?.mode === 'table';
+  const isTagmarResistance = tagmarInfo?.mode === 'resistance';
+  const tagmarTheme = isTagmarTable ? TAGMAR_BANNER_STYLES[tagmarInfo.color] : null;
 
   const isCrit = outcome?.kind === 'critical';
   const isFumble = outcome?.kind === 'fumble';
   const isSuccess = outcome?.kind === 'success';
   const isFailure = outcome?.kind === 'failure';
+
+  const karmaSpent =
+    typeof meta.karmaCost === 'number' && meta.karmaCost > 0
+      ? meta.karmaCost
+      : typeof meta.karmaSpent === 'number' && meta.karmaSpent > 0
+        ? meta.karmaSpent
+        : 0;
+  const karmaAlreadySpent = Boolean(meta.karmaAlreadySpent);
 
   const manaSpent =
     typeof meta.manaCost === 'number' && meta.manaCost > 0
@@ -154,27 +325,67 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         : 0;
   const manaAlreadySpent = Boolean(meta.manaAlreadySpent);
 
+  const actions = rawActions.filter((a) => {
+    const isSpend =
+      a.actionType === 'spend_mana' ||
+      a.actionType === 'spend_karma' ||
+      a.actionType === 'spend_resource';
+    if (!isSpend) return true;
+    const resName = typeof a.payload.resource === 'string' ? a.payload.resource.toLowerCase() : '';
+    const isKarmaAction =
+      a.actionType === 'spend_karma' ||
+      resName === 'karma' ||
+      (a.actionType === 'spend_mana' && isTagmarCampaign);
+    const isManaAction =
+      resName === 'pm' ||
+      resName === 'mp' ||
+      (a.actionType === 'spend_mana' && !isTagmarCampaign);
+    if (isKarmaAction && karmaAlreadySpent) return false;
+    if (isManaAction && manaAlreadySpent) return false;
+    return true;
+  });
+
   const isDamageRoll =
     meta.kind === 'damage' ||
     roll.label.toLowerCase().includes('dano') ||
     typeof meta.criticalMultiplier === 'number';
   const isHealRoll = meta.kind === 'heal' || roll.label.toLowerCase().includes('cura');
 
-  const cardBorder = isCrit
-    ? 'rgba(242, 204, 123, 0.8)'
-    : isFumble
-      ? 'rgba(239, 68, 68, 0.72)'
-      : isSuccess
-        ? 'rgba(34, 197, 94, 0.45)'
-        : isFailure
-          ? 'rgba(239, 68, 68, 0.35)'
-          : 'var(--border-gold)';
+  const cardBorder = tagmarTheme
+    ? tagmarTheme.border
+    : isTagmarResistance
+      ? tagmarInfo.resisted
+        ? 'rgba(74, 222, 128, 0.72)'
+        : 'rgba(248, 113, 113, 0.72)'
+      : isCrit
+        ? 'rgba(242, 204, 123, 0.8)'
+        : isFumble
+          ? 'rgba(239, 68, 68, 0.72)'
+          : isSuccess
+            ? 'rgba(34, 197, 94, 0.45)'
+            : isFailure
+              ? 'rgba(239, 68, 68, 0.35)'
+              : 'var(--border-gold)';
 
-  const cardBg = isCrit
-    ? 'linear-gradient(155deg, rgba(212, 168, 79, 0.16) 0%, rgba(20, 25, 34, 0.96) 55%)'
-    : isFumble
-      ? 'linear-gradient(155deg, rgba(239, 68, 68, 0.15) 0%, rgba(20, 25, 34, 0.96) 55%)'
-      : 'linear-gradient(160deg, rgba(27, 34, 48, 0.92) 0%, rgba(15, 19, 27, 0.96) 100%)';
+  const cardBg = tagmarTheme
+    ? `linear-gradient(155deg, ${tagmarTheme.accent}22 0%, rgba(16, 21, 30, 0.97) 58%)`
+    : isTagmarResistance
+      ? tagmarInfo.resisted
+        ? 'linear-gradient(155deg, rgba(34, 197, 94, 0.16) 0%, rgba(16, 21, 30, 0.97) 58%)'
+        : 'linear-gradient(155deg, rgba(239, 68, 68, 0.16) 0%, rgba(16, 21, 30, 0.97) 58%)'
+      : isCrit
+        ? 'linear-gradient(155deg, rgba(212, 168, 79, 0.16) 0%, rgba(20, 25, 34, 0.96) 55%)'
+        : isFumble
+          ? 'linear-gradient(155deg, rgba(239, 68, 68, 0.15) 0%, rgba(20, 25, 34, 0.96) 55%)'
+          : 'linear-gradient(160deg, rgba(27, 34, 48, 0.92) 0%, rgba(15, 19, 27, 0.96) 100%)';
+
+  const cardShadow = tagmarTheme?.glow
+    ? tagmarTheme.glow
+    : isCrit
+      ? '0 0 22px rgba(212, 168, 79, 0.22)'
+      : isFumble
+        ? '0 0 18px rgba(239, 68, 68, 0.2)'
+        : 'var(--shadow-sm)';
 
   const handleActionClick = (action: InteractiveAction) => {
     const isServerAction = serverActions.some((a) => a.id === action.id);
@@ -185,14 +396,37 @@ export function RollCard({ message, compact = false }: RollCardProps) {
       const formula = String(action.payload.formula ?? '1d6');
       const label = String(action.payload.label ?? `Dano · ${roll.label}`);
       const mult = Number(action.payload.criticalMultiplier ?? 1);
+      const rawRes = action.payload.tagmarResistance as TagmarResistanceRequest | undefined;
+      let tagmarResistance: TagmarResistanceRequest | undefined;
+      if (rawRes) {
+        const computedFd =
+          rawRes.kind === 'rf'
+            ? Number(targetChar?.computed?.rf ?? rawRes.fd ?? 1)
+            : Number(targetChar?.computed?.rm ?? rawRes.fd ?? 1);
+        tagmarResistance = {
+          kind: rawRes.kind,
+          fa: Number(rawRes.fa ?? 5),
+          fd: computedFd,
+        };
+      }
+
       rollDice({
         formula: mult > 1 ? `(${formula}) * ${mult}` : formula,
         label,
-        characterId: message.characterId ?? activeCharacter?.id,
+        characterId: rawRes ? (targetChar?.id ?? activeCharacter?.id) : (message.characterId ?? activeCharacter?.id),
         targetCharacterId: targetId || undefined,
+        tagmarResistance,
         systemMeta: {
           ...action.payload,
-          kind: label.toLowerCase().includes('cura') ? 'heal' : 'damage',
+          systemId: rawRes ? 'tagmar-3' : systemId,
+          kind: rawRes
+            ? 'resistance'
+            : label.toLowerCase().includes('cura')
+              ? 'heal'
+              : 'damage',
+          resistanceKind: tagmarResistance?.kind,
+          fa: tagmarResistance?.fa,
+          fd: tagmarResistance?.fd,
           targetCharacterId: targetId || undefined,
           targetName: targetChar?.name,
         },
@@ -216,14 +450,30 @@ export function RollCard({ message, compact = false }: RollCardProps) {
       }
       const amount = Math.max(0, Number(action.payload.amount ?? roll.total));
       const dmgType = typeof action.payload.damageType === 'string' ? action.payload.damageType : undefined;
-      const patch = engine.applyDamage(targetChar, amount, dmgType);
+      const directToEf = Boolean(action.payload.directToEf);
+      const ignoreAbsorption = Boolean(action.payload.ignoreAbsorption);
+      const targetEngine = getSystemEngine(targetChar.systemId);
+      const patch =
+        targetChar.systemId === 'tagmar-3'
+          ? tagmar3Engine.applyDamage(targetChar, amount, {
+              damageType: dmgType,
+              directToEf,
+              ignoreAbsorption,
+            })
+          : targetEngine.applyDamage(targetChar, amount, dmgType);
       patchCharacter(targetChar.id, patch);
+      const tagmarModeNote =
+        targetChar.systemId === 'tagmar-3'
+          ? directToEf
+            ? ' [Direto na EF — Crítico!]'
+            : ' [EH→EF]'
+          : '';
       sendChat({
         kind: 'combat_action',
-        content: `${targetChar.name} sofreu ${amount} de dano${dmgType ? ` (${dmgType})` : ''}.`,
+        content: `${targetChar.name} sofreu ${amount} de dano${dmgType ? ` (${dmgType})` : ''}${tagmarModeNote}.`,
       });
       setLocalExecuted((prev) => ({ ...prev, [action.id]: user.displayName }));
-      pushToast(`Aplicado ${amount} de dano em ${targetChar.name}.`, 'success');
+      pushToast(`Aplicado ${amount} de dano em ${targetChar.name}${tagmarModeNote}.`, 'success');
       return;
     }
 
@@ -235,31 +485,72 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         return;
       }
       const amount = Math.max(0, Number(action.payload.amount ?? roll.total));
-      const patch = engine.applyHealing(healTarget, amount);
+      const targetEngine = getSystemEngine(healTarget.systemId);
+      const patch = targetEngine.applyHealing(healTarget, amount);
       patchCharacter(healTarget.id, patch);
+      const unitLabel = healTarget.systemId === 'tagmar-3' ? 'EF/EH' : 'PV';
       sendChat({
         kind: 'combat_action',
-        content: `${healTarget.name} recuperou ${amount} PV.`,
+        content: `${healTarget.name} recuperou ${amount} ${unitLabel}.`,
       });
       setLocalExecuted((prev) => ({ ...prev, [action.id]: user.displayName }));
-      pushToast(`Curado ${amount} PV em ${healTarget.name}.`, 'success');
+      pushToast(`Curado ${amount} ${unitLabel} em ${healTarget.name}.`, 'success');
       return;
     }
 
-    if (action.actionType === 'spend_mana') {
-      if (!actor) {
-        pushToast('Nenhum personagem ativo para descontar PM.', 'warning');
+    if (
+      action.actionType === 'spend_mana' ||
+      action.actionType === 'spend_karma' ||
+      action.actionType === 'spend_resource'
+    ) {
+      const spendActor = targetChar && action.targetCharacterId ? targetChar : actor;
+      if (!spendActor) {
+        pushToast(
+          isTagmarCampaign
+            ? 'Nenhum personagem ativo para descontar Karma.'
+            : 'Nenhum personagem ativo para descontar PM.',
+          'warning'
+        );
         return;
       }
-      const amount = Math.max(0, Number(action.payload.amount ?? manaSpent));
-      const res = engine.spendMana(actor, amount);
-      if (res.error || !res.patch) {
-        pushToast(res.error ?? 'Mana insuficiente.', 'error');
+      const resName =
+        typeof action.payload.resource === 'string' ? action.payload.resource.toLowerCase() : '';
+      const isKarma =
+        action.actionType === 'spend_karma' ||
+        resName === 'karma' ||
+        (action.actionType === 'spend_mana' && spendActor.systemId === 'tagmar-3');
+      const isMana =
+        resName === 'pm' ||
+        resName === 'mp' ||
+        (action.actionType === 'spend_mana' && !isKarma);
+      const amount = Math.max(0, Number(action.payload.amount ?? (isKarma ? karmaSpent : manaSpent)));
+
+      if (isKarma || isMana || !resName) {
+        const actorEngine = getSystemEngine(spendActor.systemId);
+        const res = actorEngine.spendMana(spendActor, amount);
+        if (res.error || !res.patch) {
+          pushToast(res.error ?? (isKarma ? 'Karma insuficiente.' : 'Mana insuficiente.'), 'error');
+          return;
+        }
+        patchCharacter(spendActor.id, res.patch);
+        setLocalExecuted((prev) => ({ ...prev, [action.id]: user.displayName }));
+        pushToast(`${spendActor.name} gastou ${amount} ${isKarma ? 'Karma' : 'PM'}.`, 'info');
         return;
       }
-      patchCharacter(actor.id, res.patch);
+
+      const bar = spendActor.resources?.[resName];
+      if (!bar || bar.current < amount) {
+        pushToast(`Recurso ${resName.toUpperCase()} insuficiente.`, 'error');
+        return;
+      }
+      patchCharacter(spendActor.id, {
+        resources: {
+          ...spendActor.resources,
+          [resName]: { ...bar, current: Math.max(0, bar.current - amount) },
+        },
+      });
       setLocalExecuted((prev) => ({ ...prev, [action.id]: user.displayName }));
-      pushToast(`${actor.name} gastou ${amount} PM.`, 'info');
+      pushToast(`${spendActor.name} gastou ${amount} ${resName.toUpperCase()}.`, 'info');
       return;
     }
 
@@ -273,7 +564,8 @@ export function RollCard({ message, compact = false }: RollCardProps) {
       const conditionId = String(action.payload.conditionId ?? '');
       const rounds = typeof action.payload.rounds === 'number' ? action.payload.rounds : undefined;
       if (!conditionId) return;
-      const patch = engine.applyCondition(condTarget, conditionId, rounds);
+      const targetEngine = getSystemEngine(condTarget.systemId);
+      const patch = targetEngine.applyCondition(condTarget, conditionId, rounds);
       patchCharacter(condTarget.id, patch);
       sendChat({
         kind: 'combat_action',
@@ -284,7 +576,7 @@ export function RollCard({ message, compact = false }: RollCardProps) {
     }
   };
 
-  const handleQuickApplyAmount = (kind: 'damage' | 'heal') => {
+  const handleQuickApplyAmount = (kind: 'damage' | 'damage_ef' | 'heal') => {
     const targetChar =
       characters.find((c) => c.id === effectiveTargetId) ??
       (kind === 'heal' ? actor : undefined);
@@ -293,22 +585,33 @@ export function RollCard({ message, compact = false }: RollCardProps) {
       return;
     }
     const amount = Math.max(0, Math.floor(roll.total));
+    const targetEngine = getSystemEngine(targetChar.systemId);
     const patch =
-      kind === 'damage'
-        ? engine.applyDamage(targetChar, amount)
-        : engine.applyHealing(targetChar, amount);
+      kind === 'heal'
+        ? targetEngine.applyHealing(targetChar, amount)
+        : targetChar.systemId === 'tagmar-3'
+          ? tagmar3Engine.applyDamage(targetChar, amount, {
+              directToEf: kind === 'damage_ef',
+              ignoreAbsorption: kind === 'damage_ef',
+            })
+          : targetEngine.applyDamage(targetChar, amount);
     patchCharacter(targetChar.id, patch);
+    const isTargetTagmar = targetChar.systemId === 'tagmar-3';
     sendChat({
       kind: 'combat_action',
       content:
-        kind === 'damage'
-          ? `${targetChar.name} sofreu ${amount} de dano.`
-          : `${targetChar.name} recuperou ${amount} PV.`,
+        kind === 'heal'
+          ? `${targetChar.name} recuperou ${amount} ${isTargetTagmar ? 'EF/EH' : 'PV'}.`
+          : kind === 'damage_ef'
+            ? `${targetChar.name} sofreu ${amount} de dano DIRETO na EF (Crítico!).`
+            : `${targetChar.name} sofreu ${amount} de dano${isTargetTagmar ? ' (EH→EF)' : ''}.`,
     });
     pushToast(
-      kind === 'damage'
-        ? `-${amount} PV aplicado em ${targetChar.name}`
-        : `+${amount} PV curado em ${targetChar.name}`,
+      kind === 'heal'
+        ? `+${amount} ${isTargetTagmar ? 'EF/EH' : 'PV'} curado em ${targetChar.name}`
+        : kind === 'damage_ef'
+          ? `-${amount} EF (Crítico!) aplicado em ${targetChar.name}`
+          : `-${amount} ${isTargetTagmar ? 'EH→EF' : 'PV'} aplicado em ${targetChar.name}`,
       'success'
     );
   };
@@ -326,15 +629,106 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         display: 'flex',
         flexDirection: 'column',
         gap: 9,
-        boxShadow: isCrit
-          ? '0 0 22px rgba(212, 168, 79, 0.22)'
-          : isFumble
-            ? '0 0 18px rgba(239, 68, 68, 0.2)'
-            : 'var(--shadow-sm)',
+        boxShadow: cardShadow,
       }}
     >
-      {/* Dramatic Crit / Fumble Banner */}
-      {isCrit && (
+      {/* TAGMAR 3.0 COLOR-CODED TABELA DE RESOLUÇÃO BANNER */}
+      {isTagmarTable && tagmarTheme && (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 2,
+            padding: '7px 11px',
+            borderRadius: 'var(--radius-xs)',
+            background: tagmarTheme.bg,
+            border: `1px solid ${tagmarTheme.border}`,
+            color: tagmarTheme.text,
+            textAlign: 'center',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 6,
+              fontFamily: 'var(--font-display)',
+              fontSize: compact ? 12 : 13,
+              fontWeight: 800,
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase',
+            }}
+          >
+            {tagmarInfo.color === 'azul' ? (
+              <Sparkles size={14} />
+            ) : tagmarInfo.color === 'erro_critico' ? (
+              <Skull size={14} />
+            ) : (
+              <Shield size={14} />
+            )}
+            <span>{tagmarTheme.title}</span>
+          </div>
+          <div
+            style={{
+              fontSize: 10.5,
+              opacity: 0.92,
+              fontFamily: 'var(--font-mono)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+            }}
+          >
+            {tagmarInfo.column !== undefined && <span>Col. {tagmarInfo.column}</span>}
+            <span>· 1d20 = {tagmarInfo.d20}</span>
+            {tagmarInfo.overflowSteps > 0 && tagmarInfo.effectiveColumn !== undefined && (
+              <span>
+                · Overflow → Col. {tagmarInfo.effectiveColumn} (+{tagmarInfo.overflowTiers} faixas)
+              </span>
+            )}
+            {outcome?.targetDefense !== undefined && (
+              <span>· vs Def {outcome.targetDefense}</span>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* TAGMAR 3.0 RESISTANCE BANNER (RF / RM) */}
+      {isTagmarResistance && (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 8,
+            flexWrap: 'wrap',
+            padding: '7px 11px',
+            borderRadius: 'var(--radius-xs)',
+            background: tagmarInfo.resisted
+              ? 'linear-gradient(90deg, rgba(22, 163, 74, 0.28), rgba(34, 197, 94, 0.42), rgba(22, 163, 74, 0.28))'
+              : 'linear-gradient(90deg, rgba(185, 28, 28, 0.3), rgba(239, 68, 68, 0.45), rgba(185, 28, 28, 0.3))',
+            border: `1px solid ${tagmarInfo.resisted ? 'rgba(74, 222, 128, 0.75)' : 'rgba(248, 113, 113, 0.78)'}`,
+            color: tagmarInfo.resisted ? '#dcfce7' : '#fee2e2',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 800, fontSize: 12.5, fontFamily: 'var(--font-display)', letterSpacing: '0.04em' }}>
+            {tagmarInfo.resisted ? <ShieldCheck size={15} /> : <ShieldAlert size={15} />}
+            <span>
+              {tagmarInfo.kind.toUpperCase()} — {tagmarInfo.resisted ? 'RESISTIU!' : 'AFETADO!'}
+            </span>
+          </div>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 700 }}>
+            d20={tagmarInfo.d20} {tagmarInfo.resisted ? '≥' : '<'} {tagmarInfo.target} (FD {tagmarInfo.fd} vs FA {tagmarInfo.fa})
+          </span>
+        </div>
+      )}
+
+      {/* Non-Tagmar Dramatic Crit / Fumble Banner (Mighty Blade 6+6 / 1+1 etc.) */}
+      {!isTagmarTable && !isTagmarResistance && isCrit && (
         <div
           style={{
             display: 'flex',
@@ -358,7 +752,7 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         </div>
       )}
 
-      {isFumble && (
+      {!isTagmarTable && !isTagmarResistance && isFumble && (
         <div
           style={{
             display: 'flex',
@@ -382,7 +776,7 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         </div>
       )}
 
-      {/* Header: Roll label + formula + PM cost */}
+      {/* Header: Roll label + formula + PM/Karma cost */}
       <div
         style={{
           display: 'flex',
@@ -393,7 +787,7 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
-          <Dices size={15} style={{ color: 'var(--gold-400)', flexShrink: 0 }} />
+          <Dices size={15} style={{ color: tagmarTheme?.accent ?? 'var(--gold-400)', flexShrink: 0 }} />
           <span
             style={{
               fontWeight: 700,
@@ -409,7 +803,13 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
-          {manaSpent > 0 && (
+          {karmaSpent > 0 && (
+            <span className="mesa-badge mesa-badge--sapphire">
+              <Sparkles size={11} />
+              {karmaAlreadySpent ? `-${karmaSpent} Karma gastos` : `Custo ${karmaSpent} Karma`}
+            </span>
+          )}
+          {manaSpent > 0 && karmaSpent === 0 && (
             <span className="mesa-badge mesa-badge--sapphire">
               <Zap size={11} />
               {manaAlreadySpent ? `-${manaSpent} PM gastos` : `Custo ${manaSpent} PM`}
@@ -448,6 +848,7 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
           {roll.dice.map((die, idx) => {
             const hl = getDieHighlight(die);
+            const tagmarDieColor = isTagmarTable && die.sides === 20 ? tagmarTheme?.accent : undefined;
             return (
               <span
                 key={`${die.sides}-${idx}`}
@@ -465,25 +866,32 @@ export function RollCard({ message, compact = false }: RollCardProps) {
                   fontWeight: 800,
                   opacity: die.dropped ? 0.4 : 1,
                   textDecoration: die.dropped ? 'line-through' : 'none',
-                  background:
-                    hl === 'max'
+                  background: tagmarDieColor
+                    ? `${tagmarDieColor}33`
+                    : hl === 'max'
                       ? 'rgba(212, 168, 79, 0.24)'
                       : hl === 'min'
                         ? 'rgba(239, 68, 68, 0.22)'
                         : 'var(--bg-elevated)',
-                  border:
-                    hl === 'max'
+                  border: tagmarDieColor
+                    ? `1px solid ${tagmarDieColor}`
+                    : hl === 'max'
                       ? '1px solid rgba(242, 204, 123, 0.85)'
                       : hl === 'min'
                         ? '1px solid rgba(248, 113, 113, 0.7)'
                         : '1px solid var(--border-default)',
-                  color:
-                    hl === 'max'
+                  color: tagmarDieColor
+                    ? '#ffffff'
+                    : hl === 'max'
                       ? '#fde68a'
                       : hl === 'min'
                         ? '#fca5a5'
                         : 'var(--text-primary)',
-                  boxShadow: hl === 'max' ? '0 0 10px rgba(212, 168, 79, 0.3)' : undefined,
+                  boxShadow: tagmarDieColor
+                    ? `0 0 10px ${tagmarDieColor}55`
+                    : hl === 'max'
+                      ? '0 0 10px rgba(212, 168, 79, 0.3)'
+                      : undefined,
                 }}
               >
                 {die.value}
@@ -515,15 +923,21 @@ export function RollCard({ message, compact = false }: RollCardProps) {
               fontSize: compact ? 22 : 26,
               fontWeight: 800,
               lineHeight: 1,
-              color: isCrit
-                ? '#fde68a'
-                : isFumble
-                  ? '#f87171'
-                  : isSuccess
+              color: tagmarTheme
+                ? tagmarTheme.accent
+                : isTagmarResistance
+                  ? tagmarInfo.resisted
                     ? '#4ade80'
-                    : isFailure
-                      ? '#fca5a5'
-                      : 'var(--gold-400)',
+                    : '#f87171'
+                  : isCrit
+                    ? '#fde68a'
+                    : isFumble
+                      ? '#f87171'
+                      : isSuccess
+                        ? '#4ade80'
+                        : isFailure
+                          ? '#fca5a5'
+                          : 'var(--gold-400)',
             }}
           >
             {roll.total}
@@ -531,36 +945,41 @@ export function RollCard({ message, compact = false }: RollCardProps) {
         </div>
       </div>
 
-      {/* Difficulty / Defense comparison badge */}
-      {outcome && !isCrit && !isFumble && (outcome.difficulty !== undefined || outcome.targetDefense !== undefined) && (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: 8,
-            flexWrap: 'wrap',
-            fontSize: 12,
-          }}
-        >
-          <span
-            className={`mesa-badge ${
-              isSuccess ? 'mesa-badge--emerald' : isFailure ? 'mesa-badge--crimson' : 'mesa-badge--gold'
-            }`}
+      {/* Difficulty / Defense comparison badge (Non-Tagmar or target name display) */}
+      {!isTagmarTable &&
+        !isTagmarResistance &&
+        outcome &&
+        !isCrit &&
+        !isFumble &&
+        (outcome.difficulty !== undefined || outcome.targetDefense !== undefined) && (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: 8,
+              flexWrap: 'wrap',
+              fontSize: 12,
+            }}
           >
-            <Shield size={11} />
-            {outcome.badgeText ??
-              (isSuccess
-                ? `Sucesso! vs ${outcome.targetDefense !== undefined ? `Def ${outcome.targetDefense}` : `Dif ${outcome.difficulty}`}`
-                : `Falha vs ${outcome.targetDefense !== undefined ? `Def ${outcome.targetDefense}` : `Dif ${outcome.difficulty}`}`)}
-          </span>
-          {outcome.targetName && (
-            <span style={{ color: 'var(--text-muted)', fontSize: 11 }}>
-              Alvo: <strong style={{ color: 'var(--text-secondary)' }}>{outcome.targetName}</strong>
+            <span
+              className={`mesa-badge ${
+                isSuccess ? 'mesa-badge--emerald' : isFailure ? 'mesa-badge--crimson' : 'mesa-badge--gold'
+              }`}
+            >
+              <Shield size={11} />
+              {outcome.badgeText ??
+                (isSuccess
+                  ? `Sucesso! vs ${outcome.targetDefense !== undefined ? `Def ${outcome.targetDefense}` : `Dif ${outcome.difficulty}`}`
+                  : `Falha vs ${outcome.targetDefense !== undefined ? `Def ${outcome.targetDefense}` : `Dif ${outcome.difficulty}`}`)}
             </span>
-          )}
-        </div>
-      )}
+            {outcome.targetName && (
+              <span style={{ color: 'var(--text-muted)', fontSize: 11 }}>
+                Alvo: <strong style={{ color: 'var(--text-secondary)' }}>{outcome.targetName}</strong>
+              </span>
+            )}
+          </div>
+        )}
 
       {/* Interactive 1-Click Automation Buttons + Target Picker */}
       {(actions.length > 0 || isDamageRoll || isHealRoll || showQuickApply) && (
@@ -585,6 +1004,15 @@ export function RollCard({ message, compact = false }: RollCardProps) {
               >
                 <option value="">Alvo automático / escolher personagem...</option>
                 {characters.map((ch) => {
+                  if (ch.systemId === 'tagmar-3') {
+                    const eh = ch.resources?.eh;
+                    const ef = ch.resources?.ef;
+                    return (
+                      <option key={ch.id} value={ch.id}>
+                        {ch.name} {eh && ef ? `(EH ${eh.current}/${eh.max} · EF ${ef.current}/${ef.max})` : ''}
+                      </option>
+                    );
+                  }
                   const hp = ch.resources?.pv ?? ch.resources?.hp;
                   return (
                     <option key={ch.id} value={ch.id}>
@@ -600,6 +1028,7 @@ export function RollCard({ message, compact = false }: RollCardProps) {
             {actions.map((action) => {
               const executedBy = action.executedBy ?? localExecuted[action.id];
               const isDone = Boolean(executedBy);
+              const isDirectEf = Boolean(action.payload.directToEf);
               return (
                 <button
                   key={action.id}
@@ -617,7 +1046,7 @@ export function RollCard({ message, compact = false }: RollCardProps) {
                     fontWeight: 600,
                     minHeight: 30,
                     transition: 'filter 120ms ease, transform 100ms ease',
-                    ...getActionToneStyle(action.style),
+                    ...getActionToneStyle(action.style, isDirectEf),
                     opacity: isDone ? 0.72 : 1,
                   }}
                 >
@@ -628,27 +1057,51 @@ export function RollCard({ message, compact = false }: RollCardProps) {
             })}
 
             {isDamageRoll && !hasApplyDamageAction && (
-              <button
-                type="button"
-                onClick={() => handleQuickApplyAmount('damage')}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 5,
-                  padding: '5px 10px',
-                  borderRadius: 'var(--radius-xs)',
-                  border: '1px solid',
-                  fontSize: 12,
-                  fontWeight: 600,
-                  minHeight: 30,
-                  ...getActionToneStyle('damage'),
-                }}
-              >
-                <Swords size={13} />
-                <span>
-                  Aplicar {roll.total} Dano{resolvedTarget ? ` em ${resolvedTarget.name}` : ''}
-                </span>
-              </button>
+              <>
+                <button
+                  type="button"
+                  onClick={() => handleQuickApplyAmount('damage')}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 5,
+                    padding: '5px 10px',
+                    borderRadius: 'var(--radius-xs)',
+                    border: '1px solid',
+                    fontSize: 12,
+                    fontWeight: 600,
+                    minHeight: 30,
+                    ...getActionToneStyle('damage'),
+                  }}
+                >
+                  <Swords size={13} />
+                  <span>
+                    Aplicar {roll.total} Dano{isTagmarCampaign ? ' (EH→EF)' : ''}
+                    {resolvedTarget ? ` em ${resolvedTarget.name}` : ''}
+                  </span>
+                </button>
+                {isTagmarCampaign && (
+                  <button
+                    type="button"
+                    onClick={() => handleQuickApplyAmount('damage_ef')}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 5,
+                      padding: '5px 10px',
+                      borderRadius: 'var(--radius-xs)',
+                      border: '1px solid',
+                      fontSize: 12,
+                      fontWeight: 600,
+                      minHeight: 30,
+                      ...getActionToneStyle('damage', true),
+                    }}
+                  >
+                    <Sparkles size={13} />
+                    <span>Aplicar {roll.total} Direto na EF (Crítico!)</span>
+                  </button>
+                )}
+              </>
             )}
 
             {isHealRoll && !hasApplyHealAction && (
@@ -714,8 +1167,28 @@ export function RollCard({ message, compact = false }: RollCardProps) {
             }}
           >
             <Swords size={12} />
-            Aplicar {roll.total} Dano
+            Aplicar {roll.total} Dano{isTagmarCampaign ? ' (EH→EF)' : ''}
           </button>
+          {isTagmarCampaign && (
+            <button
+              type="button"
+              onClick={() => handleQuickApplyAmount('damage_ef')}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 5,
+                padding: '4px 9px',
+                borderRadius: 'var(--radius-xs)',
+                border: '1px solid',
+                fontSize: 11,
+                fontWeight: 600,
+                ...getActionToneStyle('damage', true),
+              }}
+            >
+              <Sparkles size={12} />
+              Direto na EF (Crítico!)
+            </button>
+          )}
           <button
             type="button"
             onClick={() => handleQuickApplyAmount('heal')}

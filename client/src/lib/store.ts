@@ -26,6 +26,7 @@ import type {
   MemberRole,
   RollResult,
   Scene,
+  TagmarResistanceRequest,
   Token,
   UserIdentity,
   Visibility,
@@ -68,6 +69,8 @@ export interface RollDiceInput {
   difficulty?: number;
   targetCharacterId?: string;
   targetDefense?: number;
+  tagmarColumn?: number;
+  tagmarResistance?: TagmarResistanceRequest;
   systemMeta?: Record<string, unknown>;
   actions?: InteractiveAction[];
 }

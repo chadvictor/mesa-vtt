@@ -1,0 +1,810 @@
+[
+  {
+    "id": "humano",
+    "name": "Humano",
+    "source": "Livro de Regras 3.0",
+    "officialStatus": "core",
+    "description": "A raça mais numerosa, versátil e adaptável do Mundo Conhecido. Habitantes dos mais diversos reinos de Tagmar — de Verrogar e Filanti a Levânia e Larissa — os humanos destacam-se pela ambição, criatividade e capacidade de trilhar qualquer profissão sem restrições.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": 0,
+      "forca": 0,
+      "fisico": 0,
+      "agilidade": 0
+    },
+    "tagmar3PercepcaoAdjustment": 0,
+    "extraAttributePoints": 1,
+    "baseEF": 15,
+    "classicBaseEF": 15,
+    "baseVB": 20,
+    "specialMovement": null,
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote", "mago", "rastreador", "bardo"],
+    "nativeLiteracy": false,
+    "racialAbilities": [
+      {
+        "id": "versatilidade-humana",
+        "name": "Versatilidade Humana",
+        "description": "Humanos recebem +1 ponto extra na distribuição inicial de atributos (totalizando 16 pontos em vez de 15) e não sofrem nenhuma restrição de profissão.",
+        "automationEffect": { "extraAttributePoints": 1 }
+      },
+      {
+        "id": "passada-firme",
+        "name": "Passada Firme",
+        "description": "Possuem a maior Velocidade Base (VB 20) entre as raças centrais do Mundo Conhecido, adaptando-se rapidamente a marchas longas e terrenos variados.",
+        "automationEffect": { "baseVB": 20 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.77,
+      "heightRange": "1,60 m – 1,95 m",
+      "averageWeightKg": 77,
+      "weightRange": "55 kg – 95 kg"
+    },
+    "lifespan": {
+      "maturityYears": 18,
+      "averageLifespanYears": 80,
+      "notes": "Iniciam a vida de aventuras entre 16 e 25 anos (referência: 20 + Físico). Graças à magia e ao conhecimento herbal de Tagmar, costumam alcançar cerca de 80 anos."
+    },
+    "languages": ["Malês"],
+    "portrait": "./assets/portraits/human-warrior.svg",
+    "suggestedPortrait": "./assets/portraits/human-warrior.svg"
+  },
+  {
+    "id": "anao",
+    "name": "Anão",
+    "source": "Livro de Regras 3.0",
+    "officialStatus": "core",
+    "description": "Criados por Blator nas entranhas das montanhas, os anões são robustos, orgulhosos de seus clãs e mestres inigualáveis da forja, da pedra e das armas pesadas. Desconfiam profundamente da magia arcana e nutrem rivalidade histórica contra os Elfos Florestais.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": 0,
+      "forca": 1,
+      "fisico": 2,
+      "agilidade": -1
+    },
+    "tagmar3PercepcaoAdjustment": 0,
+    "extraAttributePoints": 0,
+    "baseEF": 15,
+    "classicBaseEF": 12,
+    "baseVB": 16,
+    "specialMovement": null,
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote"],
+    "nativeLiteracy": true,
+    "racialAbilities": [
+      {
+        "id": "vigor-da-montanha",
+        "name": "Vigor da Montanha",
+        "description": "Constituição extraordinariamente resistente forjada nas profundezas: recebe +2 em Resistência Física (RF) contra venenos, doenças e toxinas.",
+        "automationEffect": { "rfBonusAgainstPoison": 2, "rfBonus": 1 }
+      },
+      {
+        "id": "visao-subterranea",
+        "name": "Visão Subterrânea",
+        "description": "Enxerga na penumbra e em galerias mal iluminadas, reduzindo em 3 pontos penalidades de escuridão parcial em ambientes subterrâneos.",
+        "automationEffect": { "lowLightVision": true, "darknessPenaltyReduction": 3 }
+      },
+      {
+        "id": "escrita-ancestral-ana",
+        "name": "Alfabetização em Voz da Pedra",
+        "description": "Por tradição de um povo sábio e antigo, todo anão inicia o jogo alfabetizado (Escrita nível 1) em seu idioma racial, Voz da Pedra.",
+        "automationEffect": { "nativeLiteracy": "Voz da Pedra" }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.39,
+      "heightRange": "1,30 m – 1,50 m",
+      "averageWeightKg": 78,
+      "weightRange": "65 kg – 88 kg"
+    },
+    "lifespan": {
+      "maturityYears": 25,
+      "averageLifespanYears": 475,
+      "notes": "Terceira maior longevidade de Tagmar, vivendo em média entre 450 e 500 anos."
+    },
+    "languages": ["Malês", "Voz da Pedra"],
+    "portrait": "./assets/portraits/dwarf-paladin.svg",
+    "suggestedPortrait": "./assets/portraits/dwarf-paladin.svg"
+  },
+  {
+    "id": "elfo-dourado",
+    "name": "Elfo Dourado",
+    "source": "Livro de Regras 3.0",
+    "officialStatus": "core",
+    "description": "Os mais raros e eruditos entre os filhos de Palier. De pele dourada, porte esguio e cabelos claros, brancos ou ruivos, dedicam seus séculos de vida ao estudo profundo da magia, da música e das artes arcanas, destacando-se como Magos e Bardos excepcionais.",
+    "attributeAdjustments": {
+      "intelecto": 1,
+      "aura": 2,
+      "carisma": 0,
+      "forca": -1,
+      "fisico": -1,
+      "agilidade": 1
+    },
+    "tagmar3PercepcaoAdjustment": 0,
+    "extraAttributePoints": 0,
+    "baseEF": 13,
+    "classicBaseEF": 12,
+    "baseVB": 18,
+    "specialMovement": null,
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote", "mago", "rastreador", "bardo"],
+    "nativeLiteracy": true,
+    "racialAbilities": [
+      {
+        "id": "afinidade-ao-mana",
+        "name": "Afinidade Suprema ao Mana",
+        "description": "Conexão ancestral com Palier e os fluxos mágicos de Tagmar: recebe +1 em Resistência à Magia (RM) e +1 na coluna em testes de Misticismo.",
+        "automationEffect": { "rmBonus": 1, "skillBonus": { "misticismo": 1 } }
+      },
+      {
+        "id": "visao-elfica",
+        "name": "Visão Élfica",
+        "description": "Sentidos visuais superiores que permitem enxergar claramente sob luz estelar ou lunar, reduzindo penalidades de penumbra.",
+        "automationEffect": { "lowLightVision": true }
+      },
+      {
+        "id": "escrita-ancestral-elfica",
+        "name": "Alfabetização Élfica",
+        "description": "Todo Elfo Dourado nasce em meio a bibliotecas e tradições eruditas, iniciando alfabetizado no idioma Élfico.",
+        "automationEffect": { "nativeLiteracy": "Élfico" }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.72,
+      "heightRange": "1,65 m – 1,85 m",
+      "averageWeightKg": 58,
+      "weightRange": "50 kg – 66 kg"
+    },
+    "lifespan": {
+      "maturityYears": 25,
+      "averageLifespanYears": 800,
+      "notes": "Atingem a maturidade aos 25 anos e estabilizam o envelhecimento, vivendo cerca de 800 anos (ou mais enquanto preservarem sua sede de conhecimento)."
+    },
+    "languages": ["Malês", "Élfico"],
+    "portrait": "./assets/portraits/elf-mage.svg",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "elfo-florestal",
+    "name": "Elfo Florestal",
+    "source": "Livro de Regras 3.0",
+    "officialStatus": "core",
+    "description": "A linhagem élfica mais numerosa de Tagmar, guardiã vigilante das matas ancestrais. Ágeis, ariscos e orgulhosos de sua herança marcial e silvestre, produzem arqueiros lendários, guerreiros velozes e rastreadores da Trilha dos Guardiões.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 1,
+      "carisma": 0,
+      "forca": -1,
+      "fisico": -1,
+      "agilidade": 1
+    },
+    "tagmar3PercepcaoAdjustment": 2,
+    "extraAttributePoints": 0,
+    "baseEF": 14,
+    "classicBaseEF": 12,
+    "baseVB": 18,
+    "specialMovement": null,
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote", "mago", "rastreador", "bardo"],
+    "nativeLiteracy": true,
+    "racialAbilities": [
+      {
+        "id": "sentidos-da-floresta",
+        "name": "Sentidos da Floresta",
+        "description": "Audição e visão excepcionalmente aguçadas (equivalente ao +2 em Percepção do Tagmar 3 Revisado): recebe +2 na coluna em testes de Percepção, Sobrevivência em florestas e Seguir Trilhas.",
+        "automationEffect": { "perceptionColumnBonus": 2, "lowLightVision": true }
+      },
+      {
+        "id": "passo-silvestre",
+        "name": "Passo Silvestre",
+        "description": "Move-se sem penalidade de velocidade por vegetação densa e recebe +1 na coluna em Ações Furtivas em áreas naturais.",
+        "automationEffect": { "ignoreForestDifficultTerrain": true, "forestStealthBonus": 1 }
+      },
+      {
+        "id": "escrita-elfica-florestal",
+        "name": "Alfabetização Élfica",
+        "description": "Inicia o jogo alfabetizado (Escrita nível 1) no idioma Élfico.",
+        "automationEffect": { "nativeLiteracy": "Élfico" }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.63,
+      "heightRange": "1,55 m – 1,72 m",
+      "averageWeightKg": 53,
+      "weightRange": "48 kg – 58 kg"
+    },
+    "lifespan": {
+      "maturityYears": 25,
+      "averageLifespanYears": 800,
+      "notes": "Vivem cerca de 800 anos, mas podem definhar prematuramente se forem isolados da natureza ou perderem a alegria de viver."
+    },
+    "languages": ["Malês", "Élfico"],
+    "portrait": "./assets/portraits/faen-ranger.svg",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "meio-elfo",
+    "name": "Meio-Elfo",
+    "source": "Livro de Regras 3.0",
+    "officialStatus": "core",
+    "description": "Fruto da união entre humanos e elfos, especialmente comuns em reinos cosmopolitas como Ludgrim. Combinam o vigor adaptável humano com a graça e o magnetismo élficos, destacando-se como diplomatas, bardos, cavaleiros e aventureiros errantes.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": 1,
+      "forca": 0,
+      "fisico": 0,
+      "agilidade": 1
+    },
+    "tagmar3PercepcaoAdjustment": 0,
+    "extraAttributePoints": 0,
+    "baseEF": 15,
+    "classicBaseEF": 13,
+    "baseVB": 17,
+    "specialMovement": null,
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote", "mago", "rastreador", "bardo"],
+    "nativeLiteracy": true,
+    "racialAbilities": [
+      {
+        "id": "diplomacia-entre-mundos",
+        "name": "Diplomacia Entre Dois Mundos",
+        "description": "Transita com facilidade entre sociedades humanas e élficas, recebendo +1 na coluna em testes de Etiqueta, Persuasão e Negociação.",
+        "automationEffect": { "socialColumnBonus": 1 }
+      },
+      {
+        "id": "heranca-elfica",
+        "name": "Herança Élfica",
+        "description": "Possui visão apurada na penumbra e inicia alfabetizado na língua de sua criação (Malês ou Élfico).",
+        "automationEffect": { "lowLightVision": true, "nativeLiteracy": "Malês/Élfico" }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.7,
+      "heightRange": "1,58 m – 1,82 m",
+      "averageWeightKg": 65,
+      "weightRange": "52 kg – 78 kg"
+    },
+    "lifespan": {
+      "maturityYears": 20,
+      "averageLifespanYears": 550,
+      "notes": "Segunda maior longevidade de Tagmar (atrás apenas dos elfos puros). Sua aparência jovial frequentemente oculta sua idade real."
+    },
+    "languages": ["Malês", "Élfico", "Lud (regional)"],
+    "portrait": "./assets/portraits/elf-mage.svg",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "pequenino",
+    "name": "Pequenino",
+    "source": "Livro de Regras 3.0",
+    "officialStatus": "core",
+    "description": "Humanóides de baixa estatura, espírito alegre, cauteloso e notável destreza. Embora prefiram a tranquilidade de suas vilas e boas refeições, os pequeninos que se aventuram pelo Mundo Conhecido tornam-se ladinos inigualáveis, batedores furtivos e guerreiros surpreendentemente corajosos.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": 1,
+      "forca": -2,
+      "fisico": 1,
+      "agilidade": 2
+    },
+    "tagmar3PercepcaoAdjustment": 1,
+    "extraAttributePoints": 0,
+    "baseEF": 11,
+    "classicBaseEF": 11,
+    "baseVB": 14,
+    "specialMovement": null,
+    "size": "Pequeno",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote"],
+    "nativeLiteracy": false,
+    "racialAbilities": [
+      {
+        "id": "furtividade-natural",
+        "name": "Furtividade Natural",
+        "description": "Sua estatura reduzida e leveza garantem +2 na coluna em testes de Ações Furtivas, Escapar e Esconder-se.",
+        "automationEffect": { "stealthColumnBonus": 2 }
+      },
+      {
+        "id": "alvo-pequeno",
+        "name": "Alvo Pequeno e Esguio",
+        "description": "Recebe +1 na Defesa Ativa (DA) contra criaturas de tamanho Grande ou superior.",
+        "automationEffect": { "daBonusVsLarge": 1 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.12,
+      "heightRange": "1,00 m – 1,22 m",
+      "averageWeightKg": 33,
+      "weightRange": "28 kg – 38 kg"
+    },
+    "lifespan": {
+      "maturityYears": 16,
+      "averageLifespanYears": 85,
+      "notes": "Iniciam aventuras entre 16 e 25 anos (referência: 14 + Físico), com expectativa de vida próxima à dos humanos."
+    },
+    "languages": ["Malês", "Lanta"],
+    "portrait": "./assets/portraits/goblin-rogue.svg",
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "meio-orco",
+    "name": "Meio-Orco",
+    "source": "Aventuras nas Terras Selvagens",
+    "officialStatus": "official-expansion",
+    "description": "Descendentes do encontro entre humanos e tribos orcas das fronteiras e Terras Selvagens. De pele acinzentada, azulada ou esverdeada, presas salientes e constituição vigorosa, enfrentam preconceito nos reinos centrais, mas são temidos como combatentes incansáveis e sobreviventes natos.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": -1,
+      "forca": 1,
+      "fisico": 1,
+      "agilidade": 0
+    },
+    "tagmar3PercepcaoAdjustment": 0,
+    "extraAttributePoints": 0,
+    "baseEF": 16,
+    "classicBaseEF": 16,
+    "baseVB": 16,
+    "specialMovement": null,
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "rastreador", "sacerdote"],
+    "nativeLiteracy": false,
+    "racialAbilities": [
+      {
+        "id": "constituicao-brutal",
+        "name": "Constituição Brutal",
+        "description": "Possui EF Básica elevada (16) e +1 em Resistência Física (RF) contra fadiga, frio e doenças.",
+        "automationEffect": { "rfBonus": 1 }
+      },
+      {
+        "id": "visao-noturna-orca",
+        "name": "Visão Crepuscular Orca",
+        "description": "Enxerga bem no crepúsculo e na penumbra, reduzindo em 2 pontos penalidades de iluminação precária.",
+        "automationEffect": { "lowLightVision": true, "darknessPenaltyReduction": 2 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.75,
+      "heightRange": "1,65 m – 1,92 m",
+      "averageWeightKg": 78,
+      "weightRange": "68 kg – 98 kg"
+    },
+    "lifespan": {
+      "maturityYears": 15,
+      "averageLifespanYears": 65,
+      "notes": "Amadurecem mais rápido que humanos; poucos chegam à velhice avançada nas Terras Selvagens."
+    },
+    "languages": ["Malês", "Orco"],
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "suggestedPortrait": "./assets/portraits/orc-barbarian.svg"
+  },
+  {
+    "id": "elfo-sombrio",
+    "name": "Elfo Sombrio",
+    "source": "Aventuras nas Terras Selvagens",
+    "officialStatus": "official-expansion",
+    "description": "Ramo recluso e temido dos elfos nativos das regiões austrais e da Caridrândia nas Terras Selvagens. De feições aquilinas e severas, possuem profunda afinidade com o mana sombrio, o Colégio Sombrio e artes ocultas de infiltração e magia.",
+    "attributeAdjustments": {
+      "intelecto": 1,
+      "aura": 2,
+      "carisma": -2,
+      "forca": -1,
+      "fisico": -1,
+      "agilidade": 1
+    },
+    "tagmar3PercepcaoAdjustment": 1,
+    "extraAttributePoints": 0,
+    "baseEF": 13,
+    "classicBaseEF": 13,
+    "baseVB": 18,
+    "specialMovement": null,
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote", "mago", "rastreador", "bardo"],
+    "nativeLiteracy": true,
+    "racialAbilities": [
+      {
+        "id": "olhos-das-sombras",
+        "name": "Olhos das Sombras",
+        "description": "Visão adaptada à escuridão profunda: reduz em 4 pontos as penalidades de combate em escuridão parcial ou noturna.",
+        "automationEffect": { "darkvision": true, "darknessPenaltyReduction": 4 }
+      },
+      {
+        "id": "ressonancia-sombria",
+        "name": "Ressonância Sombria",
+        "description": "Recebe +1 em Resistência à Magia (RM) e +1 na coluna ao evocar magias dos Colégios Sombrio, Necromântico ou das Ilusões.",
+        "automationEffect": { "rmBonus": 1, "darkMagicColumnBonus": 1 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.68,
+      "heightRange": "1,60 m – 1,80 m",
+      "averageWeightKg": 56,
+      "weightRange": "48 kg – 64 kg"
+    },
+    "lifespan": {
+      "maturityYears": 25,
+      "averageLifespanYears": 750,
+      "notes": "Compartilham a longevidade élfica, embora sua cultura belicosa e sombria cobre um preço alto."
+    },
+    "languages": ["Malês", "Élfico", "Élfico Sombrio"],
+    "portrait": "./assets/portraits/elf-mage.svg",
+    "suggestedPortrait": "./assets/portraits/elf-mage.svg"
+  },
+  {
+    "id": "sekbete",
+    "name": "Sekbete",
+    "source": "Aventuras nas Terras Selvagens",
+    "officialStatus": "official-expansion",
+    "description": "Répteis humanóides imponentes e escamosos (homens-lagarto) habitantes das regiões pantanosas e fluviais das Terras Selvagens. Donos de constituição impressionante (EF Básica 24) e excelente velocidade na água, são guerreiros e caçadores implacáveis.",
+    "attributeAdjustments": {
+      "intelecto": -1,
+      "aura": 0,
+      "carisma": -1,
+      "forca": 2,
+      "fisico": 1,
+      "agilidade": 0
+    },
+    "tagmar3PercepcaoAdjustment": 1,
+    "extraAttributePoints": 0,
+    "baseEF": 24,
+    "classicBaseEF": 24,
+    "baseVB": 18,
+    "specialMovement": {
+      "swimVB": 30,
+      "notes": "Desloca-se com VB 18 em terra e VB 30 nadando."
+    },
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "rastreador", "sacerdote"],
+    "nativeLiteracy": false,
+    "racialAbilities": [
+      {
+        "id": "escamas-naturais",
+        "name": "Escamas Naturais",
+        "description": "Couro reptiliano espesso que concede +2 de Absorção natural (cumulativa com armaduras leves) e EF Básica 24.",
+        "automationEffect": { "naturalAbsorption": 2 }
+      },
+      {
+        "id": "predador-aquatico",
+        "name": "Predador Aquático",
+        "description": "Pode prender a respiração por até 20 minutos e possui Velocidade Base 30 na água, além de ataques naturais com garras e cauda.",
+        "automationEffect": { "swimVB": 30, "naturalWeapon": "Garras/Mordida" }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.92,
+      "heightRange": "1,80 m – 2,10 m",
+      "averageWeightKg": 105,
+      "weightRange": "90 kg – 125 kg"
+    },
+    "lifespan": {
+      "maturityYears": 14,
+      "averageLifespanYears": 90,
+      "notes": "Amadurecem rapidamente em seus clãs ribeirinhos e mantêm vigor físico até idade avançada."
+    },
+    "languages": ["Sekbete", "Malês"],
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "suggestedPortrait": "./assets/portraits/orc-barbarian.svg"
+  },
+  {
+    "id": "gourai",
+    "name": "Gourai",
+    "source": "Aventuras nas Terras Selvagens",
+    "officialStatus": "official-expansion",
+    "description": "Povo anfíbio (homens-rã) nativo dos grandes mangues e pântanos das Terras Selvagens. Espirituosos, ágeis dentro d'água e adaptados à vida subaquática, são excelentes nadadores, rastreadores de pântano e místicos da natureza.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 1,
+      "carisma": -1,
+      "forca": -1,
+      "fisico": 1,
+      "agilidade": 1
+    },
+    "tagmar3PercepcaoAdjustment": 0,
+    "extraAttributePoints": 0,
+    "baseEF": 14,
+    "classicBaseEF": 14,
+    "baseVB": 15,
+    "specialMovement": {
+      "swimVB": 20,
+      "notes": "Velocidade Base 20 nadando e respiração anfíbia."
+    },
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "rastreador", "sacerdote", "mago"],
+    "nativeLiteracy": false,
+    "racialAbilities": [
+      {
+        "id": "anfibio-dos-mangues",
+        "name": "Anfíbio dos Mangues",
+        "description": "Respira tanto no ar quanto debaixo d'água, nada com Velocidade Base 20 e ignora penalidades de terreno alagado.",
+        "automationEffect": { "amphibious": true, "swimVB": 20 }
+      },
+      {
+        "id": "salto-batraquio",
+        "name": "Salto Batráquio",
+        "description": "Recebe +2 na coluna em testes de Saltar e Acrobacias, podendo saltar o dobro da distância normal.",
+        "automationEffect": { "jumpColumnBonus": 2 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.55,
+      "heightRange": "1,45 m – 1,68 m",
+      "averageWeightKg": 58,
+      "weightRange": "48 kg – 68 kg"
+    },
+    "lifespan": {
+      "maturityYears": 14,
+      "averageLifespanYears": 70,
+      "notes": "Necessitam manter a pele hidratada em viagens por regiões áridas."
+    },
+    "languages": ["Gourai", "Malês"],
+    "portrait": "./assets/portraits/faen-ranger.svg",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "napoi",
+    "name": "Napói",
+    "source": "Aventuras nas Terras Selvagens",
+    "officialStatus": "official-expansion",
+    "description": "Humanóides alados com feições de aves de rapina habitantes das escarpas e penhascos das Terras Selvagens. De ossatura leve (EF Básica 14) e agilidade extraordinária, dominam os céus em voos velozes desde que não sobrecarreguem o corpo com armaduras pesadas.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": -1,
+      "forca": -1,
+      "fisico": 0,
+      "agilidade": 2
+    },
+    "tagmar3PercepcaoAdjustment": 1,
+    "extraAttributePoints": 0,
+    "baseEF": 14,
+    "classicBaseEF": 14,
+    "baseVB": 16,
+    "specialMovement": {
+      "flyVB": 24,
+      "flySprintMultiplier": 10,
+      "notes": "Capaz de voar se estiver sem armadura pesada e sem sobrecarga; em corrida aérea curta alcança até 10× sua Velocidade Base."
+    },
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "rastreador", "bardo"],
+    "nativeLiteracy": false,
+    "racialAbilities": [
+      {
+        "id": "asas-de-rapina",
+        "name": "Asas de Rapina",
+        "description": "Pode voar livremente enquanto vestir apenas armadura Leve (ou nenhuma) e não exceder carga leve, atingindo até 10× VB em voo rápido.",
+        "automationEffect": { "canFly": true, "flySprintMultiplier": 10, "maxArmorClassForFlight": "L" }
+      },
+      {
+        "id": "visao-de-falcao",
+        "name": "Visão e Olfato de Rapina",
+        "description": "Recebe +2 na coluna em testes de Percepção visual a longas distâncias e +1 em ataques de mergulho aéreo.",
+        "automationEffect": { "perceptionColumnBonus": 2 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.65,
+      "heightRange": "1,55 m – 1,78 m",
+      "averageWeightKg": 46,
+      "weightRange": "40 kg – 54 kg"
+    },
+    "lifespan": {
+      "maturityYears": 15,
+      "averageLifespanYears": 65,
+      "notes": "Ossos pneumáticos tornam-nos leves para o voo, mas mais sensíveis a impactos pesados."
+    },
+    "languages": ["Napói", "Malês"],
+    "portrait": "./assets/portraits/faen-ranger.svg",
+    "suggestedPortrait": "./assets/portraits/faen-ranger.svg"
+  },
+  {
+    "id": "anao-das-profundezas",
+    "name": "Anão das Profundezas",
+    "source": "Aventuras nas Terras Selvagens / Guia de Raças",
+    "officialStatus": "optional-expansion",
+    "description": "Clãs anões isolados nas galerias abissais sob as grandes cordilheiras e nas fronteiras das Terras Selvagens. Mais reclusos, calados e ainda mais vigorosos que os anões dos salões superiores, dominam técnicas antigas de mineração profunda e combate em túneis estreitos.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": -1,
+      "forca": 2,
+      "fisico": 2,
+      "agilidade": -1
+    },
+    "tagmar3PercepcaoAdjustment": 0,
+    "extraAttributePoints": 0,
+    "baseEF": 16,
+    "classicBaseEF": 14,
+    "baseVB": 15,
+    "specialMovement": null,
+    "size": "Médio",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote"],
+    "nativeLiteracy": true,
+    "racialAbilities": [
+      {
+        "id": "visao-abissal",
+        "name": "Visão Abissal",
+        "description": "Enxerga no escuro subterrâneo completo até 18 metros (reduz em 5 pontos penalidades de escuridão em cavernas).",
+        "automationEffect": { "darkvision": true, "darknessPenaltyReduction": 5 }
+      },
+      {
+        "id": "pele-de-granito",
+        "name": "Resistência das Profundezas",
+        "description": "Recebe +2 em Resistência Física (RF) contra venenos, gases subterrâneos e doenças, além de +1 na coluna em Engenharia/Mineração.",
+        "automationEffect": { "rfBonus": 2 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.36,
+      "heightRange": "1,28 m – 1,46 m",
+      "averageWeightKg": 82,
+      "weightRange": "70 kg – 92 kg"
+    },
+    "lifespan": {
+      "maturityYears": 25,
+      "averageLifespanYears": 500,
+      "notes": "Longevidade comparável ou ligeiramente superior à dos anões dos reinos conhecidos."
+    },
+    "languages": ["Malês", "Voz da Pedra"],
+    "portrait": "./assets/portraits/dwarf-paladin.svg",
+    "suggestedPortrait": "./assets/portraits/dwarf-paladin.svg"
+  },
+  {
+    "id": "pequenino-das-colinas",
+    "name": "Pequenino das Colinas",
+    "source": "Guia de Raças / Expansão Regional",
+    "officialStatus": "optional-expansion",
+    "description": "Comunidades rurais e fronteiriças de pequeninos acostumados a defender suas lavouras e trilhas de montanha contra salteadores e feras. Mais afeitos à vida ao ar livre e ao manejo de fundas e arcos curtos do que seus primos urbanos.",
+    "attributeAdjustments": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": 0,
+      "forca": -1,
+      "fisico": 2,
+      "agilidade": 2
+    },
+    "tagmar3PercepcaoAdjustment": 1,
+    "extraAttributePoints": 0,
+    "baseEF": 12,
+    "classicBaseEF": 12,
+    "baseVB": 15,
+    "specialMovement": null,
+    "size": "Pequeno",
+    "allowedProfessions": ["guerreiro", "ladino", "sacerdote", "rastreador"],
+    "nativeLiteracy": false,
+    "racialAbilities": [
+      {
+        "id": "mira-de-funda",
+        "name": "Pontaria com Funda e Arremesso",
+        "description": "Treinados desde jovens a afastar predadores das colinas, recebem +2 na coluna de ataque com fundas e armas leves de arremesso.",
+        "automationEffect": { "rangedSlingColumnBonus": 2 }
+      },
+      {
+        "id": "tenacidade-rural",
+        "name": "Tenacidade das Colinas",
+        "description": "Recebe +1 em Resistência Física (RF) e +1 na coluna em testes de Sobrevivência e Furtividade em campo aberto.",
+        "automationEffect": { "rfBonus": 1, "stealthColumnBonus": 1 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.15,
+      "heightRange": "1,05 m – 1,24 m",
+      "averageWeightKg": 36,
+      "weightRange": "30 kg – 42 kg"
+    },
+    "lifespan": {
+      "maturityYears": 16,
+      "averageLifespanYears": 90,
+      "notes": "Vida saudável nas colinas confere grande vigor físico apesar da baixa estatura."
+    },
+    "languages": ["Malês", "Lanta"],
+    "portrait": "./assets/portraits/goblin-rogue.svg",
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "gnomo",
+    "name": "Gnomo",
+    "source": "Livro das Criaturas / Guia de Criação de Raças (Opcional)",
+    "officialStatus": "optional-expansion",
+    "description": "Seres feéricos e engenhosos associados aos minerais, bosques e pequenos encantamentos no folclore de Tagmar. Reconhecidos por seus gorros tradicionais que atuam como foco místico, são curiosos, astutos e apaixonados por ilusões, alquimia e engenhocas.",
+    "attributeAdjustments": {
+      "intelecto": 2,
+      "aura": 1,
+      "carisma": 0,
+      "forca": -2,
+      "fisico": -1,
+      "agilidade": 1
+    },
+    "tagmar3PercepcaoAdjustment": 1,
+    "extraAttributePoints": 0,
+    "baseEF": 11,
+    "classicBaseEF": 11,
+    "baseVB": 14,
+    "specialMovement": null,
+    "size": "Pequeno",
+    "allowedProfessions": ["ladino", "mago", "bardo", "rastreador"],
+    "nativeLiteracy": true,
+    "racialAbilities": [
+      {
+        "id": "gorro-foco-gnomico",
+        "name": "Gorro Místico (Foco Natural)",
+        "description": "O gorro tradicional de um gnomo serve como Focus místico pessoal e concede +1 em Resistência à Magia (RM) enquanto estiver sendo usado.",
+        "automationEffect": { "rmBonus": 1, "naturalFocus": true }
+      },
+      {
+        "id": "engenho-e-ilusao",
+        "name": "Engenho e Ilusão",
+        "description": "Recebe +1 na coluna em testes de Alquimia Prática, Trabalhos Manuais e magias do Colégio das Ilusões.",
+        "automationEffect": { "craftColumnBonus": 1, "illusionColumnBonus": 1 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 1.05,
+      "heightRange": "0,95 m – 1,15 m",
+      "averageWeightKg": 30,
+      "weightRange": "25 kg – 36 kg"
+    },
+    "lifespan": {
+      "maturityYears": 25,
+      "averageLifespanYears": 350,
+      "notes": "Longevidade feérica que pode ultrapassar três séculos."
+    },
+    "languages": ["Malês", "Silvestre", "Voz da Pedra"],
+    "portrait": "./assets/portraits/goblin-rogue.svg",
+    "suggestedPortrait": "./assets/portraits/goblin-rogue.svg"
+  },
+  {
+    "id": "meio-gigante",
+    "name": "Meio-Gigante",
+    "source": "Guia de Criação de Raças / Regras Opcionais",
+    "officialStatus": "optional-expansion",
+    "description": "Colossos raros das terras ermas e cordilheiras geladas que carregam sangue gigante em suas veias. Donos de força descomunal e Energia Física elevadíssima, abrem mão de agilidade e sutileza para empunhar armas maciças e sustentar a linha de frente como verdadeiras muralhas vivas.",
+    "attributeAdjustments": {
+      "intelecto": -1,
+      "aura": -1,
+      "carisma": -1,
+      "forca": 3,
+      "fisico": 2,
+      "agilidade": -2
+    },
+    "tagmar3PercepcaoAdjustment": 0,
+    "extraAttributePoints": 0,
+    "baseEF": 22,
+    "classicBaseEF": 22,
+    "baseVB": 20,
+    "specialMovement": null,
+    "size": "Grande",
+    "allowedProfessions": ["guerreiro", "rastreador"],
+    "nativeLiteracy": false,
+    "racialAbilities": [
+      {
+        "id": "porte-colossal",
+        "name": "Porte Colossal",
+        "description": "Tamanho Grande: possui alcance corpo a corpo ampliado, dobra a capacidade de carga normal e pode empunhar armas pesadas de duas mãos com menos esforço (reduz requisito minFor em 2).",
+        "automationEffect": { "carryMultiplier": 2, "minForReduction": 2, "reachMeters": 2.5 }
+      },
+      {
+        "id": "sangue-de-gigante",
+        "name": "Sangue de Gigante",
+        "description": "Possui EF Básica 22 e recebe +2 em Resistência Física (RF) contra frio extremo e empurrões.",
+        "automationEffect": { "rfBonus": 2 }
+      }
+    ],
+    "heightWeight": {
+      "averageHeightMeters": 2.35,
+      "heightRange": "2,15 m – 2,60 m",
+      "averageWeightKg": 175,
+      "weightRange": "145 kg – 215 kg"
+    },
+    "lifespan": {
+      "maturityYears": 18,
+      "averageLifespanYears": 120,
+      "notes": "Equipamentos e armaduras exigem confecção sob medida (custo dobrado)."
+    },
+    "languages": ["Malês", "Gigante"],
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "suggestedPortrait": "./assets/portraits/orc-barbarian.svg"
+  }
+]

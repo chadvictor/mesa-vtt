@@ -1,0 +1,79 @@
+{
+  "attributes": [
+    {
+      "key": "intelecto",
+      "label": "Intelecto",
+      "abbr": "INT",
+      "min": -4,
+      "max": 6,
+      "defaultValue": 0,
+      "description": "Raciocínio lógico, memória, conhecimentos acadêmicos, idiomas e Pontos de Magia de Magos."
+    },
+    {
+      "key": "aura",
+      "label": "Aura",
+      "abbr": "AUR",
+      "min": -4,
+      "max": 6,
+      "defaultValue": 0,
+      "description": "Conexão mística com o mana, base do Karma ((AUR+1)×(Estágio+1)) e da Resistência à Magia (RM)."
+    },
+    {
+      "key": "carisma",
+      "label": "Carisma",
+      "abbr": "CAR",
+      "min": -4,
+      "max": 6,
+      "defaultValue": 0,
+      "description": "Presença, liderança, persuasão, diplomacia e Pontos de Magia de Sacerdotes e Bardos."
+    },
+    {
+      "key": "forca",
+      "label": "Força",
+      "abbr": "FOR",
+      "min": -4,
+      "max": 6,
+      "defaultValue": 0,
+      "description": "Potência muscular, soma na Energia Física (EF), requisito mínimo de armas/armaduras e carga."
+    },
+    {
+      "key": "fisico",
+      "label": "Físico",
+      "abbr": "FIS",
+      "min": -4,
+      "max": 6,
+      "defaultValue": 0,
+      "description": "Saúde e constituição: soma na EF, na EH (1º estágio e evolução), na RF e na Velocidade Base (VB)."
+    },
+    {
+      "key": "agilidade",
+      "label": "Agilidade",
+      "abbr": "AGI",
+      "min": -4,
+      "max": 6,
+      "defaultValue": 0,
+      "description": "Destreza, reflexos, Defesa Ativa (DA), Iniciativa (1d10+AGI), manobras e subterfúgio."
+    }
+  ],
+  "resources": [
+    { "key": "eh", "label": "Energia Heróica", "abbr": "EH", "color": "#eab308" },
+    { "key": "ef", "label": "Energia Física", "abbr": "EF", "color": "#ef4444" },
+    { "key": "karma", "label": "Karma", "abbr": "KARMA", "color": "#38bdf8" }
+  ],
+  "derivedStats": [
+    { "key": "defesaAtiva", "label": "Defesa Ativa", "abbr": "DA", "formulaHint": "Armadura + AGI (-penal.) + Escudo + Elmo" },
+    { "key": "defesaPassiva", "label": "Defesa Passiva", "abbr": "DP", "formulaHint": "Defesa passiva da Armadura + Elmo (sem AGI/Escudo)" },
+    { "key": "absorcao", "label": "Absorção", "abbr": "ABS", "formulaHint": "Armadura + Escudo + Elmo (amortece dano na EF)" },
+    { "key": "rf", "label": "Resistência Física", "abbr": "RF", "formulaHint": "Estágio + Físico + bônus raciais" },
+    { "key": "rm", "label": "Resistência à Magia", "abbr": "RM", "formulaHint": "Estágio + Aura + bônus raciais" },
+    { "key": "vb", "label": "Velocidade Base", "abbr": "VB", "formulaHint": "VB da Raça + Físico (m/rodada de 15s)", "unit": "m" }
+  ],
+  "sheetTabs": [
+    { "id": "combate", "label": "Combate" },
+    { "id": "habilidades", "label": "Habilidades & Técnicas" },
+    { "id": "magias", "label": "Magias" },
+    { "id": "inventario", "label": "Equipamentos & Moedas" },
+    { "id": "notas", "label": "Biografia & Notas" }
+  ],
+  "equipmentSlots": ["weapon", "armor", "shield", "helmet", "gear", "consumable", "magic"]
+}

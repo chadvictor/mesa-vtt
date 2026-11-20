@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   BookOpen,
   ChevronDown,
@@ -38,6 +38,7 @@ import type {
   MightyBladeSystemData,
 } from '@systems/types';
 import { useCampaignStore } from '@/lib/store';
+import { TagmarCompendiumView } from './TagmarCompendiumView';
 
 type CompendiumSection =
   | 'races'
@@ -66,6 +67,7 @@ export interface CompendiumPanelProps {
 
 export function CompendiumPanel({ compact = false }: CompendiumPanelProps) {
   const {
+    campaign,
     characters,
     activeCharacter,
     activeScene,
@@ -75,6 +77,16 @@ export function CompendiumPanel({ compact = false }: CompendiumPanelProps) {
     createToken,
     pushToast,
   } = useCampaignStore();
+
+  const defaultSystem: 'tagmar-3' | 'mighty-blade-3e' =
+    campaign?.systemId === 'tagmar-3' ? 'tagmar-3' : 'mighty-blade-3e';
+  const [activeSystem, setActiveSystem] = useState<'tagmar-3' | 'mighty-blade-3e'>(defaultSystem);
+
+  useEffect(() => {
+    if (campaign?.systemId === 'tagmar-3' || campaign?.systemId === 'mighty-blade-3e') {
+      setActiveSystem(campaign.systemId);
+    }
+  }, [campaign?.systemId]);
 
   const [section, setSection] = useState<CompendiumSection>('abilities');
   const [query, setQuery] = useState('');
@@ -385,8 +397,61 @@ export function CompendiumPanel({ compact = false }: CompendiumPanelProps) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
-      {/* Top Category Pills + Search + Target PC Selector */}
+      {/* Multisystem Compendium Switcher */}
       <div
+        style={{
+          padding: '6px 10px',
+          borderBottom: '1px solid var(--border-subtle)',
+          background: 'rgba(7, 9, 13, 0.55)',
+          display: 'flex',
+          gap: 5,
+          flexShrink: 0,
+        }}
+      >
+        <button
+          type="button"
+          onClick={() => setActiveSystem('tagmar-3')}
+          style={{
+            flex: 1,
+            padding: '5px 8px',
+            borderRadius: 'var(--radius-xs)',
+            fontSize: 11,
+            fontWeight: 700,
+            background: activeSystem === 'tagmar-3' ? 'var(--emerald-soft)' : 'var(--bg-obsidian)',
+            border: `1px solid ${
+              activeSystem === 'tagmar-3' ? 'rgba(74, 222, 128, 0.6)' : 'var(--border-subtle)'
+            }`,
+            color: activeSystem === 'tagmar-3' ? 'var(--emerald-400)' : 'var(--text-muted)',
+          }}
+        >
+          Tagmar 3.0
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveSystem('mighty-blade-3e')}
+          style={{
+            flex: 1,
+            padding: '5px 8px',
+            borderRadius: 'var(--radius-xs)',
+            fontSize: 11,
+            fontWeight: 700,
+            background: activeSystem === 'mighty-blade-3e' ? 'var(--gold-soft)' : 'var(--bg-obsidian)',
+            border: `1px solid ${
+              activeSystem === 'mighty-blade-3e' ? 'var(--border-gold)' : 'var(--border-subtle)'
+            }`,
+            color: activeSystem === 'mighty-blade-3e' ? 'var(--gold-400)' : 'var(--text-muted)',
+          }}
+        >
+          Mighty Blade 3ª Ed.
+        </button>
+      </div>
+
+      {activeSystem === 'tagmar-3' ? (
+        <TagmarCompendiumView compact={compact} />
+      ) : (
+        <>
+          {/* Top Category Pills + Search + Target PC Selector */}
+          <div
         style={{
           padding: '8px 10px',
           borderBottom: '1px solid var(--border-subtle)',
@@ -1047,6 +1112,8 @@ export function CompendiumPanel({ compact = false }: CompendiumPanelProps) {
           </div>
         )}
       </div>
+        </>
+      )}
     </div>
   );
 }

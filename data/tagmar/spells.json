@@ -1,0 +1,6593 @@
+[
+  {
+    "id": "amizade",
+    "name": "Amizade",
+    "professionIds": [
+      "mago",
+      "bardo"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "10 metros",
+    "duration": "1 hora",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Alvo humanoide torna-se amigável se falhar em RM."
+      },
+      {
+        "level": 3,
+        "summary": "Alvo considera o evocador um bom amigo por 4 horas."
+      },
+      {
+        "level": 5,
+        "summary": "Afeta até 3 alvos simultaneamente por 1 dia."
+      }
+    ],
+    "description": "Envolve a mente de um humanoide com uma aura cálida de simpatia, dissipando hostilidade leve e tornando-o receptivo aos pedidos razoáveis do evocador.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "encantado"
+    }
+  },
+  {
+    "id": "analise",
+    "name": "Análise",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "Toque / 3m",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Identifica propriedades básicas de um item ou substância."
+      },
+      {
+        "level": 3,
+        "summary": "Revela a natureza mágica, cargas e escola de um objeto encantado."
+      },
+      {
+        "level": 5,
+        "summary": "Desvenda maldições ocultas, comando de ativação e histórico místico."
+      }
+    ],
+    "description": "Examina profundamente a estrutura física ou mística de um objeto, criatura ou substância, revelando sua composição, qualidade e encantamentos presentes.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "bola-de-fogo",
+    "name": "Bola de Fogo",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica / Colégio Elemental (Fogo)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "30 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Esfera de 2m de raio causando 4/8/12/16 (crítico 20) de dano Fogo."
+      },
+      {
+        "level": 3,
+        "summary": "Esfera de 4m de raio causando 6/12/18/24 (crítico 30) de dano Fogo."
+      },
+      {
+        "level": 5,
+        "summary": "Esfera de 6m de raio causando 8/16/24/32 (crítico 40) de dano Fogo."
+      }
+    ],
+    "description": "Arremessa um orbe incandescente de chamas arcanas que detona no ponto escolhido, incinerando criaturas e materiais inflamáveis na área de explosão.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "contatos-mentais",
+    "name": "Contatos Mentais",
+    "professionIds": [
+      "mago",
+      "bardo"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "30 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Envia uma frase telepática breve a um alvo visível."
+      },
+      {
+        "level": 3,
+        "summary": "Conversa telepática bidirecional até 150m."
+      },
+      {
+        "level": 5,
+        "summary": "Elo telepático simultâneo entre até 5 aliados a 1 km."
+      }
+    ],
+    "description": "Estabelece um canal silencioso entre mentes, permitindo transmitir pensamentos, avisos táticos ou ordens sem emitir qualquer som audível.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "desintegracao",
+    "name": "Desintegração",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 6,
+    "evocationTime": "2 rodadas",
+    "range": "20 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Desfaz 0,5 m³ de matéria inanimada ou causa 6/12/18/24 (crítico 30) de dano Arcano."
+      },
+      {
+        "level": 3,
+        "summary": "Desfaz 2 m³ de pedra/ferro ou causa 9/18/27/36 de dano."
+      },
+      {
+        "level": 5,
+        "summary": "Reduz criatura com EF zerada a cinzas finas; 12/24/36/48 de dano."
+      }
+    ],
+    "description": "Dispara um feixe esmeralda de energia desestruturante que dissolve ligações materiais, vaporizando barreiras físicas e infligindo ferimentos devastadores.",
+    "automation": {
+      "damageByColor": {
+        "verde": 6,
+        "amarelo": 12,
+        "laranja": 18,
+        "vermelho": 24,
+        "azul": 30
+      },
+      "damageType": "Arcano",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "deteccao-de-magia",
+    "name": "Detecção de Magia",
+    "professionIds": [
+      "mago",
+      "bardo",
+      "sacerdote"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Percebe presença de auras mágicas a até 15m."
+      },
+      {
+        "level": 3,
+        "summary": "Indica intensidade da aura e colégio ou ordem de origem."
+      },
+      {
+        "level": 5,
+        "summary": "Atravessa paredes finas e distingue armadilhas arcanas e ilusões."
+      }
+    ],
+    "description": "Aguça a visão mística do evocador para enxergar o brilho do Karma e do Mana residual em objetos, criaturas, runas e áreas encantadas.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "invisibilidade",
+    "name": "Invisibilidade",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica / Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Torna um objeto ou o evocador translúcido enquanto imóvel (+4 Furtividade)."
+      },
+      {
+        "level": 3,
+        "summary": "Invisibilidade plena para uma criatura em movimento; quebra ao atacar."
+      },
+      {
+        "level": 5,
+        "summary": "Invisibilidade aprimorada que persiste mesmo durante ações rápidas por 5 rodadas."
+      }
+    ],
+    "description": "Dobra os feixes de luz ao redor do alvo, tornando-o opticamente indetectável a olhos comuns enquanto o efeito permanecer ativo.",
+    "automation": {
+      "targetType": "self",
+      "appliesCondition": "invisivel",
+      "defenseBonus": 4
+    }
+  },
+  {
+    "id": "levitacao",
+    "name": "Levitação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "10 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Eleva verticalmente até 100 kg a 6 metros do chão."
+      },
+      {
+        "level": 3,
+        "summary": "Sustenta até 250 kg com deslocamento vertical controlado de 4m/rodada."
+      },
+      {
+        "level": 5,
+        "summary": "Permite planar suavemente até 500 kg por 30 minutos."
+      }
+    ],
+    "description": "Anula a força da gravidade sobre o evocador, um aliado ou um objeto pesado, permitindo subir ou descer suavemente no ar.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "manipulacao-de-luz",
+    "name": "Manipulação de Luz",
+    "professionIds": [
+      "mago",
+      "sacerdote"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "30 minutos",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Cria globo luminoso equivalente a uma tocha (raio 8m)."
+      },
+      {
+        "level": 3,
+        "summary": "Clarão súbito que pode deixar inimigos Cegos por 2 rodadas ou cria escuridão em 6m."
+      },
+      {
+        "level": 5,
+        "summary": "Iluminação solar plena em 20m, ferindo criaturas sensíveis à luz."
+      }
+    ],
+    "description": "Gera, intensifica ou extingue fontes luminosas no ambiente, servindo tanto para explorar masmorras escuras quanto para ofuscar adversários.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "cego"
+    }
+  },
+  {
+    "id": "mutacao",
+    "name": "Mutação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica / Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "2 rodadas",
+    "range": "Toque",
+    "duration": "30 minutos",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Altera traços menores (brânquias, visão noturna ou garras naturais)."
+      },
+      {
+        "level": 3,
+        "summary": "Adapta o corpo para ambiente extremo (+2 FIS ou +2 FOR temporário)."
+      },
+      {
+        "level": 5,
+        "summary": "Transformação orgânica completa em besta de porte médio."
+      }
+    ],
+    "description": "Remodela temporariamente tecidos e características biológicas do alvo, concedendo adaptações físicas extraordinárias.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 1
+    }
+  },
+  {
+    "id": "quebra-de-encantos",
+    "name": "Quebra de Encantos",
+    "professionIds": [
+      "mago",
+      "sacerdote"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Dissipa uma magia ativa de nível baixo sobre criatura ou objeto."
+      },
+      {
+        "level": 3,
+        "summary": "Cancela encantamentos de médio porte ou suprime item mágico por 5 rodadas."
+      },
+      {
+        "level": 5,
+        "summary": "Dissipa múltiplas magias em área de 6m de raio."
+      }
+    ],
+    "description": "Desfaz as tramas de Karma que sustentam encantamentos ativos, maldições temporárias, ilusões ou barreiras místicas.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "raio-eletrico",
+    "name": "Raio Elétrico",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica / Colégio Elemental (Ar)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Linha elétrica de 15m causando 4/8/12/16 (crítico 20) de dano Elétrico."
+      },
+      {
+        "level": 3,
+        "summary": "Relâmpago penetrante de 25m causando 6/12/18/24 (crítico 30) e risco de Atordoado."
+      },
+      {
+        "level": 5,
+        "summary": "Descarga ramificada que atinge até 3 alvos causando 8/16/24/32 de dano."
+      }
+    ],
+    "description": "Libera uma descarga elétrica fulminante das mãos do mago, atravessando armaduras metálicas com terrível eficácia e atordoando o sistema nervoso.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Elétrico",
+      "appliesCondition": "atordoado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "sono",
+    "name": "Sono",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Induz sonolência profunda em 1 criatura de estágio baixo."
+      },
+      {
+        "level": 3,
+        "summary": "Adormece até 3 criaturas em raio de 4m."
+      },
+      {
+        "level": 5,
+        "summary": "Derruba em sono pesado até 6 criaturas ou um oponente poderoso."
+      }
+    ],
+    "description": "Projeta ondas mentais entorpecentes que sobrecarregam os sentidos do alvo, mergulhando-o em sono profundo até ser acordado por dano ou chacoalhão vigoroso.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "inconsciente"
+    }
+  },
+  {
+    "id": "telecinese",
+    "name": "Telecinese",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "5 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Move objetos de até 10 kg à distância com precisão."
+      },
+      {
+        "level": 3,
+        "summary": "Arremessa objetos de até 50 kg (dano 3/6/9/12 Contusão) ou empurra alvos."
+      },
+      {
+        "level": 5,
+        "summary": "Ergue e arremessa até 200 kg ou imobiliza um humanoide no ar."
+      }
+    ],
+    "description": "Manipula objetos e criaturas sem contato físico utilizando pura força de vontade canalizada pelo Karma.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Contusão",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "transformacao",
+    "name": "Transformação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "2 rodadas",
+    "range": "10 metros",
+    "duration": "30 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Altera forma e cor de um objeto pequeno em outro semelhante."
+      },
+      {
+        "level": 3,
+        "summary": "Transforma um humanoide voluntário em animal pequeno (corvo, gato, lobo)."
+      },
+      {
+        "level": 5,
+        "summary": "Polimorfia forçada contra inimigo que falhe em RM."
+      }
+    ],
+    "description": "Reconfigura a forma física de objetos ou seres vivos, permitindo infiltração, fuga ou neutralização momentânea de inimigos.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "transporte-dimensional",
+    "name": "Transporte Dimensional",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 5,
+    "evocationTime": "1 rodada",
+    "range": "30 metros",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Teleporta o evocador até 20 metros para ponto visível."
+      },
+      {
+        "level": 3,
+        "summary": "Teleporta o evocador e 1 aliado tocado até 100 metros."
+      },
+      {
+        "level": 5,
+        "summary": "Salto dimensional de longo alcance para local perfeitamente memorizado."
+      }
+    ],
+    "description": "Dobra momentaneamente o tecido espacial para deslocar o mago e seus companheiros de um ponto a outro sem atravessar o espaço intermediário.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "piromanipulacao",
+    "name": "Piromanipulação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Fogo)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Controla chamas existentes de até 1m; causa 2/4/6/8 de dano Fogo."
+      },
+      {
+        "level": 3,
+        "summary": "Expande fogueiras em labaredas de 4m causando 4/8/12/16 de dano."
+      },
+      {
+        "level": 5,
+        "summary": "Molda muralha ou chicote de fogo vivo causando 6/12/18/24 de dano."
+      }
+    ],
+    "description": "Permite acender, apagar, moldar e direcionar chamas existentes no campo de batalha segundo a vontade do elementalista.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "piroprotecao",
+    "name": "Piroproteção",
+    "professionIds": [
+      "mago",
+      "sacerdote"
+    ],
+    "group": "Mago — Colégio Elemental (Fogo)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Reduz dano de Fogo recebido em 50% e protege contra calor extremo."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 DA contra ataques flamejantes e reduz dano de Fogo em 75%."
+      },
+      {
+        "level": 5,
+        "summary": "Imunidade temporária a chamas comuns e +4 RF contra sopros de dragão."
+      }
+    ],
+    "description": "Envolve o beneficiário em uma película etérea refrescante que desvia calor intenso, brasas e ataques baseados em fogo.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 2,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "maos-flamejantes",
+    "name": "Mãos Flamejantes",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Fogo)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Cone 5m",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Leque de chamas causando 3/6/9/12 (crítico 15) de dano Fogo."
+      },
+      {
+        "level": 3,
+        "summary": "Cone de 7m causando 5/10/15/20 de dano e incendiando roupas."
+      },
+      {
+        "level": 5,
+        "summary": "Jorro contínuo causando 7/14/21/28 de dano Fogo."
+      }
+    ],
+    "description": "Projeciona um leque intenso de chamas rubras a partir das pontas dos dedos, varrendo inimigos próximos em combate fechado.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "meteoros",
+    "name": "Meteoros",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Fogo)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 7,
+    "evocationTime": "2 rodadas",
+    "range": "50 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Chuva de 3 meteoros em raio de 6m causando 6/12/18/24 de dano Fogo/Contusão."
+      },
+      {
+        "level": 3,
+        "summary": "5 meteoros em raio de 10m causando 9/18/27/36 de dano."
+      },
+      {
+        "level": 5,
+        "summary": "Tempestade meteórica em 15m causando 12/24/36/48 de dano devastador."
+      }
+    ],
+    "description": "Convoca rochas incandescentes do alto dos céus que despencam sobre o campo de batalha, abrindo crateras e aniquilando formações inimigas.",
+    "automation": {
+      "damageByColor": {
+        "verde": 6,
+        "amarelo": 12,
+        "laranja": 18,
+        "vermelho": 24,
+        "azul": 30
+      },
+      "damageType": "Fogo",
+      "appliesCondition": "queimando",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "lanca-de-fogo",
+    "name": "Lança de Fogo",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Fogo)",
+    "source": "Magias Elementais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "30 metros",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Dardo flamejante perfurante causando 4/8/12/16 (crítico 20) de dano Fogo."
+      },
+      {
+        "level": 3,
+        "summary": "Lança concentrada que ignora absorção leve e causa 6/12/18/24."
+      },
+      {
+        "level": 5,
+        "summary": "Atravessa até dois alvos em linha causando 8/16/24/32."
+      }
+    ],
+    "description": "Condensa chamas puras em uma lança incandescente disparada em altíssima velocidade contra um único alvo.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Fogo",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "hidromanipulacao",
+    "name": "Hidromanipulação",
+    "professionIds": [
+      "mago",
+      "sacerdote"
+    ],
+    "group": "Mago — Colégio Elemental (Água)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Move até 200 litros de água, apaga fogo ou empurra alvo (2/4/6/8 Contusão)."
+      },
+      {
+        "level": 3,
+        "summary": "Cria onda de choque derrubando inimigos (Caído) e causando 4/8/12/16."
+      },
+      {
+        "level": 5,
+        "summary": "Abre passagem em rios ou cria redemoinho poderoso em 10m."
+      }
+    ],
+    "description": "Controla massas de água líquida, moldando ondas, jatos de pressão, passagens secas ou correntes contra adversários.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Contusão",
+      "appliesCondition": "caido",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "dardos-de-gelo",
+    "name": "Dardos de Gelo",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Água)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Dispara 2 estilhaços gélidos causando 3/6/9/12 (crítico 15) de dano Frio/Perfuração."
+      },
+      {
+        "level": 3,
+        "summary": "Dispara 4 dardos causando 5/10/15/20 de dano."
+      },
+      {
+        "level": 5,
+        "summary": "Saraivada congelante causando 7/14/21/28 e reduzindo VB do alvo."
+      }
+    ],
+    "description": "Condensa a umidade do ar em estacas pontiagudas de gelo cristalino arremessadas com precisão mortal contra os inimigos.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Frio",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "nevoa-congelante",
+    "name": "Névoa Congelante",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Água)",
+    "source": "Magias Elementais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "5 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Nuvem de 5m de raio que reduz visão e causa 3/6/9/12 de dano Frio."
+      },
+      {
+        "level": 3,
+        "summary": "Raio de 8m causando 4/8/12/16 e penalidade de -2 colunas por frio intenso."
+      },
+      {
+        "level": 5,
+        "summary": "Congela o solo e paralisa brevemente quem falhar em RF."
+      }
+    ],
+    "description": "Invoca uma bruma glacial densa que encobre a visão dos oponentes enquanto congela pele e armaduras metálicas.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Frio",
+      "appliesCondition": "cego",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "escudo-de-agua",
+    "name": "Escudo de Água",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Água)",
+    "source": "Magias Elementais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "10 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Barreira aquática giratória concedendo +2 DA e +6 Absorção contra Fogo/físico."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +3 DA e +10 Absorção temporária."
+      },
+      {
+        "level": 5,
+        "summary": "Concede +4 DA, +15 Absorção e apaga chamas mágicas adjacentes."
+      }
+    ],
+    "description": "Cerca o elementalista com uma lâmina contínua de água pressurizada que amortece golpes e extingue ataques incendiários.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 2,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "aeromanipulacao",
+    "name": "Aeromanipulação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Ar)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Cria rajada de vento que dissipa névoa, desvia flechas (-2 colunas) e empurra objetos leves."
+      },
+      {
+        "level": 3,
+        "summary": "Vendaval concentrado derrubando inimigos em cone de 10m."
+      },
+      {
+        "level": 5,
+        "summary": "Tornado localizado capaz de erguer criaturas médias."
+      }
+    ],
+    "description": "Comanda as correntes de ar ao redor para desviar projéteis, dispersar gases tóxicos, encher velas de navios ou arremessar oponentes.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "caido"
+    }
+  },
+  {
+    "id": "aeroataque",
+    "name": "Aeroataque",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Ar)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Lâmina de ar comprimido causando 3/6/9/12 (crítico 15) de dano Corte/Impacto."
+      },
+      {
+        "level": 3,
+        "summary": "Rajada cortante em cone causando 5/10/15/20 e empurrando 4 metros."
+      },
+      {
+        "level": 5,
+        "summary": "Explosão ciclônica causando 7/14/21/28 e derrubando todos na área."
+      }
+    ],
+    "description": "Comprime o vento em um pulso invisível de alta velocidade que golpeia como um machado invisível e arremessa o alvo para trás.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Corte",
+      "appliesCondition": "caido",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "lufada-cortante",
+    "name": "Lufada Cortante",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Ar)",
+    "source": "Magias Elementais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Três lâminas de vento em leque causando 4/8/12/16 de dano Corte."
+      },
+      {
+        "level": 3,
+        "summary": "Corta cordas, velas e armaduras leves causando 6/12/18/24 de dano."
+      },
+      {
+        "level": 5,
+        "summary": "Furacão laminar em área de 6m causando 8/16/24/32."
+      }
+    ],
+    "description": "Dispara foices giratórias de ar hipercomprimido capazes de dilacerar múltiplos adversários em campo aberto.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Corte",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "asas-do-vento",
+    "name": "Asas do Vento",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Ar)",
+    "source": "Magias Elementais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Voo planado com velocidade 24m/rodada."
+      },
+      {
+        "level": 3,
+        "summary": "Voo livre e manobrável com velocidade 36m/rodada e +2 DA aérea."
+      },
+      {
+        "level": 5,
+        "summary": "Voo veloz para até 3 aliados por 30 minutos."
+      }
+    ],
+    "description": "Sustenta o corpo do alvo em correntes ascendentes contínuas, permitindo voar sobre muralhas, abismos e campos de batalha.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 2
+    }
+  },
+  {
+    "id": "geomanipulacao",
+    "name": "Geomanipulação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Terra)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Move terra solta, abre trincheiras de 2m ou cria terreno difícil."
+      },
+      {
+        "level": 3,
+        "summary": "Ergue pilares de pedra de 4m ou abre fendas que prendem pés dos inimigos."
+      },
+      {
+        "level": 5,
+        "summary": "Esculpe túneis na rocha viva ou derruba muros de alvenaria."
+      }
+    ],
+    "description": "Molda solo, barro, areia e rochas naturais, remodelando o terreno tático a favor do grupo.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "imobilizado"
+    }
+  },
+  {
+    "id": "geoprotecao",
+    "name": "Geoproteção",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Terra)",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Endurece a pele como granito: +2 DA/DP e +8 Absorção."
+      },
+      {
+        "level": 3,
+        "summary": "Pele pétrea reforçada: +3 DA/DP e +14 Absorção."
+      },
+      {
+        "level": 5,
+        "summary": "Bastião de rocha viva: +4 DA/DP e +22 Absorção contra dano físico."
+      }
+    ],
+    "description": "Reveste o corpo do alvo com uma crosta mineral flexível que absorve golpes cortantes, perfurantes e esmagadores.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 2,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "muralha-de-pedra",
+    "name": "Muralha de Pedra",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Terra)",
+    "source": "Magias Elementais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Ergue parede de pedra de 4m de largura, 2,5m de altura e 40 EF."
+      },
+      {
+        "level": 3,
+        "summary": "Muralha reforçada de 8m de largura, 3m de altura e 80 EF."
+      },
+      {
+        "level": 5,
+        "summary": "Fortificação pétrea de 12m ou cúpula protetora completa."
+      }
+    ],
+    "description": "Faz brotar do solo uma barreira sólida de rocha bruta para bloquear cargas inimigas, linhas de flechas ou corredores de masmorra.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "punho-da-terra",
+    "name": "Punho da Terra",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Terra)",
+    "source": "Magias Elementais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Mão de rocha emerge do chão causando 4/8/12/16 de dano Contusão."
+      },
+      {
+        "level": 3,
+        "summary": "Esmaga e agarra o alvo (Imobilizado) causando 6/12/18/24."
+      },
+      {
+        "level": 5,
+        "summary": "Coluna sísmica arremessando o inimigo ao ar causando 8/16/24/32."
+      }
+    ],
+    "description": "Ergue um punho colossal de pedra sólida sob os pés do oponente, desferindo um impacto esmagador capaz de prender ou derrubar a vítima.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Contusão",
+      "appliesCondition": "imobilizado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "armadura-elemental",
+    "name": "Armadura Elemental",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Reveste o mago com Fogo, Gelo, Vento ou Pedra (+3 DA e +10 Absorção)."
+      },
+      {
+        "level": 3,
+        "summary": "+4 DA, +16 Absorção e quem ataca corpo a corpo sofre 4 de dano elemental."
+      },
+      {
+        "level": 5,
+        "summary": "+5 DA, +24 Absorção e resistência total ao elemento escolhido."
+      }
+    ],
+    "description": "Envolve o elementalista em uma armadura viva formada pelo elemento de sua escolha, unindo proteção física e retaliação mística.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 3,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "prisao-elemental",
+    "name": "Prisão Elemental",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "5 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Enclausura 1 alvo em gelo, rocha, ciclone ou anel de fogo (Imobilizado)."
+      },
+      {
+        "level": 3,
+        "summary": "Causa 3/6/9/12 de dano por rodada se o alvo tentar romper a prisão."
+      },
+      {
+        "level": 5,
+        "summary": "Prende até 3 alvos próximos ou uma criatura grande."
+      }
+    ],
+    "description": "Cerca e imobiliza um adversário com amarras puras dos elementos primordiais, impedindo sua movimentação e ações físicas.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Elemental",
+      "appliesCondition": "imobilizado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "resistencia-elemental",
+    "name": "Resistência Elemental",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +3 RF e reduz pela metade dano de um elemento escolhido."
+      },
+      {
+        "level": 3,
+        "summary": "Estende a proteção contra dois elementos simultaneamente."
+      },
+      {
+        "level": 5,
+        "summary": "Protege até 4 aliados próximos contra todos os danos elementais."
+      }
+    ],
+    "description": "Harmoniza a aura do alvo com os planos elementais, mitigando severamente os efeitos de fogo, frio, eletricidade e ácido.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "invocar-elemental",
+    "name": "Invocar Elemental",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 6,
+    "evocationTime": "2 rodadas",
+    "range": "10 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Convoca Elemental Menor (Estágio 4) de Fogo, Água, Ar ou Terra."
+      },
+      {
+        "level": 3,
+        "summary": "Convoca Elemental Pleno (Estágio 8) obediente às ordens mentais."
+      },
+      {
+        "level": 5,
+        "summary": "Convoca Elemental Superior (Estágio 12) por até 1 hora."
+      }
+    ],
+    "description": "Abre uma fissura temporária para os planos primordiais, trazendo um espírito elemental materializado para lutar ou servir ao mago.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "explosao-glacial",
+    "name": "Explosão Glacial",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Elemental (Água)",
+    "source": "Magias Elementais",
+    "karmaCost": 5,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Detona esfera de gelo (raio 4m) causando 5/10/15/20 de dano Frio."
+      },
+      {
+        "level": 3,
+        "summary": "Raio de 6m causando 7/14/21/28 e aplicando Imobilizado por 1 rodada."
+      },
+      {
+        "level": 5,
+        "summary": "Congela superfícies líquidas e causa 10/20/30/40 de dano Frio."
+      }
+    ],
+    "description": "Dispara um núcleo de frio absoluto que explode em cristais cortantes, congelando o chão e drenando o calor vital dos alvos.",
+    "automation": {
+      "damageByColor": {
+        "verde": 5,
+        "amarelo": 10,
+        "laranja": 15,
+        "vermelho": 20,
+        "azul": 25
+      },
+      "damageType": "Frio",
+      "appliesCondition": "imobilizado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "sosia",
+    "name": "Sósia",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 6,
+    "evocationTime": "3 rodadas",
+    "range": "Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Projeta um duplicato físico a partir da essência do mago (custa 2 EF temporárias)."
+      },
+      {
+        "level": 3,
+        "summary": "Sósia fala, age autonomamente e compartilha telepatia com o criador."
+      },
+      {
+        "level": 5,
+        "summary": "Sósia pode evocar magias conhecidas pelo mago usando Karma do criador."
+      }
+    ],
+    "description": "Ritual emblemático do Colégio do Conhecimento: o mago externaliza parte de sua própria essência vital, moldando uma cópia viva idêntica capaz de explorar e interagir com o mundo.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "ponte-eterea",
+    "name": "Ponte Etérea",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro das Magias Perdidas",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Superfície translúcida de até 10m de comprimento por 1,5m de largura (suporta 200 kg)."
+      },
+      {
+        "level": 3,
+        "summary": "Ponte de 25m de comprimento por 3m de largura suportando 600 kg."
+      },
+      {
+        "level": 5,
+        "summary": "Estrutura etérea de 50m suportando cavaleiros e carroças por 1 hora."
+      }
+    ],
+    "description": "Condensa energia espiritual pura em uma passarela transparente e resistente suspensa no ar entre dois pontos, vencendo abismos, rios ou muralhas.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "leitura-de-mentes",
+    "name": "Leitura de Mentes",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "5 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Capta emoções dominantes e pensamentos superficiais de 1 alvo."
+      },
+      {
+        "level": 3,
+        "summary": "Lê memórias recentes e intenções imediatas em combate (+2 DA contra o alvo)."
+      },
+      {
+        "level": 5,
+        "summary": "Vasculha segredos profundos e planos ocultos na mente do alvo."
+      }
+    ],
+    "description": "Penetra sutilmente nas camadas mentais de uma criatura inteligente, ouvindo seus pensamentos ativos e antecipando suas ações.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "visao-remota",
+    "name": "Visão Remota",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "500 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Projeta visão e audição em um ponto conhecido até 100 metros."
+      },
+      {
+        "level": 3,
+        "summary": "Alcança até 1 km e atravessa portas e paredes comuns."
+      },
+      {
+        "level": 5,
+        "summary": "Observa locais distantes a dezenas de quilômetros usando objeto de vínculo."
+      }
+    ],
+    "description": "Desprende a percepção sensorial do corpo físico para vigiar salas fechadas, acampamentos inimigos ou estradas distantes.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "compreensao-arcana",
+    "name": "Compreensão Arcana",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Lê qualquer idioma escrito comum ou arcano."
+      },
+      {
+        "level": 3,
+        "summary": "Compreende e fala qualquer idioma ouvido durante o efeito."
+      },
+      {
+        "level": 5,
+        "summary": "Decifra códigos secretos, runas antigas e escritas perdidas."
+      }
+    ],
+    "description": "Sintoniza o intelecto do mago com os padrões universais de significado, permitindo compreender idiomas desconhecidos e grimórios cifrados.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "barreira-mental",
+    "name": "Barreira Mental",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +3 em RM contra encantamentos mentais e ilusões."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +5 RM e bloqueia leitura de mentes e empatia mágica."
+      },
+      {
+        "level": 5,
+        "summary": "Imunidade temporária a Medo, Sono, Possessão e controle mental."
+      }
+    ],
+    "description": "Ergue uma fortaleza psíquica impenetrável em torno da consciência, repelindo invasões telepáticas e manipulações emocionais.",
+    "automation": {
+      "targetType": "self",
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "memoria-perfeita",
+    "name": "Memória Perfeita",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Magias dos Reinos",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "1 dia",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Recorda com precisão fotográfica páginas, rostos e rotas vistas recentemente."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 colunas em testes de Conhecimento e Sabedoria por 1 hora."
+      },
+      {
+        "level": 5,
+        "summary": "Acessa lembranças esquecidas ou suprimidas magicamente."
+      }
+    ],
+    "description": "Organiza e ilumina os arquivos da memória, garantindo recordação cristalina de livros lidos, mapas observados e diálogos ouvidos.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "rastrear-essencia",
+    "name": "Rastrear Essência",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "50 metros",
+    "duration": "1 hora",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Detecta direção de uma pessoa ou objeto familiar a até 200m."
+      },
+      {
+        "level": 3,
+        "summary": "Segue o rastro místico de um alvo por até 5 km."
+      },
+      {
+        "level": 5,
+        "summary": "Localiza artefatos ou criaturas escondidas sob invisibilidade ou disfarce."
+      }
+    ],
+    "description": "Sintoniza-se com a assinatura única de Karma de um ser ou objeto, revelando um fio luminoso invisível aos outros que conduz ao alvo.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "oraculo-arcano",
+    "name": "Oráculo Arcano",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "5 rodadas",
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Recebe presságio breve (favorável, perigoso ou incerto) sobre uma ação imediata."
+      },
+      {
+        "level": 3,
+        "summary": "Responde até 3 perguntas objetivas com 'sim', 'não' ou 'incerto'."
+      },
+      {
+        "level": 5,
+        "summary": "Visão enigmática revelando perigos ocultos dos próximos dias."
+      }
+    ],
+    "description": "Consulta as correntes sutis do destino e do Karma universal para obter orientação estratégica antes de decisões cruciais.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "selo-de-conhecimento",
+    "name": "Selo de Conhecimento",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Magias dos Reinos",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "Toque",
+    "duration": "Permanente (até ativar)",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Protege um livro, baú ou porta com tranca arcana e alarme mental."
+      },
+      {
+        "level": 3,
+        "summary": "Explode em pulso psíquico (3/6/9/12 Psíquico) se violado sem senha."
+      },
+      {
+        "level": 5,
+        "summary": "Atordoa invasores e alerta o mago a qualquer distância no mesmo reino."
+      }
+    ],
+    "description": "Inscreve um glifo invisível de vigilância e proteção sobre grimórios, cofres ou entradas de refúgios arcanos.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Psíquico",
+      "appliesCondition": "atordoado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "desvendar-ilusoes",
+    "name": "Desvendar Ilusões",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Enxerga através de disfarces mágicos e ilusões simples em 15m."
+      },
+      {
+        "level": 3,
+        "summary": "Revela criaturas invisíveis e passagens ocultas por magia."
+      },
+      {
+        "level": 5,
+        "summary": "Visão Verdadeira plena: enxerga formas reais, auras e planos etéreos."
+      }
+    ],
+    "description": "Dissipa o véu enganoso sobre os olhos do evocador, permitindo enxergar a realidade nua por trás de miragens, invisibilidade e transmutações.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "canalizacao-de-karma",
+    "name": "Canalização de Karma",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio do Conhecimento",
+    "source": "Magias dos Reinos",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Transfere até 4 pontos de Karma para um aliado conjurador."
+      },
+      {
+        "level": 3,
+        "summary": "Recupera 2/4/6/8 pontos de Karma meditando em foco místico."
+      },
+      {
+        "level": 5,
+        "summary": "Harmoniza o fluxo místico de até 3 conjuradores para um ritual conjunto."
+      }
+    ],
+    "description": "Manipula diretamente o fluxo interior de Karma para fortalecer rituais cooperativos ou reequilibrar reservas místicas exauridas.",
+    "automation": {
+      "targetType": "single",
+      "healByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      }
+    }
+  },
+  {
+    "id": "ilusao-sensorial",
+    "name": "Ilusão Sensorial",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "15 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Cria imagem estática de até 2m³ com som simples."
+      },
+      {
+        "level": 3,
+        "summary": "Cria ilusão móvel tridimensional de até 6m³ com som, odor e textura aparente."
+      },
+      {
+        "level": 5,
+        "summary": "Cena ilusória completa de 15m³ capaz de enganar múltiplos observadores."
+      }
+    ],
+    "description": "Molda luz e som a partir dos resíduos de Mana para projetar objetos, muros falsos, monstros ou figuras humanas inteiramente convincentes.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "imagem-espelhada",
+    "name": "Imagem Espelhada",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "5 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Cria 2 duplicatas ilusórias que se movem com o mago (+3 DA)."
+      },
+      {
+        "level": 3,
+        "summary": "Cria 4 cópias idênticas (+4 DA); cada acerto inimigo pode destruir apenas uma cópia."
+      },
+      {
+        "level": 5,
+        "summary": "Cria 6 duplicatas com som e brilho arcano (+5 DA)."
+      }
+    ],
+    "description": "Cerca o ilusionista de cópias visuais idênticas que imitam perfeitamente seus gestos, confundindo atacantes sobre qual alvo é real.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 3,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "miragem",
+    "name": "Miragem",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "2 rodadas",
+    "range": "50 metros",
+    "duration": "1 hora",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Disfarça uma área de 10m de raio (esconde acampamento ou cria fosso falso)."
+      },
+      {
+        "level": 3,
+        "summary": "Altera a aparência completa de uma estrada, ponte ou clareira de 30m."
+      },
+      {
+        "level": 5,
+        "summary": "Projeta castelo, floresta ou oásis convincente visível a quilômetros."
+      }
+    ],
+    "description": "Reveste toda uma região do terreno com um véu ilusório amplo, ocultando tropas, armadilhas ou construções inteiras.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "pseudomateria",
+    "name": "Pseudomatéria",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Confere consistência tátil a uma ilusão simples (arma ou escudo ilusório; 2/4/6/8 Psíquico)."
+      },
+      {
+        "level": 3,
+        "summary": "Cria barreira semissólida ou criatura ilusória que inflige 4/8/12/16 de dano mental."
+      },
+      {
+        "level": 5,
+        "summary": "Ilusão quase real com grande resistência contra quem acreditar nela."
+      }
+    ],
+    "description": "Infunde densidade mística às projeções ilusórias para que pareçam e se comportem como matéria sólida diante da mente de quem não duvida delas.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Psíquico",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "pseudoconsciencia",
+    "name": "Pseudoconsciência",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "2 rodadas",
+    "range": "20 metros",
+    "duration": "30 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Dotará uma ilusão de reações simples a fala e aproximação sem exigir concentração."
+      },
+      {
+        "level": 3,
+        "summary": "A ilusão dialoga, patrulha ou simula combate de modo autônomo."
+      },
+      {
+        "level": 5,
+        "summary": "Comportamento praticamente indistinguível de uma criatura viva."
+      }
+    ],
+    "description": "Concede padrões de comportamento autônomos a uma imagem ilusória, permitindo que guardas falsos ou emissários simulados ajam sozinhos.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "manto-de-sombras",
+    "name": "Manto de Sombras",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Fundir-se às penumbras (+3 em Ações Furtivas e +2 DA em baixa luz)."
+      },
+      {
+        "level": 3,
+        "summary": "Quase invisível nas sombras (+5 Furtividade e +3 DA)."
+      },
+      {
+        "level": 5,
+        "summary": "Permite deslizar silenciosamente entre sombras a até 12 metros."
+      }
+    ],
+    "description": "Tece sombras vivas em volta das vestes do alvo, abafando passos e apagando silhuetas em ambientes noturnos ou subterrâneos.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 2
+    }
+  },
+  {
+    "id": "labirinto-ilusorio",
+    "name": "Labirinto Ilusório",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Magias dos Reinos",
+    "karmaCost": 5,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "5 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Desorienta 1 alvo com corredores falsos (Atordoado por 2 rodadas)."
+      },
+      {
+        "level": 3,
+        "summary": "Prende o alvo em percepção labiríntica por 4 rodadas sem localizar aliados."
+      },
+      {
+        "level": 5,
+        "summary": "Afeta até 4 oponentes em área de 6m de raio."
+      }
+    ],
+    "description": "Sobrecarrega a orientação espacial da vítima com paredes e espelhos mentais infinitos, tirando-a temporariamente do combate.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "atordoado"
+    }
+  },
+  {
+    "id": "disfarce-arcano",
+    "name": "Disfarce Arcano",
+    "professionIds": [
+      "mago",
+      "bardo"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "1 hora",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Altera rosto, roupas e voz para aparência de outro humanoide de porte similar."
+      },
+      {
+        "level": 3,
+        "summary": "Imita com fidelidade uma pessoa específica conhecida pelo evocador."
+      },
+      {
+        "level": 5,
+        "summary": "Estende o disfarce ilusório para até 4 companheiros por 4 horas."
+      }
+    ],
+    "description": "Envolve o usuário em uma máscara ilusória impecável que modifica traços faciais, vestimentas, timbre de voz e porte.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "som-fantasma",
+    "name": "Som Fantasma",
+    "professionIds": [
+      "mago",
+      "bardo"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "5 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Gera ruído localizado (passos, sussurros, porta batendo, moedas caindo)."
+      },
+      {
+        "level": 3,
+        "summary": "Simula conversa de várias pessoas ou galope de cavalaria se aproximando."
+      },
+      {
+        "level": 5,
+        "summary": "Estrondo ensurdecedor em 6m que pode deixar inimigos Surdos e distraídos."
+      }
+    ],
+    "description": "Projeta sons realistas em qualquer ponto dentro do alcance para atrair guardas, criar emboscadas ou desorientar inimigos.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "surdo"
+    }
+  },
+  {
+    "id": "terror-ilusorio",
+    "name": "Terror Ilusório",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "5 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Manifesta o maior temor do alvo, deixando-o Amedrontado e causando 2/4/6/8 Psíquico."
+      },
+      {
+        "level": 3,
+        "summary": "Causa 4/8/12/16 Psíquico e força fuga imediata se falhar em RM."
+      },
+      {
+        "level": 5,
+        "summary": "Pesadelo coletivo em raio de 6m afetando múltiplos inimigos."
+      }
+    ],
+    "description": "Mergulha na mente da vítima para projetar diante dela um espectro personalizado de seus piores medos, abalando sua coragem e sanidade.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Psíquico",
+      "appliesCondition": "amedrontado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "veu-da-indetectabilidade",
+    "name": "Véu da Indetectabilidade",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Magias dos Reinos",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Oculta aura mágica de um objeto ou pessoa contra Detecção de Magia."
+      },
+      {
+        "level": 3,
+        "summary": "Torna o alvo indetectável por Visão Remota, Rastrear Essência e faro animal."
+      },
+      {
+        "level": 5,
+        "summary": "Cobre um acampamento inteiro de 8m de raio contra detecções místicas."
+      }
+    ],
+    "description": "Envolve o alvo em um manto refrator de Karma que anula rastros mágicos, odores e tentativas de espionagem arcana.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "duplo-ilusorio",
+    "name": "Duplo Ilusório",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio das Ilusões",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Cria projeção do mago à distância enquanto o verdadeiro fica invisível por 3 rodadas."
+      },
+      {
+        "level": 3,
+        "summary": "O duplo pode falar e simular gestos de conjuração para atrair ataques."
+      },
+      {
+        "level": 5,
+        "summary": "Permite trocar instantaneamente de percepção e confundir todo um esquadrão."
+      }
+    ],
+    "description": "Projeta uma cópia perfeita do ilusionista em outro ponto do campo de batalha enquanto oculta sua posição real.",
+    "automation": {
+      "targetType": "self",
+      "appliesCondition": "invisivel"
+    }
+  },
+  {
+    "id": "animacao-vegetal",
+    "name": "Animação Vegetal",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Vinhas e galhos chicoteiam inimigos em 4m (2/4/6/8 Contusão) e dificultam movimento."
+      },
+      {
+        "level": 3,
+        "summary": "Árvores jovens atacam e agarram inimigos (Imobilizado, 4/8/12/16)."
+      },
+      {
+        "level": 5,
+        "summary": "Desperta uma clareira inteira de 12m para defender o mago."
+      }
+    ],
+    "description": "Desperta a vitalidade latente da flora próxima para que raízes, cipós e galhos se retorçam e ataquem os adversários do naturalista.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Contusão",
+      "appliesCondition": "imobilizado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "armadura-natural",
+    "name": "Armadura Natural",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "20 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Pele revestida de casca fibrosa: +2 DA e +8 Absorção."
+      },
+      {
+        "level": 3,
+        "summary": "Carapaça orgânica resistente: +3 DA e +14 Absorção."
+      },
+      {
+        "level": 5,
+        "summary": "Proteção de ferro-madeira com +4 DA, +20 Absorção e +2 RF."
+      }
+    ],
+    "description": "Cobre o corpo do alvo com placas flexíveis de casca de árvore e fibras vegetais vivas sem prejudicar sua agilidade.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 2,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "ataque-termico",
+    "name": "Ataque Térmico",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Onda súbita de calor ou frio extremo causando 3/6/9/12 de dano Térmico."
+      },
+      {
+        "level": 3,
+        "summary": "Choque térmico intenso causando 5/10/15/20 e deixando alvo Atordoado."
+      },
+      {
+        "level": 5,
+        "summary": "Raio de 6m sofrendo 7/14/21/28 de dano por variação brusca de temperatura."
+      }
+    ],
+    "description": "Altera violentamente a temperatura ao redor do alvo, provocando queimaduras solares ou congelamento súbito.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Fogo",
+      "appliesCondition": "atordoado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "biogerminacao",
+    "name": "Biogerminação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "Permanente",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Faz brotar rapidamente ervas medicinais ou arbustos densos em 3m."
+      },
+      {
+        "level": 3,
+        "summary": "Ergue sebe espinhosa de 6m que bloqueia passagem e causa 3/6/9/12 de corte."
+      },
+      {
+        "level": 5,
+        "summary": "Restaura solo estéril ou faz crescer árvore adulta em segundos."
+      }
+    ],
+    "description": "Acelera vertiginosamente o ciclo de crescimento vegetal, fazendo sementes explodirem em barreiras, frutos nutritivos ou ervas úteis.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Perfuração",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "chuva-acida",
+    "name": "Chuva Ácida",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "3 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Precipitação corrosiva em raio de 4m causando 3/6/9/12 de dano Ácido."
+      },
+      {
+        "level": 3,
+        "summary": "Raio de 7m causando 5/10/15/20 e reduzindo Absorção de armaduras metálicas em 4."
+      },
+      {
+        "level": 5,
+        "summary": "Tormenta ácida de 10m causando 7/14/21/28 e corroendo equipamentos."
+      }
+    ],
+    "description": "Condensa nuvens tóxicas que despejam gotas corrosivas sobre inimigos, dissolvendo escudos, couraças e carne exposta.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Ácido",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "conjuracao-natural",
+    "name": "Conjuração Natural",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "2 rodadas",
+    "range": "15 metros",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Convoca 1 lobo, águia ou serpente gigante nativa da região."
+      },
+      {
+        "level": 3,
+        "summary": "Convoca 1 urso pardo ou matilha de 3 lobos das neves."
+      },
+      {
+        "level": 5,
+        "summary": "Convoca fera colossal da fauna natural para combater ao lado do grupo."
+      }
+    ],
+    "description": "Chama espíritos e animais selvagens do ecossistema local para atender ao comando do naturalista.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "controle-climatico",
+    "name": "Controle Climático",
+    "professionIds": [
+      "mago",
+      "sacerdote"
+    ],
+    "group": "Mago — Colégio Naturalista / Ordens de Maira e Ganis",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 6,
+    "evocationTime": "5 rodadas",
+    "range": "1 quilômetro",
+    "duration": "2 horas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Altera suavemente vento, nuvens ou dissipa garoa na região."
+      },
+      {
+        "level": 3,
+        "summary": "Convoca chuva forte, nevoeiro espesso ou acalma tempestade marítima."
+      },
+      {
+        "level": 5,
+        "summary": "Desencadeia tormenta elétrica severa ou seca o céu em vários quilômetros."
+      }
+    ],
+    "description": "Manipula grandes massas atmosféricas e correntes de vento para mudar drasticamente o clima de uma região inteira.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "desertificacao",
+    "name": "Desertificação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 5,
+    "evocationTime": "2 rodadas",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Resseca vegetação e drena umidade em 5m causando 4/8/12/16 de dano Necrótico/Calor."
+      },
+      {
+        "level": 3,
+        "summary": "Raio de 8m causando 6/12/18/24 (dano dobrado em criaturas vegetais/aquáticas)."
+      },
+      {
+        "level": 5,
+        "summary": "Transforma terreno fértil em poeira árida causando 8/16/24/32."
+      }
+    ],
+    "description": "Extrai abruptamente toda a umidade do solo, das plantas e dos corpos vivos na área afetada, murchando a vida em segundos.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Calor",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "dominio-natural",
+    "name": "Domínio Natural",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "15 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Acalma ou comanda 1 animal selvagem comum."
+      },
+      {
+        "level": 3,
+        "summary": "Controla até 3 bestas ou 1 animal gigante."
+      },
+      {
+        "level": 5,
+        "summary": "Impõe comando mental absoluto sobre feras monstruosas naturais."
+      }
+    ],
+    "description": "Harmoniza a aura do naturalista com os instintos da fauna local, subjugando feras hostis e transformando-as em guardiãs.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "encantado"
+    }
+  },
+  {
+    "id": "escudo-termico",
+    "name": "Escudo Térmico",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Protege contra frio polar ou calor desértico e concede +2 DA contra ataques térmicos."
+      },
+      {
+        "level": 3,
+        "summary": "Reduz dano de Fogo e Frio em 50% e concede +3 RF."
+      },
+      {
+        "level": 5,
+        "summary": "Envolve até 4 aliados em redoma climática confortável."
+      }
+    ],
+    "description": "Cria uma camada isolante invisível que estabiliza a temperatura corporal diante de geleiras, vulcões ou magias extremas.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 2,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "feixes-incandescentes",
+    "name": "Feixes Incandescentes",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "30 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concentra luz solar em raio abrasador causando 4/8/12/16 de dano Luz/Fogo."
+      },
+      {
+        "level": 3,
+        "summary": "Causa 6/12/18/24 (+50% contra mortos-vivos) e risco de Cego."
+      },
+      {
+        "level": 5,
+        "summary": "Coluna solar ardente em 4m de raio causando 8/16/24/32."
+      }
+    ],
+    "description": "Canaliza radiação luminosa concentrada em feixes ardentes capazes de queimar carne e purificar criaturas das trevas.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Fogo",
+      "appliesCondition": "cego",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "prisao-vegetal",
+    "name": "Prisão Vegetal",
+    "professionIds": [
+      "mago",
+      "rastreador"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "5 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Raízes prendem 1 alvo no lugar (Imobilizado)."
+      },
+      {
+        "level": 3,
+        "summary": "Cipós espinhosos prendem até 3 alvos em raio de 4m causando 2/4/6/8 por rodada."
+      },
+      {
+        "level": 5,
+        "summary": "Envoltório vegetal denso que imobiliza até criaturas grandes."
+      }
+    ],
+    "description": "Faz brotar raízes e cipós tenazes sob os pés dos inimigos, enlaçando pernas e braços firmemente ao solo.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Perfuração",
+      "appliesCondition": "imobilizado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "raizes-misticas",
+    "name": "Raízes Místicas",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "Pessoal",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Conecta-se à terra regenerando 3/6/9/12 de EH enquanto imóvel."
+      },
+      {
+        "level": 3,
+        "summary": "Regenera 4/8/12/16 de EF e 4 pontos de Karma absorvendo energia telúrica."
+      },
+      {
+        "level": 5,
+        "summary": "Concede +3 RF/RM e imunidade a ser derrubado enquanto pisar em solo natural."
+      }
+    ],
+    "description": "Estende filamentos sutis de energia vital para o subsolo, absorvendo vigor diretamente das correntes telúricas da natureza.",
+    "automation": {
+      "healByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "terremoto",
+    "name": "Terremoto",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Naturalista",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 7,
+    "evocationTime": "2 rodadas",
+    "range": "40 metros",
+    "duration": "2 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Tremor em raio de 8m derrubando todos (Caído) e causando 5/10/15/20 de dano Contusão."
+      },
+      {
+        "level": 3,
+        "summary": "Fissuras de 15m derrubando muralhas e causando 8/16/24/32."
+      },
+      {
+        "level": 5,
+        "summary": "Abalo sísmico cataclísmico em 25m causando 12/24/36/48 de dano."
+      }
+    ],
+    "description": "Sacode violentamente a crosta terrestre sob o campo de batalha, derrubando combatentes, abrindo fendas e colapsando fortificações.",
+    "automation": {
+      "damageByColor": {
+        "verde": 5,
+        "amarelo": 10,
+        "laranja": 15,
+        "vermelho": 20,
+        "azul": 25
+      },
+      "damageType": "Contusão",
+      "appliesCondition": "caido",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "pesadelo",
+    "name": "Pesadelo",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "100 metros",
+    "duration": "1 noite",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Perturba o sono do alvo impedindo recuperação de EH e Karma."
+      },
+      {
+        "level": 3,
+        "summary": "Causa 3/6/9/12 de dano Psíquico e fadiga severa (-2 colunas no dia seguinte)."
+      },
+      {
+        "level": 5,
+        "summary": "Aterroriza a vítima à distância mesmo a quilômetros usando um pertence pessoal."
+      }
+    ],
+    "description": "Envia visões lúgubres e espectrais aos sonhos de uma vítima adormecida, drenando sua energia vital e impedindo seu descanso.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Psíquico",
+      "appliesCondition": "amedrontado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "visao-noturna",
+    "name": "Visão Noturna",
+    "professionIds": [
+      "mago",
+      "rastreador"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Enxerga perfeitamente na penumbra e até 15m na escuridão total."
+      },
+      {
+        "level": 3,
+        "summary": "Visão noturna nítida até 30m e percepção de calor vital."
+      },
+      {
+        "level": 5,
+        "summary": "Enxerga até 50m na escuridão mágica por 4 horas."
+      }
+    ],
+    "description": "Adapta os olhos do beneficiário às sombras profundas, revelando contornos e presenças vivas mesmo em criptas sem nenhuma tocha.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "assombracao",
+    "name": "Assombração",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Invoca gemidos, vultos e frio súbito em área de 6m (-1 coluna em inimigos)."
+      },
+      {
+        "level": 3,
+        "summary": "Manifesta aparições assustadoras aplicando Amedrontado em quem falhar em RM."
+      },
+      {
+        "level": 5,
+        "summary": "Assombra uma edificação inteira por 1 dia causando pânico contínuo."
+      }
+    ],
+    "description": "Atrai ecos espirituais inquietos para impregnar um ambiente de calafrios, sombras errantes e murmúrios sepulcrais.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "amedrontado"
+    }
+  },
+  {
+    "id": "circulo-de-protecao-necromantico",
+    "name": "Círculo de Proteção",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "3 metros",
+    "duration": "30 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Traça círculo de 3m que impede entrada de mortos-vivos fracos (+2 DA/RM)."
+      },
+      {
+        "level": 3,
+        "summary": "Repele mortos-vivos e espíritos médios e concede +3 DA/RM a todos dentro."
+      },
+      {
+        "level": 5,
+        "summary": "Barreira necromântica de 6m que aprisiona ou bloqueia entidades poderosas."
+      }
+    ],
+    "description": "Inscreve runas sombrias no solo formando uma fronteira mística intransponível para espíritos hostis e cadáveres animados.",
+    "automation": {
+      "targetType": "area",
+      "defenseBonus": 2,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "paralisia",
+    "name": "Paralisia",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "4 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Rigidez cadavérica congela 1 alvo humanoide por 2 rodadas (Paralisado)."
+      },
+      {
+        "level": 3,
+        "summary": "Paralisa o alvo por 5 rodadas; pode testar RF a cada 2 rodadas."
+      },
+      {
+        "level": 5,
+        "summary": "Afeta até 3 inimigos próximos simultaneamente."
+      }
+    ],
+    "description": "Canaliza o frio imóvel da morte nos nervos do adversário, enrijecendo seus músculos e deixando-o totalmente indefeso.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "paralisado"
+    }
+  },
+  {
+    "id": "degeneracao-fisica",
+    "name": "Degeneração Física",
+    "professionIds": [
+      "mago",
+      "sacerdote"
+    ],
+    "group": "Mago — Colégio Necromântico / Ordens de Blator e Crezir",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "5 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Enfraquece músculos do alvo (-2 FOR/FIS, -2 colunas em ataques físicos)."
+      },
+      {
+        "level": 3,
+        "summary": "Drena vigor causando 3/6/9/12 de dano Necrótico e -3 colunas."
+      },
+      {
+        "level": 5,
+        "summary": "Causa 5/10/15/20 de dano direto na EF e exaustão severa."
+      }
+    ],
+    "description": "Acelera a fadiga e o definhamento celular no corpo da vítima, roubando-lhe a força dos braços e a resistência física.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Necrótico",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "toque-gelido",
+    "name": "Toque Gélido",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Toque sepulcral causando 3/6/9/12 (crítico 15) de dano Necrótico/Frio."
+      },
+      {
+        "level": 3,
+        "summary": "Causa 5/10/15/20 e o evocador recupera metade do dano em EH."
+      },
+      {
+        "level": 5,
+        "summary": "Causa 7/14/21/28, drena calor vital e aplica Paralisado por 1 rodada."
+      }
+    ],
+    "description": "Impregna a mão do necromante com o gelo do além-túmulo, drenando a centelha vital do oponente ao contato direto.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Necrótico",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "putrefacao",
+    "name": "Putrefação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Apodrece matéria orgânica ou inflige necrose dolorosa (4/8/12/16 Necrótico)."
+      },
+      {
+        "level": 3,
+        "summary": "Causa 6/12/18/24 de dano e condição Sangrando/Envenenado por infecção."
+      },
+      {
+        "level": 5,
+        "summary": "Destrói escudos de madeira/couro e inflige 8/16/24/32 de dano Necrótico."
+      }
+    ],
+    "description": "Invoca forças aceleradas de decomposição que apodrecem provisões, madeira, couro e abrem feridas purulentas em criaturas vivas.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Necrótico",
+      "appliesCondition": "envenenado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "possessao",
+    "name": "Possessão",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 6,
+    "evocationTime": "2 rodadas",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Projeta a consciência para controlar 1 animal ou morto-vivo fraco."
+      },
+      {
+        "level": 3,
+        "summary": "Assume controle do corpo de 1 humanoide que falhe em RM."
+      },
+      {
+        "level": 5,
+        "summary": "Domínio completo por 1 hora mantendo acesso às habilidades físicas do hospedeiro."
+      }
+    ],
+    "description": "Separa temporariamente o espírito do necromante de seu corpo para invadir e comandar o corpo de outro ser.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "dominado"
+    }
+  },
+  {
+    "id": "doencas",
+    "name": "Doenças",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Toque / 10m",
+    "duration": "Dias",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Contamina o alvo com febre debilitante (-2 em testes físicos e recuperação)."
+      },
+      {
+        "level": 3,
+        "summary": "Inflige peste virulenta causando 2/4/6/8 de dano por dia e condição Envenenado."
+      },
+      {
+        "level": 5,
+        "summary": "Peste contagiosa que pode se espalhar a criaturas em contato prolongado."
+      }
+    ],
+    "description": "Semeia miasmas patológicos no organismo da vítima, provocando febre alta, calafrios e rápida perda de vitalidade.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Necrótico",
+      "appliesCondition": "envenenado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "necroanimacao",
+    "name": "Necroanimação",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 5,
+    "evocationTime": "3 rodadas",
+    "range": "10 metros",
+    "duration": "Permanente (enquanto sustentado)",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Reanima 1 Esqueleto ou Zumbi obediente a comandos simples."
+      },
+      {
+        "level": 3,
+        "summary": "Ergue até 3 mortos-vivos comuns ou 1 Carniçal."
+      },
+      {
+        "level": 5,
+        "summary": "Ergue um esquadrão de 6 esqueletos guerreiros ou 1 morto-vivo de elite."
+      }
+    ],
+    "description": "Infunde energia negativa em restos mortais para reerguê-los como servos incansáveis submetidos à vontade do necromante.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "necroconhecimento",
+    "name": "Necroconhecimento",
+    "professionIds": [
+      "mago",
+      "sacerdote"
+    ],
+    "group": "Mago — Colégio Necromântico / Ordem de Cruine",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "2 rodadas",
+    "range": "Toque",
+    "duration": "5 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Determina causa e hora exata da morte de um cadáver."
+      },
+      {
+        "level": 3,
+        "summary": "Interroga o eco espiritual do falecido com até 3 perguntas."
+      },
+      {
+        "level": 5,
+        "summary": "Obtém visões das últimas cenas presenciadas pelo morto."
+      }
+    ],
+    "description": "Comunica-se com os resquícios espirituais ligados a um corpo sem vida para desvendar crimes, segredos enterrados e últimas memórias.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "medo",
+    "name": "Medo",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "5 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Impõe pavor irracional em 1 alvo (Amedrontado, -2 colunas)."
+      },
+      {
+        "level": 3,
+        "summary": "Afeta até 3 inimigos em cone de 10m, forçando recuo."
+      },
+      {
+        "level": 5,
+        "summary": "Pânico absoluto em raio de 8m derrubando armas e quebrando formações."
+      }
+    ],
+    "description": "Irradia uma onda gélida de pavor sepulcral que paralisa o espírito dos inimigos ou os força a fugir em desespero.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "amedrontado"
+    }
+  },
+  {
+    "id": "disfarce-necro-vital",
+    "name": "Disfarce Necro-Vital",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Oculta a aura vital: mortos-vivos irracionais ignoram o alvo como se fosse morto."
+      },
+      {
+        "level": 3,
+        "summary": "Simula morte clínica perfeita (sem pulso perceptível) ou esconde condição de morto-vivo."
+      },
+      {
+        "level": 5,
+        "summary": "Estende o véu necro-vital a até 4 aliados próximos."
+      }
+    ],
+    "description": "Mimetiza a assinatura fria da morte ao redor de um ser vivo — ou disfarça um morto-vivo como vivo — enganando sentidos sobrenaturais.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "seta-arcana",
+    "name": "Seta Arcana",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Evocação / Arcano",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Dispara 1 dardo de energia pura causando 2/4/6/8 (crítico 10) de dano Arcano."
+      },
+      {
+        "level": 3,
+        "summary": "Dispara 2 setas teleguiadas causando 4/8/12/16 de dano."
+      },
+      {
+        "level": 5,
+        "summary": "Saraivada de 4 setas infalíveis causando 6/12/18/24 de dano Arcano."
+      }
+    ],
+    "description": "Projétil místico fundamental formado por Karma condensado, veloz e confiável contra alvos com alta esquiva ou seres incorpóreos.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Arcano",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "escudo-arcano",
+    "name": "Escudo Arcano",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Evocação / Arcano",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "Instantânea",
+    "range": "Pessoal",
+    "duration": "5 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Disco translúcido de energia concedendo +3 DA e +6 Absorção."
+      },
+      {
+        "level": 3,
+        "summary": "Barreira reforçada concedendo +4 DA e +12 Absorção."
+      },
+      {
+        "level": 5,
+        "summary": "Escudo completo concedendo +5 DA, +18 Absorção e bloqueando Setas Arcanas."
+      }
+    ],
+    "description": "Ergue instantaneamente um campo de força cintilante diante do mago, desviando flechas, lâminas e projéteis místicos.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 3,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "explosao-de-energia",
+    "name": "Explosão de Energia",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Evocação / Arcano",
+    "source": "Magias dos Reinos",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal (Raio 5m)",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Onda de choque ao redor do mago causando 3/6/9/12 Arcano e empurrando inimigos."
+      },
+      {
+        "level": 3,
+        "summary": "Raio de 7m causando 5/10/15/20 e derrubando adversários (Caído)."
+      },
+      {
+        "level": 5,
+        "summary": "Pulso maciço de 10m causando 8/16/24/32 e dispersando projéteis."
+      }
+    ],
+    "description": "Libera subitamente uma esfera concussiva de força arcana ao redor do conjurador para romper cercos em combate fechado.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Arcano",
+      "appliesCondition": "caido",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "dissipar-magia-maior",
+    "name": "Dissipar Magia Maior",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Evocação / Arcano",
+    "source": "Magias dos Reinos",
+    "karmaCost": 5,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Anula automaticamente encantamentos médios em raio de 5m."
+      },
+      {
+        "level": 3,
+        "summary": "Interrompe rituais em andamento e cancela invocações instáveis."
+      },
+      {
+        "level": 5,
+        "summary": "Cria zona de silêncio místico por 3 rodadas em raio de 6m."
+      }
+    ],
+    "description": "Descarrega um pulso contramágico poderoso capaz de rasgar barreiras arcanas, quebrar invocações e neutralizar efeitos em área.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "circulo-runico",
+    "name": "Círculo Rúnico",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Evocação / Arcano",
+    "source": "Livro de Objetos Mágicos",
+    "karmaCost": 4,
+    "evocationTime": "3 rodadas",
+    "range": "Toque",
+    "duration": "24 horas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Armadilha rúnica no chão que detona ao toque (4/8/12/16 Arcano)."
+      },
+      {
+        "level": 3,
+        "summary": "Runa potencializada de 3m de raio causando 6/12/18/24 de dano elemental escolhido."
+      },
+      {
+        "level": 5,
+        "summary": "Selo arcano duradouro que também ativa efeito de Paralisia ou Alarme."
+      }
+    ],
+    "description": "Grava caracteres luminosos invisíveis em portas, corredores ou baús que liberam energia explosiva quando alguém não autorizado se aproxima.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Arcano",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "arma-encantada",
+    "name": "Arma Encantada",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Evocação / Arcano",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Torna uma arma mágica (+1 coluna e +2 de dano), capaz de ferir seres etéreos."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 colunas e +4 de dano elemental (Fogo, Gelo ou Raio)."
+      },
+      {
+        "level": 5,
+        "summary": "Concede +3 colunas e +6 de dano mágico em até duas armas."
+      }
+    ],
+    "description": "Canaliza Karma na lâmina ou cabeça de uma arma mundana, fazendo-a brilhar com runas energéticas e atravessar resistências sobrenaturais.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "transmutacao-alquimica",
+    "name": "Transmutação Alquímica",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Alquímico / Arcano",
+    "source": "Livro de Alquimia",
+    "karmaCost": 3,
+    "evocationTime": "3 rodadas",
+    "range": "Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Altera propriedades básicas de 1 kg de metal, pedra ou líquido."
+      },
+      {
+        "level": 3,
+        "summary": "Transforma ferro enferrujado em aço temperado ou purifica água/venenos."
+      },
+      {
+        "level": 5,
+        "summary": "Transmuta materiais complexos ou reforça armaduras (+6 Absorção temporária)."
+      }
+    ],
+    "description": "Reorganiza a estrutura íntima dos elementos materiais segundo os tratados do Colégio Alquímico de Tagmar.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "elixir-instantaneo",
+    "name": "Elixir Instantâneo",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Alquímico / Arcano",
+    "source": "Livro de Alquimia",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "Toque",
+    "duration": "1 dia",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Infunde água pura em tônico que restaura 3/6/9/12 EH."
+      },
+      {
+        "level": 3,
+        "summary": "Prepara poção emergencial que cura 3/6/9/12 EF ou neutraliza veneno leve."
+      },
+      {
+        "level": 5,
+        "summary": "Cria frasco alquímico potente com efeito de Cura Física ou Vigor."
+      }
+    ],
+    "description": "Destila rapidamente Karma e reagentes de bolso em um frasco alquímico de uso imediato para socorrer aliados no campo.",
+    "automation": {
+      "healByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "esfera-de-forca",
+    "name": "Esfera de Força",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Evocação / Arcano",
+    "source": "Magias dos Reinos",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "5 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Redoma translúcida de 2m que protege ou aprisiona 1 criatura média."
+      },
+      {
+        "level": 3,
+        "summary": "Esfera indestrutível a armas comuns (60 Absorção) que flutua suavemente."
+      },
+      {
+        "level": 5,
+        "summary": "Cúpula de 5m abrigando todo o grupo contra sopros e explosões."
+      }
+    ],
+    "description": "Cria uma bolha rígida de energia arcana transparente capaz de proteger um aliado ferido ou isolar um adversário perigoso.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 4,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "contra-magia",
+    "name": "Contra-Magia",
+    "professionIds": [
+      "mago"
+    ],
+    "group": "Mago — Colégio Evocação / Arcano",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "Reação",
+    "range": "20 metros",
+    "duration": "Instantânea",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Tenta interromper uma magia de custo baixo sendo evocada à vista."
+      },
+      {
+        "level": 3,
+        "summary": "Anula magias de custo médio ou desvia um projétil mágico."
+      },
+      {
+        "level": 5,
+        "summary": "Reflete parcialmente o choque de Karma causando 3/6/9/12 de dano Arcano ao evocador."
+      }
+    ],
+    "description": "Dispara um fio súbito de energia disruptiva exatamente no instante da evocação rival, colapsando o encanto inimigo antes que se forme.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Arcano",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "apelo",
+    "name": "Apelo",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "Pessoal",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Prece súbita por orientação ou pequeno sinal divino em momentos críticos."
+      },
+      {
+        "level": 3,
+        "summary": "Recebe favor tático (+3 colunas no próximo teste crucial)."
+      },
+      {
+        "level": 5,
+        "summary": "Intervenção dramática da divindade em situação extrema de vida ou morte."
+      }
+    ],
+    "description": "Súplica fervorosa direcionada diretamente à divindade patrona em momentos de necessidade extrema, invocando auxílio providencial.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "bencao",
+    "name": "Bênção",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica / Ordens de Blator, Crezir e Crisagom",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Abençoa 1 aliado concedendo +1 coluna em ataques e +1 DA."
+      },
+      {
+        "level": 3,
+        "summary": "Abençoa até 4 aliados concedendo +2 colunas em ataques e +1 RF/RM."
+      },
+      {
+        "level": 5,
+        "summary": "Abençoa um destacamento inteiro concedendo +2 colunas, +2 DA e imunidade a Medo."
+      }
+    ],
+    "description": "Invoca a graça divina sobre os companheiros, elevando seu vigor espiritual, coragem e precisão em combate.",
+    "automation": {
+      "targetType": "area",
+      "defenseBonus": 1,
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "curas-fisicas",
+    "name": "Curas Físicas",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica / Ordens de Selimom, Cambu e Maira",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Fecha ferimentos e restaura 3/6/9/12 (crítico 15) pontos de EF."
+      },
+      {
+        "level": 3,
+        "summary": "Restaura 5/10/15/20 de EF e estanca sangramentos graves."
+      },
+      {
+        "level": 5,
+        "summary": "Restaura 8/16/24/32 de EF e recompõe fraturas ósseas."
+      }
+    ],
+    "description": "Canaliza luz restauradora pelas mãos do sacerdote para cicatrizar cortes, ossos quebrados e ferimentos corporais na Energia Física (EF).",
+    "automation": {
+      "healByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "curas-heroicas",
+    "name": "Curas Heróicas",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica / Ordens de Blator, Crezir, Crisagom e Plandis",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque / 10m",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Revigora o ânimo e restaura 5/10/15/20 (crítico 25) pontos de EH."
+      },
+      {
+        "level": 3,
+        "summary": "Restaura 8/16/24/32 de EH e elimina exaustão imediata."
+      },
+      {
+        "level": 5,
+        "summary": "Restaura 12/24/36/48 de EH em até 3 aliados próximos."
+      }
+    ],
+    "description": "Infunde coragem divina e fôlego renovado em um combatente fatigado, recompondo rapidamente sua Energia Heróica (EH).",
+    "automation": {
+      "healByColor": {
+        "verde": 5,
+        "amarelo": 10,
+        "laranja": 15,
+        "vermelho": 20,
+        "azul": 25
+      },
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "esconjuracao",
+    "name": "Esconjuração",
+    "professionIds": [
+      "sacerdote",
+      "mago"
+    ],
+    "group": "Sacerdote — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Repele mortos-vivos ou demônios fracos (Amedrontado) e causa 3/6/9/12 Sagrado."
+      },
+      {
+        "level": 3,
+        "summary": "Afasta criaturas sombrias médias em raio de 8m causando 5/10/15/20 Sagrado."
+      },
+      {
+        "level": 5,
+        "summary": "Destrói mortos-vivos menores instantaneamente e causa 8/16/24/32 em entidades maiores."
+      }
+    ],
+    "description": "Ergue o símbolo sagrado entoando palavras de banimento que queimam e afugentam mortos-vivos, espectros e seres infernais.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Sagrado",
+      "appliesCondition": "amedrontado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "maldicoes",
+    "name": "Maldições",
+    "professionIds": [
+      "sacerdote",
+      "mago"
+    ],
+    "group": "Sacerdote — Lista Básica / Colégio Necromântico",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "1 dia",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Impõe infortúnio ao alvo (-2 colunas em todas as ações por 10 rodadas)."
+      },
+      {
+        "level": 3,
+        "summary": "Maldição severa (-3 colunas e -2 DA/RF/RM por 1 dia)."
+      },
+      {
+        "level": 5,
+        "summary": "Maldição duradoura que só cessa mediante Quebra de Encantos ou penitência."
+      }
+    ],
+    "description": "Pronuncia uma sentença mística sombria que atrai azar, fraqueza e tormento sobre um transgressor ou inimigo da fé.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "ordens",
+    "name": "Ordens",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "1 rodada",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Impõe comando de uma palavra ('Caia!', 'Largue!', 'Fuja!', 'Pare!')."
+      },
+      {
+        "level": 3,
+        "summary": "Comando claro de uma frase que dura até 3 rodadas."
+      },
+      {
+        "level": 5,
+        "summary": "Comanda até 4 inimigos simultaneamente em voz de trovão."
+      }
+    ],
+    "description": "Impregna a voz do sacerdote com autoridade divina irresistível, obrigando o alvo que falhar em RM a obedecer imediatamente.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "caido"
+    }
+  },
+  {
+    "id": "recuperacao-fisica",
+    "name": "Recuperação Física",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica / Ordens de Ganis e Lena",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Neutraliza venenos leves e cura infecções recentes."
+      },
+      {
+        "level": 3,
+        "summary": "Cura venenos mortais, paralisia tóxica e doenças comuns."
+      },
+      {
+        "level": 5,
+        "summary": "Purifica pragas mágicas, cegueira ou surdez causadas por enfermidade."
+      }
+    ],
+    "description": "Expurga toxinas, peçonhas e enfermidades do organismo do alvo, devolvendo-lhe o pleno funcionamento corporal.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "regeneracao",
+    "name": "Regeneração",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica / Ordens de Ganis e Lena",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 4,
+    "evocationTime": "2 rodadas",
+    "range": "Toque",
+    "duration": "5 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Regenera 2/4/6/8 de EF por rodada durante 5 rodadas."
+      },
+      {
+        "level": 3,
+        "summary": "Regenera 4/8/12/16 de EF e fecha lesões internas automaticamente."
+      },
+      {
+        "level": 5,
+        "summary": "Permite regenerar membros decepados ou cicatrizes severas em ritual prolongado."
+      }
+    ],
+    "description": "Desperta um fluxo contínuo de graça vital que recompõe tecidos destruídos rodada após rodada.",
+    "automation": {
+      "healByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "resistencia-divina",
+    "name": "Resistência",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica / Ordens de Cruine e Plandis",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Aumenta RF e RM do alvo em +2."
+      },
+      {
+        "level": 3,
+        "summary": "Aumenta RF e RM em +4 e reduz efeitos de condições adversas."
+      },
+      {
+        "level": 5,
+        "summary": "Protege até 4 aliados concedendo +4 RF e +4 RM por 1 hora."
+      }
+    ],
+    "description": "Fortalece o corpo e o espírito do fiel com energia protetora contra venenos, doenças e magias hostis.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "ressurreicao",
+    "name": "Ressurreição",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica / Ordens de Palier, Selimom, Maira, Parom, Cambu e Cruine",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 10,
+    "evocationTime": "10 rodadas",
+    "range": "Toque",
+    "duration": "Permanente",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Traz de volta à vida alguém morto há menos de 1 hora (1 EF restante)."
+      },
+      {
+        "level": 3,
+        "summary": "Ressuscita morto há até 3 dias com metade da EF."
+      },
+      {
+        "level": 5,
+        "summary": "Recompõe corpo gravemente danificado de alguém falecido há até 1 mês."
+      }
+    ],
+    "description": "Milagre supremo que suplica à divindade o retorno da alma ao corpo recém-falecido antes que ela cruze definitivamente o véu.",
+    "automation": {
+      "healByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "sagracao",
+    "name": "Sagração",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica / Ordens de Palier e Parom",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "3 rodadas",
+    "range": "10 metros",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Consagra área de 5m ou água benta (+2 colunas contra mortos-vivos/demônios)."
+      },
+      {
+        "level": 3,
+        "summary": "Consagra altar ou arma por 1 dia (+2 dano Sagrado contra seres malignos)."
+      },
+      {
+        "level": 5,
+        "summary": "Santifica um templo ou terreno inteiro repelindo energias profanas."
+      }
+    ],
+    "description": "Imbui solo, água, armas ou relíquias com a presença sagrada da divindade, repelindo corrupção e fortalecendo fiéis.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "deteccao-de-magia-divina",
+    "name": "Detecção de Auras Divinas",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Percebe presenças sagradas, profanas ou encantadas a até 15m."
+      },
+      {
+        "level": 3,
+        "summary": "Identifica intenções infernais, necromânticas ou divindade vinculada."
+      },
+      {
+        "level": 5,
+        "summary": "Enxerga auras ocultas por disfarces mágicos em 30m."
+      }
+    ],
+    "description": "Permite ao sacerdote sentir a pureza ou corrupção mística presente em pessoas, templos, artefatos e criaturas.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "quebra-de-encantos-sagrada",
+    "name": "Quebra de Encantos Sagrada",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Remove uma maldição leve ou efeito mágico sobre 1 aliado."
+      },
+      {
+        "level": 3,
+        "summary": "Quebra possessões espirituais, encantamentos mentais e magias sombrias."
+      },
+      {
+        "level": 5,
+        "summary": "Purifica área de 8m de qualquer feitiçaria ativa."
+      }
+    ],
+    "description": "Invoca a pureza divina para romper correntes espirituais, maldições e encantos profanos que afligem pessoas ou lugares.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "anulacao-mistica",
+    "name": "Anulação Mística",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Palier",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "5 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Suprime efeitos mágicos sobre 1 alvo ou item por 3 rodadas."
+      },
+      {
+        "level": 3,
+        "summary": "Cria campo antimagia de 4m de raio anulando evocações menores."
+      },
+      {
+        "level": 5,
+        "summary": "Bloqueia conjuração de um inimigo por 5 rodadas se falhar em RM."
+      }
+    ],
+    "description": "Dádiva de Palier que silencia temporariamente os fluxos de Karma ao redor do alvo, neutralizando feitiçarias hostis.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "silenciado"
+    }
+  },
+  {
+    "id": "fogo-divino",
+    "name": "Fogo Divino",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Palier",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Coluna de chamas brancas causando 4/8/12/16 (crítico 20) de dano Sagrado/Fogo."
+      },
+      {
+        "level": 3,
+        "summary": "Raio de 4m causando 6/12/18/24 (+50% contra seres das trevas)."
+      },
+      {
+        "level": 5,
+        "summary": "Chama purificadora em 6m causando 9/18/27/36 sem ferir aliados puros."
+      }
+    ],
+    "description": "Desce dos céus um pilar de fogo sagrado branco-dourado que consome a maldade e incinera inimigos da luz de Palier.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Sagrado",
+      "appliesCondition": "queimando",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "protecao-mental",
+    "name": "Proteção Mental",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Palier",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +4 RM contra ilusões, controle mental e medo."
+      },
+      {
+        "level": 3,
+        "summary": "Imunidade completa a leitura de mente, sono mágico e confusão."
+      },
+      {
+        "level": 5,
+        "summary": "Estende lucidez inabalável a até 4 companheiros próximos."
+      }
+    ],
+    "description": "Ilumina a mente do devoto com a clareza de Palier, tornando-a imune a enganos psíquicos e sussurros sombrios.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "area-de-paz",
+    "name": "Área de Paz",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Selimom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal (Raio 8m)",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Criaturas na área hesitam em atacar (-3 colunas em ações hostis)."
+      },
+      {
+        "level": 3,
+        "summary": "Todos na área devem passar em RM para sacar armas ou iniciar combate."
+      },
+      {
+        "level": 5,
+        "summary": "Santuário de 15m onde violência física cessa e feridos recuperam +4 EH."
+      }
+    ],
+    "description": "Irradia a serenidade absoluta de Selimom sobre o campo, acalmando fúrias e interrompendo derramamento de sangue.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "comando-de-paz",
+    "name": "Comando de Paz",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Selimom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "5 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Obriga 1 atacante a abaixar a arma se falhar em RM."
+      },
+      {
+        "level": 3,
+        "summary": "Desarma hostilidade de até 3 inimigos por 5 rodadas."
+      },
+      {
+        "level": 5,
+        "summary": "Pacifica multidão enfurecida ou duelo mortal instantaneamente."
+      }
+    ],
+    "description": "Com uma palavra gentil carregada de graça divina, dissolve o ímpeto violento no coração de um agressor.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "desarmado"
+    }
+  },
+  {
+    "id": "escudo-protetor",
+    "name": "Escudo Protetor",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Selimom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Toque / 10m",
+    "duration": "10 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Aura dourada concede +3 DA e +10 Absorção a um aliado vulnerável."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +4 DA e +18 Absorção, absorvendo golpes críticos."
+      },
+      {
+        "level": 5,
+        "summary": "Redoma protetora envolvendo até 3 aliados feridos."
+      }
+    ],
+    "description": "Envolve inocentes ou companheiros feridos com um manto translúcido de luz pacifista que barra golpes letais.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 3,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "ataque-impetuoso",
+    "name": "Ataque Impetuoso",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Crezir",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "Instantânea",
+    "range": "Pessoal / Toque",
+    "duration": "3 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +2 colunas e +3 de dano no próximo ataque corpo a corpo."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +3 colunas, +5 de dano e permite ataque extra em caso de crítico."
+      },
+      {
+        "level": 5,
+        "summary": "Frenesi sagrado por 5 rodadas (+3 colunas e +6 de dano)."
+      }
+    ],
+    "description": "Acende o sangue guerreiro de Crezir nas veias do combatente, impulsionando investidas ferozes e golpes arrasadores.",
+    "automation": {
+      "targetType": "self",
+      "appliesCondition": "em-furia"
+    }
+  },
+  {
+    "id": "dadivas-da-guerra",
+    "name": "Dádivas da Guerra",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Crezir / Ordens de Blator e Crisagom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Imbui uma arma com +2 colunas e +4 de dano em combate."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 colunas, +6 de dano e +8 Absorção na armadura do alvo."
+      },
+      {
+        "level": 5,
+        "summary": "Fortalece simultaneamente armas de até 3 guerreiros."
+      }
+    ],
+    "description": "Abençoa o aço e o braço dos campeões da guerra, tornando suas armas extraordinariamente letais.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "furia-dos-dragoes-vermelhos",
+    "name": "Fúria dos Dragões Vermelhos",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Crezir",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "5 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Chamas rubras envolvem a arma (+4 dano Fogo) e concedem imunidade a Medo."
+      },
+      {
+        "level": 3,
+        "summary": "Sopro flamejante em cone 6m causando 4/8/12/16 de dano Fogo."
+      },
+      {
+        "level": 5,
+        "summary": "Aura dracônica de Crezir: +3 colunas, +6 dano Fogo e +12 EH temporária."
+      }
+    ],
+    "description": "Canaliza a fúria lendária da ordem dos Dragões Vermelhos de Crezir, revestindo o sacerdote em ardor flamejante.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Fogo",
+      "appliesCondition": "em-furia",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "curas-espirituais",
+    "name": "Curas Espirituais",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Lena / Ordens de Palier, Selimom, Maira, Ganis, Plandis, Cambu e Cruine",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Alivia traumas mentais, remove Medo/Atordoado e restaura 4/8/12/16 EH."
+      },
+      {
+        "level": 3,
+        "summary": "Restaura 6/12/18/24 EH e 4 pontos de EF, curando fadiga da alma."
+      },
+      {
+        "level": 5,
+        "summary": "Remove maldições emocionais, loucura e restaura 10/20/30/40 EH."
+      }
+    ],
+    "description": "Milagre compassivo que sana feridas do espírito, dissipa desespero, medo mágico e restaura o equilíbrio interior.",
+    "automation": {
+      "healByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "esplendor",
+    "name": "Esplendor",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Lena",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "30 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Irradia graça estonteante (+3 colunas em testes sociais e Carisma)."
+      },
+      {
+        "level": 3,
+        "summary": "Deslumbra oponentes próximos (-2 colunas para atacarem o beneficiário)."
+      },
+      {
+        "level": 5,
+        "summary": "Presença radiante capaz de pacificar audiências e encantar multidões."
+      }
+    ],
+    "description": "Envolve o devoto de Lena em um brilho sedutor e harmonioso que inspira admiração e respeito imediatos.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 2
+    }
+  },
+  {
+    "id": "elo-empatico",
+    "name": "Elo Empático",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Lena",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "30 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Sente emoções verdadeiras, dores e nível de ferimento de 1 aliado ou alvo."
+      },
+      {
+        "level": 3,
+        "summary": "Permite compartilhar cura ou absorver parte do sofrimento de um aliado."
+      },
+      {
+        "level": 5,
+        "summary": "Conecta emocionalmente todo o grupo para coordenação perfeita (+1 DA)."
+      }
+    ],
+    "description": "Estabelece uma sintonia sensível entre corações, permitindo compreender dores ocultas e amparar companheiros à distância.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "campo-abencoado",
+    "name": "Campo Abençoado",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Maira",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "15 metros",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Solo natural em 8m de raio revitaliza aliados (+2 EH por turno de descanso)."
+      },
+      {
+        "level": 3,
+        "summary": "Aliados na área ganham +2 DA e +2 RF; inimigos sofrem terreno difícil."
+      },
+      {
+        "level": 5,
+        "summary": "Abençoa uma aldeia ou colheita contra pragas e intempéries."
+      }
+    ],
+    "description": "Desperta a bênção maternal de Maira sobre a terra, transformando uma clareira em refúgio de vigor e proteção.",
+    "automation": {
+      "targetType": "area",
+      "defenseBonus": 2,
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "comunhao-natural",
+    "name": "Comunhão Natural",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Maira / Ordem de Ganis",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "2 rodadas",
+    "range": "500 metros",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Percebe fontes de água, trilhas, animais e perigos num raio de 500m."
+      },
+      {
+        "level": 3,
+        "summary": "Dialoga brevemente com animais e árvores locais sobre eventos recentes."
+      },
+      {
+        "level": 5,
+        "summary": "Sente presença de intrusos ou corrupção num raio de 5 km."
+      }
+    ],
+    "description": "Abre os sentidos do sacerdote para ouvir a voz silenciosa das florestas, rios, rochas e criaturas vivas da região.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "santuario-natural",
+    "name": "Santuário Natural",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Maira / Ordem de Cambu",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 4,
+    "evocationTime": "3 rodadas",
+    "range": "10 metros",
+    "duration": "8 horas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Protege um acampamento de 6m contra animais selvagens e mau tempo."
+      },
+      {
+        "level": 3,
+        "summary": "Oculta o acampamento de rastreadores e dobra recuperação de EF/EH no descanso."
+      },
+      {
+        "level": 5,
+        "summary": "Cria barreira natural inviolável contra criaturas corrompidas e mortos-vivos."
+      }
+    ],
+    "description": "Consagra um trecho da natureza como abrigo seguro onde o grupo pode repousar em paz sob a guarda de Maira.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "forma-fluida",
+    "name": "Forma Fluida",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Ganis",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Corpo torna-se maleável como água (+3 Escapar, atravessa frestas e +2 DA)."
+      },
+      {
+        "level": 3,
+        "summary": "Reduz dano físico cortante/perfurante pela metade e move-se livremente sob a água."
+      },
+      {
+        "level": 5,
+        "summary": "Dissolve-se temporariamente em correnteza líquida imune a agarrões."
+      }
+    ],
+    "description": "Concede ao fiel de Ganis a fluidez indomável das ondas, escorregando de amarras e amortecendo lâminas inimigas.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 2
+    }
+  },
+  {
+    "id": "hidrotolerancia",
+    "name": "Hidrotolerância",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Ganis",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Permite respirar debaixo d'água e nadar sem penalidade por 1 hora."
+      },
+      {
+        "level": 3,
+        "summary": "Estende o dom a até 4 aliados e protege contra frio das profundezas."
+      },
+      {
+        "level": 5,
+        "summary": "Permite lutar sob o mar sem penalidades de movimento ou ataque por 4 horas."
+      }
+    ],
+    "description": "Outorga a bênção dos oceanos de Ganis, permitindo respirar, enxergar e mover-se com liberdade nas profundezas aquáticas.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "ser-de-agua",
+    "name": "Ser de Água",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Ganis",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 5,
+    "evocationTime": "2 rodadas",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Moldará uma criatura aquática viva de médio porte a partir de água próxima."
+      },
+      {
+        "level": 3,
+        "summary": "Invoca guardião das ondas (Estágio 6) capaz de engolfar inimigos."
+      },
+      {
+        "level": 5,
+        "summary": "Ergue colosso marinho (Estágio 10) capaz de defender um navio inteiro."
+      }
+    ],
+    "description": "Anima massas de água doce ou salgada na forma de um servo fluídico devotado às ordens do sacerdote de Ganis.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "bravura",
+    "name": "Bravura",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Blator / Ordens de Crezir e Crisagom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Remove Medo de até 3 aliados e concede +2 RM contra intimidação."
+      },
+      {
+        "level": 3,
+        "summary": "Aliados afetados ganham +1 coluna em combate corpo a corpo e +8 EH temporária."
+      },
+      {
+        "level": 5,
+        "summary": "Inspira toda uma companhia a lutar destemidamente sem recuar."
+      }
+    ],
+    "description": "Enche o peito dos guerreiros com a coragem inflexível de Blator, banindo o pavor diante de dragões e hordas monstruosas.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "forca-sagrada",
+    "name": "Força Sagrada",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Blator",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Aumenta o atributo Força do alvo em +2 (+2 dano físico e colunas de Força)."
+      },
+      {
+        "level": 3,
+        "summary": "Aumenta Força em +3 e permite ignorar requisito mínimo de armas pesadas."
+      },
+      {
+        "level": 5,
+        "summary": "Concede vigor titânico (+4 FOR e +10 Absorção) por 10 rodadas."
+      }
+    ],
+    "description": "Canaliza a potência bruta do criador dos anões nos braços do devoto, multiplicando o peso esmagador de cada golpe.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "ira-divina",
+    "name": "Ira Divina",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Blator / Todas as Ordens Marciais",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 5,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Descarrega julgamento celeste causando 5/10/15/20 (crítico 25) de dano Sagrado."
+      },
+      {
+        "level": 3,
+        "summary": "Impacto de área (raio 5m) causando 7/14/21/28 e aplicando Atordoado."
+      },
+      {
+        "level": 5,
+        "summary": "Tempestade de juízo divino em 8m causando 10/20/30/40 de dano Sagrado."
+      }
+    ],
+    "description": "Invoca a fúria direta da divindade em um raio trovejante de poder sagrado que castiga os inimigos da fé.",
+    "automation": {
+      "damageByColor": {
+        "verde": 5,
+        "amarelo": 10,
+        "laranja": 15,
+        "vermelho": 20,
+        "azul": 25
+      },
+      "damageType": "Sagrado",
+      "appliesCondition": "atordoado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "cobertura",
+    "name": "Cobertura",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Crisagom / Ordem de Selimom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "Reação",
+    "range": "10 metros",
+    "duration": "3 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Projeta escudo de luz sobre 1 aliado concedendo +3 DA imediata."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +4 DA e transfere metade do dano excedente para a Absorção divina."
+      },
+      {
+        "level": 5,
+        "summary": "Protege até 3 aliados em linha de frente contra cargas e flechas."
+      }
+    ],
+    "description": "Intervém taticamente no instante do perigo, estendendo a égide honrada de Crisagom para salvar um companheiro cercado.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 3,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "coordenacao",
+    "name": "Coordenação",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Crisagom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Até 4 aliados recebem +2 em Iniciativa e +1 coluna quando flanqueiam."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 colunas em ataques coordenados e +2 DA em formação."
+      },
+      {
+        "level": 5,
+        "summary": "Sintonia marcial impecável permitindo trocar posições sem sofrer ataques oportunos."
+      }
+    ],
+    "description": "Infunde a visão estratégica de Crisagom no esquadrão, sincronizando escudos, investidas e manobras coletivas.",
+    "automation": {
+      "targetType": "area",
+      "defenseBonus": 2,
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "protecao-divina",
+    "name": "Proteção Divina",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Crisagom / Ordens de Selimom e Cruine",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Aumenta Defesa Ativa e Passiva em +2 e Absorção em +8."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +3 DA/DP, +14 Absorção e +2 RM."
+      },
+      {
+        "level": 5,
+        "summary": "Armadura radiante que concede +4 DA/DP e +22 Absorção contra mal e caos."
+      }
+    ],
+    "description": "Envolve o campeão em uma couraça invisível de graça sagrada que repele aço, garras e feitiços.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 2,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "fabricacao-divina",
+    "name": "Fabricação Divina",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Parom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "3 rodadas",
+    "range": "Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Repara completamente uma arma quebrada ou restaura toda a Absorção de uma armadura."
+      },
+      {
+        "level": 3,
+        "summary": "Molda metal ou madeira bruta em uma arma ou ferramenta de excelente qualidade."
+      },
+      {
+        "level": 5,
+        "summary": "Forja temporariamente um item obra-prima (+2 colunas) sem necessidade de bigorna."
+      }
+    ],
+    "description": "Canaliza a maestria artesanal de Parom para consertar equipamentos destruídos ou modelar matéria-prima com um toque.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "forma-de-pedra",
+    "name": "Forma de Pedra",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Parom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Pele adquire dureza mineral: +3 DP, +12 Absorção e +3 RF."
+      },
+      {
+        "level": 3,
+        "summary": "Torna-se resistente a venenos, sangramento e ganha +18 Absorção."
+      },
+      {
+        "level": 5,
+        "summary": "Colosso de mármore vivo: +25 Absorção e golpes desarmados causam 4/8/12/16."
+      }
+    ],
+    "description": "Transmuta temporariamente a carne do devoto em pedra articulada, oferecendo resistência formidável a lâminas e toxinas.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 3,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "onda-destrutiva",
+    "name": "Onda Destrutiva",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Parom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "Cone 10m",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Pulso sísmico estilhaça portas/escudos e causa 4/8/12/16 Contusão."
+      },
+      {
+        "level": 3,
+        "summary": "Cone de 12m causando 6/12/18/24 (dobrado contra construtos e estruturas)."
+      },
+      {
+        "level": 5,
+        "summary": "Impacto de forja divina derrubando inimigos (Caído) e causando 9/18/27/36."
+      }
+    ],
+    "description": "Golpeia o chão com o martelo ou símbolo de Parom, liberando uma onda vibratória que racha rochas, golens e armaduras.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Contusão",
+      "appliesCondition": "caido",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "ato-falho",
+    "name": "Ato Falho",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Plandis",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "Reação",
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Induz distração súbita impondo -3 colunas na ação atual do alvo."
+      },
+      {
+        "level": 3,
+        "summary": "Força o alvo a errar um golpe ou revelar uma verdade por lapso verbal."
+      },
+      {
+        "level": 5,
+        "summary": "Transforma um sucesso inimigo em falha simples ou desarma o atacante."
+      }
+    ],
+    "description": "Semear a centelha imprevisível de Plandis faz o adversário tropeçar nas próprias palavras ou escorregar no instante decisivo.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "atordoado"
+    }
+  },
+  {
+    "id": "azar",
+    "name": "Azar",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Plandis",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "5 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Alvo sofre -2 colunas em todas as rolagens e margem de erro crítico aumenta em 1."
+      },
+      {
+        "level": 3,
+        "summary": "Alvo sofre -3 colunas e erros críticos ocorrem em resultados 1 a 3 no 1d20."
+      },
+      {
+        "level": 5,
+        "summary": "Contamina até 3 inimigos com infortúnio severo durante todo o combate."
+      }
+    ],
+    "description": "Desvia os ventos da fortuna contra o adversário, fazendo cordas de arco arrebentarem e passos falsearem no momento errado.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "sorte",
+    "name": "Sorte",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Plandis",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "5 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +2 colunas e permite rerrolar 1 resultado de falha durante a duração."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +3 colunas e crítico Azul ocorre em 19–20 no 1d20."
+      },
+      {
+        "level": 5,
+        "summary": "Abençoa até 3 aliados com golpes providenciais e esquivas milagrosas."
+      }
+    ],
+    "description": "Inclina as probabilidades do destino a favor do devoto de Plandis, transformando tentativas desesperadas em sucessos brilhantes.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "detectar-intencao",
+    "name": "Detectar Intenção",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Cambu / Ordem de Lena",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "15 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Percebe se o interlocutor pretende trair, mentir ou atacar."
+      },
+      {
+        "level": 3,
+        "summary": "Distingue interesses ocultos em negociações e emboscadas iminentes (+2 DA)."
+      },
+      {
+        "level": 5,
+        "summary": "Analisa intenções de todos em uma sala de audiência simultaneamente."
+      }
+    ],
+    "description": "Aguça o discernimento diplomático concedido por Cambu, expondo segundas intenções e emboscadas antes que aconteçam.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "corrente",
+    "name": "Corrente",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Cambu / Todas as Ordens Sacerdotais",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Une a fé de 2 sacerdotes ou aliados, somando +1 coluna em milagres/testes."
+      },
+      {
+        "level": 3,
+        "summary": "Elo espiritual de até 4 devotos permitindo compartilhar Karma e cura."
+      },
+      {
+        "level": 5,
+        "summary": "Círculo de oração coletiva amplificando drasticamente rituais de ordem."
+      }
+    ],
+    "description": "Entrelaça as auras espirituais dos fiéis em uma corrente mística que potencializa orações e protege o elo contra dispersão.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "runas",
+    "name": "Runas",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Cambu / Ordens de Palier e Parom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "Toque",
+    "duration": "1 dia",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Grava runa sagrada em pergaminho ou escudo (+1 coluna ou guarda 1 milagre menor)."
+      },
+      {
+        "level": 3,
+        "summary": "Inscreve selo de proteção em porta, carroça ou contrato inviolável."
+      },
+      {
+        "level": 5,
+        "summary": "Runa de poder capaz de disparar uma Bênção ou Cura quando acionada."
+      }
+    ],
+    "description": "Traça símbolos divinos consagrados para selar pactos, proteger caravanas comerciais e armazenar bênçãos.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "aura-divina",
+    "name": "Aura Divina",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Cruine",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal (Raio 6m)",
+    "duration": "10 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Aura prateada concede +2 DA/RM e fere mortos-vivos próximos (2/4/6/8 Sagrado)."
+      },
+      {
+        "level": 3,
+        "summary": "Mortos-vivos no raio sofrem -3 colunas e 4/8/12/16 Sagrado por contato."
+      },
+      {
+        "level": 5,
+        "summary": "Impede qualquer necromancia em raio de 10m e protege almas recém-caídas."
+      }
+    ],
+    "description": "Envolve o sacerdote de Cruine na luz solene do guardião das almas, queimando a abominação dos mortos-vivos.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Sagrado",
+      "defenseBonus": 2,
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "lamina-de-luz",
+    "name": "Lâmina de Luz",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Cruine",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "10 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Materializa espada luminosa causando 4/8/12/16 (crítico 20) de dano Sagrado."
+      },
+      {
+        "level": 3,
+        "summary": "Ignora absorção de mortos-vivos e causa 6/12/18/24 (+50% contra espectros)."
+      },
+      {
+        "level": 5,
+        "summary": "Espada solar radiante iluminando 15m e causando 8/16/24/32 Sagrado."
+      }
+    ],
+    "description": "Invoca na mão do sacerdote uma lâmina forjada em pura luz espiritual para ceifar mortos-vivos e criaturas incorpóreas.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Sagrado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "necropotencia",
+    "name": "Necropotência",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordem de Cruine",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 4,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "Instantânea",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Rompe o vínculo necromântico de 1 morto-vivo causando 5/10/15/20 Sagrado."
+      },
+      {
+        "level": 3,
+        "summary": "Desfaz controle de um necromante e causa 8/16/24/32 em mortos-vivos."
+      },
+      {
+        "level": 5,
+        "summary": "Pulso de 8m que devolve imediatamente esqueletos e zumbis ao descanso eterno."
+      }
+    ],
+    "description": "Canaliza o decreto supremo de Cruine para despedaçar a magia profana que mantém cadáveres animados fora do ciclo natural.",
+    "automation": {
+      "damageByColor": {
+        "verde": 5,
+        "amarelo": 10,
+        "laranja": 15,
+        "vermelho": 20,
+        "azul": 25
+      },
+      "damageType": "Sagrado",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "purificacao",
+    "name": "Purificação",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordens de Selimom, Lena, Maira e Ganis",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "10 metros",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Purifica água, alimentos ou fumaça tóxica em 4m de raio."
+      },
+      {
+        "level": 3,
+        "summary": "Remove venenos, doenças iniciais e corrupção de até 4 pessoas."
+      },
+      {
+        "level": 5,
+        "summary": "Descontamina poços, templos profanados ou áreas inteiras de miasma."
+      }
+    ],
+    "description": "Limpa toda impureza física, tóxica ou espiritual de corpos, provisões e ambientes contaminados.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "restauracao",
+    "name": "Restauração",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordens de Palier, Selimom, Lena e Parom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 4,
+    "evocationTime": "2 rodadas",
+    "range": "Toque",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Remove penalidades temporárias de atributos e restaura 4/8/12/16 EF."
+      },
+      {
+        "level": 3,
+        "summary": "Cura cegueira, surdez, paralisia mágica e restaura 6/12/18/24 EF + EH."
+      },
+      {
+        "level": 5,
+        "summary": "Devolve vitalidade plena, removendo drenos de energia e maldições corporais."
+      }
+    ],
+    "description": "Milagre de renovação profunda que devolve a integridade plena do corpo e da mente após aflições severas.",
+    "automation": {
+      "healByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "velocidade-divina",
+    "name": "Velocidade",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordens de Blator, Crisagom e Cruine",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "5 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Aumenta Velocidade Base em +50%, +2 Iniciativa e +2 DA."
+      },
+      {
+        "level": 3,
+        "summary": "Dobra a movimentação, concede +3 DA e permite 1 ação extra de ataque ou manobra."
+      },
+      {
+        "level": 5,
+        "summary": "Acelera até 3 aliados em combate simultaneamente."
+      }
+    ],
+    "description": "Acelera os reflexos e passos do abençoado além dos limites mortais para cruzar o campo de batalha como um relâmpago.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 2
+    }
+  },
+  {
+    "id": "vigor-sagrado",
+    "name": "Vigor",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordens de Crisagom e Selimom",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Elimina fadiga de marcha forçada e concede +10 EH temporária."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 FIS, +2 RF e +16 EH temporária."
+      },
+      {
+        "level": 5,
+        "summary": "Revigora todo um grupo de 5 aventureiros por um dia inteiro de jornada."
+      }
+    ],
+    "description": "Infunde resistência incansável no corpo do beneficiário, permitindo suportar longas marchas, vigílias e batalhas árduas.",
+    "automation": {
+      "healByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "targetType": "single",
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "sexto-sentido",
+    "name": "Sexto Sentido",
+    "professionIds": [
+      "sacerdote"
+    ],
+    "group": "Sacerdote — Ordens de Palier, Cambu e Cruine",
+    "source": "Livro das Ordens Sacerdotais",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Impede ser pego de surpresa (+2 Iniciativa e usa Defesa Ativa mesmo emboscado)."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 DA e pressente armadilhas ou ataques invisíveis a até 10m."
+      },
+      {
+        "level": 5,
+        "summary": "Antecipa o próximo lance tático de inimigos (+3 DA e +2 colunas em reações)."
+      }
+    ],
+    "description": "Desperta uma intuição sagrada fulminante que alerta o sacerdote frações de segundo antes de qualquer perigo oculto.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 2
+    }
+  },
+  {
+    "id": "cancao-do-animo",
+    "name": "Canção do Ânimo",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Aliados que ouvirem ganham +1 coluna em ataques/habilidades e +4 EH."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 colunas, +8 EH e remove condição Amedrontado."
+      },
+      {
+        "level": 5,
+        "summary": "Hino épico que concede +2 colunas, +2 DA e +14 EH a todos os aliados em 25m."
+      }
+    ],
+    "description": "Melodia vibrante e heroica entoada pelo bardo que inflama os corações dos companheiros e eleva seu desempenho em combate.",
+    "automation": {
+      "healByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "defenseBonus": 1,
+      "appliesCondition": "abencoado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "cancao-do-sono",
+    "name": "Canção do Sono",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Acalanto suave que adormece 1 criatura distraída ou de estágio baixo."
+      },
+      {
+        "level": 3,
+        "summary": "Adormece até 3 ouvintes em área de 10m que falharem em RM."
+      },
+      {
+        "level": 5,
+        "summary": "Embalo hipnótico capaz de adormecer uma guarda inteira de taverna ou portão."
+      }
+    ],
+    "description": "Canção de ninar discretamente entrelaçada com Karma que fecha as pálpebras dos ouvintes sem despertar alarme.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "inconsciente"
+    }
+  },
+  {
+    "id": "lendas",
+    "name": "Lendas",
+    "professionIds": [
+      "bardo",
+      "sacerdote"
+    ],
+    "group": "Bardo — Lista Básica / Ordens de Palier e Cambu",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "2 rodadas",
+    "range": "Pessoal / Toque",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Recorda mitos, rumores e fatos históricos sobre uma pessoa, local ou ruína."
+      },
+      {
+        "level": 3,
+        "summary": "Revela propriedades lendárias, fraquezas ou criador de um artefato ou monstro."
+      },
+      {
+        "level": 5,
+        "summary": "Visão poética detalhada de eventos perdidos no passado remoto."
+      }
+    ],
+    "description": "Recorre às tradições orais e ecos do Karma histórico para desvendar segredos antigos de relíquias, linhagens e criaturas.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "linguagem",
+    "name": "Linguagem",
+    "professionIds": [
+      "bardo",
+      "sacerdote"
+    ],
+    "group": "Bardo — Lista Básica / Ordem de Cambu",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Compreende qualquer idioma falado por humanoides ao alcance da voz."
+      },
+      {
+        "level": 3,
+        "summary": "Fala e compreende fluentemente qualquer língua viva."
+      },
+      {
+        "level": 5,
+        "summary": "Comunica-se também por escrita e dialetos ancestrais por 2 horas."
+      }
+    ],
+    "description": "Sintoniza o ouvido musical do bardo às cadências de qualquer língua, eliminando barreiras diplomáticas entre povos de Tagmar.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "memorizacao",
+    "name": "Memorização",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "Permanente",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Grava perfeitamente um discurso, mapa ou página observada por 1 minuto."
+      },
+      {
+        "level": 3,
+        "summary": "Memoriza um capítulo inteiro ou planta de castelo sem erro."
+      },
+      {
+        "level": 5,
+        "summary": "Imita com exatidão sotaques, assinaturas vistas ou peças musicais complexas."
+      }
+    ],
+    "description": "Fixa permanentemente informações, nomes, rostos e textos na memória artística do bardo.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "modificar-espirito",
+    "name": "Modificar Espírito",
+    "professionIds": [
+      "bardo",
+      "sacerdote"
+    ],
+    "group": "Bardo — Lista Básica / Ordens de Lena, Cambu e Plandis",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "15 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Suaviza raiva, tristeza ou desconfiança de 1 alvo."
+      },
+      {
+        "level": 3,
+        "summary": "Muda o humor de até 4 pessoas para alegria, calma ou melancolia."
+      },
+      {
+        "level": 5,
+        "summary": "Influencia o ânimo de toda uma taverna ou plateia de 20 pessoas."
+      }
+    ],
+    "description": "Molda sutilmente o estado emocional dos ouvintes através de entonação e acordes mágicos discretos.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "movimentos-acrobaticos",
+    "name": "Movimentos Acrobáticos",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +3 colunas em Acrobacias/Escalar e +2 DA."
+      },
+      {
+        "level": 3,
+        "summary": "Permite saltos de 5m, queda amortecida sem dano e +3 DA."
+      },
+      {
+        "level": 5,
+        "summary": "Agilidade prodigiosa (+4 colunas em Manobras e movimento sobre superfícies estreitas)."
+      }
+    ],
+    "description": "Infunde leveza rítmica no corpo do bardo para executar saltos teatrais, piruetas esquivas e fugas espetaculares.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 2
+    }
+  },
+  {
+    "id": "silencio",
+    "name": "Silêncio",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Abafa todos os sons em esfera de 3m de raio (impede magias verbais)."
+      },
+      {
+        "level": 3,
+        "summary": "Zona de silêncio absoluto de 6m de raio (aplica Silenciado na área)."
+      },
+      {
+        "level": 5,
+        "summary": "Fixa o silêncio em um alvo móvel que falhar em RM por 5 rodadas."
+      }
+    ],
+    "description": "Cria uma redoma acústica muda que suprime passos, gritos de alarme e cânticos de conjuradores inimigos.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "silenciado"
+    }
+  },
+  {
+    "id": "ventriloquismo",
+    "name": "Ventriloquismo",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Projeta a própria voz a até 15 metros de distância."
+      },
+      {
+        "level": 3,
+        "summary": "Imita vozes conhecidas ou sons animais vindos de portas, estátuas ou becos."
+      },
+      {
+        "level": 5,
+        "summary": "Sustenta diálogo ilusório entre múltiplas direções a até 40 metros."
+      }
+    ],
+    "description": "Desloca a origem aparente da voz ou de instrumentos musicais para enganar sentinelas e criar distrações teatrais.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "vertigem",
+    "name": "Vertigem",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "4 rodadas",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Desequilibra 1 alvo impondo -2 colunas e risco de cair (Caído)."
+      },
+      {
+        "level": 3,
+        "summary": "Causa tontura severa (Atordoado por 2 rodadas e -3 DA)."
+      },
+      {
+        "level": 5,
+        "summary": "Onda dissonante afeta até 3 inimigos em cone de 8m."
+      }
+    ],
+    "description": "Emite vibrações sonoras desarmônicas que perturbam o labirinto auditivo da vítima, fazendo o mundo girar ao seu redor.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "atordoado"
+    }
+  },
+  {
+    "id": "zombaria",
+    "name": "Zombaria",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "3 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Insulto mordaz que desconcentra 1 alvo (-2 colunas no próximo ataque) e causa 2/4/6/8 Psíquico."
+      },
+      {
+        "level": 3,
+        "summary": "Provoca ira cega no alvo (-2 DA e obrigado a atacar o bardo; 3/6/9/12 Psíquico)."
+      },
+      {
+        "level": 5,
+        "summary": "Humilhação retórica que abala moral de até 3 adversários."
+      }
+    ],
+    "description": "Tece trocadilhos cáusticos carregados de Karma que ferem o orgulho do adversário e arruínam sua concentração tática.",
+    "automation": {
+      "damageByColor": {
+        "verde": 2,
+        "amarelo": 4,
+        "laranja": 6,
+        "vermelho": 8,
+        "azul": 10
+      },
+      "damageType": "Psíquico",
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "balada-da-coragem",
+    "name": "Balada da Coragem",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Confrarias Bárdicas",
+    "source": "Magias dos Reinos",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "10 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Imuniza aliados contra Medo e restaura 4/8/12/16 EH."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +2 colunas em ataques e +10 EH temporária ao grupo."
+      },
+      {
+        "level": 5,
+        "summary": "Permite que um aliado zerado permaneça de pé lutando por mais 2 rodadas."
+      }
+    ],
+    "description": "Cântico guerreiro inspirado nas sagas dos antigos heróis de Tagmar, despertando bravura inabalável nos aliados.",
+    "automation": {
+      "healByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "appliesCondition": "abencoado",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "acorde-dissonante",
+    "name": "Acorde Dissonante",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Confrarias Bárdicas",
+    "source": "Magias dos Reinos",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Onda sonora cortante causando 3/6/9/12 (crítico 15) de dano Sônico."
+      },
+      {
+        "level": 3,
+        "summary": "Cone de 8m causando 5/10/15/20 Sônico e condição Surdo por 3 rodadas."
+      },
+      {
+        "level": 5,
+        "summary": "Estilhaça cristais, interrompe concentração arcana e causa 7/14/21/28 Sônico."
+      }
+    ],
+    "description": "Extrai um acorde violento do instrumento ou da voz que explode em ondas de choque capazes de ferir e ensurdecer inimigos.",
+    "automation": {
+      "damageByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "damageType": "Sônico",
+      "appliesCondition": "surdo",
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "encantar-plateia",
+    "name": "Encantar Plateia",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Confrarias Bárdicas",
+    "source": "Magias dos Reinos",
+    "karmaCost": 3,
+    "evocationTime": "2 rodadas",
+    "range": "20 metros",
+    "duration": "15 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Cativa até 6 ouvintes que ficam absortos na apresentação (-3 Usar os Sentidos)."
+      },
+      {
+        "level": 3,
+        "summary": "Fascina até 20 pessoas enquanto o bardo continuar cantando ou tocando."
+      },
+      {
+        "level": 5,
+        "summary": "Deixa toda uma multidão dócil e inclinada a acatar uma sugestão razoável."
+      }
+    ],
+    "description": "Envolve os espectadores em um transe artístico fascinante, ideal para distrair guardas enquanto aliados infiltram o local.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "encantado"
+    }
+  },
+  {
+    "id": "melodia-curativa",
+    "name": "Melodia Curativa",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Confrarias Bárdicas",
+    "source": "Magias dos Reinos",
+    "karmaCost": 2,
+    "evocationTime": "2 rodadas",
+    "range": "10 metros",
+    "duration": "Instantânea",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Acalma dores e restaura 3/6/9/12 EH para até 4 aliados ouvintes."
+      },
+      {
+        "level": 3,
+        "summary": "Restaura 5/10/15/20 EH e 2/4/6/8 EF durante breve descanso."
+      },
+      {
+        "level": 5,
+        "summary": "Remove fadiga, estresse e restaura 8/16/24/32 EH em todo o grupo."
+      }
+    ],
+    "description": "Executa uma harmonia suave junto à fogueira ou após o combate, acelerando a recuperação física e moral dos companheiros.",
+    "automation": {
+      "healByColor": {
+        "verde": 3,
+        "amarelo": 6,
+        "laranja": 9,
+        "vermelho": 12,
+        "azul": 15
+      },
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "eco-de-batalha",
+    "name": "Eco de Batalha",
+    "professionIds": [
+      "bardo"
+    ],
+    "group": "Bardo — Confrarias Bárdicas",
+    "source": "Magias dos Reinos",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "25 metros",
+    "duration": "5 rodadas",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Simula sons de reforços militares se aproximando para intimidar inimigos."
+      },
+      {
+        "level": 3,
+        "summary": "Amplifica a voz de comando dos aliados (+2 Iniciativa e +1 coluna)."
+      },
+      {
+        "level": 5,
+        "summary": "Clamor ilusório de exército em carga causando Amedrontado em área de 12m."
+      }
+    ],
+    "description": "Multiplica sons de tambores, trombetas e passos marchando para criar a ilusão acústica de uma tropa inteira chegando.",
+    "automation": {
+      "targetType": "area",
+      "appliesCondition": "amedrontado"
+    }
+  },
+  {
+    "id": "abrigo",
+    "name": "Abrigo",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "3 rodadas",
+    "range": "10 metros",
+    "duration": "12 horas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Molda galhos, folhagens ou neve em cabana camuflada para até 4 pessoas."
+      },
+      {
+        "level": 3,
+        "summary": "Abrigo seco, aquecido e resistente a tempestades para até 8 viajantes."
+      },
+      {
+        "level": 5,
+        "summary": "Refúgio oculto que alerta o rastreador caso qualquer criatura se aproxime a 15m."
+      }
+    ],
+    "description": "Pede à vegetação ou terreno natural que se acomode formando um acampamento seguro, discreto e protegido das intempéries.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "adestramento",
+    "name": "Adestramento",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "2 rodadas",
+    "range": "10 metros",
+    "duration": "1 dia",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Acalma um animal arisco e ensina ou executa 1 comando simples."
+      },
+      {
+        "level": 3,
+        "summary": "Conquista lealdade temporária de uma fera para guarda ou rastreio."
+      },
+      {
+        "level": 5,
+        "summary": "Reduz para dias um treinamento que levaria meses."
+      }
+    ],
+    "description": "Estabelece confiança profunda com bestas silvestres ou domésticas, acelerando seu aprendizado e cooperação.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "aprimorar-habilidades",
+    "name": "Aprimorar Habilidades",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +2 colunas em uma habilidade física ou de exploração escolhida."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +3 colunas em Escalar, Correr, Natação, Ações Furtivas ou Sobrevivência."
+      },
+      {
+        "level": 5,
+        "summary": "Concede +4 colunas em até duas habilidades simultaneamente por 1 hora."
+      }
+    ],
+    "description": "Canaliza vigor silvestre para elevar temporariamente a destreza, resistência ou percepção do rastreador em tarefas críticas.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "arqueirismo",
+    "name": "Arqueirismo",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "5 rodadas",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +2 colunas em ataques com Arco e ignora penalidades leves de vento."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +3 colunas, +3 de dano nas flechas e aumenta alcance em +50%."
+      },
+      {
+        "level": 5,
+        "summary": "Disparo magistral: +4 colunas, +5 de dano e permite 2 flechas na rodada."
+      }
+    ],
+    "description": "Harmoniza respiração, olhar e tensão da corda do arco com os ventos naturais, tornando cada flecha mortalmente precisa.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "camuflagem",
+    "name": "Camuflagem",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "30 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Cores das vestes e pele se confundem com mata, rocha ou neve (+3 Ações Furtivas)."
+      },
+      {
+        "level": 3,
+        "summary": "Quase imperceptível imóvel em ambiente natural (+5 Furtividade e +2 DA)."
+      },
+      {
+        "level": 5,
+        "summary": "Camufla até 4 companheiros em deslocamento cauteloso por 1 hora."
+      }
+    ],
+    "description": "Adapta visualmente o corpo e equipamento do alvo aos tons e texturas do ambiente selvagem ao redor.",
+    "automation": {
+      "targetType": "self",
+      "defenseBonus": 2
+    }
+  },
+  {
+    "id": "despistamento",
+    "name": "Despistamento",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal (Raio 5m)",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Apaga pegadas e odores do rastreador, dificultando perseguições (-4 Seguir Trilhas)."
+      },
+      {
+        "level": 3,
+        "summary": "Cobre o rastro de até 6 viajantes e montarias."
+      },
+      {
+        "level": 5,
+        "summary": "Cria ainda uma trilha falsa convincente em direção oposta por 2 quilômetros."
+      }
+    ],
+    "description": "Faz o vento e a folhagem cobrirem suavemente pegadas, galhos partidos e cheiros deixados pelo grupo em fuga.",
+    "automation": {
+      "targetType": "area"
+    }
+  },
+  {
+    "id": "dominacao-animal",
+    "name": "Dominação Animal",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "20 metros",
+    "duration": "15 minutos",
+    "resistance": "rm",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Subjuga 1 animal selvagem médio (lobo, javali, águia) para obedecer ordens."
+      },
+      {
+        "level": 3,
+        "summary": "Controla 1 fera grande (urso pardo) ou 3 animais médios."
+      },
+      {
+        "level": 5,
+        "summary": "Impõe comando firme até sobre bestas gigantes por 1 hora."
+      }
+    ],
+    "description": "Projeta a autoridade primordial das matas sobre a mente instintiva de animais, impedindo ataques ou recrutando-os como aliados.",
+    "automation": {
+      "targetType": "single",
+      "appliesCondition": "encantado"
+    }
+  },
+  {
+    "id": "elo-animal",
+    "name": "Elo Animal",
+    "professionIds": [
+      "rastreador",
+      "sacerdote"
+    ],
+    "group": "Rastreador — Lista Básica / Ordem de Maira",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "50 metros",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Comunicação empática e ordens silenciosas com animal companheiro."
+      },
+      {
+        "level": 3,
+        "summary": "Compartilha alertas de perigo e bônus de +1 coluna lutando lado a lado."
+      },
+      {
+        "level": 5,
+        "summary": "Vínculo profundo a até 1 km, sentindo estado vital e localização exata."
+      }
+    ],
+    "description": "Cria uma ponte espiritual serena entre o rastreador e um animal amigo, permitindo cooperação silenciosa em caça e combate.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "forca-mutua",
+    "name": "Força Mútua",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "15 metros",
+    "duration": "10 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Rastreador e animal vinculado compartilham +1 FOR/AGI e +6 EH temporária."
+      },
+      {
+        "level": 3,
+        "summary": "Ambos recebem +2 colunas em combate e podem dividir danos recebidos."
+      },
+      {
+        "level": 5,
+        "summary": "Sincronia plena: +2 DA, +2 colunas e regeneram 2 EH por rodada juntos."
+      }
+    ],
+    "description": "Une a vitalidade do rastreador e de seu companheiro animal, fortalecendo ambos reciprocamente em batalha.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 2,
+      "appliesCondition": "abencoado"
+    }
+  },
+  {
+    "id": "habilidade-animal",
+    "name": "Habilidade Animal",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "20 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Empresta 1 traço animal: faro de lobo, equilíbrio de gato ou escalada de esquilo."
+      },
+      {
+        "level": 3,
+        "summary": "Ganha velocidade de cervo (+50% VB) ou força de urso (+2 FOR)."
+      },
+      {
+        "level": 5,
+        "summary": "Combina duas aptidões animais simultaneamente por 1 hora."
+      }
+    ],
+    "description": "Invoca o espírito totêmico da fauna silvestre para dotar o próprio corpo de capacidades físicas extraordinárias.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "protecao-animal",
+    "name": "Proteção Animal",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Toque",
+    "duration": "20 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +2 DA e +8 Absorção ao companheiro animal ou montaria."
+      },
+      {
+        "level": 3,
+        "summary": "Concede +3 DA, +14 Absorção e +2 RF/RM ao animal."
+      },
+      {
+        "level": 5,
+        "summary": "Estende a proteção silvestre a até 3 animais ou montarias do grupo."
+      }
+    ],
+    "description": "Envolve montarias e companheiros animais em uma bênção resiliente que endurece seu pelo contra flechas e lâminas.",
+    "automation": {
+      "targetType": "single",
+      "defenseBonus": 2,
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "rastreamento",
+    "name": "Rastreamento",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 1,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +3 colunas em Seguir Trilhas e revela pegadas até 24h antigas."
+      },
+      {
+        "level": 3,
+        "summary": "Rastreia mesmo sobre rocha dura, chuva recente ou rios rasos (+5 colunas)."
+      },
+      {
+        "level": 5,
+        "summary": "Sente número, peso, estado de saúde e distância aproximada da presa."
+      }
+    ],
+    "description": "Aguça dramaticamente visão e olfato para enxergar vestígios imperceptíveis e acompanhar presas por terrenos impossíveis.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "resistencia-silvestre",
+    "name": "Resistência Silvestre",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal / Toque",
+    "duration": "1 hora",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Concede +3 RF contra venenos naturais, doenças, frio e calor."
+      },
+      {
+        "level": 3,
+        "summary": "Reduz pela metade dano de venenos e permite marchar sem cansaço."
+      },
+      {
+        "level": 5,
+        "summary": "Protege até 4 viajantes contra climas severos e peçonhas por 6 horas."
+      }
+    ],
+    "description": "Fortalece o organismo com a tenacidade da vida selvagem para resistir a picadas venenosas, nevascas e escaldantes travessias.",
+    "automation": {
+      "targetType": "self",
+      "appliesCondition": "protegido"
+    }
+  },
+  {
+    "id": "visao-animal",
+    "name": "Visão Animal",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Lista Básica",
+    "source": "Livro de Magias 3.0",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "100 metros",
+    "duration": "15 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Enxerga pelos olhos de um animal aliado a até 100 metros."
+      },
+      {
+        "level": 3,
+        "summary": "Alcance estendido para 500 metros com audição e faro compartilhados."
+      },
+      {
+        "level": 5,
+        "summary": "Permite explorar fortalezas ou vales inteiros pelos olhos de uma águia a 2 km."
+      }
+    ],
+    "description": "Transfere os sentidos perceptivos do rastreador para a mente de um animal vinculado, transformando-o em batedor perfeito.",
+    "automation": {
+      "targetType": "single"
+    }
+  },
+  {
+    "id": "passo-sem-rastros",
+    "name": "Passo sem Rastros",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Trilhas da Natureza",
+    "source": "Magias dos Reinos",
+    "karmaCost": 2,
+    "evocationTime": "1 rodada",
+    "range": "Pessoal",
+    "duration": "20 minutos",
+    "resistance": "none",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Atravessa vegetação densa, lama ou neve sem perder deslocamento nem fazer ruído."
+      },
+      {
+        "level": 3,
+        "summary": "Ignora espinhos, terreno difícil e ganha +3 em Ações Furtivas em mata."
+      },
+      {
+        "level": 5,
+        "summary": "Permite caminhar suavemente até sobre folhas secas ou água rasa por 10 rodadas."
+      }
+    ],
+    "description": "Alinha o passo do rastreador ao ritmo da floresta, deslizando por matagais fechados sem quebrar um único galho.",
+    "automation": {
+      "targetType": "self"
+    }
+  },
+  {
+    "id": "flecha-da-natureza",
+    "name": "Flecha da Natureza",
+    "professionIds": [
+      "rastreador"
+    ],
+    "group": "Rastreador — Trilhas da Natureza",
+    "source": "Magias dos Reinos",
+    "karmaCost": 3,
+    "evocationTime": "1 rodada",
+    "range": "Alcance do Arco",
+    "duration": "Instantânea",
+    "resistance": "rf",
+    "effectLevels": [
+      {
+        "level": 1,
+        "summary": "Encanta uma flecha que explode em espinhos causando 4/8/12/16 Perfuração."
+      },
+      {
+        "level": 3,
+        "summary": "Causa 6/12/18/24 e enraíza o alvo atingido (Imobilizado por 2 rodadas)."
+      },
+      {
+        "level": 5,
+        "summary": "Flecha verdejante que fere até criaturas mágicas e aplica Envenenado ou Imobilizado."
+      }
+    ],
+    "description": "Imbui uma flecha comum com seiva mística pulsante; ao atingir o alvo, ramos espinhosos brotam do impacto.",
+    "automation": {
+      "damageByColor": {
+        "verde": 4,
+        "amarelo": 8,
+        "laranja": 12,
+        "vermelho": 16,
+        "azul": 20
+      },
+      "damageType": "Perfuração",
+      "appliesCondition": "imobilizado",
+      "targetType": "single"
+    }
+  }
+]

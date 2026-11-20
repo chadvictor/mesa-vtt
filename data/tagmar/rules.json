@@ -1,0 +1,3168 @@
+{
+  "systemId": "tagmar-3e",
+  "aliases": [
+    "tagmar",
+    "tagmar-3.0"
+  ],
+  "name": "Tagmar 3.0",
+  "shortName": "Tagmar 3.0",
+  "edition": "3.0",
+  "version": "3.0",
+  "language": "pt-BR",
+  "defaultSetting": "Mundo Conhecido (Tagmar)",
+  "officialUrl": "https://www.tagmar.com.br",
+  "license": {
+    "spdx": "CC-BY-NC-SA-3.0",
+    "name": "Creative Commons Atribuição-NãoComercial-CompartilhaIgual 3.0 Brasil",
+    "shortName": "CC BY-NC-SA 3.0 BR",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/3.0/br/",
+    "nonCommercial": true,
+    "shareAlike": true,
+    "attributionRequired": true,
+    "project": "Projeto Tagmar",
+    "originalAuthors": [
+      "Marcelo Rodrigues",
+      "Ygor Moraes Esteves da Silva",
+      "Julio Augusto Cezar Junior",
+      "Leonardo Nahoum Pache de Faria"
+    ],
+    "notice": "Baseado em Tagmar 3.0 do Projeto Tagmar (https://www.tagmar.com.br), licenciado sob CC BY-NC-SA 3.0 BR. Conteúdo gratuito e não-comercial."
+  },
+  "attributes": [
+    {
+      "id": "intelecto",
+      "name": "Intelecto",
+      "shortName": "INT",
+      "scale": {
+        "min": -4,
+        "max": 6,
+        "humanAverage": 0
+      },
+      "description": "Mede raciocínio lógico, memória, capacidade de estudo, percepção analítica e domínio de conhecimentos acadêmicos e arcanos.",
+      "uses": [
+        "Habilidades de Conhecimento e Profissionais complexas",
+        "Pontos de Magia de Magos: (2 × INT) + 5 por estágio",
+        "Aprendizado de idiomas, escrita, engenharia e alquimia",
+        "Investigação, tática e análise de mecanismos"
+      ]
+    },
+    {
+      "id": "aura",
+      "name": "Aura",
+      "shortName": "AUR",
+      "scale": {
+        "min": -4,
+        "max": 6,
+        "humanAverage": 0
+      },
+      "description": "Mede a conexão mística com o mana, os planos espirituais e o divino. Essencial para todo personagem conjurador e para resistir a magias.",
+      "uses": [
+        "Cálculo de Karma: (AUR + 1) × (Estágio + 1) para místicos com AUR ≥ 1",
+        "Resistência à Magia (RM): Estágio + AUR",
+        "Coluna de ataque e intensidade de magias místicas",
+        "Misticismo, Religião e percepção sobrenatural"
+      ]
+    },
+    {
+      "id": "carisma",
+      "name": "Carisma",
+      "shortName": "CAR",
+      "scale": {
+        "min": -4,
+        "max": 6,
+        "humanAverage": 0
+      },
+      "description": "Mede magnetismo pessoal, presença, liderança, simpatia, oratória e poder de persuasão sobre pessoas e criaturas.",
+      "uses": [
+        "Habilidades de Influência (Persuasão, Liderança, Barganha, Etiqueta)",
+        "Pontos de Magia de Sacerdotes e Bardos: (2 × CAR) + 5 por estágio",
+        "Atuação artística, diplomacia e intimidação social",
+        "Reação inicial de PNJs e recrutamento de aliados"
+      ]
+    },
+    {
+      "id": "forca",
+      "name": "Força",
+      "shortName": "FOR",
+      "scale": {
+        "min": -4,
+        "max": 6,
+        "humanAverage": 0
+      },
+      "description": "Mede potência muscular, vigor bruto, capacidade de carga e impacto físico nos golpes corpo a corpo e arremessos.",
+      "uses": [
+        "Soma na Energia Física (EF): EF Base da Raça + FOR + FIS",
+        "Requisito mínimo de Força (minFor) para armas pesadas e armaduras",
+        "Bônus em danos físicos e manobras de força (Aplicar Esforço, Natação, Escalar)",
+        "Capacidade de carga e arrombamentos físicos"
+      ]
+    },
+    {
+      "id": "fisico",
+      "name": "Físico",
+      "shortName": "FIS",
+      "scale": {
+        "min": -4,
+        "max": 6,
+        "humanAverage": 0
+      },
+      "description": "Mede saúde, constituição, fôlego, tolerância à dor e resistência do organismo contra ferimentos, fadiga, venenos e doenças.",
+      "uses": [
+        "Soma na Energia Física (EF): EF Base da Raça + FOR + FIS",
+        "Soma na Energia Heróica (EH) no 1º estágio e a cada evolução de estágio",
+        "Resistência Física (RF): Estágio + FIS",
+        "Velocidade Base (VB): VB da Raça + FIS"
+      ]
+    },
+    {
+      "id": "agilidade",
+      "name": "Agilidade",
+      "shortName": "AGI",
+      "scale": {
+        "min": -4,
+        "max": 6,
+        "humanAverage": 0
+      },
+      "description": "Mede destreza manual, coordenação motora, reflexos rápidos, equilíbrio e precisão em ataques e esquivas.",
+      "uses": [
+        "Defesa Ativa (DA): Defesa Base da Armadura + AGI + Escudo",
+        "Iniciativa de combate: 1d10 + AGI",
+        "Habilidades de Manobra e Subterfúgio (Acrobacias, Ações Furtivas, Destravar Fechaduras)",
+        "Coluna de ataque com armas brancas, arcos e técnicas ágeis"
+      ]
+    }
+  ],
+  "tagmar3RevisedExtension": {
+    "optionalSeventhAttribute": {
+      "id": "percepcao",
+      "name": "Percepção",
+      "shortName": "PER",
+      "introducedIn": "Tagmar 3 Edição Revisada",
+      "description": "Atributo opcional introduzido na Edição Revisada do Tagmar 3.0 para separar acuidade sensorial, rastreamento e atenção imediata do Intelecto. No modo clássico de 6 atributos do Mesa VTT, testes sensoriais utilizam Intelecto ou Aura conforme a habilidade.",
+      "racialAdjustments": {
+        "humano": 0,
+        "anao": 0,
+        "elfo-dourado": 0,
+        "elfo-florestal": 2,
+        "meio-elfo": 0,
+        "pequenino": 1,
+        "meio-orco": 0,
+        "elfo-sombrio": 1,
+        "sekbete": 1,
+        "gourai": 0,
+        "napoi": 1
+      }
+    }
+  },
+  "characterCreation": {
+    "startingStage": 1,
+    "maxStage": 20,
+    "attributePointPool": 15,
+    "humanBonusAttributePoint": 1,
+    "attributeScale": {
+      "min": -4,
+      "max": 6,
+      "humanAverage": 0
+    },
+    "attributePointBuy": {
+      "baseValue": "0 + race.attributeAdjustments[attr]",
+      "maxIncreaseOverBase": 4,
+      "maxDecreaseBelowBase": 2,
+      "decreaseRefundPerPoint": 0.5,
+      "positiveStepCostFormula": "Subir de (N-1) para N custa N pontos (ex: 0->1 custa 1, 1->2 custa 2, 2->3 custa 3, 3->4 custa 4).",
+      "negativeStepCost": 1,
+      "progressiveCostsFromZero": {
+        "1": 1,
+        "2": 3,
+        "3": 6,
+        "4": 10
+      },
+      "description": "Todos os atributos começam em 0 + ajuste racial. O jogador distribui 15 pontos (16 se Humano). Aumentar um atributo negativo custa sempre 1 ponto por nível; aumentar um atributo positivo até o valor N custa N pontos naquele passo. Reduzir um atributo (até base - 2) devolve 0,5 ponto por passo."
+    },
+    "currency": {
+      "defaultUnit": "MP",
+      "units": [
+        {
+          "code": "MC",
+          "name": "Moeda de Cobre",
+          "valueInMC": 1
+        },
+        {
+          "code": "MP",
+          "name": "Moeda de Prata",
+          "valueInMC": 10
+        },
+        {
+          "code": "MO",
+          "name": "Moeda de Ouro",
+          "valueInMC": 100
+        }
+      ],
+      "conversionNote": "1 MO = 10 MP = 100 MC."
+    },
+    "steps": [
+      "1. Escolha sua Raça: anote os ajustes de atributos, EF Básica, Velocidade Base (VB), idiomas nativos e profissões permitidas.",
+      "2. Distribua 15 Pontos de Atributos (16 se Humano) usando a tabela progressiva de custos (máximo base +4, mínimo base -2).",
+      "3. Escolha sua Profissão básica (Guerreiro, Ladino, Sacerdote, Mago, Rastreador ou Bardo) respeitando as restrições raciais.",
+      "4. Calcule Estatísticas Derivadas: EF (EF Base + FOR + FIS), EH inicial (EH Base da Profissão + FIS), Karma ((AUR + 1) × 2 para místicos com AUR ≥ 1), VB (VB Base + FIS), RF (1 + FIS) e RM (1 + AUR).",
+      "5. Distribua Pontos de Habilidades, Pontos de Combate (Armas e Técnicas) e Pontos de Magia da profissão.",
+      "6. Anote as Posses Iniciais e o dinheiro inicial da profissão; calcule Defesa Ativa (DA), Defesa Passiva (DP) e Absorção conforme armadura, escudo e elmo equipados.",
+      "7. A partir do 5º Estágio, escolha sua Especialização (Academia, Guilda, Colégio, Trilha, Confraria ou Ordem Sacerdotal)."
+    ]
+  },
+  "resolutionTable": {
+    "name": "Tabela de Resolução de Ações — Tagmar 3.0",
+    "dice": "1d20",
+    "minColumn": -7,
+    "maxColumn": 20,
+    "totalColumns": 28,
+    "overflowRule": {
+      "aboveMaxColumn": {
+        "step": 20,
+        "bonusDamageTiersPerStep": 2,
+        "bonusDamagePercentPerStep": 50,
+        "description": "Quando a coluna de resolução ultrapassar 20, subtraia 20 repetidamente até obter uma coluna entre 1 e 20. Para cada 20 subtraídos, some +2 níveis de cor (+50% de dano) ao resultado rolado."
+      },
+      "belowMinColumn": {
+        "clampTo": -7,
+        "description": "Colunas inferiores a -7 utilizam a Coluna -7 (mantendo 30% de chance mínima de sucesso e evitando impossibilidade matemática em combate)."
+      }
+    },
+    "colorTiers": [
+      {
+        "key": "erroCritico",
+        "label": "Erro Crítico",
+        "hex": "#16a34a",
+        "damageMultiplier": 0,
+        "damagePercent": 0,
+        "isSuccess": false,
+        "isCriticalError": true,
+        "isCriticalHit": false,
+        "officialTagmar3BookColor": "Verde (Falha Crítica)",
+        "skillDifficulty": "Falha Crítica",
+        "description": "Falha desastrosa independente da competência do personagem. Em combate gera descontrole (-3 na coluna na próxima rodada), queda da arma ou abertura defensiva."
+      },
+      {
+        "key": "falha",
+        "label": "Falha / Erro",
+        "hex": "#94a3b8",
+        "damageMultiplier": 0,
+        "damagePercent": 0,
+        "isSuccess": false,
+        "isCriticalError": false,
+        "isCriticalHit": false,
+        "officialTagmar3BookColor": "Branco (Rotineiro / Erro)",
+        "skillDifficulty": "Rotineiro (em tarefas triviais) / Erro em combate",
+        "description": "O golpe não ultrapassa a defesa do oponente ou a tarefa não alcança o grau mínimo necessário."
+      },
+      {
+        "key": "verde",
+        "label": "Verde (25%)",
+        "hex": "#22c55e",
+        "damageMultiplier": 0.25,
+        "damagePercent": 25,
+        "isSuccess": true,
+        "isCriticalError": false,
+        "isCriticalHit": false,
+        "officialTagmar3BookColor": "Amarelo (Fácil / 25%)",
+        "skillDifficulty": "Fácil",
+        "description": "Sucesso marginal / golpe de raspão: aplica o dano da coluna Verde (25% do dano máximo da arma) ou supera tarefas Fáceis."
+      },
+      {
+        "key": "amarelo",
+        "label": "Amarelo (50%)",
+        "hex": "#eab308",
+        "damageMultiplier": 0.5,
+        "damagePercent": 50,
+        "isSuccess": true,
+        "isCriticalError": false,
+        "isCriticalHit": false,
+        "officialTagmar3BookColor": "Laranja (Médio / 50%)",
+        "skillDifficulty": "Médio",
+        "description": "Sucesso moderado: aplica o dano da coluna Amarelo (50% do dano máximo da arma) ou supera tarefas Médias."
+      },
+      {
+        "key": "laranja",
+        "label": "Laranja (75%)",
+        "hex": "#f97316",
+        "damageMultiplier": 0.75,
+        "damagePercent": 75,
+        "isSuccess": true,
+        "isCriticalError": false,
+        "isCriticalHit": false,
+        "officialTagmar3BookColor": "Vermelho (Difícil / 75%)",
+        "skillDifficulty": "Difícil",
+        "description": "Bom sucesso / golpe certeiro: aplica o dano da coluna Laranja (75% do dano máximo da arma) ou supera tarefas Difíceis."
+      },
+      {
+        "key": "vermelho",
+        "label": "Vermelho (100%)",
+        "hex": "#ef4444",
+        "damageMultiplier": 1.0,
+        "damagePercent": 100,
+        "isSuccess": true,
+        "isCriticalError": false,
+        "isCriticalHit": false,
+        "officialTagmar3BookColor": "Azul Claro (Muito Difícil / 100%)",
+        "skillDifficulty": "Muito Difícil",
+        "description": "Sucesso pleno / golpe poderoso: aplica o dano máximo da coluna Vermelho (100% do dano da arma) ou supera tarefas Muito Difíceis."
+      },
+      {
+        "key": "azul",
+        "label": "Azul — Crítico (125%)",
+        "hex": "#3b82f6",
+        "damageMultiplier": 1.25,
+        "damagePercent": 125,
+        "isSuccess": true,
+        "isCriticalError": false,
+        "isCriticalHit": true,
+        "officialTagmar3BookColor": "Azul Escuro / Cinza (Absurdo / Crítico)",
+        "skillDifficulty": "Absurdo / Crítico",
+        "description": "Golpe Crítico / Proeza Absurda! Aplica 100% + bônus crítico (125%) diretamente na Energia Física (EF), ignorando EH e Absorção não-mágica, e dispara uma segunda rolagem na Tabela de Críticos."
+      }
+    ],
+    "skillDifficultyMapping": {
+      "rotineiro": "falha",
+      "facil": "verde",
+      "medio": "amarelo",
+      "dificil": "laranja",
+      "muitoDificil": "vermelho",
+      "absurdo": "azul"
+    },
+    "columns": [
+      {
+        "column": -7,
+        "erroCritico": [
+          1,
+          2
+        ],
+        "falha": [
+          3,
+          14
+        ],
+        "verde": [
+          15,
+          16
+        ],
+        "amarelo": [
+          17,
+          18
+        ],
+        "laranja": [
+          19,
+          19
+        ],
+        "vermelho": null,
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 30,
+        "avgDamagePercent": 17.5
+      },
+      {
+        "column": -6,
+        "erroCritico": [
+          1,
+          2
+        ],
+        "falha": [
+          3,
+          14
+        ],
+        "verde": [
+          15,
+          16
+        ],
+        "amarelo": [
+          17,
+          17
+        ],
+        "laranja": [
+          18,
+          19
+        ],
+        "vermelho": null,
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 30,
+        "avgDamagePercent": 18.75
+      },
+      {
+        "column": -5,
+        "erroCritico": [
+          1,
+          2
+        ],
+        "falha": [
+          3,
+          13
+        ],
+        "verde": [
+          14,
+          16
+        ],
+        "amarelo": [
+          17,
+          17
+        ],
+        "laranja": [
+          18,
+          19
+        ],
+        "vermelho": null,
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 35,
+        "avgDamagePercent": 20.0
+      },
+      {
+        "column": -4,
+        "erroCritico": [
+          1,
+          2
+        ],
+        "falha": [
+          3,
+          13
+        ],
+        "verde": [
+          14,
+          15
+        ],
+        "amarelo": [
+          16,
+          17
+        ],
+        "laranja": [
+          18,
+          19
+        ],
+        "vermelho": null,
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 35,
+        "avgDamagePercent": 21.25
+      },
+      {
+        "column": -3,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          12
+        ],
+        "verde": [
+          13,
+          15
+        ],
+        "amarelo": [
+          16,
+          17
+        ],
+        "laranja": [
+          18,
+          18
+        ],
+        "vermelho": [
+          19,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 40,
+        "avgDamagePercent": 23.75
+      },
+      {
+        "column": -2,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          12
+        ],
+        "verde": [
+          13,
+          14
+        ],
+        "amarelo": [
+          15,
+          16
+        ],
+        "laranja": [
+          17,
+          18
+        ],
+        "vermelho": [
+          19,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 40,
+        "avgDamagePercent": 26.25
+      },
+      {
+        "column": -1,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          11
+        ],
+        "verde": [
+          12,
+          14
+        ],
+        "amarelo": [
+          15,
+          16
+        ],
+        "laranja": [
+          17,
+          18
+        ],
+        "vermelho": [
+          19,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 45,
+        "avgDamagePercent": 27.5
+      },
+      {
+        "column": 0,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          11
+        ],
+        "verde": [
+          12,
+          13
+        ],
+        "amarelo": [
+          14,
+          15
+        ],
+        "laranja": [
+          16,
+          17
+        ],
+        "vermelho": [
+          18,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 45,
+        "avgDamagePercent": 31.25
+      },
+      {
+        "column": 1,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          10
+        ],
+        "verde": [
+          11,
+          13
+        ],
+        "amarelo": [
+          14,
+          15
+        ],
+        "laranja": [
+          16,
+          17
+        ],
+        "vermelho": [
+          18,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 50,
+        "avgDamagePercent": 32.5
+      },
+      {
+        "column": 2,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          10
+        ],
+        "verde": [
+          11,
+          12
+        ],
+        "amarelo": [
+          13,
+          15
+        ],
+        "laranja": [
+          16,
+          17
+        ],
+        "vermelho": [
+          18,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 50,
+        "avgDamagePercent": 33.75
+      },
+      {
+        "column": 3,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          9
+        ],
+        "verde": [
+          10,
+          12
+        ],
+        "amarelo": [
+          13,
+          14
+        ],
+        "laranja": [
+          15,
+          17
+        ],
+        "vermelho": [
+          18,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 55,
+        "avgDamagePercent": 36.25
+      },
+      {
+        "column": 4,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          9
+        ],
+        "verde": [
+          10,
+          11
+        ],
+        "amarelo": [
+          12,
+          14
+        ],
+        "laranja": [
+          15,
+          16
+        ],
+        "vermelho": [
+          17,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 55,
+        "avgDamagePercent": 38.75
+      },
+      {
+        "column": 5,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          8
+        ],
+        "verde": [
+          9,
+          11
+        ],
+        "amarelo": [
+          12,
+          14
+        ],
+        "laranja": [
+          15,
+          16
+        ],
+        "vermelho": [
+          17,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 60,
+        "avgDamagePercent": 40.0
+      },
+      {
+        "column": 6,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          8
+        ],
+        "verde": [
+          9,
+          10
+        ],
+        "amarelo": [
+          11,
+          13
+        ],
+        "laranja": [
+          14,
+          16
+        ],
+        "vermelho": [
+          17,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 60,
+        "avgDamagePercent": 42.5
+      },
+      {
+        "column": 7,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          7
+        ],
+        "verde": [
+          8,
+          10
+        ],
+        "amarelo": [
+          11,
+          13
+        ],
+        "laranja": [
+          14,
+          16
+        ],
+        "vermelho": [
+          17,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 65,
+        "avgDamagePercent": 43.75
+      },
+      {
+        "column": 8,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          7
+        ],
+        "verde": [
+          8,
+          9
+        ],
+        "amarelo": [
+          10,
+          12
+        ],
+        "laranja": [
+          13,
+          15
+        ],
+        "vermelho": [
+          16,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 65,
+        "avgDamagePercent": 47.5
+      },
+      {
+        "column": 9,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          6
+        ],
+        "verde": [
+          7,
+          9
+        ],
+        "amarelo": [
+          10,
+          12
+        ],
+        "laranja": [
+          13,
+          15
+        ],
+        "vermelho": [
+          16,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 70,
+        "avgDamagePercent": 48.75
+      },
+      {
+        "column": 10,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          6
+        ],
+        "verde": [
+          7,
+          8
+        ],
+        "amarelo": [
+          9,
+          12
+        ],
+        "laranja": [
+          13,
+          15
+        ],
+        "vermelho": [
+          16,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 70,
+        "avgDamagePercent": 50.0
+      },
+      {
+        "column": 11,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          5
+        ],
+        "verde": [
+          6,
+          8
+        ],
+        "amarelo": [
+          9,
+          11
+        ],
+        "laranja": [
+          12,
+          15
+        ],
+        "vermelho": [
+          16,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ],
+        "hitChancePercent": 75,
+        "avgDamagePercent": 52.5
+      },
+      {
+        "column": 12,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          5
+        ],
+        "verde": [
+          6,
+          7
+        ],
+        "amarelo": [
+          8,
+          11
+        ],
+        "laranja": [
+          12,
+          14
+        ],
+        "vermelho": [
+          15,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ],
+        "hitChancePercent": 75,
+        "avgDamagePercent": 56.25
+      },
+      {
+        "column": 13,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          4
+        ],
+        "verde": [
+          5,
+          7
+        ],
+        "amarelo": [
+          8,
+          11
+        ],
+        "laranja": [
+          12,
+          14
+        ],
+        "vermelho": [
+          15,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ],
+        "hitChancePercent": 80,
+        "avgDamagePercent": 57.5
+      },
+      {
+        "column": 14,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          4
+        ],
+        "verde": [
+          5,
+          6
+        ],
+        "amarelo": [
+          7,
+          10
+        ],
+        "laranja": [
+          11,
+          14
+        ],
+        "vermelho": [
+          15,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ],
+        "hitChancePercent": 80,
+        "avgDamagePercent": 60.0
+      },
+      {
+        "column": 15,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          3
+        ],
+        "verde": [
+          4,
+          6
+        ],
+        "amarelo": [
+          7,
+          10
+        ],
+        "laranja": [
+          11,
+          14
+        ],
+        "vermelho": [
+          15,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ],
+        "hitChancePercent": 85,
+        "avgDamagePercent": 61.25
+      },
+      {
+        "column": 16,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          3
+        ],
+        "verde": [
+          4,
+          5
+        ],
+        "amarelo": [
+          6,
+          9
+        ],
+        "laranja": [
+          10,
+          13
+        ],
+        "vermelho": [
+          14,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ],
+        "hitChancePercent": 85,
+        "avgDamagePercent": 65.0
+      },
+      {
+        "column": 17,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          2
+        ],
+        "verde": [
+          3,
+          5
+        ],
+        "amarelo": [
+          6,
+          9
+        ],
+        "laranja": [
+          10,
+          13
+        ],
+        "vermelho": [
+          14,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ],
+        "hitChancePercent": 90,
+        "avgDamagePercent": 66.25
+      },
+      {
+        "column": 18,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          2
+        ],
+        "verde": [
+          3,
+          4
+        ],
+        "amarelo": [
+          5,
+          9
+        ],
+        "laranja": [
+          10,
+          13
+        ],
+        "vermelho": [
+          14,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ],
+        "hitChancePercent": 90,
+        "avgDamagePercent": 67.5
+      },
+      {
+        "column": 19,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": null,
+        "verde": [
+          2,
+          4
+        ],
+        "amarelo": [
+          5,
+          8
+        ],
+        "laranja": [
+          9,
+          13
+        ],
+        "vermelho": [
+          14,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ],
+        "hitChancePercent": 95,
+        "avgDamagePercent": 70.0
+      },
+      {
+        "column": 20,
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": null,
+        "verde": [
+          2,
+          3
+        ],
+        "amarelo": [
+          4,
+          7
+        ],
+        "laranja": [
+          8,
+          13
+        ],
+        "vermelho": [
+          14,
+          17
+        ],
+        "azul": [
+          18,
+          20
+        ],
+        "hitChancePercent": 95,
+        "avgDamagePercent": 73.75
+      }
+    ],
+    "byColumn": {
+      "-7": {
+        "erroCritico": [
+          1,
+          2
+        ],
+        "falha": [
+          3,
+          14
+        ],
+        "verde": [
+          15,
+          16
+        ],
+        "amarelo": [
+          17,
+          18
+        ],
+        "laranja": [
+          19,
+          19
+        ],
+        "vermelho": null,
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "-6": {
+        "erroCritico": [
+          1,
+          2
+        ],
+        "falha": [
+          3,
+          14
+        ],
+        "verde": [
+          15,
+          16
+        ],
+        "amarelo": [
+          17,
+          17
+        ],
+        "laranja": [
+          18,
+          19
+        ],
+        "vermelho": null,
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "-5": {
+        "erroCritico": [
+          1,
+          2
+        ],
+        "falha": [
+          3,
+          13
+        ],
+        "verde": [
+          14,
+          16
+        ],
+        "amarelo": [
+          17,
+          17
+        ],
+        "laranja": [
+          18,
+          19
+        ],
+        "vermelho": null,
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "-4": {
+        "erroCritico": [
+          1,
+          2
+        ],
+        "falha": [
+          3,
+          13
+        ],
+        "verde": [
+          14,
+          15
+        ],
+        "amarelo": [
+          16,
+          17
+        ],
+        "laranja": [
+          18,
+          19
+        ],
+        "vermelho": null,
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "-3": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          12
+        ],
+        "verde": [
+          13,
+          15
+        ],
+        "amarelo": [
+          16,
+          17
+        ],
+        "laranja": [
+          18,
+          18
+        ],
+        "vermelho": [
+          19,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "-2": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          12
+        ],
+        "verde": [
+          13,
+          14
+        ],
+        "amarelo": [
+          15,
+          16
+        ],
+        "laranja": [
+          17,
+          18
+        ],
+        "vermelho": [
+          19,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "-1": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          11
+        ],
+        "verde": [
+          12,
+          14
+        ],
+        "amarelo": [
+          15,
+          16
+        ],
+        "laranja": [
+          17,
+          18
+        ],
+        "vermelho": [
+          19,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "0": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          11
+        ],
+        "verde": [
+          12,
+          13
+        ],
+        "amarelo": [
+          14,
+          15
+        ],
+        "laranja": [
+          16,
+          17
+        ],
+        "vermelho": [
+          18,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "1": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          10
+        ],
+        "verde": [
+          11,
+          13
+        ],
+        "amarelo": [
+          14,
+          15
+        ],
+        "laranja": [
+          16,
+          17
+        ],
+        "vermelho": [
+          18,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "2": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          10
+        ],
+        "verde": [
+          11,
+          12
+        ],
+        "amarelo": [
+          13,
+          15
+        ],
+        "laranja": [
+          16,
+          17
+        ],
+        "vermelho": [
+          18,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "3": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          9
+        ],
+        "verde": [
+          10,
+          12
+        ],
+        "amarelo": [
+          13,
+          14
+        ],
+        "laranja": [
+          15,
+          17
+        ],
+        "vermelho": [
+          18,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "4": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          9
+        ],
+        "verde": [
+          10,
+          11
+        ],
+        "amarelo": [
+          12,
+          14
+        ],
+        "laranja": [
+          15,
+          16
+        ],
+        "vermelho": [
+          17,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "5": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          8
+        ],
+        "verde": [
+          9,
+          11
+        ],
+        "amarelo": [
+          12,
+          14
+        ],
+        "laranja": [
+          15,
+          16
+        ],
+        "vermelho": [
+          17,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "6": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          8
+        ],
+        "verde": [
+          9,
+          10
+        ],
+        "amarelo": [
+          11,
+          13
+        ],
+        "laranja": [
+          14,
+          16
+        ],
+        "vermelho": [
+          17,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "7": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          7
+        ],
+        "verde": [
+          8,
+          10
+        ],
+        "amarelo": [
+          11,
+          13
+        ],
+        "laranja": [
+          14,
+          16
+        ],
+        "vermelho": [
+          17,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "8": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          7
+        ],
+        "verde": [
+          8,
+          9
+        ],
+        "amarelo": [
+          10,
+          12
+        ],
+        "laranja": [
+          13,
+          15
+        ],
+        "vermelho": [
+          16,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "9": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          6
+        ],
+        "verde": [
+          7,
+          9
+        ],
+        "amarelo": [
+          10,
+          12
+        ],
+        "laranja": [
+          13,
+          15
+        ],
+        "vermelho": [
+          16,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "10": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          6
+        ],
+        "verde": [
+          7,
+          8
+        ],
+        "amarelo": [
+          9,
+          12
+        ],
+        "laranja": [
+          13,
+          15
+        ],
+        "vermelho": [
+          16,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "11": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          5
+        ],
+        "verde": [
+          6,
+          8
+        ],
+        "amarelo": [
+          9,
+          11
+        ],
+        "laranja": [
+          12,
+          15
+        ],
+        "vermelho": [
+          16,
+          19
+        ],
+        "azul": [
+          20,
+          20
+        ]
+      },
+      "12": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          5
+        ],
+        "verde": [
+          6,
+          7
+        ],
+        "amarelo": [
+          8,
+          11
+        ],
+        "laranja": [
+          12,
+          14
+        ],
+        "vermelho": [
+          15,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ]
+      },
+      "13": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          4
+        ],
+        "verde": [
+          5,
+          7
+        ],
+        "amarelo": [
+          8,
+          11
+        ],
+        "laranja": [
+          12,
+          14
+        ],
+        "vermelho": [
+          15,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ]
+      },
+      "14": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          4
+        ],
+        "verde": [
+          5,
+          6
+        ],
+        "amarelo": [
+          7,
+          10
+        ],
+        "laranja": [
+          11,
+          14
+        ],
+        "vermelho": [
+          15,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ]
+      },
+      "15": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          3
+        ],
+        "verde": [
+          4,
+          6
+        ],
+        "amarelo": [
+          7,
+          10
+        ],
+        "laranja": [
+          11,
+          14
+        ],
+        "vermelho": [
+          15,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ]
+      },
+      "16": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          3
+        ],
+        "verde": [
+          4,
+          5
+        ],
+        "amarelo": [
+          6,
+          9
+        ],
+        "laranja": [
+          10,
+          13
+        ],
+        "vermelho": [
+          14,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ]
+      },
+      "17": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          2
+        ],
+        "verde": [
+          3,
+          5
+        ],
+        "amarelo": [
+          6,
+          9
+        ],
+        "laranja": [
+          10,
+          13
+        ],
+        "vermelho": [
+          14,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ]
+      },
+      "18": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": [
+          2,
+          2
+        ],
+        "verde": [
+          3,
+          4
+        ],
+        "amarelo": [
+          5,
+          9
+        ],
+        "laranja": [
+          10,
+          13
+        ],
+        "vermelho": [
+          14,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ]
+      },
+      "19": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": null,
+        "verde": [
+          2,
+          4
+        ],
+        "amarelo": [
+          5,
+          8
+        ],
+        "laranja": [
+          9,
+          13
+        ],
+        "vermelho": [
+          14,
+          18
+        ],
+        "azul": [
+          19,
+          20
+        ]
+      },
+      "20": {
+        "erroCritico": [
+          1,
+          1
+        ],
+        "falha": null,
+        "verde": [
+          2,
+          3
+        ],
+        "amarelo": [
+          4,
+          7
+        ],
+        "laranja": [
+          8,
+          13
+        ],
+        "vermelho": [
+          14,
+          17
+        ],
+        "azul": [
+          18,
+          20
+        ]
+      }
+    }
+  },
+  "resistanceTable": {
+    "name": "Tabela de Teste de Resistência Física (RF) e Resistência à Magia (RM)",
+    "dice": "1d20",
+    "successCondition": "roll >= target",
+    "naturalOneAlwaysFails": true,
+    "naturalTwentyAlwaysSucceeds": true,
+    "faMin": 1,
+    "faMax": 20,
+    "fdMin": -2,
+    "fdMax": 20,
+    "formula": {
+      "expression": "d = FA - FD; if |d| <= 4 then target = 11 + d; else if d > 4 then target = min(20, 15 + floor((d - 4) / 2)); else target = max(2, 7 - floor((-d - 4) / 2))",
+      "description": "Cruza-se a Força de Defesa (FD: RF ou RM do alvo) nas linhas com a Força de Ataque (FA: potência da magia, veneno, doença ou habilidade oposta) nas colunas. Role 1d20: resultado maior ou igual ao valor da célula indica sucesso na resistência."
+    },
+    "matrix": {
+      "-2": {
+        "1": 14,
+        "2": 15,
+        "3": 15,
+        "4": 16,
+        "5": 16,
+        "6": 17,
+        "7": 17,
+        "8": 18,
+        "9": 18,
+        "10": 19,
+        "11": 19,
+        "12": 20,
+        "13": 20,
+        "14": 20,
+        "15": 20,
+        "16": 20,
+        "17": 20,
+        "18": 20,
+        "19": 20,
+        "20": 20
+      },
+      "-1": {
+        "1": 13,
+        "2": 14,
+        "3": 15,
+        "4": 15,
+        "5": 16,
+        "6": 16,
+        "7": 17,
+        "8": 17,
+        "9": 18,
+        "10": 18,
+        "11": 19,
+        "12": 19,
+        "13": 20,
+        "14": 20,
+        "15": 20,
+        "16": 20,
+        "17": 20,
+        "18": 20,
+        "19": 20,
+        "20": 20
+      },
+      "0": {
+        "1": 12,
+        "2": 13,
+        "3": 14,
+        "4": 15,
+        "5": 15,
+        "6": 16,
+        "7": 16,
+        "8": 17,
+        "9": 17,
+        "10": 18,
+        "11": 18,
+        "12": 19,
+        "13": 19,
+        "14": 20,
+        "15": 20,
+        "16": 20,
+        "17": 20,
+        "18": 20,
+        "19": 20,
+        "20": 20
+      },
+      "1": {
+        "1": 11,
+        "2": 12,
+        "3": 13,
+        "4": 14,
+        "5": 15,
+        "6": 15,
+        "7": 16,
+        "8": 16,
+        "9": 17,
+        "10": 17,
+        "11": 18,
+        "12": 18,
+        "13": 19,
+        "14": 19,
+        "15": 20,
+        "16": 20,
+        "17": 20,
+        "18": 20,
+        "19": 20,
+        "20": 20
+      },
+      "2": {
+        "1": 10,
+        "2": 11,
+        "3": 12,
+        "4": 13,
+        "5": 14,
+        "6": 15,
+        "7": 15,
+        "8": 16,
+        "9": 16,
+        "10": 17,
+        "11": 17,
+        "12": 18,
+        "13": 18,
+        "14": 19,
+        "15": 19,
+        "16": 20,
+        "17": 20,
+        "18": 20,
+        "19": 20,
+        "20": 20
+      },
+      "3": {
+        "1": 9,
+        "2": 10,
+        "3": 11,
+        "4": 12,
+        "5": 13,
+        "6": 14,
+        "7": 15,
+        "8": 15,
+        "9": 16,
+        "10": 16,
+        "11": 17,
+        "12": 17,
+        "13": 18,
+        "14": 18,
+        "15": 19,
+        "16": 19,
+        "17": 20,
+        "18": 20,
+        "19": 20,
+        "20": 20
+      },
+      "4": {
+        "1": 8,
+        "2": 9,
+        "3": 10,
+        "4": 11,
+        "5": 12,
+        "6": 13,
+        "7": 14,
+        "8": 15,
+        "9": 15,
+        "10": 16,
+        "11": 16,
+        "12": 17,
+        "13": 17,
+        "14": 18,
+        "15": 18,
+        "16": 19,
+        "17": 19,
+        "18": 20,
+        "19": 20,
+        "20": 20
+      },
+      "5": {
+        "1": 7,
+        "2": 8,
+        "3": 9,
+        "4": 10,
+        "5": 11,
+        "6": 12,
+        "7": 13,
+        "8": 14,
+        "9": 15,
+        "10": 15,
+        "11": 16,
+        "12": 16,
+        "13": 17,
+        "14": 17,
+        "15": 18,
+        "16": 18,
+        "17": 19,
+        "18": 19,
+        "19": 20,
+        "20": 20
+      },
+      "6": {
+        "1": 7,
+        "2": 7,
+        "3": 8,
+        "4": 9,
+        "5": 10,
+        "6": 11,
+        "7": 12,
+        "8": 13,
+        "9": 14,
+        "10": 15,
+        "11": 15,
+        "12": 16,
+        "13": 16,
+        "14": 17,
+        "15": 17,
+        "16": 18,
+        "17": 18,
+        "18": 19,
+        "19": 19,
+        "20": 20
+      },
+      "7": {
+        "1": 6,
+        "2": 7,
+        "3": 7,
+        "4": 8,
+        "5": 9,
+        "6": 10,
+        "7": 11,
+        "8": 12,
+        "9": 13,
+        "10": 14,
+        "11": 15,
+        "12": 15,
+        "13": 16,
+        "14": 16,
+        "15": 17,
+        "16": 17,
+        "17": 18,
+        "18": 18,
+        "19": 19,
+        "20": 19
+      },
+      "8": {
+        "1": 6,
+        "2": 6,
+        "3": 7,
+        "4": 7,
+        "5": 8,
+        "6": 9,
+        "7": 10,
+        "8": 11,
+        "9": 12,
+        "10": 13,
+        "11": 14,
+        "12": 15,
+        "13": 15,
+        "14": 16,
+        "15": 16,
+        "16": 17,
+        "17": 17,
+        "18": 18,
+        "19": 18,
+        "20": 19
+      },
+      "9": {
+        "1": 5,
+        "2": 6,
+        "3": 6,
+        "4": 7,
+        "5": 7,
+        "6": 8,
+        "7": 9,
+        "8": 10,
+        "9": 11,
+        "10": 12,
+        "11": 13,
+        "12": 14,
+        "13": 15,
+        "14": 15,
+        "15": 16,
+        "16": 16,
+        "17": 17,
+        "18": 17,
+        "19": 18,
+        "20": 18
+      },
+      "10": {
+        "1": 5,
+        "2": 5,
+        "3": 6,
+        "4": 6,
+        "5": 7,
+        "6": 7,
+        "7": 8,
+        "8": 9,
+        "9": 10,
+        "10": 11,
+        "11": 12,
+        "12": 13,
+        "13": 14,
+        "14": 15,
+        "15": 15,
+        "16": 16,
+        "17": 16,
+        "18": 17,
+        "19": 17,
+        "20": 18
+      },
+      "11": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 6,
+        "5": 6,
+        "6": 7,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "11": 11,
+        "12": 12,
+        "13": 13,
+        "14": 14,
+        "15": 15,
+        "16": 15,
+        "17": 16,
+        "18": 16,
+        "19": 17,
+        "20": 17
+      },
+      "12": {
+        "1": 4,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 6,
+        "6": 6,
+        "7": 7,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 14,
+        "16": 15,
+        "17": 15,
+        "18": 16,
+        "19": 16,
+        "20": 17
+      },
+      "13": {
+        "1": 3,
+        "2": 4,
+        "3": 4,
+        "4": 5,
+        "5": 5,
+        "6": 6,
+        "7": 6,
+        "8": 7,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 10,
+        "13": 11,
+        "14": 12,
+        "15": 13,
+        "16": 14,
+        "17": 15,
+        "18": 15,
+        "19": 16,
+        "20": 16
+      },
+      "14": {
+        "1": 3,
+        "2": 3,
+        "3": 4,
+        "4": 4,
+        "5": 5,
+        "6": 5,
+        "7": 6,
+        "8": 6,
+        "9": 7,
+        "10": 7,
+        "11": 8,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
+        "16": 13,
+        "17": 14,
+        "18": 15,
+        "19": 15,
+        "20": 16
+      },
+      "15": {
+        "1": 2,
+        "2": 3,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 5,
+        "7": 5,
+        "8": 6,
+        "9": 6,
+        "10": 7,
+        "11": 7,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 11,
+        "16": 12,
+        "17": 13,
+        "18": 14,
+        "19": 15,
+        "20": 15
+      },
+      "16": {
+        "1": 2,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 4,
+        "7": 5,
+        "8": 5,
+        "9": 6,
+        "10": 6,
+        "11": 7,
+        "12": 7,
+        "13": 8,
+        "14": 9,
+        "15": 10,
+        "16": 11,
+        "17": 12,
+        "18": 13,
+        "19": 14,
+        "20": 15
+      },
+      "17": {
+        "1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 4,
+        "7": 4,
+        "8": 5,
+        "9": 5,
+        "10": 6,
+        "11": 6,
+        "12": 7,
+        "13": 7,
+        "14": 8,
+        "15": 9,
+        "16": 10,
+        "17": 11,
+        "18": 12,
+        "19": 13,
+        "20": 14
+      },
+      "18": {
+        "1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 3,
+        "6": 3,
+        "7": 4,
+        "8": 4,
+        "9": 5,
+        "10": 5,
+        "11": 6,
+        "12": 6,
+        "13": 7,
+        "14": 7,
+        "15": 8,
+        "16": 9,
+        "17": 10,
+        "18": 11,
+        "19": 12,
+        "20": 13
+      },
+      "19": {
+        "1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 3,
+        "7": 3,
+        "8": 4,
+        "9": 4,
+        "10": 5,
+        "11": 5,
+        "12": 6,
+        "13": 6,
+        "14": 7,
+        "15": 7,
+        "16": 8,
+        "17": 9,
+        "18": 10,
+        "19": 11,
+        "20": 12
+      },
+      "20": {
+        "1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2,
+        "7": 3,
+        "8": 3,
+        "9": 4,
+        "10": 4,
+        "11": 5,
+        "12": 5,
+        "13": 6,
+        "14": 6,
+        "15": 7,
+        "16": 7,
+        "17": 8,
+        "18": 9,
+        "19": 10,
+        "20": 11
+      }
+    }
+  },
+  "derivedStats": {
+    "ef": {
+      "label": "Energia Física (EF)",
+      "shortLabel": "EF",
+      "formula": "race.baseEF + forca + fisico",
+      "withAbsorptionFormula": "race.baseEF + forca + fisico + absorcao",
+      "unconsciousAt": 0,
+      "deathAt": -15,
+      "description": "Mede a integridade corporal real (cortes, contusões, queimaduras e venenos). Só recebe dano normal quando a EH se esgota (ou diretamente em Golpes Críticos). Com EF ≤ 0 o personagem cai Inconsciente/Fora de Combate; com EF ≤ -15 ocorre a Morte."
+    },
+    "eh": {
+      "label": "Energia Heróica (EH)",
+      "shortLabel": "EH",
+      "stage1Formula": "profession.baseEH + fisico",
+      "levelUpFormula": "ehMax + ehEvolutionRoll(1d10, profession) + fisico",
+      "description": "Mede fôlego, sorte, ímpeto e capacidade heróica de amortecer e desviar de golpes letais. Absorve todo dano normal de combate antes que qualquer ferimento atinja a EF."
+    },
+    "damageFlow": {
+      "normalDamageOrder": [
+        "eh",
+        "absorcao",
+        "ef"
+      ],
+      "criticalDamageOrder": [
+        "magicAbsorcao",
+        "ef"
+      ],
+      "ehAbsorbsFirst": true,
+      "overflowToEf": true,
+      "criticalBypassesEh": true,
+      "criticalBypassesNonMagicalAbsorption": true,
+      "criticalWhenEhZero": "Se o alvo já estiver com EH = 0 ao sofrer um Golpe Crítico, aplica-se 100% do dano direto na EF e todos os efeitos especiais da Tabela de Críticos são aplicados integralmente.",
+      "unconsciousThresholdEf": 0,
+      "deathThresholdEf": -15,
+      "description": "Dano normal é descontado primeiro da EH; o excedente é amortecido pela Absorção da armadura/escudo/elmo e o restante fere a EF. Golpes Críticos atravessam a EH e a Absorção comum, atingindo diretamente a EF."
+    },
+    "karma": {
+      "label": "Karma",
+      "shortLabel": "Karma",
+      "formula": "profession.isMystic && aura >= 1 ? (aura + 1) * (stage + 1) : 0",
+      "minimumAura": 1,
+      "classicFormulaNote": "No Tagmar 3.0 oficial: Karma = (AUR + 1) × (Estágio + 1) para profissões místicas (Mago, Sacerdote, Bardo e Rastreador) com Aura ≥ 1. Personagens com Aura ≤ 0 ou profissões não-místicas (Guerreiro, Ladino) possuem Karma 0.",
+      "description": "Reserva de energia mística gasta na evocação de magias e rituais."
+    },
+    "defesaAtiva": {
+      "label": "Defesa Ativa (DA)",
+      "shortLabel": "DA",
+      "formula": "armor.defBase + agilidade + shield.defActiveBonus + helmet.defActiveBonus + magicDefenseBonus + conditionDaDelta",
+      "description": "Valor subtraído da coluna de ataque do adversário em combate normal, quando o defensor pode reagir, esquivar ou aparar."
+    },
+    "defesaPassiva": {
+      "label": "Defesa Passiva (DP)",
+      "shortLabel": "DP",
+      "formula": "armor.defBase + helmet.defPassiveBonus + magicPassiveBonus + conditionDpDelta",
+      "description": "Valor usado quando o personagem está Surpreso, Imobilizado, Inconsciente ou incapaz de usar Agilidade e Escudo para se defender."
+    },
+    "absorcao": {
+      "label": "Absorção",
+      "shortLabel": "Abs",
+      "formula": "armor.absorcao + shield.absorcao + helmet.absorcao + magicAbsorptionBonus",
+      "description": "Pontos de proteção fornecidos por armaduras, escudos e elmos que amortecem impactos antes de atingirem a EF real. Itens mágicos aplicam sua absorção mesmo contra Golpes Críticos."
+    },
+    "armorDefenseTable": [
+      {
+        "name": "Sem Armadura (Nada)",
+        "armorClass": "L",
+        "defenseType": "Leve",
+        "defBase": 0,
+        "absorcao": 0
+      },
+      {
+        "name": "Couro Leve",
+        "armorClass": "L",
+        "defenseType": "Leve",
+        "defBase": 1,
+        "absorcao": 3
+      },
+      {
+        "name": "Couro Rígido",
+        "armorClass": "M",
+        "defenseType": "Média",
+        "defBase": 0,
+        "absorcao": 6
+      },
+      {
+        "name": "Cota de Malha Parcial",
+        "armorClass": "M",
+        "defenseType": "Média",
+        "defBase": 1,
+        "absorcao": 9
+      },
+      {
+        "name": "Cota de Malha Completa",
+        "armorClass": "P",
+        "defenseType": "Pesada",
+        "defBase": 0,
+        "absorcao": 12
+      },
+      {
+        "name": "Couraça Metálica Parcial",
+        "armorClass": "P",
+        "defenseType": "Pesada",
+        "defBase": 1,
+        "absorcao": 15
+      },
+      {
+        "name": "Armadura Completa (Placas)",
+        "armorClass": "P",
+        "defenseType": "Pesada",
+        "defBase": 2,
+        "absorcao": 18
+      }
+    ],
+    "velocidadeBase": {
+      "label": "Velocidade Base (VB)",
+      "shortLabel": "VB",
+      "unit": "metros/rodada",
+      "roundSeconds": 15,
+      "gridSquareMeters": 1.5,
+      "formula": "race.baseVB + fisico",
+      "gridSquaresFormula": "max(1, floor((vb * conditionVbMultiplier) / 1.5))",
+      "sprintMultiplier": 6,
+      "description": "Distância em metros percorrida em uma rodada normal de combate (15 segundos). Em corrida curta pode chegar a 6× VB (ou 10× em voo para Napóis)."
+    },
+    "rf": {
+      "label": "Resistência Física (RF)",
+      "shortLabel": "RF",
+      "formula": "stage + fisico + racialRfBonus + conditionRfDelta",
+      "description": "Força de Defesa usada na Tabela de Resistências contra venenos, doenças, paralisias físicas e exaustão."
+    },
+    "rm": {
+      "label": "Resistência à Magia (RM)",
+      "shortLabel": "RM",
+      "formula": "stage + aura + racialRmBonus + conditionRmDelta",
+      "description": "Força de Defesa usada na Tabela de Resistências contra feitiços, maldições, encantamentos e efeitos arcanos ou divinos."
+    },
+    "iniciativa": {
+      "label": "Iniciativa",
+      "shortLabel": "INI",
+      "formula": "1d10 + agilidade + initiativeBonus",
+      "order": "descending",
+      "optionalActionWeightPenalties": {
+        "falarOuParado": 0,
+        "moverOuArmaLeve": -1,
+        "armaMedia": -3,
+        "armaPesadaOuMagiaComplexa": -6
+      },
+      "description": "Define a ordem de ação na rodada de 15 segundos (maior valor age primeiro). O grupo/personagem vencedor escolhe se age antes ou observa o oponente."
+    }
+  },
+  "combatRound": {
+    "durationSeconds": 15,
+    "phases": [
+      {
+        "step": 1,
+        "name": "Iniciativa",
+        "description": "Rolagem de 1d10 + Agilidade (ordem decrescente) para definir quem age primeiro."
+      },
+      {
+        "step": 2,
+        "name": "Movimento",
+        "description": "Deslocamento tático limitado pela Velocidade Base (VB) e condições ativas."
+      },
+      {
+        "step": 3,
+        "name": "Ação",
+        "description": "Ataques corpo a corpo/distância, evocação de magias, uso de habilidades ou técnicas de combate."
+      }
+    ],
+    "attackColumnFormula": "weaponSkillTotal + weapon.columnBonus + situationalColumnShift - targetEffectiveDefense",
+    "effectiveDefenseRule": "Usa Defesa Ativa (DA) em combate normal; usa Defesa Passiva (DP) se o alvo estiver Surpreso, Caído sem reação, Paralisado, Imobilizado ou Inconsciente.",
+    "defenselessTargetRule": "Contra alvos Inconscientes ou totalmente Paralisados, ataques corpo a corpo acertam automaticamente com dano máximo direto na EF (sem uso de EH)."
+  },
+  "stageProgression": {
+    "minStage": 1,
+    "maxStage": 20,
+    "specializationMinStage": 5,
+    "ehEvolutionDice": "1d10",
+    "ehEvolutionTableByProfession": {
+      "guerreiro": {
+        "1-2": 6,
+        "3-5": 7,
+        "6-8": 8,
+        "9-10": 9
+      },
+      "rastreador": {
+        "1-2": 5,
+        "3-5": 6,
+        "6-8": 7,
+        "9-10": 8
+      },
+      "ladino": {
+        "1-2": 4,
+        "3-5": 5,
+        "6-8": 6,
+        "9-10": 7
+      },
+      "sacerdote": {
+        "1-2": 4,
+        "3-5": 5,
+        "6-8": 6,
+        "9-10": 7
+      },
+      "bardo": {
+        "1-2": 3,
+        "3-5": 4,
+        "6-8": 5,
+        "9-10": 6
+      },
+      "mago": {
+        "1-2": 2,
+        "3-5": 3,
+        "6-8": 4,
+        "9-10": 5
+      }
+    },
+    "levelUpChecklist": [
+      "Role 1d10 na Tabela de Evolução de Energia Heróica da sua profissão e some + Físico à EH máxima.",
+      "Atualize RF (+1) e RM (+1) conforme o novo Estágio.",
+      "Se for profissão mística com Aura ≥ 1, recalcule o Karma: (AUR + 1) × (Novo Estágio + 1).",
+      "Receba novos Pontos de Habilidades, Pontos de Combate e Pontos de Magia (se místico) da profissão.",
+      "No 5º Estágio, escolha sua Especialização definitiva (Academia, Guilda, Colégio, Trilha, Confraria ou Ordem)."
+    ],
+    "stages": [
+      {
+        "stage": 1,
+        "xpMin": 0,
+        "xpMax": 10,
+        "rfBase": 1,
+        "rmBase": 1,
+        "karmaStageFactor": 2,
+        "specializationUnlocked": false,
+        "milestone": "Criação do personagem; escolha de Raça, Profissão básica e distribuição inicial de pontos."
+      },
+      {
+        "stage": 2,
+        "xpMin": 11,
+        "xpMax": 20,
+        "rfBase": 2,
+        "rmBase": 2,
+        "karmaStageFactor": 3,
+        "specializationUnlocked": false,
+        "milestone": null
+      },
+      {
+        "stage": 3,
+        "xpMin": 21,
+        "xpMax": 30,
+        "rfBase": 3,
+        "rmBase": 3,
+        "karmaStageFactor": 4,
+        "specializationUnlocked": false,
+        "milestone": null
+      },
+      {
+        "stage": 4,
+        "xpMin": 31,
+        "xpMax": 45,
+        "rfBase": 4,
+        "rmBase": 4,
+        "karmaStageFactor": 5,
+        "specializationUnlocked": false,
+        "milestone": null
+      },
+      {
+        "stage": 5,
+        "xpMin": 46,
+        "xpMax": 60,
+        "rfBase": 5,
+        "rmBase": 5,
+        "karmaStageFactor": 6,
+        "specializationUnlocked": true,
+        "milestone": "Desbloqueio oficial de Especialização (Academia, Guilda, Colégio, Trilha, Confraria ou Ordem Sacerdotal)."
+      },
+      {
+        "stage": 6,
+        "xpMin": 61,
+        "xpMax": 75,
+        "rfBase": 6,
+        "rmBase": 6,
+        "karmaStageFactor": 7,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 7,
+        "xpMin": 76,
+        "xpMax": 95,
+        "rfBase": 7,
+        "rmBase": 7,
+        "karmaStageFactor": 8,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 8,
+        "xpMin": 96,
+        "xpMax": 115,
+        "rfBase": 8,
+        "rmBase": 8,
+        "karmaStageFactor": 9,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 9,
+        "xpMin": 116,
+        "xpMax": 135,
+        "rfBase": 9,
+        "rmBase": 9,
+        "karmaStageFactor": 10,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 10,
+        "xpMin": 136,
+        "xpMax": 165,
+        "rfBase": 10,
+        "rmBase": 10,
+        "karmaStageFactor": 11,
+        "specializationUnlocked": true,
+        "milestone": "Aventureiro Veterano; acesso a técnicas e magias avançadas de sua especialização."
+      },
+      {
+        "stage": 11,
+        "xpMin": 166,
+        "xpMax": 195,
+        "rfBase": 11,
+        "rmBase": 11,
+        "karmaStageFactor": 12,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 12,
+        "xpMin": 196,
+        "xpMax": 225,
+        "rfBase": 12,
+        "rmBase": 12,
+        "karmaStageFactor": 13,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 13,
+        "xpMin": 226,
+        "xpMax": 265,
+        "rfBase": 13,
+        "rmBase": 13,
+        "karmaStageFactor": 14,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 14,
+        "xpMin": 266,
+        "xpMax": 305,
+        "rfBase": 14,
+        "rmBase": 14,
+        "karmaStageFactor": 15,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 15,
+        "xpMin": 306,
+        "xpMax": 345,
+        "rfBase": 15,
+        "rmBase": 15,
+        "karmaStageFactor": 16,
+        "specializationUnlocked": true,
+        "milestone": "Mestre de Renome nos Reinos; pode liderar instituições, fortalezas ou ordens."
+      },
+      {
+        "stage": 16,
+        "xpMin": 346,
+        "xpMax": 385,
+        "rfBase": 16,
+        "rmBase": 16,
+        "karmaStageFactor": 17,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 17,
+        "xpMin": 386,
+        "xpMax": 435,
+        "rfBase": 17,
+        "rmBase": 17,
+        "karmaStageFactor": 18,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 18,
+        "xpMin": 436,
+        "xpMax": 485,
+        "rfBase": 18,
+        "rmBase": 18,
+        "karmaStageFactor": 19,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 19,
+        "xpMin": 486,
+        "xpMax": 535,
+        "rfBase": 19,
+        "rmBase": 19,
+        "karmaStageFactor": 20,
+        "specializationUnlocked": true,
+        "milestone": null
+      },
+      {
+        "stage": 20,
+        "xpMin": 536,
+        "xpMax": 585,
+        "rfBase": 20,
+        "rmBase": 20,
+        "karmaStageFactor": 21,
+        "specializationUnlocked": true,
+        "milestone": "Ápice Lendário de Tagmar."
+      }
+    ]
+  },
+  "healingAndRest": {
+    "eh": {
+      "sleepingPerHour": 2,
+      "restingOrLightActivityPerHour": 1,
+      "heavyExertionPerHour": 0,
+      "description": "A EH recupera rapidamente: 2 pontos/hora dormindo, 1 ponto/hora descansando ou em esforço leve, e 0 em esforço pesado ou combate."
+    },
+    "ef": {
+      "naturalPerDay": 1,
+      "requiresEfAbove": 0,
+      "withMedicineSkillPer8Hours": 1,
+      "severeInjuryNote": "Ferimentos críticos graves (fraturas, hemorragias severas, mutilações) exigem cuidados médicos específicos ou magias como Curas Físicas e Regeneração.",
+      "description": "A EF acima de 0 recupera 1 ponto por dia de repouso (sem esforços pesados), ou 1 ponto a cada 8 horas com sucesso em Medicina."
+    },
+    "karma": {
+      "fullSleepHoursWithFocus": 8,
+      "fullSleepRecoveryPercent": 100,
+      "interruptedSleepMinHours": 4,
+      "interruptedSleepRecoveryPercent": 50,
+      "awakeRestHoursPerPoint": 4,
+      "withoutFocusNote": "Sem o objeto Focus, o místico precisa realizar um ritual prolongado de reconexão para recuperar Karma.",
+      "description": "Com Focus: 8h de sono tranquilo restauram 100% do Karma; sono interrompido (4h–7h) restaura 50%; menos de 4h não recupera; descanso acordado contínuo recupera 1 ponto a cada 4 horas."
+    }
+  },
+  "criticalEffects": {
+    "criticalHit": {
+      "trigger": "Rolagem na faixa Azul (Crítico) da Tabela de Resolução.",
+      "secondRoll": "Rola-se novamente 1d20 na mesma coluna de ataque para determinar a severidade do efeito na Tabela de Críticos conforme o tipo de dano (Corte, Perfuração ou Contusão).",
+      "damageRule": "Aplica dano direto na Energia Física (EF), ignorando EH e Absorção de armaduras não-mágicas.",
+      "tables": {
+        "corte": [
+          {
+            "tier": "verde",
+            "bonusEfDamage": 2,
+            "condition": "sangrando",
+            "summary": "Talho superficial: +2 EF e Sangrando (1 EF/rodada)."
+          },
+          {
+            "tier": "amarelo",
+            "bonusEfDamage": 4,
+            "condition": "sangrando",
+            "summary": "Corte profundo no braço ou perna: +4 EF, Sangrando e -2 na coluna."
+          },
+          {
+            "tier": "laranja",
+            "bonusEfDamage": 6,
+            "condition": "ferido-gravemente",
+            "summary": "Hemorragia severa: +6 EF, Ferido Gravemente e Sangrando."
+          },
+          {
+            "tier": "vermelho",
+            "bonusEfDamage": 10,
+            "condition": "atordoado",
+            "summary": "Laceração arterial / tendão rompido: +10 EF, Atordoado (2 rodadas) e Sangrando."
+          },
+          {
+            "tier": "azul",
+            "bonusEfDamage": 15,
+            "condition": "inconsciente",
+            "summary": "Golpe devastador em órgão vital ou membro: +15 EF, cai Inconsciente / Agonizando."
+          }
+        ],
+        "perfuracao": [
+          {
+            "tier": "verde",
+            "bonusEfDamage": 2,
+            "condition": "sangrando",
+            "summary": "Perfuração rasa: +2 EF e sangramento leve."
+          },
+          {
+            "tier": "amarelo",
+            "bonusEfDamage": 4,
+            "condition": "descontrolado",
+            "summary": "Estocada dolorosa: +4 EF e perde o equilíbrio (-3 na coluna)."
+          },
+          {
+            "tier": "laranja",
+            "bonusEfDamage": 7,
+            "condition": "ferido-gravemente",
+            "summary": "Perfuração profunda: +7 EF, Ferido Gravemente e Sangrando."
+          },
+          {
+            "tier": "vermelho",
+            "bonusEfDamage": 11,
+            "condition": "atordoado",
+            "summary": "Furo em órgão interno: +11 EF, Atordoado e hemorragia intensa."
+          },
+          {
+            "tier": "azul",
+            "bonusEfDamage": 16,
+            "condition": "agonizando",
+            "summary": "Golpe transfixante mortal: +16 EF direto e estado Agonizando."
+          }
+        ],
+        "contusao": [
+          {
+            "tier": "verde",
+            "bonusEfDamage": 2,
+            "condition": "descontrolado",
+            "summary": "Impacto seco: +2 EF e Descontrolado por 1 rodada."
+          },
+          {
+            "tier": "amarelo",
+            "bonusEfDamage": 4,
+            "condition": "caido",
+            "summary": "Pancada forte: +4 EF e alvo derrubado (Caído)."
+          },
+          {
+            "tier": "laranja",
+            "bonusEfDamage": 6,
+            "condition": "atordoado",
+            "summary": "Concussão ou costela trincada: +6 EF e Atordoado por 1 rodada."
+          },
+          {
+            "tier": "vermelho",
+            "bonusEfDamage": 10,
+            "condition": "ferido-gravemente",
+            "summary": "Fratura óssea grave: +10 EF, Caído e Ferido Gravemente."
+          },
+          {
+            "tier": "azul",
+            "bonusEfDamage": 14,
+            "condition": "inconsciente",
+            "summary": "Esmagamento craniano ou torácico: +14 EF e Inconsciente imediato."
+          }
+        ]
+      }
+    },
+    "criticalError": {
+      "trigger": "Rolagem na faixa Erro Crítico (1 em colunas ≥ -3; 1–2 em colunas -7 a -4).",
+      "effects": [
+        {
+          "roll1d6": "1-2",
+          "condition": "descontrolado",
+          "summary": "Descontrole: perde o ritmo do golpe e sofre -3 na coluna de resolução na próxima rodada."
+        },
+        {
+          "roll1d6": "3-4",
+          "condition": "caido",
+          "summary": "Tropeço / Abertura: escorrega ou abre a guarda (-2 na Defesa Ativa até o próximo turno ou cai Caído)."
+        },
+        {
+          "roll1d6": "5",
+          "condition": "desarmado",
+          "summary": "Arma Escapa / Trava: deixa a arma cair a 1d3 metros ou corda do arco arrebenta."
+        },
+        {
+          "roll1d6": "6",
+          "condition": "descontrolado",
+          "summary": "Revés Grave: atinge obstáculo, aliado adjacente com dano Verde (25%) ou danifica a própria arma."
+        }
+      ]
+    }
+  }
+}

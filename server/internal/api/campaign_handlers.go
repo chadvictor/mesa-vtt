@@ -79,7 +79,14 @@ func (s *Server) handleCreateCampaign(w http.ResponseWriter, r *http.Request, us
 	if systemID == "" {
 		systemID = "mighty-blade-3e"
 	}
-	if systemID != "mighty-blade-3e" && systemID != "generic-rpg" {
+	switch strings.ToLower(systemID) {
+	case "mighty-blade-3e", "mighty-blade":
+		systemID = "mighty-blade-3e"
+	case "tagmar-3", "tagmar", "tagmar-3e", "tagmar-3.0":
+		systemID = "tagmar-3"
+	case "generic-rpg":
+		systemID = "generic-rpg"
+	default:
 		writeError(w, http.StatusBadRequest, "invalid_system", "Sistema não suportado: "+systemID)
 		return
 	}
@@ -89,7 +96,11 @@ func (s *Server) handleCreateCampaign(w http.ResponseWriter, r *http.Request, us
 	}
 	coverURL := strings.TrimSpace(in.CoverURL)
 	if coverURL == "" {
-		coverURL = "./assets/banner-mesa-rpg.svg"
+		if systemID == "tagmar-3" {
+			coverURL = "./assets/maps/castle-courtyard.svg"
+		} else {
+			coverURL = "./assets/banner-mesa-rpg.svg"
+		}
 	}
 
 	inviteCode := strings.ToUpper(strings.TrimSpace(in.InviteCode))
@@ -150,11 +161,15 @@ func (s *Server) handleCreateCampaign(w http.ResponseWriter, r *http.Request, us
 	_ = s.Store.UpsertMember(r.Context(), member)
 
 	// Create default scene & default "Mesa Principal" voice channel
+	defaultSceneImg := "./assets/maps/tavern.svg"
+	if systemID == "tagmar-3" {
+		defaultSceneImg = "./assets/maps/castle-courtyard.svg"
+	}
 	_ = s.Store.UpsertScene(r.Context(), model.Scene{
 		ID:         sceneID,
 		CampaignID: campID,
 		Name:       "Mapa Inicial",
-		ImageURL:   "./assets/maps/tavern.svg",
+		ImageURL:   defaultSceneImg,
 		Width:      1600,
 		Height:     1200,
 		Grid: model.SceneGrid{
@@ -245,7 +260,7 @@ func (s *Server) handleJoinCampaign(w http.ResponseWriter, r *http.Request, user
 		role = model.RoleGM
 	} else if in.DesiredRole == model.RoleObserver {
 		role = model.RoleObserver
-	} else if in.DesiredRole == model.RoleGM && (s.Config.LocalAuthEnabled() || camp.InviteCode == "DRAKON" || user.IsAdmin) {
+	} else if in.DesiredRole == model.RoleGM && (s.Config.LocalAuthEnabled() || camp.InviteCode == "DRAKON" || camp.InviteCode == "TAGMAR" || user.IsAdmin) {
 		role = model.RoleGM
 	}
 

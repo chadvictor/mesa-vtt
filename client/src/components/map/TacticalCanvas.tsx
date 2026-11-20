@@ -4,6 +4,7 @@ import type { Character, Scene, Token } from '@systems/types';
 import type { TacticalCanvasProps } from '@/lib/componentProps';
 import { useCampaignStore } from '@/lib/store';
 import conditionsData from '@data/mighty-blade/conditions.json';
+import tagmarConditionsData from '@data/tagmar/conditions.json';
 import { TokenPopover } from './TokenPopover';
 import type { MapCameraCommandDetail } from './MapToolbar';
 
@@ -14,9 +15,10 @@ interface ConditionMeta {
   color: string;
 }
 
-const CONDITION_MAP = new Map<string, ConditionMeta>(
-  (conditionsData as ConditionMeta[]).map((c) => [c.id, c])
-);
+const CONDITION_MAP = new Map<string, ConditionMeta>([
+  ...(conditionsData as ConditionMeta[]).map((c) => [c.id, c] as const),
+  ...(tagmarConditionsData as ConditionMeta[]).map((c) => [c.id, c] as const),
+]);
 
 interface CameraState {
   x: number;

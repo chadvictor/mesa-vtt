@@ -1,0 +1,3333 @@
+[
+  {
+    "id": "goblin-comum",
+    "name": "Goblin Comum",
+    "category": "Raças Selvagens",
+    "stage": 1,
+    "source": "Livro das Criaturas",
+    "description": "Pequeno humanoide esverdeado, traiçoeiro e covarde que habita cavernas úmidas e ataca viajantes sempre em superioridade numérica.",
+    "portrait": "./assets/monsters/goblin-raider.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": -1,
+      "carisma": -2,
+      "forca": -1,
+      "fisico": 0,
+      "agilidade": 2
+    },
+    "efMax": 9,
+    "ehMax": 8,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 4,
+    "defesaPassiva": 1,
+    "absorcao": 6,
+    "rf": 1,
+    "rm": 0,
+    "vb": 15,
+    "xpReward": 1,
+    "attacks": [
+      {
+        "name": "Lança Curta Enferrujada",
+        "column": 4,
+        "damage": {
+          "verde": 2,
+          "amarelo": 5,
+          "laranja": 8,
+          "vermelho": 10,
+          "azul": 12
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo / 12m",
+        "notes": "Usa em bando"
+      },
+      {
+        "name": "Adaga Serrilhada",
+        "column": 4,
+        "damage": {
+          "verde": 2,
+          "amarelo": 4,
+          "laranja": 6,
+          "vermelho": 8,
+          "azul": 10
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Tática de Bando",
+        "karmaCost": 0,
+        "description": "Recebe +2 colunas no ataque quando houver outro goblin adjacente ao alvo."
+      },
+      {
+        "name": "Visão na Penumbra",
+        "karmaCost": 0,
+        "description": "Enxerga normalmente em cavernas pouco iluminadas."
+      }
+    ],
+    "loot": "4 MC, lança curta, armadura de couro rasgada"
+  },
+  {
+    "id": "goblin-arqueiro",
+    "name": "Goblin Arqueiro",
+    "category": "Raças Selvagens",
+    "stage": 1,
+    "source": "Livro das Criaturas",
+    "description": "Batedor goblin especialista em emboscadas entre arbustos e rochedos, disparando flechas toscas antes de recuar correndo.",
+    "portrait": "./assets/portraits/goblin-rogue.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": -1,
+      "carisma": -2,
+      "forca": -1,
+      "fisico": -1,
+      "agilidade": 3
+    },
+    "efMax": 8,
+    "ehMax": 7,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 5,
+    "defesaPassiva": 1,
+    "absorcao": 5,
+    "rf": 1,
+    "rm": 0,
+    "vb": 16,
+    "xpReward": 1,
+    "attacks": [
+      {
+        "name": "Arco Curto Goblin",
+        "column": 5,
+        "damage": {
+          "verde": 3,
+          "amarelo": 6,
+          "laranja": 9,
+          "vermelho": 12,
+          "azul": 15
+        },
+        "damageType": "Perfuração",
+        "range": "40m",
+        "notes": "Disparo emboscado +1 coluna"
+      },
+      {
+        "name": "Punhal",
+        "column": 3,
+        "damage": {
+          "verde": 2,
+          "amarelo": 4,
+          "laranja": 5,
+          "vermelho": 7,
+          "azul": 9
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Emboscada Furtiva",
+        "karmaCost": 0,
+        "description": "+3 em Ações Furtivas em terrenos rochosos e florestas."
+      },
+      {
+        "name": "Retirada Veloz",
+        "karmaCost": 0,
+        "description": "Pode recuar sem sofrer penalidade quando flanqueado."
+      }
+    ],
+    "loot": "6 MC, arco curto, 10 flechas, adaga"
+  },
+  {
+    "id": "kobal",
+    "name": "Kobal (Kobold de Tagmar)",
+    "category": "Raças Selvagens",
+    "stage": 1,
+    "source": "Livro das Criaturas",
+    "description": "Criatura reptiliana baixa e astuta que constrói túneis estreitos repletos de armadilhas mecânicas nas colinas e minas abandonadas.",
+    "portrait": "./assets/monsters/goblin-raider.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": -2,
+      "forca": -1,
+      "fisico": -1,
+      "agilidade": 2
+    },
+    "efMax": 8,
+    "ehMax": 6,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 4,
+    "defesaPassiva": 1,
+    "absorcao": 4,
+    "rf": 1,
+    "rm": 1,
+    "vb": 15,
+    "xpReward": 1,
+    "attacks": [
+      {
+        "name": "Lança Leve",
+        "column": 4,
+        "damage": {
+          "verde": 2,
+          "amarelo": 5,
+          "laranja": 7,
+          "vermelho": 10,
+          "azul": 12
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Funda com Pedras",
+        "column": 5,
+        "damage": {
+          "verde": 2,
+          "amarelo": 4,
+          "laranja": 6,
+          "vermelho": 8,
+          "azul": 10
+        },
+        "damageType": "Contusão",
+        "range": "30m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Mestre de Armadilhas",
+        "karmaCost": 0,
+        "description": "+3 colunas para construir e esconder alçapões e laços em seus túneis."
+      },
+      {
+        "name": "Sensibilidade à Luz",
+        "karmaCost": 0,
+        "description": "Sofre -1 coluna sob luz solar plena."
+      }
+    ],
+    "loot": "5 MC, funda, ferramentas de armadilha, pequenas pedras semipreciosas"
+  },
+  {
+    "id": "bandido-das-estradas",
+    "name": "Bandido das Estradas",
+    "category": "Raças Civilizadas",
+    "stage": 1,
+    "source": "Livro das Criaturas",
+    "description": "Salteador humano desesperado ou mercenário desertor que cobra pedágios ilegais de caravanas nas rotas entre os reinos.",
+    "portrait": "./assets/portraits/human-warrior.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": 0,
+      "forca": 1,
+      "fisico": 1,
+      "agilidade": 1
+    },
+    "efMax": 13,
+    "ehMax": 12,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 4,
+    "defesaPassiva": 2,
+    "absorcao": 8,
+    "rf": 2,
+    "rm": 1,
+    "vb": 15,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Espada Curta",
+        "column": 5,
+        "damage": {
+          "verde": 4,
+          "amarelo": 7,
+          "laranja": 10,
+          "vermelho": 13,
+          "azul": 17
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Arco Curto",
+        "column": 4,
+        "damage": {
+          "verde": 3,
+          "amarelo": 6,
+          "laranja": 9,
+          "vermelho": 12,
+          "azul": 15
+        },
+        "damageType": "Perfuração",
+        "range": "45m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Golpe Desleal",
+        "karmaCost": 0,
+        "description": "+2 colunas contra alvos surpresos ou derrubados."
+      }
+    ],
+    "loot": "12 MP, espada curta, gibão de couro, 1 dia de ração"
+  },
+  {
+    "id": "lobo-selvagem",
+    "name": "Lobo Selvagem",
+    "category": "Animais",
+    "stage": 1,
+    "source": "Livro das Criaturas",
+    "description": "Predador astuto das florestas e estepes de Tagmar que caça em alcateias coordenadas para cercar e derrubar presas feridas.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "intelecto": -2,
+      "aura": 0,
+      "carisma": -1,
+      "forca": 1,
+      "fisico": 1,
+      "agilidade": 3
+    },
+    "efMax": 12,
+    "ehMax": 10,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 5,
+    "defesaPassiva": 2,
+    "absorcao": 4,
+    "rf": 2,
+    "rm": 1,
+    "vb": 24,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Mordida",
+        "column": 6,
+        "damage": {
+          "verde": 3,
+          "amarelo": 6,
+          "laranja": 9,
+          "vermelho": 12,
+          "azul": 15
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Acerto Vermelho derruba o alvo (Caído)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Caçada em Alcateia",
+        "karmaCost": 0,
+        "description": "Ganha +2 colunas quando um aliado da alcateia flanqueia a mesma presa."
+      },
+      {
+        "name": "Faro Aguçado",
+        "karmaCost": 0,
+        "description": "+4 em Seguir Trilhas pelo cheiro."
+      }
+    ],
+    "loot": "Pele de lobo (3 MP), presas"
+  },
+  {
+    "id": "esqueleto-guerreiro",
+    "name": "Esqueleto Guerreiro",
+    "category": "Mortos-Vivos",
+    "stage": 1,
+    "source": "Livro das Criaturas",
+    "description": "Ossada humana reerguida por Necroanimação, empunhando aço corroído e obedecendo sem medo nem fadiga às ordens de seu mestre.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "intelecto": -3,
+      "aura": -2,
+      "carisma": -3,
+      "forca": 1,
+      "fisico": 1,
+      "agilidade": 1
+    },
+    "efMax": 12,
+    "ehMax": 0,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 3,
+    "defesaPassiva": 2,
+    "absorcao": 10,
+    "rf": 3,
+    "rm": 2,
+    "vb": 14,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Espada Longa Enferrujada",
+        "column": 5,
+        "damage": {
+          "verde": 4,
+          "amarelo": 8,
+          "laranja": 12,
+          "vermelho": 16,
+          "azul": 20
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Escudo Antigo (Empurrão)",
+        "column": 4,
+        "damage": {
+          "verde": 2,
+          "amarelo": 4,
+          "laranja": 6,
+          "vermelho": 8,
+          "azul": 10
+        },
+        "damageType": "Contusão",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Natureza Morta-Viva",
+        "karmaCost": 0,
+        "description": "Imune a venenos, sono, medo e sangramento; armas de Perfuração causam metade do dano."
+      },
+      {
+        "name": "Vulnerável a Contusão",
+        "karmaCost": 0,
+        "description": "Sofre +25% de dano de armas de Contusão e milagres Sagrados."
+      }
+    ],
+    "loot": "Espada longa gasta, rodela velha, 3 MP em moedas antigas"
+  },
+  {
+    "id": "zumbi-putrefato",
+    "name": "Zumbi Putrefato",
+    "category": "Mortos-Vivos",
+    "stage": 2,
+    "source": "Livro das Criaturas",
+    "description": "Cadáver recente animado por energia sombria, lento porém terrivelmente resistente à dor e portador de infecções necróticas.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "intelecto": -3,
+      "aura": -2,
+      "carisma": -3,
+      "forca": 2,
+      "fisico": 3,
+      "agilidade": -2
+    },
+    "efMax": 18,
+    "ehMax": 0,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 1,
+    "defesaPassiva": 1,
+    "absorcao": 6,
+    "rf": 4,
+    "rm": 2,
+    "vb": 9,
+    "xpReward": 2,
+    "attacks": [
+      {
+        "name": "Garras e Pancada",
+        "column": 5,
+        "damage": {
+          "verde": 4,
+          "amarelo": 8,
+          "laranja": 12,
+          "vermelho": 16,
+          "azul": 20
+        },
+        "damageType": "Contusão/Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Mordida Infecta",
+        "column": 4,
+        "damage": {
+          "verde": 3,
+          "amarelo": 7,
+          "laranja": 10,
+          "vermelho": 14,
+          "azul": 17
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Alvo testa RF ou fica Envenenado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Insensível à Dor",
+        "karmaCost": 0,
+        "description": "Imune a medo, veneno, atordoamento e fadiga; luta até EF atingir 0."
+      }
+    ],
+    "loot": "Farrapos e eventuais pertences antigos (4 MP)"
+  },
+  {
+    "id": "orco-comum",
+    "name": "Orco Comum",
+    "category": "Raças Selvagens",
+    "stage": 2,
+    "source": "Livro das Criaturas",
+    "description": "Guerreiro tribal robusto de pele acinzentada e presas proeminentes, organizado em clãs belicosos que assolam fronteiras humanas e anãs.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": -1,
+      "carisma": -2,
+      "forca": 2,
+      "fisico": 2,
+      "agilidade": 1
+    },
+    "efMax": 16,
+    "ehMax": 14,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 4,
+    "defesaPassiva": 2,
+    "absorcao": 12,
+    "rf": 3,
+    "rm": 1,
+    "vb": 15,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Machado de Batalha",
+        "column": 7,
+        "damage": {
+          "verde": 6,
+          "amarelo": 11,
+          "laranja": 16,
+          "vermelho": 21,
+          "azul": 27
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Dano pesado"
+      },
+      {
+        "name": "Lança Curta",
+        "column": 6,
+        "damage": {
+          "verde": 4,
+          "amarelo": 8,
+          "laranja": 11,
+          "vermelho": 15,
+          "azul": 19
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo / 12m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Vigor Tribal",
+        "karmaCost": 0,
+        "description": "Continua lutando por 1 rodada extra após cair para 0 EF antes de desabar."
+      },
+      {
+        "name": "Visão Noturna",
+        "karmaCost": 0,
+        "description": "Enxerga até 20m na escuridão."
+      }
+    ],
+    "loot": "8 MP, machado de batalha, armadura de couro rígido, talismã de osso"
+  },
+  {
+    "id": "gnoll-saqueador",
+    "name": "Gnoll Saqueador",
+    "category": "Raças Selvagens",
+    "stage": 2,
+    "source": "Livro das Criaturas",
+    "description": "Humanoide hiena feroz das savanas e ermos áridos, temido por suas risadas macabras e investidas implacáveis em bando.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": -1,
+      "carisma": -2,
+      "forca": 2,
+      "fisico": 2,
+      "agilidade": 2
+    },
+    "efMax": 16,
+    "ehMax": 15,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 5,
+    "defesaPassiva": 2,
+    "absorcao": 10,
+    "rf": 3,
+    "rm": 1,
+    "vb": 18,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Lança Média",
+        "column": 7,
+        "damage": {
+          "verde": 5,
+          "amarelo": 9,
+          "laranja": 13,
+          "vermelho": 18,
+          "azul": 23
+        },
+        "damageType": "Perfuração",
+        "range": "2m",
+        "notes": ""
+      },
+      {
+        "name": "Mordida Selvagem",
+        "column": 6,
+        "damage": {
+          "verde": 3,
+          "amarelo": 7,
+          "laranja": 10,
+          "vermelho": 14,
+          "azul": 17
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Frenesi Carniceiro",
+        "karmaCost": 0,
+        "description": "Recebe +2 colunas no turno seguinte após derrubar um inimigo."
+      }
+    ],
+    "loot": "10 MP, lança, escudo de couro e ossos"
+  },
+  {
+    "id": "aranha-gigante",
+    "name": "Aranha Gigante",
+    "category": "Animais Gigantes",
+    "stage": 2,
+    "source": "Livro das Criaturas",
+    "description": "Aracnídeo colossal do tamanho de um cavalo que tece redes pegajosas em cavernas profundas e ruínas florestais.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "intelecto": -3,
+      "aura": 0,
+      "carisma": -3,
+      "forca": 2,
+      "fisico": 2,
+      "agilidade": 3
+    },
+    "efMax": 15,
+    "ehMax": 10,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 6,
+    "defesaPassiva": 3,
+    "absorcao": 8,
+    "rf": 3,
+    "rm": 1,
+    "vb": 18,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Quelíceras Peçonhentas",
+        "column": 7,
+        "damage": {
+          "verde": 3,
+          "amarelo": 7,
+          "laranja": 10,
+          "vermelho": 14,
+          "azul": 17
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Alvo testa RF (FA 6) ou sofre Envenenado e Paralisado"
+      },
+      {
+        "name": "Jato de Teia",
+        "column": 6,
+        "damage": {
+          "verde": 0,
+          "amarelo": 0,
+          "laranja": 0,
+          "vermelho": 0,
+          "azul": 2
+        },
+        "damageType": "Especial",
+        "range": "10m",
+        "notes": "Aplica Imobilizado se acertar Amarelo ou superior"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Escalar Paredes e Tetos",
+        "karmaCost": 0,
+        "description": "Desloca-se livremente por superfícies verticais e teias sem penalidade."
+      }
+    ],
+    "loot": "Glândulas de veneno (20 MP com Venefício), seda resistente"
+  },
+  {
+    "id": "guarda-real",
+    "name": "Guarda Real / Soldado Profissional",
+    "category": "Raças Civilizadas",
+    "stage": 2,
+    "source": "Livro das Criaturas",
+    "description": "Infantaria treinada a serviço dos reinos de Tagmar, equipada com cota de malha, escudo e disciplina de formação.",
+    "portrait": "./assets/portraits/human-warrior.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": 0,
+      "forca": 2,
+      "fisico": 2,
+      "agilidade": 1
+    },
+    "efMax": 15,
+    "ehMax": 18,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 6,
+    "defesaPassiva": 3,
+    "absorcao": 22,
+    "rf": 3,
+    "rm": 2,
+    "vb": 14,
+    "xpReward": 3,
+    "attacks": [
+      {
+        "name": "Espada Longa",
+        "column": 7,
+        "damage": {
+          "verde": 5,
+          "amarelo": 9,
+          "laranja": 13,
+          "vermelho": 18,
+          "azul": 23
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Alabarda / Lança",
+        "column": 6,
+        "damage": {
+          "verde": 5,
+          "amarelo": 10,
+          "laranja": 15,
+          "vermelho": 20,
+          "azul": 25
+        },
+        "damageType": "Perfuração",
+        "range": "2,5m",
+        "notes": "Usada em guarda de portões"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Combate em Formação",
+        "karmaCost": 0,
+        "description": "+1 DA e +1 coluna lutando ao lado de outro guarda com escudo."
+      }
+    ],
+    "loot": "15 MP, espada longa, cota de malha parcial, pavês pequeno, elmo aberto"
+  },
+  {
+    "id": "lobo-das-neves",
+    "name": "Lobo das Neves",
+    "category": "Animais",
+    "stage": 3,
+    "source": "Livro das Criaturas",
+    "description": "Lobo gigante de pelagem alva das cordilheiras geladas de Tagmar, dotado de mandíbulas esmagadoras e resistência glacial.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": 1,
+      "carisma": -1,
+      "forca": 3,
+      "fisico": 3,
+      "agilidade": 3
+    },
+    "efMax": 20,
+    "ehMax": 18,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 6,
+    "defesaPassiva": 3,
+    "absorcao": 10,
+    "rf": 4,
+    "rm": 2,
+    "vb": 28,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Mordida Glacial",
+        "column": 8,
+        "damage": {
+          "verde": 5,
+          "amarelo": 10,
+          "laranja": 15,
+          "vermelho": 20,
+          "azul": 25
+        },
+        "damageType": "Perfuração/Frio",
+        "range": "Corpo a Corpo",
+        "notes": "Derruba alvo em acerto Vermelho"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Pelagem Ártica",
+        "karmaCost": 0,
+        "description": "Imune a frio natural e reduz dano de Frio mágico pela metade."
+      },
+      {
+        "name": "Camuflagem na Neve",
+        "karmaCost": 0,
+        "description": "+4 em Ações Furtivas em terrenos nevados."
+      }
+    ],
+    "loot": "Pele branca valiosa (25 MP), presas gélidas"
+  },
+  {
+    "id": "carnical",
+    "name": "Carniçal (Ghoul)",
+    "category": "Mortos-Vivos",
+    "stage": 3,
+    "source": "Livro das Criaturas",
+    "description": "Morto-vivo voraz de postura curvada que ronda cemitérios e catacumbas em busca de carne viva, cujas garras induzem paralisia.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": -1,
+      "carisma": -3,
+      "forca": 2,
+      "fisico": 2,
+      "agilidade": 3
+    },
+    "efMax": 18,
+    "ehMax": 12,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 6,
+    "defesaPassiva": 3,
+    "absorcao": 8,
+    "rf": 4,
+    "rm": 3,
+    "vb": 18,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Garras Paralisantes",
+        "column": 8,
+        "damage": {
+          "verde": 4,
+          "amarelo": 8,
+          "laranja": 12,
+          "vermelho": 16,
+          "azul": 20
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Alvo testa RF (FA 7) ou fica Paralisado por 2 rodadas"
+      },
+      {
+        "name": "Mordida Dilacerante",
+        "column": 7,
+        "damage": {
+          "verde": 4,
+          "amarelo": 9,
+          "laranja": 13,
+          "vermelho": 18,
+          "azul": 22
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Causa Sangrando em crítico"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Fedor Sepulcral",
+        "karmaCost": 0,
+        "description": "Inimigos adjacentes pela primeira vez testam RF ou sofrem -1 coluna por náusea."
+      },
+      {
+        "name": "Morto-Vivo",
+        "karmaCost": 0,
+        "description": "Imune a venenos, sono e medo."
+      }
+    ],
+    "loot": "Anéis e moedas saqueadas de túmulos (18 MP)"
+  },
+  {
+    "id": "homem-lagarto",
+    "name": "Homem-Lagarto",
+    "category": "Raças Selvagens",
+    "stage": 3,
+    "source": "Livro das Criaturas",
+    "description": "Guerreiro anfíbio de escamas esverdeadas habitante dos grandes pântanos, exímio nadador e defensor feroz de seu território.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": -2,
+      "forca": 2,
+      "fisico": 3,
+      "agilidade": 2
+    },
+    "efMax": 18,
+    "ehMax": 16,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 6,
+    "defesaPassiva": 4,
+    "absorcao": 14,
+    "rf": 4,
+    "rm": 2,
+    "vb": 15,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Tridente de Osso e Ferro",
+        "column": 8,
+        "damage": {
+          "verde": 5,
+          "amarelo": 10,
+          "laranja": 15,
+          "vermelho": 20,
+          "azul": 25
+        },
+        "damageType": "Perfuração",
+        "range": "2m",
+        "notes": ""
+      },
+      {
+        "name": "Cauda e Mordida",
+        "column": 7,
+        "damage": {
+          "verde": 4,
+          "amarelo": 8,
+          "laranja": 12,
+          "vermelho": 16,
+          "azul": 20
+        },
+        "damageType": "Contusão/Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Anfíbio",
+        "karmaCost": 0,
+        "description": "Prende a respiração por 20 minutos e luta na água sem qualquer penalidade."
+      },
+      {
+        "name": "Escamas Naturais",
+        "karmaCost": 0,
+        "description": "Conferem Absorção natural de +10 mesmo sem armadura."
+      }
+    ],
+    "loot": "Tridente, escudo de casco de tartaruga, 10 MP em âmbar"
+  },
+  {
+    "id": "javali-gigante",
+    "name": "Javali Gigante",
+    "category": "Animais Gigantes",
+    "stage": 3,
+    "source": "Livro das Criaturas",
+    "description": "Fera maciça de quase duas toneladas com presas curvas afiadas como sabres, célebre por investir sem hesitar contra caçadores.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "intelecto": -3,
+      "aura": 0,
+      "carisma": -2,
+      "forca": 4,
+      "fisico": 4,
+      "agilidade": 1
+    },
+    "efMax": 24,
+    "ehMax": 15,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 4,
+    "defesaPassiva": 3,
+    "absorcao": 12,
+    "rf": 5,
+    "rm": 2,
+    "vb": 22,
+    "xpReward": 4,
+    "attacks": [
+      {
+        "name": "Investida de Presas",
+        "column": 8,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Perfuração/Contusão",
+        "range": "Corpo a Corpo",
+        "notes": "+2 colunas e derruba em Carga"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Ferocidade Indomável",
+        "karmaCost": 0,
+        "description": "Permanece de pé lutando por 2 rodadas mesmo após zerar EF."
+      }
+    ],
+    "loot": "Presas de marfim (15 MP), carne e couro resistente"
+  },
+  {
+    "id": "urso-pardo",
+    "name": "Urso Pardo",
+    "category": "Animais",
+    "stage": 4,
+    "source": "Livro das Criaturas",
+    "description": "Gigante territorial das florestas temperadas e encostas montanhosas, capaz de partir escudos com uma única patada.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "intelecto": -2,
+      "aura": 0,
+      "carisma": -1,
+      "forca": 5,
+      "fisico": 5,
+      "agilidade": 1
+    },
+    "efMax": 28,
+    "ehMax": 20,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 5,
+    "defesaPassiva": 3,
+    "absorcao": 12,
+    "rf": 6,
+    "rm": 2,
+    "vb": 20,
+    "xpReward": 5,
+    "attacks": [
+      {
+        "name": "Patada Esmagadora",
+        "column": 9,
+        "damage": {
+          "verde": 6,
+          "amarelo": 13,
+          "laranja": 19,
+          "vermelho": 26,
+          "azul": 32
+        },
+        "damageType": "Corte/Contusão",
+        "range": "Corpo a Corpo",
+        "notes": "Empurra e derruba em Vermelho"
+      },
+      {
+        "name": "Abraço de Urso",
+        "column": 8,
+        "damage": {
+          "verde": 5,
+          "amarelo": 11,
+          "laranja": 16,
+          "vermelho": 22,
+          "azul": 27
+        },
+        "damageType": "Contusão",
+        "range": "Corpo a Corpo",
+        "notes": "Aplica Imobilizado ao acertar Laranja+"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Faro Poderoso",
+        "karmaCost": 0,
+        "description": "Detecta invasores a até 150m pelo cheiro."
+      }
+    ],
+    "loot": "Pele de urso (30 MP), garras"
+  },
+  {
+    "id": "harpia",
+    "name": "Harpia",
+    "category": "Monstros",
+    "stage": 4,
+    "source": "Livro das Criaturas",
+    "description": "Criatura alada cruel de torso humanoide e asas de ave de rapina que atrai viajantes para penhascos com seu canto hipnótico.",
+    "portrait": "./assets/portraits/faen-ranger.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 2,
+      "carisma": 1,
+      "forca": 1,
+      "fisico": 1,
+      "agilidade": 4
+    },
+    "efMax": 16,
+    "ehMax": 18,
+    "karmaMax": 12,
+    "armorClass": "L",
+    "defesaAtiva": 7,
+    "defesaPassiva": 3,
+    "absorcao": 8,
+    "rf": 4,
+    "rm": 5,
+    "vb": 30,
+    "xpReward": 5,
+    "attacks": [
+      {
+        "name": "Garras em Mergulho",
+        "column": 9,
+        "damage": {
+          "verde": 4,
+          "amarelo": 9,
+          "laranja": 13,
+          "vermelho": 18,
+          "azul": 22
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "+2 colunas em ataque mergulhando"
+      },
+      {
+        "name": "Clava de Osso",
+        "column": 7,
+        "damage": {
+          "verde": 3,
+          "amarelo": 7,
+          "laranja": 10,
+          "vermelho": 14,
+          "azul": 17
+        },
+        "damageType": "Contusão",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Canto Hipnótico",
+        "karmaCost": 3,
+        "description": "Vítimas a até 25m testam RM (FA 8) ou ficam fascinadas e caminhando na direção da harpia."
+      }
+    ],
+    "loot": "Ninho com joias de viajantes (45 MP)"
+  },
+  {
+    "id": "orco-capitao",
+    "name": "Orco Capitão de Guerra",
+    "category": "Raças Selvagens",
+    "stage": 4,
+    "source": "Livro das Criaturas",
+    "description": "Comandante veterano coberto de cicatrizes e cota de malha saqueada, liderando bandos orcos com brutalidade e disciplina.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": 1,
+      "forca": 4,
+      "fisico": 3,
+      "agilidade": 2
+    },
+    "efMax": 24,
+    "ehMax": 28,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 7,
+    "defesaPassiva": 4,
+    "absorcao": 24,
+    "rf": 6,
+    "rm": 3,
+    "vb": 15,
+    "xpReward": 6,
+    "attacks": [
+      {
+        "name": "Machado Grande de Guerra",
+        "column": 10,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Golpe Poderoso"
+      },
+      {
+        "name": "Javelina de Ferro",
+        "column": 8,
+        "damage": {
+          "verde": 5,
+          "amarelo": 10,
+          "laranja": 15,
+          "vermelho": 20,
+          "azul": 25
+        },
+        "damageType": "Perfuração",
+        "range": "20m",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Grito de Guerra Orco",
+        "karmaCost": 0,
+        "description": "Concede +2 colunas e remove Medo de todos os orcos a até 15m por 3 rodadas."
+      },
+      {
+        "name": "Aparar Brutal",
+        "karmaCost": 0,
+        "description": "Pode aparar um ataque corpo a corpo por rodada absorvendo 8 pontos de dano."
+      }
+    ],
+    "loot": "40 MP, machado grande, cota de malha completa, elmo com chifres"
+  },
+  {
+    "id": "assassino-guilda",
+    "name": "Assassino da Guilda Sombria",
+    "category": "Raças Civilizadas",
+    "stage": 4,
+    "source": "Livro das Criaturas",
+    "description": "Agente letal das irmandades clandestinas dos reinos, mestre em venenos, disfarces e ataques cirúrgicos pelas costas.",
+    "portrait": "./assets/portraits/goblin-rogue.svg",
+    "attributes": {
+      "intelecto": 2,
+      "aura": 0,
+      "carisma": 1,
+      "forca": 1,
+      "fisico": 1,
+      "agilidade": 4
+    },
+    "efMax": 16,
+    "ehMax": 26,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 9,
+    "defesaPassiva": 3,
+    "absorcao": 12,
+    "rf": 5,
+    "rm": 4,
+    "vb": 18,
+    "xpReward": 6,
+    "attacks": [
+      {
+        "name": "Estilete Envenenado",
+        "column": 10,
+        "damage": {
+          "verde": 4,
+          "amarelo": 8,
+          "laranja": 13,
+          "vermelho": 17,
+          "azul": 21
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "+6 dano se atacando de surpresa; RF ou Envenenado"
+      },
+      {
+        "name": "Besta de Mão",
+        "column": 9,
+        "damage": {
+          "verde": 4,
+          "amarelo": 7,
+          "laranja": 11,
+          "vermelho": 15,
+          "azul": 19
+        },
+        "damageType": "Perfuração",
+        "range": "20m",
+        "notes": "+25% dano abaixo de 10m"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Ataque Furtivo",
+        "karmaCost": 0,
+        "description": "Causa dano dobrado em acertos contra alvos surpresos ou flanqueados."
+      },
+      {
+        "name": "Bomba de Fumaça",
+        "karmaCost": 0,
+        "description": "Foge ocultando a área em 6m de fumaça espessa (1x por combate)."
+      }
+    ],
+    "loot": "60 MP, estilete obra-prima, besta de mão, 2 doses de Extrato de Beladona, gazuas"
+  },
+  {
+    "id": "cavaleiro-guarda-elite",
+    "name": "Cavaleiro / Guarda de Elite",
+    "category": "Raças Civilizadas",
+    "stage": 5,
+    "source": "Livro das Criaturas",
+    "description": "Campeão veterano revestido em meia-armadura ou couraça, jurado de defesa de fortalezas nobres e estradas reais.",
+    "portrait": "./assets/portraits/dwarf-paladin.svg",
+    "attributes": {
+      "intelecto": 1,
+      "aura": 1,
+      "carisma": 2,
+      "forca": 3,
+      "fisico": 3,
+      "agilidade": 2
+    },
+    "efMax": 22,
+    "ehMax": 35,
+    "karmaMax": 0,
+    "armorClass": "P",
+    "defesaAtiva": 9,
+    "defesaPassiva": 5,
+    "absorcao": 34,
+    "rf": 7,
+    "rm": 5,
+    "vb": 14,
+    "xpReward": 7,
+    "attacks": [
+      {
+        "name": "Espada Bastarda",
+        "column": 11,
+        "damage": {
+          "verde": 7,
+          "amarelo": 14,
+          "laranja": 21,
+          "vermelho": 28,
+          "azul": 35
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Versátil 1 ou 2 mãos"
+      },
+      {
+        "name": "Lança de Cavalaria",
+        "column": 11,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Perfuração",
+        "range": "3m",
+        "notes": "Quando montado em Carga"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Postura de Muralha",
+        "karmaCost": 0,
+        "description": "+2 DP e +6 Absorção temporária contra cargas."
+      },
+      {
+        "name": "Contra-Ataque",
+        "karmaCost": 0,
+        "description": "Reage imediatamente quando um oponente erra ataque corpo a corpo."
+      }
+    ],
+    "loot": "80 MP, espada bastarda, meia-armadura, pavês grande, sinete de ordem"
+  },
+  {
+    "id": "fantasma-espectro",
+    "name": "Fantasma (Espectro)",
+    "category": "Mortos-Vivos",
+    "stage": 5,
+    "source": "Livro das Criaturas",
+    "description": "Alma atormentada presa ao plano terreno por tragédia ou maldição, atravessando muralhas sólidas para drenar calor e vitalidade.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "intelecto": 1,
+      "aura": 4,
+      "carisma": 0,
+      "forca": 0,
+      "fisico": 2,
+      "agilidade": 3
+    },
+    "efMax": 22,
+    "ehMax": 20,
+    "karmaMax": 20,
+    "armorClass": "L",
+    "defesaAtiva": 8,
+    "defesaPassiva": 5,
+    "absorcao": 16,
+    "rf": 5,
+    "rm": 8,
+    "vb": 18,
+    "xpReward": 7,
+    "attacks": [
+      {
+        "name": "Toque Gélido Espectral",
+        "column": 10,
+        "damage": {
+          "verde": 5,
+          "amarelo": 10,
+          "laranja": 15,
+          "vermelho": 20,
+          "azul": 25
+        },
+        "damageType": "Necrótico/Frio",
+        "range": "Corpo a Corpo",
+        "notes": "Ignora armaduras mundanas; testa RF ou perde 1 FOR temporário"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Corpo Incorpóreo",
+        "karmaCost": 0,
+        "description": "Imune a armas não mágicas; atravessa paredes e portas."
+      },
+      {
+        "name": "Lamento Aterrador",
+        "karmaCost": 4,
+        "description": "Grito sobrenatural em 12m: alvos testam RM (FA 10) ou ficam Amedrontados por 3 rodadas."
+      }
+    ],
+    "loot": "Relíquia antiga vinculada ao local assombrado (100 MP)"
+  },
+  {
+    "id": "ogro",
+    "name": "Ogro",
+    "category": "Raças Gigantes",
+    "stage": 5,
+    "source": "Livro das Criaturas",
+    "description": "Brutamontes colossal de quase três metros de altura, voraz e impulsivo, capaz de esmagar cavalos com troncos de árvore.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "intelecto": -2,
+      "aura": -1,
+      "carisma": -2,
+      "forca": 6,
+      "fisico": 5,
+      "agilidade": 0
+    },
+    "efMax": 36,
+    "ehMax": 24,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 4,
+    "defesaPassiva": 3,
+    "absorcao": 14,
+    "rf": 7,
+    "rm": 3,
+    "vb": 16,
+    "xpReward": 7,
+    "attacks": [
+      {
+        "name": "Clava Gigante",
+        "column": 10,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Contusão",
+        "range": "2m",
+        "notes": "Alvo atingido em Laranja+ testa FOR ou cai (Caído)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Força Brutal",
+        "karmaCost": 0,
+        "description": "Destrói escudos de madeira com acertos Vermelhos ou Azuis."
+      },
+      {
+        "name": "Pele Grossa",
+        "karmaCost": 0,
+        "description": "Absorção natural de 14 mesmo vestindo apenas peles."
+      }
+    ],
+    "loot": "Saco com 70 MP, carnes, armas saqueadas e gemas brutas"
+  },
+  {
+    "id": "lobisomem",
+    "name": "Lobisomem (Licantropo)",
+    "category": "Licantropos",
+    "stage": 5,
+    "source": "Livro das Criaturas",
+    "description": "Predador amaldiçoado que assume forma híbrida lupina sob a lua cheia, combinando ferocidade selvagem, velocidade e regeneração.",
+    "portrait": "./assets/monsters/dire-wolf.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 1,
+      "carisma": -1,
+      "forca": 4,
+      "fisico": 4,
+      "agilidade": 4
+    },
+    "efMax": 26,
+    "ehMax": 28,
+    "karmaMax": 0,
+    "armorClass": "L",
+    "defesaAtiva": 9,
+    "defesaPassiva": 4,
+    "absorcao": 14,
+    "rf": 7,
+    "rm": 5,
+    "vb": 26,
+    "xpReward": 8,
+    "attacks": [
+      {
+        "name": "Garras Lupinas",
+        "column": 11,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Dois ataques rápidos por rodada"
+      },
+      {
+        "name": "Mordida da Maldição",
+        "column": 10,
+        "damage": {
+          "verde": 6,
+          "amarelo": 13,
+          "laranja": 19,
+          "vermelho": 26,
+          "azul": 32
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Risco de transmissão de licantropia se falhar em RF"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Regeneração Licantrópica",
+        "karmaCost": 0,
+        "description": "Recupera 4 EF por rodada exceto contra dano de Prata, Fogo ou Magia."
+      },
+      {
+        "name": "Resistência à Lâmina Comum",
+        "karmaCost": 0,
+        "description": "Reduz pela metade dano físico não mágico e não prateado."
+      }
+    ],
+    "loot": "Pertences da forma humana (50 MP), amuleto de prata"
+  },
+  {
+    "id": "gargula",
+    "name": "Gárgula",
+    "category": "Criaturas Artificiais",
+    "stage": 5,
+    "source": "Livro das Criaturas",
+    "description": "Estátua demoníaca esculpida em granito animado por magia antiga para vigiar torres de magos, catedrais abandonadas e mausoléus.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": 1,
+      "carisma": -2,
+      "forca": 4,
+      "fisico": 5,
+      "agilidade": 2
+    },
+    "efMax": 28,
+    "ehMax": 20,
+    "karmaMax": 0,
+    "armorClass": "P",
+    "defesaAtiva": 7,
+    "defesaPassiva": 6,
+    "absorcao": 24,
+    "rf": 7,
+    "rm": 5,
+    "vb": 24,
+    "xpReward": 7,
+    "attacks": [
+      {
+        "name": "Garras de Pedra",
+        "column": 10,
+        "damage": {
+          "verde": 5,
+          "amarelo": 11,
+          "laranja": 16,
+          "vermelho": 22,
+          "azul": 27
+        },
+        "damageType": "Corte/Contusão",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Chifrada em Mergulho",
+        "column": 10,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "+2 colunas ao mergulhar do alto"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Mimetismo Pétreo",
+        "karmaCost": 0,
+        "description": "Indistinguível de uma estátua comum enquanto permanece imóvel."
+      },
+      {
+        "name": "Corpo de Granito",
+        "karmaCost": 0,
+        "description": "Imune a venenos, sangramento e doenças; Absorção natural 24."
+      }
+    ],
+    "loot": "Olhos de rubi ou safira incrustados (90 MP)"
+  },
+  {
+    "id": "troll-das-cavernas",
+    "name": "Troll das Cavernas",
+    "category": "Raças Gigantes",
+    "stage": 6,
+    "source": "Livro das Criaturas",
+    "description": "Monstro alto, esquálido e de braços desproporcionalmente longos cuja carne esverdeada fecha cortes diante dos olhos atônitos dos guerreiros.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "intelecto": -2,
+      "aura": 0,
+      "carisma": -3,
+      "forca": 6,
+      "fisico": 6,
+      "agilidade": 2
+    },
+    "efMax": 38,
+    "ehMax": 26,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 6,
+    "defesaPassiva": 4,
+    "absorcao": 16,
+    "rf": 8,
+    "rm": 4,
+    "vb": 18,
+    "xpReward": 9,
+    "attacks": [
+      {
+        "name": "Garras Dilacerantes",
+        "column": 11,
+        "damage": {
+          "verde": 7,
+          "amarelo": 14,
+          "laranja": 21,
+          "vermelho": 28,
+          "azul": 35
+        },
+        "damageType": "Corte",
+        "range": "2,5m",
+        "notes": "Dois ataques por rodada"
+      },
+      {
+        "name": "Mordida Voraz",
+        "column": 10,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Regeneração de Troll",
+        "karmaCost": 0,
+        "description": "Regenera 6 EF no início de cada rodada; apenas Fogo ou Ácido interrompem a regeneração no turno."
+      },
+      {
+        "name": "Faro de Sangue",
+        "karmaCost": 0,
+        "description": "Localiza inimigos feridos mesmo na escuridão completa."
+      }
+    ],
+    "loot": "Tesouro acumulado na caverna (120 MP, armas de aventureiros caídos)"
+  },
+  {
+    "id": "minotauro",
+    "name": "Minotauro",
+    "category": "Monstros",
+    "stage": 6,
+    "source": "Livro das Criaturas",
+    "description": "Colosso musculoso com cabeça de touro guardião de labirintos antigos e fortalezas subterrâneas, dono de senso de direção infalível.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 0,
+      "carisma": -1,
+      "forca": 6,
+      "fisico": 5,
+      "agilidade": 2
+    },
+    "efMax": 36,
+    "ehMax": 34,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 7,
+    "defesaPassiva": 4,
+    "absorcao": 20,
+    "rf": 8,
+    "rm": 5,
+    "vb": 18,
+    "xpReward": 9,
+    "attacks": [
+      {
+        "name": "Machado Grande Labiríntico",
+        "column": 12,
+        "damage": {
+          "verde": 8,
+          "amarelo": 17,
+          "laranja": 25,
+          "vermelho": 34,
+          "azul": 42
+        },
+        "damageType": "Corte",
+        "range": "2m",
+        "notes": ""
+      },
+      {
+        "name": "Investida de Chifres",
+        "column": 11,
+        "damage": {
+          "verde": 7,
+          "amarelo": 14,
+          "laranja": 21,
+          "vermelho": 28,
+          "azul": 35
+        },
+        "damageType": "Perfuração/Contusão",
+        "range": "Corpo a Corpo",
+        "notes": "Arremessa alvo 3m e aplica Caído"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Memória de Labirinto",
+        "karmaCost": 0,
+        "description": "Nunca se perde em subterrâneos e não pode ser pego de surpresa em corredores."
+      },
+      {
+        "name": "Fúria Taurina",
+        "karmaCost": 0,
+        "description": "Quando abaixo de 50% EF ganha +2 colunas e +4 de dano."
+      }
+    ],
+    "loot": "140 MP, machado grande forjado, anéis de bronze e ouro"
+  },
+  {
+    "id": "grifo",
+    "name": "Grifo",
+    "category": "Criaturas Místicas",
+    "stage": 6,
+    "source": "Livro das Criaturas",
+    "description": "Nobre fera alada com corpo de leão e cabeça, asas e garras de águia gigante; feroz defensora de seus ninhos montanhosos.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": 2,
+      "carisma": 1,
+      "forca": 5,
+      "fisico": 4,
+      "agilidade": 4
+    },
+    "efMax": 32,
+    "ehMax": 30,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 9,
+    "defesaPassiva": 4,
+    "absorcao": 16,
+    "rf": 7,
+    "rm": 6,
+    "vb": 36,
+    "xpReward": 9,
+    "attacks": [
+      {
+        "name": "Bico Dilacerante",
+        "column": 12,
+        "damage": {
+          "verde": 6,
+          "amarelo": 13,
+          "laranja": 19,
+          "vermelho": 26,
+          "azul": 32
+        },
+        "damageType": "Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Garras em Rasante",
+        "column": 12,
+        "damage": {
+          "verde": 7,
+          "amarelo": 14,
+          "laranja": 21,
+          "vermelho": 28,
+          "azul": 35
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Pode agarrar presas médias em voo"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Visão de Águia",
+        "karmaCost": 0,
+        "description": "+5 em Usar os Sentidos visual; avista alvos a quilômetros."
+      },
+      {
+        "name": "Voo Poderoso",
+        "karmaCost": 0,
+        "description": "Desloca-se a 36m/rodada voando mesmo carregando um cavaleiro."
+      }
+    ],
+    "loot": "Penas douradas raras (80 MP), ovos de grifo (extremamente valiosos)"
+  },
+  {
+    "id": "mago-renegado",
+    "name": "Mago Renegado",
+    "category": "Raças Civilizadas",
+    "stage": 6,
+    "source": "Livro das Criaturas",
+    "description": "Conjurador expulso dos Colégios oficiais que busca segredos proibidos e artefatos raros sem respeitar limites éticos.",
+    "portrait": "./assets/portraits/elf-mage.svg",
+    "attributes": {
+      "intelecto": 4,
+      "aura": 4,
+      "carisma": 1,
+      "forca": -1,
+      "fisico": 0,
+      "agilidade": 2
+    },
+    "efMax": 16,
+    "ehMax": 22,
+    "karmaMax": 36,
+    "armorClass": "L",
+    "defesaAtiva": 7,
+    "defesaPassiva": 3,
+    "absorcao": 12,
+    "rf": 5,
+    "rm": 9,
+    "vb": 15,
+    "xpReward": 9,
+    "attacks": [
+      {
+        "name": "Bola de Fogo (Magia)",
+        "column": 12,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Fogo",
+        "range": "30m",
+        "notes": "Área raio 4m; gasta 4 Karma"
+      },
+      {
+        "name": "Raio Elétrico (Magia)",
+        "column": 12,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Elétrico",
+        "range": "25m",
+        "notes": "Linha 25m; gasta 4 Karma"
+      },
+      {
+        "name": "Cajado Encantado",
+        "column": 7,
+        "damage": {
+          "verde": 3,
+          "amarelo": 6,
+          "laranja": 9,
+          "vermelho": 12,
+          "azul": 15
+        },
+        "damageType": "Contusão",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Escudo Arcano",
+        "karmaCost": 2,
+        "description": "+4 DA e +12 Absorção instantaneamente por 5 rodadas."
+      },
+      {
+        "name": "Transporte Dimensional",
+        "karmaCost": 5,
+        "description": "Teleporta até 30m para escapar de cerco corpo a corpo."
+      }
+    ],
+    "loot": "150 MP, grimório pessoal, 2 Elixires de Karma, anel arcano"
+  },
+  {
+    "id": "sacerdote-sombrio",
+    "name": "Sacerdote Sombrio / Cultista Chefe",
+    "category": "Raças Civilizadas",
+    "stage": 7,
+    "source": "Livro das Criaturas",
+    "description": "Líder fanático de cultos profanos ou hereges que canaliza maldições, necromancia e fúria sagrada corrompida.",
+    "portrait": "./assets/portraits/cleric-healer.svg",
+    "attributes": {
+      "intelecto": 2,
+      "aura": 5,
+      "carisma": 3,
+      "forca": 2,
+      "fisico": 2,
+      "agilidade": 1
+    },
+    "efMax": 22,
+    "ehMax": 34,
+    "karmaMax": 42,
+    "armorClass": "M",
+    "defesaAtiva": 8,
+    "defesaPassiva": 5,
+    "absorcao": 26,
+    "rf": 7,
+    "rm": 10,
+    "vb": 15,
+    "xpReward": 11,
+    "attacks": [
+      {
+        "name": "Maça Profana",
+        "column": 11,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Contusão/Necrótico",
+        "range": "Corpo a Corpo",
+        "notes": ""
+      },
+      {
+        "name": "Ira Sombria (Milagre)",
+        "column": 13,
+        "damage": {
+          "verde": 6,
+          "amarelo": 13,
+          "laranja": 19,
+          "vermelho": 26,
+          "azul": 32
+        },
+        "damageType": "Necrótico",
+        "range": "25m",
+        "notes": "Gasta 5 Karma; aplica Atordoado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Degeneração Física",
+        "karmaCost": 3,
+        "description": "Enfraquece alvo (-3 colunas e 4/8/12/16 Necrótico)."
+      },
+      {
+        "name": "Curas Sombrias",
+        "karmaCost": 3,
+        "description": "Restaura 15 EH/EF em si mesmo ou aliados cultistas."
+      }
+    ],
+    "loot": "180 MP, símbolo profano de ouro, cota de malha completa, poções de cura"
+  },
+  {
+    "id": "basilisco",
+    "name": "Basilisco",
+    "category": "Monstros",
+    "stage": 7,
+    "source": "Livro das Criaturas",
+    "description": "Réptil monstruoso de oito patas e escamas verde-acinzentadas cujo olhar fixo transforma carne viva em estátua de pedra sólida.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": -2,
+      "aura": 2,
+      "carisma": -2,
+      "forca": 4,
+      "fisico": 5,
+      "agilidade": 2
+    },
+    "efMax": 34,
+    "ehMax": 28,
+    "karmaMax": 18,
+    "armorClass": "P",
+    "defesaAtiva": 7,
+    "defesaPassiva": 5,
+    "absorcao": 22,
+    "rf": 9,
+    "rm": 7,
+    "vb": 14,
+    "xpReward": 11,
+    "attacks": [
+      {
+        "name": "Mordida Peçonhenta",
+        "column": 12,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Perfuração/Veneno",
+        "range": "Corpo a Corpo",
+        "notes": "Testa RF ou Envenenado"
+      },
+      {
+        "name": "Olhar Petrificante",
+        "column": 12,
+        "damage": {
+          "verde": 0,
+          "amarelo": 0,
+          "laranja": 0,
+          "vermelho": 0,
+          "azul": 2
+        },
+        "damageType": "Mágico",
+        "range": "15m",
+        "notes": "Alvo testa RM (FA 12) ou fica Paralisado e começa a petrificar"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Couro Escamoso",
+        "karmaCost": 0,
+        "description": "Absorção natural 22 contra ataques físicos."
+      },
+      {
+        "name": "Imunidade à Petrificação",
+        "karmaCost": 0,
+        "description": "Imune a venenos e paralisia."
+      }
+    ],
+    "loot": "Glândulas alquímicas raras (220 MP — usadas para curar petrificação)"
+  },
+  {
+    "id": "manticora",
+    "name": "Mantícora",
+    "category": "Monstros",
+    "stage": 8,
+    "source": "Livro das Criaturas",
+    "description": "Besta terrível com corpo de leão, asas de couro de morcego, face humanoide feroz e cauda de escorpião capaz de disparar espinhos venenosos.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 1,
+      "carisma": -2,
+      "forca": 6,
+      "fisico": 5,
+      "agilidade": 3
+    },
+    "efMax": 40,
+    "ehMax": 36,
+    "karmaMax": 0,
+    "armorClass": "M",
+    "defesaAtiva": 9,
+    "defesaPassiva": 5,
+    "absorcao": 20,
+    "rf": 9,
+    "rm": 6,
+    "vb": 32,
+    "xpReward": 13,
+    "attacks": [
+      {
+        "name": "Garras e Mordida",
+        "column": 13,
+        "damage": {
+          "verde": 7,
+          "amarelo": 15,
+          "laranja": 22,
+          "vermelho": 30,
+          "azul": 37
+        },
+        "damageType": "Corte/Perfuração",
+        "range": "Corpo a Corpo",
+        "notes": "Ataque múltiplo feroz"
+      },
+      {
+        "name": "Saraivada de Espinhos da Cauda",
+        "column": 12,
+        "damage": {
+          "verde": 5,
+          "amarelo": 11,
+          "laranja": 16,
+          "vermelho": 22,
+          "azul": 27
+        },
+        "damageType": "Perfuração/Veneno",
+        "range": "30m",
+        "notes": "Dispara até 3 espinhos; testa RF ou Envenenado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Caçadora Aérea",
+        "karmaCost": 0,
+        "description": "Prefere fustigar presas do ar com espinhos antes de descer para o golpe final."
+      }
+    ],
+    "loot": "Espinhos venenosos (150 MP), tesouros acumulados no covil (250 MP)"
+  },
+  {
+    "id": "elemental-de-fogo",
+    "name": "Elemental de Fogo",
+    "category": "Elementais",
+    "stage": 8,
+    "source": "Livro das Criaturas",
+    "description": "Manifestação viva de chamas primordiais convocada pelo Colégio Elemental, incinerando tudo que toca em seu caminho.",
+    "portrait": "./assets/portraits/elf-mage.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 4,
+      "carisma": 0,
+      "forca": 4,
+      "fisico": 4,
+      "agilidade": 5
+    },
+    "efMax": 36,
+    "ehMax": 34,
+    "karmaMax": 30,
+    "armorClass": "L",
+    "defesaAtiva": 10,
+    "defesaPassiva": 5,
+    "absorcao": 16,
+    "rf": 8,
+    "rm": 8,
+    "vb": 24,
+    "xpReward": 13,
+    "attacks": [
+      {
+        "name": "Punho Incandescente",
+        "column": 13,
+        "damage": {
+          "verde": 7,
+          "amarelo": 14,
+          "laranja": 21,
+          "vermelho": 28,
+          "azul": 35
+        },
+        "damageType": "Fogo",
+        "range": "2m",
+        "notes": "Aplica Queimando em qualquer acerto"
+      },
+      {
+        "name": "Explosão de Chamas",
+        "column": 13,
+        "damage": {
+          "verde": 6,
+          "amarelo": 12,
+          "laranja": 18,
+          "vermelho": 24,
+          "azul": 30
+        },
+        "damageType": "Fogo",
+        "range": "Raio 6m",
+        "notes": "Gasta 4 Karma; testa RF"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Corpo Flamejante",
+        "karmaCost": 0,
+        "description": "Imune a Fogo, veneno e paralisia; quem ataca corpo a corpo sofre 5 de dano Fogo."
+      },
+      {
+        "name": "Vulnerável à Água/Frio",
+        "karmaCost": 0,
+        "description": "Sofre +50% de dano de ataques de Água ou Frio."
+      }
+    ],
+    "loot": "Essência Ígnea cristalizada (200 MP — componente alquímico raro)"
+  },
+  {
+    "id": "elemental-de-terra",
+    "name": "Elemental de Terra",
+    "category": "Elementais",
+    "stage": 8,
+    "source": "Livro das Criaturas",
+    "description": "Colosso humanoide feito de rochas vivas, granito e minérios pulsantes, quase indestrutível quando mantém os pés sobre o solo.",
+    "portrait": "./assets/portraits/dwarf-paladin.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": 3,
+      "carisma": -1,
+      "forca": 7,
+      "fisico": 7,
+      "agilidade": 0
+    },
+    "efMax": 48,
+    "ehMax": 36,
+    "karmaMax": 20,
+    "armorClass": "P",
+    "defesaAtiva": 6,
+    "defesaPassiva": 7,
+    "absorcao": 34,
+    "rf": 11,
+    "rm": 7,
+    "vb": 12,
+    "xpReward": 13,
+    "attacks": [
+      {
+        "name": "Esmagamento Telúrico",
+        "column": 13,
+        "damage": {
+          "verde": 8,
+          "amarelo": 17,
+          "laranja": 25,
+          "vermelho": 34,
+          "azul": 42
+        },
+        "damageType": "Contusão",
+        "range": "2,5m",
+        "notes": "Dobrado contra estruturas e muros"
+      },
+      {
+        "name": "Arremesso de Rocha",
+        "column": 11,
+        "damage": {
+          "verde": 7,
+          "amarelo": 14,
+          "laranja": 21,
+          "vermelho": 28,
+          "azul": 35
+        },
+        "damageType": "Contusão",
+        "range": "25m",
+        "notes": "Derruba alvo (Caído)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Deslizar na Rocha",
+        "karmaCost": 0,
+        "description": "Atravessa paredes de terra e pedra sólida como se fossem água."
+      },
+      {
+        "name": "Corpo Mineral",
+        "karmaCost": 0,
+        "description": "Imune a veneno, sangramento, medo e acertos críticos mundanos."
+      }
+    ],
+    "loot": "Gemas e veios de prata encravados (240 MP)"
+  },
+  {
+    "id": "golem-de-pedra",
+    "name": "Golem de Pedra",
+    "category": "Criaturas Artificiais",
+    "stage": 9,
+    "source": "Livro das Criaturas",
+    "description": "Guardião autômato monumental esculpido e animado por arquimagos antigos, imune à maioria das magias e incansável por séculos.",
+    "portrait": "./assets/portraits/dwarf-paladin.svg",
+    "attributes": {
+      "intelecto": -3,
+      "aura": 2,
+      "carisma": -3,
+      "forca": 8,
+      "fisico": 8,
+      "agilidade": -1
+    },
+    "efMax": 56,
+    "ehMax": 30,
+    "karmaMax": 0,
+    "armorClass": "P",
+    "defesaAtiva": 6,
+    "defesaPassiva": 8,
+    "absorcao": 38,
+    "rf": 12,
+    "rm": 12,
+    "vb": 12,
+    "xpReward": 15,
+    "attacks": [
+      {
+        "name": "Punho de Granito",
+        "column": 14,
+        "damage": {
+          "verde": 9,
+          "amarelo": 18,
+          "laranja": 27,
+          "vermelho": 36,
+          "azul": 45
+        },
+        "damageType": "Contusão",
+        "range": "2,5m",
+        "notes": "Aplica Atordoado em Vermelho+"
+      },
+      {
+        "name": "Pisão Sísmico",
+        "column": 13,
+        "damage": {
+          "verde": 7,
+          "amarelo": 14,
+          "laranja": 21,
+          "vermelho": 28,
+          "azul": 35
+        },
+        "damageType": "Contusão",
+        "range": "Raio 4m",
+        "notes": "Derruba inimigos adjacentes (Caído)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Imunidade Mágica Parcial",
+        "karmaCost": 0,
+        "description": "Recebe +6 RM contra feitiços diretos; imune a veneno, sono e controle mental."
+      },
+      {
+        "name": "Construção Indomável",
+        "karmaCost": 0,
+        "description": "Requer armas mágicas ou contusão pesada para romper plenamente sua couraça pétrea."
+      }
+    ],
+    "loot": "Núcleo rúnico de animação (350 MP — valiosíssimo para o Colégio Alquímico)"
+  },
+  {
+    "id": "vampiro",
+    "name": "Vampiro",
+    "category": "Mortos-Vivos",
+    "stage": 9,
+    "source": "Livro das Criaturas",
+    "description": "Nobre morto-vivo imortal de carisma hipnótico, força sobrenatural e sede de sangue que comanda lobos, morcegos e sombras da noite.",
+    "portrait": "./assets/portraits/gm-avatar.svg",
+    "attributes": {
+      "intelecto": 4,
+      "aura": 5,
+      "carisma": 5,
+      "forca": 5,
+      "fisico": 4,
+      "agilidade": 5
+    },
+    "efMax": 38,
+    "ehMax": 46,
+    "karmaMax": 48,
+    "armorClass": "M",
+    "defesaAtiva": 12,
+    "defesaPassiva": 6,
+    "absorcao": 20,
+    "rf": 10,
+    "rm": 12,
+    "vb": 22,
+    "xpReward": 16,
+    "attacks": [
+      {
+        "name": "Garras Aristocráticas",
+        "column": 14,
+        "damage": {
+          "verde": 7,
+          "amarelo": 14,
+          "laranja": 21,
+          "vermelho": 28,
+          "azul": 35
+        },
+        "damageType": "Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Velocidade sobre-humana"
+      },
+      {
+        "name": "Mordida Vampírica",
+        "column": 14,
+        "damage": {
+          "verde": 6,
+          "amarelo": 13,
+          "laranja": 19,
+          "vermelho": 26,
+          "azul": 32
+        },
+        "damageType": "Perfuração/Necrótico",
+        "range": "Corpo a Corpo",
+        "notes": "Drena EF e cura o Vampiro no mesmo valor"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Olhar Hipnótico",
+        "karmaCost": 4,
+        "description": "Alvo a até 15m testa RM (FA 13) ou fica encantado/paralisado obedecendo ao Vampiro."
+      },
+      {
+        "name": "Forma de Névoa ou Morcego",
+        "karmaCost": 3,
+        "description": "Transforma-se instantaneamente em névoa imune a ataques físicos para escapar."
+      },
+      {
+        "name": "Regeneração e Fraquezas",
+        "karmaCost": 0,
+        "description": "Regenera 5 EF/rodada; vulnerável a luz solar direta, água benta e estacas no coração."
+      }
+    ],
+    "loot": "400 MP, joias nobres, capa encantada, espada longa obra-prima"
+  },
+  {
+    "id": "quimera",
+    "name": "Quimera",
+    "category": "Monstros",
+    "stage": 10,
+    "source": "Livro das Criaturas",
+    "description": "Abominação alada de três cabeças (leão, bode chifrudo e dragão cuspidor de fogo) que semeia terror por vales inteiros.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": -1,
+      "aura": 2,
+      "carisma": -2,
+      "forca": 7,
+      "fisico": 6,
+      "agilidade": 3
+    },
+    "efMax": 50,
+    "ehMax": 44,
+    "karmaMax": 24,
+    "armorClass": "P",
+    "defesaAtiva": 9,
+    "defesaPassiva": 6,
+    "absorcao": 26,
+    "rf": 11,
+    "rm": 8,
+    "vb": 30,
+    "xpReward": 18,
+    "attacks": [
+      {
+        "name": "Mordida de Leão e Chifres",
+        "column": 15,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Perfuração/Corte",
+        "range": "Corpo a Corpo",
+        "notes": "Dois ataques combinados"
+      },
+      {
+        "name": "Sopro Flamejante de Dragão",
+        "column": 14,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Fogo",
+        "range": "Cone 12m",
+        "notes": "Gasta 6 Karma; testa RF"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Três Cabeças Vigilantes",
+        "karmaCost": 0,
+        "description": "Imune a flanqueamento e quase impossível de surpreender."
+      }
+    ],
+    "loot": "Tesouro de covil (450 MP, armas mágicas menores, escamas raras)"
+  },
+  {
+    "id": "demonio-menor-tipo-1",
+    "name": "Demônio Menor (Tipo I — Demônio das Cinzas)",
+    "category": "Criaturas Infernais",
+    "stage": 10,
+    "source": "Livro das Criaturas",
+    "description": "Entidade infernal convocada dos planos inferiores, envolta em fumaça sulfurosa, garras abrasadoras e malícia destrutiva.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": 2,
+      "aura": 4,
+      "carisma": 1,
+      "forca": 5,
+      "fisico": 5,
+      "agilidade": 4
+    },
+    "efMax": 44,
+    "ehMax": 42,
+    "karmaMax": 40,
+    "armorClass": "M",
+    "defesaAtiva": 11,
+    "defesaPassiva": 6,
+    "absorcao": 24,
+    "rf": 10,
+    "rm": 11,
+    "vb": 22,
+    "xpReward": 18,
+    "attacks": [
+      {
+        "name": "Garras de Enxofre",
+        "column": 14,
+        "damage": {
+          "verde": 7,
+          "amarelo": 15,
+          "laranja": 22,
+          "vermelho": 30,
+          "azul": 37
+        },
+        "damageType": "Corte/Fogo",
+        "range": "Corpo a Corpo",
+        "notes": "Aplica Queimando"
+      },
+      {
+        "name": "Chicote Infernal",
+        "column": 14,
+        "damage": {
+          "verde": 6,
+          "amarelo": 13,
+          "laranja": 19,
+          "vermelho": 26,
+          "azul": 32
+        },
+        "damageType": "Fogo",
+        "range": "4m",
+        "notes": "Puxa e derruba inimigo"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Resistência Infernal",
+        "karmaCost": 0,
+        "description": "Imune a Fogo e venenos; armas comuns causam metade do dano."
+      },
+      {
+        "name": "Teleporte das Cinzas",
+        "karmaCost": 4,
+        "description": "Reaparece em nuvem de brasas a até 20m."
+      }
+    ],
+    "loot": "Cinzas infernais cristalizadas, anel amaldiçoado (350 MP)"
+  },
+  {
+    "id": "wyvern",
+    "name": "Wyvern (Serpe Alada)",
+    "category": "Dragões",
+    "stage": 10,
+    "source": "Livro das Criaturas",
+    "description": "Parente menor e selvagem dos dragões verdadeiros, de duas patas musculosas, asas imensas e ferrão caudal extremamente venenoso.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": -2,
+      "aura": 1,
+      "carisma": -2,
+      "forca": 7,
+      "fisico": 6,
+      "agilidade": 4
+    },
+    "efMax": 52,
+    "ehMax": 40,
+    "karmaMax": 0,
+    "armorClass": "P",
+    "defesaAtiva": 10,
+    "defesaPassiva": 6,
+    "absorcao": 28,
+    "rf": 11,
+    "rm": 7,
+    "vb": 36,
+    "xpReward": 18,
+    "attacks": [
+      {
+        "name": "Mordida Dracônica",
+        "column": 15,
+        "damage": {
+          "verde": 8,
+          "amarelo": 17,
+          "laranja": 25,
+          "vermelho": 34,
+          "azul": 42
+        },
+        "damageType": "Perfuração",
+        "range": "2m",
+        "notes": ""
+      },
+      {
+        "name": "Ferrão Caudal Peçonhento",
+        "column": 15,
+        "damage": {
+          "verde": 7,
+          "amarelo": 15,
+          "laranja": 22,
+          "vermelho": 30,
+          "azul": 37
+        },
+        "damageType": "Perfuração/Veneno",
+        "range": "3m",
+        "notes": "Alvo testa RF (FA 13) ou sofre 12 dano extra e Envenenado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Mergulho Predatório",
+        "karmaCost": 0,
+        "description": "Agarra montarias ou guerreiros em voo e solta de grande altitude."
+      }
+    ],
+    "loot": "Couro dracônico (300 MP), bolsa de veneno letal"
+  },
+  {
+    "id": "hidra-cinco-cabecas",
+    "name": "Hidra de Cinco Cabeças",
+    "category": "Hidras",
+    "stage": 11,
+    "source": "Livro das Criaturas",
+    "description": "Serpente monstruosa aquática e pantanosa de cinco pescoços sinuosos que atacam em uníssono e regeneram cabeças cortadas.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": -2,
+      "aura": 2,
+      "carisma": -2,
+      "forca": 7,
+      "fisico": 8,
+      "agilidade": 2
+    },
+    "efMax": 64,
+    "ehMax": 48,
+    "karmaMax": 0,
+    "armorClass": "P",
+    "defesaAtiva": 9,
+    "defesaPassiva": 6,
+    "absorcao": 28,
+    "rf": 12,
+    "rm": 8,
+    "vb": 16,
+    "xpReward": 22,
+    "attacks": [
+      {
+        "name": "Investida Múltipla de Mordidas",
+        "column": 15,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Perfuração",
+        "range": "3m",
+        "notes": "Realiza até 3 mordidas em alvos diferentes na rodada"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Cabeças Regenerativas",
+        "karmaCost": 0,
+        "description": "Regenera 8 EF por rodada; cortar uma cabeça sem cauterizar com Fogo faz nascerem duas novas em 2 rodadas."
+      },
+      {
+        "name": "Mestre dos Pântanos",
+        "karmaCost": 0,
+        "description": "Move-se livremente na água e lama profunda."
+      }
+    ],
+    "loot": "Tesouros afundados no pântano (600 MP), sangue corrosivo alquímico"
+  },
+  {
+    "id": "gigante-das-montanhas",
+    "name": "Gigante das Montanhas",
+    "category": "Raças Gigantes",
+    "stage": 11,
+    "source": "Livro das Criaturas",
+    "description": "Titã humanoide de seis metros que habita picos nevados, arremessando rochedos enormes contra intrusos que violam seus desfiladeiros.",
+    "portrait": "./assets/portraits/orc-barbarian.svg",
+    "attributes": {
+      "intelecto": 0,
+      "aura": 1,
+      "carisma": 0,
+      "forca": 9,
+      "fisico": 8,
+      "agilidade": 1
+    },
+    "efMax": 68,
+    "ehMax": 52,
+    "karmaMax": 0,
+    "armorClass": "P",
+    "defesaAtiva": 8,
+    "defesaPassiva": 6,
+    "absorcao": 30,
+    "rf": 13,
+    "rm": 8,
+    "vb": 22,
+    "xpReward": 22,
+    "attacks": [
+      {
+        "name": "Malho Colossal de Pedra",
+        "column": 16,
+        "damage": {
+          "verde": 10,
+          "amarelo": 21,
+          "laranja": 31,
+          "vermelho": 42,
+          "azul": 52
+        },
+        "damageType": "Contusão",
+        "range": "3,5m",
+        "notes": "Atinge até 2 alvos adjacentes e derruba"
+      },
+      {
+        "name": "Arremesso de Rochedo",
+        "column": 14,
+        "damage": {
+          "verde": 9,
+          "amarelo": 18,
+          "laranja": 27,
+          "vermelho": 36,
+          "azul": 45
+        },
+        "damageType": "Contusão",
+        "range": "50m",
+        "notes": "Área 3m de impacto"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Arremesso Destruidor",
+        "karmaCost": 0,
+        "description": "Trata pedregulhos como armas de cerco contra muros e portões."
+      },
+      {
+        "name": "Vigor Titânico",
+        "karmaCost": 0,
+        "description": "Imune a ser derrubado por criaturas médias ou menores."
+      }
+    ],
+    "loot": "500 MP em barras de prata, peles raras, gemas das montanhas"
+  },
+  {
+    "id": "cavaleiro-da-morte",
+    "name": "Cavaleiro da Morte",
+    "category": "Mortos-Vivos",
+    "stage": 12,
+    "source": "Livro das Criaturas",
+    "description": "Paladino caído preservado em couraça negra por maldição perpétua, empunhando espada profana e comandando legiões de mortos-vivos.",
+    "portrait": "./assets/monsters/skeleton-warrior.svg",
+    "attributes": {
+      "intelecto": 3,
+      "aura": 5,
+      "carisma": 3,
+      "forca": 6,
+      "fisico": 6,
+      "agilidade": 3
+    },
+    "efMax": 54,
+    "ehMax": 58,
+    "karmaMax": 45,
+    "armorClass": "P",
+    "defesaAtiva": 13,
+    "defesaPassiva": 8,
+    "absorcao": 40,
+    "rf": 13,
+    "rm": 13,
+    "vb": 16,
+    "xpReward": 26,
+    "attacks": [
+      {
+        "name": "Montante Negra Profana",
+        "column": 17,
+        "damage": {
+          "verde": 10,
+          "amarelo": 20,
+          "laranja": 30,
+          "vermelho": 40,
+          "azul": 50
+        },
+        "damageType": "Corte/Necrótico",
+        "range": "2m",
+        "notes": "Ignora 10 pontos de Absorção mundana"
+      },
+      {
+        "name": "Chama Sepulcral",
+        "column": 15,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Necrótico/Fogo",
+        "range": "25m",
+        "notes": "Área 5m; gasta 6 Karma"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Aura de Terror",
+        "karmaCost": 0,
+        "description": "Inimigos a até 8m testam RM (FA 14) ou ficam Amedrontados."
+      },
+      {
+        "name": "Comandar Mortos-Vivos",
+        "karmaCost": 4,
+        "description": "Ergue e coordena esqueletos e zumbis (+2 colunas para aliados mortos-vivos)."
+      }
+    ],
+    "loot": "700 MP, couraça negra rúnica, montante encantada, sinete de casa extinta"
+  },
+  {
+    "id": "dragao-jovem",
+    "name": "Dragão Jovem",
+    "category": "Dragões",
+    "stage": 12,
+    "source": "Livro das Criaturas",
+    "description": "Dragão recém-chegado à maturidade, ágil, arrogante e já letal, patrulhando territórios montanhosos para formar seu primeiro tesouro.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": 3,
+      "aura": 4,
+      "carisma": 3,
+      "forca": 7,
+      "fisico": 7,
+      "agilidade": 4
+    },
+    "efMax": 66,
+    "ehMax": 56,
+    "karmaMax": 36,
+    "armorClass": "P",
+    "defesaAtiva": 12,
+    "defesaPassiva": 8,
+    "absorcao": 34,
+    "rf": 13,
+    "rm": 11,
+    "vb": 36,
+    "xpReward": 28,
+    "attacks": [
+      {
+        "name": "Mordida e Garras",
+        "column": 16,
+        "damage": {
+          "verde": 9,
+          "amarelo": 18,
+          "laranja": 27,
+          "vermelho": 36,
+          "azul": 45
+        },
+        "damageType": "Corte/Perfuração",
+        "range": "2,5m",
+        "notes": "Múltiplos golpes velozes"
+      },
+      {
+        "name": "Hálito Elemental Jovem",
+        "column": 16,
+        "damage": {
+          "verde": 9,
+          "amarelo": 18,
+          "laranja": 27,
+          "vermelho": 36,
+          "azul": 45
+        },
+        "damageType": "Fogo",
+        "range": "Cone 15m",
+        "notes": "Gasta 6 Karma; testa RF"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Escamas Dracônicas",
+        "karmaCost": 0,
+        "description": "Absorção natural 34 e imunidade ao elemento do próprio hálito."
+      },
+      {
+        "name": "Presença Dracônica",
+        "karmaCost": 0,
+        "description": "Criaturas de estágio menor testam RM ou sofrem -2 colunas por temor."
+      }
+    ],
+    "loot": "Tesouro inicial (120 MO, joias e 1 objeto mágico)"
+  },
+  {
+    "id": "demonio-guerreiro-tipo-3",
+    "name": "Demônio Guerreiro (Tipo III — Senhor da Ruína)",
+    "category": "Criaturas Infernais",
+    "stage": 14,
+    "source": "Livro das Criaturas",
+    "description": "General infernal de quatro metros coberto por placas de ferro ardente e chamas negras, evocado apenas em guerras cataclísmicas.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": 4,
+      "aura": 6,
+      "carisma": 3,
+      "forca": 8,
+      "fisico": 8,
+      "agilidade": 4
+    },
+    "efMax": 76,
+    "ehMax": 68,
+    "karmaMax": 60,
+    "armorClass": "P",
+    "defesaAtiva": 14,
+    "defesaPassiva": 9,
+    "absorcao": 42,
+    "rf": 15,
+    "rm": 15,
+    "vb": 22,
+    "xpReward": 34,
+    "attacks": [
+      {
+        "name": "Alabarda de Ferro Infernal",
+        "column": 18,
+        "damage": {
+          "verde": 11,
+          "amarelo": 22,
+          "laranja": 33,
+          "vermelho": 44,
+          "azul": 55
+        },
+        "damageType": "Corte/Fogo",
+        "range": "3m",
+        "notes": "Aplica Queimando e derruba"
+      },
+      {
+        "name": "Onda de Fogo Infernal",
+        "column": 17,
+        "damage": {
+          "verde": 10,
+          "amarelo": 20,
+          "laranja": 30,
+          "vermelho": 40,
+          "azul": 50
+        },
+        "damageType": "Fogo",
+        "range": "Raio 8m",
+        "notes": "Gasta 8 Karma; testa RF"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Couraça Demoníaca",
+        "karmaCost": 0,
+        "description": "Imune a Fogo, venenos e armas mundanas; requer armas mágicas ou sagradas."
+      },
+      {
+        "name": "Convocar Servos",
+        "karmaCost": 10,
+        "description": "Invoca 2 Demônios Menores das cinzas (1x por combate)."
+      }
+    ],
+    "loot": "Armamento infernal rúnico, gemas negras (180 MO)"
+  },
+  {
+    "id": "golem-de-ferro-runico",
+    "name": "Golem de Ferro Rúnico",
+    "category": "Criaturas Artificiais",
+    "stage": 14,
+    "source": "Livro das Criaturas",
+    "description": "Obra-prima suprema da engenharia arcana: titã de aço gravado com runas de Parom e dos antigos magos, quase invulnerável a aço e fogo.",
+    "portrait": "./assets/portraits/dwarf-paladin.svg",
+    "attributes": {
+      "intelecto": -2,
+      "aura": 3,
+      "carisma": -3,
+      "forca": 10,
+      "fisico": 10,
+      "agilidade": 0
+    },
+    "efMax": 86,
+    "ehMax": 54,
+    "karmaMax": 0,
+    "armorClass": "P",
+    "defesaAtiva": 10,
+    "defesaPassiva": 11,
+    "absorcao": 52,
+    "rf": 16,
+    "rm": 16,
+    "vb": 14,
+    "xpReward": 34,
+    "attacks": [
+      {
+        "name": "Punho de Aço Maciço",
+        "column": 18,
+        "damage": {
+          "verde": 12,
+          "amarelo": 24,
+          "laranja": 36,
+          "vermelho": 48,
+          "azul": 60
+        },
+        "damageType": "Contusão",
+        "range": "3m",
+        "notes": "Estilhaça escudos e aplica Atordoado"
+      },
+      {
+        "name": "Nuvem de Vapor Tóxica",
+        "column": 16,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Veneno/Calor",
+        "range": "Cone 10m",
+        "notes": "Aplica Envenenado se falhar em RF"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Absorção de Fogo",
+        "karmaCost": 0,
+        "description": "Ataques de Fogo curam a EF do Golem de Ferro em vez de feri-lo."
+      },
+      {
+        "name": "Imunidade Arcana",
+        "karmaCost": 0,
+        "description": "Imune a quase todas as magias diretas exceto Raio Elétrico e Desintegração."
+      }
+    ],
+    "loot": "Liga rúnica pura e núcleo arcano intacto (250 MO)"
+  },
+  {
+    "id": "lich-arquinecromante",
+    "name": "Lich Arquinecromante",
+    "category": "Mortos-Vivos",
+    "stage": 15,
+    "source": "Livro das Criaturas",
+    "description": "Mago ancestral que alcançou a imortalidade profana selando sua alma em um filactério oculto, dominando os segredos mais sombrios da Necromancia.",
+    "portrait": "./assets/portraits/elf-mage.svg",
+    "attributes": {
+      "intelecto": 7,
+      "aura": 8,
+      "carisma": 4,
+      "forca": 2,
+      "fisico": 4,
+      "agilidade": 4
+    },
+    "efMax": 60,
+    "ehMax": 66,
+    "karmaMax": 95,
+    "armorClass": "M",
+    "defesaAtiva": 14,
+    "defesaPassiva": 9,
+    "absorcao": 32,
+    "rf": 14,
+    "rm": 18,
+    "vb": 16,
+    "xpReward": 38,
+    "attacks": [
+      {
+        "name": "Desintegração / Raio Necrótico",
+        "column": 19,
+        "damage": {
+          "verde": 11,
+          "amarelo": 22,
+          "laranja": 33,
+          "vermelho": 44,
+          "azul": 55
+        },
+        "damageType": "Necrótico/Arcano",
+        "range": "30m",
+        "notes": "Gasta 6 Karma; testa RF"
+      },
+      {
+        "name": "Toque Paralisante do Lich",
+        "column": 16,
+        "damage": {
+          "verde": 8,
+          "amarelo": 16,
+          "laranja": 24,
+          "vermelho": 32,
+          "azul": 40
+        },
+        "damageType": "Necrótico/Frio",
+        "range": "Corpo a Corpo",
+        "notes": "Alvo testa RF (FA 17) ou fica Paralisado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Filactério Imortal",
+        "karmaCost": 0,
+        "description": "Caso destruído sem quebrar seu filactério, o Lich recompõe um novo corpo em 1d10 dias."
+      },
+      {
+        "name": "Tempestade Necromântica",
+        "karmaCost": 12,
+        "description": "Drena vida em raio de 12m (10/20/30/40 Necrótico) e reergue corpos caídos como mortos-vivos."
+      },
+      {
+        "name": "Barreira Arcana Suprema",
+        "karmaCost": 5,
+        "description": "Concede +5 DA, +24 Absorção e reflete projéteis comuns."
+      }
+    ],
+    "loot": "300 MO, cajado lendário, grimórios de Magias Perdidas, filactério oculto"
+  },
+  {
+    "id": "arquidemonio-tipo-5",
+    "name": "Arquidemônio (Tipo V — Príncipe Infernal)",
+    "category": "Criaturas Infernais",
+    "stage": 17,
+    "source": "Livro das Criaturas",
+    "description": "Soberano dos abismos infernais, de presença avassaladora, asas flamejantes e mente brilhante capaz de corromper reinos inteiros.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": 6,
+      "aura": 8,
+      "carisma": 6,
+      "forca": 9,
+      "fisico": 9,
+      "agilidade": 5
+    },
+    "efMax": 96,
+    "ehMax": 88,
+    "karmaMax": 110,
+    "armorClass": "P",
+    "defesaAtiva": 16,
+    "defesaPassiva": 11,
+    "absorcao": 48,
+    "rf": 17,
+    "rm": 18,
+    "vb": 30,
+    "xpReward": 46,
+    "attacks": [
+      {
+        "name": "Espada Flamejante Abissal",
+        "column": 20,
+        "damage": {
+          "verde": 13,
+          "amarelo": 26,
+          "laranja": 39,
+          "vermelho": 52,
+          "azul": 65
+        },
+        "damageType": "Corte/Fogo",
+        "range": "3,5m",
+        "notes": "Ignora armaduras mundanas"
+      },
+      {
+        "name": "Cataclismo Infernal",
+        "column": 19,
+        "damage": {
+          "verde": 12,
+          "amarelo": 24,
+          "laranja": 36,
+          "vermelho": 48,
+          "azul": 60
+        },
+        "damageType": "Fogo/Necrótico",
+        "range": "Raio 12m",
+        "notes": "Gasta 12 Karma; aplica Queimando e Amedrontado"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Presença Profana",
+        "karmaCost": 0,
+        "description": "Todos os inimigos em 15m testam RM (FA 18) ou ficam Amedrontados e sofrem -3 colunas."
+      },
+      {
+        "name": "Senhor dos Planos Inferiores",
+        "karmaCost": 10,
+        "description": "Imune a fogo, veneno, medo, paralisia e armas não mágicas; pode teleportar livremente."
+      }
+    ],
+    "loot": "Relíquias lendárias, coroa abissal, 500 MO em gemas raras"
+  },
+  {
+    "id": "dragao-vermelho-tagmar",
+    "name": "Dragão Vermelho de Tagmar (Adulto)",
+    "category": "Dragões",
+    "stage": 18,
+    "source": "Livro das Criaturas",
+    "description": "Monarca alado de escamas rubras impenetráveis que domina picos vulcânicos e cordilheiras, temido desde as primeiras eras de Tagmar.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": 5,
+      "aura": 7,
+      "carisma": 5,
+      "forca": 10,
+      "fisico": 10,
+      "agilidade": 4
+    },
+    "efMax": 115,
+    "ehMax": 95,
+    "karmaMax": 85,
+    "armorClass": "P",
+    "defesaAtiva": 16,
+    "defesaPassiva": 11,
+    "absorcao": 54,
+    "rf": 18,
+    "rm": 16,
+    "vb": 42,
+    "xpReward": 50,
+    "attacks": [
+      {
+        "name": "Mordida Colossal",
+        "column": 20,
+        "damage": {
+          "verde": 14,
+          "amarelo": 28,
+          "laranja": 42,
+          "vermelho": 56,
+          "azul": 70
+        },
+        "damageType": "Perfuração",
+        "range": "3,5m",
+        "notes": "Capaz de partir cavaleiros em couraça"
+      },
+      {
+        "name": "Garras e Golpe de Cauda",
+        "column": 19,
+        "damage": {
+          "verde": 12,
+          "amarelo": 24,
+          "laranja": 36,
+          "vermelho": 48,
+          "azul": 60
+        },
+        "damageType": "Corte/Contusão",
+        "range": "4m",
+        "notes": "Varredura em área derrubando inimigos"
+      },
+      {
+        "name": "Hálito de Fogo Dracônico",
+        "column": 20,
+        "damage": {
+          "verde": 14,
+          "amarelo": 28,
+          "laranja": 42,
+          "vermelho": 56,
+          "azul": 70
+        },
+        "damageType": "Fogo",
+        "range": "Cone 25m",
+        "notes": "Gasta 10 Karma; testa RF (FA 18) e incendeia toda a área"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Couraça de Escamas Rubras",
+        "karmaCost": 0,
+        "description": "Defesa Pesada (P), Absorção natural 54 e imunidade absoluta a Fogo."
+      },
+      {
+        "name": "Terror Dracônico",
+        "karmaCost": 0,
+        "description": "Rugido em 30m: inimigos testam RM (FA 17) ou ficam Amedrontados."
+      },
+      {
+        "name": "Voo Magistral",
+        "karmaCost": 0,
+        "description": "Combate nos céus a 42m/rodada gerando vendaval ao pousar."
+      }
+    ],
+    "loot": "Montanha de tesouro: 800 MO, dezenas de gemas e 2–3 Objetos Mágicos lendários"
+  },
+  {
+    "id": "dragao-imperial-anciao",
+    "name": "Dragão Imperial Ancião",
+    "category": "Dragões Imperiais",
+    "stage": 20,
+    "source": "Livro das Criaturas",
+    "description": "A mais poderosa criatura viva do Livro das Criaturas de Tagmar: um dragão milenar de intelecto genial, domínio arcano supremo e escamas indestrutíveis.",
+    "portrait": "./assets/monsters/ancient-dragon.svg",
+    "attributes": {
+      "intelecto": 8,
+      "aura": 10,
+      "carisma": 8,
+      "forca": 12,
+      "fisico": 12,
+      "agilidade": 5
+    },
+    "efMax": 145,
+    "ehMax": 120,
+    "karmaMax": 140,
+    "armorClass": "P",
+    "defesaAtiva": 18,
+    "defesaPassiva": 13,
+    "absorcao": 64,
+    "rf": 20,
+    "rm": 20,
+    "vb": 48,
+    "xpReward": 60,
+    "attacks": [
+      {
+        "name": "Mordida Imperial",
+        "column": 20,
+        "damage": {
+          "verde": 16,
+          "amarelo": 32,
+          "laranja": 48,
+          "vermelho": 64,
+          "azul": 80
+        },
+        "damageType": "Perfuração",
+        "range": "4m",
+        "notes": "Dano massivo; dilacera armaduras"
+      },
+      {
+        "name": "Tempestade de Garras e Cauda",
+        "column": 20,
+        "damage": {
+          "verde": 14,
+          "amarelo": 28,
+          "laranja": 42,
+          "vermelho": 56,
+          "azul": 70
+        },
+        "damageType": "Corte/Contusão",
+        "range": "5m",
+        "notes": "Atinge múltiplos oponentes e aplica Caído"
+      },
+      {
+        "name": "Hálito Imperial Devastador",
+        "column": 20,
+        "damage": {
+          "verde": 16,
+          "amarelo": 32,
+          "laranja": 48,
+          "vermelho": 64,
+          "azul": 80
+        },
+        "damageType": "Fogo/Arcano",
+        "range": "Cone 35m",
+        "notes": "Gasta 12 Karma; testa RF (FA 20); derrete pedra e metal"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Soberania Arcana",
+        "karmaCost": 8,
+        "description": "Conhece magias supremas dos Colégios Elemental e do Conhecimento (Meteoros, Desintegração, Barreira Mental)."
+      },
+      {
+        "name": "Escamas Imperiais",
+        "karmaCost": 0,
+        "description": "Defesa Pesada (P6), Absorção natural 64, imune a ataques não mágicos, venenos, medo e fogo."
+      },
+      {
+        "name": "Presença Majestosa",
+        "karmaCost": 0,
+        "description": "Criaturas a até 50m testam RM (FA 20) ou ficam tomadas por pavor reverencial (Amedrontado)."
+      }
+    ],
+    "loot": "Tesouro Imperial Milenar: 2.000+ MO, artefatos únicos do Livro dos Objetos Mágicos e grimórios antigos"
+  }
+]

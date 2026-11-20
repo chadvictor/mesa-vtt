@@ -14,7 +14,13 @@ import {
 } from 'lucide-react';
 import { getSystemEngine } from '@systems/registry';
 import { runMacro } from '@systems/sandbox';
-import type { Macro, MacroCommand, MacroResult, Visibility } from '@systems/types';
+import type {
+  Macro,
+  MacroCommand,
+  MacroResult,
+  TagmarResistanceRequest,
+  Visibility,
+} from '@systems/types';
 import { useCampaignStore } from '@/lib/store';
 
 export interface MacroPanelProps {
@@ -22,6 +28,19 @@ export interface MacroPanelProps {
 }
 
 const MACRO_EXAMPLES = [
+  {
+    name: 'Tabela de Resolução (Tagmar 3.0)',
+    color: '#22c55e',
+    script: `// Teste na Tabela de Resolução Tagmar 3.0 usando Força + 4
+let col = (@forca || 0) + 4;
+roll("1d20", "Teste na Tabela (Col " + col + ")", { systemId: "tagmar-3", tagmarColumn: col });`,
+  },
+  {
+    name: 'Iniciativa Tagmar (1d10 + AGI)',
+    color: '#eab308',
+    script: `let agi = @agilidade || 0;
+roll("1d10 + " + agi, "Iniciativa Tagmar", { systemId: "tagmar-3", kind: "initiative" });`,
+  },
   {
     name: 'Ataque Poderoso (MB 3e)',
     color: '#ef4444',
@@ -41,7 +60,7 @@ roll("2d6 + @inteligencia", "Bola de Fogo", { difficulty: 12 });`,
     name: 'Poção de Cura Rápida',
     color: '#22c55e',
     script: `heal(20, "self");
-say("Bebe rapidamente uma Poção de Cura (+20 PV)!");`,
+say("Bebe rapidamente uma Poção de Cura!");`,
   },
   {
     name: 'Teste d20 Genérico',
@@ -85,6 +104,16 @@ export function MacroPanel({ compact = false }: MacroPanelProps) {
   const executeCommands = (commands: MacroCommand[]) => {
     for (const cmd of commands) {
       if (cmd.type === 'roll') {
+        const metaCol =
+          typeof cmd.meta?.tagmarColumn === 'number' ? cmd.meta.tagmarColumn : undefined;
+        const rawRes = cmd.meta?.tagmarResistance as Partial<TagmarResistanceRequest> | undefined;
+        const metaRes: TagmarResistanceRequest | undefined =
+          rawRes &&
+          (rawRes.kind === 'rf' || rawRes.kind === 'rm') &&
+          typeof rawRes.fa === 'number' &&
+          typeof rawRes.fd === 'number'
+            ? { kind: rawRes.kind, fa: rawRes.fa, fd: rawRes.fd }
+            : undefined;
         rollDice({
           formula: cmd.formula,
           label: cmd.label,
@@ -92,17 +121,24 @@ export function MacroPanel({ compact = false }: MacroPanelProps) {
           visibility: cmd.visibility ?? 'all_players',
           difficulty: cmd.difficulty,
           targetCharacterId: targetCharacter?.id,
+          tagmarColumn: metaCol,
+          tagmarResistance: metaRes,
           systemMeta: cmd.meta,
         });
       } else if (cmd.type === 'roll_attack' && activeCharacter) {
         const plan = engine.planAttack(activeCharacter, cmd.weaponId ?? '', targetCharacter ?? undefined);
         rollDice({
-          formula: cmd.bonus ? `${plan.formula} + ${cmd.bonus}` : plan.formula,
+          formula: cmd.bonus && plan.tagmarColumn === undefined ? `${plan.formula} + ${cmd.bonus}` : plan.formula,
           label: plan.label,
           characterId: activeCharacter.id,
           targetCharacterId: plan.targetCharacterId,
           targetDefense: plan.targetDefense,
-          systemMeta: plan.systemMeta,
+          tagmarColumn:
+            plan.tagmarColumn !== undefined ? plan.tagmarColumn + (cmd.bonus ?? 0) : undefined,
+          systemMeta:
+            plan.tagmarColumn !== undefined
+              ? { ...plan.systemMeta, tagmarColumn: plan.tagmarColumn + (cmd.bonus ?? 0) }
+              : plan.systemMeta,
         });
       } else if (cmd.type === 'roll_ability' && activeCharacter) {
         const plan = engine.planAbility(activeCharacter, cmd.abilityId, targetCharacter ?? undefined);
@@ -121,6 +157,7 @@ export function MacroPanel({ compact = false }: MacroPanelProps) {
           difficulty: plan.difficulty,
           targetCharacterId: plan.targetCharacterId,
           targetDefense: plan.targetDefense,
+          tagmarColumn: plan.tagmarColumn,
           systemMeta: { ...plan.systemMeta, manaAlreadySpent: Boolean(plan.manaCost) },
         });
       } else if (cmd.type === 'roll_spell' && activeCharacter) {
@@ -140,10 +177,15 @@ export function MacroPanel({ compact = false }: MacroPanelProps) {
           difficulty: plan.difficulty,
           targetCharacterId: plan.targetCharacterId,
           targetDefense: plan.targetDefense,
-          systemMeta: { ...plan.systemMeta, manaAlreadySpent: Boolean(plan.manaCost) },
+          tagmarColumn: plan.tagmarColumn,
+          systemMeta: {
+            ...plan.systemMeta,
+            manaAlreadySpent: Boolean(plan.manaCost),
+            karmaAlreadySpent: Boolean(plan.karmaCost),
+          },
         });
       } else if (cmd.type === 'spend' && activeCharacter) {
-        if (cmd.resource === 'pm' || cmd.resource === 'mp') {
+        if (cmd.resource === 'pm' || cmd.resource === 'mp' || cmd.resource === 'karma') {
           const res = engine.spendMana(activeCharacter, cmd.amount);
           if (res.error) {
             pushToast(res.error, 'error');
@@ -165,7 +207,8 @@ export function MacroPanel({ compact = false }: MacroPanelProps) {
         const dest = cmd.target === 'target' ? targetCharacter : activeCharacter;
         if (dest) {
           patchCharacter(dest.id, engine.applyHealing(dest, cmd.amount));
-          pushToast(`${dest.name} recuperou ${cmd.amount} PV.`, 'success');
+          const unitLabel = dest.systemId === 'tagmar-3' ? 'EF/EH' : 'PV';
+          pushToast(`${dest.name} recuperou ${cmd.amount} ${unitLabel}.`, 'success');
         }
       } else if (cmd.type === 'damage') {
         const dest = cmd.target === 'self' ? activeCharacter : targetCharacter ?? activeCharacter;

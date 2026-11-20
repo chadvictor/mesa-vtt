@@ -16,6 +16,7 @@ import type { CharacterSidebarProps } from '@/lib/componentProps';
 import { useCampaignStore, useVoice } from '@/lib/store';
 import { CombatTracker } from './CombatTracker';
 import { MightyBladeWizard } from './MightyBladeWizard';
+import { TagmarWizard } from './TagmarWizard';
 
 export function CharacterSidebar({
   onOpenSheet,
@@ -39,12 +40,14 @@ export function CharacterSidebar({
   const voice = useVoice();
 
   const [wizardOpen, setWizardOpen] = useState(false);
+  const [tagmarWizardOpen, setTagmarWizardOpen] = useState(false);
   const [quickCreatorKind, setQuickCreatorKind] = useState<'pc' | 'npc' | null>(null);
   const [quickName, setQuickName] = useState('');
   const [quickRole, setQuickRole] = useState('');
 
   const systemId = campaign?.systemId ?? 'mighty-blade-3e';
   const isMightyBlade = systemId === 'mighty-blade-3e';
+  const isTagmar = systemId === 'tagmar-3';
   const engine = useMemo(() => getSystemEngine(systemId), [systemId]);
 
   const speakingUserIds = useMemo(() => {
@@ -67,8 +70,9 @@ export function CharacterSidebar({
       pushToast('Nenhuma cena ativa no mapa.', 'warning');
       return;
     }
-    const hp = char.resources?.pv ?? char.resources?.hp;
-    const mp = char.resources?.pm ?? char.resources?.mp;
+    const isCharTagmar = char.systemId === 'tagmar-3';
+    const hp = isCharTagmar ? char.resources?.eh : (char.resources?.pv ?? char.resources?.hp);
+    const mp = isCharTagmar ? char.resources?.ef : (char.resources?.pm ?? char.resources?.mp);
     const cx = Math.max(1, Math.floor((activeScene.grid.cols || 24) / 2) + Math.floor(Math.random() * 3 - 1));
     const cy = Math.max(1, Math.floor((activeScene.grid.rows || 18) / 2) + Math.floor(Math.random() * 3 - 1));
 
@@ -107,6 +111,7 @@ export function CharacterSidebar({
       archetype: quickRole.trim() || (quickCreatorKind === 'npc' ? 'NPC' : 'Aventureiro'),
       raceId: 'humano',
       classId: 'guerreiro',
+      professionId: 'guerreiro',
       portraitUrl:
         quickCreatorKind === 'npc'
           ? './assets/portraits/gm-avatar.svg'
@@ -129,10 +134,19 @@ export function CharacterSidebar({
   };
 
   const renderCard = (char: Character) => {
+    const isCharTagmar = char.systemId === 'tagmar-3';
     const hp = char.resources?.pv ?? char.resources?.hp;
     const mp = char.resources?.pm ?? char.resources?.mp;
     const hpPct = hp && hp.max > 0 ? Math.max(0, Math.min(100, (hp.current / hp.max) * 100)) : 0;
     const mpPct = mp && mp.max > 0 ? Math.max(0, Math.min(100, (mp.current / mp.max) * 100)) : 0;
+
+    const eh = char.resources?.eh;
+    const ef = char.resources?.ef;
+    const karma = char.resources?.karma;
+    const ehPct = eh && eh.max > 0 ? Math.max(0, Math.min(100, (eh.current / eh.max) * 100)) : 0;
+    const efPct = ef && ef.max > 0 ? Math.max(0, Math.min(100, (ef.current / ef.max) * 100)) : 0;
+    const karmaPct =
+      karma && karma.max > 0 ? Math.max(0, Math.min(100, (karma.current / karma.max) * 100)) : 0;
 
     const isActiveSpeaker = activeCharacterId === char.id;
     const isTarget = selectedTargetId === char.id;
@@ -141,6 +155,9 @@ export function CharacterSidebar({
     const bloqueio = char.computed?.bloqueio as number | undefined;
     const esquiva = char.computed?.esquiva as number | undefined;
     const defesa = char.computed?.defesa as number | undefined;
+    const defesaAtiva = char.computed?.defesaAtiva as number | undefined;
+    const defesaPassiva = char.computed?.defesaPassiva as number | undefined;
+    const absorcao = char.computed?.absorcao as number | undefined;
 
     const canPlaceOnMap = isGm || char.ownerUserId === user.id || char.controlledByUserIds?.includes(user.id);
 
@@ -244,7 +261,18 @@ export function CharacterSidebar({
 
             {/* Quick Defense Badges */}
             <div style={{ display: 'flex', gap: 5, marginTop: 4, flexWrap: 'wrap' }}>
-              {bloqueio !== undefined && esquiva !== undefined && char.systemId === 'mighty-blade-3e' ? (
+              {isCharTagmar ? (
+                <>
+                  <span className="mesa-badge mesa-badge--gold" style={{ fontSize: 10, padding: '1px 6px' }}>
+                    <Shield size={9} /> DA {defesaAtiva ?? 0} / DP {defesaPassiva ?? 0}
+                  </span>
+                  {absorcao !== undefined && absorcao > 0 && (
+                    <span className="mesa-badge mesa-badge--emerald" style={{ fontSize: 10, padding: '1px 6px' }}>
+                      Abs {absorcao}
+                    </span>
+                  )}
+                </>
+              ) : bloqueio !== undefined && esquiva !== undefined && char.systemId === 'mighty-blade-3e' ? (
                 <>
                   <span className="mesa-badge" style={{ fontSize: 10, padding: '1px 6px' }}>
                     <Shield size={9} style={{ color: 'var(--gold-400)' }} /> Bloq {bloqueio}
@@ -272,87 +300,210 @@ export function CharacterSidebar({
           </div>
         </div>
 
-        {/* HP & MP Bars */}
+        {/* Resource Bars: Tagmar (EH / EF / Karma) vs Mighty Blade & Generic (PV / PM) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {hp && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ fontSize: 10, fontWeight: 700, color: 'var(--emerald-400)', width: 20 }}>
-                PV
-              </span>
-              <div
-                style={{
-                  flex: 1,
-                  height: 8,
-                  borderRadius: 99,
-                  background: 'rgba(0,0,0,0.45)',
-                  border: '1px solid var(--border-subtle)',
-                  overflow: 'hidden',
-                }}
-              >
-                <div
-                  style={{
-                    width: `${hpPct}%`,
-                    height: '100%',
-                    background:
-                      hp.current <= 0
-                        ? 'var(--crimson-600)'
-                        : hpPct <= 30
-                          ? 'linear-gradient(90deg, #dc2626, #f87171)'
-                          : 'linear-gradient(90deg, #16a34a, #4ade80)',
-                    transition: 'width 200ms ease',
-                  }}
-                />
-              </div>
-              <span
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 10.5,
-                  color: hp.current <= 0 ? 'var(--crimson-400)' : 'var(--text-secondary)',
-                  minWidth: 42,
-                  textAlign: 'right',
-                }}
-              >
-                {hp.current}/{hp.max}
-              </span>
-            </div>
-          )}
+          {isCharTagmar ? (
+            <>
+              {eh && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: 'var(--gold-400)', width: 22 }}>
+                    EH
+                  </span>
+                  <div
+                    style={{
+                      flex: 1,
+                      height: 7,
+                      borderRadius: 99,
+                      background: 'rgba(0,0,0,0.45)',
+                      border: '1px solid var(--border-subtle)',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: `${ehPct}%`,
+                        height: '100%',
+                        background: 'linear-gradient(90deg, #eab308, #22c55e)',
+                        transition: 'width 200ms ease',
+                      }}
+                    />
+                  </div>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: 10.5,
+                      color: 'var(--text-secondary)',
+                      minWidth: 42,
+                      textAlign: 'right',
+                    }}
+                  >
+                    {eh.current}/{eh.max}
+                  </span>
+                </div>
+              )}
 
-          {mp && mp.max > 0 && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ fontSize: 10, fontWeight: 700, color: 'var(--sapphire-400)', width: 20 }}>
-                PM
-              </span>
-              <div
-                style={{
-                  flex: 1,
-                  height: 7,
-                  borderRadius: 99,
-                  background: 'rgba(0,0,0,0.45)',
-                  border: '1px solid var(--border-subtle)',
-                  overflow: 'hidden',
-                }}
-              >
-                <div
-                  style={{
-                    width: `${mpPct}%`,
-                    height: '100%',
-                    background: 'linear-gradient(90deg, #2563eb, #60a5fa)',
-                    transition: 'width 200ms ease',
-                  }}
-                />
-              </div>
-              <span
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 10.5,
-                  color: 'var(--text-secondary)',
-                  minWidth: 42,
-                  textAlign: 'right',
-                }}
-              >
-                {mp.current}/{mp.max}
-              </span>
-            </div>
+              {ef && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: 'var(--crimson-400)', width: 22 }}>
+                    EF
+                  </span>
+                  <div
+                    style={{
+                      flex: 1,
+                      height: 7,
+                      borderRadius: 99,
+                      background: 'rgba(0,0,0,0.45)',
+                      border: '1px solid var(--border-subtle)',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: `${efPct}%`,
+                        height: '100%',
+                        background:
+                          ef.current <= 0
+                            ? '#991b1b'
+                            : 'linear-gradient(90deg, #dc2626, #f87171)',
+                        transition: 'width 200ms ease',
+                      }}
+                    />
+                  </div>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: 10.5,
+                      color: ef.current <= 0 ? 'var(--crimson-400)' : 'var(--text-secondary)',
+                      minWidth: 42,
+                      textAlign: 'right',
+                    }}
+                  >
+                    {ef.current}/{ef.max}
+                  </span>
+                </div>
+              )}
+
+              {karma && karma.max > 0 && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: '#38bdf8', width: 22 }}>
+                    KM
+                  </span>
+                  <div
+                    style={{
+                      flex: 1,
+                      height: 6,
+                      borderRadius: 99,
+                      background: 'rgba(0,0,0,0.45)',
+                      border: '1px solid var(--border-subtle)',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: `${karmaPct}%`,
+                        height: '100%',
+                        background: 'linear-gradient(90deg, #0284c7, #38bdf8)',
+                        transition: 'width 200ms ease',
+                      }}
+                    />
+                  </div>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: 10.5,
+                      color: 'var(--text-secondary)',
+                      minWidth: 42,
+                      textAlign: 'right',
+                    }}
+                  >
+                    {karma.current}/{karma.max}
+                  </span>
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              {hp && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: 'var(--emerald-400)', width: 20 }}>
+                    PV
+                  </span>
+                  <div
+                    style={{
+                      flex: 1,
+                      height: 8,
+                      borderRadius: 99,
+                      background: 'rgba(0,0,0,0.45)',
+                      border: '1px solid var(--border-subtle)',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: `${hpPct}%`,
+                        height: '100%',
+                        background:
+                          hp.current <= 0
+                            ? 'var(--crimson-600)'
+                            : hpPct <= 30
+                              ? 'linear-gradient(90deg, #dc2626, #f87171)'
+                              : 'linear-gradient(90deg, #16a34a, #4ade80)',
+                        transition: 'width 200ms ease',
+                      }}
+                    />
+                  </div>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: 10.5,
+                      color: hp.current <= 0 ? 'var(--crimson-400)' : 'var(--text-secondary)',
+                      minWidth: 42,
+                      textAlign: 'right',
+                    }}
+                  >
+                    {hp.current}/{hp.max}
+                  </span>
+                </div>
+              )}
+
+              {mp && mp.max > 0 && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: 'var(--sapphire-400)', width: 20 }}>
+                    PM
+                  </span>
+                  <div
+                    style={{
+                      flex: 1,
+                      height: 7,
+                      borderRadius: 99,
+                      background: 'rgba(0,0,0,0.45)',
+                      border: '1px solid var(--border-subtle)',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: `${mpPct}%`,
+                        height: '100%',
+                        background: 'linear-gradient(90deg, #2563eb, #60a5fa)',
+                        transition: 'width 200ms ease',
+                      }}
+                    />
+                  </div>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: 10.5,
+                      color: 'var(--text-secondary)',
+                      minWidth: 42,
+                      textAlign: 'right',
+                    }}
+                  >
+                    {mp.current}/{mp.max}
+                  </span>
+                </div>
+              )}
+            </>
           )}
         </div>
 
@@ -426,12 +577,22 @@ export function CharacterSidebar({
       >
         <button
           type="button"
-          className="mesa-btn mesa-btn--gold mesa-btn--sm"
+          className={`mesa-btn ${isTagmar ? 'mesa-btn--emerald' : 'mesa-btn--gold'} mesa-btn--sm`}
           style={{ flex: 1 }}
-          onClick={() => (isMightyBlade ? setWizardOpen(true) : setQuickCreatorKind('pc'))}
+          onClick={() =>
+            isTagmar
+              ? setTagmarWizardOpen(true)
+              : isMightyBlade
+                ? setWizardOpen(true)
+                : setQuickCreatorKind('pc')
+          }
         >
           <Crown size={13} />
-          {isMightyBlade ? '+ Novo Herói' : '+ Novo Personagem'}
+          {isTagmar
+            ? '+ Novo Herói (Tagmar 3.0)'
+            : isMightyBlade
+              ? '+ Novo Herói'
+              : '+ Novo Personagem'}
         </button>
 
         {isGm && (
@@ -570,6 +731,13 @@ export function CharacterSidebar({
       <MightyBladeWizard
         open={wizardOpen}
         onClose={() => setWizardOpen(false)}
+        onCreated={(created) => onOpenSheet(created.id)}
+      />
+
+      {/* Tagmar 3.0 Hero Creator Wizard */}
+      <TagmarWizard
+        open={tagmarWizardOpen}
+        onClose={() => setTagmarWizardOpen(false)}
         onCreated={(created) => onOpenSheet(created.id)}
       />
     </div>
